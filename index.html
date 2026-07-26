@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Польский: окончания</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="head-in">
+    <div class="brand">
+      <h1>Polski: końców<span class="tail">ki</span></h1>
+      <span>справочник · русско-белорусская опора</span>
+      <div id="sbox">
+        <input id="gsearch" type="search" autocomplete="off" spellcheck="false"
+               placeholder="поиск по всему справочнику  /" aria-label="Поиск">
+        <div id="sres"></div>
+      </div>
+    </div>
+    <div id="navwrap">
+      <button id="navl" class="navarr" aria-label="Прокрутить вкладки влево"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M7 1 2 6.5 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <nav id="nav" role="tablist"></nav>
+      <button id="navr" class="navarr" aria-label="Прокрутить вкладки вправо"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M1 1 6 6.5 1 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section id="s-alpha" class="sec on"></section>
+  <section id="s-cases" class="sec">
+    <div class="chips" id="chips" role="group" aria-label="Падеж"></div>
+    <div class="panel" id="casePanel"></div>
+  </section>
+
+  <section id="s-adj" class="sec"></section>
+  <section id="s-adv" class="sec"></section>
+  <section id="s-pron" class="sec"></section>
+  <section id="s-q" class="sec"></section>
+  <section id="s-num" class="sec"></section>
+  <section id="s-verbs" class="sec"></section>
+  <section id="s-neg" class="sec"></section>
+  <section id="s-order" class="sec"></section>
+  <section id="s-impers" class="sec"></section>
+  <section id="s-conj" class="sec"></section>
+  <section id="s-part" class="sec"></section>
+  <section id="s-dim" class="sec"></section>
+  <section id="s-preps" class="sec"></section>
+  <section id="s-bridge" class="sec"></section>
+
+  <footer>Ударение - всегда предпоследний слог (кроме исключений во вкладке «Алфавит»).<br>
+    <small>По материалам <a href="https://propolski.com/gramatyka-jezyka-polskiego/" target="_blank" rel="noopener">propolski.com</a></small>.</footer>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
