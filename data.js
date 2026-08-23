@@ -43,6 +43,43 @@ const NASAL = [
  ["перед ł, l","теряется, чистое o / e","minął [minoł], zaczęli [zaczeli]"],
  ["на конце слова","ą - носовое; ę - часто теряет носовость","idą [идон]; proszę ≈ [proше]"]
 ];
+/* ============ ДАННЫЕ: звонкие / глухие и прописная буква ============ */
+const DZW_PARY = [
+ ["b","p","chleb → [chlep]"],
+ ["d","t","sad → [sat]"],
+ ["g","k","Bóg → [buk]"],
+ ["w","f","staw → [staf]"],
+ ["z","s","teraz → [teras]"],
+ ["ź","ś","weź → [weś]"],
+ ["ż · rz","sz","nóż → [nusz]"],
+ ["dz","c","pieniądz → [pieniąc]"],
+ ["dź","ć","łódź → [łuć]"],
+ ["dż","cz","brydż → [brycz]"]
+];
+const DZW_RULES = [
+ ["конец слова","звонкий оглушается","chleb [chlep] · Bóg [buk] · nóż [nusz] · staw [staf] · mąż [mąsz] · teraz [teras]"],
+ ["перед глухим","вся группа становится глухой","ławka [łafka] · babka [bapka] · łódka [łutka] · wszystko [fszystko] · wtorek [ftorek]"],
+ ["перед звонким","вся группа становится звонкой","także [tagże] · prośba [proźba] · liczba [lidżba] · jakże [jagże]"],
+ ["предлог + слово","считаются одним словом","w parku [f parku] · z tobą [s tobą] · nad stołem [nat stołem] · pod domem [pod domem]"]
+];
+const WIELKA_D = [
+ ["народы и жители - стран, регионов, городов, деревень","Polak · Rosjanin · Białorusin · Europejczyk · Ślązak · Warszawianin · Krakowianin · Zakopianin"],
+ ["объекты городского пространства","Plac Zbawiciela · Aleja Róż · Park Kościuszki · Most Poniatowskiego · Brama Floriańska · Cmentarz Rakowicki"],
+ ["имена, фамилии, клички","Adam Kowalski · Anna · Burek"],
+ ["географические названия","Warszawa · Wisła · Tatry · Stare Miasto · Morze Bałtyckie"],
+ ["учреждения и праздники","Uniwersytet Warszawski · Sejm · Boże Narodzenie · Wielkanoc · Nowy Rok"],
+ ["Pan · Pani · Państwo · Ty в переписке","Szanowny Panie · Dziękuję Pani za wiadomość · Czy mogę Cię prosić"]
+];
+const WIELKA_M = [
+ ["прилагательные от народов и мест","polski · warszawski · język polski · kuchnia włoska"],
+ ["языки и «по-…»","po polsku · po rosyjsku · po angielsku"],
+ ["дни недели","poniedziałek · we wtorek · w środę"],
+ ["месяцы","styczeń · w maju · piątego maja"],
+ ["должности и звания","prezydent · minister · doktor · profesor · dyrektor"],
+ ["ulica - единственное исключение среди городских объектов","ulica Długa · ulica Józefa Piłsudskiego"],
+ ["административные единицы","województwo mazowieckie · powiat wołomiński · gmina Michałowice"]
+];
+
 const STRESS_EXC = [
  ["форма на -śmy / -ście в прошедшем","3-й слог от конца","byliśmy, spacerowaliście"],
  ["условное наклонение на -by-","3-й слог от конца","zrobiłbym, pojechałaby"],
@@ -121,7 +158,7 @@ const CASES = [
   agree:[["ten dobry chleb","ten dobry chleb"],["ten dobry pies","tego dobrego psa"],["ta dobra kawa","tę dobrą kawę"],["to dobre piwo","to dobre piwo"],["мн. мужчины","tych dobrych lekarzy"],["мн. остальное","te dobre kawy"]],
   exc:[["pieniądze","pieniądze","не мужско-личное: mam pieniądze"],["ręka","rękę",""],["pani","panią","единственное женское на -ą"],["ta","tę","литературная норма; в речи слышно tą"]],
   pit:["<b>Числительные рядом.</b> <span class='pl'>dwa soki</span>, не <span class='pl'>dwa soka</span>. Ловушка срабатывает именно на словах, похожих на русские.",
-  "<b>Отрицание сносит биерник в родительный.</b> <span class='pl'>Mam bilet → nie mam biletu.</span> Автоматически, без исключений. Это самая частая точка отказа у русскоязычных на B1.",
+  "<b>Отрицание сносит биерник в родительный.</b> <span class='pl'>Mam bilet → nie mam biletu.</span> Автоматически и почти без исключений - самая частая точка отказа у русскоязычных на B1. Винительный удерживается только там, где <span class='pl'>nie</span> отрицает не глагол, а отдельное слово: <span class='pl'>Widziałem nie Annę, a Marię</span>.",
   "<b>Одушевлённость работает только в мужском единственном.</b> Во множественном граница проходит иначе: <span class='pl'>widzę psy</span> (животные - как неодушевлённые), но <span class='pl'>widzę panów</span>.",
   "<b>na / w + биерник = движение</b>, + предложный = положение. <span class='pl'>Idę na pocztę</span> ↔ <span class='pl'>jestem na poczcie</span>. Одна пара предлогов, два падежа, разный смысл.",
   "<b>Глаголы, которые в русском требуют другого падежа:</b> <span class='pl'>czekam na autobus</span> (жду автобус), <span class='pl'>proszę o rachunek</span> (прошу счёт), <span class='pl'>pytam o cenę</span> (спрашиваю о цене)."],
@@ -130,7 +167,7 @@ const CASES = [
 },
 {
   id:"dop", name:"Dopełniacz", ru:"Родительный", q:"kogo? czego?",
-  use:["Отрицание: <span class='pl'>mam czas → nie mam czasu</span>. Всегда.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После 5+ и после <span class='pl'>dużo, mało, kilka, trochę, ile</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>."],
+  use:["Отрицание: <span class='pl'>mam czas → nie mam czasu</span>. Всегда.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После числительных, которые его требуют, и после <span class='pl'>dużo, mało, kilka, trochę, ile</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>."],
   preps:"do, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast",
   sg:[
     {l:"муж. одушевл.", f:[{a:"pan",b:"pan|a"},{a:"brat",b:"brat|a"},{a:"pies",b:"ps|a"}], n:"-a, без вариантов"},
@@ -149,7 +186,7 @@ const CASES = [
   pit:["<b>-a или -u у неодушевлённых.</b> Надёжного правила нет. Ориентиры: пощупать можно → <span class='pl'>-a</span> (<span class='pl'>chleba, sera, noża</span>); абстракция, вещество, заимствование → <span class='pl'>-u</span> (<span class='pl'>czasu, cukru, banku</span>). Проверять по словарю и учить со словом.",
   "<b>Отрицание - всегда, даже там, где русский держит винительный.</b> «Не вижу Анну» → <span class='pl'>nie widzę Anny</span>. «Не люблю кофе» → <span class='pl'>nie lubię kawy</span>.",
   "<b>Беглая гласная во множественном.</b> <span class='pl'>książka → książek</span>, <span class='pl'>okno → okien</span>, <span class='pl'>matka → matek</span>. Окончания нет, зато в основу влезает <span class='pl'>e</span>.",
-  "<b>После 5+ и количественных слов.</b> <span class='pl'>pięć biletów, dużo ludzi, mało czasu, kilka minut</span> - здесь русская модель работает, интуиция не мешает.",
+  "<b>После количественных слов.</b> <span class='pl'>pięć biletów, dużo ludzi, mało czasu, kilka minut</span> - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (<span class='pl'>dwadzieścia dwa domy</span>, но <span class='pl'>dwadzieścia pięć domów</span>), - во вкладке «Числительные».",
   "<b><span class='pl'>Nie ma</span> - безличное.</b> Формы «его нет» не существует как <span class='pl'>on nie ma</span>: это значит «у него нет». «Его нет дома» → <span class='pl'>nie ma go w domu</span>."],
   sent:[["Nie mam dzisiaj czasu.","У меня сегодня нет времени."],["W sklepie nie ma świeżego chleba.","В магазине нет свежего хлеба."],["Szukam apteki, która jest otwarta.","Ищу аптеку, которая открыта."],["To jest samochód mojego brata.","Это машина моего брата."],["Wracam z pracy do domu około szóstej.","Возвращаюсь с работы домой около шести."]],
   trap:"Родительный стоит четвёртым блоком не случайно: без него нельзя построить ни одного отрицания. Это самый частотный падеж в бытовой речи после винительного."
@@ -220,7 +257,7 @@ const CASES = [
 },
 {
   id:"woł", name:"Wołacz", ru:"Звательный", q:"o!",
-  use:["Обращение к незнакомым - обязательно: <span class='pl'>proszę pani! proszę pana!</span>","С титулом: <span class='pl'>panie doktorze, panie kierowniku</span>.","В письме: <span class='pl'>Szanowny Panie, Droga Aniu</span>."],
+  use:["Обращение к незнакомому с титулом или именем: <span class='pl'>panie doktorze! pani Anno!</span>","С титулом: <span class='pl'>panie doktorze, panie kierowniku</span>.","В письме: <span class='pl'>Szanowny Panie, Droga Aniu</span>."],
   preps:"-",
   sg:[
     {l:"мужской → -e", f:[{a:"pan",b:"pa|ni|e"},{a:"Piotr",b:"Piot|rz|e"},{a:"Adam",b:"Ada|mi|e"},{a:"doktor",b:"dokto|rz|e"}], n:"то же чередование, что в предложном"},
@@ -232,10 +269,10 @@ const CASES = [
   pl:[{l:"все роды", f:[{a:"panowie",b:"panowie|"},{a:"dzieci",b:"dzieci|"},{a:"studenci",b:"studenci|"}], n:"= именительный, всегда"}],
   agree:[["drogi Marek","drogi Marku"],["droga Anna","droga Anno"],["szanowni panowie","szanowni panowie"]],
   exc:[["Bóg","Boże",""],["ojciec","ojcze",""],["chłopiec","chłopcze",""],["ksiądz","księże",""],["syn","synu",""]],
-  pit:["<b>Формула, которая нужна ежедневно:</b> <span class='pl'>przepraszam, proszę pani</span> / <span class='pl'>proszę pana</span>. Без вокатива обращение звучит грубо.",
+  pit:["<b>Ежедневная формула - и это не вокатив.</b> <span class='pl'>Przepraszam, proszę pani / proszę pana</span> - самое частое обращение к незнакомому, но <span class='pl'>pana, pani</span> здесь стоят не в звательном падеже: это застывший оборот. Настоящий вокатив начинается там, где есть титул или имя: <span class='pl'>Panie doktorze! Pani Anno! Proszę pana, gdzie…</span>",
   "<b>Титул тоже идёт в вокатив.</b> <span class='pl'>Panie doktorze</span>, <span class='pl'>panie kierowniku</span>, <span class='pl'>pani doktor</span> (женский титул часто не склоняется).",
   "<b>Между своими падеж вымирает.</b> <span class='pl'>Kasia, chodź!</span> - нормально в разговоре. Но в обращении к незнакомому и в письме - обязателен.",
-  "<b>В письмах с большой буквы:</b> <span class='pl'>Szanowna Pani, Drogi Marku, Dzień dobry Panie Adamie</span>."],
+  "<b>В письмах с большой буквы:</b> <span class='pl'>Szanowna Pani, Drogi Marku, Dzień dobry, Panie Adamie</span>. Обращение выделяется запятой."],
   sent:[["Przepraszam, proszę pani!","Извините, пожалуйста!"],["Panie doktorze, boli mnie gardło.","Доктор, у меня болит горло."],["Mamo, gdzie są klucze?","Мама, где ключи?"],["Kasiu, zadzwoń do mnie.","Кася, позвони мне."]],
   trap:"Падеж почти вымерший - но ровно в твоём приоритете (обращение к незнакомым) он живой и обязательный."
 }
@@ -243,6 +280,39 @@ const CASES = [
 
 /* ============ ДАННЫЕ: глаголы ============ */
 /* окончания настоящего времени по спряжениям - для подсветки */
+/* ============ ДАННЫЕ: род существительного ============ */
+const ROD_ZNAK = [
+ ["мужской","согласная на конце","student · dom · pies · telefon · stół · nauczyciel","плюс закрытая группа на -a: mężczyzna, kolega, kierowca, turysta, poeta, artysta"],
+ ["женский","-a","kobieta · kawa · praca · książka · ulica","плюс на согласную: noc, rzecz, mysz, sól, twarz, krew, marchew - и всё на -ość: miłość, radość, wolność"],
+ ["средний","-o · -e · -ę · -um","okno · mieszkanie · imię · muzeum · dziecko","на -um в единственном числе не склоняется: w muzeum, do muzeum"]
+];
+const ROD_M = [
+ ["m1 · męskoosobowy","мужчины","= Dopełniacz","= Dopełniacz мн.","-i / -y / -e / -owie + чередование","ci","byli"],
+ ["m2 · męskożywotny","животные и часть неживого","= Dopełniacz","= Mianownik мн.","-y / -i / -e","te","były"],
+ ["m3 · męskorzeczowy","вещи, всё неживое","= Mianownik","= Mianownik мн.","-y / -i / -e","te","były"]
+];
+const ROD_TEST = [
+ ["Widzę studenta.","Widzę psa.","Widzę telefon.","Biernik ед.: Dopełniacz берут m1 и m2, m3 остаётся Mianownik"],
+ ["Widzę studentów.","Widzę psy.","Widzę telefony.","Biernik мн.: Dopełniacz берёт только m1 - животные уходят к вещам"],
+ ["ci studenci","te psy","te telefony","указательное: ci - признак m1, всё остальное te"],
+ ["studenci byli","psy były","telefony były","прошедшее: -li только у m1"]
+];
+const ROD_DIFF = [
+ ["problem","м.","проблема - ж."],
+ ["program","м.","программа - ж."],
+ ["system","м.","система - ж."],
+ ["temat","м.","тема - ж."],
+ ["ból","м.","боль - ж."],
+ ["cel","м.","цель - ж."],
+ ["stopień","м.","степень - ж."],
+ ["podpis · napis","м.","подпись, надпись - ж."],
+ ["medal","м.","медаль - ж."],
+ ["metoda","ж.","метод - м."],
+ ["kontrola","ж.","контроль - м."],
+ ["pomarańcza","ж.","апельсин - м."],
+ ["muzeum","ср.","музей - м."]
+];
+
 const KEND = {
  I:  [["ę"],["esz"],["e"],["emy"],["ecie"],["ą"]],
  II: [["ę"],["isz","ysz"],["i","y"],["imy","ymy"],["icie","ycie"],["ą"]],
@@ -341,6 +411,14 @@ const KALT = [
 ];
 
 /* прошедшее время */
+/* как образуется вид */
+const ASPEKT_JAK = [
+ ["приставка","несовершенный → совершенный","robić → zrobić · pisać → napisać · czytać → przeczytać · jeść → zjeść · pić → wypić · dzwonić → zadzwonić"],
+ ["суффикс -ywa- · -iwa- · -owa- · -a-","совершенный → вторичный несовершенный","dać → dawać · kupić → kupować · otworzyć → otwierać · zamknąć → zamykać · pokazać → pokazywać · zapisać → zapisywać"],
+ ["чередование в корне","пара без приставки","zacząć → zaczynać · wrócić → wracać · spotkać → spotykać · rzucić → rzucać"],
+ ["разные слова","супплетивы, учить парой","brać → wziąć · mówić → powiedzieć · widzieć → zobaczyć · oglądać → obejrzeć · kłaść → położyć"]
+];
+
 const PAST = [
  ["ja","robiłem","robiłam","-"],
  ["ty","robiłeś","robiłaś","-"],
@@ -396,6 +474,31 @@ const IMPER = [
  ["powiedzieć","oni powiedzą","powiedz!","powiedzmy!","powiedzcie!","niech powie!",""]
 ];
 
+/* powinien - «следует»: по форме прилагательное, по функции модальный глагол */
+const POWINIEN = [
+ ["ja","powinienem","powinnam"],
+ ["ty","powinieneś","powinnaś"],
+ ["on / ona / ono","powinien","powinna · powinno"],
+ ["my","powinniśmy","powinnyśmy"],
+ ["wy","powinniście","powinnyście"],
+ ["oni / one","powinni","powinny"]
+];
+const POWINIEN_PAST = [
+ ["powinienem był zadzwonić","надо было позвонить - а я не позвонил"],
+ ["powinnam była wiedzieć","мне следовало знать"],
+ ["powinien był przyjść","ему следовало прийти"],
+ ["powinni byli zapytać","им следовало спросить"]
+];
+const MODAL_MUST = [
+ ["muszę iść","должен, обязан","внешняя необходимость, выбора нет"],
+ ["powinienem iść","следует, надо бы","совет и моральный долг - выбор остаётся"],
+ ["trzeba iść","надо","безлично, лица нет вообще"],
+ ["mam iść","мне велено идти","чужое распоряжение: Mam to zrobić do piątku."],
+ ["nie muszę iść","не обязан","необходимости нет - но можно"],
+ ["nie mogę iść","не могу","нет возможности"],
+ ["nie wolno iść","нельзя","прямой запрет"]
+];
+
 /* управление глаголов */
 const REKCJA = [
  ["dziękować","komu? za co?","Celownik + za","благодарить кого","Dziękuję ci za pomoc.",1],
@@ -406,7 +509,7 @@ const REKCJA = [
  ["uczyć się","czego?","Dopełniacz","учить что","Uczę się polskiego.",1],
  ["używać","czego?","Dopełniacz","пользоваться чем","Używam telefonu.",1],
  ["potrzebować","czego?","Dopełniacz","нуждаться в чём","Potrzebuję pomocy.",1],
- ["zapomnieć","czego? o czym?","Dopełniacz","забыть что","Zapomniałem kluczy.",1],
+ ["zapomnieć","czego? o czym?","Dopełniacz / o + Miejscownik","забыть что","Zapomniałem kluczy. · Zapomniałem o spotkaniu.",1],
  ["bać się","czego?","Dopełniacz","бояться чего","Boję się psów."],
  ["cieszyć się","z czego?","z + Dopełniacz","радоваться чему","Cieszę się z prezentu.",1],
  ["korzystać","z czego?","z + Dopełniacz","пользоваться чем","Korzystam z internetu.",1],
@@ -434,6 +537,41 @@ const REKCJA = [
  ["życzyć","komu? czego?","Celownik + Dopełniacz","желать чего","Życzę ci zdrowia."],
  ["grać","w co? na czym?","w / na","играть во что · на чём","Gram w piłkę. Gram na gitarze.",1],
  ["iść","po co?","po + Biernik","идти за чем","Idę po chleb.",1]
+];
+
+/* управление прилагательных и существительных */
+const REKCJA_ADJ = [
+ ["dumny","z + Dopełniacz","гордиться кем","Jestem dumny z syna."],
+ ["zadowolony","z + Dopełniacz","доволен чем","Jestem zadowolony z pracy."],
+ ["zmęczony","Narzędnik","устал от чего","Jestem zmęczony pracą."],
+ ["pewny / pewien","Dopełniacz","уверен в чём","Jestem pewien swojej racji. · pewny siebie"],
+ ["podobny","do + Dopełniacz","похож на кого","Jest podobny do ojca."],
+ ["gotowy","na + Biernik · do + Dopełniacz","готов к чему","Gotowy na egzamin. · Gotowy do wyjścia."],
+ ["zainteresowany","Narzędnik","заинтересован в чём","Jestem zainteresowany ofertą."],
+ ["dobry · słaby","w + Miejscownik","силён, слаб в чём","Jestem dobry w matematyce."],
+ ["bogaty","w + Biernik","богат чем","Sok bogaty w witaminy."],
+ ["odpowiedzialny","za + Biernik","отвечает за что","Jestem odpowiedzialny za projekt."],
+ ["wdzięczny","Celownik + za","благодарен кому за что","Jestem ci wdzięczny za pomoc."],
+ ["zdolny","do + Dopełniacz","способен на что","Zdolny do wszystkiego."],
+ ["chory","na + Biernik","болен чем","Jestem chory na grypę."],
+ ["zły","na + Biernik","зол на кого","Jestem zły na siebie."],
+ ["pełny / pełen","Dopełniacz","полон чего","Pokój pełen ludzi."],
+ ["wolny","od + Dopełniacz","свободен от чего","Wolny od podatku."]
+];
+const REKCJA_N = [
+ ["problem","z + Narzędnik","Mam problem z komputerem."],
+ ["ochota","na + Biernik","Mam ochotę na kawę."],
+ ["czas","na + Biernik","Nie mam czasu na to."],
+ ["powód","do + Dopełniacz","Nie ma powodu do zmartwień."],
+ ["prawo","do + Dopełniacz","Masz prawo do urlopu."],
+ ["wpływ","na + Biernik","To ma wpływ na zdrowie."],
+ ["zgoda","na + Biernik","Zgoda na przetwarzanie danych."],
+ ["pomysł","na + Biernik","Mam pomysł na wakacje."],
+ ["dostęp","do + Dopełniacz","dostęp do internetu"],
+ ["strach","przed + Narzędnik","strach przed lataniem"],
+ ["tęsknota","za + Narzędnik","tęsknota za domem"],
+ ["brak","Dopełniacz","brak czasu · z braku miejsca"],
+ ["okazja","do + Dopełniacz","okazja do świętowania"]
 ];
 
 /* глаголы движения */
@@ -634,6 +772,30 @@ const ZBIOR = [
  ["oboje","оба (он и она)","oboje rodzice (не «rodziców») · obojga rodziców"],
  ["kilkoro","несколько (о людях)","kilkoro znajomych"]
 ];
+/* дроби, десятичные, проценты */
+const ULAM = [
+ ["1/2","pół · połowa","pół godziny · połowa klasy · o pół roku starszy"],
+ ["1/4","ćwierć","ćwierć litra · kwadrans - это четверть часа"],
+ ["3/4","trzy czwarte","trzy czwarte szklanki"],
+ ["1,5","półtora · półtorej","półtora roku (м. и ср.) · półtorej godziny (ж.)"],
+ ["2,5","dwa i pół","dwa i pół tygodnia"]
+];
+const DZIES = [
+ ["0,5","zero przecinek pięć"],
+ ["3,14","trzy przecinek czternaście"],
+ ["2,75","dwa przecinek siedemdziesiąt pięć"],
+ ["1,20 zł","jeden złoty dwadzieścia"],
+ ["36,6°","trzydzieści sześć i sześć"]
+];
+const PROCENT = [
+ ["1%","jeden procent"],
+ ["2%","dwa procent"],
+ ["5%","pięć procent"],
+ ["20%","dwadzieścia procent"],
+ ["0,5%","pół procent"],
+ ["100%","sto procent"]
+];
+
 const MIES = [
  ["styczeń","stycznia","январь"],["luty","lutego","февраль"],["marzec","marca","март"],
  ["kwiecień","kwietnia","апрель"],["maj","maja","май"],["czerwiec","czerwca","июнь"],
@@ -720,12 +882,14 @@ const PARTKL = [
 ];
 const PARTPIS = [
  ["слитно","-że, -ż с глаголами и вопросительными","idźże! · chodźże! · dlaczegoż · cóż · któż"],
- ["слитно","by, bym, byś с личными формами и союзами","zrobiłbym · gdybym · żebyś · aby"],
- ["слитно","nie с существительными, прилагательными, наречиями","nieprawda · niegrzeczny · niedaleko · niepalący"],
- ["раздельно","no, czy, niech, oby, bodaj - всегда","Podejdź no tutaj! · Czy wiesz?"],
+ ["слитно","by, bym, byś с личной формой глагола","zrobiłbym · chciałabyś · poszliby"],
+ ["слитно","закреплённые слова - целиком, а не «союз + by»","gdyby · żeby · aby · choćby · chociażby · czyżby · oby"],
+ ["слитно","nie с существительными, прилагательными, наречиями, причастиями","nieprawda · niegrzeczny · niedaleko · niepalący"],
+ ["слитно","nie с прилагательным и наречием в любой степени","nielepszy · nienajlepszy · niegorzej · nienajlepiej"],
+ ["раздельно","no, czy, niech, oby, bodaj как отдельные слова","Podejdź no tutaj! · Czy wiesz? · Niech wejdzie."],
  ["раздельно","nie с глаголами","nie wiem · nie mam · nie chcę"],
  ["раздельно","nie с числительными и местоимениями","nie pięć · nie ja · nie ten"],
- ["раздельно","nie со сравнительной и превосходной степенью","nie lepszy · nie najlepszy · nie gorzej"],
+ ["раздельно","by после союза, если сочетание не закреплённое слово","czy by · albo by · to by · jak by"],
  ["раздельно","by с безличными формами","można by · trzeba by · warto by"]
 ];
 const NIEOKR = [
@@ -737,6 +901,75 @@ const NIEOKR = [
 ];
 
 /* ============ ДАННЫЕ: уменьшительные формы ============ */
+/* ============ ДАННЫЕ: люди - обращение, имена, национальности ============ */
+const PAN_DEKL = [
+ ["Mianownik","pan","pani","państwo","panowie","panie"],
+ ["Dopełniacz","pana","pani","państwa","panów","pań"],
+ ["Celownik","panu","pani","państwu","panom","paniom"],
+ ["Biernik","pana","panią","państwa","panów","panie"],
+ ["Narzędnik","panem","panią","państwem","panami","paniami"],
+ ["Miejscownik","panu","pani","państwu","panach","paniach"]
+];
+const PAN_USE = [
+ ["Czy pan ma chwilę?","к мужчине","глагол в 3-м лице единственного"],
+ ["Czy pani wie, gdzie…?","к женщине","то же"],
+ ["Czy państwo są gotowi?","к смешанной группе","3-е лицо множественного, мужско-личное"],
+ ["Czy panowie czekają?","к нескольким мужчинам","мужско-личное"],
+ ["Czy panie sobie życzą?","к нескольким женщинам","не мужско-личное"],
+ ["Państwo Kowalscy byli wczoraj.","супруги Ковальские","мужско-личное согласование"],
+ ["Proszę pana! · Proszę pani!","оклик незнакомого","Wołacz - вкладка «Существительные»"],
+ ["Panie Adamie · Pani Anno","имя после pan / pani","знакомы, но на «вы»"]
+];
+const NAZW_DEKL = [
+ ["Mianownik","Adam Kowalski","Anna Kowalska","Kowalscy"],
+ ["Dopełniacz","Adama Kowalskiego","Anny Kowalskiej","Kowalskich"],
+ ["Celownik","Adamowi Kowalskiemu","Annie Kowalskiej","Kowalskim"],
+ ["Biernik","Adama Kowalskiego","Annę Kowalską","Kowalskich"],
+ ["Narzędnik","Adamem Kowalskim","Anną Kowalską","Kowalskimi"],
+ ["Miejscownik","Adamie Kowalskim","Annie Kowalskiej","Kowalskich"]
+];
+const NAZW_TYP = [
+ ["-ski · -cki · -dzki","Kowalski","склоняется как прилагательное","Kowalska - тоже как прилагательное","Kowalscy"],
+ ["согласная","Nowak","как существительное: Nowaka, Nowakowi, Nowakiem","Nowak - не склоняется вообще","Nowakowie"],
+ ["-o","Kościuszko","по женскому образцу: Kościuszki, Kościuszce, Kościuszkę","-","Kościuszkowie"],
+ ["-a","Zaręba","по женскому образцу: Zaręby, Zarębie, Zarębę","Zaręba - так же, по женскому","Zarębowie"],
+ ["иностранная на согласную","Smith","как польская мужская: Smitha, Smithem","Smith - не склоняется","Smithowie"]
+];
+const KRAJE = [
+ ["Polska","w Polsce","do Polski","Polak","Polka","po polsku"],
+ ["Białoruś","na Białorusi","na Białoruś","Białorusin","Białorusinka","po białorusku"],
+ ["Ukraina","w / na Ukrainie","do / na Ukrainę","Ukrainiec","Ukrainka","po ukraińsku"],
+ ["Litwa","na Litwie","na Litwę","Litwin","Litwinka","po litewsku"],
+ ["Łotwa","na Łotwie","na Łotwę","Łotysz","Łotyszka","po łotewsku"],
+ ["Węgry","na Węgrzech","na Węgry","Węgier","Węgierka","po węgiersku"],
+ ["Słowacja","na Słowacji","na Słowację","Słowak","Słowaczka","po słowacku"],
+ ["Rosja","w Rosji","do Rosji","Rosjanin","Rosjanka","po rosyjsku"],
+ ["Niemcy","w Niemczech","do Niemiec","Niemiec","Niemka","po niemiecku"],
+ ["Czechy","w Czechach","do Czech","Czech","Czeszka","po czesku"],
+ ["Włochy","we Włoszech","do Włoch","Włoch","Włoszka","po włosku"],
+ ["Francja","we Francji","do Francji","Francuz","Francuzka","po francusku"],
+ ["Anglia","w Anglii","do Anglii","Anglik","Angielka","po angielsku"],
+ ["Stany Zjednoczone","w Stanach","do Stanów","Amerykanin","Amerykanka","po angielsku"]
+];
+const JEZYK = [
+ ["Mówię po polsku.","наречие, не склоняется","как говорю"],
+ ["Uczę się polskiego.","Dopełniacz - управление uczyć się","что учу"],
+ ["Znam polski.","Biernik - управление znać","чем владею"],
+ ["Tłumaczę na polski.","na + Biernik","на какой перевожу"],
+ ["z rosyjskiego na polski","z + Dopełniacz, na + Biernik","с какого на какой"],
+ ["Jestem Polakiem. · Jestem Polką.","Narzędnik после być","кто я по национальности"]
+];
+const FEMIN = [
+ ["-ka","самый продуктивный, основа не меняется","student → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka"],
+ ["-arz → -arka","у слов на -arz, -erz согласная уходит","lekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka"],
+ ["-ka, k → cz","только у слов на -nik и -k","prawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka"],
+ ["-ka, g → ż","у слов на -log и -g","psycholog → psycholożka · filolog → filolożka · pedagog → pedagożka"],
+ ["-ca → -czyni","продуктивно у слов на -ca","sprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni"],
+ ["-ica · -nica","небольшая группа","pracownik → pracownica · robotnik → robotnica"],
+ ["особые формы","вне моделей, запоминать","gospodarz → gospodyni · gość → gościni · król → królowa"],
+ ["pani + мужская форма","когда женской формы нет или она спорная","pani doktor · pani prezes · pani minister · pani inżynier - не склоняется"]
+];
+
 const DIM_M = [["kot","kotek","koteczek","кот"],["pies","piesek","pieseczek","пёс"],["dom","domek","domeczek","дом"],
  ["chłopiec","chłopczyk","","мальчик"],["brat","braciszek","","брат"],["ząb","ząbek","","зуб"],
  ["nos","nosek","","нос"],["stół","stolik","","стол"],["kwiat","kwiatek","kwiatuszek","цветок"]];
@@ -797,6 +1030,23 @@ const KTORY_SENT = [
  ["mężczyzna, którego znam","мужчина, которого я знаю","Biernik м. р., одуш. - forma którego, не który"]
 ];
 
+/* kto / co - склонение и вся семья */
+const KTO_CO = [
+ ["Mianownik","kto","co"],
+ ["Dopełniacz","kogo","czego"],
+ ["Celownik","komu","czemu"],
+ ["Biernik","kogo","co"],
+ ["Narzędnik","kim","czym"],
+ ["Miejscownik","(o) kim","(o) czym"]
+];
+const KTO_RODZ = [
+ ["kto · co","вопрос","Kogo szukasz? · Czym piszesz? · O czym myślisz?"],
+ ["ktoś · coś","кто-то, что-то","kogoś · komuś · kimś || czegoś · czemuś · czymś"],
+ ["nikt · nic","никто, ничто","nikogo · nikomu · nikim || niczego · niczemu · niczym"],
+ ["ktokolwiek · cokolwiek","кто угодно, что угодно","kogokolwiek · komukolwiek || czegokolwiek · czymkolwiek"],
+ ["ten, kto… · to, co…","тот, кто… · то, что…","Ten, kto to zrobił. · Nie wierzę w to, co mówisz."]
+];
+
 /* ============ ДАННЫЕ: отрицание ============ */
 const NIKT_DEKL = [
  ["Mianownik","nikt","nic"],
@@ -849,7 +1099,7 @@ const IMPERS_MODAL = [
  ["można","можно","Można tu parkować?"],
  ["nie wolno","нельзя, запрещено","Nie wolno tu palić."],
  ["warto","стоит (имеет смысл)","Warto to przeczytać."],
- ["należy","следует (более официально)","Należy wypełnić formularz."]
+ ["należy","следует (более официально)","Należy wypełnić formularz. Прошедшее - należało, без było."]
 ];
 const MOWI_SIE = [
  ["Jak się mówi po polsku «hello»?","Как сказать по-польски «hello»?"],
@@ -899,7 +1149,162 @@ const PREPS = [
  ["przed / nad / pod / za / między","Biernik","куда","idę pod stół"],
  ["dzięki","Celownik","благодаря","dzięki tobie"]
 ];
-const TABS = [["s-alpha","Алфавит"],["s-cases","Существительные"],["s-adj","Прилагательные"],["s-adv","Наречия"],["s-pron","Местоимения"],["s-q","Вопросы"],["s-num","Числительные"],["s-verbs","Глаголы"],["s-neg","Отрицание"],["s-order","Порядок слов"],["s-impers","Безличные"],["s-conj","Союзы"],["s-part","Частицы"],["s-dim","Уменьшительные"],["s-preps","Предлоги"],["s-bridge","Мосты"]];
+/* ============ ДАННЫЕ: приставки, сокращения, косвенная речь, отрезки времени ============ */
+const PREF_ALL = [
+ ["przy-","приближение, прибытие","przyjść · przyjechać","przynieść · przywieźć · przypisać"],
+ ["od-","удаление, обратное действие","odejść · odjechać","oddać · odpisać (ответить) · odłożyć"],
+ ["do-","достижение цели","dojść · dojechać","dodać · dopłacić · dokończyć"],
+ ["w-","внутрь","wejść · wjechać","włożyć · wpisać · wrzucić"],
+ ["wy-","наружу; до конца","wyjść · wyjechać","wyjąć · wypić · wypisać · wypełnić"],
+ ["prze-","сквозь, через; заново","przejść · przejechać","przeczytać · przepisać · przenieść"],
+ ["pod-","под; вплотную","podejść · podjechać","podpisać · podnieść · podać"],
+ ["ob- · o-","вокруг, кругом","obejść · objechać","opisać · obejrzeć · owinąć"],
+ ["roz- … się","в разные стороны","rozejść się · rozjechać się","rozłożyć · rozpakować · rozdać"],
+ ["za-","по пути, ненадолго; начало","zajść · zajechać","zapisać · zamknąć · zacząć"],
+ ["po-","начало движения; недолго","pójść · pojechać","poczytać · posiedzieć · pobiegać"],
+ ["z- · s-","вниз; до конца","zejść · zjechać","zrobić · zjeść · skończyć · spisać"],
+ ["na-","на поверхность; накопление","najechać","napisać · nalać · nasypać · najeść się"],
+ ["u-","отделение; завершение","ujść","uciec · ugotować · umyć · uszyć"]
+];
+const PREF_ASPEKT = [
+ ["przyjść","przychodzić","przyjechać","przyjeżdżać"],
+ ["wyjść","wychodzić","wyjechać","wyjeżdżać"],
+ ["wejść","wchodzić","wjechać","wjeżdżać"],
+ ["odejść","odchodzić","odjechać","odjeżdżać"],
+ ["dojść","dochodzić","dojechać","dojeżdżać"],
+ ["przejść","przechodzić","przejechać","przejeżdżać"]
+];
+const SKROTY = [
+ ["np.","na przykład","например"],
+ ["itd.","i tak dalej","и так далее"],
+ ["itp.","i tym podobne","и тому подобное"],
+ ["m.in.","między innymi","в частности, среди прочего"],
+ ["tzn.","to znaczy","то есть"],
+ ["tzw.","tak zwany","так называемый"],
+ ["ok.","około","около, примерно"],
+ ["godz.","godzina","час; часы работы"],
+ ["ul. · al. · pl. · os.","ulica · aleja · plac · osiedle","улица, проспект, площадь, микрорайон"],
+ ["nr","numer","номер"],
+ ["zł · gr","złoty · grosz","злотый, грош"],
+ ["szt.","sztuka","штука"],
+ ["pn.–pt.","poniedziałek – piątek","пн - пт"],
+ ["dot.","dotyczy","касательно"],
+ ["ws.","w sprawie","по вопросу"],
+ ["ww.","wyżej wymieniony","вышеупомянутый"],
+ ["br.","bieżącego roku","текущего года"],
+ ["wg","według","согласно"],
+ ["ds.","do spraw","по делам - в названиях должностей"],
+ ["dr · mgr · inż. · prof.","doktor · magister · inżynier · profesor","учёные степени и титулы"]
+];
+const MOWA_ZAL = [
+ ["«Przyjdę jutro».","Powiedział, że przyjdzie następnego dnia.","будущее осталось будущим; сдвинулось только jutro"],
+ ["«Jestem chory».","Powiedział, że jest chory.","настоящее осталось настоящим"],
+ ["«Byłem w domu».","Powiedział, że był w domu.","прошедшее осталось прошедшим"],
+ ["«Czy masz czas?»","Zapytał, czy mam czas.","вопрос да/нет → czy"],
+ ["«Gdzie mieszkasz?»","Zapytał, gdzie mieszkam.","вопросительное слово сохраняется, порядок прямой"],
+ ["«Zrób to!»","Powiedział, żebym to zrobił. · Kazał mi to zrobić.","приказ → żeby с личным окончанием или kazać + инфинитив"]
+];
+const CZAS_WYR = [
+ ["za + Biernik","через сколько - в будущем","za godzinę · za tydzień · za dwa lata"],
+ ["… temu","сколько назад","godzinę temu · tydzień temu · dwa lata temu"],
+ ["przez + Biernik","сколько длилось","przez godzinę · przez cały dzień · przez rok"],
+ ["w ciągu + Dopełniacz","за какой срок успею","w ciągu godziny · w ciągu tygodnia"],
+ ["od … do … + Dopełniacz","с и до","od poniedziałku do piątku · od dziewiątej do piątej"],
+ ["od + Dopełniacz","с какого момента","od rana · od wczoraj · od dwóch lat"],
+ ["do + Dopełniacz","до какого момента","do piątku · do końca miesiąca"],
+ ["na + Biernik","на какой срок","jadę na tydzień · na chwilę · na zawsze"],
+ ["po + Miejscownik","после чего","po pracy · po obiedzie · po wakacjach"],
+ ["przed + Narzędnik","перед чем","przed obiadem · przed wyjazdem"],
+ ["co + Biernik","каждые","co dzień · co tydzień · co miesiąc · co dwie godziny"],
+ ["w + Biernik","в какой день","w poniedziałek · we wtorek · w środę"],
+ ["w + Miejscownik","в каком месяце, году","w maju · w tym roku · w 2026 roku"],
+ ["o + Miejscownik","во сколько","o piątej · o wpół do ósmej"]
+];
+
+/* пометки к словарю глаголов: где связка не является чистой видовой парой */
+const ASPEKT_UWAGI = {
+ "znać":       ["новое состояние","poznawać"],
+ "myśleć":     ["недолго",""],
+ "mieszkać":   ["начало состояния",""],
+ "lubić":      ["начало состояния",""],
+ "kochać":     ["начало состояния",""],
+ "patrzeć":    ["недолго",""],
+ "słuchać":    ["недолго",""],
+ "uczyć się":  ["результат",""],
+ "pamiętać":   ["результат","zapamiętywać"],
+ "siedzieć":   ["смена состояния","siadać"],
+ "czekać":     ["недолго",""],
+ "szukać":     ["результат","znajdować"],
+ "rozmawiać":  ["недолго",""],
+ "nieść":      ["результат",""]
+};
+
+/* выбор вида */
+const WYBOR = [
+ ["процесс, «был этим занят»","несов.","Wczoraj czytałem tę książkę."],
+ ["результат достигнут","сов.","Wczoraj przeczytałem tę książkę."],
+ ["регулярно, повторяется","несов.","Codziennie robię zakupy."],
+ ["один раз, целиком","сов.","Dziś zrobiłem zakupy."],
+ ["фон, на котором что-то случилось","несов.","Kiedy czytałem, zadzwonił telefon."],
+ ["само событие на фоне","сов.","Kiedy czytałem, zadzwonił telefon."],
+ ["после chcieć, musieć - процесс","несов.","Chcę czytać. · Muszę robić to codziennie."],
+ ["после chcieć, musieć - результат","сов.","Chcę przeczytać. · Muszę zrobić to dziś."],
+ ["сколько длилось","несов.","Czytałem przez godzinę."],
+ ["за какой срок уложился","сов.","Przeczytałem to w godzinę."],
+ ["отрицание общего факта","несов.","Nie czytałem tej książki."],
+ ["приказ","сов.","Zrób to!"],
+ ["запрет","несов.","Nie rób tego!"]
+];
+const WYBOR_SLOWA = [
+ ["несовершенный тянут","zawsze · często · zwykle · codziennie · długo · przez godzinę · ciągle · nigdy"],
+ ["совершенный тянут","nagle · wreszcie · w końcu · już · od razu · nareszcie · w godzinę"]
+];
+
+/* число + прилагательное + существительное + глагол */
+const LICZ_GRUPA = [
+ ["1","jeden duży dom","Mianownik ед.","jest · był","Jeden duży dom stoi pusty."],
+ ["2, 3, 4","dwa duże domy","Mianownik мн.","są · były","Dwa duże domy zostały sprzedane."],
+ ["5 и больше","pięć dużych domów","Dopełniacz мн.","jest · było","Pięć dużych domów zostało sprzedanych."],
+ ["2-4, мужчины","dwaj dobrzy studenci","Mianownik мн.","czytają · czytali","Dwaj dobrzy studenci czytają."],
+ ["2-4, мужчины - вариант","dwóch dobrych studentów","Dopełniacz мн.","czyta · czytało","Dwóch dobrych studentów czyta."],
+ ["5+, мужчины","pięciu dobrych studentów","Dopełniacz мн.","czeka · czekało","Pięciu dobrych studentów czekało."]
+];
+
+const TABS = [["s-index","Оглавление"],["s-alpha","Алфавит"],["s-rodz","Род"],["s-cases","Существительные"],["s-adj","Прилагательные"],["s-adv","Наречия"],["s-pron","Местоимения"],["s-q","Вопросы"],["s-num","Числительные"],["s-verbs","Глаголы"],["s-neg","Отрицание"],["s-order","Порядок слов"],["s-impers","Безличные"],["s-conj","Союзы"],["s-part","Частицы"],["s-ludzie","Люди"],["s-dim","Уменьшительные"],["s-preps","Предлоги"],["s-bridge","Мосты"]];
+
+/* оглавление: группы разделов с одной строкой описания - порядок здесь независим от TABS */
+const GROUPS = [
+  ["Основы", [
+    ["s-alpha","32 буквы, девять особых, диграфы, ударение"],
+    ["s-rodz","Мужской род делится на три - отсюда всё остальное"],
+  ]],
+  ["Склонение", [
+    ["s-cases","Семь падежей: когда нужен, предлоги, окончания"],
+    ["s-adj","Одна парадигма на прилагательные, притяжательные и указательные"],
+    ["s-pron","Личные, притяжательные, возвратные, указательные"],
+    ["s-num","Какой падеж требует число и что делает с глаголом"],
+  ]],
+  ["Глагол", [
+    ["s-verbs","Четыре спряжения, времена и вид, наклонения, причастия, управление"],
+  ]],
+  ["Предложение", [
+    ["s-q","czy для общего вопроса, вопросительное слово для частного"],
+    ["s-neg","Отрицания накапливаются, а не гасят друг друга"],
+    ["s-order","Свободный порядок слов, но у клитик жёсткие места"],
+    ["s-impers","Язык объявлений, вывесок и учреждений"],
+  ]],
+  ["Наречия и служебные", [
+    ["s-adv","Образуются от прилагательных списком типовых окончаний"],
+    ["s-preps","Один предлог - два падежа: разница обычно «где / куда»"],
+    ["s-conj","От них зависит запятая - единственное реальное отличие пунктуации"],
+    ["s-part","Без них польский звучит как учебник"],
+  ]],
+  ["Живая речь", [
+    ["s-ludzie","Вежливое «вы» - третье лицо; имена, фамилии, национальности"],
+    ["s-dim","Уменьшительные шире, чем в русском: вежливость и тепло"],
+    ["s-bridge","Фонетические соответствия, белорусский мост, ложные друзья"],
+  ]],
+];
 
 const VTABS = [["conj","Спряжения"],["czasy","Времена"],["tryby","Наклонения"],["formy","Причастия и пассив"],["rekcja","Управление"],["lista","Словарь глаголов"]];
 
@@ -972,6 +1377,44 @@ const ADJ = [
  ["Miejscownik","dobrym","dobrej","dobrym","dobrych","dobrych"]
 ];
 
+/* степени сравнения: как образуется */
+const STOPN = [
+ ["-szy","на конце основы одна согласная","nowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · twardy → twardszy · głupi → głupszy · ciekawy → ciekawszy"],
+ ["-ejszy","на конце основы скопление согласных","ładny → ładniejszy · trudny → trudniejszy · zimny → zimniejszy · łatwy → łatwiejszy · piękny → piękniejszy · mądry → mądrzejszy"],
+ ["-k- · -ek- · -ok- выпадает","прилагательные на -ki, -eki, -oki","wysoki → wyższy · niski → niższy · bliski → bliższy · daleki → dalszy · szeroki → szerszy · krótki → krótszy · ciężki → cięższy · głęboki → głębszy"]
+];
+const STOPN_ALT = [
+ ["n → ń","tani → tańszy"],
+ ["ł → l","miły → milszy · biały → bielszy · wesoły → weselszy · ciepły → cieplejszy"],
+ ["g → ż","drogi → droższy · długi → dłuższy · ubogi → uboższy"],
+ ["ą → ę","wąski → węższy"],
+ ["r → rz","mądry → mądrzejszy · ostry → ostrzejszy"]
+];
+const STOPN_IRR = [
+ ["dobry","lepszy","najlepszy"],
+ ["zły","gorszy","najgorszy"],
+ ["duży / wielki","większy","największy"],
+ ["mały","mniejszy","najmniejszy"],
+ ["lekki","lżejszy","najlżejszy"],
+ ["gorący","gorętszy","najgorętszy"]
+];
+const POROWN = [
+ ["niż + падеж по роли","чем - падеж от того, чем было бы слово в полной фразе","Jest wyższy niż ja [jestem]. · Lubię Annę bardziej niż Marię [lubię]."],
+ ["od + Dopełniacz","чем - то же значение","Jest wyższy ode mnie."],
+ ["tak … jak","такой же … как","Jest tak wysoki jak ja."],
+ ["nie tak … jak","не такой … как","Nie jest tak drogi jak tamten."],
+ ["taki sam jak","такой же, как","Mam taki sam telefon jak ty."],
+ ["ten sam","тот же самый","Mieszkamy w tym samym domu."],
+ ["o wiele · dużo · znacznie","намного","o wiele lepszy · dużo taniej"],
+ ["trochę · nieco","немного","trochę większy · nieco później"],
+ ["coraz + сравнительная","всё … и …","Jest coraz zimniej. · Coraz więcej ludzi."],
+ ["im …, tym …","чем …, тем …","Im szybciej, tym lepiej."],
+ ["jak naj- + сравнительная","как можно …","jak najszybciej · jak najlepiej"],
+ ["za · zbyt","слишком","Za drogo. · Zbyt trudne."],
+ ["dość · wystarczająco","достаточно","dość ciepło · wystarczająco duży"],
+ ["ze wszystkich · w …","самый из / в","najlepszy ze wszystkich · najstarszy w rodzinie"]
+];
+
 /* ============ НАРЕЧИЯ ============ */
 const ADV_O = ["szybki→szybko","wolny→wolno","ciepły→ciepło","zimny→zimno","łatwy→łatwo","trudny→trudno","głośny→głośno","cichy→cicho","prosty→prosto","tani→tanio","brzydki→brzydko"];
 const ADV_E = ["ładny→ładnie","dokładny→dokładnie","szczęśliwy→szczęśliwie","ciekawy→ciekawie","miły→mile","piękny→pięknie","straszny→strasznie","wygodny→wygodnie","spokojny→spokojnie","grzeczny→grzecznie"];
@@ -1007,6 +1450,85 @@ const PRON = [
  ["wy","was","wam","was","wami","was"],
  ["oni","ich / nich","im / nim","ich / nich","nimi","nich"],
  ["one","ich / nich","im / nim","je / nie","nimi","nich"]
+];
+
+/* возвратное siebie */
+const SIEBIE = [
+ ["Mianownik","-","формы нет: возвратное не бывает подлежащим"],
+ ["Dopełniacz","siebie","Nie lubię siebie na zdjęciach."],
+ ["Celownik","sobie","Kup sobie kawę."],
+ ["Biernik","siebie / się","Widzę siebie w lustrze. · Myję się."],
+ ["Narzędnik","sobą","Weź parasol ze sobą."],
+ ["Miejscownik","(o) sobie","Opowiedz o sobie."]
+];
+const SIEBIE_PHR = [
+ ["u siebie","у себя, дома","Jestem u siebie."],
+ ["do siebie","к себе","Wracam do siebie."],
+ ["po sobie","за собой","Posprzątaj po sobie."],
+ ["przy sobie","при себе","Nie mam przy sobie dokumentów."],
+ ["ze sobą","с собой","Weź to ze sobą."],
+ ["dla siebie","для себя","Kupiłem to dla siebie."],
+ ["między sobą","между собой","Rozmawiają między sobą."],
+ ["sam ze sobą","сам с собой","Mówi sam ze sobą."],
+ ["być sobą","быть собой","Po prostu bądź sobą."],
+ ["nawzajem","взаимно, и вам того же","- Wesołych świąt! - Nawzajem!"]
+];
+const SOBIE_V = [
+ ["radzić sobie","справляться","Jak sobie radzisz? · Dam sobie radę."],
+ ["wyobrazić sobie","представить","Wyobraź sobie!"],
+ ["przypomnieć sobie","вспомнить","Nie mogę sobie przypomnieć."],
+ ["zdawać sobie sprawę","отдавать себе отчёт","Zdaję sobie sprawę, że to trudne."],
+ ["życzyć sobie","желать","Czego pan sobie życzy?"],
+ ["pozwolić sobie","позволить себе","Nie mogę sobie na to pozwolić."],
+ ["robić sobie","делать себе","Robię sobie kawę."],
+ ["iść sobie","уйти","Idź sobie!"]
+];
+const SAM = [
+ ["Mianownik","sam","sama","samo","sami","same"],
+ ["Dopełniacz","samego","samej","samego","samych","samych"],
+ ["Celownik","samemu","samej","samemu","samym","samym"],
+ ["Biernik","sam / samego","samą","samo","samych","same"],
+ ["Narzędnik","samym","samą","samym","samymi","samymi"],
+ ["Miejscownik","samym","samej","samym","samych","samych"]
+];
+
+/* четыре функции się и указательные ten / tamten / taki */
+const SIE_FUNC = [
+ ["возвратность","myję się · ubieram się · czeszę się","действие на самого себя; можно подставить siebie: myję siebie"],
+ ["взаимность","spotykamy się · znamy się · kochają się","друг друга; можно добавить nawzajem: znamy się nawzajem"],
+ ["часть глагола","boję się · śmieję się · starać się · podoba mi się","без się глагола просто не существует: формы bać, śmiać, starać нет"],
+ ["безличность","mówi się · tu się nie pali · jak to się robi","подлежащего нет вообще - вкладка «Безличные»"]
+];
+const TAMTEN = [
+ ["муж.","ten","tamten","taki"],
+ ["жен.","ta","tamta","taka"],
+ ["ср.","to","tamto","takie"],
+ ["мн. мужчины","ci","tamci","tacy"],
+ ["мн. остальное","te","tamte","takie"]
+];
+const WSZ = [
+ ["Mianownik","wszyscy","wszystkie","wszystko"],
+ ["Dopełniacz","wszystkich","wszystkich","wszystkiego"],
+ ["Celownik","wszystkim","wszystkim","wszystkiemu"],
+ ["Biernik","wszystkich","wszystkie","wszystko"],
+ ["Narzędnik","wszystkimi","wszystkimi","wszystkim"],
+ ["Miejscownik","wszystkich","wszystkich","wszystkim"]
+];
+const WSZ_PHR = [
+ ["Wszystkiego najlepszego!","Всего наилучшего!","Dopełniacz - стандартное поздравление"],
+ ["Przede wszystkim","прежде всего","przed + Narzędnik, с беглым e"],
+ ["Po wszystkim.","Всё кончено.","Miejscownik"],
+ ["Ze wszystkich stron","со всех сторон","Dopełniacz мн. ч."],
+ ["Dziękuję wszystkim.","Спасибо всем.","Celownik"],
+ ["Wszyscy przyszli.","Все пришли.","мужско-личное - о людях"],
+ ["Wszystkie bilety sprzedane.","Все билеты проданы.","не-мужско-личное - о вещах"],
+ ["To wszystko.","Это всё.","в магазине - «больше ничего»"]
+];
+const OKRESL = [
+ ["każdy / każda / każde","каждый","склоняется как прилагательное, множественного числа нет - вместо него wszyscy: Każdy z nas. · Każdego dnia."],
+ ["inny / inna / inne","другой","Daj mi inny. · innym razem - в другой раз"],
+ ["żaden / żadna / żadne","никакой","обычно требует nie при глаголе: Żaden z nich nie przyszedł. Но после bez, pod, przed обходится без него: bez żadnego problemu, pod żadnym pozorem."],
+ ["obaj · oba · obie · oboje","оба, обе","obaj / obydwaj panowie (мужчины) · oba domy (вещи) · obie książki (женский) · oboje rodzice (он и она). Косвенные падежи общие: obu / obydwu, obiema."]
 ];
 
 /* --- мосты --- */
