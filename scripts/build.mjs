@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
@@ -6,6 +6,30 @@ import vm from "node:vm";
 import { parseHTML } from "linkedom";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const baseURL = "https://polski.hamanovich.com/";
+const pages = [
+  {id:"s-index", path:"", title:"Польская грамматика — таблицы, правила и примеры", description:"Практический справочник польской грамматики на русском с опорой на белорусский: падежи, глаголы, местоимения, числительные и примеры."},
+  {id:"s-alpha", path:"alphabet", title:"Польский алфавит и произношение — правила и примеры", description:"Польский алфавит, диграфы, носовые гласные, ударение, оглушение и ассимиляция с объяснениями для русско- и белорусскоязычных."},
+  {id:"s-rodz", path:"gender", title:"Род существительных в польском языке", description:"Мужской, женский и средний род в польском, три типа мужского рода, исключения и несклоняемые существительные на -um."},
+  {id:"s-cases", path:"cases", title:"Падежи польского языка — окончания и примеры", description:"Семь падежей польского языка: вопросы, предлоги, окончания единственного и множественного числа, чередования и исключения."},
+  {id:"s-alt", path:"alternations", title:"Чередования в польском языке — сводная карта", description:"Типовые польские чередования ó/o, ą/ę и изменения согласных при склонении существительных и спряжении глаголов."},
+  {id:"s-adj", path:"adjectives", title:"Польские прилагательные — склонение и сравнение", description:"Склонение польских прилагательных, степени сравнения, согласование и практические таблицы с примерами."},
+  {id:"s-adv", path:"adverbs", title:"Наречия польского языка — образование и степени сравнения", description:"Образование польских наречий, сравнительная и превосходная степени, формы места, времени и образа действия."},
+  {id:"s-pron", path:"pronouns", title:"Местоимения польского языка — полные таблицы", description:"Личные, притяжательные, возвратные и указательные местоимения польского языка: склонение, краткие формы и примеры."},
+  {id:"s-q", path:"questions", title:"Вопросы в польском языке — czy, gdzie, dokąd и który", description:"Общие и частные вопросы по-польски, склонение kto и co, различие jaki и który, а также где, куда, откуда и каким путём."},
+  {id:"s-num", path:"numerals", title:"Числительные польского языка — склонение и согласование", description:"Польские количественные, порядковые и собирательные числительные, склонение, согласование с существительным и глаголом."},
+  {id:"s-verbs", path:"verbs", title:"Польские глаголы — спряжение, времена, вид и управление", description:"Спряжения польских глаголов, прошедшее и будущее время, вид, наклонения, причастия, пассив и управление падежами."},
+  {id:"s-neg", path:"negation", title:"Отрицание в польском языке — правила и примеры", description:"Польское отрицание nie, двойное отрицание, родительный падеж после отрицания и конструкции ani, nikt, nic."},
+  {id:"s-order", path:"word-order", title:"Порядок слов в польском языке", description:"Нейтральный и выразительный порядок слов в польском предложении, место клитик się, mi, ci и логическое ударение."},
+  {id:"s-impers", path:"impersonal", title:"Безличные конструкции в польском языке", description:"Польские безличные конструкции объявлений, вывесок и официальной речи: można, trzeba, wolno, формы на -no и -to."},
+  {id:"s-conj", path:"conjunctions", title:"Союзы и сложные предложения в польском языке", description:"Польские сочинительные и подчинительные союзы, запятые, косвенная речь и преобразование придаточного в короткую конструкцию."},
+  {id:"s-part", path:"particles", title:"Частицы польского языка — значения и примеры", description:"Частые польские частицы no, czy, chyba, może, niech, oby, właśnie и другие с оттенками значения и примерами."},
+  {id:"s-ludzie", path:"people", title:"Обращение, имена и национальности по-польски", description:"Вежливое обращение pan, pani, państwo, склонение польских имён и фамилий, названия стран, жителей и языков."},
+  {id:"s-dim", path:"diminutives", title:"Уменьшительные формы в польском языке", description:"Польские уменьшительные существительные, прилагательные и имена: типовые суффиксы, оттенки вежливости и живые примеры."},
+  {id:"s-preps", path:"prepositions", title:"Предлоги польского языка и управление падежами", description:"Польские предлоги по падежам, различие места и направления, предлоги с двумя падежами и практические примеры."},
+  {id:"s-bridge", path:"language-bridges", title:"Польский через русский и белорусский — языковые мосты", description:"Фонетические соответствия польского, русского и белорусского языков, полезные ассоциации и ложные друзья переводчика."}
+];
+const pageById = new Map(pages.map(page => [page.id, page]));
 const [template, dataSource, appSource, clientSource, styleSource] = await Promise.all([
   readFile(resolve(root, "index.template.html"), "utf8"),
   readFile(resolve(root, "data.js"), "utf8"),
@@ -92,16 +116,142 @@ vm.runInContext(`
 document.documentElement.dataset.prerendered = "true";
 document.documentElement.style.removeProperty("--brand-h");
 document.documentElement.style.removeProperty("--head-h");
-document.querySelector('link[rel="stylesheet"]').href = `style.css?v=${fingerprint(styleSource)}`;
 document.querySelectorAll('script[src="data.js"],script[src="app.js"]').forEach(script => script.remove());
-const client = document.createElement("script");
-client.src = `client.js?v=${fingerprint(clientSource)}`;
-document.body.append(client);
-
-const html = `<!DOCTYPE html>\n${document.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");
-await writeFile(resolve(root, "index.html"), html, "utf8");
-
 const fulltext = document.body.textContent.replace(/[ \t]+/g, " ").replace(/\n\s+/g, "\n").trim() + "\n";
 await writeFile(resolve(root, "fulltext.txt"), fulltext, "utf8");
 
-console.log(`Generated index.html (${Buffer.byteLength(html).toLocaleString("en-US")} bytes)`);
+const clean = value => value.replace(/\s+/g, " ").trim();
+const nodeText = node => {
+  if(node.tagName === "TR")
+    return clean([...node.children].map(cell => clean(cell.textContent)).filter(Boolean).join(" · "));
+  if(node.parentElement?.classList.contains("ngrid"))
+    return clean([...node.children].map(child => clean(child.textContent)).filter(Boolean).join(" "));
+  return clean(node.textContent);
+};
+
+/* A compact, shared full-text index keeps search global after the content is split across pages. */
+const searchEntries = [];
+const seenSearchEntries = new Set();
+for(const section of document.querySelectorAll(".sec")){
+  if(section.id === "s-index") continue;
+  const label = clean(document.querySelector(`#tab-${section.id}`)?.textContent || section.id);
+  let heading = "";
+  for(const node of section.querySelectorAll("h2,h3,tr,li,p,.tip,.ngrid > div")){
+    if(node.matches("h2,h3")){ heading = clean(node.textContent); continue; }
+    if(node.tagName === "TR" && node.querySelector("th")) continue;
+    if(node.matches("p") && node.closest(".tip")) continue;
+    const text = nodeText(node);
+    if(text.length < 2) continue;
+    const caseVariant = node.closest(".case-variant");
+    const verbVariant = node.closest(".verb-variant");
+    const key = `${section.id}|${caseVariant?.dataset.case || ""}|${caseVariant?.dataset.num || ""}|${verbVariant?.dataset.v || ""}|${text}`;
+    if(seenSearchEntries.has(key)) continue;
+    seenSearchEntries.add(key);
+    const id = `r-${searchEntries.length + 1}`;
+    node.id = id;
+    searchEntries.push({
+      id, tab:section.id, label, head:heading, text,
+      cs:caseVariant?.dataset.case, num:caseVariant?.dataset.num, vs:verbVariant?.dataset.v
+    });
+  }
+}
+
+const searchSource = `globalThis.SEARCH_INDEX=${JSON.stringify(searchEntries)};\n`;
+await writeFile(resolve(root, "search-index.js"), searchSource, "utf8");
+const assetHashes = {
+  style:fingerprint(styleSource),
+  client:fingerprint(clientSource),
+  search:fingerprint(searchSource)
+};
+
+const pageHref = (from, targetId) => {
+  const target = pageById.get(targetId) || pages[0];
+  if(!from.path) return target.path ? `${target.path}/` : "./";
+  if(!target.path) return "../";
+  return target.id === from.id ? "./" : `../${target.path}/`;
+};
+const modernHash = legacyHash => {
+  const parts = decodeURIComponent(legacyHash.replace(/^#/, "")).split("/");
+  const target = parts.shift();
+  if(target === "s-cases" || target === "s-verbs") return parts.length ? `#${parts.join("/")}` : "";
+  const anchor = parts.find(part => part.startsWith("~"));
+  return anchor ? `#${anchor}` : "";
+};
+
+const masterHTML = document.documentElement.outerHTML;
+const generated = [];
+for(const page of pages){
+  const { document:pageDocument } = parseHTML(`<!DOCTYPE html>\n${masterHTML}`);
+  pageDocument.documentElement.dataset.page = page.id;
+  pageDocument.title = page.title;
+  pageDocument.querySelector('meta[name="description"]').setAttribute("content", page.description);
+  pageDocument.querySelector('meta[property="og:title"]').setAttribute("content", page.title);
+  pageDocument.querySelector('meta[property="og:description"]').setAttribute("content", page.description);
+  const canonical = new URL(page.path ? `${page.path}/` : "", baseURL).href;
+  pageDocument.querySelector('link[rel="canonical"]').setAttribute("href", canonical);
+  pageDocument.querySelector('meta[property="og:url"]').setAttribute("content", canonical);
+
+  for(const section of pageDocument.querySelectorAll(".sec")){
+    if(section.id !== page.id) section.remove();
+    else {
+      section.classList.add("on");
+      section.removeAttribute("aria-hidden");
+      section.removeAttribute("role");
+      section.removeAttribute("tabindex");
+      section.removeAttribute("aria-labelledby");
+    }
+  }
+
+  const brandHeading = pageDocument.querySelector(".brand h1");
+  if(brandHeading){
+    const brandLink = pageDocument.createElement("a");
+    brandLink.className = "site-title";
+    brandLink.href = pageHref(page, "s-index");
+    brandLink.innerHTML = brandHeading.innerHTML;
+    brandHeading.replaceWith(brandLink);
+  }
+  const topicHeading = pageDocument.querySelector(".sec h2");
+  if(topicHeading){
+    const pageHeading = pageDocument.createElement("h1");
+    pageHeading.className = "page-title";
+    pageHeading.innerHTML = topicHeading.innerHTML;
+    topicHeading.replaceWith(pageHeading);
+  }
+
+  for(const link of pageDocument.querySelectorAll("#nav [data-s],#navmenu [data-s],.idx-a[data-s]")){
+    const targetId = link.dataset.s;
+    link.setAttribute("href", pageHref(page, targetId));
+    if(targetId === page.id) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+    link.removeAttribute("aria-selected");
+    link.removeAttribute("tabindex");
+  }
+  for(const link of pageDocument.querySelectorAll('a[href^="#s-"]')){
+    const legacy = link.getAttribute("href");
+    const targetId = decodeURIComponent(legacy.slice(1)).split("/")[0];
+    link.setAttribute("href", pageHref(page, targetId) + modernHash(legacy));
+  }
+
+  const prefix = page.path ? "../" : "";
+  pageDocument.querySelector('link[rel="stylesheet"]').setAttribute("href", `${prefix}style.css?v=${assetHashes.style}`);
+  for(const icon of pageDocument.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]')){
+    const href = icon.getAttribute("href");
+    if(href && !/^(?:[a-z]+:|\/)/i.test(href)) icon.setAttribute("href", prefix + href);
+  }
+  const clientScript = pageDocument.createElement("script");
+  clientScript.src = `${prefix}client.js?v=${assetHashes.client}`;
+  clientScript.dataset.searchSrc = `${prefix}search-index.js?v=${assetHashes.search}`;
+  pageDocument.body.append(clientScript);
+
+  const html = `<!DOCTYPE html>\n${pageDocument.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");
+  const outputDir = page.path ? resolve(root, page.path) : root;
+  await mkdir(outputDir, {recursive:true});
+  await writeFile(resolve(outputDir, "index.html"), html, "utf8");
+  generated.push({page, bytes:Buffer.byteLength(html)});
+}
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(page => `  <url>\n    <loc>${new URL(page.path ? `${page.path}/` : "", baseURL).href}</loc>\n  </url>`).join("\n")}\n</urlset>\n`;
+await writeFile(resolve(root, "sitemap.xml"), sitemap, "utf8");
+
+const totalBytes = generated.reduce((sum, item) => sum + item.bytes, 0);
+console.log(`Generated ${generated.length} HTML pages (${totalBytes.toLocaleString("en-US")} bytes total) and ${searchEntries.length} search entries`);

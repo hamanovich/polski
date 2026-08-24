@@ -1215,7 +1215,7 @@ dumnyz + Dopełniaczгордиться кемJestem dumny z syna.zadowolonyz + D
 problemz + NarzędnikMam problem z komputerem.ochotana + BiernikMam ochotę na kawę.czasna + BiernikNie mam czasu na to.powóddo + DopełniaczNie ma powodu do zmartwień.prawodo + DopełniaczMasz prawo do urlopu.wpływna + BiernikTo ma wpływ na zdrowie.zgodana + BiernikZgoda na przetwarzanie danych.pomysłna + BiernikMam pomysł na wakacje.dostępdo + Dopełniaczdostęp do internetustrachprzed + Narzędnikstrach przed lataniemtęsknotaza + Narzędniktęsknota za domembrakDopełniaczbrak czasu · z braku miejscaokazjado + Dopełniaczokazja do świętowania
 Управление часто наследуется от однокоренного глагола. tęsknić za czymś → tęsknota za czymś · wpływać na coś → wpływ na coś · zgadzać się na coś → zgoda na coś · interesować się czymś → zainteresowany czymś. Знаешь глагол - в большинстве случаев угадаешь и производное. Совпадает не всегда, но это лучшая догадка при отсутствии словаря.
 Словарь глаголов
-79 самых частых глаголов с ключевыми формами. Поиск понимает и польский, и русский, и без диакритики.
+100 частотных и практически необходимых глаголов с ключевыми формами. Поиск понимает и польский, и русский, и без диакритики.
 глаголпереводспр.jatyoniононасов. / результат
 być
 быть
@@ -1841,6 +1841,174 @@ sprzedajesz
 sprzedają
 sprzedawałsprzedawała
 sprzedać
+zostać
+остаться; стать
+I
+zostanę
+zostaniesz
+zostaną
+zostałzostała
+сов.
+należeć
+принадлежать; należy — следует
+II
+należę
+należysz
+należą
+należałnależała
+-
+czuć się
+чувствовать себя
+I
+czuję się
+czujesz się
+czują się
+czuł sięczuła się
+poczuć się
+wydawać się
+казаться
+I
+wydaję się
+wydajesz się
+wydają się
+wydawał sięwydawała się
+wydać się
+wyglądać
+выглядеть
+III
+wyglądam
+wyglądasz
+wyglądają
+wyglądałwyglądała
+-
+udać się
+получиться; отправиться
+III
+udam się
+udasz się
+udadzą się
+udał sięudała się
+сов.
+okazać się
+оказаться, выясниться
+I
+okażę się
+okażesz się
+okażą się
+okazał sięokazała się
+сов.
+uważać
+считать, полагать; быть осторожным
+III
+uważam
+uważasz
+uważają
+uważałuważała
+-
+prowadzić
+вести; водить
+II
+prowadzę
+prowadzisz
+prowadzą
+prowadziłprowadziła
+poprowadzić
+potrafić
+уметь, быть в состоянии
+II
+potrafię
+potrafisz
+potrafią
+potrafiłpotrafiła
+-
+próbować
+пробовать, пытаться
+I
+próbuję
+próbujesz
+próbują
+próbowałpróbowała
+spróbować
+pojawiać się
+появляться
+III
+pojawiam się
+pojawiasz się
+pojawiają się
+pojawiał siępojawiała się
+pojawić się
+dostawać
+получать
+I
+dostaję
+dostajesz
+dostają
+dostawałdostawała
+dostać
+oznaczać
+значить, обозначать
+III
+oznaczam
+oznaczasz
+oznaczają
+oznaczałoznaczała
+-
+działać
+действовать; работать
+III
+działam
+działasz
+działają
+działałdziałała
+zadziałać
+opowiadać
+рассказывать
+III
+opowiadam
+opowiadasz
+opowiadają
+opowiadałopowiadała
+opowiedzieć
+trwać
+длиться, продолжаться
+III
+trwam
+trwasz
+trwają
+trwałtrwała
+-
+istnieć
+существовать
+I
+istnieję
+istniejesz
+istnieją
+istniałistniała
+-
+liczyć
+считать; рассчитывать на
+II
+liczę
+liczysz
+liczą
+liczyłliczyła
+policzyć
+wierzyć
+верить
+II
+wierzę
+wierzysz
+wierzą
+wierzyłwierzyła
+uwierzyć
+potrzebować
+нуждаться; быть нужным
+I
+potrzebuję
+potrzebujesz
+potrzebują
+potrzebowałpotrzebowała
+-
 powiedzieć
 сказать
 IV

@@ -1,358 +1,351 @@
-/* Progressive enhancement for the fully prerendered page.
-   Content is already in index.html; this file only controls interaction. */
-const $ = s => document.querySelector(s);
-const $$ = s => [...document.querySelectorAll(s)];
-const clean = s => s.replace(/\s+/g, " ").trim();
-const norm = s => s.toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/\p{M}/gu,"");
+/* Progressive enhancement for prerendered topic pages.
+   Content and navigation already work without JavaScript; this file adds filters,
+   global search, heading links, theme controls and compact URL state. */
+const $ = selector => document.querySelector(selector);
+const $$ = selector => [...document.querySelectorAll(selector)];
+const clean = value => value.replace(/\s+/g, " ").trim();
+const norm = value => value.toLowerCase().replace(/ł/g, "l").normalize("NFD").replace(/\p{M}/gu, "");
+const SEARCH_INDEX_SRC = document.currentScript?.dataset.searchSrc || "search-index.js";
 
-const tabButtons = $$("#nav [data-s]");
-const tabIds = tabButtons.map(x => x.dataset.s);
-let curTab = "s-index", curCase = "mian", curNum = "sg", curV = "conj";
+const currentPage = document.documentElement.dataset.page || "s-index";
+const navLinks = $$("#nav [data-s]");
+const tabIds = navLinks.map(link => link.dataset.s);
+let curCase = "mian", curNum = "sg", curV = "conj";
 
-/* ---------- main navigation ---------- */
-function showTab(id, scroll = true){
-  if(!tabIds.includes(id)) id = tabIds[0];
-  curTab = id;
-  tabButtons.forEach(x => {
-    const on = x.dataset.s === id;
-    x.setAttribute("aria-selected", on);
-    x.tabIndex = on ? 0 : -1;
-  });
-  $$("#navmenu [data-s]").forEach(x => x.setAttribute("aria-current", x.dataset.s === id));
-  $$(".sec").forEach(s => {
-    const on = s.id === id;
-    s.classList.toggle("on", on);
-    s.setAttribute("aria-hidden", String(!on));
-  });
-  const on = $("#nav [aria-selected='true']");
-  if(on?.scrollIntoView) on.scrollIntoView({block:"nearest", inline:"nearest"});
-  if(scroll) window.scrollTo({top:0});
-  updateNavArrows();
-}
-
-$("#nav").addEventListener("click", e => {
-  const tab = e.target.closest("[data-s]");
-  if(!tab) return;
-  showTab(tab.dataset.s);
-  writeHash();
+const navLink = tab => navLinks.find(link => link.dataset.s === tab);
+navLinks.forEach(link => {
+  if(link.dataset.s === currentPage) link.setAttribute("aria-current", "page");
+  else link.removeAttribute("aria-current");
+});
+$$("#navmenu [data-s]").forEach(link => {
+  if(link.dataset.s === currentPage) link.setAttribute("aria-current", "page");
+  else link.removeAttribute("aria-current");
 });
 
-$("#nav").addEventListener("keydown", e => {
-  const step = {ArrowRight:1, ArrowLeft:-1, Home:"first", End:"last"}[e.key];
+/* Arrow keys remain a shortcut over the horizontal list, while links preserve
+   ordinary browser behaviour for clicks, open-in-new-tab and no-JS navigation. */
+$("#nav").addEventListener("keydown", event => {
+  const step = {ArrowRight:1, ArrowLeft:-1, Home:"first", End:"last"}[event.key];
   if(step === undefined) return;
-  e.preventDefault();
-  const i = tabIds.indexOf(curTab);
+  event.preventDefault();
+  const current = Math.max(0, tabIds.indexOf(currentPage));
   const next = step === "first" ? 0 : step === "last" ? tabIds.length - 1
-    : (i + step + tabIds.length) % tabIds.length;
-  showTab(tabIds[next], false);
-  writeHash();
-  $("#tab-" + tabIds[next]).focus();
-});
-
-$("#s-index").addEventListener("click", e => {
-  const link = e.target.closest(".idx-a[data-s]");
-  if(!link) return;
-  e.preventDefault();
-  showTab(link.dataset.s);
-  writeHash();
+    : (current + step + tabIds.length) % tabIds.length;
+  location.href = navLinks[next].href;
 });
 
 /* ---------- cases and verb subsections ---------- */
-function showCase(id, num){
-  let target = $(`.case-variant[data-case="${CSS.escape(id)}"][data-num="${CSS.escape(num)}"]`);
-  if(!target){ id = "mian"; num = "sg"; target = $(`.case-variant[data-case="mian"][data-num="sg"]`); }
-  curCase = id; curNum = num;
-  $$(".case-variant").forEach(x => {
-    const on = x === target;
-    x.classList.toggle("on", on);
-    x.setAttribute("aria-hidden", String(!on));
+function showCase(id, number){
+  const variants = $$(".case-variant");
+  if(!variants.length) return;
+  let target = variants.find(item => item.dataset.case === id && item.dataset.num === number);
+  if(!target){ id = "mian"; number = "sg"; target = variants.find(item => item.dataset.case === id && item.dataset.num === number); }
+  curCase = id; curNum = number;
+  variants.forEach(item => {
+    const on = item === target;
+    item.classList.toggle("on", on);
+    item.setAttribute("aria-hidden", String(!on));
   });
-  $$("#chips [data-c]").forEach(x => x.setAttribute("aria-pressed", x.dataset.c === id));
-  $$("#numtog [data-n]").forEach(x => x.setAttribute("aria-pressed", x.dataset.n === num));
+  $$("#chips [data-c]").forEach(item => item.setAttribute("aria-pressed", item.dataset.c === id));
+  $$("#numtog [data-n]").forEach(item => item.setAttribute("aria-pressed", item.dataset.n === number));
 }
 
-$("#chips").addEventListener("click", e => {
-  const b = e.target.closest("[data-c]");
-  if(!b) return;
-  showCase(b.dataset.c, curNum);
+$("#chips")?.addEventListener("click", event => {
+  const button = event.target.closest("[data-c]");
+  if(!button) return;
+  showCase(button.dataset.c, curNum);
   writeHash();
 });
-$("#numtog").addEventListener("click", e => {
-  const b = e.target.closest("[data-n]");
-  if(!b) return;
-  showCase(curCase, b.dataset.n);
+$("#numtog")?.addEventListener("click", event => {
+  const button = event.target.closest("[data-n]");
+  if(!button) return;
+  showCase(curCase, button.dataset.n);
   writeHash();
 });
 
 function showVerb(key){
-  let target = $(`.verb-variant[data-v="${CSS.escape(key)}"]`);
-  if(!target){ key = "conj"; target = $('.verb-variant[data-v="conj"]'); }
+  const variants = $$(".verb-variant");
+  if(!variants.length) return;
+  let target = variants.find(item => item.dataset.v === key);
+  if(!target){ key = "conj"; target = variants.find(item => item.dataset.v === key); }
   curV = key;
-  $$(".verb-variant").forEach(x => {
-    const on = x === target;
-    x.classList.toggle("on", on);
-    x.setAttribute("aria-hidden", String(!on));
+  variants.forEach(item => {
+    const on = item === target;
+    item.classList.toggle("on", on);
+    item.setAttribute("aria-hidden", String(!on));
   });
-  $$("#vchips [data-v]").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === key));
+  $$("#vchips [data-v]").forEach(item => item.setAttribute("aria-pressed", item.dataset.v === key));
 }
 
-$("#vchips").addEventListener("click", e => {
-  const b = e.target.closest("[data-v]");
-  if(!b) return;
-  showVerb(b.dataset.v);
+$("#vchips")?.addEventListener("click", event => {
+  const button = event.target.closest("[data-v]");
+  if(!button) return;
+  showVerb(button.dataset.v);
   writeHash();
 });
 
-/* ---------- filters over prerendered rows ---------- */
+/* ---------- local filters ---------- */
 function filterPreps(value){
-  $$("#pfilter [data-f]").forEach(x => x.setAttribute("aria-pressed", x.dataset.f === value));
-  $$("#ptable tr").forEach((row, i) => {
-    if(i === 0) return;
-    row.hidden = value !== "все" && clean(row.cells[1]?.textContent || "") !== value;
+  $$("#pfilter [data-f]").forEach(item => item.setAttribute("aria-pressed", item.dataset.f === value));
+  $$("#ptable tr").forEach((row, index) => {
+    if(index) row.hidden = value !== "все" && clean(row.cells[1]?.textContent || "") !== value;
   });
 }
-$("#pfilter").addEventListener("click", e => {
-  const b = e.target.closest("[data-f]");
-  if(b) filterPreps(b.dataset.f);
+$("#pfilter")?.addEventListener("click", event => {
+  const button = event.target.closest("[data-f]");
+  if(button) filterPreps(button.dataset.f);
 });
 
-const vsearch = $("#vsearch");
+const verbSearch = $("#vsearch");
 function filterVerbs(query){
-  const q = norm(query.trim());
-  $$("#vlist table tr").forEach((row, i) => {
-    if(i === 0) return;
-    row.hidden = !!q && !norm(row.textContent).includes(q);
+  const key = norm(query.trim());
+  $$("#vlist table tr").forEach((row, index) => {
+    if(index) row.hidden = !!key && !norm(row.textContent).includes(key);
   });
 }
-vsearch.addEventListener("input", e => filterVerbs(e.target.value));
+verbSearch?.addEventListener("input", event => filterVerbs(event.target.value));
 
-/* ---------- hashes and heading links ---------- */
-function hashFor(){
-  if(curTab === "s-cases") return `#s-cases/${curCase}/${curNum}`;
-  if(curTab === "s-verbs") return `#s-verbs/${curV}`;
-  return `#${curTab}`;
+/* ---------- URL state, legacy hashes and heading links ---------- */
+function hashFor(suffix = ""){
+  const tail = suffix ? `/${suffix}` : "";
+  if(currentPage === "s-cases") return `#${curCase}/${curNum}${tail}`;
+  if(currentPage === "s-verbs") return `#${curV}${tail}`;
+  return suffix ? `#${suffix}` : "";
 }
-function writeHash(){
-  const hash = hashFor();
-  if(location.hash === hash) return;
-  history.replaceState(null, "", hash);
+function writeHash(suffix = ""){
+  const hash = hashFor(suffix);
+  if(location.hash !== hash) history.replaceState(null, "", hash || location.pathname + location.search);
 }
 
 const SMOOTH = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-function scrollToHeading(tab, slug){
-  const heading = document.querySelector(`#${tab} [data-h="${CSS.escape(slug)}"]`);
+function scrollToHeading(slug){
+  const heading = document.querySelector(`[data-h="${CSS.escape(slug)}"]`);
   if(!heading) return;
-  const off = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 0;
-  const y = window.scrollY + heading.getBoundingClientRect().top - off - 12;
+  const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 0;
+  const y = window.scrollY + heading.getBoundingClientRect().top - offset - 12;
   window.scrollTo({top:Math.max(0, y), behavior:SMOOTH});
 }
-
+function revealSearchHit(id){
+  const target = document.getElementById(id);
+  if(!target) return;
+  target.classList.add("hit");
+  target.scrollIntoView({block:"center", behavior:SMOOTH});
+  setTimeout(() => target.classList.remove("hit"), 2600);
+}
+function redirectLegacyHash(parts){
+  const targetPage = parts.shift();
+  const link = navLink(targetPage);
+  if(!link) return false;
+  let tail = "";
+  if(targetPage === "s-cases" || targetPage === "s-verbs") tail = parts.join("/");
+  else tail = parts.find(part => part.startsWith("~")) || "";
+  location.replace(link.href.replace(/#.*$/, "") + (tail ? `#${tail}` : ""));
+  return true;
+}
 function applyHash(){
-  const parts = decodeURIComponent(location.hash.replace(/^#/, "")).split("/");
-  const tab = tabIds.includes(parts[0]) ? parts[0] : "s-index";
-  if(tab === "s-cases") showCase(parts[1] || "mian", parts[2] === "pl" ? "pl" : "sg");
-  if(tab === "s-verbs") showVerb(parts[1] || "conj");
-  showTab(tab);
-  const anchor = parts.find(x => x.startsWith("~"));
-  if(anchor) requestAnimationFrame(() => scrollToHeading(tab, anchor.slice(1)));
+  const parts = decodeURIComponent(location.hash.replace(/^#/, "")).split("/").filter(Boolean);
+  if(parts[0]?.startsWith("s-") && redirectLegacyHash([...parts])) return;
+
+  let rest = parts;
+  if(currentPage === "s-cases"){
+    showCase(parts[0] || "mian", parts[1] === "pl" ? "pl" : "sg");
+    rest = parts.slice(2);
+  }else if(currentPage === "s-verbs"){
+    showVerb(parts[0] || "conj");
+    rest = parts.slice(1);
+  }
+  const heading = rest.find(part => part.startsWith("~"));
+  const hit = rest.find(part => /^r-\d+$/.test(part));
+  if(heading) requestAnimationFrame(() => scrollToHeading(heading.slice(1)));
+  if(hit) requestAnimationFrame(() => revealSearchHit(hit));
 }
 window.addEventListener("hashchange", applyHash);
 
-document.addEventListener("click", e => {
-  const b = e.target.closest(".alink");
-  if(!b) return;
-  const h = b.closest("h3");
-  const hash = `${hashFor()}/~${h.dataset.h}`;
-  history.replaceState(null, "", hash);
-  const ok = () => { b.classList.add("ok"); setTimeout(() => b.classList.remove("ok"), 1400); };
+document.addEventListener("click", event => {
+  const button = event.target.closest(".alink");
+  if(!button) return;
+  const heading = button.closest("h3");
+  writeHash(`~${heading.dataset.h}`);
+  const ok = () => { button.classList.add("ok"); setTimeout(() => button.classList.remove("ok"), 1400); };
   try{ navigator.clipboard.writeText(location.href).then(ok, ok); }catch{ ok(); }
 });
 
-/* ---------- full-text search built from prerendered DOM ---------- */
-function nodeText(node){
-  if(node.tagName === "TR")
-    return clean([...node.children].map(td => clean(td.textContent)).filter(Boolean).join(" · "));
-  if(node.parentElement?.classList.contains("ngrid"))
-    return clean([...node.children].map(x => clean(x.textContent)).filter(Boolean).join(" "));
-  return clean(node.textContent);
-}
-
+/* ---------- global full-text search ---------- */
 let INDEX = [];
-function buildIndex(){
-  const seen = new Set();
-  INDEX = [];
-  $$(".sec").forEach(sec => {
-    if(sec.id === "s-index") return;
-    const label = clean($(`#tab-${sec.id}`)?.textContent || sec.id);
-    let head = "";
-    sec.querySelectorAll("h2,h3,tr,li,p,.tip,.ngrid > div").forEach(node => {
-      if(node.matches("h2,h3")){ head = clean(node.textContent); return; }
-      if(node.tagName === "TR" && node.querySelector("th")) return;
-      if(node.matches("p") && node.closest(".tip")) return;
-      const text = nodeText(node);
-      if(text.length < 2) return;
-      const cv = node.closest(".case-variant"), vv = node.closest(".verb-variant");
-      const key = `${sec.id}|${cv?.dataset.case || ""}|${cv?.dataset.num || ""}|${vv?.dataset.v || ""}|${text}`;
-      if(seen.has(key)) return;
-      seen.add(key);
-      INDEX.push({
-        tab:sec.id, label, head, text, key:norm(text), node,
-        cs:cv?.dataset.case, num:cv?.dataset.num, vs:vv?.dataset.v
-      });
-    });
+let searchLoad;
+function loadSearchIndex(){
+  if(INDEX.length) return Promise.resolve();
+  if(searchLoad) return searchLoad;
+  searchLoad = new Promise(resolve => {
+    const script = document.createElement("script");
+    script.src = SEARCH_INDEX_SRC;
+    script.onload = () => {
+      INDEX = (globalThis.SEARCH_INDEX || []).map(entry => ({...entry, key:norm(entry.text)}));
+      resolve();
+    };
+    script.onerror = () => resolve();
+    document.head.append(script);
   });
+  return searchLoad;
 }
-
-const tokens = q => norm(q).split(/\s+/).filter(Boolean);
-function search(q){
-  const ts = tokens(q);
-  if(!ts.length || (ts.length === 1 && ts[0].length < 2)) return {list:[], total:0};
+const tokens = query => norm(query).split(/\s+/).filter(Boolean);
+function search(query){
+  const terms = tokens(query);
+  if(!terms.length || (terms.length === 1 && terms[0].length < 2)) return {list:[], total:0};
   const hits = [];
-  for(const e of INDEX){
-    let score = 0, ok = true;
-    for(const t of ts){
-      const at = e.key.indexOf(t);
-      if(at < 0){ ok = false; break; }
+  for(const entry of INDEX){
+    let score = 0, matches = true;
+    for(const term of terms){
+      const at = entry.key.indexOf(term);
+      if(at < 0){ matches = false; break; }
       score += at;
     }
-    if(ok) hits.push({e, score:score / ts.length + e.text.length / 40});
+    if(matches) hits.push({entry, score:score / terms.length + entry.text.length / 40});
   }
-  hits.sort((a,b) => a.score - b.score);
-  return {list:hits.slice(0,30).map(x => x.e), total:hits.length};
+  hits.sort((a, b) => a.score - b.score);
+  return {list:hits.slice(0, 30).map(hit => hit.entry), total:hits.length};
 }
 
-const escapeHTML = s => s.replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-function mark(text, q){
+const escapeHTML = value => value.replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+function mark(text, query){
   const key = norm(text), ranges = [];
-  for(const t of tokens(q)){
-    let at = key.indexOf(t);
-    while(at >= 0){ ranges.push([at, at + t.length]); at = key.indexOf(t, at + t.length); }
+  for(const term of tokens(query)){
+    let at = key.indexOf(term);
+    while(at >= 0){ ranges.push([at, at + term.length]); at = key.indexOf(term, at + term.length); }
   }
   if(!ranges.length) return escapeHTML(text);
-  ranges.sort((a,b) => a[0] - b[0]);
+  ranges.sort((a, b) => a[0] - b[0]);
   const merged = [ranges[0]];
-  for(const r of ranges.slice(1)){
+  for(const range of ranges.slice(1)){
     const last = merged.at(-1);
-    if(r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r);
+    if(range[0] <= last[1]) last[1] = Math.max(last[1], range[1]); else merged.push(range);
   }
-  let out = "", pos = 0;
-  for(const [a,b] of merged){
-    out += escapeHTML(text.slice(pos,a)) + "<mark>" + escapeHTML(text.slice(a,b)) + "</mark>";
-    pos = b;
+  let output = "", position = 0;
+  for(const [start, end] of merged){
+    output += escapeHTML(text.slice(position, start)) + "<mark>" + escapeHTML(text.slice(start, end)) + "</mark>";
+    position = end;
   }
-  return out + escapeHTML(text.slice(pos));
+  return output + escapeHTML(text.slice(position));
 }
 
-let hitList = [], hitSel = -1;
-function openSearch(on){
-  $("#sres").classList.toggle("on", on);
-  $("#gsearch").setAttribute("aria-expanded", on);
-  if(!on){ $("#gsearch").removeAttribute("aria-activedescendant"); hitSel = -1; }
+let hitList = [], selectedHit = -1;
+function openSearch(open){
+  $("#sres").classList.toggle("on", open);
+  $("#gsearch").setAttribute("aria-expanded", open);
+  if(!open){ $("#gsearch").removeAttribute("aria-activedescendant"); selectedHit = -1; }
 }
-function selectHit(i){
+function selectHit(index){
   const items = $$("#sres .sr");
   if(!items.length) return;
-  hitSel = (i + items.length) % items.length;
-  items.forEach((b,n) => b.setAttribute("aria-selected", n === hitSel));
-  items[hitSel].scrollIntoView({block:"nearest"});
-  $("#gsearch").setAttribute("aria-activedescendant", items[hitSel].id);
+  selectedHit = (index + items.length) % items.length;
+  items.forEach((item, number) => item.setAttribute("aria-selected", number === selectedHit));
+  items[selectedHit].scrollIntoView({block:"nearest"});
+  $("#gsearch").setAttribute("aria-activedescendant", items[selectedHit].id);
 }
-function renderResults(q){
+function renderResults(query){
   const box = $("#sres");
-  if(!q.trim()){ openSearch(false); box.innerHTML = ""; hitList = []; return; }
-  const {list,total} = search(q);
-  hitList = list; hitSel = -1; openSearch(true);
+  if(!query.trim()){ openSearch(false); box.innerHTML = ""; hitList = []; return; }
+  const {list, total} = search(query);
+  hitList = list; selectedHit = -1; openSearch(true);
   if(!list.length){
-    box.innerHTML = tokens(q).every(t => t.length < 2)
-      ? `<div class="snone">Введите хотя бы два символа</div>`
-      : `<div class="snone">Ничего не нашлось</div>`;
+    box.innerHTML = tokens(query).every(term => term.length < 2)
+      ? '<div class="snone">Введите хотя бы два символа</div>'
+      : '<div class="snone">Ничего не нашлось</div>';
     return;
   }
-  box.innerHTML = list.map((e,i) => `<button class="sr" role="option" id="sr-${i}" data-i="${i}" aria-selected="false">
-    <span class="sr-w">${escapeHTML(e.label)}${e.head?` · ${escapeHTML(e.head)}`:""}</span>
-    <span class="sr-t">${mark(e.text.length > 140 ? e.text.slice(0,140) + "…" : e.text, q)}</span>
+  box.innerHTML = list.map((entry, index) => `<button class="sr" role="option" id="sr-${index}" data-i="${index}" aria-selected="false">
+    <span class="sr-w">${escapeHTML(entry.label)}${entry.head ? ` · ${escapeHTML(entry.head)}` : ""}</span>
+    <span class="sr-t">${mark(entry.text.length > 140 ? entry.text.slice(0, 140) + "…" : entry.text, query)}</span>
   </button>`).join("") + (total > list.length ? `<div class="scount">показаны ${list.length} из ${total} - уточните запрос</div>` : "");
 }
 function closeSearch(){ openSearch(false); $("#gsearch").blur(); }
-function goTo(e){
-  if(e.cs) showCase(e.cs, e.num || "sg");
-  if(e.vs) showVerb(e.vs);
-  if(e.tab === "s-preps") filterPreps("все");
-  if(e.vs === "lista"){ vsearch.value = ""; filterVerbs(""); }
-  showTab(e.tab, false); writeHash(); closeSearch();
-  e.node.classList.add("hit");
-  e.node.scrollIntoView({block:"center", behavior:SMOOTH});
-  setTimeout(() => e.node.classList.remove("hit"), 2600);
+function resultHash(entry){
+  if(entry.tab === "s-cases") return `#${entry.cs || "mian"}/${entry.num || "sg"}/${entry.id}`;
+  if(entry.tab === "s-verbs") return `#${entry.vs || "conj"}/${entry.id}`;
+  return `#${entry.id}`;
+}
+function goTo(entry){
+  const hash = resultHash(entry);
+  if(entry.tab !== currentPage){
+    const link = navLink(entry.tab);
+    if(link) location.href = link.href.replace(/#.*$/, "") + hash;
+    return;
+  }
+  if(entry.cs) showCase(entry.cs, entry.num || "sg");
+  if(entry.vs) showVerb(entry.vs);
+  if(entry.tab === "s-preps") filterPreps("все");
+  if(entry.vs === "lista" && verbSearch){ verbSearch.value = ""; filterVerbs(""); }
+  history.replaceState(null, "", hash);
+  closeSearch();
+  revealSearchHit(entry.id);
 }
 
-$("#gsearch").addEventListener("input", e => renderResults(e.target.value));
-$("#gsearch").addEventListener("focus", e => { if(e.target.value) renderResults(e.target.value); });
-$("#gsearch").addEventListener("keydown", e => {
-  if(e.key === "Escape"){ e.target.value = ""; renderResults(""); closeSearch(); return; }
-  if(e.key === "ArrowDown" || e.key === "ArrowUp"){
-    e.preventDefault();
-    if(!$("#sres").classList.contains("on")) renderResults(e.target.value);
-    selectHit(hitSel + (e.key === "ArrowDown" ? 1 : -1)); return;
+$("#gsearch").addEventListener("input", async event => { await loadSearchIndex(); renderResults(event.target.value); });
+$("#gsearch").addEventListener("focus", async event => { await loadSearchIndex(); if(event.target.value) renderResults(event.target.value); });
+$("#gsearch").addEventListener("keydown", event => {
+  if(event.key === "Escape"){ event.target.value = ""; renderResults(""); closeSearch(); return; }
+  if(event.key === "ArrowDown" || event.key === "ArrowUp"){
+    event.preventDefault();
+    if(!$("#sres").classList.contains("on")) renderResults(event.target.value);
+    selectHit(selectedHit + (event.key === "ArrowDown" ? 1 : -1)); return;
   }
-  if(e.key === "Home" || e.key === "End"){
+  if(event.key === "Home" || event.key === "End"){
     if(!$("#sres .sr")) return;
-    e.preventDefault(); selectHit(e.key === "Home" ? 0 : -1); return;
+    event.preventDefault(); selectHit(event.key === "Home" ? 0 : -1); return;
   }
-  if(e.key === "Enter") ($("#sres .sr[aria-selected='true']") || $("#sres .sr"))?.click();
+  if(event.key === "Enter") ($("#sres .sr[aria-selected='true']") || $("#sres .sr"))?.click();
 });
-$("#sres").addEventListener("click", e => {
-  const b = e.target.closest(".sr[data-i]");
-  if(b) goTo(hitList[+b.dataset.i]);
+$("#sres").addEventListener("click", event => {
+  const button = event.target.closest(".sr[data-i]");
+  if(button) goTo(hitList[+button.dataset.i]);
 });
-document.addEventListener("click", e => { if(!e.target.closest("#sbox")) openSearch(false); });
-document.addEventListener("keydown", e => {
-  if((e.key === "/" || (e.key === "k" && (e.metaKey || e.ctrlKey))) && document.activeElement !== $("#gsearch")){
-    e.preventDefault(); $("#gsearch").focus(); $("#gsearch").select();
+document.addEventListener("click", event => { if(!event.target.closest("#sbox")) openSearch(false); });
+document.addEventListener("keydown", event => {
+  if((event.key === "/" || (event.key === "k" && (event.metaKey || event.ctrlKey))) && document.activeElement !== $("#gsearch")){
+    event.preventDefault(); $("#gsearch").focus(); $("#gsearch").select();
   }
 });
 
 /* ---------- theme, menu and sticky header ---------- */
-const THEMES = [["light","светлая"],["dark","тёмная"]];
-const SYSDARK = matchMedia("(prefers-color-scheme: dark)");
+const THEMES = [["light", "светлая"], ["dark", "тёмная"]];
+const SYSTEM_DARK = matchMedia("(prefers-color-scheme: dark)");
 function readTheme(){
-  try{ const t = localStorage.getItem("theme"); return t === "light" || t === "dark" ? t : null; }catch{ return null; }
+  try{ const theme = localStorage.getItem("theme"); return theme === "light" || theme === "dark" ? theme : null; }catch{ return null; }
 }
 function applyTheme(value){
   if(value) document.documentElement.dataset.theme = value;
   else delete document.documentElement.dataset.theme;
-  const cur = value || (SYSDARK.matches ? "dark" : "light");
-  $("#theme").innerHTML = THEMES.map(([id,label]) =>
-    `<button type="button" data-t="${id}" aria-pressed="${id === cur}">${label}</button>`).join("");
+  const current = value || (SYSTEM_DARK.matches ? "dark" : "light");
+  $("#theme").innerHTML = THEMES.map(([id, label]) =>
+    `<button type="button" data-t="${id}" aria-pressed="${id === current}">${label}</button>`).join("");
 }
-$("#theme").addEventListener("click", e => {
-  const b = e.target.closest("[data-t]");
-  if(!b) return;
-  try{ localStorage.setItem("theme", b.dataset.t); }catch{}
-  applyTheme(b.dataset.t); setHeadH();
+$("#theme").addEventListener("click", event => {
+  const button = event.target.closest("[data-t]");
+  if(!button) return;
+  try{ localStorage.setItem("theme", button.dataset.t); }catch{}
+  applyTheme(button.dataset.t); setHeadH();
 });
-SYSDARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
+SYSTEM_DARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
 
-function closeNavMenu(){ $("#navmenu").classList.remove("on"); $("#navall").setAttribute("aria-expanded","false"); }
+function closeNavMenu(){ $("#navmenu").classList.remove("on"); $("#navall").setAttribute("aria-expanded", "false"); }
 $("#navall").addEventListener("click", () => {
   const open = !$("#navmenu").classList.contains("on");
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", open);
   if(open) $("#navmenu [data-s]")?.focus();
 });
-$("#navmenu").addEventListener("click", e => {
-  const b = e.target.closest("[data-s]");
-  if(!b) return;
-  showTab(b.dataset.s); writeHash(); closeNavMenu(); $("#navall").focus();
+$("#navmenu").addEventListener("click", event => {
+  if(event.target.closest("[data-s]")) closeNavMenu();
 });
-document.addEventListener("keydown", e => { if(e.key === "Escape" && $("#navmenu").classList.contains("on")) closeNavMenu(); });
-document.addEventListener("click", e => { if(!e.target.closest("#navwrap")) closeNavMenu(); });
+document.addEventListener("keydown", event => { if(event.key === "Escape" && $("#navmenu").classList.contains("on")) closeNavMenu(); });
+document.addEventListener("click", event => { if(!event.target.closest("#navwrap")) closeNavMenu(); });
 
 function setHeadH(){
-  const hdr = $("header"), nav = $("#navwrap");
-  const off = nav.getBoundingClientRect().top - hdr.getBoundingClientRect().top;
+  const header = $("header"), nav = $("#navwrap");
+  const offset = nav.getBoundingClientRect().top - header.getBoundingClientRect().top;
   const narrow = matchMedia("(max-width:700px)").matches;
-  document.documentElement.style.setProperty("--brand-h", (narrow ? off : 0) + "px");
-  document.documentElement.style.setProperty("--head-h", (narrow ? hdr.offsetHeight - off : hdr.offsetHeight) + "px");
+  document.documentElement.style.setProperty("--brand-h", (narrow ? offset : 0) + "px");
+  document.documentElement.style.setProperty("--head-h", (narrow ? header.offsetHeight - offset : header.offsetHeight) + "px");
 }
 function updateNavArrows(){
   const nav = $("#nav"), wrap = $("#navwrap");
@@ -360,16 +353,16 @@ function updateNavArrows(){
   wrap.classList.toggle("can-r", nav.scrollLeft < nav.scrollWidth - nav.clientWidth - 2);
 }
 $("#nav").addEventListener("scroll", updateNavArrows, {passive:true});
-$("#navl").addEventListener("click", () => $("#nav").scrollBy({left:-$("#nav").clientWidth * .6,behavior:"smooth"}));
-$("#navr").addEventListener("click", () => $("#nav").scrollBy({left: $("#nav").clientWidth * .6,behavior:"smooth"}));
-window.addEventListener("resize", () => {updateNavArrows(); setHeadH();});
+$("#navl").addEventListener("click", () => $("#nav").scrollBy({left:-$("#nav").clientWidth * .6, behavior:"smooth"}));
+$("#navr").addEventListener("click", () => $("#nav").scrollBy({left: $("#nav").clientWidth * .6, behavior:"smooth"}));
+window.addEventListener("resize", () => { updateNavArrows(); setHeadH(); });
 
 /* ---------- start ---------- */
-showCase("mian", "sg");
-showVerb("conj");
-filterPreps("все");
+if(currentPage === "s-cases") showCase("mian", "sg");
+if(currentPage === "s-verbs") showVerb("conj");
+if(currentPage === "s-preps") filterPreps("все");
 applyTheme(readTheme());
-buildIndex();
 setHeadH();
 updateNavArrows();
+navLink(currentPage)?.scrollIntoView({block:"nearest", inline:"nearest"});
 applyHash();

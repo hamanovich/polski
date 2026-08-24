@@ -44,10 +44,11 @@ body{
 header{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:10}
 .head-in{max-width:var(--w);margin:0 auto;padding:14px 16px 0}
 .brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.brand h1{
+.brand h1,.brand .site-title{
   font-family:var(--serif);font-size:var(--fs-h1);font-weight:600;letter-spacing:-.01em;margin:0;
+  color:inherit;text-decoration:none;
 }
-.brand h1 .tail{color:var(--end)}
+.brand h1 .tail,.brand .site-title .tail{color:var(--end)}
 .brand span{font-size:var(--fs-note);color:var(--muted)}
 .themebar{
   display:inline-flex;margin-left:auto;background:var(--panel);
@@ -77,13 +78,13 @@ nav::-webkit-scrollbar{display:none}
 #navr{right:0;background:linear-gradient(to left,var(--paper) 55%,var(--paper-0))}
 #navwrap.can-l #navl{display:flex}
 #navwrap.can-r #navr{display:flex}
-nav button{
+nav a{
   font:inherit;font-size:var(--fs-note);color:var(--muted);background:none;border:0;
-  padding:8px 12px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;
+  padding:8px 12px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;text-decoration:none;
 }
-nav button:hover{color:var(--ink)}
-nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ui);font-weight:600}
-nav button:focus-visible,.chip:focus-visible,.tog button:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ui);font-weight:600}
+nav a:focus-visible,.chip:focus-visible,.tog button:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 
 #navall{
   font:inherit;font-size:var(--fs-note);color:var(--muted-s);background:var(--panel);
@@ -106,16 +107,16 @@ nav button:focus-visible,.chip:focus-visible,.tog button:focus-visible{outline:2
   font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;color:var(--muted-s);
   font-weight:600;margin:0 0 4px;
 }
-#navmenu button{
+#navmenu a{
   display:block;width:100%;text-align:left;font:inherit;font-family:var(--serif);font-size:var(--fs-lead);
-  background:none;border:0;padding:4px 0;cursor:pointer;color:var(--ink);
+  background:none;border:0;padding:4px 0;cursor:pointer;color:var(--ink);text-decoration:none;
 }
-#navmenu button:hover{color:var(--ui);text-decoration:underline;text-underline-offset:3px}
-#navmenu button[aria-current="true"]{color:var(--ui);font-weight:600}
-#navmenu button:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+#navmenu a:hover{color:var(--ui);text-decoration:underline;text-underline-offset:3px}
+#navmenu a[aria-current="page"]{color:var(--ui);font-weight:600}
+#navmenu a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:18px;margin-top:14px}
-h2{font-family:var(--serif);font-size:var(--fs-h2);font-weight:600;margin:0 0 4px}
+h2,.page-title{font-family:var(--serif);font-size:var(--fs-h2);font-weight:600;margin:0 0 4px}
 h3{font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px;font-weight:600}
 h3:first-child{margin-top:0}
 .alink{
@@ -143,9 +144,10 @@ li{margin-bottom:5px}
 .content-variant{display:block}
 .js .content-variant{display:none}
 .js .content-variant.on{display:block}
-html:not(.js) #navwrap,html:not(.js) #sbox,html:not(.js) .themebar,
+html:not(.js) #sbox,html:not(.js) .themebar,
 html:not(.js) .casebar,html:not(.js) #pfilter,html:not(.js) #vsearch,
 html:not(.js) .alink{display:none}
+html:not(.js) #navall,html:not(.js) #navmenu,html:not(.js) .navarr{display:none}
 @media (prefers-reduced-motion:no-preference){
   .sec.on{animation:in .16s ease-out}
   @keyframes in{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}

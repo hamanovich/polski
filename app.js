@@ -765,7 +765,7 @@ const norm = s => s.toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/\
 function vLista(){
   return `<div class="panel">
     <h2>Словарь глаголов</h2>
-    <p class="lead">${VERBS.length} самых частых глаголов с ключевыми формами. Поиск понимает и польский, и русский, и без диакритики.</p>
+    <p class="lead">${VERBS.length} частотных и практически необходимых глаголов с ключевыми формами. Поиск понимает и польский, и русский, и без диакритики.</p>
     <input class="src" id="vsearch" type="search" placeholder="mowic, идти, jeść…" autocomplete="off">
     <div class="scroll" id="vlist"></div>
     <div class="tip">Три формы дают всю парадигму: <b>ja</b> и <b>oni</b> - малое крыло бабочки, <b>ty</b> - большое. Формы <span class="pl">on / ona</span> в прошедшем показывают чередование основы.</div>
@@ -1419,22 +1419,20 @@ const VLABEL = Object.fromEntries(VTABS);
 let curTab = TABS[0][0];
 
 $("#nav").innerHTML = TABS.map((t,i) =>
-  `<button role="tab" id="tab-${t[0]}" data-s="${t[0]}" aria-controls="${t[0]}"
-     aria-selected="${i===0}" tabindex="${i===0 ? 0 : -1}">${t[1]}</button>`).join("");
+  `<a id="tab-${t[0]}" data-s="${t[0]}" href="#${t[0]}"
+     ${i===0 ? 'aria-current="page"' : ""}>${t[1]}</a>`).join("");
 
 function showTab(id, scroll){
   if(!TABS.some(t => t[0] === id)) id = TABS[0][0];
   curTab = id;
   $("#nav").querySelectorAll("button").forEach(x => {
     const on = x.dataset.s === id;
-    x.setAttribute("aria-selected", on);
-    /* roving tabindex: в группе вкладок Tab останавливается один раз, дальше стрелки */
-    x.tabIndex = on ? 0 : -1;
+    if(on) x.setAttribute("aria-current", "page"); else x.removeAttribute("aria-current");
   });
   $("#navmenu").querySelectorAll("button").forEach(x =>
     x.setAttribute("aria-current", x.dataset.s === id));
   document.querySelectorAll(".sec").forEach(s => s.classList.toggle("on", s.id === id));
-  const on = $("#nav button[aria-selected='true']");
+  const on = $("#nav [aria-current='page']");
   if(on && on.scrollIntoView) on.scrollIntoView({block:"nearest", inline:"nearest"});
   if(scroll !== false) window.scrollTo({top:0});
   updateNavArrows();
@@ -1456,9 +1454,9 @@ $("#nav").addEventListener("keydown", e => {
 
 /* полный список: 19 вкладок в строку не влезают, а состав справочника надо видеть целиком */
 $("#navmenu").innerHTML = `<section><h4>Начало</h4>
-    <button type="button" data-s="${TABS[0][0]}">${LABEL[TABS[0][0]]}</button></section>` +
+    <a data-s="${TABS[0][0]}" href="#${TABS[0][0]}">${LABEL[TABS[0][0]]}</a></section>` +
   GROUPS.map(g => `<section><h4>${g[0]}</h4>
-    ${g[1].map(([id]) => `<button type="button" data-s="${id}">${LABEL[id]}</button>`).join("")}
+    ${g[1].map(([id]) => `<a data-s="${id}" href="#${id}">${LABEL[id]}</a>`).join("")}
   </section>`).join("");
 
 function closeNavMenu(){
@@ -1469,7 +1467,7 @@ $("#navall").onclick = () => {
   const open = !$("#navmenu").classList.contains("on");
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", open);
-  if(open) $("#navmenu button").focus();
+  if(open) $("#navmenu a").focus();
 };
 $("#navmenu").addEventListener("click", e => {
   const b = e.target.closest("button");
@@ -1551,7 +1549,7 @@ function scrollToHeading(tab, h){
   window.scrollTo({top:Math.max(0, y), behavior:SMOOTH});
 }
 
-$("#nav").querySelectorAll("button").forEach(b => b.onclick = () => {
+$("#nav").querySelectorAll("[data-s]").forEach(b => b.onclick = () => {
   showTab(b.dataset.s);
   writeHash();
 });

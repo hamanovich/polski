@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check app.js && node --check data.js && node --check client.js && node --check scripts/build.mjs && node scripts/check-build.mjs"
+    "check": "node --check app.js && node --check data.js && node --check client.js && node --check search-index.js && node --check scripts/build.mjs && node scripts/check-build.mjs"
   },
   "devDependencies": {
     "linkedom": "^0.18.12"
