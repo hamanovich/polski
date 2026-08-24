@@ -137,8 +137,15 @@ p{margin:0 0 10px}
 .tip b{color:var(--alt)}
 ul{margin:0;padding-left:18px}
 li{margin-bottom:5px}
-.sec{display:none}
-.sec.on{display:block}
+.sec{display:block}
+.js .sec{display:none}
+.js .sec.on{display:block}
+.content-variant{display:block}
+.js .content-variant{display:none}
+.js .content-variant.on{display:block}
+html:not(.js) #navwrap,html:not(.js) #sbox,html:not(.js) .themebar,
+html:not(.js) .casebar,html:not(.js) #pfilter,html:not(.js) #vsearch,
+html:not(.js) .alink{display:none}
 @media (prefers-reduced-motion:no-preference){
   .sec.on{animation:in .16s ease-out}
   @keyframes in{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
@@ -149,7 +156,7 @@ li{margin-bottom:5px}
 .idx h3{margin-top:0}
 .idx-a{
   display:block;width:100%;text-align:left;font:inherit;background:none;cursor:pointer;
-  border:0;border-bottom:1px solid var(--line);padding:9px 0;
+  color:inherit;text-decoration:none;border:0;border-bottom:1px solid var(--line);padding:9px 0;
 }
 .idx-a:last-child{border-bottom:0}
 .idx-a b{font-family:var(--serif);font-size:var(--fs-lead);font-weight:600;display:block;line-height:1.3}
@@ -310,7 +317,24 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
 .ngrid b{font-family:var(--mono);font-size:var(--fs-note);font-weight:400;color:var(--muted);min-width:38px;text-align:right}
 .ngrid span{font-family:var(--serif);font-size:var(--fs-lead)}
 @media (max-width:620px){
-  table.vt{min-width:560px}
+  table.vt{width:560px;min-width:560px;table-layout:fixed}
+  table.vt:has(tr > :nth-child(4)){width:680px}
+  table.vt:has(tr > :nth-child(5)){width:800px}
+  table.vt:has(tr > :nth-child(6)){width:920px}
+  table.vt:has(tr > :nth-child(7)){width:1040px}
+  table.vt:has(tr > :nth-child(8)){width:1160px}
+  table.vt:has(tr > :nth-child(9)){width:1280px}
+  table.vt th:not(:first-child),table.vt td:not(:first-child){
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+  table.vt th:first-child,table.vt td:first-child{
+    width:clamp(104px,34vw,140px);
+    min-width:clamp(104px,34vw,140px);
+    max-width:clamp(104px,34vw,140px);
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
   td.note{min-width:110px}
 }
 footer{font-size:var(--fs-note);color:var(--muted);margin-top:28px;text-align:center;line-height:1.7}

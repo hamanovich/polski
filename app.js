@@ -479,12 +479,12 @@ function vCzasy(){
     <div class="tip"><b><span class="pl">przez godzinę</span> и <span class="pl">w godzinę</span> - не одно и то же.</b> <span class="pl">Czytałem przez godzinę</span> - час читал, дочитал или нет, неизвестно. <span class="pl">Przeczytałem to w godzinę</span> - уложился за час и закончил. Русское «за час» покрывает оба, польский выбирает видом. Подробнее - «Отрезки времени» во вкладке «Числительные».</div>
 
     <h3>Сетка: какой вид в каком времени</h3>
-    <table>
+    <div class="scroll"><table>
       <tr><th></th><th>несовершенный</th><th>совершенный</th></tr>
       <tr><td>прошедшее</td><td class="w">robiłem</td><td class="g">zrobiłem</td></tr>
       <tr><td>настоящее</td><td class="w">robię</td><td style="color:var(--muted)">нет</td></tr>
       <tr><td>будущее</td><td class="w">będę robić / robił</td><td class="g">zrobię</td></tr>
-    </table>
+    </table></div>
 
     <h3>Прошедшее время</h3>
     <p>Основа: инфинитив минус <b>-ć</b>, дальше <b>-ł-</b> и окончание рода и лица. Род есть у всех лиц - в русском такого нет.</p>
@@ -495,11 +495,11 @@ function vCzasy(){
     <p class="lead">Множественное различает только два рода: <b>мужско-личный</b> (есть хоть один мужчина) - <span class="pl">robili</span>, и <b>всё остальное</b> - <span class="pl">robiły</span>.</p>
 
     <h3>Чередования в прошедшем</h3>
-    <table>
+    <div class="scroll"><table>
       <tr><td style="width:34%">инфинитив на <b>-eć</b></td><td class="c">e → a</td><td class="w">musieć → musiał, musiała, <b>но</b> musieli</td></tr>
       <tr><td>инфинитив на <b>-ąć</b></td><td class="c">ą → ę</td><td class="w">zacząć → zaczął, <b>но</b> zaczęła, zaczęli</td></tr>
       <tr><td>основа на <b>-o-</b></td><td class="c">o → ó</td><td class="w">móc → mógł, nieść → niósł (но mogła, niosła)</td></tr>
-    </table>
+    </table></div>
 
     <h3>Нерегулярные в прошедшем</h3>
     <div class="scroll"><table>
@@ -1106,7 +1106,7 @@ function renderPreps(){
     <p class="lead">Один предлог часто управляет двумя падежами. Разница обычно «где / куда».</p>
     <div class="chips" id="pfilter">${cs.map((c,i) =>
       `<button class="chip" data-f="${c}" aria-pressed="${i===0}"><span class="cp">${c}</span></button>`).join("")}</div>
-    <div class="scroll"><table id="ptable"></table></div>
+    <div class="scroll"><table id="ptable" class="vt"></table></div>
     <div class="tip"><b>Правило движения.</b> Стоишь - Miejscownik или Narzędnik. Двигаешься - Biernik. <span class="pl">Jestem na poczcie</span> / <span class="pl">idę na pocztę</span>.</div>
 
     <h3>Беглое e: w → we, z → ze</h3>
@@ -1740,8 +1740,8 @@ function renderIndex(){
     <p class="lead">Восемнадцать разделов. Если не знаешь, с чего начать, - начни с рода: пока слово не отнесено к роду, таблицы падежей некуда приложить.</p>
     <div class="idx">${GROUPS.map(g => `<section>
       <h3>${g[0]}</h3>
-      ${g[1].map(([id, note]) => `<button class="idx-a" type="button" data-s="${id}">
-        <b>${LABEL[id]}</b><span>${note}</span></button>`).join("")}
+      ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">
+        <b>${LABEL[id]}</b><span>${note}</span></a>`).join("")}
     </section>`).join("")}</div>
   </div>`;
 }
