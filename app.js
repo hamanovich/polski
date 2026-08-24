@@ -209,6 +209,43 @@ function renderRod(){
   </div>`;
 }
 
+/* --- сводная карта чередований --- */
+function renderAlt(){
+  $("#s-alt").innerHTML = `<div class="panel">
+    <h2>Чередования: сводная карта</h2>
+    <p class="lead">Окончание часто меняет последний звук основы. Эта таблица нужна как карта: найди знакомую пару, а затем переходи к разделу, где показано точное условие.</p>
+    <div class="tip"><b>Не применяй чередование автоматически.</b> Одна и та же буква меняется не во всех формах: <span class="pl">róg → rogu</span>, но <span class="pl">róg → rogi</span>; <span class="pl">Polak → Polacy</span>, но <span class="pl">Polaka</span>. Сначала выбери падеж или форму глагола, потом меняй основу.</div>
+
+    <h3>Гласные</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>чередование</th><th>где встречается</th><th>примеры</th></tr>
+      <tr><td class="c">ó ↔ o</td><td style="white-space:normal">при склонении и в родственных формах</td><td class="w" style="white-space:normal">róg → rogu · samochód → samochodu · stół → stole</td></tr>
+      <tr><td class="c">ą ↔ ę</td><td style="white-space:normal">при склонении существительных и в отдельных глагольных формах</td><td class="w" style="white-space:normal">mąż → męża · ząb → zęby · zacząć → zaczęła</td></tr>
+      <tr><td class="c">e ↔ a</td><td style="white-space:normal">в прошедшем времени у части глаголов на -eć</td><td class="w" style="white-space:normal">musieć → musiał · musiała, но musieli</td></tr>
+      <tr><td class="c">o ↔ ó</td><td style="white-space:normal">в мужской форме прошедшего времени у отдельных глаголов</td><td class="w" style="white-space:normal">móc → mógł · nieść → niósł, но mogła · niosła</td></tr>
+    </table></div>
+
+    <h3>Согласные перед окончанием</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>чередование</th><th>типичное место</th><th>примеры</th></tr>
+      <tr><td class="c">r → rz</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">komputer → komputerze · teatr → teatrze</td></tr>
+      <tr><td class="c">k → c</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">apteka → aptece · ręka → ręce</td></tr>
+      <tr><td class="c">k → c + y</td><td style="white-space:normal">мужско-личное множественное</td><td class="w" style="white-space:normal">Polak → Polacy · kierownik → kierownicy</td></tr>
+      <tr><td class="c">g → dz · ch → sz</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">droga → drodze · mucha → musze</td></tr>
+      <tr><td class="c">t → ci · d → dzi</td><td style="white-space:normal">перед мягким окончанием</td><td class="w" style="white-space:normal">brat → bracie · woda → wodzie · student → studenci</td></tr>
+      <tr><td class="c">ł → l</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">szkoła → szkole · stół → stole</td></tr>
+    </table></div>
+
+    <h3>Где смотреть подробности</h3>
+    <ul>
+      <li><a href="#s-cases/miej/sg/~чередования-перед-e">Miejscownik: согласные перед -e</a> — полная таблица и развилка <span class="pl">-e / -u</span>.</li>
+      <li><a href="#s-cases/mian/pl">Mianownik множественного</a> — мужско-личные формы <span class="pl">Polak → Polacy, student → studenci</span>.</li>
+      <li><a href="#s-verbs/conj/~чередования-в-основе">Спряжения: изменения основы</a> — <span class="pl">pisać → piszę, móc → możesz</span> и другие модели.</li>
+      <li><a href="#s-verbs/czasy/~чередования-в-прошедшем">Прошедшее время</a> — <span class="pl">musiał, zaczęła, mógł</span>.</li>
+    </ul>
+  </div>`;
+}
+
 /* --- алфавит и произношение --- */
 function renderAlpha(){
   $("#s-alpha").innerHTML = `<div class="panel">
@@ -523,7 +560,7 @@ function vCzasy(){
       <tr><td style="color:var(--muted)">wy</td><td class="w">będziecie czytać</td><td class="g">będziecie czytali / czytały</td></tr>
       <tr><td style="color:var(--muted)">oni / one</td><td class="w">będą czytać</td><td class="g">będą czytali / czytały</td></tr>
     </table></div>
-    <div class="tip"><b>Три ловушки.</b> 1) Никогда <span class="bad">będę być</span> - просто <span class="pl">będę</span>. 2) Никогда <span class="bad">będę zrobić</span> - с совершенным видом <span class="pl">będę</span> не сочетается. 3) Модальные почти всегда идут в форме на -ł: <span class="pl">będę mógł, będę musiała, będzie chciał</span>.</div>
+    <div class="tip"><b>Три ловушки.</b> 1) Никогда <span class="bad">będę być</span> - просто <span class="pl">będę</span>. 2) Никогда <span class="bad">będę zrobić</span> и <span class="bad">będę zrobił</span>: совершенный <span class="pl">zrobić</span> образует простое будущее <span class="pl">zrobię</span>. 3) Модальные почти всегда идут в форме на -ł: <span class="pl">będę mógł, będę musiała, będzie chciał</span>.</div>
 
     <h3>Слова-подсказки</h3>
     <p class="pl">wczoraj · przedwczoraj · w zeszłym tygodniu · rok temu - прошедшее<br>teraz · zawsze · codziennie · zwykle - настоящее<br>jutro · pojutrze · za godzinę · w przyszłym roku - будущее</p>
@@ -1737,7 +1774,7 @@ document.addEventListener("keydown", e => {
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
-    <p class="lead">Восемнадцать разделов. Если не знаешь, с чего начать, - начни с рода: пока слово не отнесено к роду, таблицы падежей некуда приложить.</p>
+    <p class="lead">Девятнадцать разделов. Если не знаешь, с чего начать, - начни с рода: пока слово не отнесено к роду, таблицы падежей некуда приложить.</p>
     <div class="idx">${GROUPS.map(g => `<section>
       <h3>${g[0]}</h3>
       ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">
@@ -1779,7 +1816,7 @@ SYSDARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); })
 applyTheme(readTheme());
 
 /* ============ СТАРТ ============ */
-renderAlpha(); renderRod(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
+renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
 renderNumTog();
 buildIndex();
