@@ -574,7 +574,7 @@ dobrylepszynajlepszyzłygorszynajgorszyduży / wielkiwiększynajwiększymałymni
 «Чем» - niż или od, но дальше начинается то, чего в русском нет по форме.
 конструкциязначениепример
 niż + падеж по роличем - падеж от того, чем было бы слово в полной фразеJest wyższy niż ja [jestem]. · Lubię Annę bardziej niż Marię [lubię].od + Dopełniaczчем - то же значениеJest wyższy ode mnie.tak … jakтакой же … какJest tak wysoki jak ja.nie tak … jakне такой … какNie jest tak drogi jak tamten.taki sam jakтакой же, какMam taki sam telefon jak ty.ten samтот же самыйMieszkamy w tym samym domu.o wiele · dużo · znacznieнамногоo wiele lepszy · dużo taniejtrochę · niecoнемногоtrochę większy · nieco późniejcoraz + сравнительнаявсё … и …Jest coraz zimniej. · Coraz więcej ludzi.im …, tym …чем …, тем …Im szybciej, tym lepiej.jak naj- + сравнительнаякак можно …jak najszybciej · jak najlepiejza · zbytслишкомZa drogo. · Zbyt trudne.dość · wystarczającoдостаточноdość ciepło · wystarczająco dużyze wszystkich · w …самый из / вnajlepszy ze wszystkich · najstarszy w rodzinie
-za - это «слишком», а не «за». Za drogo - «слишком дорого», za mało - «слишком мало». Предлог za («за») выглядит так же, и позиция не различает: Idę za wysokim mężczyzną - «иду за высоким мужчиной». Различает форма: в значении «слишком» za стоит при несклоняемом прилагательном или наречии (za drogo, ta sukienka jest za droga), предлог - при именной группе в падеже (za domem, za rogiem).
+za — это и «слишком», и предлог «за». В значении «слишком» za непосредственно модифицирует признак или количество: za drogi, za droga, za drogo, za dużo. Как предлог za вводит именную группу в падеже: za domem, za wysokim mężczyzną. Значение и форму показывает вся конструкция, а не само слово za.
 coraz и im…, tym… берут только сравнительную степень. Coraz lepiej, не coraz dobrze. В Im więcej, tym lepiej обе части в сравнительной, запятая обязательна.
 Подводные камни
 Прилагательное после być остаётся в именительном. Jestem zmęczony, но jestem lekarzem. Появилось существительное - обе части уходят в творительный: jestem dobrym lekarzem.
@@ -675,6 +675,19 @@ czy открывает вопрос, на который отвечают «да
 Вопросительные слова
 словозначениепример
 ktoктоKto to jest?coчтоCo to jest?jaki / jaka / jakieкакой (качество, любой признак)Jaki jest dzisiaj dzień? - Słoneczny.który / która / któreкоторый (выбор из известного набора)Który dzień tygodnia lubisz najbardziej?czyj / czyja / czyjeчейCzyja to torba?ileсколькоIle to kosztuje?gdzieгдеGdzie mieszkasz?dokądкудаDokąd idziesz?skądоткудаSkąd jesteś?kiedyкогдаKiedy wracasz?dlaczegoпочемуDlaczego się spóźniłeś?jakкакJak się masz?po coзачемPo co to robisz?
+Место и направление: одна система
+вопросчто спрашиваемответ
+Gdzie jesteś?где — положениеW domu. · Tutaj.
+Dokąd idziesz?куда — цель движенияDo domu. · Tam.
+Skąd wracasz?откуда — исходная точкаZ pracy. · Stamtąd.
+Którędy iść?каким путёмTędy. · Tamtędy.
+В разговоре gdzie часто заменяет dokąd. Gdzie idziesz? звучит естественно, но точная система различает положение gdzie? и направление dokąd?. Пары ответов: tu / tutaj — здесь, tam — там/туда, stąd — отсюда, stamtąd — оттуда, tędy / tamtędy — этим/тем путём.
+В придаточном места
+связкапример
+tam, gdzie…Zostań tam, gdzie jesteś.
+tam, dokąd…Idź tam, dokąd prowadzi znak.
+stamtąd, skąd…Wrócił stamtąd, skąd wyjechał.
+tędy, którędy…Idź tędy, którędy szliśmy wczoraj.
 kto и co: склонение
 Вопросительное слово стоит в том падеже, которого требует глагол или предлог внутри самого вопроса. Отсюда Czego szukasz?, а не «Co szukasz?».
 падежktoco
@@ -768,7 +781,7 @@ za tydzień - это «через неделю», а не «за неделю».
 1 / 2–4 / 5+rok · lata · lat - mam 21 lat, 22 lata, 25 lat
 деньгиzłoty · złote · złotych - 2 złote, 5 złotych, 22 złote
 неточный счётkilka · kilkanaście (11–19) · kilkadziesiąt · parę
-ile требует Dopełniacz: ile osób, ile lat, ile pieniędzy - как «5 и больше», потому что это то же самое правило. У несчётных - единственное число: ile czasu, ile cukru. О мужчинах - форма ilu: ilu studentów, ilu ludzi, и глагол в среднем роде: Ilu ludzi przyszło?
+ile / ilu: сначала определи падеж всей группы. В Mianownik и Biernik после ile существительное стоит в Dopełniacz множественного числа: ile osób, ile lat, ile pieniędzy; у несчётных — в единственном: ile czasu, ile cukru. О мужчинах — форма ilu: ilu studentów, ilu ludzi, а глагол обычно в среднем роде единственного числа: Ilu ludzi przyszło? В косвенных падежах склоняется вся группа: Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?
 Дроби
 числокак называетсяпримеры
 1/2pół · połowapół godziny · połowa klasy · o pół roku starszy1/4ćwierććwierć litra · kwadrans - это четверть часа3/4trzy czwartetrzy czwarte szklanki1,5półtora · półtorejpółtora roku (м. и ср.) · półtorej godziny (ж.)2,5dwa i półdwa i pół tygodnia
@@ -1053,7 +1066,7 @@ wy-byściechcielibyściechciałybyście
 oni / one-bychcielibychciałyby
 Куда прилипает -by
 Chciałbym kawę.слитно с глаголом - база
-Gdybym miał czas…слитно с gdyby, żeby, aby, czyby
+Gdybym miał czas…слитно в самостоятельных словах: gdyby, żeby, aby, choćby, czyżby
 Ja bym tego nie zrobił.раздельно после местоимения
 Chętnie bym pojechał.раздельно после наречия
 Należałoby zadzwonić.безличная форма
@@ -1907,6 +1920,17 @@ Wiem, że on przyjdzie.факт: «знаю, что придёт» - прост�
 Chcę, żeby on przyszedł.желание/цель, субъект другой - обязательно żeby
 Chcę przyjść.субъект тот же - просто инфинитив, без że/żeby
 bo vs ponieważ vs dlatego że. Значение одинаковое, разница в регистре: bo - разговорное и самое частое, ponieważ - нейтральное и письменное, dlatego że - подчёркивает причину сильнее обоих.
+Из придаточного — в короткую конструкцию
+Ту же мысль часто можно выразить без придаточного — через существительное или отглагольное существительное. Это особенно обычно в письменной и официальной речи.
+придаточноекороткая конструкция
+Kiedy wróciłem do domu, zadzwoniłem do Anny.Po powrocie do domu zadzwoniłem do Anny.
+Po tym, jak podpisałem umowę, dostałem klucze.Po podpisaniu umowy dostałem klucze.
+Zanim wyjdę, zamknę okna.Przed wyjściem zamknę okna.
+Ponieważ padał deszcz, zostaliśmy w domu.Z powodu deszczu zostaliśmy w domu.
+Mimo że był zmęczony, pracował dalej.Mimo zmęczenia pracował dalej.
+Uczę się, żeby zdać egzamin.Uczę się w celu zdania egzaminu. официально
+Падеж задаёт новая конструкция. po + Miejscownik: po powrocie, po podpisaniu; przed + Narzędnik: przed wyjściem; z powodu, mimo, w celu + Dopełniacz: z powodu deszczu, mimo zmęczenia, w celu zdania.
+Проверь, кто выполняет действие. При одном субъекте сокращение прямое: Kiedy wróciłem, zadzwoniłem → Po powrocie zadzwoniłem. Если субъекты разные, их нужно назвать: Kiedy wróciłem, Anna zadzwoniła → Po moim powrocie Anna zadzwoniła. Без moim смысл станет двусмысленным.
 Косвенная речь
 Главное здесь - то, чего не происходит: время не сдвигается. Польский сохраняет ту же форму, что была в прямой речи, ровно как русский.
 прямая речькосвеннаячто произошло
@@ -1969,7 +1993,7 @@ MianownikpanpanipaństwopanowiepanieDopełniaczpanapanipaństwapanówpańCelowni
 pani почти не склоняется. Одна форма на родительный, дательный и предложный: dla pani, dziękuję pani, mówię o pani. Отдельная форма есть только у винительного и творительного - panią. Парадигма редкая, и ошибку в ней слышно сразу.
 Как это работает в речи
 фразак комуформа глагола
-Czy pan ma chwilę?к мужчинеглагол в 3-м лице единственногоCzy pani wie, gdzie…?к женщинето жеCzy państwo są gotowi?к смешанной группе3-е лицо множественного, мужско-личноеCzy panowie czekają?к нескольким мужчинаммужско-личноеCzy panie sobie życzą?к нескольким женщинамне мужско-личноеPaństwo Kowalscy byli wczoraj.супруги Ковальскиемужско-личное согласованиеProszę pana! · Proszę pani!оклик незнакомогоWołacz - вкладка «Существительные»Panie Adamie · Pani Annoимя после pan / paniзнакомы, но на «вы»
+Czy pan ma chwilę?к мужчинеглагол в 3-м лице единственногоCzy pani wie, gdzie…?к женщинето жеCzy państwo są gotowi?к смешанной группе3-е лицо множественного, мужско-личноеCzy panowie czekają?к нескольким мужчинаммужско-личноеCzy panie sobie życzą?к нескольким женщинамне мужско-личноеPaństwo Kowalscy byli wczoraj.супруги Ковальскиемужско-личное согласованиеProszę pana! · Proszę pani!оклик незнакомогоустойчивое обращение, не WołaczPanie Adamie · Pani Annoимя после pan / paniзнакомы, но на «вы»
 Глагол в третьем лице, а не во втором множественном. Czy pan ma czas? - буквально «имеет ли пан время». Русское «вы» - это польское wy, и wy к незнакомому звучит как обращение к толпе или как хамство.
 państwo - три разных слова. Вежливое «вы» к смешанной компании (Czy państwo są gotowi?), «супруги» (państwo Kowalscy) и «государство» (средний род: państwo polskie, w tym państwie). Различает только контекст.
 Дистанция задаётся тем, что стоит после pan. Proszę pana - незнакомый. Panie Adamie - знакомы, но на «вы». Pan Kowalski - официально и обычно о третьем лице, а не в лицо.

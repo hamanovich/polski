@@ -25,6 +25,21 @@ function renderConj(){
       <tr><td class="w">Chcę przyjść.</td><td>субъект тот же - просто инфинитив, без że/żeby</td></tr>
     </table>
     <div class="tip"><b>bo vs ponieważ vs dlatego że.</b> Значение одинаковое, разница в регистре: <span class="pl">bo</span> - разговорное и самое частое, <span class="pl">ponieważ</span> - нейтральное и письменное, <span class="pl">dlatego że</span> - подчёркивает причину сильнее обоих.</div>
+
+    <h3>Из придаточного — в короткую конструкцию</h3>
+    <p class="lead">Ту же мысль часто можно выразить без придаточного — через существительное или отглагольное существительное. Это особенно обычно в письменной и официальной речи.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>придаточное</th><th>короткая конструкция</th></tr>
+      <tr><td class="w" style="white-space:normal">Kiedy wróciłem do domu, zadzwoniłem do Anny.</td><td class="g" style="white-space:normal">Po powrocie do domu zadzwoniłem do Anny.</td></tr>
+      <tr><td class="w" style="white-space:normal">Po tym, jak podpisałem umowę, dostałem klucze.</td><td class="g" style="white-space:normal">Po podpisaniu umowy dostałem klucze.</td></tr>
+      <tr><td class="w" style="white-space:normal">Zanim wyjdę, zamknę okna.</td><td class="g" style="white-space:normal">Przed wyjściem zamknę okna.</td></tr>
+      <tr><td class="w" style="white-space:normal">Ponieważ padał deszcz, zostaliśmy w domu.</td><td class="g" style="white-space:normal">Z powodu deszczu zostaliśmy w domu.</td></tr>
+      <tr><td class="w" style="white-space:normal">Mimo że był zmęczony, pracował dalej.</td><td class="g" style="white-space:normal">Mimo zmęczenia pracował dalej.</td></tr>
+      <tr><td class="w" style="white-space:normal">Uczę się, żeby zdać egzamin.</td><td class="g" style="white-space:normal">Uczę się w celu zdania egzaminu. <span class="note">официально</span></td></tr>
+    </table></div>
+    <div class="tip"><b>Падеж задаёт новая конструкция.</b> <span class="pl">po + Miejscownik</span>: <span class="pl">po powrocie, po podpisaniu</span>; <span class="pl">przed + Narzędnik</span>: <span class="pl">przed wyjściem</span>; <span class="pl">z powodu, mimo, w celu + Dopełniacz</span>: <span class="pl">z powodu deszczu, mimo zmęczenia, w celu zdania</span>.</div>
+    <div class="tip"><b>Проверь, кто выполняет действие.</b> При одном субъекте сокращение прямое: <span class="pl">Kiedy wróciłem, zadzwoniłem → Po powrocie zadzwoniłem</span>. Если субъекты разные, их нужно назвать: <span class="pl">Kiedy wróciłem, Anna zadzwoniła → Po moim powrocie Anna zadzwoniła</span>. Без <span class="pl">moim</span> смысл станет двусмысленным.</div>
+
     <h3>Косвенная речь</h3>
     <p class="lead">Главное здесь - то, чего <b>не</b> происходит: время не сдвигается. Польский сохраняет ту же форму, что была в прямой речи, ровно как русский.</p>
     <div class="scroll"><table class="vt">
@@ -607,7 +622,7 @@ function vTryby(){
     <h3>Куда прилипает -by</h3>
     <table>
       <tr><td style="width:38%" class="w">Chciałbym kawę.</td><td>слитно с глаголом - база</td></tr>
-      <tr><td class="w">Gdybym miał czas…</td><td>слитно с gdyby, żeby, aby, czyby</td></tr>
+      <tr><td class="w">Gdybym miał czas…</td><td>слитно в самостоятельных словах: gdyby, żeby, aby, choćby, czyżby</td></tr>
       <tr><td class="w">Ja bym tego nie zrobił.</td><td>раздельно после местоимения</td></tr>
       <tr><td class="w">Chętnie bym pojechał.</td><td>раздельно после наречия</td></tr>
       <tr><td class="w">Należałoby zadzwonić.</td><td>безличная форма</td></tr>
@@ -900,7 +915,7 @@ function renderNum(){
       <tr><td>деньги</td><td class="w">złoty · złote · złotych - <span class="g">2 złote, 5 złotych, 22 złote</span></td></tr>
       <tr><td>неточный счёт</td><td class="w">kilka · kilkanaście (11–19) · kilkadziesiąt · parę</td></tr>
     </table></div>
-    <div class="tip"><b>ile</b> требует Dopełniacz: <span class="pl">ile osób, ile lat, ile pieniędzy</span> - как «5 и больше», потому что это то же самое правило. У несчётных - единственное число: <span class="pl">ile czasu, ile cukru</span>. О мужчинах - форма <span class="pl">ilu</span>: <span class="pl">ilu studentów, ilu ludzi</span>, и глагол в среднем роде: <span class="pl">Ilu ludzi przyszło?</span></div>
+    <div class="tip"><b><span class="pl">ile / ilu</span>: сначала определи падеж всей группы.</b> В Mianownik и Biernik после <span class="pl">ile</span> существительное стоит в Dopełniacz множественного числа: <span class="pl">ile osób, ile lat, ile pieniędzy</span>; у несчётных — в единственном: <span class="pl">ile czasu, ile cukru</span>. О мужчинах — форма <span class="pl">ilu</span>: <span class="pl">ilu studentów, ilu ludzi</span>, а глагол обычно в среднем роде единственного числа: <span class="pl">Ilu ludzi przyszło?</span> В косвенных падежах склоняется вся группа: <span class="pl">Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?</span></div>
 
     <h3>Дроби</h3>
     <div class="scroll"><table class="vt">
@@ -985,6 +1000,24 @@ function renderQ(){
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>пример</th></tr>
       ${QWORDS.map(q => `<tr><td class="w">${q[0]}</td><td style="color:var(--muted)">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
+    </table></div>
+
+    <h3>Место и направление: одна система</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>вопрос</th><th>что спрашиваем</th><th>ответ</th></tr>
+      <tr><td class="w" style="white-space:normal">Gdzie jesteś?</td><td style="white-space:normal">где — положение</td><td class="g" style="white-space:normal">W domu. · Tutaj.</td></tr>
+      <tr><td class="w" style="white-space:normal">Dokąd idziesz?</td><td style="white-space:normal">куда — цель движения</td><td class="g" style="white-space:normal">Do domu. · Tam.</td></tr>
+      <tr><td class="w" style="white-space:normal">Skąd wracasz?</td><td style="white-space:normal">откуда — исходная точка</td><td class="g" style="white-space:normal">Z pracy. · Stamtąd.</td></tr>
+      <tr><td class="w" style="white-space:normal">Którędy iść?</td><td style="white-space:normal">каким путём</td><td class="g" style="white-space:normal">Tędy. · Tamtędy.</td></tr>
+    </table></div>
+    <div class="tip"><b>В разговоре <span class="pl">gdzie</span> часто заменяет <span class="pl">dokąd</span>.</b> <span class="pl">Gdzie idziesz?</span> звучит естественно, но точная система различает положение <span class="pl">gdzie?</span> и направление <span class="pl">dokąd?</span>. Пары ответов: <span class="pl">tu / tutaj</span> — здесь, <span class="pl">tam</span> — там/туда, <span class="pl">stąd</span> — отсюда, <span class="pl">stamtąd</span> — оттуда, <span class="pl">tędy / tamtędy</span> — этим/тем путём.</div>
+    <h3>В придаточном места</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>связка</th><th>пример</th></tr>
+      <tr><td class="w" style="white-space:normal">tam, gdzie…</td><td class="g" style="white-space:normal">Zostań tam, gdzie jesteś.</td></tr>
+      <tr><td class="w" style="white-space:normal">tam, dokąd…</td><td class="g" style="white-space:normal">Idź tam, dokąd prowadzi znak.</td></tr>
+      <tr><td class="w" style="white-space:normal">stamtąd, skąd…</td><td class="g" style="white-space:normal">Wrócił stamtąd, skąd wyjechał.</td></tr>
+      <tr><td class="w" style="white-space:normal">tędy, którędy…</td><td class="g" style="white-space:normal">Idź tędy, którędy szliśmy wczoraj.</td></tr>
     </table></div>
 
     <h3>kto и co: склонение</h3>
@@ -1212,7 +1245,7 @@ function renderAdj(){
       <tr><th>конструкция</th><th>значение</th><th>пример</th></tr>
       ${POROWN.map(p => `<tr><td class="w" style="white-space:normal">${p[0]}</td><td style="color:var(--muted)">${p[1]}</td><td class="g" style="white-space:normal">${p[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">za</span> - это «слишком», а не «за».</b> <span class="pl">Za drogo</span> - «слишком дорого», <span class="pl">za mało</span> - «слишком мало». Предлог <span class="pl">za</span> («за») выглядит так же, и позиция не различает: <span class="pl">Idę za wysokim mężczyzną</span> - «иду за высоким мужчиной». Различает форма: в значении «слишком» <span class="pl">za</span> стоит при несклоняемом прилагательном или наречии (<span class="pl">za drogo, ta sukienka jest za droga</span>), предлог - при именной группе в падеже (<span class="pl">za domem, za rogiem</span>).</div>
+    <div class="tip"><b><span class="pl">za</span> — это и «слишком», и предлог «за».</b> В значении «слишком» <span class="pl">za</span> непосредственно модифицирует признак или количество: <span class="pl">za drogi, za droga, za drogo, za dużo</span>. Как предлог <span class="pl">za</span> вводит именную группу в падеже: <span class="pl">za domem, za wysokim mężczyzną</span>. Значение и форму показывает вся конструкция, а не само слово <span class="pl">za</span>.</div>
     <div class="tip"><b><span class="pl">coraz</span> и <span class="pl">im…, tym…</span> берут только сравнительную степень.</b> <span class="pl">Coraz lepiej</span>, не <span class="bad">coraz dobrze</span>. В <span class="pl">Im więcej, tym lepiej</span> обе части в сравнительной, запятая обязательна.</div>
     <h3>Подводные камни</h3>
     <ol class="pit">

@@ -917,7 +917,7 @@ const PAN_USE = [
  ["Czy panowie czekają?","к нескольким мужчинам","мужско-личное"],
  ["Czy panie sobie życzą?","к нескольким женщинам","не мужско-личное"],
  ["Państwo Kowalscy byli wczoraj.","супруги Ковальские","мужско-личное согласование"],
- ["Proszę pana! · Proszę pani!","оклик незнакомого","Wołacz - вкладка «Существительные»"],
+ ["Proszę pana! · Proszę pani!","оклик незнакомого","устойчивое обращение, не Wołacz"],
  ["Panie Adamie · Pani Anno","имя после pan / pani","знакомы, но на «вы»"]
 ];
 const NAZW_DEKL = [
