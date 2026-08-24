@@ -934,7 +934,7 @@ function renderNum(){
     <table>
       ${PROCENT.map(p => `<tr><td style="width:22%" class="c">${p[0]}</td><td class="w">${p[1]}</td></tr>`).join("")}
     </table>
-    <div class="tip"><b><span class="pl">procent</span> после числительного не склоняется.</b> <span class="pl">dwa procent, pięć procent, sto procent</span> - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: <span class="pl">pół procent</span>, <span class="pl">półtora procent</span>, <span class="pl">dwa i pół procent</span> - и остаётся такой во всех падежах: <span class="pl">o dwóch i pół procent</span>. Склоняется <span class="pl">procent</span> только там, где числительного рядом нет: <span class="pl">w stu procentach</span> («на все сто»), <span class="pl">wysokość procentu</span>.</div>
+    <div class="tip"><b><span class="pl">procent</span> после числительного не склоняется.</b> <span class="pl">dwa procent, pięć procent, sto procent</span> - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: <span class="pl">pół procent</span>, <span class="pl">półtora procent</span>, <span class="pl">dwa i pół procent</span> - и остаётся такой во всех падежах: <span class="pl">o dwóch i pół procent</span>. Формы <span class="pl">pół procenta, półtora procenta</span> часто слышны в живой речи, но словарная норма их не рекомендует. Склоняется <span class="pl">procent</span> только там, где числительного рядом нет: <span class="pl">w stu procentach</span> («на все сто»), <span class="pl">wysokość procentu</span>.</div>
 
   </div>`;
 }
@@ -968,8 +968,9 @@ function renderPart(){
     <h3>Слитно или раздельно</h3>
     <div class="scroll"><table class="vt">
       <tr><th>как</th><th>правило</th><th>примеры</th></tr>
-      ${PARTPIS.map(p => `<tr><td class="${p[0]==="слитно"?"c":"cq"}">${p[0]}</td><td>${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
+      ${PARTPIS.map(p => `<tr><td class="${p[0].startsWith("слитно")?"c":"cq"}">${p[0]}</td><td>${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
+    <div class="tip"><b>Норма с 1 января 2026 года.</b> Теперь <span class="pl">nie</span> пишется слитно с прилагательными и образованными от них наречиями во всех степенях: <span class="pl">nielepszy, nienajlepszy, niegorzej, nienajlepiej</span>. В старых словарях и текстах ещё встречается прежнее раздельное написание.</div>
     <div class="tip"><b>-że усиливает и подгоняет приказ.</b> <span class="pl">Idź!</span> - команда, <span class="pl">Idźże!</span> - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: <span class="pl">chodźże, weźże, dajże</span>.</div>
 
     <h3>Готовые реплики</h3>
@@ -1103,7 +1104,15 @@ function renderNeg(){
 function renderOrder(){
   $("#s-order").innerHTML = `<div class="panel">
     <h2>Порядок слов</h2>
-    <p class="lead">Польский свободнее русского в порядке подлежащего и сказуемого, но у безударных словечек - клитик - есть жёсткие правила места.</p>
+    <p class="lead">Польский, как и русский, допускает несколько порядков слов. Выбор не случайный: нейтральная фраза обычно ведёт от уже известной темы к новому сообщению, а у безударных словечек - клитик - есть ещё и жёсткие правила места.</p>
+
+    <h3>Тема и новое сообщение</h3>
+    <p>То, о чём уже идёт речь, обычно ставят раньше, а ответ на главный вопрос - ближе к концу. Поэтому одинаковые слова в разном порядке отвечают на разные вопросы.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>вопрос</th><th>нейтральный ответ</th><th>новое</th></tr>
+      ${TEMA_REMA.map(r => `<tr><td class="g">${r[0]}</td><td class="w">${r[1]}</td><td class="note">${r[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Это тенденция, не железная схема.</b> Контрастное ударение может выделить почти любое слово, но без особого контекста новое сообщение естественнее звучит в конце: <span class="pl">Klucze są na stole</span> и <span class="pl">Na stole są klucze</span> описывают ту же сцену, но не сообщают одно и то же.</div>
 
     <h3>Клитики: mi, ci, go, mu, się…</h3>
     <p>Короткие безударные слова никогда не открывают предложение и никогда не идут сразу после предлога. Обычно они льнут ко второму месту в предложении - сразу после первого ударного слова или перед глаголом.</p>
@@ -1399,6 +1408,7 @@ function renderPron(){
 }
 
 function renderBridge(){
+  const falseGroups = [...new Set(FALSE.map(f => f[3]))];
   $("#s-bridge").innerHTML = `<div class="panel">
     <h2>Фонетические соответствия</h2>
     <p class="lead">Работает на любом незнакомом слове.</p>
@@ -1408,8 +1418,13 @@ function renderBridge(){
     <p class="pl">kawa (кава) · herbata (гарбата) · dziękuję (дзякуй) · ciekawy (цікавы) · skarpetki (шкарпэткі) · szukać (шукаць) · rozmawiać (размаўляць) · ołówek (аловак) · rower (ровар)</p>
     <div class="tip"><b>ł - это ў.</b> <span class="pl">był</span> = «быў», <span class="pl">bułka</span> = «буўка». Звук уже в артикуляции с детства; русскоязычные ставят его месяцами. Проблема остаётся только на письме.</div>
     <h3>Ложные друзья</h3>
-    <div class="scroll"><table><tr><th>слово</th><th>значит</th><th>не значит</th></tr>
-      ${FALSE.map(f => `<tr><td class="w">${f[0]}</td><td>${f[1]}</td><td style="color:var(--muted)">${f[2]}</td></tr>`).join("")}</table></div>
+    <p class="lead">100 частых ловушек для русско- и белорусскоязычных. В таблицах есть и полностью разные слова, и частичные ложные друзья: у последних совпадает одно значение, но привычный перенос другого значения приводит к ошибке.</p>
+    <div class="false-friends">
+      ${falseGroups.map(group => `<h4>${group}</h4>
+        <div class="scroll"><table class="vt"><tr><th>слово</th><th>значит</th><th>не значит</th></tr>
+          ${FALSE.filter(f => f[3] === group).map(f => `<tr><td class="w">${f[0]}</td><td>${f[1]}</td><td class="note">${f[2]}</td></tr>`).join("")}
+        </table></div>`).join("")}
+    </div>
   </div>`;
 }
 

@@ -119,6 +119,8 @@ nav a:focus-visible,.chip:focus-visible,.tog button:focus-visible{outline:2px so
 h2,.page-title{font-family:var(--serif);font-size:var(--fs-h2);font-weight:600;margin:0 0 4px}
 h3{font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px;font-weight:600}
 h3:first-child{margin-top:0}
+.false-friends h4{font-size:var(--fs-note);margin:20px 0 7px;font-weight:600;color:var(--ink)}
+.false-friends h4:first-child{margin-top:14px}
 .alink{
   font:inherit;background:none;border:0;padding:0 0 0 6px;cursor:pointer;
   color:var(--line);opacity:0;transition:opacity .12s;vertical-align:baseline;

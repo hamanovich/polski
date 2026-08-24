@@ -90,8 +90,29 @@ assert(!verbs.html.includes("czyby"));
 assert(documents.get("s-alt").html.includes("Чередования: сводная карта"));
 assert(!documents.get("s-ludzie").html.includes("Wołacz - вкладка"));
 assert(documents.get("s-num").html.includes("Z iloma osobami rozmawiałeś?"));
+assert(documents.get("s-num").html.includes("pół procenta, półtora procenta"));
 assert(documents.get("s-conj").html.includes("Po moim powrocie Anna zadzwoniła"));
 assert(documents.get("s-q").html.includes("Którędy iść?"));
+assert(documents.get("s-cases").document.querySelector("#s-cases")?.textContent.includes("duchu"));
+assert(!documents.get("s-verbs").html.includes("Pociąg już odszedł"));
+
+const order = documents.get("s-order");
+assert.equal(order.document.querySelectorAll("#s-order .vt")[0]?.querySelectorAll("tr").length, 4);
+assert(order.html.includes("Na stole są klucze"));
+
+const particles = documents.get("s-part");
+assert(particles.html.includes("Норма с 1 января 2026 года"));
+assert(particles.html.includes("nielepszy, nienajlepszy"));
+
+const bridge = documents.get("s-bridge");
+const falseFriendCells = [...bridge.document.querySelectorAll(".false-friends tr td:first-child")];
+assert.equal(falseFriendCells.length, 100);
+assert.equal(new Set(falseFriendCells.map(cell => cell.textContent.trim())).size, 100);
+assert.equal(bridge.document.querySelectorAll(".false-friends h4").length, 5);
+assert(bridge.html.includes("pytać"));
+assert(bridge.html.includes("jutro"));
+assert(bridge.html.includes("puszka"));
+assert(bridge.html.includes("lustro"));
 
 assert.match(css, /\.sec\{display:block\}/);
 assert.match(css, /\.js \.sec\{display:none\}/);

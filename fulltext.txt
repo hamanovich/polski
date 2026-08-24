@@ -478,8 +478,8 @@ Wołacz
 pan→paniePiotr→PiotrzeAdam→Adamiedoktor→doktorze
 то же чередование, что в предложном
 мужской → -u
-Marek→Markusyn→synulekarz→lekarzu
-после мягких и k, g
+Marek→Markusyn→synulekarz→lekarzuduch→duchu
+после мягких и k, g, ch
 женский
 mama→mamoAnna→Annosiostra→siostro
 -o
@@ -791,7 +791,7 @@ półtora или półtorej. Единственная дробь с родом: 
 Разделитель дробной части - запятая, читается przecinek. Точка в этой роли не используется вообще.
 Проценты
 1%jeden procent2%dwa procent5%pięć procent20%dwadzieścia procent0,5%pół procent100%sto procent
-procent после числительного не склоняется. dwa procent, pięć procent, sto procent - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: pół procent, półtora procent, dwa i pół procent - и остаётся такой во всех падежах: o dwóch i pół procent. Склоняется procent только там, где числительного рядом нет: w stu procentach («на все сто»), wysokość procentu.
+procent после числительного не склоняется. dwa procent, pięć procent, sto procent - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: pół procent, półtora procent, dwa i pół procent - и остаётся такой во всех падежах: o dwóch i pół procent. Формы pół procenta, półtora procenta часто слышны в живой речи, но словарная норма их не рекомендует. Склоняется procent только там, где числительного рядом нет: w stu procentach («на все сто»), wysokość procentu.
 СпряженияВременаНаклоненияПричастия и пассивУправлениеСловарь глаголов
 Четыре спряжения
 Тип определяется парой форм «я» и «ты»: -ę/-esz, -ę/-isz, -am/-asz, -em/-esz. Знаешь пару - знаешь всю парадигму.
@@ -1203,7 +1203,7 @@ przyjśćprzychodzićprzyjechaćprzyjeżdżaćwyjśćwychodzićwyjechaćwyjeżd�
 Зачем это нужно на практике. «Поезд отходит в пять» - регулярно, значит несовершенный: Pociąg odjeżdża o piątej. «Поезд ушёл» - однократно и законченно: Pociąg odjechał. Оба слова от jechać, но берутся из разных половин пары.
 iść с приставками: рабочие фразы
 глаголпереводпример
-pójśćпойтиPójdę tam jutro.przyjśćприйтиPrzyszedł o piątej.wyjśćвыйтиWyszła z domu.wejśćвойтиWejdź, proszę!przejśćперейтиPrzejdź przez ulicę.dojśćдойтиJak dojść do dworca?odejśćотойти, уйтиPociąg już odszedł.obejśćобойтиObeszliśmy całe miasto.
+pójśćпойтиPójdę tam jutro.przyjśćприйтиPrzyszedł o piątej.wyjśćвыйтиWyszła z domu.wejśćвойтиWejdź, proszę!przejśćперейтиPrzejdź przez ulicę.dojśćдойтиJak dojść do dworca?odejśćотойти, уйтиOdszedł od okna.obejśćобойтиObeszliśmy całe miasto.
 Куда именно. do + Dopełniacz - в здание, город, страну: do sklepu, do Polski. na + Biernik - на мероприятие, открытое место, «в» для некоторых стран: na pocztę, na uniwersytet, na Węgry. w + Biernik - w góry. do - идти к человеку: idę do lekarza.
 Управление прилагательных
 Та же проблема, что у глаголов, только менее заметная: być оставляет прилагательное в именительном, но собственное управление прилагательного никуда не девается.
@@ -2038,7 +2038,12 @@ ani… ani и żaden
 Nie mam ani czasu, ani pieniędzy.
 Отдельное отрицательное местоимение żaden / żadna / żadne - «никакой»: Żaden z nich nie przyszedł. Склоняется как прилагательное с окончаниями местоименного типа: żadnego, żadnej, żadnym.
 Порядок слов
-Польский свободнее русского в порядке подлежащего и сказуемого, но у безударных словечек - клитик - есть жёсткие правила места.
+Польский, как и русский, допускает несколько порядков слов. Выбор не случайный: нейтральная фраза обычно ведёт от уже известной темы к новому сообщению, а у безударных словечек - клитик - есть ещё и жёсткие правила места.
+Тема и новое сообщение
+То, о чём уже идёт речь, обычно ставят раньше, а ответ на главный вопрос - ближе к концу. Поэтому одинаковые слова в разном порядке отвечают на разные вопросы.
+вопроснейтральный ответновое
+Gdzie są klucze?Klucze są na stole.na stole — где именноCo jest na stole?Na stole są klucze.klucze — что именноKto kupił bilety?Bilety kupiła Anna.Anna — кто именно
+Это тенденция, не железная схема. Контрастное ударение может выделить почти любое слово, но без особого контекста новое сообщение естественнее звучит в конце: Klucze są na stole и Na stole są klucze описывают ту же сцену, но не сообщают одно и то же.
 Клитики: mi, ci, go, mu, się…
 Короткие безударные слова никогда не открывают предложение и никогда не идут сразу после предлога. Обычно они льнут ко второму месту в предложении - сразу после первого ударного слова или перед глаголом.
 клитиказначениепример
@@ -2141,7 +2146,8 @@ Ani słowa! · Ani jeden.Усиленное отрицание.
 Двойное отрицание обязательно. Nikt nic nie wie. · Nigdy tam nie byłem. - nie при глаголе остаётся, даже когда уже есть nikt или nigdy. Здесь польский совпадает с русским и расходится с английским.
 Слитно или раздельно
 какправилопримеры
-слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»gdyby · żeby · aby · choćby · chociażby · czyżby · obyслитноnie с существительными, прилагательными, наречиями, причастиямиnieprawda · niegrzeczny · niedaleko · niepalącyслитноnie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельноby после союза, если сочетание не закреплённое словоczy by · albo by · to by · jak byраздельноby с безличными формамиmożna by · trzeba by · warto by
+слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»gdyby · żeby · aby · choćby · chociażby · czyżby · obyслитноnie с существительными, прилагательными, наречиями, причастиямиnieprawda · niegrzeczny · niedaleko · niepalącyслитно · норма-2026nie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельноby после союза, если сочетание не закреплённое словоczy by · albo by · to by · jak byраздельноby с безличными формамиmożna by · trzeba by · warto by
+Норма с 1 января 2026 года. Теперь nie пишется слитно с прилагательными и образованными от них наречиями во всех степенях: nielepszy, nienajlepszy, niegorzej, nienajlepiej. В старых словарях и текстах ещё встречается прежнее раздельное написание.
 -że усиливает и подгоняет приказ. Idź! - команда, Idźże! - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: chodźże, weźże, dajże.
 Готовые реплики
 No dobra. · No jasne. · No pewnie.ну ладно · ну ясно · ну конечно
@@ -2228,6 +2234,20 @@ wwewe Wrocławiu, we wtorek, we mniezzeze mną, ze szkoły, ze sobąododeode mni
 kawa (кава) · herbata (гарбата) · dziękuję (дзякуй) · ciekawy (цікавы) · skarpetki (шкарпэткі) · szukać (шукаць) · rozmawiać (размаўляць) · ołówek (аловак) · rower (ровар)
 ł - это ў. był = «быў», bułka = «буўка». Звук уже в артикуляции с детства; русскоязычные ставят его месяцами. Проблема остаётся только на письме.
 Ложные друзья
+100 частых ловушек для русско- и белорусскоязычных. В таблицах есть и полностью разные слова, и частичные ложные друзья: у последних совпадает одно значение, но привычный перенос другого значения приводит к ошибке.
+Быт, вещи и еда
 словозначитне значит
-zapomniećзабытьзапомнитьsklepмагазинсклепdywanковёрдиванogródсадогородurodaкрасотауродowoceфруктыовощиzakazзапретзаказdworzecвокзалдворецstółстолстулkrzesłoстулкреслоgrzecznyвежливыйгрешныйczaszkaчерепчашкаgrubyтолстыйгрубыйwygodnyудобныйвыгодныйpukaćстучать-ordynarnyхамский, грубыйординарный, обычныйpensjaзарплатапенсияranoутро, утромрано (это wcześnie)awansповышение по службеаванс (это zaliczka)nagłyвнезапныйнаглыйżabaлягушкажаба (это ropucha)biernyпассивныйберущий, активный - хотя корень тот же, что у braćdobaсутки, 24 часа-
+sklepмагазинсклеп — grobowiec / kryptamagazynсклад; журнал, телепередачамагазин — sklepdywanковёрдиван — kanapalustroзеркалолюстра — żyrandolpuszkaбанка, жестянкапушка — armata / działostółстолстул — krzesłokrzesłoстулкресло — fotelkubekкружкакубок — pucharszklankaстакансклянка, бутылка — butelkateczkaпапка, портфельтечка — rujaportfelкошелёкпортфель — teczka / aktówkagarniturкостюмгарнитур, набор — zestawpodłogaполподлог — fałszerstwopłotзаборплот — tratwapierogiвареники, пельменипечёные пироги — placki / ciastadyniaтыквадыня — melonowoceфруктыовощи — warzyważabaлягушкажаба — ropuchareceptaрецепт врачакулинарный рецепт — przepisprzepisправило; рецепт блюдарецепт врача — recepta
+Время и пространство
+словозначитне значит
+ranoутромрано — wcześniejutroзавтраутро — rano / poranekczasвремячас — godzinaniedzielaвоскресеньенеделя — tydzieńczasemиногдачасами — godzinaminigdyникогданигде — nigdziewcześnieрановечно — wieczniepółnocсевер; полночьтолько полночьpołudnieюг; полденьтолько полденьrokгодрок, судьба — loskrajстранакрай — skraj / regionmiastoгородместо — miejscedworzecвокзалдворец — pałacpokójкомната; миртолько покой — spokójogródсадогород — warzywnik
+Люди и качества
+словозначитне значит
+urodaкрасота, внешностьурод — potwórgrzecznyвежливый, послушныйгрешный — grzesznygrubyтолстый, большой по толщинегрубый — niegrzeczny / szorstkiwygodnyудобныйвыгодный — opłacalnyordynarnyхамский, вульгарныйобычный — zwyczajnynagłyвнезапныйнаглый — bezczelnydziwnyстранныйдивный, прекрасный — cudownysmutnyгрустныйсмутный, неясный — niejasnybezpiecznyбезопасныйбеспечный — beztroskiprzykryнеприятный, печальныйприкрытый — przykrytypilnyстарательный; срочныйпыльный — zakurzonyprzystojnyкрасивый, статныйпристойный — przyzwoitychytryхитрый; жадныйпросто сообразительный — sprytnyprzyjacielблизкий другпросто приятель, знакомый — kolega / znajomysławnyзнаменитыйславный, милый — miłyprezydentпрезидент; мэр крупного городатолько глава государстваobywatelгражданинобыватель — filister / laikposełдепутат; посланникпосол — ambasadorrodzinaсемьяродина — ojczyznachłopкрестьянин; разг. мужикхолоп, раб — niewolnik
+Действия
+словозначитне значит
+zapominać / zapomniećзабывать / забытьзапоминать — zapamiętywaćpytaćспрашиватьпытать — torturowaćpukaćстучатьпукать — puszczać bąkiuważaćсчитать, полагать; беречьсяуважать — szanowaćliczyćсчитать; рассчитыватьлечить — leczyćleczyćлечитьсчитать — liczyćsprzątaćубирать, наводить порядокспрятать — schowaćubrać (się)одеть(ся)убрать, удалить — posprzątać / usunąćnaprawićпочинить, исправитьнаправить, послать — skierowaćgadaćразговаривать, болтатьгадать — zgadywać / wróżyćmylić (się)путать(ся), ошибатьсямылить — mydlićkurzyćпылитькурить — palićzabićубитьзабить гвоздь / гол — wbić / strzelićpożyczyćодолжить или взять взаймыпожить — pomieszkaćzapraszaćприглашатьспрашивать — pytaćskazaćприговорить, осудитьсказать — powiedziećoszukaćобманутьобыскать — przeszukaćruszaćдвигать(ся), трогатьсярушить, разрушать — burzyćpodróżowaćпутешествоватьподружиться — zaprzyjaźnić sięzawracaćразворачивать(ся); надоедатьзаворачивать, оборачивать — owijać
+Учёба, работа и другие ловушки
+словозначитне значит
+urządучреждение, ведомствоурод — potwórzawódпрофессия; разочарованиезавод — fabrykapensjaзарплатапенсия — emeryturaawansповышение по службеаванс — zaliczkazakazзапретзаказ — zamówienieuwagaвнимание; замечаниеуважение — szacuneksprawaдело, вопроссправа — z prawejrzeczвещь; делоречь — mowazdanieпредложение; мнениездание — budynekprzykładпримерприклад ружья — kolbaprzypadekслучай; падежприпадок — napadmandatштраф; мандаттолько мандатdelegacjaкомандировка; делегациятолько делегацияdietaдиета; суточныетолько диетаnałógзависимость, порокналог — podatekbrakотсутствие, нехваткабрак — małżeństwo; wadalistписьмолист — liść / kartkarozprawaсудебное заседание; диссертациярасправа — samosądżałobaтрауржалоба — skargaczaszkaчерепчашка — filiżankaakademikстуденческое общежитиеакадемик — członek akademiibieliznaнижнее или постельное бельёбелизна — bielceraкожа, цвет лицасера — siarkastrychчердакстричь — strzycdziałkaучасток, дачасделка — transakcja
 Ударение - всегда предпоследний слог (кроме исключений во вкладке «Алфавит»).
