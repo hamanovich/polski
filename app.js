@@ -396,9 +396,82 @@ function casePanelHTML(c, num){
     <h3>Итог по падежу</h3>
     <div class="tip">${c.trap}</div>`;
 }
+
+function exerciseAnswersAttr(answers){
+  return encodeURIComponent(JSON.stringify(answers));
+}
+function exerciseControlHTML(control, key){
+  const answers = exerciseAnswersAttr(control.answers);
+  const label = control.label || "Ответ";
+  if(control.options){
+    return `<span class="exercise-field"><select class="exercise-control" data-key="${key}" data-answers="${answers}" aria-label="${label}">
+      <option value="">выбрать</option>${control.options.map(option => `<option value="${option}">${option}</option>`).join("")}
+    </select></span>`;
+  }
+  const width = Math.max(5, Math.min(16, Math.max(...control.answers.map(answer => answer.length)) + 2));
+  return `<span class="exercise-field"><input class="exercise-control" data-key="${key}" data-answers="${answers}"
+    aria-label="${label}" autocomplete="off" autocapitalize="none" spellcheck="false" size="${width}">
+    ${control.hint ? `<span class="exercise-lemma" aria-hidden="true">(${control.hint})</span>` : ""}</span>`;
+}
+function exerciseTaskHTML(task, number, testMode = false){
+  let body;
+  if(task.passage){
+    body = `<p class="exercise-sentence exercise-passage">${task.passage.map(part => typeof part === "string"
+      ? part : exerciseControlHTML(part, `${task.id}-${part.key}`)).join("")}</p>`;
+  }else{
+    const control = exerciseControlHTML(task, task.id);
+    body = `<p class="exercise-sentence">${task.prompt.replace("___", control)}</p>`;
+  }
+  return `<fieldset class="exercise-item" data-exercise-id="${task.id}">
+    <legend><span>${number}</span>${task.passage ? task.prompt : "Выберите или впишите форму"}</legend>
+    ${body}
+    <div class="exercise-feedback" role="status" aria-live="polite" hidden></div>
+    ${testMode ? "" : `<div class="exercise-item-actions">
+      <button type="button" class="exercise-button" data-action="check-item">Проверить</button>
+      <button type="button" class="exercise-link" data-action="reveal-item">Показать ответ</button>
+    </div>`}
+    <p class="exercise-explanation" hidden>${task.explanation}</p>
+  </fieldset>`;
+}
+function practiceAnswerCount(practice){
+  return practice.tasks.reduce((total, task) => total + (task.passage
+    ? task.passage.filter(part => typeof part !== "string").length : 1), 0);
+}
+function casePracticeHTML(practice, on = false){
+  return `<section class="practice panel content-variant case-practice-variant${on ? " on" : ""}" data-case="${practice.id}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Практика · ${practice.tasks.length} заданий · ${practiceAnswerCount(practice)} пропусков</p><h2>${practice.title}</h2></div>
+      <div class="exercise-progress" aria-live="polite">0 из ${practice.tasks.length} заданий</div>
+    </div>
+    <p class="lead">${practice.lead}</p>
+    <div class="exercise-list">${practice.tasks.map((task, index) => exerciseTaskHTML(task, index + 1)).join("")}</div>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-action="reset-practice">Начать заново</button></div>
+  </section>`;
+}
+function exerciseTestHTML(test, id, extraClass = ""){
+  return `<section class="practice panel exercise-test ${extraClass}" data-test="${id}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Проверка без подсказок</p><h2>${test.title}</h2></div>
+      <output class="test-score" aria-live="polite"></output>
+    </div>
+    <p class="lead">${test.lead}</p>
+    <div class="exercise-list exercise-test-list">${test.tasks.map((task, index) => exerciseTaskHTML(task, index + 1, true)).join("")}</div>
+    <div class="practice-actions">
+      <button type="button" class="exercise-button" data-action="check-test">Проверить тест</button>
+      <button type="button" class="exercise-link" data-action="reset-test">Начать заново</button>
+    </div>
+  </section>`;
+}
+function caseTestHTML(){ return exerciseTestHTML(CASE_TEST, "cases", "case-test"); }
+function renderCasePractice(){
+  const practice = CASE_PRACTICE.find(item => item.id === curCase) || CASE_PRACTICE[0];
+  $("#casePractice").innerHTML = casePracticeHTML(practice, true);
+  $("#caseTest").innerHTML = caseTestHTML();
+}
 function renderCase(){
   $("#casePanel").innerHTML = casePanelHTML(CASES.find(x => x.id === curCase), curNum);
   linkHeadings($("#casePanel"));
+  renderCasePractice();
 }
 
 /* --- глаголы --- */
@@ -772,6 +845,23 @@ function vLista(){
     <div class="tip"><b>Последняя колонка - не всегда видовая пара.</b> Чаще всего это она: <span class="pl">robić ↔ zrobić</span>, <span class="pl">kupować ↔ kupić</span> - одно и то же действие, разный вид. Но там, где стоит пометка, связка другая: <span class="pl">szukać → znaleźć</span> - это не «искать совершенного вида», а результат поиска; <span class="pl">znać → poznać</span> - переход в новое состояние; <span class="pl">czekać → poczekać</span> - «подождать немного». В таких случаях под формой указан настоящий видовой партнёр, если он есть: <span class="pl">znaleźć ↔ znajdować</span>, <span class="pl">poznać ↔ poznawać</span>, <span class="pl">usiąść ↔ siadać</span>, <span class="pl">zapamiętać ↔ zapamiętywać</span>. Практически колонка отвечает на вопрос «каким словом сказать результат», а это чаще и нужно.</div>
   </div>`;
 }
+function verbPracticeHTML(practice, on = false){
+  return `<section class="practice panel content-variant verb-practice-variant${on ? " on" : ""}" data-v="${practice.id}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Практика · ${practice.tasks.length} заданий · ${practiceAnswerCount(practice)} пропусков</p><h2>${practice.title}</h2></div>
+      <div class="exercise-progress" aria-live="polite">0 из ${practice.tasks.length} заданий</div>
+    </div>
+    <p class="lead">${practice.lead}</p>
+    <div class="exercise-list">${practice.tasks.map((task, index) => exerciseTaskHTML(task, index + 1)).join("")}</div>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-action="reset-practice">Начать заново</button></div>
+  </section>`;
+}
+function verbTestHTML(){ return exerciseTestHTML(VERB_TEST, "verbs", "verb-test"); }
+function renderVerbPractice(){
+  const practice = VERB_PRACTICE.find(item => item.id === curV) || VERB_PRACTICE[0];
+  $("#verbPractice").innerHTML = verbPracticeHTML(practice, true);
+  $("#verbTest").innerHTML = verbTestHTML();
+}
 function listHTML(q){
   const f = norm(q || "");
   const rows = VERBS.filter(v => !f || v.slice(0,2).concat(v.slice(3)).some(x => norm(x).includes(f)));
@@ -795,7 +885,7 @@ function renderVerbs(){
   $("#s-verbs").innerHTML =
     `<div class="casebar"><div class="chips" id="vchips" role="group" aria-label="Раздел о глаголах">${
       VTABS.map(t => `<button class="chip" data-v="${t[0]}" aria-pressed="${t[0]===curV}"><span class="cp">${t[1]}</span></button>`).join("")
-    }</div></div><div id="vPanel"></div>`;
+    }</div></div><div id="vPanel"></div><div id="verbPractice"></div><div id="verbTest"></div>`;
   $("#vchips").querySelectorAll(".chip").forEach(b => b.onclick = () => {
     curV = b.dataset.v; renderVerbs(); writeHash();
   });
@@ -805,6 +895,7 @@ function renderVerbs(){
     $("#vsearch").oninput = e => drawList(e.target.value);
   }
   linkHeadings($("#vPanel"));
+  renderVerbPractice();
 }
 
 /* --- числительные --- */
@@ -1195,7 +1286,7 @@ function renderPreps(){
       ${PREP_E.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Чаще всего это происходит перед местоимениями <span class="pl">mną, mnie</span> и словом <span class="pl">wszystkim</span>, а также когда следующее слово начинается на ту же букву или на скопление согласных.</p>
-  </div>`;
+  </div><div id="prepPractice"></div><div id="prepTest"></div>`;
   const draw = f => $("#ptable").innerHTML =
     `<tr><th>предлог</th><th>падеж</th><th>значение</th><th>пример</th></tr>` +
     PREPS.filter(p => f === "все" || p[1] === f).map(p =>
@@ -1205,6 +1296,23 @@ function renderPreps(){
     $("#pfilter").querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
     draw(b.dataset.f);
   });
+  renderPrepPractice();
+}
+function prepositionPracticeHTML(practice){
+  return `<section class="practice panel preposition-practice" data-practice="${practice.id}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Практика · ${practice.tasks.length} заданий · ${practiceAnswerCount(practice)} пропусков</p><h2>${practice.title}</h2></div>
+      <div class="exercise-progress" aria-live="polite">0 из ${practice.tasks.length} заданий</div>
+    </div>
+    <p class="lead">${practice.lead}</p>
+    <div class="exercise-list">${practice.tasks.map((task, index) => exerciseTaskHTML(task, index + 1)).join("")}</div>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-action="reset-practice">Начать заново</button></div>
+  </section>`;
+}
+function prepositionTestHTML(){ return exerciseTestHTML(PREP_TEST, "prepositions", "preposition-test"); }
+function renderPrepPractice(){
+  $("#prepPractice").innerHTML = PREP_PRACTICE.map(prepositionPracticeHTML).join("");
+  $("#prepTest").innerHTML = prepositionTestHTML();
 }
 function renderAdj(){
   $("#s-adj").innerHTML = `<div class="panel">
@@ -1262,7 +1370,24 @@ function renderAdj(){
       <li><b>Порядок слов.</b> Качество - перед словом (<span class="pl">czarna kawa</span>), вид или тип - после (<span class="pl">kawa rozpuszczalna</span>, <span class="pl">język polski</span>, <span class="pl">dzień dobry</span>). Русский тут почти всегда ставит перед. Само приветствие пишется с маленькой - <span class="pl">Powiedziałem dzień dobry</span>; большая появляется только в начале реплики: <span class="pl">Dzień dobry!</span></li>
       <li><b>Женское <span class="pl">-ą</span> в винительном и творительном совпадает.</b> <span class="pl">Widzę dobrą kawę</span> / <span class="pl">z dobrą kawą</span> - форма одна, падежи разные.</li>
     </ol>
-  </div>`;
+  </div><div id="adjPractice"></div><div id="adjTest"></div>`;
+  renderAdjPractice();
+}
+function adjectivePracticeHTML(practice){
+  return `<section class="practice panel adjective-practice" data-practice="${practice.id}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Практика · ${practice.tasks.length} заданий · ${practiceAnswerCount(practice)} пропусков</p><h2>${practice.title}</h2></div>
+      <div class="exercise-progress" aria-live="polite">0 из ${practice.tasks.length} заданий</div>
+    </div>
+    <p class="lead">${practice.lead}</p>
+    <div class="exercise-list">${practice.tasks.map((task, index) => exerciseTaskHTML(task, index + 1)).join("")}</div>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-action="reset-practice">Начать заново</button></div>
+  </section>`;
+}
+function adjectiveTestHTML(){ return exerciseTestHTML(ADJ_TEST, "adjectives", "adjective-test"); }
+function renderAdjPractice(){
+  $("#adjPractice").innerHTML = ADJ_PRACTICE.map(adjectivePracticeHTML).join("");
+  $("#adjTest").innerHTML = adjectiveTestHTML();
 }
 function renderAdv(){
   $("#s-adv").innerHTML = `<div class="panel">
@@ -1820,7 +1945,6 @@ document.addEventListener("keydown", e => {
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
-    <p class="lead">Девятнадцать разделов. Если не знаешь, с чего начать, - начни с рода: пока слово не отнесено к роду, таблицы падежей некуда приложить.</p>
     <div class="idx">${GROUPS.map(g => `<section>
       <h3>${g[0]}</h3>
       ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">

@@ -48,6 +48,11 @@ function showCase(id, number){
   });
   $$("#chips [data-c]").forEach(item => item.setAttribute("aria-pressed", item.dataset.c === id));
   $$("#numtog [data-n]").forEach(item => item.setAttribute("aria-pressed", item.dataset.n === number));
+  $$(".case-practice-variant").forEach(item => {
+    const on = item.dataset.case === id;
+    item.classList.toggle("on", on);
+    item.setAttribute("aria-hidden", String(!on));
+  });
 }
 
 $("#chips")?.addEventListener("click", event => {
@@ -75,6 +80,11 @@ function showVerb(key){
     item.setAttribute("aria-hidden", String(!on));
   });
   $$("#vchips [data-v]").forEach(item => item.setAttribute("aria-pressed", item.dataset.v === key));
+  $$(".verb-practice-variant").forEach(item => {
+    const on = item.dataset.v === key;
+    item.classList.toggle("on", on);
+    item.setAttribute("aria-hidden", String(!on));
+  });
 }
 
 $("#vchips")?.addEventListener("click", event => {
@@ -104,6 +114,150 @@ function filterVerbs(query){
   });
 }
 verbSearch?.addEventListener("input", event => filterVerbs(event.target.value));
+
+/* ---------- exercises ---------- */
+const EXERCISE_STORAGE_KEY = "polski-exercises-v1";
+let exerciseState = {values:{}, results:{}, scores:{}};
+try{
+  const saved = JSON.parse(sessionStorage.getItem(EXERCISE_STORAGE_KEY)
+    || sessionStorage.getItem("polski-case-exercises-v1") || "null");
+  if(saved && typeof saved === "object") exerciseState = {
+    values:saved.values || {}, results:saved.results || {}, scores:saved.scores || {}
+  };
+}catch{}
+
+function saveExerciseState(){
+  try{ sessionStorage.setItem(EXERCISE_STORAGE_KEY, JSON.stringify(exerciseState)); }catch{}
+}
+function exerciseAnswers(control){
+  try{ return JSON.parse(decodeURIComponent(control.dataset.answers)); }catch{ return []; }
+}
+function exerciseNorm(value){
+  return value.normalize("NFKC").trim().replace(/\s+/g, " ").toLocaleLowerCase("pl");
+}
+function exerciseIsCorrect(control){
+  const value = exerciseNorm(control.value);
+  return !!value && exerciseAnswers(control).some(answer => exerciseNorm(answer) === value);
+}
+function clearExerciseItem(item){
+  item.dataset.result = "";
+  item.querySelectorAll(".exercise-field").forEach(field => field.classList.remove("is-correct", "is-wrong", "is-revealed"));
+  item.querySelectorAll(".exercise-control").forEach(control => control.removeAttribute("aria-invalid"));
+  const feedback = item.querySelector(".exercise-feedback");
+  if(feedback){ feedback.hidden = true; feedback.textContent = ""; }
+  const explanation = item.querySelector(".exercise-explanation");
+  if(explanation) explanation.hidden = true;
+}
+function gradeExerciseItem(item, persist = true){
+  const controls = [...item.querySelectorAll(".exercise-control")];
+  const correct = controls.every(exerciseIsCorrect);
+  controls.forEach(control => {
+    const field = control.closest(".exercise-field");
+    const ok = exerciseIsCorrect(control);
+    field.classList.toggle("is-correct", ok);
+    field.classList.toggle("is-wrong", !ok);
+    field.classList.remove("is-revealed");
+    control.setAttribute("aria-invalid", String(!ok));
+  });
+  item.dataset.result = correct ? "correct" : "wrong";
+  const feedback = item.querySelector(".exercise-feedback");
+  feedback.hidden = false;
+  feedback.textContent = correct ? "Верно." : "Есть ошибка — проверьте выделенные поля.";
+  item.querySelector(".exercise-explanation").hidden = false;
+  if(persist){ exerciseState.results[item.dataset.exerciseId] = item.dataset.result; saveExerciseState(); }
+  return correct;
+}
+function revealExerciseItem(item){
+  item.querySelectorAll(".exercise-control").forEach(control => {
+    control.value = exerciseAnswers(control)[0] || "";
+    exerciseState.values[control.dataset.key] = control.value;
+    const field = control.closest(".exercise-field");
+    field.classList.remove("is-wrong");
+    field.classList.add("is-correct", "is-revealed");
+    control.removeAttribute("aria-invalid");
+  });
+  item.dataset.result = "revealed";
+  exerciseState.results[item.dataset.exerciseId] = "revealed";
+  const feedback = item.querySelector(".exercise-feedback");
+  feedback.hidden = false; feedback.textContent = "Ответ показан.";
+  item.querySelector(".exercise-explanation").hidden = false;
+  saveExerciseState(); updateExerciseProgress(item.closest(".practice"));
+}
+function updateExerciseProgress(practice){
+  if(!practice || practice.classList.contains("exercise-test")) return;
+  const items = [...practice.querySelectorAll(".exercise-item")];
+  const correct = items.filter(item => item.dataset.result === "correct").length;
+  const progress = practice.querySelector(".exercise-progress");
+  if(progress) progress.textContent = `верно ${correct} из ${items.length}`;
+}
+function resetExerciseGroup(group, isTest = false){
+  group.querySelectorAll(".exercise-control").forEach(control => {
+    control.value = ""; delete exerciseState.values[control.dataset.key];
+  });
+  group.querySelectorAll(".exercise-item").forEach(item => {
+    delete exerciseState.results[item.dataset.exerciseId]; clearExerciseItem(item);
+  });
+  if(isTest){
+    delete exerciseState.scores[group.dataset.test];
+    const score = group.querySelector(".test-score");
+    if(score){ score.textContent = ""; score.className = "test-score"; }
+  }
+  saveExerciseState(); updateExerciseProgress(group);
+}
+function checkExerciseTest(test){
+  const items = [...test.querySelectorAll(".exercise-item")];
+  const score = items.filter(item => gradeExerciseItem(item)).length;
+  exerciseState.scores[test.dataset.test] = score;
+  saveExerciseState();
+  const output = test.querySelector(".test-score");
+  output.textContent = `${score} из ${items.length}`;
+  output.className = `test-score ${score === items.length ? "is-perfect" : "is-scored"}`;
+  output.scrollIntoView({block:"nearest", behavior:SMOOTH});
+}
+
+function initExerciseSection(section){
+  if(!section) return;
+  section.querySelectorAll(".exercise-control").forEach(control => {
+    if(Object.hasOwn(exerciseState.values, control.dataset.key)) control.value = exerciseState.values[control.dataset.key];
+  });
+  section.querySelectorAll(".exercise-item").forEach(item => {
+    const result = exerciseState.results[item.dataset.exerciseId];
+    if(result === "correct" || result === "wrong") gradeExerciseItem(item, false);
+    else if(result === "revealed") revealExerciseItem(item);
+  });
+  section.querySelectorAll(".practice:not(.exercise-test)").forEach(updateExerciseProgress);
+  section.querySelectorAll(".exercise-test").forEach(test => {
+    const restoredScore = exerciseState.scores[test.dataset.test];
+    if(!Number.isInteger(restoredScore)) return;
+    const output = test.querySelector(".test-score");
+    const total = test.querySelectorAll(".exercise-item").length;
+    output.textContent = `${restoredScore} из ${total}`;
+    output.className = `test-score ${restoredScore === total ? "is-perfect" : "is-scored"}`;
+  });
+  section.addEventListener("input", event => {
+    const control = event.target.closest(".exercise-control");
+    if(!control) return;
+    exerciseState.values[control.dataset.key] = control.value;
+    const item = control.closest(".exercise-item");
+    delete exerciseState.results[item.dataset.exerciseId];
+    clearExerciseItem(item); saveExerciseState(); updateExerciseProgress(item.closest(".practice"));
+  });
+  section.addEventListener("click", event => {
+    const action = event.target.closest("[data-action]")?.dataset.action;
+    if(!action) return;
+    const item = event.target.closest(".exercise-item");
+    const practice = event.target.closest(".practice");
+    if(action === "check-item"){ gradeExerciseItem(item); updateExerciseProgress(practice); }
+    if(action === "reveal-item") revealExerciseItem(item);
+    if(action === "reset-practice") resetExerciseGroup(practice);
+    if(action === "check-test") checkExerciseTest(practice);
+    if(action === "reset-test") resetExerciseGroup(practice, true);
+  });
+}
+initExerciseSection($("#s-cases"));
+initExerciseSection($("#s-verbs"));
+initExerciseSection($("#s-adj"));
+initExerciseSection($("#s-preps"));
 
 /* ---------- URL state, legacy hashes and heading links ---------- */
 function hashFor(suffix = ""){

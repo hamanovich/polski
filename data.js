@@ -278,6 +278,254 @@ const CASES = [
 }
 ];
 
+/* ============ ДАННЫЕ: практика по падежам ============ */
+/* options превращает поле в выбор; без options пользователь вводит ответ сам.
+   passage — небольшой связный текст, где объекты между строками становятся пропусками. */
+const CASE_PRACTICE = [
+{
+  id:"mian", title:"Именительный на месте",
+  lead:"Собери подлежащее и именную часть сказуемого. Следи за родом и мужско-личным множественным числом.",
+  tasks:[
+    {id:"mian-1", prompt:"To są ___ dzieci.", options:["mój","moja","moje"], answers:["moje"], explanation:"Dzieci — немужско-личное множественное число, поэтому moje."},
+    {id:"mian-2", prompt:"___ dobrzy studenci czekają przed salą. (ten)", answers:["ci"], explanation:"Мужско-личная форма указательного ten во множественном числе — ci."},
+    {id:"mian-3", prompt:"Państwo Kowalscy ___ już gotowi.", options:["był","była","byli","były"], answers:["byli"], explanation:"Państwo о смешанной группе согласуется как мужско-личное множественное число: byli."},
+    {id:"mian-4", prompt:"To jest dobry ___ (nauczyciel).", answers:["nauczyciel"], explanation:"После to jest название человека остаётся в именительном: nauczyciel."},
+    {id:"mian-text", prompt:"Представление на семейной встрече", passage:[
+      "To jest mój ",{key:"a",answers:["brat"],hint:"brat",label:"форма слова brat"},". ",
+      {key:"b",options:["Ta","Ten","To"],answers:["Ta"],label:"указательное местоимение"}," miła kobieta to jego żona. Ich dzieci ",
+      {key:"c",options:["jest","są"],answers:["są"],label:"форма być"}," bardzo spokojne."
+    ], explanation:"Brat и ta kobieta стоят в именительном; при dzieci нужна форма są."}
+  ]
+},
+{
+  id:"bier", title:"Вижу цель действия",
+  lead:"Выбери форму прямого дополнения. Главная развилка — одушевлённость в единственном и мужско-личность во множественном.",
+  tasks:[
+    {id:"bier-1", prompt:"Widzę nowego ___ (student).", answers:["studenta"], explanation:"Мужское одушевлённое: винительный единственного совпадает с родительным — studenta."},
+    {id:"bier-2", prompt:"Kupuję świeżą ___.", options:["kawa","kawę","kawy"], answers:["kawę"], explanation:"Женский винительный единственного обычно получает -ę: kawę."},
+    {id:"bier-3", prompt:"Mam dwa ___.", options:["bilety","biletów","biletami"], answers:["bilety"], explanation:"Неодушевлённое мужское множественное: винительный совпадает с именительным — bilety."},
+    {id:"bier-4", prompt:"Znam tych ___.", options:["lekarze","lekarzy","lekarzom"], answers:["lekarzy"], explanation:"Мужско-личный винительный множественного совпадает с родительным — lekarzy."},
+    {id:"bier-text", prompt:"Покупки на ужин", passage:[
+      "W sklepie kupuję świeżą ",{key:"a",answers:["rybę"],hint:"ryba",label:"форма слова ryba"},", dwa ",
+      {key:"b",options:["pomidory","pomidorów","pomidorami"],answers:["pomidory"],label:"форма слова pomidor"}," i dobry ",
+      {key:"c",options:["chleb","chleba","chlebem"],answers:["chleb"],label:"форма слова chleb"},"."
+    ], explanation:"Ryba даёт -ę; неодушевлённые pomidory и chleb в винительном совпадают с именительным."}
+  ]
+},
+{
+  id:"dop", title:"Нет, из, до и около",
+  lead:"Потренируй отрицание, количество и самые частые предлоги родительного падежа.",
+  tasks:[
+    {id:"dop-1", prompt:"Nie mam dziś ___.", options:["czas","czasu","czasem"], answers:["czasu"], explanation:"После отрицания nie mam прямое дополнение переходит в родительный: czasu."},
+    {id:"dop-2", prompt:"Wracam z ___ (praca).", answers:["pracy"], explanation:"Z в значении «из» требует родительного; praca → pracy."},
+    {id:"dop-3", prompt:"Szukamy ___ do mieszkania.", options:["klucze","kluczy","kluczami"], answers:["kluczy"], explanation:"Szukać управляет родительным падежом: szukać kluczy."},
+    {id:"dop-4", prompt:"W sali nie ma pięciu ___.", options:["studentów","studentom","studentami"], answers:["studentów"], explanation:"После pięciu и в конструкции nie ma нужен родительный множественного: studentów."},
+    {id:"dop-text", prompt:"Утро без привычных вещей", passage:[
+      "Nie ma ",{key:"a",answers:["kawy"],hint:"kawa",label:"форма слова kawa"}," ani świeżego ",
+      {key:"b",options:["chleb","chleba","chlebem"],answers:["chleba"],label:"форма слова chleb"},". Idę więc do ",
+      {key:"c",options:["sklep","sklepu","sklepie"],answers:["sklepu"],label:"форма слова sklep"},"."
+    ], explanation:"Nie ma требует родительного; do sklepu — направление к месту."}
+  ]
+},
+{
+  id:"cel", title:"Кому и для кого",
+  lead:"Адресат, помощь, благодарность и бытовые конструкции с mi, ci, mu.",
+  tasks:[
+    {id:"cel-1", prompt:"Pomagam starszej ___ (sąsiadka).", answers:["sąsiadce"], explanation:"Pomagać требует дательного; sąsiadka → sąsiadce с чередованием k → c."},
+    {id:"cel-2", prompt:"Dziękuję ___ za pomoc.", options:["pan","pana","panu","panem"], answers:["panu"], explanation:"Dziękować требует дательного: dziękuję panu."},
+    {id:"cel-3", prompt:"Kupiliśmy ___ prezenty.", options:["dzieci","dzieciom","dziećmi"], answers:["dzieciom"], explanation:"Дательный множественного для всех родов имеет окончание -om: dzieciom."},
+    {id:"cel-4", prompt:"___ się ten film nie podoba.", options:["Ja","Mi","Mną"], answers:["Mi"], explanation:"В конструкции podoba mi się тот, кому нравится, стоит в дательном."},
+    {id:"cel-text", prompt:"Просьба о помощи", passage:[
+      "Jest ",{key:"a",options:["ja","mi","mną"],answers:["mi"],label:"форма местоимения ja"}," zimno. Mówię o tym ",
+      {key:"b",answers:["koledze"],hint:"kolega",label:"форма слова kolega"},", a on daje ",
+      {key:"c",options:["mi","mnie","mną"],answers:["mi"],label:"форма местоимения ja"}," ciepłą kurtkę."
+    ], explanation:"В нейтральной позиции после глагола используется краткая форма дательного: daje mi. Полное mnie требует смыслового ударения и отдельного контекста."}
+  ]
+},
+{
+  id:"narz", title:"С кем, чем и в какой роли",
+  lead:"Профессия, средство передвижения, орудие и совместность с предлогом z.",
+  tasks:[
+    {id:"narz-1", prompt:"Moja siostra jest ___.", options:["lekarka","lekarki","lekarką"], answers:["lekarką"], explanation:"Название профессии после być ставится в творительном: jest lekarką."},
+    {id:"narz-2", prompt:"Poproszę kawę z ___.", options:["mleko","mleka","mlekiem"], answers:["mlekiem"], explanation:"Z в значении совместности требует творительного: z mlekiem."},
+    {id:"narz-3", prompt:"Codziennie jadę do pracy ___.", options:["tramwaj","tramwajem","w tramwaju"], answers:["tramwajem"], explanation:"Транспорт выражается творительным без предлога: jadę tramwajem."},
+    {id:"narz-4", prompt:"Piotr jest dobrym ___ (lekarz).", answers:["lekarzem"], explanation:"Существительное вместе с прилагательным уходит в творительный: dobrym lekarzem."},
+    {id:"narz-text", prompt:"Первый день на новой работе", passage:[
+      "Jestem ",{key:"a",answers:["programistą"],hint:"programista",label:"форма слова programista"},". Pracuję z doświadczoną ",
+      {key:"b",options:["koleżanka","koleżanki","koleżanką"],answers:["koleżanką"],label:"форма слова koleżanka"}," i piszę notatki ",
+      {key:"c",options:["ołówek","ołówka","ołówkiem"],answers:["ołówkiem"],label:"форма слова ołówek"},"."
+    ], explanation:"Роль, совместность и орудие действия здесь требуют творительного."}
+  ]
+},
+{
+  id:"miej", title:"Где, о чём и после чего",
+  lead:"Предложный всегда идёт с предлогом. Отработай место, тему разговора и время.",
+  tasks:[
+    {id:"miej-1", prompt:"Mieszkamy w ___ (Warszawa).", answers:["Warszawie"], explanation:"W + место требует предложного; Warszawa → Warszawie."},
+    {id:"miej-2", prompt:"Rozmawiamy o nowej ___.", options:["praca","pracy","pracę"], answers:["pracy"], explanation:"O в значении темы требует предложного: o pracy."},
+    {id:"miej-3", prompt:"Spotkajmy się na ___.", options:["dworzec","dworca","dworcu"], answers:["dworcu"], explanation:"Устойчиво: na dworcu. Основа на c получает -u."},
+    {id:"miej-4", prompt:"Po ___ idę na spacer.", options:["obiad","obiadu","obiedzie"], answers:["obiedzie"], explanation:"Po в значении «после» требует предложного: po obiedzie."},
+    {id:"miej-text", prompt:"Встреча в городе", passage:[
+      "O piątej jestem już w ",{key:"a",answers:["centrum"],hint:"centrum",label:"форма слова centrum"},". Czekam na ciebie przy ",
+      {key:"b",options:["okno","okna","oknie"],answers:["oknie"],label:"форма слова okno"}," w małej ",
+      {key:"c",options:["kawiarnia","kawiarni","kawiarnię"],answers:["kawiarni"],label:"форма слова kawiarnia"},"."
+    ], explanation:"Centrum не изменяется; przy oknie и w kawiarni требуют предложного."}
+  ]
+},
+{
+  id:"woł", title:"Позвать и обратиться",
+  lead:"Имена, родственные обращения и титулы — именно там звательный остаётся живым.",
+  tasks:[
+    {id:"wol-1", prompt:"Panie ___, boli mnie gardło. (doktor)", answers:["doktorze"], explanation:"Мужской титул после panie ставится в звательном: panie doktorze."},
+    {id:"wol-2", prompt:"Droga ___, dziękuję za list. (Anna)", answers:["Anno"], explanation:"Женские имена на -a обычно получают -o: Anna → Anno."},
+    {id:"wol-3", prompt:"Drogi ___, wszystkiego najlepszego! (Marek)", answers:["Marku"], explanation:"После k используется окончание -u: Marek → Marku."},
+    {id:"wol-4", prompt:"___, gdzie są moje klucze? (mama)", answers:["Mamo"], explanation:"Mama → Mamo в прямом обращении."},
+    {id:"wol-text", prompt:"Короткий разговор в приёмной", passage:[
+      {key:"a",options:["Pan","Panie","Pana"],answers:["Panie"],label:"форма слова pan"}," doktorze, czy mogę wejść? — Chwileczkę, ",
+      {key:"b",answers:["panie"],hint:"pan",label:"форма слова pan"}," Adamie. — Dobrze, ",
+      {key:"c",options:["doktor","doktora","doktorze"],answers:["doktorze"],label:"форма слова doktor"},"."
+    ], explanation:"В прямом обращении употребляем panie и звательную форму титула doktorze."}
+  ]
+}
+];
+
+const CASE_TEST = {
+  title:"Итоговый тест: семь падежей",
+  lead:"Четырнадцать ситуаций без подсказки, какой падеж нужен. Ответы откроются только после общей проверки.",
+  tasks:[
+    {id:"test-1", prompt:"To są ___ nowi sąsiedzi.", options:["te","ci","tych"], answers:["ci"], explanation:"Мужско-личный именительный: ci nowi sąsiedzi."},
+    {id:"test-2", prompt:"Widzę twojego ___ (brat).", answers:["brata"], explanation:"Одушевлённый мужской винительный: brata."},
+    {id:"test-3", prompt:"Nie znam tej ___ (kobieta).", answers:["kobiety"], explanation:"После отрицания biernik меняется на dopełniacz: kobiety."},
+    {id:"test-4", prompt:"Daję książkę młodszemu ___.", options:["brat","brata","bratu","bratem"], answers:["bratu"], explanation:"Адресат действия стоит в дательном: bratu."},
+    {id:"test-5", prompt:"Jedziemy nad morze ___.", options:["pociąg","pociągu","pociągiem"], answers:["pociągiem"], explanation:"Средство передвижения — творительный без предлога."},
+    {id:"test-6", prompt:"Klucze leżą na ___.", options:["stół","stołu","stole","stołem"], answers:["stole"], explanation:"Где? na + предложный: na stole."},
+    {id:"test-7", prompt:"Pani ___, proszę podpisać dokument. (Anna)", answers:["Anno"], explanation:"Прямое обращение по имени: Pani Anno."},
+    {id:"test-8", prompt:"Kupuję trzy świeże ___.", options:["bułki","bułek","bułkami"], answers:["bułki"], explanation:"После 2–4 здесь винительный множественного, совпадающий с именительным: bułki."},
+    {id:"test-9", prompt:"Potrzebujemy więcej ___.", options:["krzesła","krzeseł","krzesłom"], answers:["krzeseł"], explanation:"Więcej требует родительного множественного: krzeseł."},
+    {id:"test-10", prompt:"Czy możesz pomóc mojej ___? (siostra)", answers:["siostrze"], explanation:"Pomagać + дательный; siostra → siostrze."},
+    {id:"test-11", prompt:"Interesuję się polską ___.", options:["historia","historii","historią"], answers:["historią"], explanation:"Interesować się управляет творительным: historią."},
+    {id:"test-12", prompt:"Myślę o naszych ___.", options:["wakacje","wakacji","wakacjach","wakacjami"], answers:["wakacjach"], explanation:"O + тема требует предложного множественного: wakacjach."},
+    {id:"test-13", prompt:"___, chodź tutaj! (Piotr)", answers:["Piotrze"], explanation:"Piotr → Piotrze в звательном."},
+    {id:"test-14", prompt:"Moje dzieci ___ już w domu.", options:["jest","są","byli"], answers:["są"], explanation:"Dzieci — именительный множественного, с ним są."}
+  ]
+};
+
+/* ============ ДАННЫЕ: практика по глаголам ============ */
+const VERB_PRACTICE = [
+{
+  id:"conj", title:"Спряжение в живых фразах",
+  lead:"Поставь глагол в нужное лицо. Исходная форма всегда дана — проверяем форму, а не словарный запас.",
+  tasks:[
+    {id:"vconj-1", prompt:"Codziennie ___ po polsku. (pisać, ja)", answers:["piszę"], explanation:"Pisać: ja piszę, ty piszesz — I спряжение и чередование s → sz."},
+    {id:"vconj-2", prompt:"Co teraz ___? (robić, ty)", options:["robisz","robisz się","robiszcie"], answers:["robisz"], explanation:"Robić относится ко II спряжению: ty robisz."},
+    {id:"vconj-3", prompt:"Moi rodzice dużo ___. (pracować, oni)", answers:["pracują"], explanation:"-ować превращается в -uj-: oni pracują."},
+    {id:"vconj-4", prompt:"My ___ już gotowi. (być)", options:["jesteśmy","jesteście","są"], answers:["jesteśmy"], explanation:"Нерегулярная форма być для my — jesteśmy."},
+    {id:"vconj-text", prompt:"Обычное утро", passage:[
+      "Rano ",{key:"a",answers:["wstaję"],hint:"wstawać · ja",label:"форма wstawać для ja"},", potem ",
+      {key:"b",options:["piję","pijesz","pije"],answers:["piję"],label:"форма pić для ja"}," kawę i ",
+      {key:"c",answers:["jadę"],hint:"jechać · ja",label:"форма jechać для ja"}," do pracy."
+    ], explanation:"Один субъект ja задаёт формы wstaję, piję и jadę."}
+  ]
+},
+{
+  id:"czasy", title:"Вчера, сегодня, завтра",
+  lead:"Выбери время и вид по контексту. В прошедшем дополнительно следи за родом и числом.",
+  tasks:[
+    {id:"vtime-1", prompt:"Wczoraj Anna ___ bilet. (kupić)", answers:["kupiła"], explanation:"Wczoraj задаёт прошедшее; Anna — женский род: kupiła."},
+    {id:"vtime-2", prompt:"Wczoraj przez trzy godziny ___ do Krakowa. (jechać, my · мужчины/смешанная группа)", answers:["jechaliśmy"], explanation:"Длительность przez trzy godziny мотивирует несовершенный вид; мужско-личное my получает -liśmy: jechaliśmy."},
+    {id:"vtime-3", prompt:"Jutro ___ ten raport. (napisać, ja)", options:["piszę","napiszę","będę napisać"], answers:["napiszę"], explanation:"Совершенный napisać образует простое будущее: napiszę."},
+    {id:"vtime-4", prompt:"Wieczorem ___ książkę. (czytać, my)", options:["będziemy czytać","będziemy przeczytać","przeczytaliśmy"], answers:["będziemy czytać"], explanation:"Несовершенный czytać образует составное будущее: będziemy czytać."},
+    {id:"vtime-text", prompt:"Три дня одного путешествия", passage:[
+      "Wczoraj ",{key:"a",answers:["przyjechałem"],hint:"przyjechać · ja, мужчина",label:"прошедшая форма przyjechać"}," do Gdańska. Dziś ",
+      {key:"b",options:["zwiedzam","zwiedziłem","będę zwiedził"],answers:["zwiedzam"],label:"форма zwiedzać для dziś"}," miasto, a jutro ",
+      {key:"c",answers:["wrócę"],hint:"wrócić · ja",label:"будущая форма wrócić"}," do domu."
+    ], explanation:"Wczoraj → przyjechałem, dziś → zwiedzam, jutro + совершенный wrócić → wrócę."}
+  ]
+},
+{
+  id:"tryby", title:"Просьба, совет и условие",
+  lead:"Отработай повелительное и условное наклонение, а также формы powinien.",
+  tasks:[
+    {id:"vmode-1", prompt:"___ okno, proszę. (otworzyć, ty)", answers:["otwórz"], explanation:"Повелительная форма otworzyć — otwórz, с o → ó."},
+    {id:"vmode-2", prompt:"Nie ___ tego teraz! (robić, ty)", options:["rób","zrób","robisz"], answers:["rób"], explanation:"Обычный запрет предпочитает несовершенный вид: nie rób."},
+    {id:"vmode-3", prompt:"___ poprosić o kawę. (chcieć, ja · мужчина)", answers:["chciałbym"], explanation:"Мужчина говорит chciałbym; женщина — chciałabym."},
+    {id:"vmode-4", prompt:"Anna ___ wcześniej wyjść. (powinien)", options:["powinien","powinna","powinnam"], answers:["powinna"], explanation:"Для ona нужна форма powinna."},
+    {id:"vmode-text", prompt:"Условный план", passage:[
+      "Gdybym ",{key:"a",answers:["miał"],hint:"mieć · ja, мужчина",label:"условная форма mieć"}," więcej czasu, ",
+      {key:"b",options:["pojechałbym","pojadę","jechałem"],answers:["pojechałbym"],label:"условная форма pojechać"}," w góry i ",
+      {key:"c",answers:["zostałbym"],hint:"zostać · ja, мужчина",label:"условная форма zostać"}," tam na tydzień."
+    ], explanation:"После gdybym первая часть имеет форму miał, а результаты — pojechałbym и zostałbym."}
+  ]
+},
+{
+  id:"formy", title:"Формы письменного польского",
+  lead:"Причастия, деепричастия, пассив и отглагольные существительные в типичных объявлениях и текстах.",
+  tasks:[
+    {id:"vform-1", prompt:"Kobieta ___ gazetę siedzi przy oknie. (czytać)", answers:["czytająca"], explanation:"Действительное причастие согласуется с kobieta: czytająca."},
+    {id:"vform-2", prompt:"Drzwi są ___. (zamknąć)", options:["zamknięte","zamykające","zamknąwszy"], answers:["zamknięte"], explanation:"Drzwi — немужско-личное множественное число, поэтому: drzwi są zamknięte."},
+    {id:"vform-3", prompt:"___ do pracy, słucham podcastu. (iść)", answers:["Idąc","idąc"], explanation:"Одновременное действие несовершенного вида: idąc."},
+    {id:"vform-4", prompt:"Most został ___ w 2020 roku. (zbudować)", answers:["zbudowany"], explanation:"Пассив: został + страдательное причастие zbudowany."},
+    {id:"vform-text", prompt:"Объявление в доме", passage:[
+      "Winda jest chwilowo ",{key:"a",options:["wyłączona","wyłączając","wyłączenie"],answers:["wyłączona"],label:"форма wyłączyć"},". Osoby ",
+      {key:"b",answers:["mieszkające"],hint:"mieszkać",label:"причастие от mieszkać"}," na wyższych piętrach prosimy o ",
+      {key:"c",options:["korzystanie","korzystający","skorzystawszy"],answers:["korzystanie"],label:"отглагольное существительное od korzystać"}," ze schodów."
+    ], explanation:"Wyłączona — состояние лифта; mieszkające — действительное причастие; o korzystanie — отглагольное существительное."}
+  ]
+},
+{
+  id:"rekcja", title:"Глагол выбирает падеж",
+  lead:"Проверяем управление — одну из самых частых зон ошибок у русскоязычных.",
+  tasks:[
+    {id:"vrek-1", prompt:"Szukam swoich ___. (klucze)", answers:["kluczy"], explanation:"Szukać требует родительного: szukam kluczy."},
+    {id:"vrek-2", prompt:"Pomagam starszej ___. (sąsiadka)", answers:["sąsiadce"], explanation:"Pomagać требует дательного: sąsiadce."},
+    {id:"vrek-3", prompt:"Interesuję się polską ___. (historia)", options:["historię","historii","historią"], answers:["historią"], explanation:"Interesować się + творительный: historią."},
+    {id:"vrek-4", prompt:"Bardzo tęsknię za moją ___. (rodzina)", answers:["rodziną"], explanation:"Tęsknić za + творительный: za rodziną."},
+    {id:"vrek-text", prompt:"Новый сотрудник", passage:[
+      "Marek uczy się ",{key:"a",answers:["polskiego"],hint:"polski",label:"форма polski после uczyć się"},", pomaga ",
+      {key:"b",options:["kolega","koledze","kolegą"],answers:["koledze"],label:"форма kolega после pomaga"}," i często pyta kierownika o ",
+      {key:"c",answers:["radę"],hint:"rada",label:"форма rada после pytać o"},"."
+    ], explanation:"Uczyć się + родительный, pomagać + дательный, pytać o + винительный."}
+  ]
+},
+{
+  id:"lista", title:"Словарь в действии",
+  lead:"Узнай инфинитив по форме и выбери нужный частый глагол по конструкции.",
+  tasks:[
+    {id:"vlist-1", prompt:"Форма idę принадлежит глаголу ___.", options:["iść","jechać","chodzić"], answers:["iść"], explanation:"Idę — форма ja от iść."},
+    {id:"vlist-2", prompt:"Форма biorę принадлежит глаголу ___.", answers:["brać"], explanation:"Brać имеет две основы: bior- и bierz-."},
+    {id:"vlist-3", prompt:"___ ten adres, ale nie wiem, gdzie to jest.", options:["Znam","Wiem","Umiem"], answers:["Znam"], explanation:"Конкретно названный объект адрес требует znać: znam adres."},
+    {id:"vlist-4", prompt:"Nie ___, kiedy przyjedzie pociąg.", options:["znam","wiem","umiem"], answers:["wiem"], explanation:"Перед придаточным kiedy нужен wiedzieć: nie wiem, kiedy…"},
+    {id:"vlist-text", prompt:"Перед выходом", passage:[
+      "Najpierw ",{key:"a",answers:["jem"],hint:"jeść · ja",label:"форма jeść для ja"}," śniadanie, potem ",
+      {key:"b",options:["biorę","bierzę","bram"],answers:["biorę"],label:"форма brać для ja"}," klucze i ",
+      {key:"c",answers:["wychodzę"],hint:"wychodzić · ja",label:"форма wychodzić для ja"}," z domu."
+    ], explanation:"Частые нерегулярные формы: jem, biorę; wychodzić → wychodzę."}
+  ]
+}
+];
+
+const VERB_TEST = {
+  title:"Итоговый тест: польские глаголы",
+  lead:"Пятнадцать заданий на формы, время, вид, наклонение и управление. Результат появится после общей проверки.",
+  tasks:[
+    {id:"vtest-1", prompt:"Co teraz ___? (pisać, ty)", answers:["piszesz"], explanation:"Pisać: ty piszesz."},
+    {id:"vtest-2", prompt:"Oni codziennie ___ o szóstej. (wstawać)", answers:["wstają"], explanation:"Wstawać для oni: wstają."},
+    {id:"vtest-3", prompt:"Wczoraj Maria ___ obiad. (ugotować)", answers:["ugotowała"], explanation:"Maria — женский род прошедшего времени: ugotowała."},
+    {id:"vtest-4", prompt:"Jutro ___ do ciebie. (zadzwonić, ja)", options:["dzwonię","zadzwonię","będę zadzwonić"], answers:["zadzwonię"], explanation:"Совершенный zadzwonić даёт простое будущее zadzwonię."},
+    {id:"vtest-5", prompt:"W weekend ___ mieszkanie. (sprzątać, my)", options:["będziemy sprzątać","będziemy posprzątać","posprzątaliśmy"], answers:["będziemy sprzątać"], explanation:"Несовершенный sprzątać образует составное будущее."},
+    {id:"vtest-6", prompt:"___ chwilę! (czekać, ty)", answers:["Czekaj","czekaj"], explanation:"Повелительная форма czekać — czekaj."},
+    {id:"vtest-7", prompt:"Czy ___ mi pan pomóc? (móc, условное)", answers:["mógłby"], explanation:"Вежливое обращение к мужчине: czy mógłby mi pan pomóc?"},
+    {id:"vtest-8", prompt:"Anna ___ więcej odpoczywać. (powinien)", answers:["powinna"], explanation:"Форма для ona — powinna."},
+    {id:"vtest-9", prompt:"Mężczyzna ___ przy drzwiach jest moim sąsiadem. (stać)", answers:["stojący"], explanation:"Действительное причастие от stać: stojący."},
+    {id:"vtest-10", prompt:"Dokument został ___. (podpisać)", options:["podpisany","podpisując","podpisanie"], answers:["podpisany"], explanation:"Пассив требует страдательного причастия podpisany."},
+    {id:"vtest-11", prompt:"Dziękuję pani za ___. (pomoc)", answers:["pomoc"], explanation:"Dziękować komuś za + винительный; pomoc имеет ту же форму."},
+    {id:"vtest-12", prompt:"Boję się dużych ___. (pies)", answers:["psów"], explanation:"Bać się требует родительного: psów."},
+    {id:"vtest-13", prompt:"Zwykle ___ do pracy autobusem. (jeździć, ja)", options:["jadę","jeżdżę","idę"], answers:["jeżdżę"], explanation:"Регулярное движение транспортом: jeżdżę."},
+    {id:"vtest-14", prompt:"Nie ___ jego numeru telefonu.", options:["znam","wiem","umiem"], answers:["znam"], explanation:"Назван конкретный объект: znać numer."},
+    {id:"vtest-15", prompt:"Nie ___, czy on przyjdzie.", options:["znam","wiem","umiem"], answers:["wiem"], explanation:"Придаточное с czy требует wiedzieć."}
+  ]
+};
+
 /* ============ ДАННЫЕ: глаголы ============ */
 /* окончания настоящего времени по спряжениям - для подсветки */
 /* ============ ДАННЫЕ: род существительного ============ */
@@ -434,8 +682,8 @@ const PASTIRR = [
  ["mieć","miałem / miałam","miał · miała","mieli · miały","-eć → -ał, но -eli"],
  ["musieć","musiałem / musiałam","musiał · musiała","musieli · musiały","то же правило"],
  ["chcieć","chciałem / chciałam","chciał · chciała","chcieli · chciały","то же правило"],
- ["wziąć","wziąłem / wzięłam","wziął · wzięła","wzięli · wzięły","ą → ę везде, кроме «он»"],
- ["zacząć","zacząłem / zaczęłam","zaczął · zaczęła","zaczęli · zaczęły","то же правило"],
+ ["wziąć","wziąłem / wzięłam","wziął · wzięła","wzięli · wzięły","муж. ед.: wziąłem, wziąłeś, wziął; жен., ср. и мн. имеют основу wzię-"],
+ ["zacząć","zacząłem / zaczęłam","zaczął · zaczęła","zaczęli · zaczęły","муж. ед.: zacząłem, zacząłeś, zaczął; жен., ср. и мн. имеют основу zaczę-"],
  ["znaleźć","znalazłem / znalazłam","znalazł · znalazła","znaleźli · znalazły",""],
  ["nieść","niosłem / niosłam","niósł · niosła","nieśli · niosły","niósł - с ó"],
  ["usiąść","usiadłem / usiadłam","usiadł · usiadła","usiedli · usiadły",""],
@@ -1175,6 +1423,88 @@ const PREPS = [
  ["przed / nad / pod / za / między","Biernik","куда","idę pod stół"],
  ["dzięki","Celownik","благодаря","dzięki tobie"]
 ];
+
+const PREP_PRACTICE = [
+{
+  id:"government", title:"Предлог сразу выбирает падеж",
+  lead:"Отработай частые связки как единое целое: do sklepu, u lekarza, bez cukru, przy oknie.",
+  tasks:[
+    {id:"prepgo-1", prompt:"Idę do ___. (sklep)", answers:["sklepu"], explanation:"Do требует родительного: do sklepu."},
+    {id:"prepgo-2", prompt:"Wracam z ___. (Warszawa)", answers:["Warszawy"], explanation:"Z в значении «из» требует родительного: z Warszawy."},
+    {id:"prepgo-3", prompt:"Jestem teraz u ___. (lekarz)", answers:["lekarza"], explanation:"U + родительный: u lekarza."},
+    {id:"prepgo-4", prompt:"To prezent dla ___. (dziecko)", answers:["dziecka"], explanation:"Dla требует родительного: dla dziecka."},
+    {id:"prepgo-5", prompt:"Poproszę kawę bez ___. (cukier)", answers:["cukru"], explanation:"Bez требует родительного: bez cukru."},
+    {id:"prepgo-6", prompt:"Stolik stoi przy ___. (okno)", answers:["oknie"], explanation:"Przy требует предложного: przy oknie."},
+    {id:"prepgo-7", prompt:"Rozmawiamy o ___. (pogoda)", answers:["pogodzie"], explanation:"O в значении темы требует предложного: o pogodzie."},
+    {id:"prepgo-text", prompt:"После рабочего дня", passage:[
+      "Wracam ",{key:"a",options:["z","ze","od"],answers:["z"],label:"предлог перед pracy"}," pracy do ",
+      {key:"b",answers:["domu"],hint:"dom",label:"форма dom после do"},". Po ",
+      {key:"c",answers:["obiedzie"],hint:"obiad",label:"форма obiad после po"}," idę na spacer."
+    ], explanation:"Z pracy и do domu требуют родительного; po obiedzie — предложного."}
+  ]
+},
+{
+  id:"space", title:"Где или куда",
+  lead:"Один предлог меняет падеж вместе со смыслом: положение — предложный или творительный, направление — винительный.",
+  tasks:[
+    {id:"prepsp-1", prompt:"Jestem na ___. (poczta)", answers:["poczcie"], explanation:"Где? Na + предложный: na poczcie."},
+    {id:"prepsp-2", prompt:"Idę na ___. (poczta)", answers:["pocztę"], explanation:"Куда? Na + винительный: na pocztę."},
+    {id:"prepsp-3", prompt:"Kot śpi pod ___. (stół)", answers:["stołem"], explanation:"Где? Pod + творительный: pod stołem."},
+    {id:"prepsp-4", prompt:"Kot schował się pod ___. (stół)", answers:["stół"], explanation:"Куда? Pod + винительный: pod stół."},
+    {id:"prepsp-5", prompt:"Czekam przed ___. (dom)", answers:["domem"], explanation:"Положение перед объектом: przed + творительный."},
+    {id:"prepsp-6", prompt:"Wyszedłem przed ___. (dom)", answers:["dom"], explanation:"Движение в пространство перед домом: przed + винительный."},
+    {id:"prepsp-7", prompt:"Latem jedziemy w ___. (góry)", answers:["góry"], explanation:"Направление: устойчиво w góry, винительный."},
+    {id:"prepsp-text", prompt:"Переставляем вещи", passage:[
+      "Klucze leżą na ",{key:"a",answers:["stole"],hint:"stół · где",label:"форма stół после na"},". Kładę telefon na ",
+      {key:"b",options:["stole","stół","stołem"],answers:["stół"],label:"форма stół при направлении"},", a krzesło stawiam między ",
+      {key:"c",answers:["stołem a oknem"],hint:"stół a okno",label:"формы после między"},"."
+    ], explanation:"Na stole — где; na stół — куда; między stołem a oknem — положение, творительный."}
+  ]
+},
+{
+  id:"meaning", title:"Одинаковый предлог — разные конструкции",
+  lead:"Различай z, o и po по смыслу, а также выбирай формы we, ze, ode, przede и pode там, где без e трудно произнести.",
+  tasks:[
+    {id:"prepme-1", prompt:"Kawa ___ mlekiem.", options:["z","ze","od"], answers:["z"], explanation:"Z + творительный означает совместность: z mlekiem."},
+    {id:"prepme-2", prompt:"Wychodzę ___ domu.", options:["z","ze","od"], answers:["z"], explanation:"Z + родительный означает движение изнутри: z domu."},
+    {id:"prepme-3", prompt:"Proszę ___ pomoc.", options:["o","po","za"], answers:["o"], explanation:"Prosić o + винительный: proszę o pomoc."},
+    {id:"prepme-4", prompt:"Idę ___ chleb.", options:["o","po","do"], answers:["po"], explanation:"Iść po + винительный означает сходить за чем-то: po chleb."},
+    {id:"prepme-5", prompt:"Czekaliśmy ___ godzinę.", options:["przez","od","po"], answers:["przez"], explanation:"Длительность: przez + винительный, przez godzinę."},
+    {id:"prepme-6", prompt:"Mieszkam ___ Wrocławiu.", options:["w","we","na"], answers:["we"], explanation:"Перед начальным wr- используется форма we: we Wrocławiu."},
+    {id:"prepme-7", prompt:"Chodź ___ mną.", options:["z","ze","ode"], answers:["ze"], explanation:"Перед mną употребляется ze: ze mną."},
+    {id:"prepme-text", prompt:"Короткое сообщение", passage:[
+      {key:"a",options:["W","We","Na"],answers:["We"],label:"предлог перед wtorek"}," wtorek wracam ze szkoły razem ",
+      {key:"b",options:["z","ze","od"],answers:["ze"],label:"предлог перед wszystkimi"}," wszystkimi. To ważne ",
+      {key:"c",options:["przed","przede","pode"],answers:["przede"],label:"предлог перед wszystkim"}," wszystkim dla mnie."
+    ], explanation:"We wtorek, ze wszystkimi, przede wszystkim — три устойчивых случая беглого e."}
+  ]
+}
+];
+
+const PREP_TEST = {
+  title:"Итоговый тест: польские предлоги",
+  lead:"Восемнадцать заданий на выбор предлога, падеж после него и различие положения и направления.",
+  tasks:[
+    {id:"preptest-1", prompt:"Jedziemy do ___. (Kraków)", answers:["Krakowa"], explanation:"Do + родительный: do Krakowa."},
+    {id:"preptest-2", prompt:"Wracam z ___. (uniwersytet)", answers:["uniwersytetu"], explanation:"Z в значении «из» + родительный: z uniwersytetu."},
+    {id:"preptest-3", prompt:"Mieszkam u ___. (siostra)", answers:["siostry"], explanation:"U + родительный: u siostry."},
+    {id:"preptest-4", prompt:"Herbata bez ___. (cytryna)", answers:["cytryny"], explanation:"Bez + родительный: bez cytryny."},
+    {id:"preptest-5", prompt:"Spotkajmy się przy ___. (wejście)", answers:["wejściu"], explanation:"Przy + предложный: przy wejściu."},
+    {id:"preptest-6", prompt:"Rozmawiamy o ___. (film)", answers:["filmie"], explanation:"Тема разговора: o + предложный, o filmie."},
+    {id:"preptest-7", prompt:"Pytam ___ cenę.", options:["o","po","za"], answers:["o"], explanation:"Pytać o + винительный: o cenę."},
+    {id:"preptest-8", prompt:"Po ___ odpoczywam. (praca)", answers:["pracy"], explanation:"После чего: po + предложный, po pracy."},
+    {id:"preptest-9", prompt:"Idę po ___. (kawa)", answers:["kawę"], explanation:"За чем: po + винительный, po kawę."},
+    {id:"preptest-10", prompt:"Dron lata nad ___. (miasto)", answers:["miastem"], explanation:"Где движется? Nad + творительный: nad miastem."},
+    {id:"preptest-11", prompt:"Dron wleciał nad ___. (miasto)", answers:["miasto"], explanation:"Куда направился? Nad + винительный: nad miasto."},
+    {id:"preptest-12", prompt:"Samochód stoi za ___. (dom)", answers:["domem"], explanation:"Где? Za + творительный: za domem."},
+    {id:"preptest-13", prompt:"Jedziemy ___ miasto.", options:["przez","po","od"], answers:["przez"], explanation:"Через пространство: przez + винительный."},
+    {id:"preptest-14", prompt:"Pracuję ___ poniedziałku.", options:["od","ode","z"], answers:["od"], explanation:"Перед обычным существительным: od poniedziałku."},
+    {id:"preptest-15", prompt:"Dostałem wiadomość ___ niego.", options:["od","ode","z"], answers:["od"], explanation:"Нормально od niego; форма ode нужна прежде всего перед mnie."},
+    {id:"preptest-16", prompt:"Ten prezent jest ___ mnie.", options:["dla","do","u"], answers:["dla"], explanation:"Для кого: dla + родительный, dla mnie."},
+    {id:"preptest-17", prompt:"Dzięki ___ zdążyliśmy. (ty)", answers:["tobie"], explanation:"Dzięki требует дательного: dzięki tobie."},
+    {id:"preptest-18", prompt:"Usiądź między ___ a Piotrem. (Anna)", answers:["Anną"], explanation:"Положение между объектами: między + творительный, między Anną a Piotrem."}
+  ]
+};
 /* ============ ДАННЫЕ: приставки, сокращения, косвенная речь, отрезки времени ============ */
 const PREF_ALL = [
  ["przy-","приближение, прибытие","przyjść · przyjechać","przynieść · przywieźć · przypisać"],
@@ -1395,6 +1725,88 @@ const PLX = {
 };
 
 /* ============ ПРИЛАГАТЕЛЬНЫЕ ============ */
+const ADJ_PRACTICE = [
+{
+  id:"agree", title:"Согласование всей группы",
+  lead:"Род, число и падеж выбираются по существительному. В мужско-личном множественном следи ещё и за чередованием основы.",
+  tasks:[
+    {id:"adjagr-1", prompt:"Widzę ___ kobietę. (miły)", answers:["miłą"], explanation:"Женский винительный: miłą kobietę."},
+    {id:"adjagr-2", prompt:"Rozmawiam z ___ lekarzem. (dobry)", answers:["dobrym"], explanation:"Z + творительный: z dobrym lekarzem."},
+    {id:"adjagr-3", prompt:"Nie ma ___ samochodu. (nowy)", answers:["nowego"], explanation:"Родительный мужского и среднего рода: nowego samochodu."},
+    {id:"adjagr-4", prompt:"Pomagam ___ sąsiadce. (starszy)", answers:["starszej"], explanation:"Дательный женского рода имеет окончание -ej: starszej sąsiadce."},
+    {id:"adjagr-5", prompt:"To są ___ studenci. (wysoki)", options:["wysokie","wysocy","wysokich"], answers:["wysocy"], explanation:"Мужско-личный именительный: wysocy studenci, k → c."},
+    {id:"adjagr-6", prompt:"___ dzieci bawią się w parku. (mały)", options:["Mali","Małe","Małych"], answers:["Małe"], explanation:"Dzieci относятся к немужско-личному множественному: małe dzieci."},
+    {id:"adjagr-7", prompt:"Spotykam się z ___ przyjaciółmi. (polski)", answers:["polskimi"], explanation:"Творительный множественного для всех родов: polskimi przyjaciółmi."},
+    {id:"adjagr-text", prompt:"Новое жильё", passage:[
+      "W ",{key:"a",answers:["nowym"],hint:"nowy · mieszkanie",label:"форма nowy при mieszkanie"}," mieszkaniu są ",
+      {key:"b",options:["biały","białe","białych"],answers:["białe"],label:"форма biały при ściany"}," ściany i duży salon z ",
+      {key:"c",answers:["małym"],hint:"mały · balkon",label:"форма mały при balkon"}," balkonem."
+    ], explanation:"W nowym mieszkaniu, białe ściany, z małym balkonem — три разных согласования."}
+  ]
+},
+{
+  id:"compare", title:"Степени сравнения без кальки",
+  lead:"Регулярные суффиксы, чередования, исключения и аналитические формы bardziej / najbardziej.",
+  tasks:[
+    {id:"adjcmp-1", prompt:"nowy → ___ → najnowszy", answers:["nowszy"], explanation:"Одна согласная в конце основы: nowy → nowszy."},
+    {id:"adjcmp-2", prompt:"ładny → ___ → najładniejszy", answers:["ładniejszy"], explanation:"Скопление согласных: суффикс -ejszy, ładniejszy."},
+    {id:"adjcmp-3", prompt:"wysoki → ___ → najwyższy", answers:["wyższy"], explanation:"В сравнительной степени -ok- выпадает: wyższy."},
+    {id:"adjcmp-4", prompt:"dobry → ___ → najlepszy", options:["dobrzejszy","lepszy","bardziej dobry"], answers:["lepszy"], explanation:"Dobry имеет нерегулярную форму lepszy."},
+    {id:"adjcmp-5", prompt:"zły → gorszy → ___", answers:["najgorszy"], explanation:"Превосходная степень — naj- + gorszy: najgorszy."},
+    {id:"adjcmp-6", prompt:"Этот доклад интереснее: Ten referat jest ___. (interesujący)", options:["interesująciejszy","bardziej interesujący","więcej interesujący"], answers:["bardziej interesujący"], explanation:"Длинное причастное прилагательное сравнивается аналитически: bardziej interesujący."},
+    {id:"adjcmp-7", prompt:"Какое прилагательное обычно не образует степеней сравнения?", options:["ciepły","drewniany","trudny"], answers:["drewniany"], explanation:"Материал — относительный признак; drewniany обычно не сравнивается."},
+    {id:"adjcmp-text", prompt:"Выбор гостиницы", passage:[
+      "Ten hotel jest ",{key:"a",answers:["tańszy"],hint:"tani",label:"сравнительная степень tani"}," od tamtego, ale tamten jest ",
+      {key:"b",options:["komfortowszy","bardziej komfortowy","więcej komfortowy"],answers:["bardziej komfortowy"],label:"сравнительная степень komfortowy"},". Najbliżej centrum leży jednak ",
+      {key:"c",answers:["najdroższy"],hint:"drogi",label:"превосходная степень drogi"}," hotel."
+    ], explanation:"Tańszy и najdroższy синтетические; komfortowy естественно сравнивается через bardziej."}
+  ]
+},
+{
+  id:"usage", title:"Форма меняет смысл конструкции",
+  lead:"После być, в сравнительных оборотах и в порядке слов прилагательное ведёт себя не так, как подсказывает русский.",
+  tasks:[
+    {id:"adjuse-1", prompt:"Я устал — Jestem ___. (говорит мужчина)", options:["zmęczony","zmęczonym","zmęczonego"], answers:["zmęczony"], explanation:"Прилагательное без существительного после być остаётся в именительном: zmęczony."},
+    {id:"adjuse-2", prompt:"Я хороший врач — Jestem ___. (говорит мужчина)", answers:["dobrym lekarzem"], explanation:"С существительным вся группа ставится в творительный: dobrym lekarzem."},
+    {id:"adjuse-3", prompt:"Чёрный кофе: ___", answers:["czarna kawa"], explanation:"Качество ставится перед существительным: czarna kawa."},
+    {id:"adjuse-4", prompt:"Растворимый кофе: ___", answers:["kawa rozpuszczalna"], explanation:"Тип или вид ставится после существительного: kawa rozpuszczalna."},
+    {id:"adjuse-5", prompt:"Piotr jest wyższy ___ mnie.", options:["niż","ode","jak"], answers:["ode"], explanation:"Перед mnie нормативная форма с беглым e: ode mnie."},
+    {id:"adjuse-6", prompt:"У нас одинаковые модели телефонов, но не один аппарат: Mamy ___ telefony.", options:["te same","takie same","tych samych"], answers:["takie same"], explanation:"Takie same — одинаковые; te same — те же самые конкретные предметы."},
+    {id:"adjuse-7", prompt:"Исправьте ошибку: Ten telefon jest bardziej lepszy. → Ten telefon jest ___.", answers:["lepszy"], explanation:"Смешивать аналитическую и синтетическую степень нельзя: только lepszy."},
+    {id:"adjuse-text", prompt:"Разговор в магазине", passage:[
+      "Ta kurtka jest za ",{key:"a",answers:["droga"],hint:"drogi · kurtka",label:"форма drogi при kurtka"},". Czy ma pani ",
+      {key:"b",options:["taki sam","taką samą","tę samą"],answers:["taką samą"],label:"форма taki sam при kurtka"},", ale w ",
+      {key:"c",answers:["większym"],hint:"duży · сравнительная, rozmiar",label:"форма сравнительной степени duży"}," rozmiarze?"
+    ], explanation:"Za droga согласуется с kurtka; taką samą — винительный; większym — предложный от większy."}
+  ]
+}
+];
+
+const ADJ_TEST = {
+  title:"Итоговый тест: прилагательные",
+  lead:"Восемнадцать заданий на согласование, степени сравнения, порядок слов и сравнительные конструкции.",
+  tasks:[
+    {id:"adjtest-1", prompt:"Kupuję ___ książkę. (ciekawy)", answers:["ciekawą"], explanation:"Женский винительный: ciekawą książkę."},
+    {id:"adjtest-2", prompt:"Rozmawiamy o ___ problemie. (ważny)", answers:["ważnym"], explanation:"O + предложный мужского рода: ważnym problemie."},
+    {id:"adjtest-3", prompt:"Nie znam ___ człowieka. (ten)", answers:["tego"], explanation:"Родительный мужского рода: tego człowieka."},
+    {id:"adjtest-4", prompt:"To są ___ lekarze. (dobry)", options:["dobre","dobrzy","dobrych"], answers:["dobrzy"], explanation:"Мужско-личный именительный: dobrzy lekarze."},
+    {id:"adjtest-5", prompt:"___ psy biegają po parku. (duży)", options:["Duzi","Duże","Dużych"], answers:["Duże"], explanation:"Животные во множественном относятся к немужско-личной группе: duże psy."},
+    {id:"adjtest-6", prompt:"Idę z ___ koleżankami. (nowy)", answers:["nowymi"], explanation:"Творительный множественного: nowymi koleżankami."},
+    {id:"adjtest-7", prompt:"młody → ___ → najmłodszy", answers:["młodszy"], explanation:"Регулярная сравнительная степень: młodszy."},
+    {id:"adjtest-8", prompt:"niski → ___ → najniższy", answers:["niższy"], explanation:"-isk- сокращается и меняется: niski → niższy."},
+    {id:"adjtest-9", prompt:"mały → mniejszy → ___", answers:["najmniejszy"], explanation:"Превосходная: najmniejszy."},
+    {id:"adjtest-10", prompt:"Это объяснение понятнее: To wyjaśnienie jest ___. (zrozumiały)", options:["zrozumialsze","bardziej zrozumiałe","więcej zrozumiałe"], answers:["zrozumialsze","bardziej zrozumiałe"], explanation:"Оба варианта корректны: zrozumialsze — синтетическая сравнительная форма, bardziej zrozumiałe — аналитическая."},
+    {id:"adjtest-11", prompt:"Jestem ___. (gotowy, говорит женщина)", answers:["gotowa"], explanation:"После być без существительного остаётся именительный: gotowa."},
+    {id:"adjtest-12", prompt:"Anna jest ___. (dobry nauczyciel)", answers:["dobrą nauczycielką"], explanation:"Существительное после być требует творительного всей группы."},
+    {id:"adjtest-13", prompt:"Польский язык: ___", answers:["język polski"], explanation:"Тип/название языка: прилагательное после существительного."},
+    {id:"adjtest-14", prompt:"Тёплый вечер: ___", answers:["ciepły wieczór"], explanation:"Обычное качество ставится перед существительным."},
+    {id:"adjtest-15", prompt:"Maria jest młodsza ___ Anna.", options:["od","niż","jak"], answers:["niż"], explanation:"Niż вводит полную параллельную конструкцию: młodsza niż Anna."},
+    {id:"adjtest-16", prompt:"Im wcześniej, tym ___.", options:["dobrze","lepiej","najlepiej"], answers:["lepiej"], explanation:"Im…, tym… требует сравнительной степени в обеих частях."},
+    {id:"adjtest-17", prompt:"Robi się coraz ___. (zimno)", answers:["zimniej"], explanation:"Coraz требует сравнительной степени: coraz zimniej."},
+    {id:"adjtest-18", prompt:"Исправьте: To jest bardziej tańsze. → To jest ___.", answers:["tańsze"], explanation:"Нельзя соединять bardziej с синтетической формой tańsze."}
+  ]
+};
+
 const ADJ = [
  ["Mianownik","dobry","dobra","dobre","dobrzy","dobre"],
  ["Dopełniacz","dobrego","dobrej","dobrego","dobrych","dobrych"],

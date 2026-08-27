@@ -110,6 +110,16 @@ vm.runInContext(`
   ).join("");
   document.querySelector('[data-v="lista"] #vlist').innerHTML = listHTML("");
 
+  const practiceHost = document.querySelector("#casePractice");
+  practiceHost.className = "variant-host";
+  practiceHost.innerHTML = CASE_PRACTICE.map((practice, index) => casePracticeHTML(practice, index === 0)).join("");
+  document.querySelector("#caseTest").innerHTML = caseTestHTML();
+
+  const verbPracticeHost = document.querySelector("#verbPractice");
+  verbPracticeHost.className = "variant-host";
+  verbPracticeHost.innerHTML = VERB_PRACTICE.map((practice, index) => verbPracticeHTML(practice, index === 0)).join("");
+  document.querySelector("#verbTest").innerHTML = verbTestHTML();
+
   document.querySelectorAll(".case-variant,.verb-variant").forEach(linkHeadings);
 `, sandbox, {filename:"scripts/build-content.js"});
 
@@ -117,7 +127,9 @@ document.documentElement.dataset.prerendered = "true";
 document.documentElement.style.removeProperty("--brand-h");
 document.documentElement.style.removeProperty("--head-h");
 document.querySelectorAll('script[src="data.js"],script[src="app.js"]').forEach(script => script.remove());
-const fulltext = document.body.textContent.replace(/[ \t]+/g, " ").replace(/\n\s+/g, "\n").trim() + "\n";
+const fulltextBody = document.body.cloneNode(true);
+fulltextBody.querySelectorAll(".practice").forEach(section => section.remove());
+const fulltext = fulltextBody.textContent.replace(/[ \t]+/g, " ").replace(/\n\s+/g, "\n").trim() + "\n";
 await writeFile(resolve(root, "fulltext.txt"), fulltext, "utf8");
 
 const clean = value => value.replace(/\s+/g, " ").trim();
@@ -137,6 +149,7 @@ for(const section of document.querySelectorAll(".sec")){
   const label = clean(document.querySelector(`#tab-${section.id}`)?.textContent || section.id);
   let heading = "";
   for(const node of section.querySelectorAll("h2,h3,tr,li,p,.tip,.ngrid > div")){
+    if(node.closest(".practice")) continue;
     if(node.matches("h2,h3")){ heading = clean(node.textContent); continue; }
     if(node.tagName === "TR" && node.querySelector("th")) continue;
     if(node.matches("p") && node.closest(".tip")) continue;

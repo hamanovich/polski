@@ -17,7 +17,6 @@ Polski: końcówki
 Живая речь
 ЛюдиУменьшительныеМосты
 Справочник
-Девятнадцать разделов. Если не знаешь, с чего начать, - начни с рода: пока слово не отнесено к роду, таблицы падежей некуда приложить.
 Основы
 Алфавит32 буквы, диграфы, носовые, ударение и ассимиляция
 РодТри мужских рода, исключения и несклоняемые слова на -um
@@ -993,7 +992,7 @@ jarobiłemrobiłam-tyrobiłeśrobiłaś-on / ona / onorobiłrobiłarobiłomyrobi
 основа на -o-o → ómóc → mógł, nieść → niósł (но mogła, niosła)
 Нерегулярные в прошедшем
 глаголjaon · onaoni · one
-iśćszedłem / szłamszedł · szłaszli · szłyполностью другая основаjeśćjadłem / jadłamjadł · jadłajedli · jadłya → e только в мужско-личномmócmogłem / mogłammógł · mogłamogli · mogłymógł - с ómiećmiałem / miałammiał · miałamieli · miały-eć → -ał, но -elimusiećmusiałem / musiałammusiał · musiałamusieli · musiałyто же правилоchciećchciałem / chciałamchciał · chciałachcieli · chciałyто же правилоwziąćwziąłem / wzięłamwziął · wzięławzięli · wzięłyą → ę везде, кроме «он»zacząćzacząłem / zaczęłamzaczął · zaczęłazaczęli · zaczęłyто же правилоznaleźćznalazłem / znalazłamznalazł · znalazłaznaleźli · znalazłynieśćniosłem / niosłamniósł · niosłanieśli · niosłyniósł - с óusiąśćusiadłem / usiadłamusiadł · usiadłausiedli · usiadłybyćbyłem / byłambył · byłabyli · byłyопора для всего остального
+iśćszedłem / szłamszedł · szłaszli · szłyполностью другая основаjeśćjadłem / jadłamjadł · jadłajedli · jadłya → e только в мужско-личномmócmogłem / mogłammógł · mogłamogli · mogłymógł - с ómiećmiałem / miałammiał · miałamieli · miały-eć → -ał, но -elimusiećmusiałem / musiałammusiał · musiałamusieli · musiałyто же правилоchciećchciałem / chciałamchciał · chciałachcieli · chciałyто же правилоwziąćwziąłem / wzięłamwziął · wzięławzięli · wzięłyмуж. ед.: wziąłem, wziąłeś, wziął; жен., ср. и мн. имеют основу wzię-zacząćzacząłem / zaczęłamzaczął · zaczęłazaczęli · zaczęłyмуж. ед.: zacząłem, zacząłeś, zaczął; жен., ср. и мн. имеют основу zaczę-znaleźćznalazłem / znalazłamznalazł · znalazłaznaleźli · znalazłynieśćniosłem / niosłamniósł · niosłanieśli · niosłyniósł - с óusiąśćusiadłem / usiadłamusiadł · usiadłausiedli · usiadłybyćbyłem / byłambył · byłabyli · byłyопора для всего остального
 Подвижные окончания. -m, -ś, -śmy, -ście умеют отрываться и уезжать к первому слову: gdzie byłeś? = gdzieś był?; my to zrobiliśmy = myśmy to zrobili. И ударение: в byliśmy, byliście оно на третьем слоге от конца - единственное системное исключение из правила предпоследнего слога.
 Будущее: совершенный вид → простое
 Совершенный глагол спрягается как настоящее время, а значит будущее.

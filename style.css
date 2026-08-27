@@ -9,6 +9,9 @@
   --line-ui:light-dark(#848C7F,#6E777D);
   --end:light-dark(#B4123F,#FF6B8A);
   --alt:light-dark(#965900,#E0A44A);
+  --ok:light-dark(#17643A,#65D394);
+  --ok-bg:light-dark(#EAF6EE,#172A20);
+  --wrong-bg:light-dark(#FCECF0,#321B22);
   --ui:light-dark(#14171A,#E6E9E4);
   --tip:light-dark(#FBF7E8,#26221A);
   --mark:light-dark(#FBE9A7,#5C4A16);
@@ -218,6 +221,74 @@ html:not(.js) #navall,html:not(.js) #navmenu,html:not(.js) .navarr{display:none}
 .legend i{font-style:normal;font-weight:700}
 .legend .l1{color:var(--end)}
 .legend .l2{color:var(--alt)}
+
+/* Практика по падежам */
+.practice{margin-top:28px;padding:20px}
+.practice-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px}
+.practice-kicker{
+  color:var(--muted);font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;
+  margin:0 0 3px !important;
+}
+.exercise-progress,.test-score{
+  flex:0 0 auto;font-size:var(--fs-note);color:var(--muted-s);border:1px solid var(--line-ui);
+  border-radius:999px;padding:4px 9px;white-space:nowrap;
+}
+.test-score:empty{display:none}
+.test-score.is-scored{color:var(--alt);border-color:var(--alt);background:var(--tip)}
+.test-score.is-perfect{color:var(--ok);border-color:var(--ok);background:var(--ok-bg)}
+.exercise-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.exercise-item{
+  min-width:0;margin:0;border:1px solid var(--line);border-radius:2px;padding:14px;
+  background:var(--paper);
+}
+.exercise-item legend{
+  max-width:calc(100% - 12px);padding:0 6px 0 0;color:var(--muted);font-size:var(--fs-micro);
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.exercise-item legend span{
+  display:inline-grid;place-items:center;min-width:20px;height:20px;margin-right:7px;border-radius:50%;
+  background:var(--ink);color:var(--paper);letter-spacing:0;
+}
+.exercise-sentence{
+  max-width:none !important;margin:3px 0 12px !important;font-family:var(--serif);
+  font-size:var(--fs-lead);line-height:2.15;
+}
+.exercise-passage{line-height:2.35}
+.exercise-field{display:inline-flex;align-items:center;position:relative;margin:0 2px;vertical-align:baseline}
+.exercise-lemma{margin-left:5px;color:var(--muted);font-family:var(--sans);font-size:var(--fs-note);white-space:nowrap}
+.exercise-control{
+  max-width:180px;font:inherit;font-family:var(--serif);font-size:var(--fs-base);line-height:1.35;
+  color:var(--ink);background:var(--panel);border:0;border-bottom:1px solid var(--line-ui);
+  border-radius:0;padding:3px 5px;
+}
+select.exercise-control{padding-right:22px}
+.exercise-control:focus{outline:2px solid var(--ui);outline-offset:1px;border-color:transparent}
+.exercise-field.is-correct .exercise-control{color:var(--ok);border-color:var(--ok);background:var(--ok-bg)}
+.exercise-field.is-wrong .exercise-control{color:var(--end);border-color:var(--end);background:var(--wrong-bg)}
+.exercise-field.is-revealed .exercise-control{color:var(--alt);border-color:var(--alt);background:var(--tip)}
+.exercise-feedback{font-size:var(--fs-note);margin:2px 0 6px;color:var(--end)}
+.exercise-item[data-result="correct"] .exercise-feedback{color:var(--ok)}
+.exercise-item[data-result="revealed"] .exercise-feedback{color:var(--alt)}
+.exercise-explanation{font-size:var(--fs-note);color:var(--muted-s);margin:4px 0 10px !important}
+.exercise-item-actions,.practice-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.practice-actions{margin-top:16px}
+.exercise-button,.exercise-link{
+  font:inherit;font-size:var(--fs-note);border-radius:2px;padding:6px 10px;cursor:pointer;
+}
+.exercise-button{color:var(--paper);background:var(--ink);border:1px solid var(--ink)}
+.exercise-button:hover{opacity:.84}
+.exercise-link{color:var(--muted-s);background:none;border:1px solid var(--line-ui)}
+.exercise-link:hover{color:var(--ink);border-color:var(--ink)}
+.exercise-button:focus-visible,.exercise-link:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+.exercise-test{margin-top:18px;border-top:3px solid var(--ink)}
+html:not(.js) .practice{display:none}
+@media (max-width:760px){
+  .practice{padding:16px;margin-top:20px}
+  .practice-heading{display:block}
+  .exercise-progress,.test-score{display:inline-block;margin-top:7px}
+  .exercise-list{grid-template-columns:1fr}
+  .exercise-control{font-size:var(--fs-lead);max-width:160px}
+}
 
 table{width:100%;border-collapse:collapse;font-size:var(--fs-base)}
 th,td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
