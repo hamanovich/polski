@@ -16,7 +16,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="../style.css?v=7f1f99aec5">
+<link rel="stylesheet" href="../style.css?v=8f497e3a0a">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("theme");if(t&&t!=="auto")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -34,12 +34,31 @@
       </div>
     </div>
     <div id="navwrap">
-      <div id="navscroll">
-        <button id="navl" class="navarr" aria-label="Прокрутить вкладки влево"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M7 1 2 6.5 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
-        <nav id="nav" aria-label="Разделы справочника"><a id="tab-s-index" data-s="s-index" href="../">Оглавление</a><a id="tab-s-alpha" data-s="s-alpha" href="../alphabet/">Алфавит</a><a id="tab-s-rodz" data-s="s-rodz" href="../gender/">Род</a><a id="tab-s-cases" data-s="s-cases" href="../cases/">Существительные</a><a id="tab-s-alt" data-s="s-alt" href="../alternations/">Чередования</a><a id="tab-s-adj" data-s="s-adj" href="../adjectives/">Прилагательные</a><a id="tab-s-adv" data-s="s-adv" href="../adverbs/">Наречия</a><a id="tab-s-pron" data-s="s-pron" href="../pronouns/">Местоимения</a><a id="tab-s-q" data-s="s-q" href="../questions/">Вопросы</a><a id="tab-s-num" data-s="s-num" href="../numerals/">Числительные</a><a id="tab-s-verbs" data-s="s-verbs" href="../verbs/">Глаголы</a><a id="tab-s-neg" data-s="s-neg" href="../negation/">Отрицание</a><a id="tab-s-order" data-s="s-order" href="../word-order/">Порядок слов</a><a id="tab-s-impers" data-s="s-impers" href="../impersonal/">Безличные</a><a id="tab-s-conj" data-s="s-conj" href="../conjunctions/">Союзы</a><a aria-current="page" id="tab-s-part" data-s="s-part" href="./">Частицы</a><a id="tab-s-ludzie" data-s="s-ludzie" href="../people/">Люди</a><a id="tab-s-dim" data-s="s-dim" href="../diminutives/">Уменьшительные</a><a id="tab-s-preps" data-s="s-preps" href="../prepositions/">Предлоги</a><a id="tab-s-bridge" data-s="s-bridge" href="../language-bridges/">Мосты</a></nav>
-        <button id="navr" class="navarr" aria-label="Прокрутить вкладки вправо"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M1 1 6 6.5 1 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
-      </div>
-      <button id="navall" type="button" aria-expanded="false" aria-controls="navmenu">все разделы</button>
+      <nav id="nav" aria-label="Разделы справочника"><a id="tab-s-index" class="nav-home" data-s="s-index" href="../"><b>Оглавление</b></a><div class="navgroup" data-g="0">
+    <button type="button" class="navgroup-btn" id="ng-0" aria-expanded="false" aria-controls="ngp-0">Основы</button>
+    <div class="navpop" id="ngp-0" aria-labelledby="ng-0"><a id="tab-s-alpha" data-s="s-alpha" href="../alphabet/"><b>Алфавит</b><span>32 буквы, диграфы, носовые, ударение и ассимиляция</span></a><a id="tab-s-rodz" data-s="s-rodz" href="../gender/"><b>Род</b><span>Три мужских рода, исключения и несклоняемые слова на -um</span></a></div>
+  </div><div class="navgroup" data-g="1">
+    <button type="button" class="navgroup-btn" id="ng-1" aria-expanded="false" aria-controls="ngp-1">Склонение</button>
+    <div class="navpop" id="ngp-1" aria-labelledby="ng-1"><a id="tab-s-cases" data-s="s-cases" href="../cases/"><b>Существительные</b><span>Семь падежей: когда нужен, предлоги, окончания и чередования</span></a><a id="tab-s-alt" data-s="s-alt" href="../alternations/"><b>Чередования</b><span>Сводная карта ó/o, ą/ę и изменений согласных</span></a><a id="tab-s-adj" data-s="s-adj" href="../adjectives/"><b>Прилагательные</b><span>Одна парадигма на прилагательные, притяжательные и указательные</span></a><a id="tab-s-pron" data-s="s-pron" href="../pronouns/"><b>Местоимения</b><span>Личные, притяжательные, возвратные, указательные</span></a><a id="tab-s-num" data-s="s-num" href="../numerals/"><b>Числительные</b><span>Какой падеж требует число и что делает с глаголом</span></a></div>
+  </div><div class="navgroup" data-g="2">
+    <button type="button" class="navgroup-btn" id="ng-2" aria-expanded="false" aria-controls="ngp-2">Глагол</button>
+    <div class="navpop" id="ngp-2" aria-labelledby="ng-2"><a id="tab-s-verbs" data-s="s-verbs" href="../verbs/"><b>Глаголы</b><span>Спряжения, времена и вид, причастия и управление слов</span></a></div>
+  </div><div class="navgroup" data-g="3">
+    <button type="button" class="navgroup-btn" id="ng-3" aria-expanded="false" aria-controls="ngp-3">Словарь и речь</button>
+    <div class="navpop" id="ngp-3" aria-labelledby="ng-3"><a id="tab-s-vocab" data-s="s-vocab" href="../vocabulary/"><b>Словарь</b><span>400 полезных слов: глаголы, существительные, прилагательные и наречия</span></a><a id="tab-s-talk" data-s="s-talk" href="../speaking/"><b>Разговорная практика</b><span>Готовые фразы, конструкторы, мини-диалоги и фразы спасения</span></a></div>
+  </div><div class="navgroup" data-g="4">
+    <button type="button" class="navgroup-btn" id="ng-4" aria-expanded="false" aria-controls="ngp-4">Предложение</button>
+    <div class="navpop" id="ngp-4" aria-labelledby="ng-4"><a id="tab-s-q" data-s="s-q" href="../questions/"><b>Вопросы</b><span>czy для общего вопроса, вопросительное слово для частного</span></a><a id="tab-s-neg" data-s="s-neg" href="../negation/"><b>Отрицание</b><span>Отрицания накапливаются, а не гасят друг друга</span></a><a id="tab-s-order" data-s="s-order" href="../word-order/"><b>Порядок слов</b><span>Свободный порядок слов, но у клитик жёсткие места</span></a><a id="tab-s-impers" data-s="s-impers" href="../impersonal/"><b>Безличные</b><span>Язык объявлений, вывесок и учреждений</span></a></div>
+  </div><div class="navgroup is-current" data-g="5">
+    <button type="button" class="navgroup-btn" id="ng-5" aria-expanded="false" aria-controls="ngp-5">Служебные слова</button>
+    <div class="navpop" id="ngp-5" aria-labelledby="ng-5"><a id="tab-s-adv" data-s="s-adv" href="../adverbs/"><b>Наречия</b><span>Образуются от прилагательных списком типовых окончаний</span></a><a id="tab-s-preps" data-s="s-preps" href="../prepositions/"><b>Предлоги</b><span>Один предлог - два падежа: разница обычно «где / куда»</span></a><a id="tab-s-conj" data-s="s-conj" href="../conjunctions/"><b>Союзы</b><span>От них зависит запятая - единственное реальное отличие пунктуации</span></a><a aria-current="page" id="tab-s-part" data-s="s-part" href="./"><b>Частицы</b><span>Без них польский звучит как учебник</span></a></div>
+  </div><div class="navgroup" data-g="6">
+    <button type="button" class="navgroup-btn" id="ng-6" aria-expanded="false" aria-controls="ngp-6">Живая речь</button>
+    <div class="navpop" id="ngp-6" aria-labelledby="ng-6"><a id="tab-s-ludzie" data-s="s-ludzie" href="../people/"><b>Люди</b><span>Вежливое «вы» - третье лицо; имена, фамилии, национальности</span></a><a id="tab-s-dim" data-s="s-dim" href="../diminutives/"><b>Уменьшительные</b><span>Уменьшительные шире, чем в русском: вежливость и тепло</span></a><a id="tab-s-bridge" data-s="s-bridge" href="../language-bridges/"><b>Мосты</b><span>Фонетические соответствия, белорусский мост, ложные друзья</span></a></div>
+  </div></nav>
+      <button id="navall" type="button" aria-expanded="false" aria-controls="navmenu">
+        <span class="navall-ico" aria-hidden="true"></span><span class="navall-txt">Частицы</span>
+      </button>
       <div id="navmenu"><section><h4>Начало</h4>
     <a data-s="s-index" href="../">Оглавление</a></section><section><h4>Основы</h4>
     <a data-s="s-alpha" href="../alphabet/">Алфавит</a><a data-s="s-rodz" href="../gender/">Род</a>
@@ -47,9 +66,11 @@
     <a data-s="s-cases" href="../cases/">Существительные</a><a data-s="s-alt" href="../alternations/">Чередования</a><a data-s="s-adj" href="../adjectives/">Прилагательные</a><a data-s="s-pron" href="../pronouns/">Местоимения</a><a data-s="s-num" href="../numerals/">Числительные</a>
   </section><section><h4>Глагол</h4>
     <a data-s="s-verbs" href="../verbs/">Глаголы</a>
+  </section><section><h4>Словарь и речь</h4>
+    <a data-s="s-vocab" href="../vocabulary/">Словарь</a><a data-s="s-talk" href="../speaking/">Разговорная практика</a>
   </section><section><h4>Предложение</h4>
     <a data-s="s-q" href="../questions/">Вопросы</a><a data-s="s-neg" href="../negation/">Отрицание</a><a data-s="s-order" href="../word-order/">Порядок слов</a><a data-s="s-impers" href="../impersonal/">Безличные</a>
-  </section><section><h4>Наречия и служебные</h4>
+  </section><section><h4>Служебные слова</h4>
     <a data-s="s-adv" href="../adverbs/">Наречия</a><a data-s="s-preps" href="../prepositions/">Предлоги</a><a data-s="s-conj" href="../conjunctions/">Союзы</a><a aria-current="page" data-s="s-part" href="./">Частицы</a>
   </section><section><h4>Живая речь</h4>
     <a data-s="s-ludzie" href="../people/">Люди</a><a data-s="s-dim" href="../diminutives/">Уменьшительные</a><a data-s="s-bridge" href="../language-bridges/">Мосты</a>
@@ -75,71 +96,73 @@
 
 
 
+
+
   <section id="s-part" class="sec on"><div class="panel">
     <h1 class="page-title">Частицы</h1>
-    <p id="r-1689" class="lead">Не переводятся по словарю и не склоняются, но именно они делают речь живой. Без них польский звучит как учебник.</p>
+    <p id="r-2044" class="lead">Не переводятся по словарю и не склоняются, но именно они делают речь живой. Без них польский звучит как учебник.</p>
 
     <h3 data-h="рабочии-минимум">Рабочий минимум<button aria-label="Скопировать ссылку на «Рабочий минимум»" title="Скопировать ссылку на «Рабочий минимум»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>частица</th><th>значение</th><th>примеры</th><th></th></tr>
-      <tr id="r-1690"><td class="w">no</td><td style="color:var(--muted);font-size:var(--fs-note)">ну</td>
-        <td class="g">No dobrze, mów. · No i co? · Chodź no tutaj!</td><td class="note">Самая частая в разговоре. Не «но» - «но» это <span class="pl">ale</span>.</td></tr><tr id="r-1691"><td class="w">czy</td><td style="color:var(--muted);font-size:var(--fs-note)">ли</td>
-        <td class="g">Czy jesteś głodny? · Nie wiem, czy przyjdzie.</td><td class="note">Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается.</td></tr><tr id="r-1692"><td class="w">chyba</td><td style="color:var(--muted);font-size:var(--fs-note)">наверное, кажется</td>
-        <td class="g">Chyba tak. · Chyba będzie padać.</td><td class="note">Неуверенность. <span class="pl">chyba że</span> - «разве что».</td></tr><tr id="r-1693"><td class="w">może</td><td style="color:var(--muted);font-size:var(--fs-note)">может быть</td>
-        <td class="g">Może pójdziemy do kina? · Może masz rację.</td><td class="note">Ещё и мягкое предложение.</td></tr><tr id="r-1694"><td class="w">pewnie</td><td style="color:var(--muted);font-size:var(--fs-note)">наверняка</td>
-        <td class="g">Pewnie śpi. · No pewnie!</td><td class="note"><span class="pl">No pewnie!</span> - «ну конечно!»</td></tr><tr id="r-1695"><td class="w">niech</td><td style="color:var(--muted);font-size:var(--fs-note)">пусть</td>
-        <td class="g">Niech pan wejdzie. · Niech oni poczekają.</td><td class="note">Повелительное для 3-го лица и вежливое обращение.</td></tr><tr id="r-1696"><td class="w">oby</td><td style="color:var(--muted);font-size:var(--fs-note)">хоть бы, дай бог</td>
-        <td class="g">Oby się udało! · Oby nie padało.</td><td class="note">Пожелание.</td></tr><tr id="r-1697"><td class="w">żeby</td><td style="color:var(--muted);font-size:var(--fs-note)">чтобы, вот бы</td>
-        <td class="g">Żebyś wiedział! · Żeby tylko zdążyć.</td><td class="note">Сливается с окончаниями: żebym, żebyś, żebyśmy.</td></tr><tr id="r-1698"><td class="w">przecież</td><td style="color:var(--muted);font-size:var(--fs-note)">ведь</td>
-        <td class="g">Przecież mówiłem! · Przecież to oczywiste.</td><td class="note">Возражение и напоминание.</td></tr><tr id="r-1699"><td class="w">właśnie</td><td style="color:var(--muted);font-size:var(--fs-note)">именно, как раз</td>
-        <td class="g">Właśnie o tym mówię. · Właśnie!</td><td class="note">Одиночное <span class="pl">Właśnie!</span> = «вот именно!»</td></tr><tr id="r-1700"><td class="w">akurat</td><td style="color:var(--muted);font-size:var(--fs-note)">как раз</td>
-        <td class="g">Jest akurat pięć jabłek. · Akurat!</td><td class="note">Одиночное <span class="pl">Akurat!</span> - ирония: «ага, конечно».</td></tr><tr id="r-1701"><td class="w">naprawdę</td><td style="color:var(--muted);font-size:var(--fs-note)">правда, действительно</td>
-        <td class="g">Naprawdę nie wiem. · Naprawdę?</td><td class="note">Проверка и усиление.</td></tr><tr id="r-1702"><td class="w">tylko</td><td style="color:var(--muted);font-size:var(--fs-note)">только</td>
-        <td class="g">Mam tylko pięć złotych. · Tylko nie to!</td><td class="note">Ограничение.</td></tr><tr id="r-1703"><td class="w">nawet</td><td style="color:var(--muted);font-size:var(--fs-note)">даже</td>
-        <td class="g">Nawet nie wiedziałem. · Nawet ładne.</td><td class="note">Усиление.</td></tr><tr id="r-1704"><td class="w">wcale</td><td style="color:var(--muted);font-size:var(--fs-note)">вовсе</td>
-        <td class="g">Wcale nie! · Wcale mi się nie podoba.</td><td class="note">Почти всегда с <span class="pl">nie</span>.</td></tr><tr id="r-1705"><td class="w">dopiero</td><td style="color:var(--muted);font-size:var(--fs-note)">только (о времени)</td>
-        <td class="g">Dopiero przyszedł. · Jest dopiero piąta.</td><td class="note">Не путать с <span class="pl">tylko</span>: <span class="pl">dopiero</span> - про время.</td></tr><tr id="r-1706"><td class="w">owszem</td><td style="color:var(--muted);font-size:var(--fs-note)">да, конечно</td>
-        <td class="g">Owszem, zgadzam się.</td><td class="note">Вежливое согласие, часто в ответ на вопрос.</td></tr><tr id="r-1707"><td class="w">ależ</td><td style="color:var(--muted);font-size:var(--fs-note)">да что ты, ну конечно</td>
-        <td class="g">Ależ oczywiście! · Ależ nie!</td><td class="note">Эмоциональное усиление.</td></tr><tr id="r-1708"><td class="w">niby</td><td style="color:var(--muted);font-size:var(--fs-note)">якобы, вроде</td>
-        <td class="g">Niby się uczy. · Niby wszystko dobrze.</td><td class="note">Сомнение в чужих словах.</td></tr><tr id="r-1709"><td class="w">raczej</td><td style="color:var(--muted);font-size:var(--fs-note)">скорее</td>
-        <td class="g">Raczej nie. · Raczej tak.</td><td class="note">Мягкий ответ вместо резкого «нет».</td></tr><tr id="r-1710"><td class="w">aż</td><td style="color:var(--muted);font-size:var(--fs-note)">аж</td>
-        <td class="g">Aż tyle? · Czekałem aż trzy godziny.</td><td class="note">Удивление количеству.</td></tr><tr id="r-1711"><td class="w">ani</td><td style="color:var(--muted);font-size:var(--fs-note)">ни</td>
+      <tr id="r-2045"><td class="w">no</td><td style="color:var(--muted);font-size:var(--fs-note)">ну</td>
+        <td class="g">No dobrze, mów. · No i co? · Chodź no tutaj!</td><td class="note">Самая частая в разговоре. Не «но» - «но» это <span class="pl">ale</span>.</td></tr><tr id="r-2046"><td class="w">czy</td><td style="color:var(--muted);font-size:var(--fs-note)">ли</td>
+        <td class="g">Czy jesteś głodny? · Nie wiem, czy przyjdzie.</td><td class="note">Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается.</td></tr><tr id="r-2047"><td class="w">chyba</td><td style="color:var(--muted);font-size:var(--fs-note)">наверное, кажется</td>
+        <td class="g">Chyba tak. · Chyba będzie padać.</td><td class="note">Неуверенность. <span class="pl">chyba że</span> - «разве что».</td></tr><tr id="r-2048"><td class="w">może</td><td style="color:var(--muted);font-size:var(--fs-note)">может быть</td>
+        <td class="g">Może pójdziemy do kina? · Może masz rację.</td><td class="note">Ещё и мягкое предложение.</td></tr><tr id="r-2049"><td class="w">pewnie</td><td style="color:var(--muted);font-size:var(--fs-note)">наверняка</td>
+        <td class="g">Pewnie śpi. · No pewnie!</td><td class="note"><span class="pl">No pewnie!</span> - «ну конечно!»</td></tr><tr id="r-2050"><td class="w">niech</td><td style="color:var(--muted);font-size:var(--fs-note)">пусть</td>
+        <td class="g">Niech pan wejdzie. · Niech oni poczekają.</td><td class="note">Повелительное для 3-го лица и вежливое обращение.</td></tr><tr id="r-2051"><td class="w">oby</td><td style="color:var(--muted);font-size:var(--fs-note)">хоть бы, дай бог</td>
+        <td class="g">Oby się udało! · Oby nie padało.</td><td class="note">Пожелание.</td></tr><tr id="r-2052"><td class="w">żeby</td><td style="color:var(--muted);font-size:var(--fs-note)">чтобы, вот бы</td>
+        <td class="g">Żebyś wiedział! · Żeby tylko zdążyć.</td><td class="note">Сливается с окончаниями: żebym, żebyś, żebyśmy.</td></tr><tr id="r-2053"><td class="w">przecież</td><td style="color:var(--muted);font-size:var(--fs-note)">ведь</td>
+        <td class="g">Przecież mówiłem! · Przecież to oczywiste.</td><td class="note">Возражение и напоминание.</td></tr><tr id="r-2054"><td class="w">właśnie</td><td style="color:var(--muted);font-size:var(--fs-note)">именно, как раз</td>
+        <td class="g">Właśnie o tym mówię. · Właśnie!</td><td class="note">Одиночное <span class="pl">Właśnie!</span> = «вот именно!»</td></tr><tr id="r-2055"><td class="w">akurat</td><td style="color:var(--muted);font-size:var(--fs-note)">как раз</td>
+        <td class="g">Jest akurat pięć jabłek. · Akurat!</td><td class="note">Одиночное <span class="pl">Akurat!</span> - ирония: «ага, конечно».</td></tr><tr id="r-2056"><td class="w">naprawdę</td><td style="color:var(--muted);font-size:var(--fs-note)">правда, действительно</td>
+        <td class="g">Naprawdę nie wiem. · Naprawdę?</td><td class="note">Проверка и усиление.</td></tr><tr id="r-2057"><td class="w">tylko</td><td style="color:var(--muted);font-size:var(--fs-note)">только</td>
+        <td class="g">Mam tylko pięć złotych. · Tylko nie to!</td><td class="note">Ограничение.</td></tr><tr id="r-2058"><td class="w">nawet</td><td style="color:var(--muted);font-size:var(--fs-note)">даже</td>
+        <td class="g">Nawet nie wiedziałem. · Nawet ładne.</td><td class="note">Усиление.</td></tr><tr id="r-2059"><td class="w">wcale</td><td style="color:var(--muted);font-size:var(--fs-note)">вовсе</td>
+        <td class="g">Wcale nie! · Wcale mi się nie podoba.</td><td class="note">Почти всегда с <span class="pl">nie</span>.</td></tr><tr id="r-2060"><td class="w">dopiero</td><td style="color:var(--muted);font-size:var(--fs-note)">только (о времени)</td>
+        <td class="g">Dopiero przyszedł. · Jest dopiero piąta.</td><td class="note">Не путать с <span class="pl">tylko</span>: <span class="pl">dopiero</span> - про время.</td></tr><tr id="r-2061"><td class="w">owszem</td><td style="color:var(--muted);font-size:var(--fs-note)">да, конечно</td>
+        <td class="g">Owszem, zgadzam się.</td><td class="note">Вежливое согласие, часто в ответ на вопрос.</td></tr><tr id="r-2062"><td class="w">ależ</td><td style="color:var(--muted);font-size:var(--fs-note)">да что ты, ну конечно</td>
+        <td class="g">Ależ oczywiście! · Ależ nie!</td><td class="note">Эмоциональное усиление.</td></tr><tr id="r-2063"><td class="w">niby</td><td style="color:var(--muted);font-size:var(--fs-note)">якобы, вроде</td>
+        <td class="g">Niby się uczy. · Niby wszystko dobrze.</td><td class="note">Сомнение в чужих словах.</td></tr><tr id="r-2064"><td class="w">raczej</td><td style="color:var(--muted);font-size:var(--fs-note)">скорее</td>
+        <td class="g">Raczej nie. · Raczej tak.</td><td class="note">Мягкий ответ вместо резкого «нет».</td></tr><tr id="r-2065"><td class="w">aż</td><td style="color:var(--muted);font-size:var(--fs-note)">аж</td>
+        <td class="g">Aż tyle? · Czekałem aż trzy godziny.</td><td class="note">Удивление количеству.</td></tr><tr id="r-2066"><td class="w">ani</td><td style="color:var(--muted);font-size:var(--fs-note)">ни</td>
         <td class="g">Ani słowa! · Ani jeden.</td><td class="note">Усиленное отрицание.</td></tr>
     </table></div>
 
     <h3 data-h="разряды">Разряды<button aria-label="Скопировать ссылку на «Разряды»" title="Скопировать ссылку на «Разряды»" class="alink" type="button"></button></h3>
     <div class="scroll"><table>
       <tr><th>разряд</th><th>частицы</th><th>пример</th></tr>
-      <tr id="r-1712"><td style="color:var(--muted)">вопросительные</td><td class="w">czy, czyż, czyżby</td><td class="g">Czy Ania wróciła?</td></tr><tr id="r-1713"><td style="color:var(--muted)">утвердительные</td><td class="w">tak, no, owszem, wszak</td><td class="g">Tak, trochę.</td></tr><tr id="r-1714"><td style="color:var(--muted)">отрицательные</td><td class="w">nie, ani, wcale</td><td class="g">To nie jest problem.</td></tr><tr id="r-1715"><td style="color:var(--muted)">условные</td><td class="w">by, bym, byś, byśmy, byście</td><td class="g">On by to zrobił dobrze.</td></tr><tr id="r-1716"><td style="color:var(--muted)">сомнения</td><td class="w">chyba, może, pewnie, bodaj</td><td class="g">Może mógłbyś wysłać mi maila.</td></tr><tr id="r-1717"><td style="color:var(--muted)">побудительные</td><td class="w">niech, oby, żeby</td><td class="g">Niech ona to skończy!</td></tr><tr id="r-1718"><td style="color:var(--muted)">усилительные</td><td class="w">przecież, ależ, -że, to</td><td class="g">Ależ oczywiście!</td></tr><tr id="r-1719"><td style="color:var(--muted)">ограничительные</td><td class="w">tylko, jedynie, nawet, chociaż</td><td class="g">Mam tylko pięć złotych.</td></tr><tr id="r-1720"><td style="color:var(--muted)">неопределённые</td><td class="w">byle, lada, -kolwiek, -ś</td><td class="g">Nie rzucaj byle gdzie.</td></tr>
+      <tr id="r-2067"><td style="color:var(--muted)">вопросительные</td><td class="w">czy, czyż, czyżby</td><td class="g">Czy Ania wróciła?</td></tr><tr id="r-2068"><td style="color:var(--muted)">утвердительные</td><td class="w">tak, no, owszem, wszak</td><td class="g">Tak, trochę.</td></tr><tr id="r-2069"><td style="color:var(--muted)">отрицательные</td><td class="w">nie, ani, wcale</td><td class="g">To nie jest problem.</td></tr><tr id="r-2070"><td style="color:var(--muted)">условные</td><td class="w">by, bym, byś, byśmy, byście</td><td class="g">On by to zrobił dobrze.</td></tr><tr id="r-2071"><td style="color:var(--muted)">сомнения</td><td class="w">chyba, może, pewnie, bodaj</td><td class="g">Może mógłbyś wysłać mi maila.</td></tr><tr id="r-2072"><td style="color:var(--muted)">побудительные</td><td class="w">niech, oby, żeby</td><td class="g">Niech ona to skończy!</td></tr><tr id="r-2073"><td style="color:var(--muted)">усилительные</td><td class="w">przecież, ależ, -że, to</td><td class="g">Ależ oczywiście!</td></tr><tr id="r-2074"><td style="color:var(--muted)">ограничительные</td><td class="w">tylko, jedynie, nawet, chociaż</td><td class="g">Mam tylko pięć złotych.</td></tr><tr id="r-2075"><td style="color:var(--muted)">неопределённые</td><td class="w">byle, lada, -kolwiek, -ś</td><td class="g">Nie rzucaj byle gdzie.</td></tr>
     </table></div>
 
     <h3 data-h="неопределенность-s-kolwiek-byle">Неопределённость: -ś, -kolwiek, byle<button aria-label="Скопировать ссылку на «Неопределённость: -ś, -kolwiek, byle»" title="Скопировать ссылку на «Неопределённость: -ś, -kolwiek, byle»" class="alink" type="button"></button></h3>
     <div class="scroll"><table>
       <tr><th>элемент</th><th>значение</th><th>примеры</th></tr>
-      <tr id="r-1721"><td class="c">-ś</td><td style="color:var(--muted)">-то, -нибудь</td><td class="w">ktoś · coś · gdzieś · kiedyś · jakiś</td></tr><tr id="r-1722"><td class="c">-kolwiek</td><td style="color:var(--muted)">-нибудь (любой)</td><td class="w">ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiek</td></tr><tr id="r-1723"><td class="c">byle</td><td style="color:var(--muted)">лишь бы, кое-как</td><td class="w">byle kto · byle gdzie · byle jak</td></tr><tr id="r-1724"><td class="c">lada</td><td style="color:var(--muted)">любой, первый попавшийся</td><td class="w">lada dzień · lada chwila · lada kto</td></tr><tr id="r-1725"><td class="c">nie-</td><td style="color:var(--muted)">ни- / не-</td><td class="w">nikt · nic · nigdy · nigdzie · żaden</td></tr>
+      <tr id="r-2076"><td class="c">-ś</td><td style="color:var(--muted)">-то, -нибудь</td><td class="w">ktoś · coś · gdzieś · kiedyś · jakiś</td></tr><tr id="r-2077"><td class="c">-kolwiek</td><td style="color:var(--muted)">-нибудь (любой)</td><td class="w">ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiek</td></tr><tr id="r-2078"><td class="c">byle</td><td style="color:var(--muted)">лишь бы, кое-как</td><td class="w">byle kto · byle gdzie · byle jak</td></tr><tr id="r-2079"><td class="c">lada</td><td style="color:var(--muted)">любой, первый попавшийся</td><td class="w">lada dzień · lada chwila · lada kto</td></tr><tr id="r-2080"><td class="c">nie-</td><td style="color:var(--muted)">ни- / не-</td><td class="w">nikt · nic · nigdy · nigdzie · żaden</td></tr>
     </table></div>
-    <div id="r-1726" class="tip"><b>Двойное отрицание обязательно.</b> <span class="pl">Nikt nic nie wie.</span> · <span class="pl">Nigdy tam nie byłem.</span> - <span class="pl">nie</span> при глаголе остаётся, даже когда уже есть <span class="pl">nikt</span> или <span class="pl">nigdy</span>. Здесь польский совпадает с русским и расходится с английским.</div>
+    <div id="r-2081" class="tip"><b>Двойное отрицание обязательно.</b> <span class="pl">Nikt nic nie wie.</span> · <span class="pl">Nigdy tam nie byłem.</span> - <span class="pl">nie</span> при глаголе остаётся, даже когда уже есть <span class="pl">nikt</span> или <span class="pl">nigdy</span>. Здесь польский совпадает с русским и расходится с английским.</div>
 
     <h3 data-h="слитно-или-раздельно">Слитно или раздельно<button aria-label="Скопировать ссылку на «Слитно или раздельно»" title="Скопировать ссылку на «Слитно или раздельно»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>как</th><th>правило</th><th>примеры</th></tr>
-      <tr id="r-1727"><td class="c">слитно</td><td>-że, -ż с глаголами и вопросительными</td><td class="w">idźże! · chodźże! · dlaczegoż · cóż · któż</td></tr><tr id="r-1728"><td class="c">слитно</td><td>by, bym, byś с личной формой глагола</td><td class="w">zrobiłbym · chciałabyś · poszliby</td></tr><tr id="r-1729"><td class="c">слитно</td><td>закреплённые слова - целиком, а не «союз + by»</td><td class="w">gdyby · żeby · aby · choćby · chociażby · czyżby · oby</td></tr><tr id="r-1730"><td class="c">слитно</td><td>nie с существительными, прилагательными, наречиями, причастиями</td><td class="w">nieprawda · niegrzeczny · niedaleko · niepalący</td></tr><tr id="r-1731"><td class="c">слитно · норма-2026</td><td>nie с прилагательным и наречием в любой степени</td><td class="w">nielepszy · nienajlepszy · niegorzej · nienajlepiej</td></tr><tr id="r-1732"><td class="cq">раздельно</td><td>no, czy, niech, oby, bodaj как отдельные слова</td><td class="w">Podejdź no tutaj! · Czy wiesz? · Niech wejdzie.</td></tr><tr id="r-1733"><td class="cq">раздельно</td><td>nie с глаголами</td><td class="w">nie wiem · nie mam · nie chcę</td></tr><tr id="r-1734"><td class="cq">раздельно</td><td>nie с числительными и местоимениями</td><td class="w">nie pięć · nie ja · nie ten</td></tr><tr id="r-1735"><td class="cq">раздельно</td><td>by после союза, если сочетание не закреплённое слово</td><td class="w">czy by · albo by · to by · jak by</td></tr><tr id="r-1736"><td class="cq">раздельно</td><td>by с безличными формами</td><td class="w">można by · trzeba by · warto by</td></tr>
+      <tr id="r-2082"><td class="c">слитно</td><td>-że, -ż с глаголами и вопросительными</td><td class="w">idźże! · chodźże! · dlaczegoż · cóż · któż</td></tr><tr id="r-2083"><td class="c">слитно</td><td>by, bym, byś с личной формой глагола</td><td class="w">zrobiłbym · chciałabyś · poszliby</td></tr><tr id="r-2084"><td class="c">слитно</td><td>закреплённые слова - целиком, а не «союз + by»</td><td class="w">gdyby · żeby · aby · choćby · chociażby · czyżby · oby</td></tr><tr id="r-2085"><td class="c">слитно</td><td>nie с существительными, прилагательными, наречиями, причастиями</td><td class="w">nieprawda · niegrzeczny · niedaleko · niepalący</td></tr><tr id="r-2086"><td class="c">слитно · норма-2026</td><td>nie с прилагательным и наречием в любой степени</td><td class="w">nielepszy · nienajlepszy · niegorzej · nienajlepiej</td></tr><tr id="r-2087"><td class="cq">раздельно</td><td>no, czy, niech, oby, bodaj как отдельные слова</td><td class="w">Podejdź no tutaj! · Czy wiesz? · Niech wejdzie.</td></tr><tr id="r-2088"><td class="cq">раздельно</td><td>nie с глаголами</td><td class="w">nie wiem · nie mam · nie chcę</td></tr><tr id="r-2089"><td class="cq">раздельно</td><td>nie с числительными и местоимениями</td><td class="w">nie pięć · nie ja · nie ten</td></tr><tr id="r-2090"><td class="cq">раздельно</td><td>by после союза, если сочетание не закреплённое слово</td><td class="w">czy by · albo by · to by · jak by</td></tr><tr id="r-2091"><td class="cq">раздельно</td><td>by с безличными формами</td><td class="w">można by · trzeba by · warto by</td></tr>
     </table></div>
-    <div id="r-1737" class="tip"><b>Норма с 1 января 2026 года.</b> Теперь <span class="pl">nie</span> пишется слитно с прилагательными и образованными от них наречиями во всех степенях: <span class="pl">nielepszy, nienajlepszy, niegorzej, nienajlepiej</span>. В старых словарях и текстах ещё встречается прежнее раздельное написание.</div>
-    <div id="r-1738" class="tip"><b>-że усиливает и подгоняет приказ.</b> <span class="pl">Idź!</span> - команда, <span class="pl">Idźże!</span> - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: <span class="pl">chodźże, weźże, dajże</span>.</div>
+    <div id="r-2092" class="tip"><b>Норма с 1 января 2026 года.</b> Теперь <span class="pl">nie</span> пишется слитно с прилагательными и образованными от них наречиями во всех степенях: <span class="pl">nielepszy, nienajlepszy, niegorzej, nienajlepiej</span>. В старых словарях и текстах ещё встречается прежнее раздельное написание.</div>
+    <div id="r-2093" class="tip"><b>-że усиливает и подгоняет приказ.</b> <span class="pl">Idź!</span> - команда, <span class="pl">Idźże!</span> - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: <span class="pl">chodźże, weźże, dajże</span>.</div>
 
     <h3 data-h="готовые-реплики">Готовые реплики<button aria-label="Скопировать ссылку на «Готовые реплики»" title="Скопировать ссылку на «Готовые реплики»" class="alink" type="button"></button></h3>
     <table>
-      <tr id="r-1739"><td style="width:34%" class="w">No dobra. · No jasne. · No pewnie.</td><td>ну ладно · ну ясно · ну конечно</td></tr>
-      <tr id="r-1740"><td class="w">No właśnie! · Dokładnie!</td><td>вот именно</td></tr>
-      <tr id="r-1741"><td class="w">Raczej nie. · Chyba nie.</td><td>скорее нет - мягкий отказ</td></tr>
-      <tr id="r-1742"><td class="w">Ależ oczywiście!</td><td>ну разумеется</td></tr>
-      <tr id="r-1743"><td class="w">Akurat!</td><td>ага, как же - с иронией</td></tr>
-      <tr id="r-1744"><td class="w">Przecież mówiłem.</td><td>я же говорил</td></tr>
-      <tr id="r-1745"><td class="w">Może być.</td><td>сойдёт, пойдёт</td></tr>
-      <tr id="r-1746"><td class="w">Oby!</td><td>дай бог</td></tr>
+      <tr id="r-2094"><td style="width:34%" class="w">No dobra. · No jasne. · No pewnie.</td><td>ну ладно · ну ясно · ну конечно</td></tr>
+      <tr id="r-2095"><td class="w">No właśnie! · Dokładnie!</td><td>вот именно</td></tr>
+      <tr id="r-2096"><td class="w">Raczej nie. · Chyba nie.</td><td>скорее нет - мягкий отказ</td></tr>
+      <tr id="r-2097"><td class="w">Ależ oczywiście!</td><td>ну разумеется</td></tr>
+      <tr id="r-2098"><td class="w">Akurat!</td><td>ага, как же - с иронией</td></tr>
+      <tr id="r-2099"><td class="w">Przecież mówiłem.</td><td>я же говорил</td></tr>
+      <tr id="r-2100"><td class="w">Może być.</td><td>сойдёт, пойдёт</td></tr>
+      <tr id="r-2101"><td class="w">Oby!</td><td>дай бог</td></tr>
     </table>
-    <div id="r-1747" class="tip"><b>Три ложных друга.</b> <span class="pl">no</span> - это «ну», а «но» будет <span class="pl">ale</span>. <span class="pl">owszem</span> - «да, конечно», ничего общего с «совсем». <span class="pl">niby</span> - «якобы», а не «небо».</div>
+    <div id="r-2102" class="tip"><b>Три ложных друга.</b> <span class="pl">no</span> - это «ну», а «но» будет <span class="pl">ale</span>. <span class="pl">owszem</span> - «да, конечно», ничего общего с «совсем». <span class="pl">niby</span> - «якобы», а не «небо».</div>
   </div><section class="practice panel particle-practice" data-practice="particles">
     <div class="practice-heading">
       <div><p class="practice-kicker">Практика · 20 заданий · 20 пропусков</p><h2>Практика: частицы</h2></div>
@@ -354,10 +377,10 @@
 
 
 
-  <footer>Ударение — всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</footer>
+  <nav aria-label="Соседние разделы" class="pager"><a class="pager-prev" href="../conjunctions/"><small>Предыдущий раздел</small><b>Союзы</b></a><a class="pager-next" href="../people/"><small>Следующий раздел</small><b>Люди</b></a></nav><footer>Ударение — всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</footer>
 </div>
 
 
 
-<script data-search-src="../search-index.js?v=fdc2a7869a" src="../client.js?v=4472765830"></script></body>
+<script data-search-src="../search-index.js?v=db306f5286" src="../client.js?v=a148fbe1fd"></script></body>
 </html>

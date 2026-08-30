@@ -16,7 +16,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="../style.css?v=7f1f99aec5">
+<link rel="stylesheet" href="../style.css?v=8f497e3a0a">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("theme");if(t&&t!=="auto")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -34,12 +34,31 @@
       </div>
     </div>
     <div id="navwrap">
-      <div id="navscroll">
-        <button id="navl" class="navarr" aria-label="Прокрутить вкладки влево"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M7 1 2 6.5 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
-        <nav id="nav" aria-label="Разделы справочника"><a id="tab-s-index" data-s="s-index" href="../">Оглавление</a><a id="tab-s-alpha" data-s="s-alpha" href="../alphabet/">Алфавит</a><a id="tab-s-rodz" data-s="s-rodz" href="../gender/">Род</a><a aria-current="page" id="tab-s-cases" data-s="s-cases" href="./">Существительные</a><a id="tab-s-alt" data-s="s-alt" href="../alternations/">Чередования</a><a id="tab-s-adj" data-s="s-adj" href="../adjectives/">Прилагательные</a><a id="tab-s-adv" data-s="s-adv" href="../adverbs/">Наречия</a><a id="tab-s-pron" data-s="s-pron" href="../pronouns/">Местоимения</a><a id="tab-s-q" data-s="s-q" href="../questions/">Вопросы</a><a id="tab-s-num" data-s="s-num" href="../numerals/">Числительные</a><a id="tab-s-verbs" data-s="s-verbs" href="../verbs/">Глаголы</a><a id="tab-s-neg" data-s="s-neg" href="../negation/">Отрицание</a><a id="tab-s-order" data-s="s-order" href="../word-order/">Порядок слов</a><a id="tab-s-impers" data-s="s-impers" href="../impersonal/">Безличные</a><a id="tab-s-conj" data-s="s-conj" href="../conjunctions/">Союзы</a><a id="tab-s-part" data-s="s-part" href="../particles/">Частицы</a><a id="tab-s-ludzie" data-s="s-ludzie" href="../people/">Люди</a><a id="tab-s-dim" data-s="s-dim" href="../diminutives/">Уменьшительные</a><a id="tab-s-preps" data-s="s-preps" href="../prepositions/">Предлоги</a><a id="tab-s-bridge" data-s="s-bridge" href="../language-bridges/">Мосты</a></nav>
-        <button id="navr" class="navarr" aria-label="Прокрутить вкладки вправо"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M1 1 6 6.5 1 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
-      </div>
-      <button id="navall" type="button" aria-expanded="false" aria-controls="navmenu">все разделы</button>
+      <nav id="nav" aria-label="Разделы справочника"><a id="tab-s-index" class="nav-home" data-s="s-index" href="../"><b>Оглавление</b></a><div class="navgroup" data-g="0">
+    <button type="button" class="navgroup-btn" id="ng-0" aria-expanded="false" aria-controls="ngp-0">Основы</button>
+    <div class="navpop" id="ngp-0" aria-labelledby="ng-0"><a id="tab-s-alpha" data-s="s-alpha" href="../alphabet/"><b>Алфавит</b><span>32 буквы, диграфы, носовые, ударение и ассимиляция</span></a><a id="tab-s-rodz" data-s="s-rodz" href="../gender/"><b>Род</b><span>Три мужских рода, исключения и несклоняемые слова на -um</span></a></div>
+  </div><div class="navgroup is-current" data-g="1">
+    <button type="button" class="navgroup-btn" id="ng-1" aria-expanded="false" aria-controls="ngp-1">Склонение</button>
+    <div class="navpop" id="ngp-1" aria-labelledby="ng-1"><a aria-current="page" id="tab-s-cases" data-s="s-cases" href="./"><b>Существительные</b><span>Семь падежей: когда нужен, предлоги, окончания и чередования</span></a><a id="tab-s-alt" data-s="s-alt" href="../alternations/"><b>Чередования</b><span>Сводная карта ó/o, ą/ę и изменений согласных</span></a><a id="tab-s-adj" data-s="s-adj" href="../adjectives/"><b>Прилагательные</b><span>Одна парадигма на прилагательные, притяжательные и указательные</span></a><a id="tab-s-pron" data-s="s-pron" href="../pronouns/"><b>Местоимения</b><span>Личные, притяжательные, возвратные, указательные</span></a><a id="tab-s-num" data-s="s-num" href="../numerals/"><b>Числительные</b><span>Какой падеж требует число и что делает с глаголом</span></a></div>
+  </div><div class="navgroup" data-g="2">
+    <button type="button" class="navgroup-btn" id="ng-2" aria-expanded="false" aria-controls="ngp-2">Глагол</button>
+    <div class="navpop" id="ngp-2" aria-labelledby="ng-2"><a id="tab-s-verbs" data-s="s-verbs" href="../verbs/"><b>Глаголы</b><span>Спряжения, времена и вид, причастия и управление слов</span></a></div>
+  </div><div class="navgroup" data-g="3">
+    <button type="button" class="navgroup-btn" id="ng-3" aria-expanded="false" aria-controls="ngp-3">Словарь и речь</button>
+    <div class="navpop" id="ngp-3" aria-labelledby="ng-3"><a id="tab-s-vocab" data-s="s-vocab" href="../vocabulary/"><b>Словарь</b><span>400 полезных слов: глаголы, существительные, прилагательные и наречия</span></a><a id="tab-s-talk" data-s="s-talk" href="../speaking/"><b>Разговорная практика</b><span>Готовые фразы, конструкторы, мини-диалоги и фразы спасения</span></a></div>
+  </div><div class="navgroup" data-g="4">
+    <button type="button" class="navgroup-btn" id="ng-4" aria-expanded="false" aria-controls="ngp-4">Предложение</button>
+    <div class="navpop" id="ngp-4" aria-labelledby="ng-4"><a id="tab-s-q" data-s="s-q" href="../questions/"><b>Вопросы</b><span>czy для общего вопроса, вопросительное слово для частного</span></a><a id="tab-s-neg" data-s="s-neg" href="../negation/"><b>Отрицание</b><span>Отрицания накапливаются, а не гасят друг друга</span></a><a id="tab-s-order" data-s="s-order" href="../word-order/"><b>Порядок слов</b><span>Свободный порядок слов, но у клитик жёсткие места</span></a><a id="tab-s-impers" data-s="s-impers" href="../impersonal/"><b>Безличные</b><span>Язык объявлений, вывесок и учреждений</span></a></div>
+  </div><div class="navgroup" data-g="5">
+    <button type="button" class="navgroup-btn" id="ng-5" aria-expanded="false" aria-controls="ngp-5">Служебные слова</button>
+    <div class="navpop" id="ngp-5" aria-labelledby="ng-5"><a id="tab-s-adv" data-s="s-adv" href="../adverbs/"><b>Наречия</b><span>Образуются от прилагательных списком типовых окончаний</span></a><a id="tab-s-preps" data-s="s-preps" href="../prepositions/"><b>Предлоги</b><span>Один предлог - два падежа: разница обычно «где / куда»</span></a><a id="tab-s-conj" data-s="s-conj" href="../conjunctions/"><b>Союзы</b><span>От них зависит запятая - единственное реальное отличие пунктуации</span></a><a id="tab-s-part" data-s="s-part" href="../particles/"><b>Частицы</b><span>Без них польский звучит как учебник</span></a></div>
+  </div><div class="navgroup" data-g="6">
+    <button type="button" class="navgroup-btn" id="ng-6" aria-expanded="false" aria-controls="ngp-6">Живая речь</button>
+    <div class="navpop" id="ngp-6" aria-labelledby="ng-6"><a id="tab-s-ludzie" data-s="s-ludzie" href="../people/"><b>Люди</b><span>Вежливое «вы» - третье лицо; имена, фамилии, национальности</span></a><a id="tab-s-dim" data-s="s-dim" href="../diminutives/"><b>Уменьшительные</b><span>Уменьшительные шире, чем в русском: вежливость и тепло</span></a><a id="tab-s-bridge" data-s="s-bridge" href="../language-bridges/"><b>Мосты</b><span>Фонетические соответствия, белорусский мост, ложные друзья</span></a></div>
+  </div></nav>
+      <button id="navall" type="button" aria-expanded="false" aria-controls="navmenu">
+        <span class="navall-ico" aria-hidden="true"></span><span class="navall-txt">Существительные</span>
+      </button>
       <div id="navmenu"><section><h4>Начало</h4>
     <a data-s="s-index" href="../">Оглавление</a></section><section><h4>Основы</h4>
     <a data-s="s-alpha" href="../alphabet/">Алфавит</a><a data-s="s-rodz" href="../gender/">Род</a>
@@ -47,9 +66,11 @@
     <a aria-current="page" data-s="s-cases" href="./">Существительные</a><a data-s="s-alt" href="../alternations/">Чередования</a><a data-s="s-adj" href="../adjectives/">Прилагательные</a><a data-s="s-pron" href="../pronouns/">Местоимения</a><a data-s="s-num" href="../numerals/">Числительные</a>
   </section><section><h4>Глагол</h4>
     <a data-s="s-verbs" href="../verbs/">Глаголы</a>
+  </section><section><h4>Словарь и речь</h4>
+    <a data-s="s-vocab" href="../vocabulary/">Словарь</a><a data-s="s-talk" href="../speaking/">Разговорная практика</a>
   </section><section><h4>Предложение</h4>
     <a data-s="s-q" href="../questions/">Вопросы</a><a data-s="s-neg" href="../negation/">Отрицание</a><a data-s="s-order" href="../word-order/">Порядок слов</a><a data-s="s-impers" href="../impersonal/">Безличные</a>
-  </section><section><h4>Наречия и служебные</h4>
+  </section><section><h4>Служебные слова</h4>
     <a data-s="s-adv" href="../adverbs/">Наречия</a><a data-s="s-preps" href="../prepositions/">Предлоги</a><a data-s="s-conj" href="../conjunctions/">Союзы</a><a data-s="s-part" href="../particles/">Частицы</a>
   </section><section><h4>Живая речь</h4>
     <a data-s="s-ludzie" href="../people/">Люди</a><a data-s="s-dim" href="../diminutives/">Уменьшительные</a><a data-s="s-bridge" href="../language-bridges/">Мосты</a>
@@ -2248,10 +2269,12 @@
 
 
 
-  <footer>Ударение — всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</footer>
+
+
+  <nav aria-label="Соседние разделы" class="pager"><a class="pager-prev" href="../gender/"><small>Предыдущий раздел</small><b>Род</b></a><a class="pager-next" href="../alternations/"><small>Следующий раздел</small><b>Чередования</b></a></nav><footer>Ударение — всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</footer>
 </div>
 
 
 
-<script data-search-src="../search-index.js?v=fdc2a7869a" src="../client.js?v=4472765830"></script></body>
+<script data-search-src="../search-index.js?v=db306f5286" src="../client.js?v=a148fbe1fd"></script></body>
 </html>

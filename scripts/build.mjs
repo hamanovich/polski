@@ -19,6 +19,8 @@ const pages = [
   {id:"s-q", path:"questions", title:"Вопросы в польском языке — czy, gdzie, dokąd и który", description:"Общие и частные вопросы по-польски, склонение kto и co, различие jaki и który, а также где, куда, откуда и каким путём."},
   {id:"s-num", path:"numerals", title:"Числительные польского языка — склонение и согласование", description:"Польские количественные, порядковые и собирательные числительные, склонение, согласование с существительным и глаголом."},
   {id:"s-verbs", path:"verbs", title:"Польские глаголы — спряжение, времена, вид и управление", description:"Спряжения польских глаголов, прошедшее и будущее время, вид, наклонения, причастия, пассив и управление падежами."},
+  {id:"s-vocab", path:"vocabulary", title:"Словарь польского языка — 400 полезных слов", description:"Практический польский словарь: 100 полезных глаголов, существительных, прилагательных и наречий с ключевыми формами и живыми примерами."},
+  {id:"s-talk", path:"speaking", title:"Разговорный польский — фразы, шаблоны и мини-диалоги", description:"Разговорный польский для начинающих: готовые фразы для жизни, конструкторы предложений, короткие диалоги и фразы, которые помогают не потерять разговор."},
   {id:"s-neg", path:"negation", title:"Отрицание в польском языке — правила и примеры", description:"Польское отрицание nie, двойное отрицание, родительный падеж после отрицания и конструкции ani, nikt, nic."},
   {id:"s-order", path:"word-order", title:"Порядок слов в польском языке", description:"Нейтральный и выразительный порядок слов в польском предложении, место клитик się, mi, ci и логическое ударение."},
   {id:"s-impers", path:"impersonal", title:"Безличные конструкции в польском языке", description:"Польские безличные конструкции объявлений, вывесок и официальной речи: można, trzeba, wolno, формы на -no и -to."},
@@ -102,13 +104,12 @@ vm.runInContext(`
               data-case="\${c.id}" data-num="\${num}">\${casePanelHTML(c, num)}</article>\`
   )).join("");
 
-  const verbRenderers = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja, lista:vLista};
+  const verbRenderers = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja};
   const verbHost = document.querySelector("#vPanel");
   verbHost.className = "variant-host";
   verbHost.innerHTML = Object.entries(verbRenderers).map(([key, render]) =>
     \`<div class="content-variant verb-variant\${key === "conj" ? " on" : ""}" data-v="\${key}">\${render()}</div>\`
   ).join("");
-  document.querySelector('[data-v="lista"] #vlist').innerHTML = listHTML("");
 
   const practiceHost = document.querySelector("#casePractice");
   practiceHost.className = "variant-host";
@@ -117,7 +118,9 @@ vm.runInContext(`
 
   const verbPracticeHost = document.querySelector("#verbPractice");
   verbPracticeHost.className = "variant-host";
-  verbPracticeHost.innerHTML = VERB_PRACTICE.map((practice, index) => verbPracticeHTML(practice, index === 0)).join("");
+  verbPracticeHost.innerHTML = VERB_PRACTICE
+    .filter(practice => VTABS.some(tab => tab[0] === practice.id))
+    .map((practice, index) => verbPracticeHTML(practice, index === 0)).join("");
   document.querySelector("#verbTest").innerHTML = verbTestHTML();
 
   document.querySelectorAll(".case-variant,.verb-variant").forEach(linkHeadings);
@@ -146,7 +149,8 @@ const searchEntries = [];
 const seenSearchEntries = new Set();
 for(const section of document.querySelectorAll(".sec")){
   if(section.id === "s-index") continue;
-  const label = clean(document.querySelector(`#tab-${section.id}`)?.textContent || section.id);
+  const navEntry = document.querySelector(`#tab-${section.id}`);
+  const label = clean(navEntry?.querySelector("b")?.textContent || navEntry?.textContent || section.id);
   let heading = "";
   for(const node of section.querySelectorAll("h2,h3,tr,li,p,.tip,.ngrid > div")){
     if(node.closest(".practice")) continue;
@@ -191,6 +195,13 @@ const modernHash = legacyHash => {
   return anchor ? `#${anchor}` : "";
 };
 
+/* Порядок чтения и группа раздела берутся из GROUPS: по ним строится «предыдущий / следующий». */
+const groups = JSON.parse(vm.runInContext("JSON.stringify(GROUPS)", sandbox));
+const groupOf = new Map();
+groups.forEach(([, items], index) => items.forEach(([id]) => groupOf.set(id, index)));
+const readingOrder = ["s-index", ...groups.flatMap(([, items]) => items.map(([id]) => id))];
+const labelOf = new Map(JSON.parse(vm.runInContext("JSON.stringify(TABS)", sandbox)));
+
 const masterHTML = document.documentElement.outerHTML;
 const generated = [];
 for(const page of pages){
@@ -213,6 +224,25 @@ for(const page of pages){
       section.removeAttribute("tabindex");
       section.removeAttribute("aria-labelledby");
     }
+  }
+
+  for(const group of pageDocument.querySelectorAll("#nav .navgroup"))
+    group.classList.toggle("is-current", Number(group.dataset.g) === groupOf.get(page.id));
+  const navAllText = pageDocument.querySelector("#navall .navall-txt");
+  if(navAllText) navAllText.textContent = page.id === "s-index" ? "Все разделы" : labelOf.get(page.id);
+
+  const position = readingOrder.indexOf(page.id);
+  const neighbours = [
+    ["prev", readingOrder[position - 1], "Предыдущий раздел"],
+    ["next", readingOrder[position + 1], "Следующий раздел"]
+  ].filter(([, id]) => id);
+  if(page.id !== "s-index" && neighbours.length){
+    const pager = pageDocument.createElement("nav");
+    pager.className = "pager";
+    pager.setAttribute("aria-label", "Соседние разделы");
+    pager.innerHTML = neighbours.map(([side, id, caption]) =>
+      `<a class="pager-${side}" href="${pageHref(page, id)}"><small>${caption}</small><b>${labelOf.get(id)}</b></a>`).join("");
+    pageDocument.querySelector(".wrap footer").before(pager);
   }
 
   const brandHeading = pageDocument.querySelector(".brand h1");

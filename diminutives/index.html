@@ -16,7 +16,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="../style.css?v=7f1f99aec5">
+<link rel="stylesheet" href="../style.css?v=8f497e3a0a">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("theme");if(t&&t!=="auto")document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -34,12 +34,31 @@
       </div>
     </div>
     <div id="navwrap">
-      <div id="navscroll">
-        <button id="navl" class="navarr" aria-label="Прокрутить вкладки влево"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M7 1 2 6.5 7 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
-        <nav id="nav" aria-label="Разделы справочника"><a id="tab-s-index" data-s="s-index" href="../">Оглавление</a><a id="tab-s-alpha" data-s="s-alpha" href="../alphabet/">Алфавит</a><a id="tab-s-rodz" data-s="s-rodz" href="../gender/">Род</a><a id="tab-s-cases" data-s="s-cases" href="../cases/">Существительные</a><a id="tab-s-alt" data-s="s-alt" href="../alternations/">Чередования</a><a id="tab-s-adj" data-s="s-adj" href="../adjectives/">Прилагательные</a><a id="tab-s-adv" data-s="s-adv" href="../adverbs/">Наречия</a><a id="tab-s-pron" data-s="s-pron" href="../pronouns/">Местоимения</a><a id="tab-s-q" data-s="s-q" href="../questions/">Вопросы</a><a id="tab-s-num" data-s="s-num" href="../numerals/">Числительные</a><a id="tab-s-verbs" data-s="s-verbs" href="../verbs/">Глаголы</a><a id="tab-s-neg" data-s="s-neg" href="../negation/">Отрицание</a><a id="tab-s-order" data-s="s-order" href="../word-order/">Порядок слов</a><a id="tab-s-impers" data-s="s-impers" href="../impersonal/">Безличные</a><a id="tab-s-conj" data-s="s-conj" href="../conjunctions/">Союзы</a><a id="tab-s-part" data-s="s-part" href="../particles/">Частицы</a><a id="tab-s-ludzie" data-s="s-ludzie" href="../people/">Люди</a><a aria-current="page" id="tab-s-dim" data-s="s-dim" href="./">Уменьшительные</a><a id="tab-s-preps" data-s="s-preps" href="../prepositions/">Предлоги</a><a id="tab-s-bridge" data-s="s-bridge" href="../language-bridges/">Мосты</a></nav>
-        <button id="navr" class="navarr" aria-label="Прокрутить вкладки вправо"><svg width="8" height="13" viewBox="0 0 8 13" aria-hidden="true"><path d="M1 1 6 6.5 1 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
-      </div>
-      <button id="navall" type="button" aria-expanded="false" aria-controls="navmenu">все разделы</button>
+      <nav id="nav" aria-label="Разделы справочника"><a id="tab-s-index" class="nav-home" data-s="s-index" href="../"><b>Оглавление</b></a><div class="navgroup" data-g="0">
+    <button type="button" class="navgroup-btn" id="ng-0" aria-expanded="false" aria-controls="ngp-0">Основы</button>
+    <div class="navpop" id="ngp-0" aria-labelledby="ng-0"><a id="tab-s-alpha" data-s="s-alpha" href="../alphabet/"><b>Алфавит</b><span>32 буквы, диграфы, носовые, ударение и ассимиляция</span></a><a id="tab-s-rodz" data-s="s-rodz" href="../gender/"><b>Род</b><span>Три мужских рода, исключения и несклоняемые слова на -um</span></a></div>
+  </div><div class="navgroup" data-g="1">
+    <button type="button" class="navgroup-btn" id="ng-1" aria-expanded="false" aria-controls="ngp-1">Склонение</button>
+    <div class="navpop" id="ngp-1" aria-labelledby="ng-1"><a id="tab-s-cases" data-s="s-cases" href="../cases/"><b>Существительные</b><span>Семь падежей: когда нужен, предлоги, окончания и чередования</span></a><a id="tab-s-alt" data-s="s-alt" href="../alternations/"><b>Чередования</b><span>Сводная карта ó/o, ą/ę и изменений согласных</span></a><a id="tab-s-adj" data-s="s-adj" href="../adjectives/"><b>Прилагательные</b><span>Одна парадигма на прилагательные, притяжательные и указательные</span></a><a id="tab-s-pron" data-s="s-pron" href="../pronouns/"><b>Местоимения</b><span>Личные, притяжательные, возвратные, указательные</span></a><a id="tab-s-num" data-s="s-num" href="../numerals/"><b>Числительные</b><span>Какой падеж требует число и что делает с глаголом</span></a></div>
+  </div><div class="navgroup" data-g="2">
+    <button type="button" class="navgroup-btn" id="ng-2" aria-expanded="false" aria-controls="ngp-2">Глагол</button>
+    <div class="navpop" id="ngp-2" aria-labelledby="ng-2"><a id="tab-s-verbs" data-s="s-verbs" href="../verbs/"><b>Глаголы</b><span>Спряжения, времена и вид, причастия и управление слов</span></a></div>
+  </div><div class="navgroup" data-g="3">
+    <button type="button" class="navgroup-btn" id="ng-3" aria-expanded="false" aria-controls="ngp-3">Словарь и речь</button>
+    <div class="navpop" id="ngp-3" aria-labelledby="ng-3"><a id="tab-s-vocab" data-s="s-vocab" href="../vocabulary/"><b>Словарь</b><span>400 полезных слов: глаголы, существительные, прилагательные и наречия</span></a><a id="tab-s-talk" data-s="s-talk" href="../speaking/"><b>Разговорная практика</b><span>Готовые фразы, конструкторы, мини-диалоги и фразы спасения</span></a></div>
+  </div><div class="navgroup" data-g="4">
+    <button type="button" class="navgroup-btn" id="ng-4" aria-expanded="false" aria-controls="ngp-4">Предложение</button>
+    <div class="navpop" id="ngp-4" aria-labelledby="ng-4"><a id="tab-s-q" data-s="s-q" href="../questions/"><b>Вопросы</b><span>czy для общего вопроса, вопросительное слово для частного</span></a><a id="tab-s-neg" data-s="s-neg" href="../negation/"><b>Отрицание</b><span>Отрицания накапливаются, а не гасят друг друга</span></a><a id="tab-s-order" data-s="s-order" href="../word-order/"><b>Порядок слов</b><span>Свободный порядок слов, но у клитик жёсткие места</span></a><a id="tab-s-impers" data-s="s-impers" href="../impersonal/"><b>Безличные</b><span>Язык объявлений, вывесок и учреждений</span></a></div>
+  </div><div class="navgroup" data-g="5">
+    <button type="button" class="navgroup-btn" id="ng-5" aria-expanded="false" aria-controls="ngp-5">Служебные слова</button>
+    <div class="navpop" id="ngp-5" aria-labelledby="ng-5"><a id="tab-s-adv" data-s="s-adv" href="../adverbs/"><b>Наречия</b><span>Образуются от прилагательных списком типовых окончаний</span></a><a id="tab-s-preps" data-s="s-preps" href="../prepositions/"><b>Предлоги</b><span>Один предлог - два падежа: разница обычно «где / куда»</span></a><a id="tab-s-conj" data-s="s-conj" href="../conjunctions/"><b>Союзы</b><span>От них зависит запятая - единственное реальное отличие пунктуации</span></a><a id="tab-s-part" data-s="s-part" href="../particles/"><b>Частицы</b><span>Без них польский звучит как учебник</span></a></div>
+  </div><div class="navgroup is-current" data-g="6">
+    <button type="button" class="navgroup-btn" id="ng-6" aria-expanded="false" aria-controls="ngp-6">Живая речь</button>
+    <div class="navpop" id="ngp-6" aria-labelledby="ng-6"><a id="tab-s-ludzie" data-s="s-ludzie" href="../people/"><b>Люди</b><span>Вежливое «вы» - третье лицо; имена, фамилии, национальности</span></a><a aria-current="page" id="tab-s-dim" data-s="s-dim" href="./"><b>Уменьшительные</b><span>Уменьшительные шире, чем в русском: вежливость и тепло</span></a><a id="tab-s-bridge" data-s="s-bridge" href="../language-bridges/"><b>Мосты</b><span>Фонетические соответствия, белорусский мост, ложные друзья</span></a></div>
+  </div></nav>
+      <button id="navall" type="button" aria-expanded="false" aria-controls="navmenu">
+        <span class="navall-ico" aria-hidden="true"></span><span class="navall-txt">Уменьшительные</span>
+      </button>
       <div id="navmenu"><section><h4>Начало</h4>
     <a data-s="s-index" href="../">Оглавление</a></section><section><h4>Основы</h4>
     <a data-s="s-alpha" href="../alphabet/">Алфавит</a><a data-s="s-rodz" href="../gender/">Род</a>
@@ -47,9 +66,11 @@
     <a data-s="s-cases" href="../cases/">Существительные</a><a data-s="s-alt" href="../alternations/">Чередования</a><a data-s="s-adj" href="../adjectives/">Прилагательные</a><a data-s="s-pron" href="../pronouns/">Местоимения</a><a data-s="s-num" href="../numerals/">Числительные</a>
   </section><section><h4>Глагол</h4>
     <a data-s="s-verbs" href="../verbs/">Глаголы</a>
+  </section><section><h4>Словарь и речь</h4>
+    <a data-s="s-vocab" href="../vocabulary/">Словарь</a><a data-s="s-talk" href="../speaking/">Разговорная практика</a>
   </section><section><h4>Предложение</h4>
     <a data-s="s-q" href="../questions/">Вопросы</a><a data-s="s-neg" href="../negation/">Отрицание</a><a data-s="s-order" href="../word-order/">Порядок слов</a><a data-s="s-impers" href="../impersonal/">Безличные</a>
-  </section><section><h4>Наречия и служебные</h4>
+  </section><section><h4>Служебные слова</h4>
     <a data-s="s-adv" href="../adverbs/">Наречия</a><a data-s="s-preps" href="../prepositions/">Предлоги</a><a data-s="s-conj" href="../conjunctions/">Союзы</a><a data-s="s-part" href="../particles/">Частицы</a>
   </section><section><h4>Живая речь</h4>
     <a data-s="s-ludzie" href="../people/">Люди</a><a aria-current="page" data-s="s-dim" href="./">Уменьшительные</a><a data-s="s-bridge" href="../language-bridges/">Мосты</a>
@@ -77,42 +98,44 @@
 
 
 
+
+
   <section id="s-dim" class="sec on"><div class="panel">
     <h1 class="page-title">Уменьшительные формы</h1>
-    <p id="r-1816" class="lead">В польском их используют гораздо шире, чем в русском - не только для «маленького», но и как знак вежливости и тепла в обычном разговоре.</p>
-    <div id="r-1817" class="tip"><b>Это не про размер.</b> <span class="pl">Poproszę kawusię</span> в кафе не значит «маленькую чашечку» - это просто дружелюбный, смягчённый тон. Продавщица может предложить <span class="pl">bułeczkę</span> взрослому покупателю, а не ребёнку.</div>
+    <p id="r-2171" class="lead">В польском их используют гораздо шире, чем в русском - не только для «маленького», но и как знак вежливости и тепла в обычном разговоре.</p>
+    <div id="r-2172" class="tip"><b>Это не про размер.</b> <span class="pl">Poproszę kawusię</span> в кафе не значит «маленькую чашечку» - это просто дружелюбный, смягчённый тон. Продавщица может предложить <span class="pl">bułeczkę</span> взрослому покупателю, а не ребёнку.</div>
 
     <h3 data-h="существительные-мужскои-род">Существительные: мужской род<button aria-label="Скопировать ссылку на «Существительные: мужской род»" title="Скопировать ссылку на «Существительные: мужской род»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th>ещё уменьшительнее</th><th>перевод</th></tr>
-      <tr id="r-1818"><td class="w">kot</td><td class="g">kotek</td><td class="g">koteczek</td><td style="color:var(--muted)">кот</td></tr><tr id="r-1819"><td class="w">pies</td><td class="g">piesek</td><td class="g">pieseczek</td><td style="color:var(--muted)">пёс</td></tr><tr id="r-1820"><td class="w">dom</td><td class="g">domek</td><td class="g">domeczek</td><td style="color:var(--muted)">дом</td></tr><tr id="r-1821"><td class="w">chłopiec</td><td class="g">chłopczyk</td><td class="g"></td><td style="color:var(--muted)">мальчик</td></tr><tr id="r-1822"><td class="w">brat</td><td class="g">braciszek</td><td class="g"></td><td style="color:var(--muted)">брат</td></tr><tr id="r-1823"><td class="w">ząb</td><td class="g">ząbek</td><td class="g"></td><td style="color:var(--muted)">зуб</td></tr><tr id="r-1824"><td class="w">nos</td><td class="g">nosek</td><td class="g"></td><td style="color:var(--muted)">нос</td></tr><tr id="r-1825"><td class="w">stół</td><td class="g">stolik</td><td class="g"></td><td style="color:var(--muted)">стол</td></tr><tr id="r-1826"><td class="w">kwiat</td><td class="g">kwiatek</td><td class="g">kwiatuszek</td><td style="color:var(--muted)">цветок</td></tr>
+      <tr id="r-2173"><td class="w">kot</td><td class="g">kotek</td><td class="g">koteczek</td><td style="color:var(--muted)">кот</td></tr><tr id="r-2174"><td class="w">pies</td><td class="g">piesek</td><td class="g">pieseczek</td><td style="color:var(--muted)">пёс</td></tr><tr id="r-2175"><td class="w">dom</td><td class="g">domek</td><td class="g">domeczek</td><td style="color:var(--muted)">дом</td></tr><tr id="r-2176"><td class="w">chłopiec</td><td class="g">chłopczyk</td><td class="g"></td><td style="color:var(--muted)">мальчик</td></tr><tr id="r-2177"><td class="w">brat</td><td class="g">braciszek</td><td class="g"></td><td style="color:var(--muted)">брат</td></tr><tr id="r-2178"><td class="w">ząb</td><td class="g">ząbek</td><td class="g"></td><td style="color:var(--muted)">зуб</td></tr><tr id="r-2179"><td class="w">nos</td><td class="g">nosek</td><td class="g"></td><td style="color:var(--muted)">нос</td></tr><tr id="r-2180"><td class="w">stół</td><td class="g">stolik</td><td class="g"></td><td style="color:var(--muted)">стол</td></tr><tr id="r-2181"><td class="w">kwiat</td><td class="g">kwiatek</td><td class="g">kwiatuszek</td><td style="color:var(--muted)">цветок</td></tr>
     </table></div>
 
     <h3 data-h="существительные-женскии-род">Существительные: женский род<button aria-label="Скопировать ссылку на «Существительные: женский род»" title="Скопировать ссылку на «Существительные: женский род»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th></th><th>перевод</th></tr>
-      <tr id="r-1827"><td class="w">książka</td><td class="g">książeczka</td><td class="note"></td><td style="color:var(--muted)">книга</td></tr><tr id="r-1828"><td class="w">kawa</td><td class="g">kawka / kawusia</td><td class="note"></td><td style="color:var(--muted)">кофе</td></tr><tr id="r-1829"><td class="w">mama</td><td class="g">mamusia</td><td class="note"></td><td style="color:var(--muted)">мама</td></tr><tr id="r-1830"><td class="w">córka</td><td class="g">córeczka</td><td class="note"></td><td style="color:var(--muted)">дочь</td></tr><tr id="r-1831"><td class="w">ręka</td><td class="g">rączka</td><td class="note"></td><td style="color:var(--muted)">рука</td></tr><tr id="r-1832"><td class="w">gwiazda</td><td class="g">gwiazdka</td><td class="note"></td><td style="color:var(--muted)">звезда</td></tr><tr id="r-1833"><td class="w">torba</td><td class="g">torebka</td><td class="note"></td><td style="color:var(--muted)">сумка</td></tr><tr id="r-1834"><td class="w">chwila</td><td class="g">chwilka</td><td class="note"></td><td style="color:var(--muted)">момент</td></tr><tr id="r-1835"><td class="w">siostra</td><td class="g">siostrzyczka</td><td class="note"></td><td style="color:var(--muted)">сестра</td></tr>
+      <tr id="r-2182"><td class="w">książka</td><td class="g">książeczka</td><td class="note"></td><td style="color:var(--muted)">книга</td></tr><tr id="r-2183"><td class="w">kawa</td><td class="g">kawka / kawusia</td><td class="note"></td><td style="color:var(--muted)">кофе</td></tr><tr id="r-2184"><td class="w">mama</td><td class="g">mamusia</td><td class="note"></td><td style="color:var(--muted)">мама</td></tr><tr id="r-2185"><td class="w">córka</td><td class="g">córeczka</td><td class="note"></td><td style="color:var(--muted)">дочь</td></tr><tr id="r-2186"><td class="w">ręka</td><td class="g">rączka</td><td class="note"></td><td style="color:var(--muted)">рука</td></tr><tr id="r-2187"><td class="w">gwiazda</td><td class="g">gwiazdka</td><td class="note"></td><td style="color:var(--muted)">звезда</td></tr><tr id="r-2188"><td class="w">torba</td><td class="g">torebka</td><td class="note"></td><td style="color:var(--muted)">сумка</td></tr><tr id="r-2189"><td class="w">chwila</td><td class="g">chwilka</td><td class="note"></td><td style="color:var(--muted)">момент</td></tr><tr id="r-2190"><td class="w">siostra</td><td class="g">siostrzyczka</td><td class="note"></td><td style="color:var(--muted)">сестра</td></tr>
     </table></div>
 
     <h3 data-h="существительные-среднии-род">Существительные: средний род<button aria-label="Скопировать ссылку на «Существительные: средний род»" title="Скопировать ссылку на «Существительные: средний род»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th></th><th>перевод</th></tr>
-      <tr id="r-1836"><td class="w">okno</td><td class="g">okienko</td><td class="note"></td><td style="color:var(--muted)">окно</td></tr><tr id="r-1837"><td class="w">dziecko</td><td class="g">dzieciątko</td><td class="note"></td><td style="color:var(--muted)">ребёнок</td></tr><tr id="r-1838"><td class="w">mleko</td><td class="g">mleczko</td><td class="note"></td><td style="color:var(--muted)">молоко</td></tr><tr id="r-1839"><td class="w">słońce</td><td class="g">słoneczko</td><td class="note"></td><td style="color:var(--muted)">солнце</td></tr><tr id="r-1840"><td class="w">jajko</td><td class="g">jajeczko</td><td class="note"></td><td style="color:var(--muted)">яйцо</td></tr><tr id="r-1841"><td class="w">piwo</td><td class="g">piwko</td><td class="note"></td><td style="color:var(--muted)">пиво</td></tr>
+      <tr id="r-2191"><td class="w">okno</td><td class="g">okienko</td><td class="note"></td><td style="color:var(--muted)">окно</td></tr><tr id="r-2192"><td class="w">dziecko</td><td class="g">dzieciątko</td><td class="note"></td><td style="color:var(--muted)">ребёнок</td></tr><tr id="r-2193"><td class="w">mleko</td><td class="g">mleczko</td><td class="note"></td><td style="color:var(--muted)">молоко</td></tr><tr id="r-2194"><td class="w">słońce</td><td class="g">słoneczko</td><td class="note"></td><td style="color:var(--muted)">солнце</td></tr><tr id="r-2195"><td class="w">jajko</td><td class="g">jajeczko</td><td class="note"></td><td style="color:var(--muted)">яйцо</td></tr><tr id="r-2196"><td class="w">piwo</td><td class="g">piwko</td><td class="note"></td><td style="color:var(--muted)">пиво</td></tr>
     </table></div>
-    <div id="r-1842" class="tip"><b>Двойное уменьшительное усиливает нежность.</b> <span class="pl">kot → kotek → koteczek</span> - «кот → котик → котеночек». Дальше по цепочке обычно не ходят.</div>
+    <div id="r-2197" class="tip"><b>Двойное уменьшительное усиливает нежность.</b> <span class="pl">kot → kotek → koteczek</span> - «кот → котик → котеночек». Дальше по цепочке обычно не ходят.</div>
 
     <h3 data-h="прилагательные">Прилагательные<button aria-label="Скопировать ссылку на «Прилагательные»" title="Скопировать ссылку на «Прилагательные»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th>совсем ласково</th><th>перевод</th></tr>
-      <tr id="r-1843"><td class="w">mały</td><td class="g">malutki</td><td class="g">maluteńki / maciupeńki</td><td style="color:var(--muted)">маленький</td></tr><tr id="r-1844"><td class="w">ładny</td><td class="g">ładniutki</td><td class="g"></td><td style="color:var(--muted)">красивый</td></tr><tr id="r-1845"><td class="w">cichy</td><td class="g">cichutki</td><td class="g">cichuteńki</td><td style="color:var(--muted)">тихий</td></tr><tr id="r-1846"><td class="w">słodki</td><td class="g">słodziutki</td><td class="g"></td><td style="color:var(--muted)">сладкий, милый</td></tr><tr id="r-1847"><td class="w">biedny</td><td class="g">biedniutki</td><td class="g"></td><td style="color:var(--muted)">бедный, бедняжка</td></tr>
+      <tr id="r-2198"><td class="w">mały</td><td class="g">malutki</td><td class="g">maluteńki / maciupeńki</td><td style="color:var(--muted)">маленький</td></tr><tr id="r-2199"><td class="w">ładny</td><td class="g">ładniutki</td><td class="g"></td><td style="color:var(--muted)">красивый</td></tr><tr id="r-2200"><td class="w">cichy</td><td class="g">cichutki</td><td class="g">cichuteńki</td><td style="color:var(--muted)">тихий</td></tr><tr id="r-2201"><td class="w">słodki</td><td class="g">słodziutki</td><td class="g"></td><td style="color:var(--muted)">сладкий, милый</td></tr><tr id="r-2202"><td class="w">biedny</td><td class="g">biedniutki</td><td class="g"></td><td style="color:var(--muted)">бедный, бедняжка</td></tr>
     </table></div>
 
     <h3 data-h="имена-и-обращения">Имена и обращения<button aria-label="Скопировать ссылку на «Имена и обращения»" title="Скопировать ссылку на «Имена и обращения»" class="alink" type="button"></button></h3>
     <div class="scroll"><table class="vt">
       <tr><th>полное имя</th><th>обычное уменьшительное</th><th>ласковое</th><th>по-русски похоже на</th></tr>
-      <tr id="r-1848"><td class="w">Anna</td><td class="g">Ania</td><td class="g">Anusia / Anka</td><td style="color:var(--muted)">Аня, Анечка</td></tr><tr id="r-1849"><td class="w">Piotr</td><td class="g">Piotrek</td><td class="g">Piotruś</td><td style="color:var(--muted)">Петя, Петенька</td></tr><tr id="r-1850"><td class="w">Katarzyna</td><td class="g">Kasia</td><td class="g">Kasieńka</td><td style="color:var(--muted)">Катя, Катенька</td></tr><tr id="r-1851"><td class="w">Michał</td><td class="g">Michałek</td><td class="g">Misiek</td><td style="color:var(--muted)">Миша, Мишенька</td></tr><tr id="r-1852"><td class="w">Elżbieta</td><td class="g">Ela</td><td class="g">Elunia</td><td style="color:var(--muted)">Эля, Элечка</td></tr><tr id="r-1853"><td class="w">babcia</td><td class="g">babcia → babunia</td><td class="g"></td><td style="color:var(--muted)">бабушка → бабуля</td></tr>
+      <tr id="r-2203"><td class="w">Anna</td><td class="g">Ania</td><td class="g">Anusia / Anka</td><td style="color:var(--muted)">Аня, Анечка</td></tr><tr id="r-2204"><td class="w">Piotr</td><td class="g">Piotrek</td><td class="g">Piotruś</td><td style="color:var(--muted)">Петя, Петенька</td></tr><tr id="r-2205"><td class="w">Katarzyna</td><td class="g">Kasia</td><td class="g">Kasieńka</td><td style="color:var(--muted)">Катя, Катенька</td></tr><tr id="r-2206"><td class="w">Michał</td><td class="g">Michałek</td><td class="g">Misiek</td><td style="color:var(--muted)">Миша, Мишенька</td></tr><tr id="r-2207"><td class="w">Elżbieta</td><td class="g">Ela</td><td class="g">Elunia</td><td style="color:var(--muted)">Эля, Элечка</td></tr><tr id="r-2208"><td class="w">babcia</td><td class="g">babcia → babunia</td><td class="g"></td><td style="color:var(--muted)">бабушка → бабуля</td></tr>
     </table></div>
-    <div id="r-1854" class="tip"><b>Практический совет.</b> Услышал незнакомое ласковое слово от продавца, официанта или коллеги - это не панибратство, а норма вежливого общения. В официальных документах и с незнакомыми по имени-фамилии уменьшительные, разумеется, не используют.</div>
+    <div id="r-2209" class="tip"><b>Практический совет.</b> Услышал незнакомое ласковое слово от продавца, официанта или коллеги - это не панибратство, а норма вежливого общения. В официальных документах и с незнакомыми по имени-фамилии уменьшительные, разумеется, не используют.</div>
   </div><section class="practice panel diminutive-practice" data-practice="diminutives">
     <div class="practice-heading">
       <div><p class="practice-kicker">Практика · 20 заданий · 20 пропусков</p><h2>Практика: уменьшительные</h2></div>
@@ -305,10 +328,10 @@
 
 
 
-  <footer>Ударение — всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</footer>
+  <nav aria-label="Соседние разделы" class="pager"><a class="pager-prev" href="../people/"><small>Предыдущий раздел</small><b>Люди</b></a><a class="pager-next" href="../language-bridges/"><small>Следующий раздел</small><b>Мосты</b></a></nav><footer>Ударение — всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</footer>
 </div>
 
 
 
-<script data-search-src="../search-index.js?v=fdc2a7869a" src="../client.js?v=4472765830"></script></body>
+<script data-search-src="../search-index.js?v=db306f5286" src="../client.js?v=a148fbe1fd"></script></body>
 </html>

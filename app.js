@@ -846,16 +846,6 @@ function vRekcja(){
 }
 
 const norm = s => s.toLowerCase().replace(/ł/g,"l").normalize("NFD").replace(/\p{M}/gu,"");
-function vLista(){
-  return `<div class="panel">
-    <h2>Словарь глаголов</h2>
-    <p class="lead">${VERBS.length} частотных и практически необходимых глаголов с ключевыми формами. Поиск понимает и польский, и русский, и без диакритики.</p>
-    <input class="src" id="vsearch" type="search" placeholder="mowic, идти, jeść…" autocomplete="off">
-    <div class="scroll" id="vlist"></div>
-    <div class="tip">Три формы дают всю парадигму: <b>ja</b> и <b>oni</b> - малое крыло бабочки, <b>ty</b> - большое. Формы <span class="pl">on / ona</span> в прошедшем показывают чередование основы.</div>
-    <div class="tip"><b>Последняя колонка - не всегда видовая пара.</b> Чаще всего это она: <span class="pl">robić ↔ zrobić</span>, <span class="pl">kupować ↔ kupić</span> - одно и то же действие, разный вид. Но там, где стоит пометка, связка другая: <span class="pl">szukać → znaleźć</span> - это не «искать совершенного вида», а результат поиска; <span class="pl">znać → poznać</span> - переход в новое состояние; <span class="pl">czekać → poczekać</span> - «подождать немного». В таких случаях под формой указан настоящий видовой партнёр, если он есть: <span class="pl">znaleźć ↔ znajdować</span>, <span class="pl">poznać ↔ poznawać</span>, <span class="pl">usiąść ↔ siadać</span>, <span class="pl">zapamiętać ↔ zapamiętywać</span>. Практически колонка отвечает на вопрос «каким словом сказать результат», а это чаще и нужно.</div>
-  </div>`;
-}
 function verbPracticeHTML(practice, on = false){
   return `<section class="practice panel content-variant verb-practice-variant${on ? " on" : ""}" data-v="${practice.id}">
     <div class="practice-heading">
@@ -890,8 +880,6 @@ function listHTML(q){
     </tr>`).join("")}
   </table>${rows.length ? "" : `<p class="lead" style="padding:12px 0">Ничего не нашлось.</p>`}`;
 }
-function drawList(q){ $("#vlist").innerHTML = listHTML(q); }
-
 function renderVerbs(){
   $("#s-verbs").innerHTML =
     `<div class="casebar"><div class="chips" id="vchips" role="group" aria-label="Раздел о глаголах">${
@@ -900,11 +888,7 @@ function renderVerbs(){
   $("#vchips").querySelectorAll(".chip").forEach(b => b.onclick = () => {
     curV = b.dataset.v; renderVerbs(); writeHash();
   });
-  $("#vPanel").innerHTML = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja, lista:vLista}[curV]();
-  if(curV === "lista"){
-    drawList("");
-    $("#vsearch").oninput = e => drawList(e.target.value);
-  }
+  $("#vPanel").innerHTML = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja}[curV]();
   linkHeadings($("#vPanel"));
   renderVerbPractice();
 }
@@ -1565,79 +1549,244 @@ function renderBridge(){
   </div>${topicPracticeHTML(BRIDGE_PRACTICE, "bridge")}`;
 }
 
+/* --- базовый словарь и разговорная практика --- */
+function vocabularyTable(words, labels){
+  return `<div class="scroll vocabulary-list"><table class="vt">
+    <thead><tr>${labels.map(label => `<th>${label}</th>`).join("")}</tr></thead>
+    <tbody>${words.map(word => `<tr>
+      <td class="w">${word[0]}</td>
+      <td style="color:var(--muted);font-size:var(--fs-note)">${word[1]}</td>
+      <td class="cq">${word[2]}</td>
+      <td class="w" style="white-space:normal">${word[3]}</td>
+    </tr>`).join("")}</tbody>
+  </table></div>`;
+}
+
+function renderVocabulary(){
+  $("#s-vocab").innerHTML = `<div class="panel">
+    <h2>Словарь</h2>
+    <p class="lead">400 полезных слов для повседневного общения. Это не механический частотный топ: здесь слова, которыми можно говорить о себе, планах, людях и обычных ситуациях. К каждому слову — форма, которая чаще всего нужна в речи, и короткий живой пример.</p>
+    <div class="tip"><b>Как пользоваться.</b> Не пытайся выучить таблицу целиком. Выбери 5–10 слов на сегодня, прочитай примеры вслух и сразу составь с ними по одной фразе про себя.</div>
+
+    <h3>100 глаголов</h3>
+    <p class="lead">Три формы дают всю парадигму: <span class="pl">ja</span> и <span class="pl">oni</span> — малое крыло, <span class="pl">ty</span> — большое. Формы <span class="pl">on / ona</span> в прошедшем показывают чередование основы.</p>
+    <div class="scroll vocabulary-list">${listHTML("")}</div>
+    <div class="tip"><b>Последняя колонка — не всегда видовая пара.</b> Чаще всего это она: <span class="pl">robić ↔ zrobić</span>, <span class="pl">kupować ↔ kupić</span>. Но <span class="pl">szukać → znaleźć</span> — результат поиска, а не совершенный вид слова «искать». Колонка отвечает на практический вопрос: каким словом сказать результат.</div>
+
+    <h3>100 полезных существительных</h3>
+    <p class="lead">Формы всегда идут в одном порядке: род · родительный единственного · именительный множественного. Если обычной множественной формы нет или она не нужна в начальной речи, стоит <span class="pl">—</span>. Родительный помогает сразу говорить: <span class="pl">nie mam czasu, idę do sklepu, bez telefonu</span>.</p>
+    ${vocabularyTable(VOCAB_NOUNS, ["слово", "перевод", "род · род. · мн.", "пример"])}
+
+    <h3>100 полезных прилагательных</h3>
+    <p class="lead">Мужская форма уже стоит в первой колонке; дальше даны женская, средняя и сравнительная. Там, где сравнительная степень для начальной речи не нужна, стоит <span class="pl">—</span>. Для рассказа о себе особенно полезны формы: <span class="pl">jestem zmęczony / zmęczona, jestem gotowy / gotowa</span>.</p>
+    ${vocabularyTable(VOCAB_ADJECTIVES, ["слово", "перевод", "жен. · сред. · сравн.", "пример"])}
+
+    <h3>100 полезных наречий и выражений</h3>
+    <p class="lead">Здесь есть наречия, частицы и готовые выражения — всё, что помогает связать знакомые слова в нормальную речь: назвать время, степень, место, мнение и темп действия.</p>
+    ${vocabularyTable(VOCAB_ADVERBS, ["слово", "перевод", "сравнение", "пример"])}
+  </div>`;
+}
+
+function talkRows(rows){
+  return `<div class="scroll"><table class="vt"><tr><th>по-польски</th><th>по-русски</th><th>вариант для себя</th></tr>
+    ${rows.map(row => `<tr><td class="w">${row[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${row[1]}</td><td class="g" style="white-space:normal">${row[2]}</td></tr>`).join("")}
+  </table></div>`;
+}
+
+function renderTalk(){
+  const about = [
+    ["Mam na imię … i mieszkam w … .", "Меня зовут …, и я живу в … .", "Podstaw swoje imię i miasto."],
+    ["Uczę się polskiego od … .", "Я учу польский уже … .", "od miesiąca / od roku"],
+    ["Mój polski jest jeszcze słaby, ale staram się mówić.", "Мой польский пока слабый, но я стараюсь говорить.", "bardzo słaby / coraz lepszy"],
+    ["Pracuję jako … / studiuję … .", "Я работаю … / учусь на … .", "Powiedz tylko tyle, ile chcesz."],
+    ["W wolnym czasie lubię … .", "В свободное время я люблю … .", "czytać / podróżować / spotykać się ze znajomymi"],
+    ["Ostatnio dużo …, dlatego … .", "В последнее время я много …, поэтому … .", "pracuję / uczę się / odpoczywam"],
+  ];
+  const day = [
+    ["Dzisiaj miałem / miałam dość intensywny dzień.", "Сегодня у меня был довольно насыщенный день.", "spokojny / dobry / trudny"],
+    ["Rano …, a potem … .", "Утром я …, а потом … .", "pracowałem / poszedłem na spacer"],
+    ["Po pracy chcę trochę odpocząć.", "После работы хочу немного отдохнуть.", "ugotować kolację / spotkać się z …"],
+    ["W weekend spotkałem / spotkałam się ze znajomymi.", "На выходных я встретился/-ась с друзьями.", "byłem / byłam w domu"],
+    ["Jutro planuję … .", "Завтра я планирую … .", "uczyć się / pójść do … / nic szczególnego"],
+  ];
+  const cafe = [
+    ["Poproszę kawę i wodę, proszę.", "Мне, пожалуйста, кофе и воду.", "Zmień napój albo dodaj ciasto."],
+    ["Czy mogę prosić o menu?", "Можно меню, пожалуйста?", "Короткая вежливая просьба."],
+    ["Dla mnie będzie … .", "Для меня будет … .", "kawa z mlekiem / zupa / kanapka"],
+    ["Czy mogę zapłacić kartą?", "Можно оплатить картой?", "Картой — kartą, наличными — gotówką."],
+    ["Poproszę rachunek.", "Счёт, пожалуйста.", "В Польше это естественная формула."],
+  ];
+  const shop = [
+    ["Szukam … .", "Я ищу … .", "prezentu / ładowarki / sklepu spożywczego"],
+    ["Czy mają państwo …?", "У вас есть …?", "Размер, товар или нужная вещь."],
+    ["Czy mogę to przymierzyć?", "Можно это примерить?", "Для одежды и обуви."],
+    ["Ile to kosztuje?", "Сколько это стоит?", "Простой вопрос о цене."],
+    ["Wezmę to.", "Я это возьму.", "Когда решил купить."],
+  ];
+  const transport = [
+    ["Przepraszam, gdzie jest przystanek?", "Извините, где остановка?", "Можно уточнить: autobusowy / tramwajowy."],
+    ["Czy ten autobus jedzie do centrum?", "Этот автобус едет в центр?", "Замени centrum на нужное место."],
+    ["O której odjeżdża pociąg?", "Во сколько отправляется поезд?", "Odjeżdża — отправляется по расписанию."],
+    ["Muszę wysiąść na następnym przystanku.", "Мне нужно выйти на следующей остановке.", "Wysiąść — выйти из транспорта."],
+    ["Czy to jest daleko stąd?", "Это далеко отсюда?", "Ответ часто: blisko / daleko / około dziesięć minut."],
+  ];
+  const rescue = [
+    ["Chwileczkę, muszę się zastanowić.", "Секундочку, мне нужно подумать.", "Даёт время сформулировать ответ."],
+    ["Nie wiem, jak to powiedzieć po polsku, ale…", "Не знаю, как сказать это по-польски, но…", "После этого скажи проще или покажи слово."],
+    ["Czy możesz powiedzieć to trochę wolniej?", "Можешь сказать немного медленнее?", "Нормальная вежливая просьба."],
+    ["Czy możesz powtórzyć?", "Можешь повторить?", "Коротко и естественно."],
+    ["Rozumiem mniej więcej.", "Я примерно понимаю.", "Если общий смысл понятен, но не всё."],
+    ["Nie rozumiem jeszcze wszystkiego.", "Я пока не всё понимаю.", "Честно и без извинений."],
+    ["Jak to znaczy po rosyjsku?", "Что это значит по-русски?", "Можно заменить rosyjsku на angielsku."],
+    ["Czy dobrze rozumiem, że…?", "Я правильно понимаю, что…?", "Повтори смысл своими словами."],
+    ["Możesz podać przykład?", "Можешь привести пример?", "Когда новое слово неясно."],
+    ["Uczę się, więc czasem robię błędy.", "Я учусь, поэтому иногда ошибаюсь.", "Снимает напряжение в начале разговора."],
+  ];
+  $("#s-talk").innerHTML = `<div class="panel talk-panel">
+    <h2>Разговорная практика</h2>
+    <p class="lead">Цель этого раздела — не вспомнить отдельное слово, а иметь готовую опору для реального разговора. Начни с одной темы, вслух замени детали на свои и только потом переходи к диалогу.</p>
+
+    <h3>Готовые фразы: рассказываю о себе</h3>
+    ${talkRows(about)}
+
+    <h3>Готовые фразы: день, выходные и планы</h3>
+    ${talkRows(day)}
+
+    <h3>Кафе и магазин</h3>
+    ${talkRows(cafe)}
+    ${talkRows(shop)}
+
+    <h3>Транспорт и дорога</h3>
+    ${talkRows(transport)}
+
+    <h3>Конструктор фраз</h3>
+    <p class="lead">Выбери варианты в строке — ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.</p>
+    <div class="talk-builders">
+      <article class="talk-builder" data-talk-builder><b>1. Что происходит сегодня</b><div class="talk-fields"><label><span>когда</span><select><option>Dzisiaj</option><option>W weekend</option><option>Ostatnio</option></select></label><label><span>что делаю</span><select><option>uczę się polskiego</option><option>pracuję w domu</option><option>spotykam się ze znajomymi</option></select></label></div><output class="talk-example" aria-live="polite">Dzisiaj uczę się polskiego.</output></article>
+      <article class="talk-builder" data-talk-builder><b>2. Что планируешь</b><div class="talk-fields"><label><span>когда</span><select><option>Jutro</option><option>W tym tygodniu</option><option>W weekend</option></select></label><label><span>план</span><select><option>chcę odpocząć</option><option>planuję pójść na spacer</option><option>chcę spotkać się z przyjaciółmi</option></select></label></div><output class="talk-example" aria-live="polite">Jutro chcę odpocząć.</output></article>
+      <article class="talk-builder" data-talk-builder><b>3. Что думаешь</b><div class="talk-fields"><label><span>начало</span><select><option>Moim zdaniem</option><option>Myślę, że</option><option>Wydaje mi się, że</option></select></label><label><span>мнение</span><select><option>to dobry pomysł</option><option>ten film jest ciekawy</option><option>to miejsce jest bardzo miłe</option></select></label></div><output class="talk-example" aria-live="polite">Moim zdaniem to dobry pomysł.</output></article>
+      <article class="talk-builder" data-talk-builder><b>4. Как себя чувствуешь</b><div class="talk-fields"><label><span>состояние</span><select><option>Nie mam dziś dużo energii</option><option>Czuję się bardzo dobrze</option><option>Mam dziś dobry humor</option></select></label><label><span>что дальше</span><select><option>i dlatego chcę odpocząć</option><option>i dlatego zostaję w domu</option><option>ale chcę jeszcze trochę się uczyć</option></select></label></div><output class="talk-example" aria-live="polite">Nie mam dziś dużo energii i dlatego chcę odpocząć.</output></article>
+    </div>
+    <div class="tip"><b>Мини-задание.</b> Возьми любой шаблон и произнеси три варианта о себе. Не ищи идеальную грамматику во время речи: сначала закончи мысль, потом проверь один непонятный момент в справочнике.</div>
+
+    <h3>Мини-диалоги</h3>
+    <div class="talk-dialogues">
+      <article><p class="talk-situation">Знакомый спрашивает о выходных</p><p><b>— Co robiłeś w weekend?</b><br>— W weekend odpoczywałem w domu. W niedzielę spotkałem się ze znajomymi.</p><p class="talk-prompt">Твоя очередь: ответь, что делал именно ты. Достаточно двух фраз.</p></article>
+      <article><p class="talk-situation">Разговор о польском</p><p><b>— Jak długo uczysz się polskiego?</b><br>— Uczę się od … . Jeszcze nie mówię dobrze, ale staram się rozmawiać z ludźmi.</p><p class="talk-prompt">Замени срок и добавь, что тебе даётся легко или трудно.</p></article>
+      <article><p class="talk-situation">Приглашение</p><p><b>— Może pójdziemy jutro na kawę?</b><br>— Chętnie. O której? / Niestety, jutro nie mogę. Może w piątek?</p><p class="talk-prompt">Сначала согласись, затем в другом варианте вежливо откажись и предложи время.</p></article>
+      <article><p class="talk-situation">Не понял собеседника</p><p><b>— …</b><br>— Przepraszam, czy możesz powtórzyć trochę wolniej? Rozumiem mniej więcej, ale nie wszystko.</p><p class="talk-prompt">Это не ошибка, а нормальный ход разговора.</p></article>
+    </div>
+
+    <h3>Фразы спасения</h3>
+    ${talkRows(rescue)}
+  </div>`;
+}
+
 /* ============ НАВИГАЦИЯ И АДРЕС СТРАНИЦЫ ============ */
 const LABEL = Object.fromEntries(TABS);
 const VLABEL = Object.fromEntries(VTABS);
 let curTab = TABS[0][0];
 
-$("#nav").innerHTML = TABS.map((t,i) =>
-  `<a id="tab-${t[0]}" data-s="${t[0]}" href="#${t[0]}"
-     ${i===0 ? 'aria-current="page"' : ""}>${t[1]}</a>`).join("");
+/* Навигация двухуровневая: в строке - семь смысловых групп, разделы внутри выпадающих списков.
+   Двадцать две вкладки в одну строку не помещались, а горизонтальная прокрутка прятала состав справочника. */
+const GROUP_OF = {};
+GROUPS.forEach((g, i) => g[1].forEach(([id]) => GROUP_OF[id] = i));
 
-function showTab(id, scroll){
-  if(!TABS.some(t => t[0] === id)) id = TABS[0][0];
-  curTab = id;
-  $("#nav").querySelectorAll("button").forEach(x => {
-    const on = x.dataset.s === id;
-    if(on) x.setAttribute("aria-current", "page"); else x.removeAttribute("aria-current");
-  });
-  $("#navmenu").querySelectorAll("button").forEach(x =>
-    x.setAttribute("aria-current", x.dataset.s === id));
-  document.querySelectorAll(".sec").forEach(s => s.classList.toggle("on", s.id === id));
-  const on = $("#nav [aria-current='page']");
-  if(on && on.scrollIntoView) on.scrollIntoView({block:"nearest", inline:"nearest"});
-  if(scroll !== false) window.scrollTo({top:0});
-  updateNavArrows();
-}
+const navItemHTML = (id, note) =>
+  `<a id="tab-${id}" data-s="${id}" href="#${id}"><b>${LABEL[id]}</b><span>${note}</span></a>`;
 
-/* стрелки внутри полосы вкладок - обязательная часть паттерна tablist */
-$("#nav").addEventListener("keydown", e => {
-  const step = {ArrowRight:1, ArrowLeft:-1, Home:"first", End:"last"}[e.key];
-  if(step === undefined) return;
-  e.preventDefault();
-  const i = TABS.findIndex(t => t[0] === curTab);
-  const next = step === "first" ? 0
-             : step === "last" ? TABS.length - 1
-             : (i + step + TABS.length) % TABS.length;
-  showTab(TABS[next][0], false);
-  writeHash();
-  $("#tab-" + TABS[next][0]).focus();
-});
+$("#nav").innerHTML =
+  `<a id="tab-${TABS[0][0]}" class="nav-home" data-s="${TABS[0][0]}" href="#${TABS[0][0]}"><b>${LABEL[TABS[0][0]]}</b></a>` +
+  GROUPS.map((g, i) => `<div class="navgroup" data-g="${i}">
+    <button type="button" class="navgroup-btn" id="ng-${i}" aria-expanded="false" aria-controls="ngp-${i}">${g[0]}</button>
+    <div class="navpop" id="ngp-${i}" aria-labelledby="ng-${i}">${g[1].map(([id, note]) => navItemHTML(id, note)).join("")}</div>
+  </div>`).join("");
 
-/* полный список: 19 вкладок в строку не влезают, а состав справочника надо видеть целиком */
+/* полный список: на узком экране он заменяет группы, на широком остаётся быстрым способом увидеть всё */
 $("#navmenu").innerHTML = `<section><h4>Начало</h4>
     <a data-s="${TABS[0][0]}" href="#${TABS[0][0]}">${LABEL[TABS[0][0]]}</a></section>` +
   GROUPS.map(g => `<section><h4>${g[0]}</h4>
     ${g[1].map(([id]) => `<a data-s="${id}" href="#${id}">${LABEL[id]}</a>`).join("")}
   </section>`).join("");
 
+function closeNavPops(except){
+  $("#nav").querySelectorAll(".navgroup-btn[aria-expanded='true']").forEach(b => {
+    if(b !== except) b.setAttribute("aria-expanded", "false");
+  });
+}
 function closeNavMenu(){
   $("#navmenu").classList.remove("on");
   $("#navall").setAttribute("aria-expanded", "false");
 }
+function closeNav(){ closeNavPops(); closeNavMenu(); }
+
+function markNav(id){
+  const group = GROUP_OF[id];
+  document.querySelectorAll("#nav [data-s],#navmenu [data-s]").forEach(a => {
+    if(a.dataset.s === id) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+  $("#nav").querySelectorAll(".navgroup").forEach(g =>
+    g.classList.toggle("is-current", +g.dataset.g === group));
+  const cur = $("#navall .navall-txt");
+  if(cur) cur.textContent = id === TABS[0][0] ? "Все разделы" : LABEL[id];
+}
+
+function showTab(id, scroll){
+  if(!TABS.some(t => t[0] === id)) id = TABS[0][0];
+  curTab = id;
+  markNav(id);
+  document.querySelectorAll(".sec").forEach(s => s.classList.toggle("on", s.id === id));
+  if(scroll !== false) window.scrollTo({top:0});
+}
+
+$("#nav").addEventListener("click", e => {
+  const btn = e.target.closest(".navgroup-btn");
+  if(btn){
+    const open = btn.getAttribute("aria-expanded") !== "true";
+    closeNavPops(btn);
+    closeNavMenu();
+    btn.setAttribute("aria-expanded", open);
+    if(open) btn.nextElementSibling.querySelector("a").focus();
+    return;
+  }
+  const link = e.target.closest("[data-s]");
+  if(!link) return;
+  showTab(link.dataset.s);
+  writeHash();
+  closeNav();
+});
+
 $("#navall").onclick = () => {
   const open = !$("#navmenu").classList.contains("on");
+  closeNavPops();
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", open);
-  if(open) $("#navmenu a").focus();
+  if(open) $("#navmenu [data-s]").focus();
 };
 $("#navmenu").addEventListener("click", e => {
-  const b = e.target.closest("button");
-  if(!b) return;
-  showTab(b.dataset.s);
+  const link = e.target.closest("[data-s]");
+  if(!link) return;
+  showTab(link.dataset.s);
   writeHash();
   closeNavMenu();
   $("#navall").focus();
 });
 document.addEventListener("keydown", e => {
-  if(e.key === "Escape" && $("#navmenu").classList.contains("on")){ closeNavMenu(); $("#navall").focus(); }
+  if(e.key !== "Escape") return;
+  const openBtn = $("#nav .navgroup-btn[aria-expanded='true']");
+  if(openBtn){ closeNavPops(); openBtn.focus(); return; }
+  if($("#navmenu").classList.contains("on")){ closeNavMenu(); $("#navall").focus(); }
 });
 document.addEventListener("click", e => {
-  if(!e.target.closest("#navwrap")) closeNavMenu();
+  if(!e.target.closest("#navwrap")) closeNav();
+});
+document.addEventListener("focusin", e => {
+  if(!e.target.closest("#navwrap")) closeNav();
 });
 
 /* высота липкой части шапки: от неё отсчитывается строка падежей.
-   на узком экране шапка липнет с отрицательным top, так что видимой остаётся только полоса вкладок */
+   на узком экране шапка липнет с отрицательным top, так что видимой остаётся только полоса навигации */
 function setHeadH(){
   const hdr = document.querySelector("header"), nav = $("#navwrap");
   const off = nav.getBoundingClientRect().top - hdr.getBoundingClientRect().top;
@@ -1646,20 +1795,31 @@ function setHeadH(){
   st.setProperty("--brand-h", (narrow ? off : 0) + "px");
   st.setProperty("--head-h", (narrow ? hdr.offsetHeight - off : hdr.offsetHeight) + "px");
 }
-
-/* стрелки прокрутки меню: показываем только ту, за которой есть скрытые вкладки */
-function updateNavArrows(){
-  const n = $("#nav"), w = $("#navwrap");
-  w.classList.toggle("can-l", n.scrollLeft > 2);
-  w.classList.toggle("can-r", n.scrollLeft < n.scrollWidth - n.clientWidth - 2);
+/* Семь групп либо помещаются в одну строку, либо целиком уступают место кнопке
+   «Все разделы»: перенос на вторую строку выглядит случайным и сбивает поиск нужной группы.
+   Ширину строки меряем один раз в скрытом состоянии, чтобы решение не зависело от breakpoint. */
+let navRowWidth = 0;
+function measureNavRow(){
+  const wrap = $("#navwrap");
+  wrap.classList.add("measuring");
+  navRowWidth = $("#nav").scrollWidth || 0;
+  wrap.classList.remove("measuring");
 }
-$("#nav").addEventListener("scroll", updateNavArrows, {passive:true});
-window.addEventListener("resize", () => { updateNavArrows(); setHeadH(); });
-$("#navl").onclick = () => $("#nav").scrollBy({left: -$("#nav").clientWidth * 0.6, behavior:"smooth"});
-$("#navr").onclick = () => $("#nav").scrollBy({left:  $("#nav").clientWidth * 0.6, behavior:"smooth"});
-updateNavArrows();
-setHeadH();
+function fitNav(){
+  const wrap = $("#navwrap");
+  if(!navRowWidth) measureNavRow();
+  const compact = navRowWidth > wrap.clientWidth - 4;
+  if(compact !== wrap.classList.contains("compact")){
+    wrap.classList.toggle("compact", compact);
+    closeNav();
+  }
+}
 
+window.addEventListener("resize", () => { fitNav(); setHeadH(); });
+if(document.fonts) document.fonts.ready.then(() => { navRowWidth = 0; fitNav(); });
+markNav(curTab);
+fitNav();
+setHeadH();
 /* адрес вида #s-cases/dop/pl или #s-verbs/rekcja */
 function hashFor(){
   if(curTab === "s-cases") return `#s-cases/${curCase}/${curNum}`;
@@ -1797,7 +1957,6 @@ function buildIndex(){
   const VMAP = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja};
   for(const key of Object.keys(VMAP))
     harvest(VMAP[key](), {tab:"s-verbs", label:"Глаголы", sub:VLABEL[key], vs:key});
-  harvest(listHTML(""), {tab:"s-verbs", label:"Глаголы", sub:VLABEL.lista, vs:"lista"});
   /* дубли не нужны: у падежа общая часть одинакова в обоих числах - оставляем первое вхождение */
   const seen = new Set();
   INDEX = INDEX.filter(e => {
@@ -1999,7 +2158,7 @@ applyTheme(readTheme());
 
 /* ============ СТАРТ ============ */
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
-renderNum(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
+renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
 renderNumTog();
 buildIndex();
 renderIndex();

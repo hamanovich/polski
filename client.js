@@ -9,7 +9,6 @@ const SEARCH_INDEX_SRC = document.currentScript?.dataset.searchSrc || "search-in
 
 const currentPage = document.documentElement.dataset.page || "s-index";
 const navLinks = $$("#nav [data-s]");
-const tabIds = navLinks.map(link => link.dataset.s);
 let curCase = "mian", curNum = "sg", curV = "conj";
 
 const navLink = tab => navLinks.find(link => link.dataset.s === tab);
@@ -20,18 +19,6 @@ navLinks.forEach(link => {
 $$("#navmenu [data-s]").forEach(link => {
   if(link.dataset.s === currentPage) link.setAttribute("aria-current", "page");
   else link.removeAttribute("aria-current");
-});
-
-/* Arrow keys remain a shortcut over the horizontal list, while links preserve
-   ordinary browser behaviour for clicks, open-in-new-tab and no-JS navigation. */
-$("#nav").addEventListener("keydown", event => {
-  const step = {ArrowRight:1, ArrowLeft:-1, Home:"first", End:"last"}[event.key];
-  if(step === undefined) return;
-  event.preventDefault();
-  const current = Math.max(0, tabIds.indexOf(currentPage));
-  const next = step === "first" ? 0 : step === "last" ? tabIds.length - 1
-    : (current + step + tabIds.length) % tabIds.length;
-  location.href = navLinks[next].href;
 });
 
 /* ---------- cases and verb subsections ---------- */
@@ -496,18 +483,50 @@ $("#theme").addEventListener("click", event => {
 });
 SYSTEM_DARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
 
+/* Двухуровневое меню: группы в строке, разделы в выпадающих списках; на узком экране - общий список. */
+function closeNavPops(except){
+  $$("#nav .navgroup-btn[aria-expanded='true']").forEach(button => {
+    if(button !== except) button.setAttribute("aria-expanded", "false");
+  });
+}
 function closeNavMenu(){ $("#navmenu").classList.remove("on"); $("#navall").setAttribute("aria-expanded", "false"); }
+function closeNav(){ closeNavPops(); closeNavMenu(); }
+
+$("#nav").addEventListener("click", event => {
+  const button = event.target.closest(".navgroup-btn");
+  if(!button) return;
+  const open = button.getAttribute("aria-expanded") !== "true";
+  closeNav();
+  button.setAttribute("aria-expanded", open);
+  if(open) button.nextElementSibling.querySelector("a")?.focus();
+});
 $("#navall").addEventListener("click", () => {
   const open = !$("#navmenu").classList.contains("on");
+  closeNavPops();
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", open);
   if(open) $("#navmenu [data-s]")?.focus();
 });
-$("#navmenu").addEventListener("click", event => {
-  if(event.target.closest("[data-s]")) closeNavMenu();
+document.addEventListener("keydown", event => {
+  if(event.key !== "Escape") return;
+  const openButton = $("#nav .navgroup-btn[aria-expanded='true']");
+  if(openButton){ closeNavPops(); openButton.focus(); return; }
+  if($("#navmenu").classList.contains("on")){ closeNavMenu(); $("#navall").focus(); }
 });
-document.addEventListener("keydown", event => { if(event.key === "Escape" && $("#navmenu").classList.contains("on")) closeNavMenu(); });
-document.addEventListener("click", event => { if(!event.target.closest("#navwrap")) closeNavMenu(); });
+document.addEventListener("click", event => { if(!event.target.closest("#navwrap")) closeNav(); });
+document.addEventListener("focusin", event => { if(!event.target.closest("#navwrap")) closeNav(); });
+
+/* ---------- разговорный конструктор ---------- */
+function updateTalkBuilder(builder){
+  const output = builder.querySelector("output");
+  if(!output) return;
+  const parts = [...builder.querySelectorAll("select")].map(select => select.value.trim()).filter(Boolean);
+  output.textContent = parts.length ? `${parts.join(" ")}.` : "";
+}
+document.addEventListener("change", event => {
+  const select = event.target.closest("[data-talk-builder] select");
+  if(select) updateTalkBuilder(select.closest("[data-talk-builder]"));
+});
 
 function setHeadH(){
   const header = $("header"), nav = $("#navwrap");
@@ -516,22 +535,34 @@ function setHeadH(){
   document.documentElement.style.setProperty("--brand-h", (narrow ? offset : 0) + "px");
   document.documentElement.style.setProperty("--head-h", (narrow ? header.offsetHeight - offset : header.offsetHeight) + "px");
 }
-function updateNavArrows(){
-  const nav = $("#nav"), wrap = $("#navwrap");
-  wrap.classList.toggle("can-l", nav.scrollLeft > 2);
-  wrap.classList.toggle("can-r", nav.scrollLeft < nav.scrollWidth - nav.clientWidth - 2);
+/* Семь групп либо помещаются в одну строку, либо целиком уступают место кнопке
+   «Все разделы»: перенос на вторую строку выглядит случайным и сбивает поиск нужной группы.
+   Ширину строки меряем один раз в скрытом состоянии, чтобы решение не зависело от breakpoint. */
+let navRowWidth = 0;
+function measureNavRow(){
+  const wrap = $("#navwrap");
+  wrap.classList.add("measuring");
+  navRowWidth = $("#nav").scrollWidth || 0;
+  wrap.classList.remove("measuring");
 }
-$("#nav").addEventListener("scroll", updateNavArrows, {passive:true});
-$("#navl").addEventListener("click", () => $("#nav").scrollBy({left:-$("#nav").clientWidth * .6, behavior:"smooth"}));
-$("#navr").addEventListener("click", () => $("#nav").scrollBy({left: $("#nav").clientWidth * .6, behavior:"smooth"}));
-window.addEventListener("resize", () => { updateNavArrows(); setHeadH(); });
+function fitNav(){
+  const wrap = $("#navwrap");
+  if(!navRowWidth) measureNavRow();
+  const compact = navRowWidth > wrap.clientWidth - 4;
+  if(compact !== wrap.classList.contains("compact")){
+    wrap.classList.toggle("compact", compact);
+    closeNav();
+  }
+}
+
+window.addEventListener("resize", () => { fitNav(); setHeadH(); });
+document.fonts?.ready.then(() => { navRowWidth = 0; fitNav(); });
 
 /* ---------- start ---------- */
 if(currentPage === "s-cases") showCase("mian", "sg");
 if(currentPage === "s-verbs") showVerb("conj");
 if(currentPage === "s-preps") filterPreps("все");
 applyTheme(readTheme());
+fitNav();
 setHeadH();
-updateNavArrows();
-navLink(currentPage)?.scrollIntoView({block:"nearest", inline:"nearest"});
 applyHash();

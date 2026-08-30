@@ -64,39 +64,58 @@ header{border-bottom:1px solid var(--line);background:var(--paper);position:stic
 .themebar button:hover{color:var(--ink)}
 .themebar button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .themebar button:focus-visible{outline:2px solid var(--ui);outline-offset:-2px}
-#navwrap{position:relative;margin-top:12px;display:flex;align-items:flex-end;gap:8px}
-#navscroll{position:relative;flex:1 1 auto;min-width:0}
-nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
-nav::-webkit-scrollbar{display:none}
-
-.navarr{
-  position:absolute;top:0;bottom:2px;width:36px;z-index:5;
-  display:none;align-items:center;justify-content:center;
-  border:0;padding:0;cursor:pointer;
-  color:var(--muted);
-}
-.navarr svg{display:block}
-.navarr:hover{color:var(--ui)}
-#navl{left:0;background:linear-gradient(to right,var(--paper) 55%,var(--paper-0))}
-#navr{right:0;background:linear-gradient(to left,var(--paper) 55%,var(--paper-0))}
-#navwrap.can-l #navl{display:flex}
-#navwrap.can-r #navr{display:flex}
-nav a{
+#navwrap{position:relative;margin-top:12px;display:flex;align-items:flex-end;gap:8px;flex-wrap:wrap}
+#nav{display:flex;flex-wrap:nowrap;gap:2px;flex:1 1 auto;min-width:0}
+.nav-home,.navgroup-btn{
   font:inherit;font-size:var(--fs-note);color:var(--muted);background:none;border:0;
   padding:8px 12px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;text-decoration:none;
+  display:inline-flex;align-items:center;gap:7px;
 }
-nav a:hover{color:var(--ink)}
-nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ui);font-weight:600}
-nav a:focus-visible,.chip:focus-visible,.tog button:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+.nav-home b,.navgroup-btn{font-weight:400}
+.nav-home:hover,.navgroup-btn:hover{color:var(--ink)}
+.nav-home[aria-current="page"],.navgroup.is-current > .navgroup-btn{color:var(--ink);border-bottom-color:var(--ui);font-weight:600}
+.nav-home:focus-visible,.navgroup-btn:focus-visible,
+.chip:focus-visible,.tog button:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+.navgroup{position:relative;display:flex}
+.navgroup-btn::after{
+  content:"";flex:0 0 auto;width:0;height:0;
+  border:4px solid transparent;border-bottom:0;border-top-color:currentColor;opacity:.5;
+}
+.navgroup-btn[aria-expanded="true"]{color:var(--ink);background:var(--panel)}
+.navgroup-btn[aria-expanded="true"]::after{transform:scaleY(-1)}
+
+.navpop{
+  display:none;position:absolute;left:0;top:calc(100% + 2px);z-index:40;
+  width:max(300px,100%);max-width:min(380px,92vw);
+  background:var(--panel);border:1px solid var(--line);border-radius:2px;
+  box-shadow:0 6px 24px var(--shadow);padding:8px;
+}
+.navgroup-btn[aria-expanded="true"] + .navpop{display:block}
+.navgroup:nth-last-child(-n+3) .navpop{left:auto;right:0}
+.navpop a{display:block;padding:7px 9px;border-radius:2px;text-decoration:none;color:var(--ink)}
+.navpop a b{display:block;font-family:var(--serif);font-size:var(--fs-lead);font-weight:600;line-height:1.3}
+.navpop a span{display:block;font-size:var(--fs-note);color:var(--muted);line-height:1.35;margin-top:1px}
+.navpop a:hover{background:var(--hover)}
+.navpop a:hover b{color:var(--ui);text-decoration:underline;text-underline-offset:3px}
+.navpop a[aria-current="page"]{background:var(--hover)}
+.navpop a[aria-current="page"] b::before{content:"";display:inline-block;width:3px;height:11px;
+  background:var(--ui);margin-right:7px;vertical-align:-1px}
+.navpop a:focus-visible{outline:2px solid var(--ui);outline-offset:-2px}
 
 #navall{
   font:inherit;font-size:var(--fs-note);color:var(--muted-s);background:var(--panel);
-  border:1px solid var(--line-ui);border-bottom:0;border-radius:2px 2px 0 0;
+  border:1px solid var(--line-ui);border-radius:2px;
   padding:7px 10px;margin-bottom:2px;cursor:pointer;white-space:nowrap;flex:0 0 auto;
+  display:none;align-items:center;gap:8px;max-width:100%;overflow:hidden;
 }
 #navall:hover{color:var(--ink)}
 #navall[aria-expanded="true"]{color:var(--ink);border-color:var(--ink)}
 #navall:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+.navall-ico{width:14px;height:2px;background:currentColor;position:relative;flex:0 0 auto}
+.navall-ico::before,.navall-ico::after{content:"";position:absolute;left:0;width:14px;height:2px;background:currentColor}
+.navall-ico::before{top:-5px}
+.navall-ico::after{top:5px}
+.navall-txt{overflow:hidden;text-overflow:ellipsis}
 #navmenu{
   display:none;position:absolute;right:0;top:calc(100% + 2px);z-index:40;
   width:min(760px,92vw);max-height:min(70vh,520px);overflow-y:auto;
@@ -117,6 +136,36 @@ nav a:focus-visible,.chip:focus-visible,.tog button:focus-visible{outline:2px so
 #navmenu a:hover{color:var(--ui);text-decoration:underline;text-underline-offset:3px}
 #navmenu a[aria-current="page"]{color:var(--ui);font-weight:600}
 #navmenu a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+
+/* Как только семь групп перестают помещаться в одну строку, они уступают место
+   одной кнопке с полным списком: перенос на вторую строку выглядел бы случайным.
+   Переключение считает JS по фактической ширине, media-запрос - подстраховка до его запуска. */
+@media (max-width:920px){
+  .js #nav{display:none}
+  .js #navall{display:inline-flex}
+}
+.js #navwrap.compact #nav{display:none}
+.js #navwrap.compact #navall{display:inline-flex}
+#navwrap.measuring #nav{
+  display:flex !important;position:absolute;left:0;top:0;
+  width:auto;visibility:hidden;pointer-events:none;
+}
+
+.pager{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.pager a{
+  flex:1 1 240px;display:block;text-decoration:none;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:11px 14px;
+}
+.pager a:hover{border-color:var(--line-ui)}
+.pager a:hover b{color:var(--ui);text-decoration:underline;text-underline-offset:3px}
+.pager a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+.pager small{
+  display:block;font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted-s);margin-bottom:3px;
+}
+.pager b{font-family:var(--serif);font-size:var(--fs-lead);font-weight:600}
+.pager-next{text-align:right}
+.pager-prev + .pager-next{margin-left:auto}
 
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:18px;margin-top:14px}
 h2,.page-title{font-family:var(--serif);font-size:var(--fs-h2);font-weight:600;margin:0 0 4px}
@@ -140,6 +189,9 @@ p{margin:0 0 10px}
 .related-links a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
 .related-links a:hover{color:var(--ui);text-decoration-color:var(--ui)}
 .related-links a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+.tip a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
+.tip a:hover{color:var(--ui);text-decoration-color:var(--ui)}
+.tip a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 .idx p,.sent,.ngrid{max-width:none}
 .pl{font-family:var(--serif)}
 .tip{background:var(--tip);border-left:2px solid var(--alt);padding:10px 12px;font-size:var(--fs-base);margin-top:8px}
@@ -155,7 +207,17 @@ li{margin-bottom:5px}
 html:not(.js) #sbox,html:not(.js) .themebar,
 html:not(.js) .casebar,html:not(.js) #pfilter,html:not(.js) #vsearch,
 html:not(.js) .alink{display:none}
-html:not(.js) #navall,html:not(.js) #navmenu,html:not(.js) .navarr{display:none}
+html:not(.js) #navall,html:not(.js) #navmenu{display:none}
+html:not(.js) header{position:static}
+html:not(.js) #nav{display:block;columns:3 200px;column-gap:24px;padding-bottom:10px}
+html:not(.js) .navgroup{break-inside:avoid;margin-bottom:10px}
+html:not(.js) .navgroup-btn{
+  cursor:default;padding:0 0 2px;font-size:var(--fs-micro);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted-s);font-weight:600;border-bottom:0;
+}
+html:not(.js) .navgroup-btn::after{display:none}
+html:not(.js) .navpop{display:block;position:static;width:auto;max-width:none;border:0;box-shadow:none;padding:0;background:none}
+html:not(.js) .navpop a span{display:none}
 @media (prefers-reduced-motion:no-preference){
   .sec.on{animation:in .16s ease-out}
   @keyframes in{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
@@ -181,8 +243,8 @@ html:not(.js) #navall,html:not(.js) #navmenu,html:not(.js) .navarr{display:none}
 }
 .casebar .chips{flex:1 1 320px;padding:0}
 .casebar .tog{flex:0 0 auto}
-.chips{display:flex;gap:6px;overflow-x:auto;padding:14px 0 2px;scrollbar-width:none}
-.chips::-webkit-scrollbar{display:none}
+/* падежи переносятся по строкам: горизонтальная прокрутка прятала половину списка */
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:14px 0 2px}
 .chip{
   font:inherit;text-align:left;background:var(--panel);border:1px solid var(--line-ui);
   border-radius:2px;padding:7px 11px;cursor:pointer;white-space:nowrap;line-height:1.25;
@@ -344,6 +406,21 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
 }
 .src:focus{outline:2px solid var(--ui);outline-offset:1px}
 
+.talk-builders,.talk-dialogues{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.talk-builders article,.talk-dialogues article{border:1px solid var(--line);padding:12px;background:var(--paper)}
+.talk-builders article>b{font-size:var(--fs-note);color:var(--alt)}
+.talk-builders p,.talk-dialogues p{font-size:var(--fs-base);margin:5px 0 0}
+.talk-example{font-family:var(--serif);color:var(--end)}
+.talk-builder{display:flex;flex-direction:column;gap:8px}
+.talk-fields{display:grid;gap:7px}
+.talk-fields label{display:grid;gap:2px;font-size:var(--fs-note);color:var(--muted-s)}
+.talk-fields select{width:100%;font:inherit;font-family:var(--serif);font-size:var(--fs-base);color:var(--ink);background:var(--panel);border:1px solid var(--line-ui);border-radius:2px;padding:6px 8px}
+.talk-fields select:focus{outline:2px solid var(--ui);outline-offset:1px}
+.talk-builder output{display:block;margin-top:auto;padding-top:2px}
+.talk-situation{font-size:var(--fs-micro)!important;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.talk-prompt{color:var(--muted)}
+@media (max-width:700px){.talk-builders,.talk-dialogues{grid-template-columns:1fr}}
+
 #sbox{position:relative;flex:0 1 300px;min-width:200px}
 #gsearch{
   font:inherit;font-size:var(--fs-note);width:100%;padding:6px 10px;
@@ -380,14 +457,30 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
   #sres{right:auto;left:0;width:100%}
   #gsearch,.src{font-size:var(--fs-lead)}
   header{top:calc(-1 * var(--brand-h,0px))}
-  #navwrap{margin-top:8px}
-  #navmenu{columns:2 150px;padding:14px;width:92vw}
-  #navwrap.can-l #navl,#navwrap.can-r #navr{display:none}
-  .casebar{gap:8px;padding:8px 16px}
+  /* меню открывается листом во всю ширину шапки, поэтому позиционируется от неё */
+  #navwrap{margin-top:8px;padding-bottom:8px;position:static}
+  #navall{width:100%;justify-content:flex-start;padding:10px 12px;margin-bottom:0}
+  #navmenu{
+    left:0;right:0;top:100%;width:auto;columns:1;padding:2px 16px 14px;
+    border-left:0;border-right:0;border-radius:0;
+    max-height:calc(100vh - var(--head-h,0px) - 6px);
+  }
+  #navmenu section{margin:0}
+  #navmenu h4{padding:14px 0 2px}
+  #navmenu a{padding:11px 0;border-bottom:1px solid var(--line)}
+  #navmenu section:last-child a:last-child{border-bottom:0}
+  #navmenu a[aria-current="page"]::before{content:"";display:inline-block;width:3px;height:12px;
+    background:var(--ui);margin-right:7px;vertical-align:-1px}
+  .pager a{flex:1 1 100%}
+  .pager-next{text-align:left}
+  /* падежи переносятся по строкам: горизонтальная прокрутка прячет половину падежей */
+  .casebar{gap:8px;padding:8px 0;position:static;margin:0;border-bottom:0}
   .casebar .chips{flex:1 1 100%}
-  .chip{padding:6px 10px}
+  .chips{flex-wrap:wrap;overflow:visible;padding:0}
+  .chip{padding:7px 10px;flex:1 1 auto;text-align:center}
   .chip .cr{display:none}
-  .tog button{padding:5px 12px}
+  .tog{width:100%}
+  .tog button{flex:1 1 0;padding:7px 12px}
 }
 
 .ngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:0 20px}
@@ -422,7 +515,7 @@ footer a:hover{color:var(--ui)}
 @media print{
   :root{color-scheme:light}
   html,body{background:#fff;color:#000}
-  header,#navwrap,#sres,#navmenu,.alink,.tog,.chips{display:none !important}
+  header,#navwrap,#sres,#navmenu,.alink,.tog,.chips,.pager{display:none !important}
   .wrap{max-width:none;padding:0}
   .sec{display:none}
   .sec.on{display:block}

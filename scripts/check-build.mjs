@@ -10,6 +10,7 @@ const routes = [
   ["s-index", ""], ["s-alpha", "alphabet"], ["s-rodz", "gender"], ["s-cases", "cases"],
   ["s-alt", "alternations"], ["s-adj", "adjectives"], ["s-adv", "adverbs"],
   ["s-pron", "pronouns"], ["s-q", "questions"], ["s-num", "numerals"], ["s-verbs", "verbs"],
+  ["s-vocab", "vocabulary"], ["s-talk", "speaking"],
   ["s-neg", "negation"], ["s-order", "word-order"], ["s-impers", "impersonal"],
   ["s-conj", "conjunctions"], ["s-part", "particles"], ["s-ludzie", "people"],
   ["s-dim", "diminutives"], ["s-preps", "prepositions"], ["s-bridge", "language-bridges"]
@@ -53,6 +54,19 @@ for(const [id, path] of routes){
   titles.add(document.title);
 
   assert.equal(document.querySelectorAll("#nav a[data-s]").length, routes.length);
+  assert.equal(document.querySelectorAll("#nav .navgroup").length, 7, "Navigation must stay two-level: seven groups in one row");
+  assert.equal(document.querySelectorAll("#nav .navgroup .navpop a[data-s]").length, routes.length - 1);
+  assert.equal(document.querySelectorAll("#navmenu a[data-s]").length, routes.length);
+  const currentGroups = document.querySelectorAll("#nav .navgroup.is-current");
+  const pager = document.querySelectorAll(".pager a[href]");
+  if(id === "s-index"){
+    assert.equal(currentGroups.length, 0);
+    assert.equal(pager.length, 0, "Table of contents needs no pager");
+  }else{
+    assert.equal(currentGroups.length, 1, `${path} must highlight its group`);
+    assert(currentGroups[0].contains(document.querySelector('#nav a[aria-current="page"]')));
+    assert(pager.length === 1 || pager.length === 2, `${path} must offer previous/next topics`);
+  }
   assert.equal(document.querySelectorAll('#nav a[aria-current="page"]').length, 1);
   assert.equal(document.querySelector('#nav a[aria-current="page"]')?.dataset.s, id);
   assert.equal(document.querySelectorAll('a[href^="#s-"]').length, 0, "Legacy fragment links must be rewritten");
@@ -72,7 +86,7 @@ for(const [id, path] of routes){
 
 const rootPage = documents.get("s-index");
 assert.equal(rootPage.document.title, "Польская грамматика — таблицы, правила и примеры");
-assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 19);
+assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 21);
 assert(!rootPage.html.includes("przez godzinę"), "Homepage should not duplicate every topic");
 
 const cases = documents.get("s-cases");
@@ -80,12 +94,16 @@ assert.equal(cases.document.querySelectorAll(".case-variant").length, 14);
 assert(cases.html.includes("Miejscownik"));
 
 const verbs = documents.get("s-verbs");
-assert.equal(verbs.document.querySelectorAll(".verb-variant").length, 6);
-const verbRows = [...verbs.document.querySelectorAll('[data-v="lista"] #vlist table tr')].slice(1);
-assert.equal(verbRows.length, 100);
-assert.equal(new Set(verbRows.map(row => row.querySelector("td")?.textContent.trim())).size, 100);
+assert.equal(verbs.document.querySelectorAll(".verb-variant").length, 5);
 assert(verbs.html.includes("będę zrobił"));
 assert(!verbs.html.includes("czyby"));
+
+const vocabulary = documents.get("s-vocab");
+assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list").length, 4);
+assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list tr").length, 404);
+const speaking = documents.get("s-talk");
+assert(speaking.html.includes("Фразы спасения"));
+assert(speaking.html.includes("Co robiłeś w weekend?"));
 
 assert(documents.get("s-alt").html.includes("Чередования: сводная карта"));
 assert(!documents.get("s-ludzie").html.includes("Wołacz - вкладка"));
@@ -114,6 +132,8 @@ assert(bridge.html.includes("jutro"));
 assert(bridge.html.includes("puszka"));
 assert(bridge.html.includes("lustro"));
 
+assert.match(css, /\.navgroup-btn\[aria-expanded="true"\] \+ \.navpop\{display:block\}/);
+assert.match(css, /html:not\(\.js\) \.navpop\{display:block/, "Sections must stay reachable without JavaScript");
 assert.match(css, /\.sec\{display:block\}/);
 assert.match(css, /\.js \.sec\{display:none\}/);
 assert.match(css, /\.content-variant\{display:block\}/);
@@ -129,7 +149,7 @@ assert(!sitemap.includes("#"), "Sitemap must contain canonical HTTP URLs, not fr
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");
 const searchIndex = JSON.parse(searchJSON);
 assert(searchIndex.length > 1500);
-assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 19);
+assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 21);
 assert(searchIndex.every(entry => /^r-\d+$/.test(entry.id) && entry.text));
 assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementById(entry.id)), "Every search entry must resolve on its topic page");
 
