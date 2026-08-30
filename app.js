@@ -420,7 +420,10 @@ function exerciseTaskHTML(task, number, testMode = false){
       ? part : exerciseControlHTML(part, `${task.id}-${part.key}`)).join("")}</p>`;
   }else{
     const control = exerciseControlHTML(task, task.id);
-    body = `<p class="exercise-sentence">${task.prompt.replace("___", control)}</p>`;
+    const question = task.prompt.includes("___")
+      ? task.prompt.replace("___", control)
+      : `${task.prompt} ${control}`;
+    body = `<p class="exercise-sentence">${question}</p>`;
   }
   return `<fieldset class="exercise-item" data-exercise-id="${task.id}">
     <legend><span>${number}</span>${task.passage ? task.prompt : "Выберите или впишите форму"}</legend>
@@ -1487,7 +1490,7 @@ function renderPron(){
     <div class="tip"><b><span class="pl">ten</span> покрывает и «этот», и «тот».</b> Русское «тот фильм, о котором я говорил» по-польски - <span class="pl">ten film, o którym mówiłem</span>. <span class="pl">tamten</span> нужен только при явном противопоставлении здесь и там: <span class="pl">Nie ten, tamten.</span> · <span class="pl">Ten jest tańszy niż tamten.</span> Ставить <span class="pl">tamten</span> везде, где по-русски «тот», - типичная калька.</div>
 
     <h3>Притяжательные</h3>
-    <table>
+    <div class="scroll pron-possesive-table"><table>
       <tr><th>лицо</th><th>форма</th><th>склоняется</th></tr>
       <tr><td>ja</td><td class="w">mój / moja / moje</td><td>да, как прилагательное</td></tr>
       <tr><td>ty</td><td class="w">twój / twoja / twoje</td><td>да</td></tr>
@@ -1496,7 +1499,7 @@ function renderPron(){
       <tr><td>my</td><td class="w">nasz / nasza / nasze</td><td>да</td></tr>
       <tr><td>wy</td><td class="w">wasz / wasza / wasze</td><td>да</td></tr>
       <tr><td>oni / one</td><td class="w">ich</td><td class="c">нет</td></tr>
-    </table>
+    </table></div>
     <div class="tip"><b>Свой собственный: <span class="pl">swój</span>.</b> Если обладатель - подлежащее, поляк ставит <span class="pl">swój</span>: <span class="pl">Biorę swój bilet</span>. Правило то же, что с русским «свой», но в польском оно соблюдается строже, чем в русской разговорной речи.</div>
 
     <h3>sam: сам, один, тот же</h3>
@@ -1743,11 +1746,16 @@ function showTab(id, scroll){
 $("#nav").addEventListener("click", e => {
   const btn = e.target.closest(".navgroup-btn");
   if(btn){
+    const scrollTop = window.scrollY;
     const open = btn.getAttribute("aria-expanded") !== "true";
     closeNavPops(btn);
     closeNavMenu();
     btn.setAttribute("aria-expanded", open);
-    if(open) btn.nextElementSibling.querySelector("a").focus();
+    /* Фокус остаётся на кнопке-триггере. Следующий Tab естественно ведёт в
+       выпадающее меню, зато браузер не прокручивает документ к его пунктам. */
+    requestAnimationFrame(() => {
+      if(window.scrollY !== scrollTop) window.scrollTo(0, scrollTop);
+    });
     return;
   }
   const link = e.target.closest("[data-s]");
@@ -1757,12 +1765,15 @@ $("#nav").addEventListener("click", e => {
   closeNav();
 });
 
-$("#navall").onclick = () => {
+$("#navall").onclick = e => {
+  const scrollTop = window.scrollY;
   const open = !$("#navmenu").classList.contains("on");
   closeNavPops();
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", open);
-  if(open) $("#navmenu [data-s]").focus();
+  requestAnimationFrame(() => {
+    if(window.scrollY !== scrollTop) window.scrollTo(0, scrollTop);
+  });
 };
 $("#navmenu").addEventListener("click", e => {
   const link = e.target.closest("[data-s]");
@@ -2116,6 +2127,7 @@ document.addEventListener("keydown", e => {
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
+    <p class="index-intro">Польская грамматика без лишней теории: выберите тему или найдите нужную форму поиском.</p>
     <div class="idx">${GROUPS.map(g => `<section>
       <h3>${g[0]}</h3>
       ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">

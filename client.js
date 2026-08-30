@@ -498,14 +498,12 @@ $("#nav").addEventListener("click", event => {
   const open = button.getAttribute("aria-expanded") !== "true";
   closeNav();
   button.setAttribute("aria-expanded", open);
-  if(open) button.nextElementSibling.querySelector("a")?.focus();
 });
 $("#navall").addEventListener("click", () => {
   const open = !$("#navmenu").classList.contains("on");
   closeNavPops();
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", open);
-  if(open) $("#navmenu [data-s]")?.focus();
 });
 document.addEventListener("keydown", event => {
   if(event.key !== "Escape") return;
