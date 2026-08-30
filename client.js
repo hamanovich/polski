@@ -255,9 +255,24 @@ function initExerciseSection(section){
   });
 }
 initExerciseSection($("#s-cases"));
+initExerciseSection($("#s-rodz"));
 initExerciseSection($("#s-verbs"));
 initExerciseSection($("#s-adj"));
 initExerciseSection($("#s-preps"));
+initExerciseSection($("#s-adv"));
+initExerciseSection($("#s-pron"));
+initExerciseSection($("#s-num"));
+initExerciseSection($("#s-q"));
+initExerciseSection($("#s-neg"));
+initExerciseSection($("#s-order"));
+initExerciseSection($("#s-impers"));
+initExerciseSection($("#s-conj"));
+initExerciseSection($("#s-part"));
+initExerciseSection($("#s-alt"));
+initExerciseSection($("#s-ludzie"));
+initExerciseSection($("#s-alpha"));
+initExerciseSection($("#s-dim"));
+initExerciseSection($("#s-bridge"));
 
 /* ---------- URL state, legacy hashes and heading links ---------- */
 function hashFor(suffix = ""){

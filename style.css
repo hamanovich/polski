@@ -137,6 +137,9 @@ h3:hover .alink,.alink:focus-visible,.alink.ok{opacity:1}
 p{margin:0 0 10px}
 .lead{color:var(--muted);font-size:var(--fs-base);margin:0 0 2px}
 .panel p,.panel ul,.panel ol,.tip{max-width:var(--measure)}
+.related-links a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
+.related-links a:hover{color:var(--ui);text-decoration-color:var(--ui)}
+.related-links a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 .idx p,.sent,.ngrid{max-width:none}
 .pl{font-family:var(--serif)}
 .tip{background:var(--tip);border-left:2px solid var(--alt);padding:10px 12px;font-size:var(--fs-base);margin-top:8px}

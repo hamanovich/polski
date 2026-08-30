@@ -48,7 +48,7 @@ function renderConj(){
     </table></div>
     <div class="tip"><b>Меняются только лицо и обстоятельства.</b> Местоимения и окончания глагола переходят на новое лицо, а слова «здесь и сейчас» сдвигаются: <span class="pl">jutro → następnego dnia</span>, <span class="pl">wczoraj → dzień wcześniej</span>, <span class="pl">tutaj → tam</span>, <span class="pl">teraz → wtedy</span>. Само время глагола остаётся тем же.</div>
     <div class="tip"><b>В косвенном вопросе - обычный порядок слов.</b> Сохраняется вопросительное слово или <span class="pl">czy</span>, а дальше фраза строится как утверждение: <span class="pl">Zapytał, gdzie mieszkam</span>. Никакой перестановки, как в английском, в польском нет и в прямом вопросе. Для вопросов «да/нет» вводится <span class="pl">czy</span>: <span class="pl">Nie wiem, czy przyjdzie</span>. Запятая перед <span class="pl">że, czy, gdzie, kiedy</span> - всегда.</div>
-  </div>`;
+  </div>${topicPracticeHTML(CONJ_PRACTICE, "conjunction")}`;
 }
 
 /* --- люди: обращение, имена, национальности --- */
@@ -114,7 +114,7 @@ function renderLudzie(){
     </table></div>
     <div class="tip"><b>Когда женской формы нет - берётся <span class="pl">pani</span> плюс мужская форма, несклоняемая.</b> <span class="pl">pani doktor, pani prezes, pani minister</span>: <span class="pl">byłem u pani doktor</span>, не «u pani doktorki» в официальной речи. Формы <span class="pl">doktorka, profesorka, ministra, gościni</span> живые и частые в прессе, но в документах и в обращении к незнакомой держится <span class="pl">pani + мужская форма</span>.</div>
     <div class="tip"><b>После <span class="pl">być</span> - творительный.</b> <span class="pl">Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką.</span> Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.</div>
-  </div>`;
+  </div>${topicPracticeHTML(PEOPLE_PRACTICE, "people")}`;
 }
 
 function renderDim(){
@@ -154,7 +154,7 @@ function renderDim(){
       ${DIM_NAME.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Практический совет.</b> Услышал незнакомое ласковое слово от продавца, официанта или коллеги - это не панибратство, а норма вежливого общения. В официальных документах и с незнакомыми по имени-фамилии уменьшительные, разумеется, не используют.</div>
-  </div>`;
+  </div>${topicPracticeHTML(DIM_PRACTICE, "diminutive")}`;
 }
 
 /* ============ РЕНДЕР ============ */
@@ -181,7 +181,7 @@ function renderRod(){
   $("#s-rodz").innerHTML = `<div class="panel">
     <h2>Род существительного</h2>
     <p class="lead">Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. Сам род почти всегда переносится из русского - работа в другом: мужской в польском делится на три.</p>
-    <div class="tip"><b>Тест в две секунды.</b> Единственное число - подставь <span class="pl">ten / ta / to</span>. Множественное - <span class="pl">ci / te</span>. Если встало <span class="pl">ci</span>, слово мужско-личное со всеми последствиями.</div>
+    <div class="tip"><b>Быстрая проверка согласования.</b> Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: <span class="pl">ten stół</span> (мужской), <span class="pl">ta książka</span> (женский), <span class="pl">to okno</span> (средний). Во множественном числе проверь, группа ли это мужчин: <span class="pl">ci studenci</span>, но <span class="pl">te książki, te kobiety, te psy</span>. Форма <span class="pl">ci</span> означает только мужско-личное множественное; <span class="pl">te</span> — всё остальное.</div>
 
     <h3>Как определить род</h3>
     <div class="scroll"><table class="vt">
@@ -221,7 +221,7 @@ function renderRod(){
       <li><b>Слова только во множественном рода не имеют.</b> <span class="pl">drzwi, spodnie, okulary, nożyczki, urodziny, wakacje, pieniądze</span> - все не-мужско-личные: <span class="pl">drzwi były otwarte</span>. Но <span class="pl">rodzice, ludzie, państwo</span> - мужско-личные: <span class="pl">rodzice byli</span>.</li>
       <li><b>Слова на -um среднего рода и в единственном не склоняются.</b> <span class="pl">muzeum, w muzeum, do muzeum</span> - одна форма на все падежи. Во множественном склоняются нормально: <span class="pl">muzea, muzeów, w muzeach</span>.</li>
     </ol>
-  </div>`;
+  </div>${topicPracticeHTML(ROD_PRACTICE, "gender")}`;
 }
 
 /* --- сводная карта чередований --- */
@@ -229,7 +229,7 @@ function renderAlt(){
   $("#s-alt").innerHTML = `<div class="panel">
     <h2>Чередования: сводная карта</h2>
     <p class="lead">Окончание часто меняет последний звук основы. Эта таблица нужна как карта: найди знакомую пару, а затем переходи к разделу, где показано точное условие.</p>
-    <div class="tip"><b>Не применяй чередование автоматически.</b> Одна и та же буква меняется не во всех формах: <span class="pl">róg → rogu</span>, но <span class="pl">róg → rogi</span>; <span class="pl">Polak → Polacy</span>, но <span class="pl">Polaka</span>. Сначала выбери падеж или форму глагола, потом меняй основу.</div>
+    <div class="tip"><b>Не применяй чередование автоматически.</b> Одна и та же буква ведёт себя по-разному в разных словах и формах: <span class="pl">róg → rogu</span>, но <span class="pl">król → królu</span>; <span class="pl">Polak → Polacy</span>, но <span class="pl">Polaka</span>. Сначала выбери падеж или форму глагола, потом меняй основу.</div>
 
     <h3>Гласные</h3>
     <div class="scroll"><table class="vt">
@@ -252,13 +252,13 @@ function renderAlt(){
     </table></div>
 
     <h3>Где смотреть подробности</h3>
-    <ul>
+    <ul class="related-links">
       <li><a href="#s-cases/miej/sg/~чередования-перед-e">Miejscownik: согласные перед -e</a> — полная таблица и развилка <span class="pl">-e / -u</span>.</li>
       <li><a href="#s-cases/mian/pl">Mianownik множественного</a> — мужско-личные формы <span class="pl">Polak → Polacy, student → studenci</span>.</li>
       <li><a href="#s-verbs/conj/~чередования-в-основе">Спряжения: изменения основы</a> — <span class="pl">pisać → piszę, móc → możesz</span> и другие модели.</li>
       <li><a href="#s-verbs/czasy/~чередования-в-прошедшем">Прошедшее время</a> — <span class="pl">musiał, zaczęła, mógł</span>.</li>
     </ul>
-  </div>`;
+  </div>${topicPracticeHTML(ALT_PRACTICE, "alternation")}`;
 }
 
 /* --- алфавит и произношение --- */
@@ -353,7 +353,7 @@ function renderAlpha(){
     <div class="tip"><b>Главная ловушка: <span class="pl">Polak</span> с большой, <span class="pl">polski</span> и <span class="pl">po polsku</span> с маленькой.</b> В русском «поляк» с маленькой, «польский» тоже - то есть расходится только существительное. <span class="pl">Jestem Polakiem, mówię po polsku</span>: в одной фразе обе буквы разные.</div>
     <div class="tip"><b>Что изменилось с 1 января 2026.</b> Жители городов, районов и деревень теперь пишутся <b>с большой</b>: <span class="pl">Warszawianin, Mokotowianin, Zakopianin</span> - раньше было с маленькой. Родовое слово в названиях городских объектов тоже поднялось: <span class="pl">Plac Zbawiciela, Aleja Róż, Park Kościuszki</span>. Единственное исключение - <span class="pl">ulica</span>, она осталась строчной: <span class="pl">ulica Długa</span>. В книгах и вывесках, изданных раньше, встретится старое написание.</div>
     <div class="tip"><b><span class="pl">Pan / Pani / Państwo</span> с большой только в переписке.</b> <span class="pl">Szanowna Pani, dziękuję Pani za wiadomość</span> - это вежливость, а не правило орфографии. В обычном тексте с маленькой: <span class="pl">ten pan czeka od godziny</span>. То же с <span class="pl">Ty, Ciebie, Tobie, Wasz</span> в письме.</div>
-  </div>`;
+  </div>${topicPracticeHTML(ALPHA_PRACTICE, "alphabet")}`;
 }
 
 let curCase = "mian", curNum = "sg";
@@ -439,6 +439,17 @@ function practiceAnswerCount(practice){
 }
 function casePracticeHTML(practice, on = false){
   return `<section class="practice panel content-variant case-practice-variant${on ? " on" : ""}" data-case="${practice.id}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Практика · ${practice.tasks.length} заданий · ${practiceAnswerCount(practice)} пропусков</p><h2>${practice.title}</h2></div>
+      <div class="exercise-progress" aria-live="polite">0 из ${practice.tasks.length} заданий</div>
+    </div>
+    <p class="lead">${practice.lead}</p>
+    <div class="exercise-list">${practice.tasks.map((task, index) => exerciseTaskHTML(task, index + 1)).join("")}</div>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-action="reset-practice">Начать заново</button></div>
+  </section>`;
+}
+function topicPracticeHTML(practice, topic){
+  return `<section class="practice panel ${topic}-practice" data-practice="${practice.id}">
     <div class="practice-heading">
       <div><p class="practice-kicker">Практика · ${practice.tasks.length} заданий · ${practiceAnswerCount(practice)} пропусков</p><h2>${practice.title}</h2></div>
       <div class="exercise-progress" aria-live="polite">0 из ${practice.tasks.length} заданий</div>
@@ -1027,7 +1038,7 @@ function renderNum(){
     </table>
     <div class="tip"><b><span class="pl">procent</span> после числительного не склоняется.</b> <span class="pl">dwa procent, pięć procent, sto procent</span> - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: <span class="pl">pół procent</span>, <span class="pl">półtora procent</span>, <span class="pl">dwa i pół procent</span> - и остаётся такой во всех падежах: <span class="pl">o dwóch i pół procent</span>. Формы <span class="pl">pół procenta, półtora procenta</span> часто слышны в живой речи, но словарная норма их не рекомендует. Склоняется <span class="pl">procent</span> только там, где числительного рядом нет: <span class="pl">w stu procentach</span> («на все сто»), <span class="pl">wysokość procentu</span>.</div>
 
-  </div>`;
+  </div>${topicPracticeHTML(NUM_PRACTICE, "numeral")}`;
 }
 
 /* --- частицы --- */
@@ -1076,7 +1087,7 @@ function renderPart(){
       <tr><td class="w">Oby!</td><td>дай бог</td></tr>
     </table>
     <div class="tip"><b>Три ложных друга.</b> <span class="pl">no</span> - это «ну», а «но» будет <span class="pl">ale</span>. <span class="pl">owszem</span> - «да, конечно», ничего общего с «совсем». <span class="pl">niby</span> - «якобы», а не «небо».</div>
-  </div>`;
+  </div>${topicPracticeHTML(PART_PRACTICE, "particle")}`;
 }
 
 /* --- вопросы и который --- */
@@ -1154,7 +1165,7 @@ function renderQ(){
       ${KTORY_SENT.map(k => `<tr><td style="width:36%" class="w">${k[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${k[1]}</td><td class="g" style="font-size:var(--fs-note)">${k[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Без который не построить сложное предложение.</b> Именно он позволяет сказать не «Это магазин. Я там работаю», а «Это магазин, в котором я работаю» - то есть перейти от двух коротких фраз к одной развёрнутой.</div>
-  </div>`;
+  </div>${topicPracticeHTML(QUESTION_PRACTICE, "question")}`;
 }
 
 /* --- отрицание --- */
@@ -1188,7 +1199,7 @@ function renderNeg(){
     <h3>ani… ani и żaden</h3>
     <p class="pl">Nie mam ani czasu, ani pieniędzy.</p>
     <p class="lead">Отдельное отрицательное местоимение <span class="pl">żaden / żadna / żadne</span> - «никакой»: <span class="pl">Żaden z nich nie przyszedł.</span> Склоняется как прилагательное с окончаниями местоименного типа: <span class="pl">żadnego, żadnej, żadnym</span>.</p>
-  </div>`;
+  </div>${topicPracticeHTML(NEG_PRACTICE, "negation")}`;
 }
 
 /* --- порядок слов --- */
@@ -1228,7 +1239,7 @@ function renderOrder(){
     <h3>Прилагательное: качество или тип</h3>
     <p class="lead">Тоже вопрос порядка слов, хоть и внутри одной именной группы: качество - перед словом, вид или тип - после. Подробнее и с примерами - во вкладке «Прилагательные».</p>
     <p class="pl">czarna kawa (какой кофе) · kawa rozpuszczalna (какой вид кофе) · język polski · dzień dobry</p>
-  </div>`;
+  </div>${topicPracticeHTML(ORDER_PRACTICE, "word-order")}`;
 }
 
 /* --- безличные конструкции --- */
@@ -1265,8 +1276,9 @@ function renderImpers(){
     </table></div>
     <div class="tip"><b>Точка ставится не всегда, и правило простое.</b> Если сокращение кончается на ту же букву, что и полное слово, точки нет: <span class="pl">dr</span> (dokto<b>r</b>), <span class="pl">mgr</span> (magiste<b>r</b>), <span class="pl">nr</span> (nume<b>r</b>), <span class="pl">wg</span> (wedłu<b>g</b>). Если на другую - точка обязательна: <span class="pl">ok.</span> (okoł<b>o</b>), <span class="pl">godz.</span> (godzin<b>a</b>), <span class="pl">ul.</span> (ulic<b>a</b>), <span class="pl">prof.</span> (profeso<b>r</b>).</div>
     <div class="tip"><b>В косвенном падеже точка возвращается.</b> <span class="pl">dr Kowalski</span> - без точки, но <span class="pl">u dr. Kowalskiego</span> или <span class="pl">u dra Kowalskiego</span>: подразумевается уже <span class="pl">doktora</span>, а сокращение на эту букву не кончается. С женщиной проще - <span class="pl">u dr Kowalskiej</span>, без точки, потому что <span class="pl">doktor</span> в женском употреблении не склоняется.</div>
+    <div class="tip"><b><span class="pl">nie wolno</span> и <span class="pl">nie można</span> — не одно и то же.</b> <span class="pl">Nie wolno palić</span> — прямой запрет: курить запрещено. <span class="pl">Nie można wejść, bo drzwi są zamknięte</span> — войти невозможно из-за обстоятельств; в правилах <span class="pl">nie można</span> тоже встречается, но звучит мягче. Человека при необходимости ставим в дательный: <span class="pl">nie wolno mi palić, nie można nam wejść</span>.</div>
     <div class="tip"><b>Номера, которые спросят в любом окне.</b> <span class="pl">PESEL</span> - личный идентификатор жителя, <span class="pl">NIP</span> - налоговый номер, <span class="pl">REGON</span> - номер организации в статистике, <span class="pl">KRS</span> - судебный реестр компаний. Это не сокращения в обычном смысле: они не расшифровываются в речи и склоняются как обычные мужские слова - <span class="pl">podaj PESEL, numer NIP-u</span>.</div>
-  </div>`;
+  </div>${topicPracticeHTML(IMPERS_PRACTICE, "impersonal")}`;
 }
 
 function renderPreps(){
@@ -1425,7 +1437,7 @@ function renderAdv(){
       ${ADV_LIST.map(a => `<tr><td class="w">${a[0]}</td><td style="color:var(--muted)">${a[1]}</td><td class="g">${a[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Не путать с прилагательным.</b> Наречие относится к глаголу и не склоняется: <span class="pl">On mówi dobrze</span> (наречие) vs <span class="pl">To jest dobry pomysł</span> (прилагательное, согласуется с существительным).</div>
-  </div>`;
+  </div>${topicPracticeHTML(ADV_PRACTICE, "adverb")}`;
 }
 function renderPron(){
   $("#s-pron").innerHTML = `<div class="panel">
@@ -1448,7 +1460,7 @@ function renderPron(){
       <tr><th>падеж</th><th>форма</th><th>пример</th></tr>
       ${SIEBIE.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="${r[1]==="-"?"":"g"}" style="white-space:normal${r[1]==="-"?";color:var(--muted)":""}">${r[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">się</span> - это короткая форма винительного от <span class="pl">siebie</span>.</b> Безударное <span class="pl">się</span> идёт при глаголе (<span class="pl">myję się</span>), ударное <span class="pl">siebie</span> - под логическим ударением и всегда после предлога: <span class="pl">bez siebie, do siebie, ze sobą</span>. Сказать <span class="bad">bez się</span> нельзя.</div>
+    <div class="tip"><b><span class="pl">się</span> — безударная форма возвратного местоимения.</b> Она встречается в Dopełniacz и Biernik: <span class="pl">boję się, myję się</span>; кроме того, <span class="pl">się</span> выполняет нефлексионные функции при глаголах. Полное <span class="pl">siebie</span> нужно под ударением и после предлога: <span class="pl">bez siebie, do siebie, ze sobą</span>. Сказать <span class="bad">bez się</span> нельзя.</div>
 
     <h3>Четыре разных się</h3>
     <p class="lead">Форма одна, работы четыре. Понимать, какая именно, нужно затем, что от этого зависит, можно ли заменить <span class="pl">się</span> на <span class="pl">siebie</span> и переводится ли оно вообще.</p>
@@ -1529,7 +1541,7 @@ function renderPron(){
       <tr><th>слово</th><th>значение</th><th>как ведёт себя</th></tr>
       ${OKRESL.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td style="white-space:normal;font-size:var(--fs-note)">${r[2]}</td></tr>`).join("")}
     </table></div>
-  </div>`;
+  </div>${topicPracticeHTML(PRON_PRACTICE, "pronoun")}`;
 }
 
 function renderBridge(){
@@ -1550,7 +1562,7 @@ function renderBridge(){
           ${FALSE.filter(f => f[3] === group).map(f => `<tr><td class="w">${f[0]}</td><td>${f[1]}</td><td class="note">${f[2]}</td></tr>`).join("")}
         </table></div>`).join("")}
     </div>
-  </div>`;
+  </div>${topicPracticeHTML(BRIDGE_PRACTICE, "bridge")}`;
 }
 
 /* ============ НАВИГАЦИЯ И АДРЕС СТРАНИЦЫ ============ */
