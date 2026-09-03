@@ -26,8 +26,8 @@ function renderConj(){
     </table>
     <div class="tip"><b>bo vs ponieważ vs dlatego że.</b> Значение одинаковое, разница в регистре: <span class="pl">bo</span> - разговорное и самое частое, <span class="pl">ponieważ</span> - нейтральное и письменное, <span class="pl">dlatego że</span> - подчёркивает причину сильнее обоих.</div>
 
-    <h3>Из придаточного — в короткую конструкцию</h3>
-    <p class="lead">Ту же мысль часто можно выразить без придаточного — через существительное или отглагольное существительное. Это особенно обычно в письменной и официальной речи.</p>
+    <h3>Из придаточного - в короткую конструкцию</h3>
+    <p class="lead">Ту же мысль часто можно выразить без придаточного - через существительное или отглагольное существительное. Это особенно обычно в письменной и официальной речи.</p>
     <div class="scroll"><table class="vt">
       <tr><th>придаточное</th><th>короткая конструкция</th></tr>
       <tr><td class="w" style="white-space:normal">Kiedy wróciłem do domu, zadzwoniłem do Anny.</td><td class="g" style="white-space:normal">Po powrocie do domu zadzwoniłem do Anny.</td></tr>
@@ -181,7 +181,7 @@ function renderRod(){
   $("#s-rodz").innerHTML = `<div class="panel">
     <h2>Род существительного</h2>
     <p class="lead">Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. Сам род почти всегда переносится из русского - работа в другом: мужской в польском делится на три.</p>
-    <div class="tip"><b>Быстрая проверка согласования.</b> Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: <span class="pl">ten stół</span> (мужской), <span class="pl">ta książka</span> (женский), <span class="pl">to okno</span> (средний). Во множественном числе проверь, группа ли это мужчин: <span class="pl">ci studenci</span>, но <span class="pl">te książki, te kobiety, te psy</span>. Форма <span class="pl">ci</span> означает только мужско-личное множественное; <span class="pl">te</span> — всё остальное.</div>
+    <div class="tip"><b>Быстрая проверка согласования.</b> Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: <span class="pl">ten stół</span> (мужской), <span class="pl">ta książka</span> (женский), <span class="pl">to okno</span> (средний). Во множественном числе проверь, группа ли это мужчин: <span class="pl">ci studenci</span>, но <span class="pl">te książki, te kobiety, te psy</span>. Форма <span class="pl">ci</span> означает только мужско-личное множественное; <span class="pl">te</span> - всё остальное.</div>
 
     <h3>Как определить род</h3>
     <div class="scroll"><table class="vt">
@@ -253,10 +253,10 @@ function renderAlt(){
 
     <h3>Где смотреть подробности</h3>
     <ul class="related-links">
-      <li><a href="#s-cases/miej/sg/~чередования-перед-e">Miejscownik: согласные перед -e</a> — полная таблица и развилка <span class="pl">-e / -u</span>.</li>
-      <li><a href="#s-cases/mian/pl">Mianownik множественного</a> — мужско-личные формы <span class="pl">Polak → Polacy, student → studenci</span>.</li>
-      <li><a href="#s-verbs/conj/~чередования-в-основе">Спряжения: изменения основы</a> — <span class="pl">pisać → piszę, móc → możesz</span> и другие модели.</li>
-      <li><a href="#s-verbs/czasy/~чередования-в-прошедшем">Прошедшее время</a> — <span class="pl">musiał, zaczęła, mógł</span>.</li>
+      <li><a href="#s-cases/miej/sg/~чередования-перед-e">Miejscownik: согласные перед -e</a> - полная таблица и развилка <span class="pl">-e / -u</span>.</li>
+      <li><a href="#s-cases/mian/pl">Mianownik множественного</a> - мужско-личные формы <span class="pl">Polak → Polacy, student → studenci</span>.</li>
+      <li><a href="#s-verbs/conj/~чередования-в-основе">Спряжения: изменения основы</a> - <span class="pl">pisać → piszę, móc → możesz</span> и другие модели.</li>
+      <li><a href="#s-verbs/czasy/~чередования-в-прошедшем">Прошедшее время</a> - <span class="pl">musiał, zaczęła, mógł</span>.</li>
     </ul>
   </div>${topicPracticeHTML(ALT_PRACTICE, "alternation")}`;
 }
@@ -1004,7 +1004,7 @@ function renderNum(){
       <tr><td>деньги</td><td class="w">złoty · złote · złotych - <span class="g">2 złote, 5 złotych, 22 złote</span></td></tr>
       <tr><td>неточный счёт</td><td class="w">kilka · kilkanaście (11–19) · kilkadziesiąt · parę</td></tr>
     </table></div>
-    <div class="tip"><b><span class="pl">ile / ilu</span>: сначала определи падеж всей группы.</b> В Mianownik и Biernik после <span class="pl">ile</span> существительное стоит в Dopełniacz множественного числа: <span class="pl">ile osób, ile lat, ile pieniędzy</span>; у несчётных — в единственном: <span class="pl">ile czasu, ile cukru</span>. О мужчинах — форма <span class="pl">ilu</span>: <span class="pl">ilu studentów, ilu ludzi</span>, а глагол обычно в среднем роде единственного числа: <span class="pl">Ilu ludzi przyszło?</span> В косвенных падежах склоняется вся группа: <span class="pl">Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?</span></div>
+    <div class="tip"><b><span class="pl">ile / ilu</span>: сначала определи падеж всей группы.</b> В Mianownik и Biernik после <span class="pl">ile</span> существительное стоит в Dopełniacz множественного числа: <span class="pl">ile osób, ile lat, ile pieniędzy</span>; у несчётных - в единственном: <span class="pl">ile czasu, ile cukru</span>. О мужчинах - форма <span class="pl">ilu</span>: <span class="pl">ilu studentów, ilu ludzi</span>, а глагол обычно в среднем роде единственного числа: <span class="pl">Ilu ludzi przyszło?</span> В косвенных падежах склоняется вся группа: <span class="pl">Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?</span></div>
 
     <h3>Дроби</h3>
     <div class="scroll"><table class="vt">
@@ -1095,12 +1095,12 @@ function renderQ(){
     <h3>Место и направление: одна система</h3>
     <div class="scroll"><table class="vt">
       <tr><th>вопрос</th><th>что спрашиваем</th><th>ответ</th></tr>
-      <tr><td class="w" style="white-space:normal">Gdzie jesteś?</td><td style="white-space:normal">где — положение</td><td class="g" style="white-space:normal">W domu. · Tutaj.</td></tr>
-      <tr><td class="w" style="white-space:normal">Dokąd idziesz?</td><td style="white-space:normal">куда — цель движения</td><td class="g" style="white-space:normal">Do domu. · Tam.</td></tr>
-      <tr><td class="w" style="white-space:normal">Skąd wracasz?</td><td style="white-space:normal">откуда — исходная точка</td><td class="g" style="white-space:normal">Z pracy. · Stamtąd.</td></tr>
+      <tr><td class="w" style="white-space:normal">Gdzie jesteś?</td><td style="white-space:normal">где - положение</td><td class="g" style="white-space:normal">W domu. · Tutaj.</td></tr>
+      <tr><td class="w" style="white-space:normal">Dokąd idziesz?</td><td style="white-space:normal">куда - цель движения</td><td class="g" style="white-space:normal">Do domu. · Tam.</td></tr>
+      <tr><td class="w" style="white-space:normal">Skąd wracasz?</td><td style="white-space:normal">откуда - исходная точка</td><td class="g" style="white-space:normal">Z pracy. · Stamtąd.</td></tr>
       <tr><td class="w" style="white-space:normal">Którędy iść?</td><td style="white-space:normal">каким путём</td><td class="g" style="white-space:normal">Tędy. · Tamtędy.</td></tr>
     </table></div>
-    <div class="tip"><b>В разговоре <span class="pl">gdzie</span> часто заменяет <span class="pl">dokąd</span>.</b> <span class="pl">Gdzie idziesz?</span> звучит естественно, но точная система различает положение <span class="pl">gdzie?</span> и направление <span class="pl">dokąd?</span>. Пары ответов: <span class="pl">tu / tutaj</span> — здесь, <span class="pl">tam</span> — там/туда, <span class="pl">stąd</span> — отсюда, <span class="pl">stamtąd</span> — оттуда, <span class="pl">tędy / tamtędy</span> — этим/тем путём.</div>
+    <div class="tip"><b>В разговоре <span class="pl">gdzie</span> часто заменяет <span class="pl">dokąd</span>.</b> <span class="pl">Gdzie idziesz?</span> звучит естественно, но точная система различает положение <span class="pl">gdzie?</span> и направление <span class="pl">dokąd?</span>. Пары ответов: <span class="pl">tu / tutaj</span> - здесь, <span class="pl">tam</span> - там/туда, <span class="pl">stąd</span> - отсюда, <span class="pl">stamtąd</span> - оттуда, <span class="pl">tędy / tamtędy</span> - этим/тем путём.</div>
     <h3>В придаточном места</h3>
     <div class="scroll"><table class="vt">
       <tr><th>связка</th><th>пример</th></tr>
@@ -1263,7 +1263,7 @@ function renderImpers(){
     </table></div>
     <div class="tip"><b>Точка ставится не всегда, и правило простое.</b> Если сокращение кончается на ту же букву, что и полное слово, точки нет: <span class="pl">dr</span> (dokto<b>r</b>), <span class="pl">mgr</span> (magiste<b>r</b>), <span class="pl">nr</span> (nume<b>r</b>), <span class="pl">wg</span> (wedłu<b>g</b>). Если на другую - точка обязательна: <span class="pl">ok.</span> (okoł<b>o</b>), <span class="pl">godz.</span> (godzin<b>a</b>), <span class="pl">ul.</span> (ulic<b>a</b>), <span class="pl">prof.</span> (profeso<b>r</b>).</div>
     <div class="tip"><b>В косвенном падеже точка возвращается.</b> <span class="pl">dr Kowalski</span> - без точки, но <span class="pl">u dr. Kowalskiego</span> или <span class="pl">u dra Kowalskiego</span>: подразумевается уже <span class="pl">doktora</span>, а сокращение на эту букву не кончается. С женщиной проще - <span class="pl">u dr Kowalskiej</span>, без точки, потому что <span class="pl">doktor</span> в женском употреблении не склоняется.</div>
-    <div class="tip"><b><span class="pl">nie wolno</span> и <span class="pl">nie można</span> — не одно и то же.</b> <span class="pl">Nie wolno palić</span> — прямой запрет: курить запрещено. <span class="pl">Nie można wejść, bo drzwi są zamknięte</span> — войти невозможно из-за обстоятельств; в правилах <span class="pl">nie można</span> тоже встречается, но звучит мягче. Человека при необходимости ставим в дательный: <span class="pl">nie wolno mi palić, nie można nam wejść</span>.</div>
+    <div class="tip"><b><span class="pl">nie wolno</span> и <span class="pl">nie można</span> - не одно и то же.</b> <span class="pl">Nie wolno palić</span> - прямой запрет: курить запрещено. <span class="pl">Nie można wejść, bo drzwi są zamknięte</span> - войти невозможно из-за обстоятельств; в правилах <span class="pl">nie można</span> тоже встречается, но звучит мягче. Человека при необходимости ставим в дательный: <span class="pl">nie wolno mi palić, nie można nam wejść</span>.</div>
     <div class="tip"><b>Номера, которые спросят в любом окне.</b> <span class="pl">PESEL</span> - личный идентификатор жителя, <span class="pl">NIP</span> - налоговый номер, <span class="pl">REGON</span> - номер организации в статистике, <span class="pl">KRS</span> - судебный реестр компаний. Это не сокращения в обычном смысле: они не расшифровываются в речи и склоняются как обычные мужские слова - <span class="pl">podaj PESEL, numer NIP-u</span>.</div>
   </div>${topicPracticeHTML(IMPERS_PRACTICE, "impersonal")}`;
 }
@@ -1361,7 +1361,7 @@ function renderAdj(){
       <tr><th>конструкция</th><th>значение</th><th>пример</th></tr>
       ${POROWN.map(p => `<tr><td class="w" style="white-space:normal">${p[0]}</td><td style="color:var(--muted)">${p[1]}</td><td class="g" style="white-space:normal">${p[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">za</span> — это и «слишком», и предлог «за».</b> В значении «слишком» <span class="pl">za</span> непосредственно модифицирует признак или количество: <span class="pl">za drogi, za droga, za drogo, za dużo</span>. Как предлог <span class="pl">za</span> вводит именную группу в падеже: <span class="pl">za domem, za wysokim mężczyzną</span>. Значение и форму показывает вся конструкция, а не само слово <span class="pl">za</span>.</div>
+    <div class="tip"><b><span class="pl">za</span> - это и «слишком», и предлог «за».</b> В значении «слишком» <span class="pl">za</span> непосредственно модифицирует признак или количество: <span class="pl">za drogi, za droga, za drogo, za dużo</span>. Как предлог <span class="pl">za</span> вводит именную группу в падеже: <span class="pl">za domem, za wysokim mężczyzną</span>. Значение и форму показывает вся конструкция, а не само слово <span class="pl">za</span>.</div>
     <div class="tip"><b><span class="pl">coraz</span> и <span class="pl">im…, tym…</span> берут только сравнительную степень.</b> <span class="pl">Coraz lepiej</span>, не <span class="bad">coraz dobrze</span>. В <span class="pl">Im więcej, tym lepiej</span> обе части в сравнительной, запятая обязательна.</div>
     <h3>Подводные камни</h3>
     <ol class="pit">
@@ -1447,7 +1447,7 @@ function renderPron(){
       <tr><th>падеж</th><th>форма</th><th>пример</th></tr>
       ${SIEBIE.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="${r[1]==="-"?"":"g"}" style="white-space:normal${r[1]==="-"?";color:var(--muted)":""}">${r[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">się</span> — безударная форма возвратного местоимения.</b> Она встречается в Dopełniacz и Biernik: <span class="pl">boję się, myję się</span>; кроме того, <span class="pl">się</span> выполняет нефлексионные функции при глаголах. Полное <span class="pl">siebie</span> нужно под ударением и после предлога: <span class="pl">bez siebie, do siebie, ze sobą</span>. Сказать <span class="bad">bez się</span> нельзя.</div>
+    <div class="tip"><b><span class="pl">się</span> - безударная форма возвратного местоимения.</b> Она встречается в Dopełniacz и Biernik: <span class="pl">boję się, myję się</span>; кроме того, <span class="pl">się</span> выполняет нефлексионные функции при глаголах. Полное <span class="pl">siebie</span> нужно под ударением и после предлога: <span class="pl">bez siebie, do siebie, ze sobą</span>. Сказать <span class="bad">bez się</span> нельзя.</div>
 
     <h3>Четыре разных się</h3>
     <p class="lead">Форма одна, работы четыре. Понимать, какая именно, нужно затем, что от этого зависит, можно ли заменить <span class="pl">się</span> на <span class="pl">siebie</span> и переводится ли оно вообще.</p>
@@ -1568,24 +1568,24 @@ function vocabularyTable(words, labels){
 function renderVocabulary(){
   $("#s-vocab").innerHTML = `<div class="panel">
     <h2>Словарь</h2>
-    <p class="lead">400 полезных слов для повседневного общения. Это не механический частотный топ: здесь слова, которыми можно говорить о себе, планах, людях и обычных ситуациях. К каждому слову — форма, которая чаще всего нужна в речи, и короткий живой пример.</p>
+    <p class="lead">400 полезных слов для повседневного общения. Это не механический частотный топ: здесь слова, которыми можно говорить о себе, планах, людях и обычных ситуациях. К каждому слову - форма, которая чаще всего нужна в речи, и короткий живой пример.</p>
     <div class="tip"><b>Как пользоваться.</b> Не пытайся выучить таблицу целиком. Выбери 5–10 слов на сегодня, прочитай примеры вслух и сразу составь с ними по одной фразе про себя.</div>
 
     <h3>100 глаголов</h3>
-    <p class="lead">Три формы дают всю парадигму: <span class="pl">ja</span> и <span class="pl">oni</span> — малое крыло, <span class="pl">ty</span> — большое. Формы <span class="pl">on / ona</span> в прошедшем показывают чередование основы.</p>
+    <p class="lead">Три формы дают всю парадигму: <span class="pl">ja</span> и <span class="pl">oni</span> - малое крыло, <span class="pl">ty</span> - большое. Формы <span class="pl">on / ona</span> в прошедшем показывают чередование основы.</p>
     <div class="scroll vocabulary-list">${listHTML("")}</div>
-    <div class="tip"><b>Последняя колонка — не всегда видовая пара.</b> Чаще всего это она: <span class="pl">robić ↔ zrobić</span>, <span class="pl">kupować ↔ kupić</span>. Но <span class="pl">szukać → znaleźć</span> — результат поиска, а не совершенный вид слова «искать». Колонка отвечает на практический вопрос: каким словом сказать результат.</div>
+    <div class="tip"><b>Последняя колонка - не всегда видовая пара.</b> Чаще всего это она: <span class="pl">robić ↔ zrobić</span>, <span class="pl">kupować ↔ kupić</span>. Но <span class="pl">szukać → znaleźć</span> - результат поиска, а не совершенный вид слова «искать». Колонка отвечает на практический вопрос: каким словом сказать результат.</div>
 
     <h3>100 полезных существительных</h3>
-    <p class="lead">Формы всегда идут в одном порядке: род · родительный единственного · именительный множественного. Если обычной множественной формы нет или она не нужна в начальной речи, стоит <span class="pl">—</span>. Родительный помогает сразу говорить: <span class="pl">nie mam czasu, idę do sklepu, bez telefonu</span>.</p>
+    <p class="lead">Формы всегда идут в одном порядке: род · родительный единственного · именительный множественного. Если обычной множественной формы нет или она не нужна в начальной речи, стоит <span class="pl">-</span>. Родительный помогает сразу говорить: <span class="pl">nie mam czasu, idę do sklepu, bez telefonu</span>.</p>
     ${vocabularyTable(VOCAB_NOUNS, ["слово", "перевод", "род · род. · мн.", "пример"])}
 
     <h3>100 полезных прилагательных</h3>
-    <p class="lead">Мужская форма уже стоит в первой колонке; дальше даны женская, средняя и сравнительная. Там, где сравнительная степень для начальной речи не нужна, стоит <span class="pl">—</span>. Для рассказа о себе особенно полезны формы: <span class="pl">jestem zmęczony / zmęczona, jestem gotowy / gotowa</span>.</p>
+    <p class="lead">Мужская форма уже стоит в первой колонке; дальше даны женская, средняя и сравнительная. Там, где сравнительная степень для начальной речи не нужна, стоит <span class="pl">-</span>. Для рассказа о себе особенно полезны формы: <span class="pl">jestem zmęczony / zmęczona, jestem gotowy / gotowa</span>.</p>
     ${vocabularyTable(VOCAB_ADJECTIVES, ["слово", "перевод", "жен. · сред. · сравн.", "пример"])}
 
     <h3>100 полезных наречий и выражений</h3>
-    <p class="lead">Здесь есть наречия, частицы и готовые выражения — всё, что помогает связать знакомые слова в нормальную речь: назвать время, степень, место, мнение и темп действия.</p>
+    <p class="lead">Здесь есть наречия, частицы и готовые выражения - всё, что помогает связать знакомые слова в нормальную речь: назвать время, степень, место, мнение и темп действия.</p>
     ${vocabularyTable(VOCAB_ADVERBS, ["слово", "перевод", "сравнение", "пример"])}
   </div>`;
 }
@@ -1616,7 +1616,7 @@ function renderTalk(){
     ["Poproszę kawę i wodę, proszę.", "Мне, пожалуйста, кофе и воду.", "Zmień napój albo dodaj ciasto."],
     ["Czy mogę prosić o menu?", "Можно меню, пожалуйста?", "Короткая вежливая просьба."],
     ["Dla mnie będzie … .", "Для меня будет … .", "kawa z mlekiem / zupa / kanapka"],
-    ["Czy mogę zapłacić kartą?", "Можно оплатить картой?", "Картой — kartą, наличными — gotówką."],
+    ["Czy mogę zapłacić kartą?", "Можно оплатить картой?", "Картой - kartą, наличными - gotówką."],
     ["Poproszę rachunek.", "Счёт, пожалуйста.", "В Польше это естественная формула."],
   ];
   const shop = [
@@ -1629,8 +1629,8 @@ function renderTalk(){
   const transport = [
     ["Przepraszam, gdzie jest przystanek?", "Извините, где остановка?", "Можно уточнить: autobusowy / tramwajowy."],
     ["Czy ten autobus jedzie do centrum?", "Этот автобус едет в центр?", "Замени centrum на нужное место."],
-    ["O której odjeżdża pociąg?", "Во сколько отправляется поезд?", "Odjeżdża — отправляется по расписанию."],
-    ["Muszę wysiąść na następnym przystanku.", "Мне нужно выйти на следующей остановке.", "Wysiąść — выйти из транспорта."],
+    ["O której odjeżdża pociąg?", "Во сколько отправляется поезд?", "Odjeżdża - отправляется по расписанию."],
+    ["Muszę wysiąść na następnym przystanku.", "Мне нужно выйти на следующей остановке.", "Wysiąść - выйти из транспорта."],
     ["Czy to jest daleko stąd?", "Это далеко отсюда?", "Ответ часто: blisko / daleko / około dziesięć minut."],
   ];
   const rescue = [
@@ -1654,7 +1654,7 @@ function renderTalk(){
     ["jakoś tak", "как-то так", "Było jakoś tak spokojnie.", "Закрывает неточную мысль, когда точное слово не нашлось."],
   ];
   const fillersRepair = [
-    ["no wiesz…", "ну, знаешь…", "No wiesz, trochę się stresuję.", "Только с ровесником или близким человеком — обращение на ty."],
+    ["no wiesz…", "ну, знаешь…", "No wiesz, trochę się stresuję.", "Только с ровесником или близким человеком - обращение на ty."],
     ["wie pan / wie pani…", "понимаете…", "Wie pani, nie jestem pewien.", "Вежливый вариант для незнакомого человека."],
     ["jak to powiedzieć…", "как это сказать…", "Jak to powiedzieć… nie do końca rozumiem.", "Честная пауза, после которой можно сказать проще."],
     ["no więc…", "ну так вот…", "No więc, spotkaliśmy się wczoraj.", "Помогает начать мысль заново после паузы."],
@@ -1674,7 +1674,7 @@ function renderTalk(){
   ];
   $("#s-talk").innerHTML = `<div class="panel talk-panel">
     <h2>Разговорная практика</h2>
-    <p class="lead">Цель этого раздела — не вспомнить отдельное слово, а иметь готовую опору для реального разговора. Начни с одной темы, вслух замени детали на свои и только потом переходи к диалогу.</p>
+    <p class="lead">Цель этого раздела - не вспомнить отдельное слово, а иметь готовую опору для реального разговора. Начни с одной темы, вслух замени детали на свои и только потом переходи к диалогу.</p>
 
     <h3>Готовые фразы: рассказываю о себе</h3>
     ${talkRows(about)}
@@ -1696,10 +1696,10 @@ function renderTalk(){
     ${talkRows(fillersRepair)}
     <h4>Смягчить мнение или передать ход собеседнику</h4>
     ${talkRows(fillersSoft)}
-    <div class="tip"><b>Как это произносить.</b> Связка должна быть короткой и в обычном темпе: <span class="pl">no, znaczy…</span>, потом сразу мысль. Не растягивай <span class="pl">znaczyyy</span>: лучше короткая пауза после него. Не злоупотребляй <span class="pl">jakby</span> — это польское «как бы», которое у многих уже стало словом-паразитом.</div>
+    <div class="tip"><b>Как это произносить.</b> Связка должна быть короткой и в обычном темпе: <span class="pl">no, znaczy…</span>, потом сразу мысль. Не растягивай <span class="pl">znaczyyy</span>: лучше короткая пауза после него. Не злоупотребляй <span class="pl">jakby</span> - это польское «как бы», которое у многих уже стало словом-паразитом.</div>
 
     <h3>Конструктор фраз</h3>
-    <p class="lead">Выбери варианты в строке — ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.</p>
+    <p class="lead">Выбери варианты в строке - ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.</p>
     <div class="talk-builders">
       <article class="talk-builder" data-talk-builder><b>1. Что происходит сегодня</b><div class="talk-fields"><label><span>когда</span><select><option>Dzisiaj</option><option>W weekend</option><option>Ostatnio</option></select></label><label><span>что делаю</span><select><option>uczę się polskiego</option><option>pracuję w domu</option><option>spotykam się ze znajomymi</option></select></label></div><output class="talk-example" aria-live="polite">Dzisiaj uczę się polskiego.</output></article>
       <article class="talk-builder" data-talk-builder><b>2. Что планируешь</b><div class="talk-fields"><label><span>когда</span><select><option>Jutro</option><option>W tym tygodniu</option><option>W weekend</option></select></label><label><span>план</span><select><option>chcę odpocząć</option><option>planuję pójść na spacer</option><option>chcę spotkać się z przyjaciółmi</option></select></label></div><output class="talk-example" aria-live="polite">Jutro chcę odpocząć.</output></article>
@@ -2169,6 +2169,14 @@ function renderIndex(){
       ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">
         <b>${LABEL[id]}</b><span>${note}</span></a>`).join("")}
     </section>`).join("")}</div>
+    <section class="index-plan" aria-labelledby="index-plan-title">
+      <h3 id="index-plan-title">Личный маршрут</h3>
+      <a class="index-plan-card" href="plan-40/">
+        <span class="index-plan-number">40</span>
+        <span class="index-plan-copy"><b>План на 40 дней</b><span>Ежедневный путь от опоры в грамматике к разговорному B1.</span></span>
+        <span class="index-plan-action">Открыть <span aria-hidden="true">→</span></span>
+      </a>
+    </section>
   </div>`;
 }
 $("#s-index").addEventListener("click", e => {

@@ -15,7 +15,10 @@ const routes = [
   ["s-conj", "conjunctions"], ["s-part", "particles"], ["s-ludzie", "people"],
   ["s-dim", "diminutives"], ["s-preps", "prepositions"], ["s-bridge", "language-bridges"]
 ];
-const routePaths = new Set(routes.map(([, path]) => `/${path ? `${path}/` : ""}`));
+const routePaths = new Set([
+  ...routes.map(([, path]) => `/${path ? `${path}/` : ""}`),
+  "/plan-40/"
+]);
 
 const [css, robots, sitemap, searchSource] = await Promise.all([
   readFile(resolve(root, "style.css"), "utf8"),
@@ -85,8 +88,9 @@ for(const [id, path] of routes){
 }
 
 const rootPage = documents.get("s-index");
-assert.equal(rootPage.document.title, "Польская грамматика — таблицы, правила и примеры");
+assert.equal(rootPage.document.title, "Польская грамматика - таблицы, правила и примеры");
 assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 21);
+assert(rootPage.document.querySelector('#s-index .index-plan-card[href="plan-40/"]'));
 assert(!rootPage.html.includes("przez godzinę"), "Homepage should not duplicate every topic");
 
 const cases = documents.get("s-cases");

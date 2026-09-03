@@ -621,6 +621,21 @@ h3:first-child{margin-top:0}
 .idx-a b{font-family:var(--sans);font-size:16px;font-weight:680;letter-spacing:-.02em}
 .idx-a span{font-size:13px;line-height:1.46;margin-top:3px}
 .idx-a:hover b{color:var(--end);text-decoration:none}
+.index-plan{margin-top:42px;padding-top:24px;border-top:1px solid var(--line)}
+.index-plan h3{font-size:15px;letter-spacing:-.015em;margin:0 0 10px;padding:0;border:0}
+.index-plan-card{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:20px;
+  padding:20px 22px;border:1px solid var(--line);border-left:4px solid var(--end);border-radius:10px;
+  background:linear-gradient(110deg,var(--panel),var(--hover));color:var(--ink);text-decoration:none;
+}
+.index-plan-card:hover{border-color:var(--end);border-left-color:var(--end);box-shadow:0 10px 28px var(--shadow)}
+.index-plan-card:focus-visible{outline:3px solid color-mix(in srgb,var(--alt) 70%,transparent);outline-offset:3px}
+.index-plan-number{font-family:var(--serif);font-size:clamp(2.6rem,5vw,4rem);font-weight:600;line-height:.9;color:var(--end);letter-spacing:-.05em}
+.index-plan-copy{display:grid;gap:4px;min-width:0}
+.index-plan-copy b{font-family:var(--sans);font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:720;letter-spacing:-.035em}
+.index-plan-copy span{font-size:14px;line-height:1.5;color:var(--muted);max-width:56ch}
+.index-plan-action{font-size:14px;font-weight:650;color:var(--end);white-space:nowrap}
+.index-plan-action span{padding-left:3px}
 .casebar{margin:20px 0 0;padding:14px 0 12px;background:var(--paper);border-bottom:1px solid var(--line)}
 .chip{border-color:var(--line);border-radius:8px;padding:8px 11px;background:var(--panel)}
 .chip[aria-pressed="true"],.tog button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
@@ -651,6 +666,7 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
   #navwrap{margin-top:10px}#navall{border-radius:8px}.panel{margin-top:18px;padding:26px 20px;border-radius:12px;box-shadow:0 1px 0 var(--line)}
   h2,.page-title{font-size:clamp(2rem,11vw,2.7rem);line-height:1.05;margin-bottom:15px}h3{font-size:1.3rem;margin-top:34px}
   .idx{columns:1;margin-top:28px}.idx section{margin-bottom:28px}.casebar{margin:0 -14px;padding:10px 14px;background:var(--paper)}
+  .index-plan{margin-top:32px}.index-plan-card{grid-template-columns:auto minmax(0,1fr);gap:14px;padding:18px}.index-plan-action{grid-column:2}
   .practice{border-radius:12px;margin-top:24px}.scroll{margin-left:-2px;margin-right:-2px;border-radius:8px}.brow{grid-template-columns:1fr}.pager{margin-top:26px}footer{margin-top:34px}
 }
 
@@ -665,8 +681,174 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
   #sres{max-width:calc(100vw - 28px)}
 }
 
-/* Mobile navigation is a real viewport drawer.  An absolute sheet inside a
-   sticky header intermittently loses touch scrolling in Safari and WebViews. */
+/* Личный 40-дневный план. Использует токены и контейнеры справочника; здесь
+   только раскладка элементов, которых в самом справочнике нет. */
+/* Шапка липкая, поэтому якорь должен вставать под неё. Высоту меряет скрипт страницы
+   и кладёт в --head-h - тот же приём, что в справочнике; литерал остаётся для случая без JS. */
+html:has(body.plan-page){scroll-padding-top:calc(var(--head-h, 84px) + 12px)}
+body.plan-page main{font-size:var(--fs-base);line-height:1.5}
+body.plan-page header.top.plan-header{background:var(--paper);border-bottom:1px solid var(--line)}
+/* В справочнике низ шапки держит #navwrap; здесь навигации нет, поэтому отступ задаётся явно. */
+body.plan-page .head-in{padding-bottom:14px}
+/* Строку шапки в справочнике распирает поле поиска - но только пока оно помещается
+   рядом с названием, то есть примерно с 1010px (перенос задаёт содержимое, а не
+   медиазапрос). На этой же ширине держим высоту строки и здесь, иначе логотип
+   центрируется по другой высоте и заметно прыгает при переходе со страницы справочника. */
+@media (min-width:1010px){ body.plan-page .brand{min-height:41.5px} }
+body.plan-page .circles a:focus-visible,
+body.plan-page .board a:focus-visible,
+body.plan-page .up:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+body.plan-page nav.circles{margin-left:auto;gap:3px;flex-wrap:nowrap;padding:0}
+body.plan-page nav.circles a{
+  width:24px;height:24px;border-radius:2px;border-color:var(--line);color:var(--muted);
+  font-size:var(--fs-micro);font-variant-numeric:tabular-nums;
+}
+body.plan-page nav.circles a:hover{color:var(--end);border-color:var(--end)}
+
+body.plan-page .circles-label{
+  font-size:var(--fs-micro);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted-s);margin-right:9px;
+}
+body.plan-page nav.circles a{position:relative;border-radius:7px}
+body.plan-page nav.circles a[aria-current]{background:var(--ink);color:var(--paper);font-weight:600}
+body.plan-page nav.circles a[aria-current]:hover{color:var(--paper)}
+body.plan-page nav.circles a::after{
+  content:attr(data-kicker) "\A" attr(data-name);
+  position:absolute;top:calc(100% + 9px);left:50%;
+  transform:translateX(-50%) translateY(-3px);
+  white-space:pre;text-align:left;
+  padding:9px 12px;border:1px solid var(--line);border-radius:8px;
+  background:var(--panel);color:var(--ink);box-shadow:0 14px 36px var(--shadow);
+  font-size:var(--fs-note);line-height:1.5;letter-spacing:0;text-transform:none;font-weight:400;
+  opacity:0;visibility:hidden;pointer-events:none;z-index:20;
+  transition:opacity .13s ease,transform .13s ease;
+}
+body.plan-page nav.circles a:hover::after,
+body.plan-page nav.circles a:focus-visible::after{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);
+}
+@media (prefers-reduced-motion:reduce){
+  body.plan-page nav.circles a::after{transition:none}
+}
+
+body.plan-page .hero{padding:32px 0 26px}
+body.plan-page .hero h1{
+  font-family:var(--serif);font-size:clamp(29px,5vw,42px);font-weight:600;
+  line-height:1.12;letter-spacing:-.02em;margin:0 0 10px;
+}
+body.plan-page .hero p,
+body.plan-page .cgoal,
+body.plan-page .ignore{color:var(--muted);max-width:var(--measure)}
+body.plan-page .board{grid-template-columns:repeat(8,1fr);gap:5px;max-width:504px;margin:24px 0 9px}
+body.plan-page .board a{
+  border-radius:2px;border-color:var(--line);background:var(--panel);color:var(--muted);
+  font-size:var(--fs-note);transition:border-color .12s,color .12s,background .12s;
+}
+body.plan-page .board a:hover{color:var(--end);border-color:var(--end);background:var(--hover)}
+body.plan-page .board a.z{color:var(--alt);border-color:var(--alt)}
+body.plan-page .board a.h{color:var(--end);border-color:var(--end)}
+body.plan-page .legend{font-size:var(--fs-note);color:var(--muted);gap:14px;margin-top:10px}
+body.plan-page .legend b{color:var(--alt)}
+body.plan-page .legend u{color:var(--end)}
+
+body.plan-page section.blk,
+body.plan-page .circle{padding:26px 0;border-top:1px solid var(--line)}
+body.plan-page h2.k{
+  width:auto;max-width:none;font-family:var(--sans);font-size:var(--fs-lead);font-weight:680;
+  letter-spacing:-.015em;text-transform:none;color:var(--ink);margin:0 0 10px;
+}
+body.plan-page h2.big{font-family:var(--serif);font-size:var(--fs-h2);font-weight:600;line-height:1.25;margin:0}
+body.plan-page table.modes{max-width:var(--measure);font-size:var(--fs-base);margin:10px 0 14px}
+body.plan-page table.modes th,
+body.plan-page table.modes td{border-color:var(--line);padding:9px 12px 9px 0}
+body.plan-page table.modes th{font-size:var(--fs-micro);font-weight:600;color:var(--muted-s);letter-spacing:.06em;text-transform:uppercase}
+body.plan-page .rules{max-width:var(--measure)}
+body.plan-page .rules dt{font-family:var(--serif);font-size:var(--fs-lead);font-weight:600;margin:18px 0 3px}
+body.plan-page .rules dd{font-size:var(--fs-base);line-height:1.55;color:var(--muted)}
+body.plan-page ul.plain{max-width:var(--measure)}
+body.plan-page ul.plain li{font-size:var(--fs-base);line-height:1.5;border-color:var(--line);padding:9px 0}
+body.plan-page ul.plain li b,
+body.plan-page .ignore span,
+body.plan-page ol.err li b{color:var(--ink)}
+
+body.plan-page .chead{gap:10px}
+body.plan-page .cnum{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--end)}
+body.plan-page .crange{font-size:var(--fs-note);color:var(--muted);margin-top:2px}
+body.plan-page .cgoal{font-size:var(--fs-base);line-height:1.5;margin:7px 0 16px}
+body.plan-page article.day{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:16px;margin:12px 0}
+body.plan-page article.day.z{border-color:var(--alt)}
+body.plan-page article.day.h{border-color:var(--end)}
+body.plan-page .dhead{gap:10px;margin-bottom:11px}
+body.plan-page .dnum{
+  font-family:var(--sans);font-size:var(--fs-note);font-weight:600;color:var(--end);
+  border-color:var(--end);border-radius:2px;min-width:28px;height:24px;
+}
+body.plan-page article.day.z .dnum{color:var(--alt);border-color:var(--alt)}
+body.plan-page article.day.h .dnum{color:var(--end);border-color:var(--end)}
+body.plan-page .dtitle{font-family:var(--serif);font-size:var(--fs-lead);font-weight:600;line-height:1.3}
+body.plan-page .track{grid-template-columns:72px minmax(0,1fr);gap:12px;padding:8px 0;border-color:var(--line)}
+body.plan-page .tname{font-size:var(--fs-micro);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-s);padding-top:1px}
+body.plan-page .tbody{font-size:var(--fs-base);line-height:1.55;color:var(--muted)}
+body.plan-page .tbody b,
+body.plan-page .tbody i{color:var(--ink)}
+body.plan-page a.ref{color:var(--end);border-bottom-color:color-mix(in srgb,var(--end) 42%,transparent);text-underline-offset:3px}
+body.plan-page a.ref:hover{color:var(--ui);border-bottom-color:currentColor}
+body.plan-page .crit,
+body.plan-page .no{font-size:var(--fs-base);line-height:1.5;border-radius:0;padding:10px 12px;background:var(--tip)}
+body.plan-page .crit{border-left-color:var(--alt)}
+body.plan-page .crit .l{color:var(--alt);font-size:var(--fs-micro);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+body.plan-page .no{border-left-color:var(--end);background:var(--wrong-bg);color:var(--muted)}
+body.plan-page .no .l{color:var(--end);font-size:var(--fs-micro);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+body.plan-page .chat{font-size:var(--fs-note);color:var(--muted);margin-top:10px}
+body.plan-page .chat b{color:var(--muted-s);font-weight:600}
+body.plan-page ol.err{font-size:var(--fs-base);line-height:1.55;color:var(--muted)}
+body.plan-page footer{font-size:var(--fs-note);line-height:1.5;color:var(--muted);padding:28px 0 46px;border-color:var(--line)}
+body.plan-page .up{
+  width:36px;height:36px;border-radius:2px;background:var(--panel);border-color:var(--line);
+  color:var(--muted);box-shadow:0 3px 12px var(--shadow);
+}
+body.plan-page .up:hover{color:var(--end);border-color:var(--end)}
+
+/* Структура плана: эти компоненты существуют только на этой странице. */
+body.plan-page a.ref{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--end) 42%,transparent)}
+body.plan-page nav.circles{display:flex;align-items:center}
+body.plan-page nav.circles a{display:grid;place-items:center;text-decoration:none}
+body.plan-page .board{display:grid}
+body.plan-page .board a{aspect-ratio:1;display:grid;place-items:center;text-decoration:none;font-variant-numeric:tabular-nums}
+body.plan-page .legend{display:flex;flex-wrap:wrap}
+body.plan-page table.modes{width:100%;border-collapse:collapse}
+body.plan-page table.modes th,
+body.plan-page table.modes td{text-align:left;vertical-align:top}
+body.plan-page .rules dd{margin:0}
+body.plan-page .chead{display:flex;align-items:baseline;flex-wrap:wrap}
+body.plan-page .cnum{line-height:1}
+body.plan-page .dhead{display:flex;align-items:baseline}
+body.plan-page .dnum{display:grid;place-items:center;flex:none;font-variant-numeric:tabular-nums}
+body.plan-page .track{display:grid;border-top:1px solid var(--line)}
+body.plan-page .track:first-of-type{border-top:0}
+body.plan-page .crit{margin-top:14px;border-left:2px solid var(--alt)}
+body.plan-page .no{margin-top:8px;border-left:2px solid var(--end)}
+body.plan-page .crit .l,
+body.plan-page .no .l{display:block;margin-bottom:2px}
+body.plan-page ul.plain{list-style:none;padding:0;margin:0}
+body.plan-page ol.err{padding-left:22px;max-width:var(--measure)}
+body.plan-page ol.err li{padding:6px 0}
+body.plan-page footer{margin:0;max-width:none}
+body.plan-page .up{
+  position:fixed;right:16px;bottom:16px;display:grid;place-items:center;
+  text-decoration:none;font-size:14px;
+}
+@media (max-width:650px){
+  body.plan-page .head-in{padding-top:12px;padding-bottom:12px}
+  body.plan-page .brand{align-items:center}
+  body.plan-page nav.circles{display:none}
+  body.plan-page .hero{padding-top:24px}
+  body.plan-page .board{grid-template-columns:repeat(5,1fr);max-width:none}
+  body.plan-page .track{grid-template-columns:1fr;gap:2px}
+  body.plan-page .tname{padding-top:0}
+  body.plan-page article.day{padding:14px}
+}
+
 @media (max-width:700px){
   #navmenu{
     position:fixed;top:var(--head-h,72px) !important;right:0 !important;bottom:0 !important;left:0 !important;

@@ -149,7 +149,7 @@ function gradeExerciseItem(item, persist = true){
   item.dataset.result = correct ? "correct" : "wrong";
   const feedback = item.querySelector(".exercise-feedback");
   feedback.hidden = false;
-  feedback.textContent = correct ? "Верно." : "Есть ошибка — проверьте выделенные поля.";
+  feedback.textContent = correct ? "Верно." : "Есть ошибка - проверьте выделенные поля.";
   item.querySelector(".exercise-explanation").hidden = false;
   if(persist){ exerciseState.results[item.dataset.exerciseId] = item.dataset.result; saveExerciseState(); }
   return correct;
