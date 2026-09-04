@@ -61,14 +61,21 @@ for(const [id, path] of routes){
   assert.equal(document.querySelectorAll("#nav .navgroup .navpop a[data-s]").length, routes.length - 1);
   assert.equal(document.querySelectorAll("#navmenu a[data-s]").length, routes.length);
   const currentGroups = document.querySelectorAll("#nav .navgroup.is-current");
-  const pager = document.querySelectorAll(".pager a[href]");
+  const pagers = [...document.querySelectorAll(".pager")];
   if(id === "s-index"){
     assert.equal(currentGroups.length, 0);
-    assert.equal(pager.length, 0, "Table of contents needs no pager");
+    assert.equal(pagers.length, 0, "Table of contents needs no pager");
   }else{
     assert.equal(currentGroups.length, 1, `${path} must highlight its group`);
     assert(currentGroups[0].contains(document.querySelector('#nav a[aria-current="page"]')));
-    assert(pager.length === 1 || pager.length === 2, `${path} must offer previous/next topics`);
+    /* Нижний пейджер есть всегда, серединный - ровно там, где есть практика. */
+    const practice = document.querySelector(".sec .practice");
+    assert.equal(pagers.length, practice ? 2 : 1, `${path} must offer previous/next topics next to its practice`);
+    if(practice) assert(pagers[0].compareDocumentPosition(practice) & 4, `${path}: mid pager must precede the practice`);
+    for(const pager of pagers){
+      const links = pager.querySelectorAll("a[href]");
+      assert(links.length === 1 || links.length === 2, `${path}: pager must hold one or two links`);
+    }
   }
   assert.equal(document.querySelectorAll('#nav a[aria-current="page"]').length, 1);
   assert.equal(document.querySelector('#nav a[aria-current="page"]')?.dataset.s, id);
@@ -83,6 +90,7 @@ for(const [id, path] of routes){
   assert.equal(scripts.length, 1, "Search index should load lazily, not on every page view");
   assert.match(scripts[0].getAttribute("src"), /client\.js\?v=[a-f0-9]{10}$/);
   assert.match(scripts[0].dataset.searchSrc, /search-index\.js\?v=[a-f0-9]{10}$/);
+  assert(document.querySelector("button.totop"), `${path || "/"} must offer the scroll-to-top control`);
   assert(!html.includes('src="data.js"'));
   assert(!html.includes('src="app.js"'));
 }

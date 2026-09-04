@@ -621,6 +621,16 @@ h3:first-child{margin-top:0}
 .idx-a b{font-family:var(--sans);font-size:16px;font-weight:680;letter-spacing:-.02em}
 .idx-a span{font-size:13px;line-height:1.46;margin-top:3px}
 .idx-a:hover b{color:var(--end);text-decoration:none}
+/* Подразделы под карточкой: у записи с ними нижнюю границу держит уже .idx-sub. */
+.idx-a:has(+ .idx-sub){border-bottom:0;padding-bottom:6px}
+.idx-sub{display:flex;flex-wrap:wrap;gap:5px;padding:0 0 11px;border-bottom:1px solid var(--line)}
+.idx-sub:last-child{border-bottom:0}
+.idx-sub a{
+  font-size:12px;line-height:1.1;color:var(--muted);text-decoration:none;
+  padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:var(--paper);
+}
+.idx-sub a:hover{color:var(--end);border-color:var(--end)}
+.idx-sub a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 .index-plan{margin-top:42px;padding-top:24px;border-top:1px solid var(--line)}
 .index-plan h3{font-size:15px;letter-spacing:-.015em;margin:0 0 10px;padding:0;border:0}
 .index-plan-card{
@@ -662,6 +672,7 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto !important;animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
 @media (max-width:700px){
   html{scroll-padding-top:11rem}.wrap{padding:0 14px 34px}.head-in{padding:12px 14px 0}.brand h1,.brand .site-title{font-size:21px}.brand span{font-size:12px}
+  .brand-subtitle{display:none}
   header{top:0}
   #navwrap{margin-top:10px}#navall{border-radius:8px}.panel{margin-top:18px;padding:26px 20px;border-radius:12px;box-shadow:0 1px 0 var(--line)}
   h2,.page-title{font-size:clamp(2rem,11vw,2.7rem);line-height:1.05;margin-bottom:15px}h3{font-size:1.3rem;margin-top:34px}
@@ -679,6 +690,8 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
 @media (max-width:920px){
   #sbox{min-width:0;flex:1 1 100%;}
   #sres{max-width:calc(100vw - 28px)}
+  #navwrap{padding-bottom:8px}
+  #navall{width:100%;justify-content:flex-start}
 }
 
 /* Личный 40-дневный план. Использует токены и контейнеры справочника; здесь
@@ -696,8 +709,7 @@ body.plan-page .head-in{padding-bottom:14px}
    центрируется по другой высоте и заметно прыгает при переходе со страницы справочника. */
 @media (min-width:1010px){ body.plan-page .brand{min-height:41.5px} }
 body.plan-page .circles a:focus-visible,
-body.plan-page .board a:focus-visible,
-body.plan-page .up:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
+body.plan-page .board a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 body.plan-page nav.circles{margin-left:auto;gap:3px;flex-wrap:nowrap;padding:0}
 body.plan-page nav.circles a{
   width:24px;height:24px;border-radius:2px;border-color:var(--line);color:var(--muted);
@@ -803,11 +815,6 @@ body.plan-page .chat{font-size:var(--fs-note);color:var(--muted);margin-top:10px
 body.plan-page .chat b{color:var(--muted-s);font-weight:600}
 body.plan-page ol.err{font-size:var(--fs-base);line-height:1.55;color:var(--muted)}
 body.plan-page footer{font-size:var(--fs-note);line-height:1.5;color:var(--muted);padding:28px 0 46px;border-color:var(--line)}
-body.plan-page .up{
-  width:36px;height:36px;border-radius:2px;background:var(--panel);border-color:var(--line);
-  color:var(--muted);box-shadow:0 3px 12px var(--shadow);
-}
-body.plan-page .up:hover{color:var(--end);border-color:var(--end)}
 
 /* Структура плана: эти компоненты существуют только на этой странице. */
 body.plan-page a.ref{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--end) 42%,transparent)}
@@ -834,10 +841,6 @@ body.plan-page ul.plain{list-style:none;padding:0;margin:0}
 body.plan-page ol.err{padding-left:22px;max-width:var(--measure)}
 body.plan-page ol.err li{padding:6px 0}
 body.plan-page footer{margin:0;max-width:none}
-body.plan-page .up{
-  position:fixed;right:16px;bottom:16px;display:grid;place-items:center;
-  text-decoration:none;font-size:14px;
-}
 @media (max-width:650px){
   body.plan-page .head-in{padding-top:12px;padding-bottom:12px}
   body.plan-page .brand{align-items:center}
@@ -850,16 +853,55 @@ body.plan-page .up{
 }
 
 @media (max-width:700px){
+  /* Лист открывается под всей шапкой: --head-h считает только строку навигации, поэтому
+     меню накрывало собой и поиск, и собственную кнопку. Высоту ограничиваем, а не задаём:
+     короткий список остаётся коротким, длинный упирается в низ экрана и скроллится сам.
+     Первый max-height - запасной для Safari без поддержки dvh. */
+  /* Лист открывается под всей шапкой и всегда достаёт до низа экрана: высоту задают top и
+     bottom, а не вычисления с dvh - тогда её нечему сломать при смене адресной строки. */
   #navmenu{
-    position:fixed;top:var(--head-h,72px) !important;right:0 !important;bottom:0 !important;left:0 !important;
-    width:auto;height:calc(100dvh - var(--head-h,72px)) !important;max-height:none;min-height:0;
-    overflow-y:auto !important;overflow-x:hidden;
+    position:fixed;top:var(--header-h,140px);left:0;right:0;bottom:0;
+    width:auto;height:auto;min-height:0;max-height:none;
+    overflow-y:scroll;overflow-x:hidden;
     overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y;
     padding:10px 20px 28px;border:0;border-top:1px solid var(--line);border-radius:0;
     box-shadow:0 18px 48px var(--shadow);column-count:auto;column-width:auto;
   }
+  /* backdrop-filter делает шапку containing block для position:fixed, и лист начинает ездить
+     вместе с ней. Пока меню открыто, оно закрывает всё под шапкой, так что размытие не нужно. */
+  html.nav-open header{backdrop-filter:none;-webkit-backdrop-filter:none}
   #navmenu section{break-inside:auto}
   #navmenu h4{font-family:var(--sans);font-size:12px;letter-spacing:.08em;color:var(--end);padding:16px 0 4px}
   #navmenu a{font-family:var(--sans);font-size:17px;line-height:1.35;padding:12px 0}
   .pron-possesive-table{margin-top:12px}
+}
+
+/* iOS Safari зумит страницу, когда фокус попадает в поле со шрифтом меньше 16px, и обратно
+   уже не отъезжает. Поэтому на узком экране все текстовые поля и списки поднимаем до 16px:
+   селекторы намеренно перебивают и базовый слой, и слой редизайна. */
+@media (max-width:700px){
+  #gsearch,.src,.talk-fields select,input,select,textarea{font-size:16px}
+}
+
+/* Кнопка «наверх». Одна на весь сайт, включая план: круглая, появляется после экрана
+   прокрутки и поднимает плавно. Без JS не работает, поэтому там скрыта. */
+.totop{
+  position:fixed;right:20px;bottom:20px;z-index:20;
+  width:44px;height:44px;border-radius:999px;
+  display:grid;place-items:center;cursor:pointer;
+  font:inherit;font-size:17px;line-height:1;
+  color:var(--muted-s);background:var(--panel);border:1px solid var(--line);
+  box-shadow:0 6px 20px var(--shadow);
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .18s ease,transform .18s ease,color .16s ease,border-color .16s ease;
+}
+.totop.on{opacity:1;visibility:visible;transform:none}
+.totop:hover{color:var(--end);border-color:var(--end)}
+.totop:focus-visible{outline:2px solid var(--ui);outline-offset:3px}
+html:not(.js) .totop{display:none}
+@media (max-width:700px){
+  .totop{right:14px;bottom:14px;width:40px;height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  .totop{transition:none}
 }

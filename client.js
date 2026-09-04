@@ -462,6 +462,28 @@ document.addEventListener("keydown", event => {
   }
 });
 
+/* Кнопка «наверх»: именно кнопка, а не ссылка на "#" - клик по ссылке стёр бы состояние
+   раздела, которое живёт в hash (/cases/#dop/pl). Появляется, когда прокрутка ушла за экран. */
+const toTop = $(".totop");
+if(toTop){
+  let toTopPending = false;
+  const syncToTop = () => {
+    toTopPending = false;
+    toTop.classList.toggle("on", window.scrollY > window.innerHeight * 0.8);
+  };
+  addEventListener("scroll", () => {
+    if(toTopPending) return;
+    toTopPending = true;
+    requestAnimationFrame(syncToTop);
+  }, {passive:true});
+  addEventListener("resize", syncToTop);
+  toTop.addEventListener("click", () => {
+    window.scrollTo({top:0, behavior:SMOOTH});
+    closeNav();
+  });
+  syncToTop();
+}
+
 /* ---------- theme, menu and sticky header ---------- */
 const THEMES = [["light", "светлая"], ["dark", "тёмная"]];
 const SYSTEM_DARK = matchMedia("(prefers-color-scheme: dark)");
@@ -489,7 +511,14 @@ function closeNavPops(except){
     if(button !== except) button.setAttribute("aria-expanded", "false");
   });
 }
-function closeNavMenu(){ $("#navmenu").classList.remove("on"); $("#navall").setAttribute("aria-expanded", "false"); }
+/* На узком экране меню - лист во всю высоту под шапкой. Пока он открыт, документ под ним
+   подмораживаем: иначе жест прокрутки уходит в страницу, а список остаётся на месте. */
+function setNavMenuOpen(open){
+  $("#navmenu").classList.toggle("on", open);
+  $("#navall").setAttribute("aria-expanded", String(open));
+  document.documentElement.classList.toggle("nav-open", open);
+}
+function closeNavMenu(){ setNavMenuOpen(false); }
 function closeNav(){ closeNavPops(); closeNavMenu(); }
 
 $("#nav").addEventListener("click", event => {
@@ -502,8 +531,7 @@ $("#nav").addEventListener("click", event => {
 $("#navall").addEventListener("click", () => {
   const open = !$("#navmenu").classList.contains("on");
   closeNavPops();
-  $("#navmenu").classList.toggle("on", open);
-  $("#navall").setAttribute("aria-expanded", open);
+  setNavMenuOpen(open);
 });
 document.addEventListener("keydown", event => {
   if(event.key !== "Escape") return;
@@ -532,6 +560,8 @@ function setHeadH(){
   const narrow = matchMedia("(max-width:700px)").matches;
   document.documentElement.style.setProperty("--brand-h", (narrow ? offset : 0) + "px");
   document.documentElement.style.setProperty("--head-h", (narrow ? header.offsetHeight - offset : header.offsetHeight) + "px");
+  /* Полная высота шапки: от неё отсчитывается лист меню на узком экране. */
+  document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
 }
 /* Семь групп либо помещаются в одну строку, либо целиком уступают место кнопке
    «Все разделы»: перенос на вторую строку выглядит случайным и сбивает поиск нужной группы.

@@ -131,7 +131,7 @@ document.documentElement.style.removeProperty("--brand-h");
 document.documentElement.style.removeProperty("--head-h");
 document.querySelectorAll('script[src="data.js"],script[src="app.js"]').forEach(script => script.remove());
 const fulltextBody = document.body.cloneNode(true);
-fulltextBody.querySelectorAll(".practice").forEach(section => section.remove());
+fulltextBody.querySelectorAll(".practice,.totop").forEach(node => node.remove());
 const fulltext = fulltextBody.textContent.replace(/[ \t]+/g, " ").replace(/\n\s+/g, "\n").trim() + "\n";
 await writeFile(resolve(root, "fulltext.txt"), fulltext, "utf8");
 
@@ -237,12 +237,21 @@ for(const page of pages){
     ["next", readingOrder[position + 1], "Следующий раздел"]
   ].filter(([, id]) => id);
   if(page.id !== "s-index" && neighbours.length){
-    const pager = pageDocument.createElement("nav");
-    pager.className = "pager";
-    pager.setAttribute("aria-label", "Соседние разделы");
-    pager.innerHTML = neighbours.map(([side, id, caption]) =>
-      `<a class="pager-${side}" href="${pageHref(page, id)}"><small>${caption}</small><b>${labelOf.get(id)}</b></a>`).join("");
-    pageDocument.querySelector(".wrap footer").before(pager);
+    const makePager = extraClass => {
+      const pager = pageDocument.createElement("nav");
+      pager.className = extraClass ? `pager ${extraClass}` : "pager";
+      pager.setAttribute("aria-label", "Соседние разделы");
+      pager.innerHTML = neighbours.map(([side, id, caption]) =>
+        `<a class="pager-${side}" href="${pageHref(page, id)}"><small>${caption}</small><b>${labelOf.get(id)}</b></a>`).join("");
+      return pager;
+    };
+    /* Второй пейджер - на стыке теории и практики: дочитал раздел и можешь идти дальше,
+       не пролистывая два десятка упражнений и тест. Ставим перед первым блоком с практикой. */
+    const topic = pageDocument.querySelector(".sec");
+    const practiceHost = [...topic.children].find(child =>
+      child.classList.contains("practice") || child.querySelector(".practice"));
+    if(practiceHost) practiceHost.before(makePager("pager-mid"));
+    pageDocument.querySelector(".wrap footer").before(makePager());
   }
 
   const brandHeading = pageDocument.querySelector(".brand h1");

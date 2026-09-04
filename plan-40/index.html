@@ -605,7 +605,7 @@
 
 <footer>Живой разговор идёт каждый день отдельным пятым треком, вне сессии, а пять дней помечены как трудные: первый на 10-й, звонок на 25-й, договорённость на 30-й, компания на 38-й, сорок минут подряд на 39-й. Они определяют результат. Всё остальное - подготовка к ним, и если не хватает времени, резать надо практику и вход, а не эти дни.</footer>
 </main>
-<a class="up" href="#" aria-label="Наверх">↑</a>
+<button class="totop" type="button" aria-label="Наверх"><span aria-hidden="true">↑</span></button>
 <script>
 /* Переключатель темы справочника. Логика повторяет applyTheme() из client.js:
    справочник грузит client.js целиком, этой странице нужна только эта часть. */
@@ -648,6 +648,7 @@
   /* Подсветка круга, который сейчас на экране: номер в шапке говорит, где ты в плане. */
   var marks = [].slice.call(document.querySelectorAll("nav.circles a[href^='#k']"));
   var sections = marks.map(function(link){ return document.getElementById(link.hash.slice(1)); });
+  var toTop = document.querySelector(".totop");
   var pending = false;
   function markCurrent(){
     pending = false;
@@ -659,7 +660,12 @@
       if(i === current) link.setAttribute("aria-current", "true");
       else link.removeAttribute("aria-current");
     });
+    toTop.classList.toggle("on", window.scrollY > window.innerHeight * 0.8);
   }
+  /* Кнопка «наверх»: та же, что в справочнике. Кнопка, а не ссылка на "#", чтобы клик
+     не оставлял в адресе пустой якорь поверх #d17 или #k3. */
+  var smooth = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  toTop.addEventListener("click", function(){ window.scrollTo({top:0, behavior:smooth}); });
   addEventListener("scroll", function(){
     if(pending) return;
     pending = true;

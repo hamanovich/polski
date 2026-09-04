@@ -643,7 +643,7 @@ const VERB_EXTRA = {
     ["On ___ w sklepie. (kupować)","kupuje","Kupować для on: kupuje."],
     ["My ___ do kina. (iść)","idziemy","Iść для my: idziemy."],
     ["Wy ___ po kawę? (iść)","idziecie","Iść для wy: idziecie."],
-    ["Oni ___ bardzo dobrze. (znać)","znają","Znać для oni: znają."],
+    ["Oni ___ to miasto bardzo dobrze. (znać)","znają","Znać для oni: znają. Znać требует объекта: znać kogo? co?"],
     ["Ja ___ rano o siódmej. (wstawać)","wstaję","Wstawać для ja: wstaję."],
     ["Ty ___ klucze? (mieć)","masz","Mieć для ty: masz."],
     ["Ona ___ do pracy autobusem. (jeździć)","jeździ","Jeździć для ona: jeździ."],

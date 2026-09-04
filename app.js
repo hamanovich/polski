@@ -2160,6 +2160,17 @@ document.addEventListener("keydown", e => {
 });
 
 /* --- оглавление --- */
+/* Подразделы, у которых есть собственный адрес: на самой странице они показаны чипсами,
+   в оглавлении работают как прямые ссылки. Формат ссылки старый (#s-…), его переписывает
+   сборка - так оглавление не знает ничего о маршрутах. */
+const IDX_SUB = {
+  "s-cases":CASES.map(c => [`#s-cases/${c.id}/sg`, c.name]),
+  "s-verbs":VTABS.map(([id, label]) => [`#s-verbs/${id}`, label])
+};
+const idxSubHTML = id => IDX_SUB[id]
+  ? `<div class="idx-sub">${IDX_SUB[id].map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}</div>`
+  : "";
+
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
@@ -2167,7 +2178,7 @@ function renderIndex(){
     <div class="idx">${GROUPS.map(g => `<section>
       <h3>${g[0]}</h3>
       ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">
-        <b>${LABEL[id]}</b><span>${note}</span></a>`).join("")}
+        <b>${LABEL[id]}</b><span>${note}</span></a>${idxSubHTML(id)}`).join("")}
     </section>`).join("")}</div>
     <section class="index-plan" aria-labelledby="index-plan-title">
       <h3 id="index-plan-title">Личный маршрут</h3>
