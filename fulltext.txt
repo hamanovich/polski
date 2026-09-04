@@ -579,13 +579,14 @@ Mianownik множественного - мужско-личные формы Po
 Спряжения: изменения основы - pisać → piszę, móc → możesz и другие модели.
 Прошедшее время - musiał, zaczęła, mógł.
 Прилагательные
-Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (mój, twój, nasz). Jego, jej, ich - исключение: они не склоняются.
+Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (mój, twój, nasz). У ten из неё выпадают три формы: ten, ci, tę. Jego, jej, ich - исключение: они не склоняются.
 dobry - полная парадигма
-падежмуж.жен.ср.мн. мужчинымн. остальное
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
 MianownikdobrydobradobredobrzydobreDopełniaczdobregodobrejdobregodobrychdobrychCelownikdobremudobrejdobremudobrymdobrymBiernikdobry / dobregodobrądobredobrychdobreNarzędnikdobrymdobrądobrymdobrymidobrymiMiejscownikdobrymdobrejdobrymdobrychdobrych
-После k и g пишется i вместо y. polski → polskiego, polskim, polscy · drogi → drogiego, drogim, drodzy. Это орфография, а не отдельное склонение.
+После k и g пишется i вместо y. wysoki → wysokiego, wysokim · drogi → drogiego, drogim. Это орфография, а не отдельное склонение. А вот polski → polscy и drogi → drodzy одной орфографией не объясняются: там чередование основы (k → c, g → dz), о нём ниже.
 Мужско-личное множественное: чередование
-ед. ч.мн. ч. (мужчины)
+Эта форма нужна не только для группы мужчин, но и для любой смешанной группы людей, где мужчина есть хотя бы один: Piotr i Anna są wysocy.
+ед. ч.мн. мужско-личное
 dobrydobrzy
 młodymłodzi
 wysokiwysocy
@@ -597,15 +598,16 @@ zmęczonyzmęczeni
 Степени сравнения: как образуется
 Суффикс выбирается по тому, чем кончается основа. Превосходная - всегда просто naj- перед сравнительной.
 суффикскогдапримеры
--szyна конце основы одна согласнаяnowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · twardy → twardszy · głupi → głupszy · ciekawy → ciekawszy-ejszyна конце основы скопление согласныхładny → ładniejszy · trudny → trudniejszy · zimny → zimniejszy · łatwy → łatwiejszy · piękny → piękniejszy · mądry → mądrzejszy-k- · -ek- · -ok- выпадаетприлагательные на -ki, -eki, -okiwysoki → wyższy · niski → niższy · bliski → bliższy · daleki → dalszy · szeroki → szerszy · krótki → krótszy · ciężki → cięższy · głęboki → głębszy
+-szyна конце основы одна согласнаяnowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · głupi → głupszy · ciekawy → ciekawszy-ejszyна конце основы скопление согласныхładny → ładniejszy · trudny → trudniejszy · zimny → zimniejszy · łatwy → łatwiejszy · piękny → piękniejszy · mądry → mądrzejszy-k- · -ek- · -ok- выпадаетприлагательные на -ki, -eki, -okiwysoki → wyższy · niski → niższy · bliski → bliższy · daleki → dalszy · szeroki → szerszy · krótki → krótszy · ciężki → cięższy · głęboki → głębszy
+Подсказка по основе покрывает большинство слов, но не все: у twardy основа кончается стечением rd, а форма всё равно twardszy. Сравнительную степень частотных слов надёжнее запоминать вместе с самим прилагательным.
 Чередования в основе
 было → сталопримеры
 n → ńtani → tańszył → lmiły → milszy · biały → bielszy · wesoły → weselszy · ciepły → cieplejszyg → żdrogi → droższy · długi → dłuższy · ubogi → uboższyą → ęwąski → węższyr → rzmądry → mądrzejszy · ostry → ostrzejszy
 Нерегулярные
 обычнаясравнительнаяпревосходная
 dobrylepszynajlepszyzłygorszynajgorszyduży / wielkiwiększynajwiększymałymniejszynajmniejszylekkilżejszynajlżejszygorącygorętszynajgorętszy
-Длинные и заимствованные - аналитически. bardziej / najbardziej + прилагательное: bardziej interesujący, najbardziej znany. Обратное направление - mniej / najmniej. Смешивать два способа нельзя: bardziej lepszy - грубая ошибка.
-Не всё сравнивается. Относительные прилагательные - материал, происхождение, принадлежность к классу - степеней обычно не имеют: drewniany, polski, ślubny, martwy.
+Часть прилагательных сравнивается аналитически. bardziej / najbardziej + прилагательное: bardziej interesujący, najbardziej znany. Так ведут себя прежде всего причастные формы на -ący и -ony. Длина и заимствованное происхождение сами по себе правилом не являются: popularny → popularniejszy, nowoczesny → nowocześniejszy, bezpieczny → bezpieczniejszy. Обратное направление - mniej / najmniej. Смешивать два способа нельзя: bardziej lepszy - грубая ошибка.
+Не всё сравнивается. Относительные прилагательные - материал, происхождение, принадлежность к классу - степеней обычно не имеют: drewniany, polski, ślubny. Отдельно стоят качественные прилагательные с предельным значением: martwy в прямом смысле степеней тоже не образует.
 Конструкции сравнения
 «Чем» - niż или od, но дальше начинается то, чего в русском нет по форме.
 конструкциязначениепример
@@ -613,7 +615,7 @@ niż + падеж по роличем - падеж от того, чем был�
 za - это и «слишком», и предлог «за». В значении «слишком» za непосредственно модифицирует признак или количество: za drogi, za droga, za drogo, za dużo. Как предлог za вводит именную группу в падеже: za domem, za wysokim mężczyzną. Значение и форму показывает вся конструкция, а не само слово za.
 coraz и im…, tym… берут только сравнительную степень. Coraz lepiej, не coraz dobrze. В Im więcej, tym lepiej обе части в сравнительной, запятая обязательна.
 Подводные камни
-Прилагательное после być остаётся в именительном. Jestem zmęczony, но jestem lekarzem. Появилось существительное - обе части уходят в творительный: jestem dobrym lekarzem.
+Прилагательное после być остаётся в именительном. Jestem zmęczony, но jestem lekarzem. Появилось существительное - обе части уходят в творительный: jestem dobrym lekarzem. Но после to jest вся группа остаётся в именительном: To jest dobry lekarz.
 Порядок слов. Качество - перед словом (czarna kawa), вид или тип - после (kawa rozpuszczalna, język polski, dzień dobry). Русский тут почти всегда ставит перед. Само приветствие пишется с маленькой - Powiedziałem dzień dobry; большая появляется только в начале реплики: Dzień dobry!
 Женское -ą в винительном и творительном совпадает. Widzę dobrą kawę / z dobrą kawą - форма одна, падежи разные.
 Наречия
@@ -666,7 +668,7 @@ u siebieу себя, домаJestem u siebie.do siebieк себеWracam do siebi
 radzić sobieсправлятьсяJak sobie radzisz? · Dam sobie radę.wyobrazić sobieпредставитьWyobraź sobie!przypomnieć sobieвспомнитьNie mogę sobie przypomnieć.zdawać sobie sprawęотдавать себе отчётZdaję sobie sprawę, że to trudne.życzyć sobieжелатьCzego pan sobie życzy?pozwolić sobieпозволить себеNie mogę sobie na to pozwolić.robić sobieделать себеRobię sobie kawę.iść sobieуйтиIdź sobie!
 Czego pan sobie życzy? - стандартный вопрос продавца и официанта. Здесь без sobie фраза не складывается. А в Idź sobie! оно как раз отделимо - и добавляет пренебрежения к простому Idź!
 ten / ta / to
-падежмуж.жен.ср.мн. мужчинымн. остальное
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
 Mianowniktentatocite
 Dopełniacztegotejtegotychtych
 Celowniktemutejtemutymtym
@@ -690,7 +692,7 @@ wywasz / wasza / waszeда
 oni / oneichнет
 Свой собственный: swój. Если обладатель - подлежащее, поляк ставит swój: Biorę swój bilet. Правило то же, что с русским «свой», но в польском оно соблюдается строже, чем в русской разговорной речи.
 sam: сам, один, тот же
-падежмуж.жен.ср.мн. мужчинымн. остальное
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
 MianowniksamsamasamosamisameDopełniaczsamegosamejsamegosamychsamychCelowniksamemusamejsamemusamymsamymBierniksam / samegosamąsamosamychsameNarzędniksamymsamąsamymsamymisamymiMiejscowniksamymsamejsamymsamychsamych
 Три значения. Zrobiłem to sam - сам, без чужой помощи. Mieszkam sam - один. ten sam dom - тот же самый. И не путать: ten sam - «тот же самый», taki sam - «такой же».
 wszyscy / wszystko
@@ -743,7 +745,7 @@ Który z tych samochodów jest twój?который из этих (выбор и
 o czymо чёмO czym myślisz?o kimо комO kim mówisz?z kimс кемZ kim idziesz do kina?do kogoк комуDo kogo dzwonisz?dla kogoдля когоDla kogo to jest?na coна чтоNa co czekasz?na kogoна когоNa kogo czekasz?u kogoу когоU kogo mieszkasz?za coза чтоZa co mi dziękujesz?w czymв чёмW czym problem?z czegoиз чегоZ czego to jest zrobione?
 który: полное склонение
 Склоняется как прилагательное dobry - та же парадигма, что уже знакома по прилагательным.
-падежмуж.жен.ср.мн. мужчинымн. остальное
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
 MianownikktóryktóraktórektórzyktóreDopełniaczktóregoktórejktóregoktórychktórychCelownikktóremuktórejktóremuktórymktórymBiernikktóry / któregoktórąktórektórychktóreNarzędnikktórymktórąktórymktórymiktórymiMiejscownikktórymktórejktórymktórychktórych
 który как относительное местоимение
 Присоединяет придаточное к существительному. Род и число - от существительного, к которому относится; падеж - от того, какую роль który играет внутри своего придаточного.
@@ -1133,7 +1135,7 @@ muszę iśćдолжен, обязанвнешняя необходимость,
 czytaćoni czytajączytający / czytająca / czytająceчитающийpracowaćoni pracująpracującyработающийspaćoni śpiąśpiącyспящийiśćoni idąidącyидущийpalićoni paląpalącyкурящийmieszkaćoni mieszkająmieszkającyпроживающий
 Kobieta czytająca gazetę siedzi przy oknie. = Kobieta, która czyta gazetę, siedzi przy oknie. - «женщина, читающая газету, сидит у окна». Придаточное с która отделяется запятыми с двух сторон, причастный оборот - нет. В разговоре чаще звучит второй вариант, но в объявлениях и документах причастие обычно: osoby mieszkające w Polsce.
 Страдательное причастие: -ny / -ony / -ty
-Только от переходных глаголов, то есть от тех, у которых есть прямое дополнение в Bierniku. От korzystać z, opiekować się, iść его нет: форм korzystany, zaopiekowany не существует.
+Только от переходных глаголов, то есть таких, от которых возможна пассивная конструкция: szukać książki → książka jest szukana, używać telefonu → telefon jest używany. От korzystać z, opiekować się, iść его нет: форм korzystany, zaopiekowany не существует.
 типпримеры
 -ać → -anyprzeczytać → przeczytany · napisać → napisany · sprzedać → sprzedany-ić / -yć → -ony, с тем же чередованием, что в 1-м лицеzrobić → zrobiony · kupić → kupiony · zaprosić → zaproszony · zapłacić → zapłacony-eć → -any / -ianywidzieć → widziany · słyszeć → słyszany-ąć / -nąć → -ętyzamknąć → zamknięty · wziąć → wzięty · zająć → zajęty · zacząć → zaczętyодносложный корень на гласный → -tyumyć → umyty · pić → pity · zabić → zabity · nakryć → nakrytyнерегулярноеotworzyć → otwarty
 Это самые частые слова на дверях и табличках:

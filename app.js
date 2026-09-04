@@ -752,7 +752,7 @@ function vFormy(){
     <p class="lead"><span class="pl">Kobieta czytająca gazetę siedzi przy oknie.</span> = <span class="pl">Kobieta, która czyta gazetę, siedzi przy oknie.</span> - «женщина, читающая газету, сидит у окна». Придаточное с <span class="pl">która</span> отделяется запятыми с двух сторон, причастный оборот - нет. В разговоре чаще звучит второй вариант, но в объявлениях и документах причастие обычно: <span class="pl">osoby mieszkające w Polsce</span>.</p>
 
     <h3>Страдательное причастие: -ny / -ony / -ty</h3>
-    <p>Только от переходных глаголов, то есть от тех, у которых есть прямое дополнение в Bierniku. От <span class="pl">korzystać z</span>, <span class="pl">opiekować się</span>, <span class="pl">iść</span> его нет: форм <span class="bad">korzystany</span>, <span class="bad">zaopiekowany</span> не существует.</p>
+    <p>Только от переходных глаголов, то есть таких, от которых возможна пассивная конструкция: <span class="pl">szukać książki → książka jest szukana</span>, <span class="pl">używać telefonu → telefon jest używany</span>. От <span class="pl">korzystać z</span>, <span class="pl">opiekować się</span>, <span class="pl">iść</span> его нет: форм <span class="bad">korzystany</span>, <span class="bad">zaopiekowany</span> не существует.</p>
     <div class="scroll"><table class="vt">
       <tr><th>тип</th><th>примеры</th></tr>
       ${IMIES_B.map(i => `<tr><td>${i[0]}</td><td class="w">${i[1]}</td></tr>`).join("")}
@@ -1142,7 +1142,7 @@ function renderQ(){
     <h3>który: полное склонение</h3>
     <p class="lead">Склоняется как прилагательное <span class="pl">dobry</span> - та же парадигма, что уже знакома по прилагательным.</p>
     <div class="scroll"><table>
-      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужчины</th><th>мн. остальное</th></tr>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
       ${KTORY.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
 
@@ -1316,15 +1316,16 @@ function renderPrepPractice(){
 function renderAdj(){
   $("#s-adj").innerHTML = `<div class="panel">
     <h2>Прилагательные</h2>
-    <p class="lead">Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (<span class="pl">mój, twój, nasz</span>). <span class="pl">Jego, jej, ich</span> - исключение: они не склоняются.</p>
+    <p class="lead">Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (<span class="pl">mój, twój, nasz</span>). У <span class="pl">ten</span> из неё выпадают три формы: <span class="pl">ten</span>, <span class="pl">ci</span>, <span class="pl">tę</span>. <span class="pl">Jego, jej, ich</span> - исключение: они не склоняются.</p>
     <h3>dobry - полная парадигма</h3>
     <div class="scroll"><table>
-      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужчины</th><th>мн. остальное</th></tr>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
       ${ADJ.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>После k и g пишется i вместо y.</b> <span class="pl">polski → polskiego, polskim, polscy</span> · <span class="pl">drogi → drogiego, drogim, drodzy</span>. Это орфография, а не отдельное склонение.</div>
+    <div class="tip"><b>После k и g пишется i вместо y.</b> <span class="pl">wysoki → wysokiego, wysokim</span> · <span class="pl">drogi → drogiego, drogim</span>. Это орфография, а не отдельное склонение. А вот <span class="pl">polski → polscy</span> и <span class="pl">drogi → drodzy</span> одной орфографией не объясняются: там чередование основы (<span class="pl">k → c</span>, <span class="pl">g → dz</span>), о нём ниже.</div>
     <h3>Мужско-личное множественное: чередование</h3>
-    <table><tr><th>ед. ч.</th><th>мн. ч. (мужчины)</th></tr>
+    <p class="lead">Эта форма нужна не только для группы мужчин, но и для любой смешанной группы людей, где мужчина есть хотя бы один: <span class="pl">Piotr i Anna są wysocy</span>.</p>
+    <table><tr><th>ед. ч.</th><th>мн. мужско-личное</th></tr>
       <tr><td class="w">dobry</td><td class="g">dobrzy</td></tr>
       <tr><td class="w">młody</td><td class="g">młodzi</td></tr>
       <tr><td class="w">wysoki</td><td class="g">wysocy</td></tr>
@@ -1340,6 +1341,7 @@ function renderAdj(){
       <tr><th>суффикс</th><th>когда</th><th>примеры</th></tr>
       ${STOPN.map(s => `<tr><td class="c">${s[0]}</td><td style="color:var(--muted);white-space:normal">${s[1]}</td><td class="g" style="white-space:normal">${s[2]}</td></tr>`).join("")}
     </table></div>
+    <p class="note">Подсказка по основе покрывает большинство слов, но не все: у <span class="pl">twardy</span> основа кончается стечением <span class="pl">rd</span>, а форма всё равно <span class="pl">twardszy</span>. Сравнительную степень частотных слов надёжнее запоминать вместе с самим прилагательным.</p>
 
     <h3>Чередования в основе</h3>
     <table>
@@ -1352,8 +1354,8 @@ function renderAdj(){
       <tr><th>обычная</th><th>сравнительная</th><th>превосходная</th></tr>
       ${STOPN_IRR.map(s => `<tr><td class="w">${s[0]}</td><td class="g">${s[1]}</td><td class="g">${s[2]}</td></tr>`).join("")}
     </table>
-    <div class="tip"><b>Длинные и заимствованные - аналитически.</b> <span class="pl">bardziej / najbardziej</span> + прилагательное: <span class="pl">bardziej interesujący, najbardziej znany</span>. Обратное направление - <span class="pl">mniej / najmniej</span>. Смешивать два способа нельзя: <span class="bad">bardziej lepszy</span> - грубая ошибка.</div>
-    <div class="tip"><b>Не всё сравнивается.</b> Относительные прилагательные - материал, происхождение, принадлежность к классу - степеней обычно не имеют: <span class="pl">drewniany, polski, ślubny, martwy</span>.</div>
+    <div class="tip"><b>Часть прилагательных сравнивается аналитически.</b> <span class="pl">bardziej / najbardziej</span> + прилагательное: <span class="pl">bardziej interesujący, najbardziej znany</span>. Так ведут себя прежде всего причастные формы на <span class="pl">-ący</span> и <span class="pl">-ony</span>. Длина и заимствованное происхождение сами по себе правилом не являются: <span class="pl">popularny → popularniejszy</span>, <span class="pl">nowoczesny → nowocześniejszy</span>, <span class="pl">bezpieczny → bezpieczniejszy</span>. Обратное направление - <span class="pl">mniej / najmniej</span>. Смешивать два способа нельзя: <span class="bad">bardziej lepszy</span> - грубая ошибка.</div>
+    <div class="tip"><b>Не всё сравнивается.</b> Относительные прилагательные - материал, происхождение, принадлежность к классу - степеней обычно не имеют: <span class="pl">drewniany, polski, ślubny</span>. Отдельно стоят качественные прилагательные с предельным значением: <span class="pl">martwy</span> в прямом смысле степеней тоже не образует.</div>
 
     <h3>Конструкции сравнения</h3>
     <p class="lead">«Чем» - <span class="pl">niż</span> или <span class="pl">od</span>, но дальше начинается то, чего в русском нет по форме.</p>
@@ -1365,7 +1367,7 @@ function renderAdj(){
     <div class="tip"><b><span class="pl">coraz</span> и <span class="pl">im…, tym…</span> берут только сравнительную степень.</b> <span class="pl">Coraz lepiej</span>, не <span class="bad">coraz dobrze</span>. В <span class="pl">Im więcej, tym lepiej</span> обе части в сравнительной, запятая обязательна.</div>
     <h3>Подводные камни</h3>
     <ol class="pit">
-      <li><b>Прилагательное после <span class="pl">być</span> остаётся в именительном.</b> <span class="pl">Jestem zmęczony</span>, но <span class="pl">jestem lekarzem</span>. Появилось существительное - обе части уходят в творительный: <span class="pl">jestem dobrym lekarzem</span>.</li>
+      <li><b>Прилагательное после <span class="pl">być</span> остаётся в именительном.</b> <span class="pl">Jestem zmęczony</span>, но <span class="pl">jestem lekarzem</span>. Появилось существительное - обе части уходят в творительный: <span class="pl">jestem dobrym lekarzem</span>. Но после <span class="pl">to jest</span> вся группа остаётся в именительном: <span class="pl">To jest dobry lekarz</span>.</li>
       <li><b>Порядок слов.</b> Качество - перед словом (<span class="pl">czarna kawa</span>), вид или тип - после (<span class="pl">kawa rozpuszczalna</span>, <span class="pl">język polski</span>, <span class="pl">dzień dobry</span>). Русский тут почти всегда ставит перед. Само приветствие пишется с маленькой - <span class="pl">Powiedziałem dzień dobry</span>; большая появляется только в начале реплики: <span class="pl">Dzień dobry!</span></li>
       <li><b>Женское <span class="pl">-ą</span> в винительном и творительном совпадает.</b> <span class="pl">Widzę dobrą kawę</span> / <span class="pl">z dobrą kawą</span> - форма одна, падежи разные.</li>
     </ol>
@@ -1472,7 +1474,7 @@ function renderPron(){
     <div class="tip"><b><span class="pl">Czego pan sobie życzy?</span></b> - стандартный вопрос продавца и официанта. Здесь без <span class="pl">sobie</span> фраза не складывается. А в <span class="pl">Idź sobie!</span> оно как раз отделимо - и добавляет пренебрежения к простому <span class="pl">Idź!</span></div>
     <h3>ten / ta / to</h3>
     <div class="scroll"><table>
-      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужчины</th><th>мн. остальное</th></tr>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
       <tr><td>Mianownik</td><td class="w">ten</td><td class="w">ta</td><td class="w">to</td><td class="g">ci</td><td class="g">te</td></tr>
       <tr><td>Dopełniacz</td><td class="w">tego</td><td class="w">tej</td><td class="w">tego</td><td class="g">tych</td><td class="g">tych</td></tr>
       <tr><td>Celownik</td><td class="w">temu</td><td class="w">tej</td><td class="w">temu</td><td class="g">tym</td><td class="g">tym</td></tr>
@@ -1504,7 +1506,7 @@ function renderPron(){
 
     <h3>sam: сам, один, тот же</h3>
     <div class="scroll"><table>
-      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужчины</th><th>мн. остальное</th></tr>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
       ${SAM.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Три значения.</b> <span class="pl">Zrobiłem to sam</span> - сам, без чужой помощи. <span class="pl">Mieszkam sam</span> - один. <span class="pl">ten sam dom</span> - тот же самый. И не путать: <span class="pl">ten sam</span> - «тот же самый», <span class="pl">taki sam</span> - «такой же».</div>

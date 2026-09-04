@@ -2383,7 +2383,7 @@ const ADJ = [
 ];
 
 const STOPN = [
- ["-szy","на конце основы одна согласная","nowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · twardy → twardszy · głupi → głupszy · ciekawy → ciekawszy"],
+ ["-szy","на конце основы одна согласная","nowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · głupi → głupszy · ciekawy → ciekawszy"],
  ["-ejszy","на конце основы скопление согласных","ładny → ładniejszy · trudny → trudniejszy · zimny → zimniejszy · łatwy → łatwiejszy · piękny → piękniejszy · mądry → mądrzejszy"],
  ["-k- · -ek- · -ok- выпадает","прилагательные на -ki, -eki, -oki","wysoki → wyższy · niski → niższy · bliski → bliższy · daleki → dalszy · szeroki → szerszy · krótki → krótszy · ciężki → cięższy · głęboki → głębszy"]
 ];
