@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Страница не найдена - Polski: końcówki</title>
+<meta name="description" content="Запрошенная страница справочника польского языка не найдена.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EFF1EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15181A" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css?v=f455ed0588">
+<script>document.documentElement.classList.add("js")</script>
+<script>try{var t=localStorage.getItem("theme");if(t&&t!=="auto")document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body class="error-page">
+<a class="skip-link" href="#content">Перейти к содержанию</a>
+<header>
+  <div class="head-in">
+    <div class="brand">
+      <a class="site-title" href="/">Polski: końców<span class="tail">ki</span></a>
+      <span class="brand-subtitle">справочник · русско-белорусская опора</span>
+      <div id="theme" class="themebar" role="group" aria-label="Тема оформления">
+        <button type="button" data-t="light">светлая</button>
+        <button type="button" data-t="dark">тёмная</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="wrap error-main">
+  <section class="panel error-panel">
+    <p class="error-code">404</p>
+    <h1>Этой страницы нет</h1>
+    <p class="lead">Возможно, в адресе опечатка или ссылка ведёт на уже перемещённый материал.</p>
+    <div class="error-actions">
+      <a class="exercise-button" href="/">На главную</a>
+    </div>
+    <p class="error-note">Нашли ошибку или есть пожелания по содержанию? Напишите на <a href="mailto:mail@hamanovich.com">mail@hamanovich.com</a>.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const theme = document.querySelector("#theme");
+  const systemDark = matchMedia("(prefers-color-scheme: dark)");
+  function readTheme(){
+    try{
+      const value = localStorage.getItem("theme");
+      return value === "light" || value === "dark" ? value : null;
+    }catch(e){ return null; }
+  }
+  function applyTheme(value){
+    if(value) document.documentElement.dataset.theme = value;
+    else delete document.documentElement.dataset.theme;
+    const current = value || (systemDark.matches ? "dark" : "light");
+    theme.querySelectorAll("button").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.t === current));
+    });
+  }
+  theme.querySelectorAll("button").forEach(button => button.addEventListener("click", () => {
+    try{ localStorage.setItem("theme", button.dataset.t); }catch(e){}
+    applyTheme(button.dataset.t);
+  }));
+  systemDark.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
+  applyTheme(readTheme());
+})();
+</script>
+</body>
+</html>
+

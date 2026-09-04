@@ -37,7 +37,7 @@ const NASAL = [
  ["перед ć/ci, dź/dzi","oń, eń","będzie [beńdzie]"],
  ["перед g, k","носовое, ближе к он/эн","mąka, ręka"],
  ["перед f, w, s, z, sz, rz, ż, ch","чистый носовой звук","wąski, węch"],
- ["перед ł, l","теряется, чистое o / e","minął [minoł], zaczęli [zaczeli]"],
+ ["перед ł, l","теряется, чистое o / e","minął [миноў], zaczęli [zaczeli]"],
  ["на конце слова","ą - носовое; ę - часто теряет носовость","idą [идон]; proszę ≈ [proше]"]
 ];
 
@@ -164,7 +164,7 @@ const CASES = [
 },
 {
   id:"dop", name:"Dopełniacz", ru:"Родительный", q:"kogo? czego?",
-  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После 5 и больше: <span class='pl'>pięć biletów</span>. Также после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>."],
+  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После числительных на 5-9 и 0, а также после 11-14: <span class='pl'>pięć biletów, dwanaście biletów</span>. Также после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>."],
   preps:"do, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast",
   sg:[
     {l:"муж. одушевл.", f:[{a:"pan",b:"pan|a"},{a:"brat",b:"brat|a"},{a:"pies",b:"ps|a"}], n:"-a, без вариантов"},
@@ -214,7 +214,7 @@ const CASES = [
 },
 {
   id:"narz", name:"Narzędnik", ru:"Творительный", q:"kim? czym?",
-  use:["Профессия и роль после <span class='pl'>być, zostać, zostawać</span>: <span class='pl'>jestem programistą</span>.","Орудие: <span class='pl'>piszę długopisem</span>.","Транспорт: <span class='pl'>jadę autobusem</span> - без предлога.","Совместность: <span class='pl'>kawa z mlekiem, idę z bratem</span>.","Глаголы: <span class='pl'>interesować się, zajmować się, opiekować się, martwić się</span> + творительный."],
+  use:["Профессия и роль после <span class='pl'>być, zostać, zostawać</span>: <span class='pl'>jestem programistą</span>.","Орудие: <span class='pl'>piszę długopisem</span>.","Транспорт: <span class='pl'>jadę autobusem</span> - без предлога.","Совместность: <span class='pl'>kawa z mlekiem, idę z bratem</span>.","Глаголы: <span class='pl'>interesować się, zajmować się, opiekować się</span> + творительный."],
   preps:"z (с кем/чем), nad, pod, przed, za, między, poza - все в значении «где»",
   sg:[
     {l:"муж. и средний", f:[{a:"autobus",b:"autobus|em"},{a:"brat",b:"brat|em"},{a:"piwo",b:"piw|em"},{a:"pociąg",b:"pocią|gi|em"},{a:"mleko",b:"mle|ki|em"}], n:"-em; после k, g вставляется i: -kiem, -giem"},
@@ -489,8 +489,8 @@ const CASE_PRACTICE = [
     {id:"wol-18", prompt:"Pani ___, zapraszam do gabinetu. (Maria)", answers:["Mario"], explanation:"Maria → Mario в звательном."},
     {id:"wol-19", prompt:"Szanowny panie ___, dziękuję za odpowiedź. (Adam)", answers:["Adamie"], explanation:"Adam → Adamie в звательном."},
     {id:"wol-text", prompt:"Короткий разговор в приёмной", passage:[
-      {key:"a",options:["Pan","Panie","Pana"],answers:["Panie"],label:"форма слова pan"}," doktorze, czy mogę wejść? — Chwileczkę, ",
-      {key:"b",answers:["panie"],hint:"pan",label:"форма слова pan"}," Adamie. — Dobrze, ",
+      {key:"a",options:["Pan","Panie","Pana"],answers:["Panie"],label:"форма слова pan"}," doktorze, czy mogę wejść? - Chwileczkę, ",
+      {key:"b",answers:["panie"],hint:"pan",label:"форма слова pan"}," Adamie. - Dobrze, ",
       {key:"c",options:["doktor","doktora","doktorze"],answers:["doktorze"],label:"форма слова doktor"},"."
     ], explanation:"В прямом обращении употребляем panie и звательную форму титула doktorze."}
   ]
@@ -808,7 +808,7 @@ const PERS = ["ja","ty","on / ona","my","wy","oni / one"];
 const KON = [
  {n:"I", mark:"-ę / -esz",
   who:"Самая большая и самая пёстрая группа. Основа часто меняется - её надо запомнить, окончания всегда одни.",
-  find:"Односложные на -ić/-yć/-uć (pić, żyć, czuć) · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · всё на -ować / -ywać / -iwać / -awać · часть глаголов на -ać (pisać, brać, jechać, płakać).",
+  find:"Односложные на -ić/-yć/-uć (pić, żyć, czuć) · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · большинство на -ować и часть на -ywać / -iwać · часть глаголов на -ać (pisać, brać, jechać, płakać).",
   verbs:[
    ["pisać","писать",["piszę","piszesz","pisze","piszemy","piszecie","piszą"],"s → sz во всех формах"],
    ["iść","идти",["idę","idziesz","idzie","idziemy","idziecie","idą"],"d → dzi в большом крыле"],
@@ -1244,10 +1244,10 @@ const NDEKL = [
 const NAGR = [
  ["1","Mianownik ед. ч.","jeden dom · jedna książka · jedno okno","jest / był"],
  ["2, 3, 4","Mianownik мн. ч.","dwa domy · trzy książki · cztery okna","są / były"],
- ["5 и больше","Dopełniacz мн. ч.","pięć domów · dziesięć książek · sto okien","jest / było"],
- ["12, 13, 14","Dopełniacz мн. ч.","dwanaście domów · czternaście książek","jest / było"],
+ ["5-9, 0, 11-14","Dopełniacz мн. ч.","pięć domów · dziesięć książek · czternaście okien","jest / było"],
  ["22, 23, 24","Mianownik мн. ч.","dwadzieścia dwa domy · trzydzieści trzy książki","są / były"],
- ["21, 25, 31…","Dopełniacz мн. ч.","dwadzieścia jeden domów · trzydzieści pięć książek","jest / było"]
+ ["21, 31, 41...","Mianownik ед. ч.","dwadzieścia jeden dom · trzydzieści jedna książka","jest / był"],
+ ["25, 35, 100...","Dopełniacz мн. ч.","dwadzieścia pięć domów · sto okien","jest / było"]
 ];
 
 const MOSNUM = [
@@ -1276,8 +1276,8 @@ const DZIES = [
  ["0,5","zero przecinek pięć"],
  ["3,14","trzy przecinek czternaście"],
  ["2,75","dwa przecinek siedemdziesiąt pięć"],
- ["1,20 zł","jeden złoty dwadzieścia"],
- ["36,6°","trzydzieści sześć i sześć"]
+ ["1,20 zł","jeden złoty dwadzieścia groszy"],
+ ["36,6°","trzydzieści sześć przecinek sześć stopnia"]
 ];
 const PROCENT = [
  ["1%","jeden procent"],
@@ -1366,8 +1366,8 @@ const PARTKL = [
  ["условные","by, bym, byś, byśmy, byście","On by to zrobił dobrze."],
  ["сомнения","chyba, może, pewnie, bodaj","Może mógłbyś wysłać mi maila."],
  ["побудительные","niech, oby, żeby","Niech ona to skończy!"],
- ["усилительные","przecież, ależ, -że, to","Ależ oczywiście!"],
- ["ограничительные","tylko, jedynie, nawet, chociaż","Mam tylko pięć złotych."],
+ ["усилительные","przecież, ależ, -że, to, nawet","Ależ oczywiście!"],
+ ["ограничительные","tylko, jedynie","Mam tylko pięć złotych."],
  ["неопределённые","byle, lada, -kolwiek, -ś","Nie rzucaj byle gdzie."]
 ];
 const PARTPIS = [
@@ -1425,8 +1425,8 @@ const NAZW_TYP = [
 ];
 const KRAJE = [
  ["Polska","w Polsce","do Polski","Polak","Polka","po polsku"],
- ["Białoruś","na Białorusi","na Białoruś","Białorusin","Białorusinka","po białorusku"],
- ["Ukraina","w / na Ukrainie","do / na Ukrainę","Ukrainiec","Ukrainka","po ukraińsku"],
+ ["Białoruś","w / na Białorusi","do / na Białoruś","Białorusin","Białorusinka","po białorusku"],
+ ["Ukraina","w Ukrainie / na Ukrainie","do Ukrainy / na Ukrainę","Ukrainiec","Ukrainka","po ukraińsku"],
  ["Litwa","na Litwie","na Litwę","Litwin","Litwinka","po litewsku"],
  ["Łotwa","na Łotwie","na Łotwę","Łotysz","Łotyszka","po łotewsku"],
  ["Węgry","na Węgrzech","na Węgry","Węgier","Węgierka","po węgiersku"],
@@ -1437,7 +1437,7 @@ const KRAJE = [
  ["Włochy","we Włoszech","do Włoch","Włoch","Włoszka","po włosku"],
  ["Francja","we Francji","do Francji","Francuz","Francuzka","po francusku"],
  ["Anglia","w Anglii","do Anglii","Anglik","Angielka","po angielsku"],
- ["Stany Zjednoczone","w Stanach","do Stanów","Amerykanin","Amerykanka","po angielsku"]
+ ["Stany Zjednoczone","w Stanach Zjednoczonych / w Stanach","do Stanów Zjednoczonych / do Stanów","Amerykanin","Amerykanka","po angielsku"]
 ];
 const JEZYK = [
  ["Mówię po polsku.","наречие, не склоняется","как говорю"],
@@ -1455,7 +1455,7 @@ const FEMIN = [
  ["-ca → -czyni","продуктивно у слов на -ca","sprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni"],
  ["-ica · -nica","небольшая группа","pracownik → pracownica · robotnik → robotnica"],
  ["особые формы","вне моделей, запоминать","gospodarz → gospodyni · gość → gościni · król → królowa"],
- ["pani + мужская форма","когда женской формы нет или она спорная","pani doktor · pani prezes · pani minister · pani inżynier - не склоняется"]
+ ["pani + мужская форма","один из вариантов, особенно в официальном обращении","pani doktor · pani prezes · pani minister · pani inżynier; название профессии после pani не склоняется"]
 ];
 
 const DIM_M = [["kot","kotek","koteczek","кот"],["pies","piesek","pieseczek","пёс"],["dom","domek","domeczek","дом"],
@@ -1557,11 +1557,11 @@ const NIEMA_JEST = [
 ];
 
 const SIE_POS = [
- ["Jak się nazywasz?","się - вторым словом, перед глаголом","не в начале и не в конце"],
+ ["Jak się nazywasz?","się - после вопросительного слова, перед глаголом","не в начале"],
  ["Nazywam się Jan.","się стоит рядом с глаголом; часто - после него","позиция зависит от всей фразы: Jak się nazywasz?"],
  ["Nie martw się.","się - в конце короткой фразы","после отрицания + глагол"],
- ["Czy podoba ci się ten film?","сначала ci, потом się - порядок клитик фиксирован","ci się, не się ci"],
- ["Widziałem go wczoraj.","go (местоимение) - не в начале предложения","*Go widziałem wczoraj - режет слух"]
+ ["Czy podoba ci się ten film?","ci się - нейтральный порядок","się ci возможно при выделении ci"],
+ ["Widziałem go wczoraj.","нейтральный порядок","Go widziałem wczoraj - выделяет объект"]
 ];
 const CLITICS = [
  ["się","возвратная частица","Uczę się polskiego."],
@@ -1577,7 +1577,7 @@ const TEMA_REMA = [
  ["Kto kupił bilety?","Bilety kupiła Anna.","Anna - кто именно"]
 ];
 const QVERB_ORDER = [
- ["Ile kosztuje bilet?","верно: вопросительное слово + глагол сразу","Ile bilet kosztuje? звучит неестественно"],
+ ["Ile kosztuje bilet?","нейтрально: вопросительное слово + глагол + подлежащее","Ile bilet kosztuje? возможно, но выделяет bilet"],
  ["Gdzie mieszka twoja siostra?","вопросительное слово + глагол + подлежащее",""],
  ["Kiedy wraca ojciec?","то же самое",""]
 ];
@@ -1701,7 +1701,7 @@ const PREP_EXTRA = {
     ["Idę do ___ po receptę. (apteka)","apteki","Do + родительный: do apteki."],
     ["Mieszkamy koło ___. (rzeka)","rzeki","Koło + родительный: koło rzeki."],
     ["Książka leży między ___ a lampą. (komputer)","komputerem","Положение: między + творительный."],
-    ["Czekam na ciebie przed ___. (spotkanie)","spotkaniem","Przed в значении места требует творительного."],
+    ["Czekam na ciebie przed ___. (spotkanie)","spotkaniem","Przed здесь означает время: «до встречи» и требует творительного."],
     ["Mówimy o tym po ___. (polski)","polsku","Устойчиво: po polsku."],
     ["Pracuję od ___ do piątku. (poniedziałek)","poniedziałku","Od + родительный: od poniedziałku."],
     ["Dzieci są teraz w ___. (szkoła)","szkole","W + предложный: w szkole."],
@@ -1783,9 +1783,9 @@ const PEOPLE_PRACTICE={id:"people",title:"Практика: люди и вежл
 const ALPHA_PRACTICE={id:"alphabet",title:"Практика: алфавит и произношение",lead:"20 заданий на чтение букв, диграфов и носовых гласных.",tasks:[...ADIAC,...DIGR].map((item,index)=>({id:`alpha-${index+1}`,prompt:`Как читается польское «${item[0]}»?`,answers:[item[1]],explanation:item[3]?`${item[2]}. Пример: ${item[3]}`:`Пример: ${item[2]}`})).concat(topicTasks("alpha-nasal",[["Как реализуются ą/ę перед b, p?","om, em","Перед b, p: om, em."],["Как реализуются ą/ę в конце слова?","ą - носовое; ę - часто теряет носовость","Конец слова: особая позиция."],["Как реализуются ą/ę перед d, t?","on, en","Перед d, t: on, en."]]))};
 const DIM_PRACTICE={id:"diminutives",title:"Практика: уменьшительные",lead:"20 заданий на формы и уместность уменьшительных.",tasks:[...DIM_M,...DIM_F,...DIM_N,...DIM_ADJ,...DIM_NAME].slice(0,20).map((item,index)=>({id:`dim-${index+1}`,prompt:`Уменьшительная форма слова «${item[0]}»:`,answers:[item[1].split(" / ")[0]],explanation:`Первая обычная уменьшительная форма: ${item[1]}.`}))};
 const BRIDGE_PRACTICE={id:"bridges",title:"Практика: мосты и ложные друзья",lead:"20 заданий на значения похожих польских слов.",get tasks(){return FALSE.slice(0,20).map((item,index)=>({id:`bridge-${index+1}`,prompt:`Что по-польски означает «${item[0]}»?`,answers:[item[1]],explanation:`Не «${item[2]}».`}));}};
-const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, даты и время.",tasks:topicTasks("num",[["dwa ___ (dom)","domy","После dwa: mianownik множественного."],["pięć ___ (dom)","domów","После pięć: dopełniacz множественного."],["dwie ___ (książka)","książki","Женский род после dwie."],["trzy ___ (okno)","okna","После trzy: okna."],["dwanaście ___ (student)","studentów","11–14: родительный множественного."],["dwadzieścia dwa ___ (kot)","koty","Последнее число dwa."],["dwadzieścia pięć ___ (kot)","kotów","Последнее число pięć."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? — o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["we ___ (wtorek)","wtorek","Устойчиво: we wtorek."],["w ___ (maj)","maju","W maju."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["pięć ___ (złoty)","złotych","После 5: złotych."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["Wrócę za ___ (tydzień)","tydzień","За неделю в будущем."],["w ciągu ___ (tydzień)","tygodnia","В течение срока: w ciągu tygodnia."]] )};
-const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на вопросительные слова и падежные формы.",tasks:topicTasks("question",[["___ mieszkasz? — W Gdańsku.","Gdzie","Где: gdzie?"],["___ idziesz? — Do sklepu.","Dokąd","Куда: dokąd?"],["___ wracasz? — Z pracy.","Skąd","Откуда: skąd?"],["___ to kosztuje?","Ile","Сколько: ile?"],["___ jesteś smutny?","Dlaczego","Почему: dlaczego?"],["___ jest ten film? — Ciekawy.","Jaki","Качество: jaki?"],["___ z tych filmów wybierasz?","Który","Выбор: który?"],["___ szukasz? (książka)","Czego","Szukać чего: czego?"],["___ pomagasz? (sąsiad)","Komu","Pomagać кому: komu?"],["___ piszesz? (długopis)","Czym","Чем: czym?"],["___ rozmawiasz? (Anna)","Z kim","С кем: z kim?"],["___ czekasz? (autobus)","Na co","Ждать что: na co?"],["___ dzwonisz? (lekarz)","Do kogo","Dzwonić требует do + родительный: do lekarza → do kogo?"],["___ jest ta torba?","Czyja","Чья: czyja?"],["___ wracasz? — Wieczorem.","Kiedy","Когда: kiedy?"],["___ mówisz po polsku? — Dobrze.","Jak","Как: jak?"],["___ to robisz? — Żeby pomóc.","Po co","Зачем: po co?"],["___ dojeżdżasz do szkoły? — Autobusem.","Jak","Как добираешься: jak?"],["___ jest problem? — W tym, że komputer się nie włącza.","W czym","В чём: w czym?"],["___ dni zostało do wakacji?","Ile","Сколько дней: ile dni?"]] )};
-const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",lead:"20 заданий на nie, отрицательные местоимения и nie ma.",tasks:topicTasks("neg",[["Nie mam ___. (czas)","czasu","После nie: родительный."],["Nikt nic nie ___. (wiedzieć)","wie","Nie остаётся при глаголе."],["Nigdy tam nie ___. (być, ja)","byłem","Nigdy nie byłem."],["Nie ma ___ w domu. (Anna)","Anny","Nie ma + родительный."],["Anna nie ___ lekarzem.","jest","Nie jest lekarzem."],["Nie widzę żadnego ___. (pies)","psa","Żadnego psa."],["Nie mam ani ___, ani pieniędzy. (czas)","czasu","Ani czasu."],["Nigdzie nie ___ kluczy. (widzieć, ja)","widzę","Nigdzie nie widzę."],["Nie chcę ___. (kawa)","kawy","Nie chcę kawy."],["Czy ktoś dzwoni? — Nie, ___.","nikt","Nikt."],["Nie wiem ___ o tym problemie. (nic)","nic","После wiedzieć употребляется nic: Nie wiem nic o tym problemie."],["On nie ___ w pracy.","jest","Nie jest w pracy."],["W lodówce nie ma ___. (mleko)","mleka","Nie ma mleka."],["Żaden z nich nie ___. (przyjść)","przyszedł","Żaden nie przyszedł."],["Nie mogę znaleźć swoich ___. (okulary)","okularów","Родительный множественного."],["Nikomu nic nie ___. (mówić, ja)","mówię","Nikomu nic nie mówię."],["To nie ___ prawda.","jest","Nie jest prawda."],["Nie słyszę ___ (muzyka)","muzyki","Nie słyszę muzyki."],["Nikt nie ___, gdzie on jest. (wiedzieć)","wie","Nikt nie wie."],["Bez ciebie nie ___. (móc, ja)","mogę","Nie mogę."]] )};
+const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, даты и время.",tasks:topicTasks("num",[["dwa ___ (dom)","domy","После dwa: mianownik множественного."],["pięć ___ (dom)","domów","После pięć: dopełniacz множественного."],["dwie ___ (książka)","książki","Женский род после dwie."],["trzy ___ (okno)","okna","После trzy: okna."],["dwanaście ___ (student)","studentów","11–14: родительный множественного."],["dwadzieścia dwa ___ (kot)","koty","Последнее число dwa."],["dwadzieścia pięć ___ (kot)","kotów","Последнее число pięć."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? - o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["we ___ (wtorek)","wtorek","Устойчиво: we wtorek."],["w ___ (maj)","maju","W maju."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["pięć ___ (złoty)","złotych","После 5: złotych."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["Wrócę za ___ (tydzień)","tydzień","За неделю в будущем."],["w ciągu ___ (tydzień)","tygodnia","В течение срока: w ciągu tygodnia."]] )};
+const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на вопросительные слова и падежные формы.",tasks:topicTasks("question",[["___ mieszkasz? - W Gdańsku.","Gdzie","Где: gdzie?"],["___ idziesz? - Do sklepu.","Dokąd","Куда: dokąd?"],["___ wracasz? - Z pracy.","Skąd","Откуда: skąd?"],["___ to kosztuje?","Ile","Сколько: ile?"],["___ jesteś smutny?","Dlaczego","Почему: dlaczego?"],["___ jest ten film? - Ciekawy.","Jaki","Качество: jaki?"],["___ z tych filmów wybierasz?","Który","Выбор: który?"],["___ szukasz? (książka)","Czego","Szukać чего: czego?"],["___ pomagasz? (sąsiad)","Komu","Pomagać кому: komu?"],["___ piszesz? (długopis)","Czym","Чем: czym?"],["___ rozmawiasz? (Anna)","Z kim","С кем: z kim?"],["___ czekasz? (autobus)","Na co","Ждать что: na co?"],["___ dzwonisz? (lekarz)","Do kogo","Dzwonić требует do + родительный: do lekarza → do kogo?"],["___ jest ta torba?","Czyja","Чья: czyja?"],["___ wracasz? - Wieczorem.","Kiedy","Когда: kiedy?"],["___ mówisz po polsku? - Dobrze.","Jak","Как: jak?"],["___ to robisz? - Żeby pomóc.","Po co","Зачем: po co?"],["___ dojeżdżasz do szkoły? - Autobusem.","Jak","Как добираешься: jak?"],["___ jest problem? - W tym, że komputer się nie włącza.","W czym","В чём: w czym?"],["___ dni zostało do wakacji?","Ile","Сколько дней: ile dni?"]] )};
+const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",lead:"20 заданий на nie, отрицательные местоимения и nie ma.",tasks:topicTasks("neg",[["Nie mam ___. (czas)","czasu","После nie: родительный."],["Nikt nic nie ___. (wiedzieć)","wie","Nie остаётся при глаголе."],["Nigdy tam nie ___. (być, ja)","byłem","Nigdy nie byłem."],["Nie ma ___ w domu. (Anna)","Anny","Nie ma + родительный."],["Anna nie ___ lekarzem.","jest","Nie jest lekarzem."],["Nie widzę żadnego ___. (pies)","psa","Żadnego psa."],["Nie mam ani ___, ani pieniędzy. (czas)","czasu","Ani czasu."],["Nigdzie nie ___ kluczy. (widzieć, ja)","widzę","Nigdzie nie widzę."],["Nie chcę ___. (kawa)","kawy","Nie chcę kawy."],["Czy ktoś dzwoni? - Nie, ___.","nikt","Nikt."],["Nie wiem ___ o tym problemie. (nic)","nic","После wiedzieć употребляется nic: Nie wiem nic o tym problemie."],["On nie ___ w pracy.","jest","Nie jest w pracy."],["W lodówce nie ma ___. (mleko)","mleka","Nie ma mleka."],["Żaden z nich nie ___. (przyjść)","przyszedł","Żaden nie przyszedł."],["Nie mogę znaleźć swoich ___. (okulary)","okularów","Родительный множественного."],["Nikomu nic nie ___. (mówić, ja)","mówię","Nikomu nic nie mówię."],["To nie ___ prawda.","jest","Nie jest prawda."],["Nie słyszę ___ (muzyka)","muzyki","Nie słyszę muzyki."],["Nikt nie ___, gdzie on jest. (wiedzieć)","wie","Nikt nie wie."],["Bez ciebie nie ___. (móc, ja)","mogę","Nie mogę."]] )};
 const ORDER_PRACTICE={id:"word-order",title:"Практика: порядок слов",lead:"20 заданий на клитики, się и нейтральный порядок.",tasks:topicTasks("order",[["Jak ___ nazywasz?","się","Się не открывает фразу."],["Czy możesz ___ pomóc? (ja)","mi","Краткая клитика mi."],["Nie martw ___.","się","Nie martw się."],["Powiedz ___ prawdę. (ja)","mi","Powiedz mi."],["Czy podoba ___ się ten film? (ty)","ci","Порядок: ci się."],["Widzę ___ codziennie. (on)","go","Краткая форма: go."],["Idę do ___. (on)","niego","После предлога: niego."],["Mnie to nie ___. (interesować)","interesuje","Полная форма для акцента."],["Gdzie ___ twoja siostra? (mieszkać)","mieszka","Вопросительное слово + глагол."],["Ile ___ bilet? (kosztować)","kosztuje","Ile kosztuje bilet?"],["Klucze są ___ stole. (na)","na","Новый факт: na stole."],["Na stole są ___. (klucze)","klucze","Ответ на «что?» - klucze."],["Czy Anna ___ zna? (ty)","cię","Винительный: cię."],["Nie ___ się tego. (bać, ty)","bój","Nie bój się."],["On ___ dał książkę. (ja)","mi","On mi dał."],["Wczoraj ___ go w kinie. (widzieć, ja)","widziałem","Вчера видел: widziałem."],["Czy ___ to zrobić? (móc, ty)","możesz","Czy możesz…"],["Z kim ___ spotykasz?","się","Spotykać się z kimś: здесь нужна частица się."],["Proszę, ___ mi pomóc.","pomóż","Pomóż mi."],["Dzisiaj ___ do pracy. (iść, ja)","idę","Dzisiaj idę."]] )};
 const IMPERS_PRACTICE={id:"impersonal",title:"Практика: безличные конструкции",lead:"20 заданий на trzeba, można, nie wolno, -no/-to и mówi się.",tasks:topicTasks("impers",[["Tu nie ___ palić.","wolno","Прямой запрет: nie wolno."],["Nie ___ wejść, bo drzwi są zamknięte.","można","Нет возможности: nie można."],["___ wypełnić formularz.","Trzeba","Необходимость: trzeba."],["___ to przeczytać.","Warto","Рекомендация: warto."],["W regulaminie: ___ zapłacić do piątku.","należy","Официальная инструкция: należy."],["Wczoraj nie ___ tu parkować.","można było","Прошедшее: nie można było."],["Trzeba ___ wcześniej. (wyjść)","było","Trzeba było wyjść."],["Wczoraj ___ formularz.","wypełniono","Безличное действие: wypełniono."],["Drzwi ___ o ósmej.","otwarto","Форма на -to: otwarto."],["Po polsku ___ się «dzień dobry».","mówi","Mówi się."],["Tu się nie ___. (palić)","pali","Tu się nie pali."],["Nie wolno ___ zdjęć. (robić)","robić","После nie wolno - инфинитив."],["Czy ___ tu usiąść?","można","Можно ли: czy można?"],["___ mi wejść?","Wolno","Можно ли мне: wolno mi?"],["Nie ___ nam rozmawiać głośno.","wolno","Nie wolno nam."],["Wczoraj ___ remont.","wykonano","Wykonano remont."],["Jak ___ dojeżdża na lotnisko?","się","Jak się dojeżdża?"],["___ było spróbować tej zupy.","Warto","Warto było."],["W urzędzie ___ złożyć wniosek online.","można","Возможность: można."],["Nie ___ było wejść po zamknięciu.","wolno","Запрет в прошлом: nie wolno było."]] )};
 NEG_PRACTICE.tasks[2] = {id:"neg-3",prompt:"Nigdy tam nie ___. (być, ja, мужчина)",answers:["byłem"],explanation:"Nigdy nie byłem."};
@@ -1797,7 +1797,7 @@ CONJ_PRACTICE.tasks = topicTasks("conj",[
   ["Kupiłem chleb ___ mleko.","i","Соединяем два предмета: i."],["On czyta, ___ ja piszę.","a","Лёгкое противопоставление: a."],["Chciałem pójść, ___ nie mogłem.","ale","Сильное противопоставление: ale."],["Możesz zamówić herbatę ___ kawę.","lub","Обычный выбор в утверждении: lub."],["Nie mam ani czasu, ___ pieniędzy.","ani","Парная конструкция ani… ani."],["Spóźniłem się, ___ pobiegłem.","więc","Следствие: więc."],["Byłem chory, ___ nie przyszedłem.","dlatego","Следствие в отдельной части: dlatego."],["Ja lubię herbatę, ___ on kawę.","natomiast","Сопоставляем два элемента: natomiast."],["Jest weekend, ___ sobota i niedziela.","czyli","Пояснение другими словами: czyli."],["Zaprosiłem rodzinę ___ przyjaciół.","oraz","Официальнее, чем i: oraz."],["Wiem, ___ przyjdzie.","że","После глагола знания: że."],["Chcę, ___ przyszedł wcześniej.","żeby","Желание / цель: żeby."],["Nie przyszedłem, ___ byłem chory.","ponieważ","Причина в нейтрально-письменном стиле: ponieważ."],["Nie idę, ___ pada deszcz.","bo","Разговорное объяснение причины: bo."],["___ będziesz gotowy, zadzwoń.","jeśli","Реальное условие: jeśli."],["___ miał czas, poszedłby.","Gdyby","Нереальное условие: gdyby."],["Zadzwonię, ___ przyjadę.","gdy","Будущее время в придаточном: gdy."],["Poszedłem, ___ padał deszcz.","chociaż","Уступка: chociaż."],["___ wyjdziesz, zamknij okno.","Zanim","Сначала одно действие, потом другое: zanim."],["___ tu mieszkam, jestem szczęśliwy.","Odkąd","Начальная точка длительного состояния: odkąd."]
 ]);
 PART_PRACTICE.tasks = topicTasks("part",[
-  ["___ dobrze, mów.","No","Разговорное «ну»: no."],["___ jesteś głodny?","Czy","Вопрос да/нет: czy."],["___ będzie padać.","Chyba","Неуверенное предположение: chyba."],["___ pójdziemy do kina?","Może","Мягкое предложение: może."],["On ___ śpi.","pewnie","Уверенное предположение: pewnie."],["___ pan wejdzie.","Niech","Вежливое побуждение: niech."],["___ się udało!","Oby","Пожелание: oby."],["___ tylko zdążyć na pociąg!","Żeby","Пожелание / восклицание: żeby."],["___ mówiłem, że będzie trudno.","Przecież","Напоминание собеседнику: przecież."],["— To dokładnie o tym mówiłem. — ___.","Właśnie","Подтверждение «вот именно»: właśnie."],["Jest ___ pięć miejsc, więc wszyscy się zmieścimy.","akurat","Ровно столько, сколько нужно: akurat."],["___ nie wiem, gdzie on jest.","Naprawdę","Усиление искренности: naprawdę."],["Mam ___ pięć złotych.","tylko","Ограничение количества: tylko."],["___ nie wiedziałem o tej zmianie.","Nawet","Усиление: nawet."],["To mi się ___ nie podoba.","wcale","«Совсем не» с nie: wcale."],["Jest ___ piąta, mamy czas.","dopiero","«Только» о времени: dopiero."],["— Czy zgadzasz się? — ___, ale mam pytanie.","Owszem","Вежливое согласие: owszem."],["___ nie! To niemożliwe.","Ależ","Эмоциональное усиление: ależ."],["On ___ się uczy, ale nie widzę efektów.","niby","Сомнение в видимости действия: niby."],["___ nie pójdę dziś na spotkanie.","Raczej","Мягкое «скорее нет»: raczej."]
+  ["___ dobrze, mów.","No","Разговорное «ну»: no."],["___ jesteś głodny?","Czy","Вопрос да/нет: czy."],["___ będzie padać.","Chyba","Неуверенное предположение: chyba."],["___ pójdziemy do kina?","Może","Мягкое предложение: może."],["On ___ śpi.","pewnie","Уверенное предположение: pewnie."],["___ pan wejdzie.","Niech","Вежливое побуждение: niech."],["___ się udało!","Oby","Пожелание: oby."],["___ tylko zdążyć na pociąg!","Żeby","Пожелание / восклицание: żeby."],["___ mówiłem, że będzie trudno.","Przecież","Напоминание собеседнику: przecież."],["- To dokładnie o tym mówiłem. - ___.","Właśnie","Подтверждение «вот именно»: właśnie."],["Jest ___ pięć miejsc, więc wszyscy się zmieścimy.","akurat","Ровно столько, сколько нужно: akurat."],["___ nie wiem, gdzie on jest.","Naprawdę","Усиление искренности: naprawdę."],["Mam ___ pięć złotych.","tylko","Ограничение количества: tylko."],["___ nie wiedziałem o tej zmianie.","Nawet","Усиление: nawet."],["To mi się ___ nie podoba.","wcale","«Совсем не» с nie: wcale."],["Jest ___ piąta, mamy czas.","dopiero","«Только» о времени: dopiero."],["- Czy zgadzasz się? - ___, ale mam pytanie.","Owszem","Вежливое согласие: owszem."],["___ nie! To niemożliwe.","Ależ","Эмоциональное усиление: ależ."],["On ___ się uczy, ale nie widzę efektów.","niby","Сомнение в видимости действия: niby."],["___ nie pójdę dziś na spotkanie.","Raczej","Мягкое «скорее нет»: raczej."]
 ]);
 DIM_PRACTICE.tasks = [
   {id:"dim-1",prompt:"Обычная уменьшительная форма от kot:",options:["kotek","kotunia","kociątko"],answers:["kotek"],explanation:"Обычная уменьшительная форма: kotek."},
@@ -1894,20 +1894,20 @@ const CZAS_WYR = [
 ];
 
 const ASPEKT_UWAGI = {
- "znać":       ["новое состояние","poznawać"],
- "myśleć":     ["недолго",""],
- "mieszkać":   ["начало состояния",""],
- "lubić":      ["начало состояния",""],
- "kochać":     ["начало состояния",""],
- "patrzeć":    ["недолго",""],
- "słuchać":    ["недолго",""],
- "uczyć się":  ["результат",""],
- "pamiętać":   ["результат","zapamiętywać"],
- "siedzieć":   ["смена состояния","siadać"],
- "czekać":     ["недолго",""],
- "szukać":     ["результат","znajdować"],
- "rozmawiać":  ["недолго",""],
- "nieść":      ["результат",""]
+ "znać": "новое состояние: poznać; poznawać - вторичный несовершенный",
+ "myśleć": "недолго: pomyśleć",
+ "mieszkać": "начало состояния: zamieszkać",
+ "lubić": "начало состояния: polubić",
+ "kochać": "начало состояния: pokochać",
+ "patrzeć": "недолго: popatrzeć",
+ "słuchać": "недолго: posłuchać",
+ "uczyć się": "результат: nauczyć się",
+ "pamiętać": "результат: zapamiętać; zapamiętywać - вторичный несовершенный",
+ "siedzieć": "смена состояния: usiąść; siadać - вторичный несовершенный",
+ "czekać": "недолго: poczekać",
+ "szukać": "результат: znaleźć; znajdować - вторичный несовершенный",
+ "rozmawiać": "недолго: porozmawiać",
+ "nieść": "результат: zanieść"
 };
 
 const WYBOR = [
@@ -1933,7 +1933,7 @@ const WYBOR_SLOWA = [
 const LICZ_GRUPA = [
  ["1","jeden duży dom","Mianownik ед.","jest · był","Jeden duży dom stoi pusty."],
  ["2, 3, 4","dwa duże domy","Mianownik мн.","są · były","Dwa duże domy zostały sprzedane."],
- ["5 и больше","pięć dużych domów","Dopełniacz мн.","jest · było","Pięć dużych domów zostało sprzedanych."],
+ ["5-9, 0, 11-14","pięć dużych domów","Dopełniacz мн.","jest · było","Pięć dużych domów zostało sprzedanych."],
  ["2-4, мужчины","dwaj dobrzy studenci","Mianownik мн.","czytają · czytali","Dwaj dobrzy studenci czytają."],
  ["2-4, мужчины - вариант","dwóch dobrych studentów","Dopełniacz мн.","czyta · czytało","Dwóch dobrych studentów czyta."],
  ["5+, мужчины","pięciu dobrych studentów","Dopełniacz мн.","czeka · czekało","Pięciu dobrych studentów czekało."]
@@ -1971,7 +1971,7 @@ const ADV_PRACTICE = {
     {id:"adv-1",prompt:"Mówię po polsku ___. (dobry)",answers:["dobrze"],explanation:"Наречие от dobry - dobrze: говорит как?"},
     {id:"adv-2",prompt:"Pociąg jedzie bardzo ___. (szybki)",answers:["szybko"],explanation:"Наречие от szybki - szybko."},
     {id:"adv-3",prompt:"Dzisiaj pracuję w domu, a ___ idę do biura.",options:["wczoraj","jutro","nigdy"],answers:["jutro"],explanation:"Завтра - jutro."},
-    {id:"adv-4",prompt:"___ mieszkasz? — W Warszawie.",options:["Kiedy","Gdzie","Jak"],answers:["Gdzie"],explanation:"О месте спрашиваем gdzie?"},
+    {id:"adv-4",prompt:"___ mieszkasz? - W Warszawie.",options:["Kiedy","Gdzie","Jak"],answers:["Gdzie"],explanation:"О месте спрашиваем gdzie?"},
     {id:"adv-5",prompt:"On mówi ___ niż ja. (cicho)",answers:["ciszej"],explanation:"Сравнительная степень от cicho - ciszej."},
     {id:"adv-6",prompt:"Autobus jest już ___.",options:["blisko","bliski","bliską"],answers:["blisko"],explanation:"Blisko - неизменяемое наречие «близко»."},
     {id:"adv-7",prompt:"W weekend wstaję ___. (późny)",answers:["późno"],explanation:"Наречие от późny - późno."},
@@ -2023,10 +2023,10 @@ const GROUPS = [
   ["Основы", [
     ["s-alpha","32 буквы, диграфы, носовые, ударение и ассимиляция"],
     ["s-rodz","Три мужских рода, исключения и несклоняемые слова на -um"],
+    ["s-alt","Сводная карта ó/o, ą/ę и изменений согласных"],
   ]],
   ["Склонение", [
     ["s-cases","Семь падежей: когда нужен, предлоги, окончания и чередования"],
-    ["s-alt","Сводная карта ó/o, ą/ę и изменений согласных"],
     ["s-adj","Одна парадигма на прилагательные, притяжательные и указательные"],
     ["s-pron","Личные, притяжательные, возвратные, указательные"],
     ["s-num","Какой падеж требует число и что делает с глаголом"],
@@ -2569,7 +2569,7 @@ const FALSE = [
  ["miasto","город","место - miejsce","Время и пространство"],
  ["dworzec","вокзал","дворец - pałac","Время и пространство"],
  ["pokój","комната; мир","только покой - spokój","Время и пространство"],
- ["ogród","сад","огород - warzywnik","Время и пространство"],
+ ["ogród","сад","огород - ogród warzywny / warzywnik","Время и пространство"],
 
  ["uroda","красота, внешность","урод - potwór","Люди и качества"],
  ["grzeczny","вежливый, послушный","грешный - grzeszny","Люди и качества"],
@@ -2619,7 +2619,7 @@ const FALSE = [
  ["awans","повышение по службе","аванс - zaliczka","Учёба, работа и другие ловушки"],
  ["zakaz","запрет","заказ - zamówienie","Учёба, работа и другие ловушки"],
  ["uwaga","внимание; замечание","уважение - szacunek","Учёба, работа и другие ловушки"],
- ["sprawa","дело, вопрос","справа - z prawej","Учёба, работа и другие ловушки"],
+ ["sprawa","дело, вопрос","справа - po prawej stronie / z prawej strony","Учёба, работа и другие ловушки"],
  ["rzecz","вещь; дело","речь - mowa","Учёба, работа и другие ловушки"],
  ["zdanie","предложение; мнение","здание - budynek","Учёба, работа и другие ловушки"],
  ["przykład","пример","приклад ружья - kolba","Учёба, работа и другие ловушки"],

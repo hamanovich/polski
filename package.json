@@ -4,7 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check app.js && node --check data.js && node --check client.js && node --check search-index.js && node --check scripts/build.mjs && node scripts/check-build.mjs"
+    "lint": "node scripts/lint-content.mjs",
+    "check": "node --check app.js && node --check data.js && node --check client.js && node --check search-index.js && node --check scripts/build.mjs && npm run lint && node scripts/check-build.mjs",
+    "drift": "git diff --stat --exit-code -- index.html 404.html search-index.js sitemap.xml fulltext.txt '*/index.html' ':!plan-40/index.html'",
+    "verify": "npm run build && npm run check && npm run drift",
+    "og": "node scripts/og-images.mjs"
   },
   "devDependencies": {
     "linkedom": "^0.18.12"

@@ -1,35 +1,56 @@
-import { readFile } from "node:fs/promises";
+import { readFile, access } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { parseHTML } from "linkedom";
+import { cardManifest } from "./og-card.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const baseURL = "https://polski.hamanovich.com/";
 const routes = [
-  ["s-index", ""], ["s-alpha", "alphabet"], ["s-rodz", "gender"], ["s-cases", "cases"],
-  ["s-alt", "alternations"], ["s-adj", "adjectives"], ["s-adv", "adverbs"],
-  ["s-pron", "pronouns"], ["s-q", "questions"], ["s-num", "numerals"], ["s-verbs", "verbs"],
-  ["s-vocab", "vocabulary"], ["s-talk", "speaking"],
-  ["s-neg", "negation"], ["s-order", "word-order"], ["s-impers", "impersonal"],
-  ["s-conj", "conjunctions"], ["s-part", "particles"], ["s-ludzie", "people"],
-  ["s-dim", "diminutives"], ["s-preps", "prepositions"], ["s-bridge", "language-bridges"]
+  ["s-index", "", "Польская грамматика"],
+  ["s-alpha", "alphabet", "Польский алфавит и произношение"],
+  ["s-rodz", "gender", "Род существительных в польском языке"],
+  ["s-cases", "cases", "Падежи польского языка"],
+  ["s-alt", "alternations", "Чередования в польском языке"],
+  ["s-adj", "adjectives", "Польские прилагательные"],
+  ["s-adv", "adverbs", "Наречия в польском языке"],
+  ["s-pron", "pronouns", "Местоимения польского языка"],
+  ["s-q", "questions", "Вопросы в польском языке"],
+  ["s-num", "numerals", "Числительные польского языка"],
+  ["s-verbs", "verbs", "Польские глаголы"],
+  ["s-vocab", "vocabulary", "Словарь польского языка"],
+  ["s-talk", "speaking", "Разговорный польский"],
+  ["s-neg", "negation", "Отрицание в польском языке"],
+  ["s-order", "word-order", "Порядок слов в польском языке"],
+  ["s-impers", "impersonal", "Безличные конструкции в польском языке"],
+  ["s-conj", "conjunctions", "Союзы польского языка"],
+  ["s-part", "particles", "Частицы польского языка"],
+  ["s-ludzie", "people", "Обращение, имена и национальности"],
+  ["s-dim", "diminutives", "Уменьшительные формы в польском языке"],
+  ["s-preps", "prepositions", "Предлоги польского языка"],
+  ["s-bridge", "language-bridges", "Польский через русский и белорусский"]
 ];
+const TOC_MIN = 6;
+const sitemapPaths = [...routes.map(([, path]) => path), "plan-40"];
 const routePaths = new Set([
   ...routes.map(([, path]) => `/${path ? `${path}/` : ""}`),
   "/plan-40/"
 ]);
 
-const [css, robots, sitemap, searchSource] = await Promise.all([
+const [css, robots, sitemap, searchSource, dataSource, appSource] = await Promise.all([
   readFile(resolve(root, "style.css"), "utf8"),
   readFile(resolve(root, "robots.txt"), "utf8"),
   readFile(resolve(root, "sitemap.xml"), "utf8"),
-  readFile(resolve(root, "search-index.js"), "utf8")
+  readFile(resolve(root, "search-index.js"), "utf8"),
+  readFile(resolve(root, "data.js"), "utf8"),
+  readFile(resolve(root, "app.js"), "utf8")
 ]);
 
 const documents = new Map();
 const titles = new Set();
-for(const [id, path] of routes){
+const headings = new Set();
+for(const [id, path, heading] of routes){
   const file = resolve(root, path, "index.html");
   const html = await readFile(file, "utf8");
   const { document } = parseHTML(html);
@@ -45,7 +66,11 @@ for(const [id, path] of routes){
   assert.equal(document.querySelector(".sec")?.getAttribute("role"), null);
   assert.equal(document.querySelectorAll("h1").length, 1);
   assert(document.querySelector("h1.page-title"));
+  assert.equal(document.querySelector("h1.page-title")?.textContent.trim(), heading, `${path || "/"} must lead with its own topic as h1`);
+  assert(!headings.has(heading), `Duplicate h1: ${heading}`);
+  headings.add(heading);
   assert(document.querySelector(".site-title[href]"));
+  assert.equal(document.querySelector('footer a[href="mailto:mail@hamanovich.com"]')?.textContent.trim(), "mail@hamanovich.com");
 
   const canonical = new URL(path ? `${path}/` : "", baseURL).href;
   assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute("href"), canonical);
@@ -55,6 +80,31 @@ for(const [id, path] of routes){
   assert(document.title.length > 20);
   assert(!titles.has(document.title), `Duplicate title: ${document.title}`);
   titles.add(document.title);
+
+  const socialCard = `${baseURL}og/${path || "index"}.png`;
+  assert.equal(document.querySelector('meta[property="og:image"]')?.getAttribute("content"), socialCard);
+  assert.equal(document.querySelector('meta[property="og:image:alt"]')?.getAttribute("content"), heading);
+  assert.equal(document.querySelector('meta[name="twitter:card"]')?.getAttribute("content"), "summary_large_image");
+  await access(resolve(root, "og", `${path || "index"}.png`));
+
+  const linkedData = [...document.querySelectorAll('script[type="application/ld+json"]')];
+  assert.equal(linkedData.length, 1, `${path || "/"} must carry exactly one JSON-LD block`);
+  const graph = JSON.parse(linkedData[0].textContent)["@graph"];
+  assert(graph.some(node => node["@type"] === "WebSite"));
+  const webpage = graph.find(node => String(node["@type"]).includes("WebPage"));
+  assert.equal(webpage.url, canonical);
+  assert.equal(webpage.name, document.title);
+  assert.equal(webpage.headline, heading);
+  assert.equal(webpage.inLanguage, "ru");
+  assert.match(webpage.dateModified, /^\d{4}-\d{2}-\d{2}$/, `${path || "/"} needs a dateModified`);
+  const breadcrumb = graph.find(node => node["@type"] === "BreadcrumbList");
+  if(id === "s-index") assert.equal(breadcrumb, undefined, "Homepage is the breadcrumb root, not a step in it");
+  else{
+    assert.equal(breadcrumb.itemListElement.length, 2, `${path}: breadcrumb must run root then topic`);
+    assert.equal(breadcrumb.itemListElement[0].item, baseURL);
+    assert.equal(breadcrumb.itemListElement[1].name, heading);
+    assert.equal(breadcrumb.itemListElement[1].item, undefined, "Last breadcrumb step carries no URL");
+  }
 
   assert.equal(document.querySelectorAll("#nav a[data-s]").length, routes.length);
   assert.equal(document.querySelectorAll("#nav .navgroup").length, 7, "Navigation must stay two-level: seven groups in one row");
@@ -77,6 +127,20 @@ for(const [id, path] of routes){
       assert(links.length === 1 || links.length === 2, `${path}: pager must hold one or two links`);
     }
   }
+  const ids = [...document.querySelectorAll("[id]")].map(node => node.id);
+  assert.equal(new Set(ids).size, ids.length, `${path || "/"} must not repeat an id`);
+  const anchored = [...document.querySelectorAll(".sec h3[id]")].filter(heading => !heading.closest(".practice"));
+  const toc = document.querySelector(".sec .toc");
+  if(id !== "s-index" && anchored.length >= TOC_MIN){
+    assert(toc, `${path} has ${anchored.length} subsections and needs its table of contents`);
+    const tocLinks = [...toc.querySelectorAll('a[href^="#"]')];
+    assert.equal(tocLinks.length, anchored.length, `${path}: table of contents must list every subsection`);
+    for(const link of tocLinks){
+      const target = decodeURIComponent(link.getAttribute("href").slice(1));
+      assert(document.getElementById(target), `${path}: dead anchor #${target}`);
+    }
+  }else assert.equal(toc, null, `${path || "/"} is too short for a table of contents`);
+
   assert.equal(document.querySelectorAll('#nav a[aria-current="page"]').length, 1);
   assert.equal(document.querySelector('#nav a[aria-current="page"]')?.dataset.s, id);
   assert.equal(document.querySelectorAll('a[href^="#s-"]').length, 0, "Legacy fragment links must be rewritten");
@@ -117,18 +181,43 @@ const speaking = documents.get("s-talk");
 assert(speaking.html.includes("Фразы спасения"));
 assert(speaking.html.includes("Co robiłeś w weekend?"));
 
-assert(documents.get("s-alt").html.includes("Чередования: сводная карта"));
+assert(documents.get("s-alt").html.includes("Окончание часто меняет последний звук основы"));
 assert(!documents.get("s-ludzie").html.includes("Wołacz - вкладка"));
 assert(documents.get("s-num").html.includes("Z iloma osobami rozmawiałeś?"));
-assert(documents.get("s-num").html.includes("pół procenta, półtora procenta"));
+assert(documents.get("s-num").html.includes("o czterdziestu procentach"));
+assert(documents.get("s-num").html.includes("Число на что оканчивается?"));
+assert(documents.get("s-num").html.includes("dwadzieścia jeden dom"));
+assert(!documents.get("s-num").html.includes("dwadzieścia jeden domów"));
 assert(documents.get("s-conj").html.includes("Po moim powrocie Anna zadzwoniła"));
+assert(documents.get("s-conj").html.includes("Powiedział, że zadzwoni i że przyjdzie"));
 assert(documents.get("s-q").html.includes("Którędy iść?"));
 assert(documents.get("s-cases").document.querySelector("#s-cases")?.textContent.includes("duchu"));
+assert(!documents.get("s-cases").html.includes("opiekować się, martwić się</span> + творительный"));
 assert(!documents.get("s-verbs").html.includes("Pociąg już odszedł"));
+assert(documents.get("s-verbs").html.includes("Вид не генерируется механически"));
+assert(vocabulary.html.includes("poznać"));
+assert(documents.get("s-verbs").html.includes("zniknął"));
+assert(documents.get("s-ludzie").html.includes("Регистр и уважительное обращение"));
+assert(documents.get("s-ludzie").html.includes("w Ukrainie / do Ukrainy"));
+assert(documents.get("s-ludzie").html.includes("u pani doktorki</span> не ошибка"));
 
 const order = documents.get("s-order");
 assert.equal(order.document.querySelectorAll("#s-order .vt")[0]?.querySelectorAll("tr").length, 4);
 assert(order.html.includes("Na stole są klucze"));
+assert(order.html.includes("Нейтрально и с акцентом"));
+assert(order.html.includes("Go widziałem wczoraj"));
+
+const pronouns = documents.get("s-pron");
+assert(pronouns.html.includes("Interesuję się nim"));
+
+assert(documents.get("s-talk").html.includes("Co to znaczy po rosyjsku?"));
+assert(!documents.get("s-talk").html.includes("Jak to znaczy po rosyjsku?"));
+
+assert(dataSource.includes('"martwić się","o kogo?","o + Biernik"'));
+assert(dataSource.includes('"znać": "новое состояние: poznać'));
+assert(!dataSource.includes("dwadzieścia jeden domów"));
+assert(!appSource.includes("Двигаешься - Biernik."));
+assert(!appSource.includes("подчинительными союзами запятая ставится <b>всегда</b>"));
 
 const particles = documents.get("s-part");
 assert(particles.html.includes("Норма с 1 января 2026 года"));
@@ -153,9 +242,51 @@ assert.match(robots, /User-agent: OAI-SearchBot\s+Allow: \//);
 assert.match(robots, /User-agent: \*\s+Allow: \//);
 assert.match(robots, /Sitemap: https:\/\/polski\.hamanovich\.com\/sitemap\.xml/);
 
+const ogManifest = JSON.parse(await readFile(resolve(root, "og", "manifest.json"), "utf8")
+  .catch(() => { throw new Error("og/manifest.json is missing: run npm run og"); }));
+const expectedCards = cardManifest();
+assert.deepEqual(
+  Object.keys(ogManifest).sort(),
+  Object.keys(expectedCards).sort(),
+  "og/manifest.json must list exactly the pages that need a social card"
+);
+for(const [name, fingerprint] of Object.entries(expectedCards)){
+  assert.equal(ogManifest[name], fingerprint, `og/${name}.png is stale: rerun npm run og`);
+}
+
+const planHTML = await readFile(resolve(root, "plan-40", "index.html"), "utf8");
+const plan = parseHTML(planHTML).document;
+assert.equal(plan.querySelectorAll("h1").length, 1, "plan-40 is hand written but still needs one h1");
+assert.equal(plan.querySelector('link[rel="canonical"]')?.getAttribute("href"), `${baseURL}plan-40/`);
+assert.equal(plan.querySelector('meta[property="og:url"]')?.getAttribute("content"), `${baseURL}plan-40/`);
+assert.equal(plan.querySelector('meta[property="og:image"]')?.getAttribute("content"), `${baseURL}og/plan-40.png`);
+assert.equal(plan.querySelector('meta[name="twitter:card"]')?.getAttribute("content"), "summary_large_image");
+await access(resolve(root, "og", "plan-40.png"));
+const planGraph = JSON.parse(plan.querySelector('script[type="application/ld+json"]').textContent)["@graph"];
+assert.equal(planGraph.find(node => String(node["@type"]).includes("WebPage")).url, `${baseURL}plan-40/`);
+assert.equal(planGraph.find(node => node["@type"] === "BreadcrumbList").itemListElement.length, 2);
+
+const notFoundHTML = await readFile(resolve(root, "404.html"), "utf8");
+const notFound = parseHTML(notFoundHTML).document;
+assert.equal(notFound.title, "Страница не найдена - Polski: końcówki");
+assert.equal(notFound.querySelectorAll("h1").length, 1);
+assert.equal(notFound.querySelector("h1")?.textContent.trim(), "Этой страницы нет");
+assert.equal(notFound.querySelector('meta[name="robots"]')?.getAttribute("content"), "noindex");
+assert.equal(notFound.querySelector('a[href="/"]')?.textContent.trim(), "Polski: końcówki");
+assert.equal(notFound.querySelector(".error-actions a[href='/']")?.textContent.trim(), "На главную");
+assert.equal(notFound.querySelector('a[href="mailto:mail@hamanovich.com"]')?.textContent.trim(), "mail@hamanovich.com");
+assert.match(notFound.querySelector('link[rel="stylesheet"]')?.getAttribute("href") || "", /^\/style\.css\?v=[a-f0-9]{10}$/);
+for(const node of notFound.querySelectorAll("link[href],script[src],a[href]")){
+  const url = node.getAttribute("href") || node.getAttribute("src");
+  assert(/^(?:[a-z]+:|\/|#)/i.test(url), `404 is served at the missing path, so ${url} must be root absolute`);
+}
+assert.deepEqual([...notFound.querySelectorAll("#theme button")].map(button => button.textContent.trim()), ["светлая", "тёмная"]);
+assert.match(notFoundHTML, /document\.documentElement\.classList\.add\("js"\)/);
+
 const sitemapURLs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert.equal(sitemapURLs.length, routes.length);
-assert.deepEqual(sitemapURLs, routes.map(([, path]) => new URL(path ? `${path}/` : "", baseURL).href));
+assert.equal(sitemapURLs.length, sitemapPaths.length);
+assert.deepEqual(sitemapURLs, sitemapPaths.map(path => new URL(path ? `${path}/` : "", baseURL).href));
+assert.equal([...sitemap.matchAll(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g)].length, sitemapPaths.length, "Every sitemap URL needs a lastmod");
 assert(!sitemap.includes("#"), "Sitemap must contain canonical HTTP URLs, not fragments");
 
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");

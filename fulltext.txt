@@ -4,9 +4,9 @@ Polski: końcówki
 светлаятёмная
 Оглавление
 Основы
-Алфавит32 буквы, диграфы, носовые, ударение и ассимиляцияРодТри мужских рода, исключения и несклоняемые слова на -um
+Алфавит32 буквы, диграфы, носовые, ударение и ассимиляцияРодТри мужских рода, исключения и несклоняемые слова на -umЧередованияСводная карта ó/o, ą/ę и изменений согласных
 Склонение
-СуществительныеСемь падежей: когда нужен, предлоги, окончания и чередованияЧередованияСводная карта ó/o, ą/ę и изменений согласныхПрилагательныеОдна парадигма на прилагательные, притяжательные и указательныеМестоименияЛичные, притяжательные, возвратные, указательныеЧислительныеКакой падеж требует число и что делает с глаголом
+СуществительныеСемь падежей: когда нужен, предлоги, окончания и чередованияПрилагательныеОдна парадигма на прилагательные, притяжательные и указательныеМестоименияЛичные, притяжательные, возвратные, указательныеЧислительныеКакой падеж требует число и что делает с глаголом
 Глагол
 ГлаголыСпряжения, времена и вид, причастия и управление слов
 Словарь и речь
@@ -20,9 +20,9 @@ Polski: końcówki
 Все разделы
 Начало
 ОглавлениеОсновы
-АлфавитРод
+АлфавитРодЧередования
 Склонение
-СуществительныеЧередованияПрилагательныеМестоименияЧислительные
+СуществительныеПрилагательныеМестоименияЧислительные
 Глагол
 Глаголы
 Словарь и речь
@@ -34,13 +34,13 @@ Polski: końcówki
 Живая речь
 ЛюдиУменьшительныеМосты
 Справочник
-Польская грамматика без лишней теории: выберите тему или найдите нужную форму поиском.
+Без лишней теории: выберите тему или найдите нужную форму поиском.
 Основы
 Алфавит32 буквы, диграфы, носовые, ударение и ассимиляция
 РодТри мужских рода, исключения и несклоняемые слова на -um
+ЧередованияСводная карта ó/o, ą/ę и изменений согласных
 Склонение
 СуществительныеСемь падежей: когда нужен, предлоги, окончания и чередованияMianownikBiernikDopełniaczCelownikNarzędnikMiejscownikWołacz
-ЧередованияСводная карта ó/o, ą/ę и изменений согласных
 ПрилагательныеОдна парадигма на прилагательные, притяжательные и указательные
 МестоименияЛичные, притяжательные, возвратные, указательные
 ЧислительныеКакой падеж требует число и что делает с глаголом
@@ -87,7 +87,7 @@ szcz - это не «щ». Русское «щ» - один долгий мяг�
 Носовые ą / ę: как реально звучат
 Это не «он/эн», а именно носовой звук - но в разных позициях он меняется почти до неузнаваемости.
 позициязвучит какпримеры
-перед b, pom, emdąb [domp], zęby [zemby]перед d, t, dz, c, czon, enkąt [kont], kolęda [kolenda]перед ć/ci, dź/dzioń, eńbędzie [beńdzie]перед g, kносовое, ближе к он/энmąka, rękaперед f, w, s, z, sz, rz, ż, chчистый носовой звукwąski, węchперед ł, lтеряется, чистое o / eminął [minoł], zaczęli [zaczeli]на конце словаą - носовое; ę - часто теряет носовостьidą [идон]; proszę ≈ [proше]
+перед b, pom, emdąb [domp], zęby [zemby]перед d, t, dz, c, czon, enkąt [kont], kolęda [kolenda]перед ć/ci, dź/dzioń, eńbędzie [beńdzie]перед g, kносовое, ближе к он/энmąka, rękaперед f, w, s, z, sz, rz, ż, chчистый носовой звукwąski, węchперед ł, lтеряется, чистое o / eminął [миноў], zaczęli [zaczeli]на конце словаą - носовое; ę - часто теряет носовостьidą [идон]; proszę ≈ [proше]
 Мост для русскоязычных. Там, где в польском ą/ę, в русском часто «у» или «я»: после твёрдой согласной - «у» (ręka - рука, mąka - мука, ząb - зуб), после мягкой - «я» (pięć - пять, mięso - мясо).
 Звонкие и глухие
 Пары те же, что в русском, и правило то же - но написание их не показывает никогда. Слово пишется как есть, а читается по позиции.
@@ -285,7 +285,7 @@ pieniądzepieniądzeне мужско-личное: mam pieniądzerękarękępan
 Само окончание -ę у тебя стоит с первого блока. Ошибки идут не отсюда, а из соседних клеток: числительные, отрицание, глагольное управление.
 Dopełniacz
 Родительный · вопросы: kogo? czego?
-Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После 5 и больше: pięć biletów. Также после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.
+Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После числительных на 5-9 и 0, а также после 11-14: pięć biletów, dwanaście biletów. Также после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.
 Предлогиdo, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast
 Окончания существительных
 муж. одушевл.
@@ -319,7 +319,7 @@ rękarąkмн. ч.roklatмн. ч.człowiekludziмн. ч.pieniądzepieniędzydzie
 Родительный стоит четвёртым блоком не случайно: без него нельзя построить ни одного отрицания. Это самый частотный падеж в бытовой речи после винительного.
 Dopełniacz
 Родительный · вопросы: kogo? czego?
-Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После 5 и больше: pięć biletów. Также после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.
+Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После числительных на 5-9 и 0, а также после 11-14: pięć biletów, dwanaście biletów. Также после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.
 Предлогиdo, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast
 Окончания существительных
 мужской
@@ -404,7 +404,7 @@ jami / mnieкороткая mi - обычная, mnie - под ударение�
 Самый лёгкий падеж для тебя: функция и конструкции почти полностью совпадают с русским «мне». Главное - не забыть, что после dziękować идёт он, а не винительный.
 Narzędnik
 Творительный · вопросы: kim? czym?
-Когда нуженПрофессия и роль после być, zostać, zostawać: jestem programistą.Орудие: piszę długopisem.Транспорт: jadę autobusem - без предлога.Совместность: kawa z mlekiem, idę z bratem.Глаголы: interesować się, zajmować się, opiekować się, martwić się + творительный.
+Когда нуженПрофессия и роль после być, zostać, zostawać: jestem programistą.Орудие: piszę długopisem.Транспорт: jadę autobusem - без предлога.Совместность: kawa z mlekiem, idę z bratem.Глаголы: interesować się, zajmować się, opiekować się + творительный.
 Предлогиz (с кем/чем), nad, pod, przed, za, między, poza - все в значении «где»
 Окончания существительных
 муж. и средний
@@ -426,7 +426,7 @@ ja / tymną / tobąon / onanim / niąпосле предлога: z nim, z niąm
 Здесь ошибка не в окончании, а в самом решении поставить падеж. Окончания -em / -ą простые, чередований почти нет. Вся сложность - вспомнить, что после być нужен именно этот падеж.
 Narzędnik
 Творительный · вопросы: kim? czym?
-Когда нуженПрофессия и роль после być, zostać, zostawać: jestem programistą.Орудие: piszę długopisem.Транспорт: jadę autobusem - без предлога.Совместность: kawa z mlekiem, idę z bratem.Глаголы: interesować się, zajmować się, opiekować się, martwić się + творительный.
+Когда нуженПрофессия и роль после być, zostać, zostawać: jestem programistą.Орудие: piszę długopisem.Транспорт: jadę autobusem - без предлога.Совместность: kawa z mlekiem, idę z bratem.Глаголы: interesować się, zajmować się, opiekować się + творительный.
 Предлогиz (с кем/чем), nad, pod, przed, za, między, poza - все в значении «где»
 Окончания существительных
 все роды: регулярно
@@ -579,7 +579,7 @@ Mianownik множественного - мужско-личные формы Po
 Спряжения: изменения основы - pisać → piszę, móc → możesz и другие модели.
 Прошедшее время - musiał, zaczęła, mógł.
 Прилагательные
-Одна парадигма на все прилагательные, притяжательные (mój, twój, nasz) и указательные. Выучив её, закрываешь сразу три класса слов.
+Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (mój, twój, nasz). Jego, jej, ich - исключение: они не склоняются.
 dobry - полная парадигма
 падежмуж.жен.ср.мн. мужчинымн. остальное
 MianownikdobrydobradobredobrzydobreDopełniaczdobregodobrejdobregodobrychdobrychCelownikdobremudobrejdobremudobrymdobrymBiernikdobry / dobregodobrądobredobrychdobreNarzędnikdobrymdobrądobrymdobrymidobrymiMiejscownikdobrymdobrejdobrymdobrychdobrych
@@ -643,7 +643,7 @@ szybkoszybciejnajszybciejk → c, как в прилагательномładnie�
 Личные
 ктокого / чегокомукого / чтокем(о) ком
 jamniemi / mniemniemnąmnietyciebie / cięci / tobieciebie / ciętobątobieonjego / go / niegomu / jemu / niemujego / go / niegonimnimonojego / go / niegomu / jemu / niemuje / nienimnimonajej / niejjej / niejją / niąniąniejmynasnamnasnaminaswywaswamwaswamiwasoniich / nichim / nimich / nichniminichoneich / nichim / nimje / nieniminich
-Формы на n- ставятся только после предлога. Widzę go, но idę do niego. Mówię jej, но mówię o niej. Это механическое правило, ошибок не даёт, если помнить о нём.
+Формы niego, niej, nich ставятся после предлога. Widzę go, но idę do niego. Mówię jej, но mówię o niej. В творительном формы nim, nią, nimi имеют n и без предлога: Interesuję się nim.
 Короткие формы go, mu, cię, ci, mi безударные. Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: Mnie to nie interesuje.
 Личное местоимение обычно опускается. Окончание глагола уже содержит лицо: idę, а не ja idę. Постоянное ja звучит либо как нажим, либо как речь иностранца.
 Вежливое обращение - третье лицо. Czy pan ma paragon? Форма на ty с незнакомым воспринимается как хамство, в отличие от русского, где «вы» - просто множественное.
@@ -751,17 +751,19 @@ sklep, w którym pracujęмагазин, в котором я работаюMiej
 Без который не построить сложное предложение. Именно он позволяет сказать не «Это магазин. Я там работаю», а «Это магазин, в котором я работаю» - то есть перейти от двух коротких фраз к одной развёрнутой.
 Числительные
 Главная сложность не в самих числах, а в том, какой падеж они требуют от существительного и что делают с глаголом.
-Три режима. 1 → всё в единственном числе. 2, 3, 4 → Mianownik множественного, глагол во множественном. 5 и больше → Dopełniacz множественного, глагол в среднем роде единственного: pięć osób było.
+Три основных режима. Числительное на 1, кроме 11, требует Mianownik единственного: dwadzieścia jeden dom był. На 2, 3, 4, кроме 12-14, - Mianownik множественного и глагол во множественном: dwadzieścia dwa domy były. На 5-9, 0 и на 11-14 - Dopełniacz множественного и глагол в среднем роде единственного: pięć osób było.
 Количественные: 0–20
 0zero1jeden2dwa3trzy4cztery5pięć6sześć7siedem8osiem9dziewięć10dziesięć11jedenaście12dwanaście13trzynaście14czternaście15piętnaście16szesnaście17siedemnaście18osiemnaście19dziewiętnaście20dwadzieścia
 Десятки, сотни, тысячи
 30trzydzieści40czterdzieści50pięćdziesiąt60sześćdziesiąt70siedemdziesiąt80osiemdziesiąt90dziewięćdziesiąt100sto200dwieście300trzysta400czterysta500pięćset600sześćset700siedemset800osiemset900dziewięćset1 000tysiąc10⁶milion
 Составные пишутся раздельно и без «и»: dwadzieścia jeden (21) · sto trzydzieści siedem (137) · dwa tysiące dwadzieścia sześć (2026).
-Род есть только у 1 и 2. jeden dom · jedna książka · jedno okno; dwa domy · dwie książki · dwa okna. Начиная с trzy род не различается.
+У базовых количественных форм род различается у 1 и 2. jeden dom · jedna książka · jedno okno; dwa domy · dwie książki · dwa okna. У мужско-личных групп есть отдельные формы dwaj, trzej, czterej.
 Согласование с существительным
 числосуществительноепримерглагол
-1Mianownik ед. ч.jeden dom · jedna książka · jedno oknojest / był2, 3, 4Mianownik мн. ч.dwa domy · trzy książki · cztery oknasą / były5 и большеDopełniacz мн. ч.pięć domów · dziesięć książek · sto okienjest / było12, 13, 14Dopełniacz мн. ч.dwanaście domów · czternaście książekjest / było22, 23, 24Mianownik мн. ч.dwadzieścia dwa domy · trzydzieści trzy książkisą / były21, 25, 31…Dopełniacz мн. ч.dwadzieścia jeden domów · trzydzieści pięć książekjest / było
-Смотрим только на последнее слово числительного. Но 11–14 всегда ведут себя как «5 и больше»: dwanaście domów, не «dwanaście domy».
+1Mianownik ед. ч.jeden dom · jedna książka · jedno oknojest / był2, 3, 4Mianownik мн. ч.dwa domy · trzy książki · cztery oknasą / były5-9, 0, 11-14Dopełniacz мн. ч.pięć domów · dziesięć książek · czternaście okienjest / było22, 23, 24Mianownik мн. ч.dwadzieścia dwa domy · trzydzieści trzy książkisą / były21, 31, 41...Mianownik ед. ч.dwadzieścia jeden dom · trzydzieści jedna książkajest / był25, 35, 100...Dopełniacz мн. ч.dwadzieścia pięć domów · sto okienjest / było
+В составных числительных смотрим на последнюю цифру: 22 domy, 25 domów. Исключение - 11-14: они всегда требуют Dopełniacz множественного, dwanaście domów, не «dwanaście domy».
+Число на что оканчивается?
+Быстрая схема. 21, 31, 41... обычно требуют единственного числа: dwadzieścia jeden dom. Окончания 2-4, кроме 12-14, дают множественное: 22 domy. Окончания 5-9, 0 и числа 11-14 - Dopełniacz множественного: 25 domów, 30 domów, 114 domów. Возраст запоминай отдельно: mam 21 lat, 22 lata, 25 lat. Для мужчин есть свои формы: dwaj / dwóch studentów.
 Мужско-личные формы
 Если считаем мужчин, у числительного появляется отдельная форма - и она меняет весь остальной падеж и глагол.
 формасуществительноеглаголпример
@@ -770,19 +772,19 @@ dwaj · trzej · czterejMianownik мн. ч.глагол во мн. ч.Dwaj stude
 Число + прилагательное + существительное + глагол
 Числительное задаёт падеж существительному, прилагательное просто следует за существительным, а глагол смотрит на числительное. Три согласования в одной фразе - здесь и ломается всё, что выучено по отдельности.
 числогруппападеж группыглаголпример
-1jeden duży domMianownik ед.jest · byłJeden duży dom stoi pusty.2, 3, 4dwa duże domyMianownik мн.są · byłyDwa duże domy zostały sprzedane.5 и большеpięć dużych domówDopełniacz мн.jest · byłoPięć dużych domów zostało sprzedanych.2-4, мужчиныdwaj dobrzy studenciMianownik мн.czytają · czytaliDwaj dobrzy studenci czytają.2-4, мужчины - вариантdwóch dobrych studentówDopełniacz мн.czyta · czytałoDwóch dobrych studentów czyta.5+, мужчиныpięciu dobrych studentówDopełniacz мн.czeka · czekałoPięciu dobrych studentów czekało.
-Прилагательное согласуется с существительным, а не с числительным. При 5+ вся группа целиком уходит в Dopełniacz множественного: pięć dużych domów, dziesięć nowych samochodów, pięć dużych książek. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.
-Самое трудное место - пассив и прошедшее при 5+. Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: Pięć dużych domów zostało sprzedanych. Сравни с 2-4, где всё обычное: Dwa duże domy zostały sprzedane. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.
+1jeden duży domMianownik ед.jest · byłJeden duży dom stoi pusty.2, 3, 4dwa duże domyMianownik мн.są · byłyDwa duże domy zostały sprzedane.5-9, 0, 11-14pięć dużych domówDopełniacz мн.jest · byłoPięć dużych domów zostało sprzedanych.2-4, мужчиныdwaj dobrzy studenciMianownik мн.czytają · czytaliDwaj dobrzy studenci czytają.2-4, мужчины - вариантdwóch dobrych studentówDopełniacz мн.czyta · czytałoDwóch dobrych studentów czyta.5+, мужчиныpięciu dobrych studentówDopełniacz мн.czeka · czekałoPięciu dobrych studentów czekało.
+Прилагательное согласуется с существительным, а не с числительным. При числительных на 5-9, 0 и при 11-14 вся группа целиком уходит в Dopełniacz множественного: pięć dużych domów, dziesięć nowych samochodów, pięć dużych książek. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.
+Самое трудное место - пассив и прошедшее при числительных на 5-9, 0 и 11-14. Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: Pięć dużych domów zostało sprzedanych. Сравни с 2-4, где всё обычное: Dwa duże domy zostały sprzedane. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.
 Женский род ничем не отличается. dwie duże książki są · pięć dużych książek jest. Род виден только у dwa / dwie, дальше механика та же.
 Склонение
 падеж2345
 Mianownikdwa · dwie · dwajtrzy · trzejcztery · czterejpięć · pięciuDopełniaczdwóchtrzechczterechpięciuCelownikdwómtrzemczterempięciuBiernikdwa · dwie · dwóchtrzy · trzechcztery · czterechpięć · pięciuNarzędnikdwoma · dwiematrzemaczteremapięciomaMiejscownikdwóchtrzechczterechpięciu
-Все числительные от 5 до 100 склоняются по образцу pięć: pięciu, pięciu, pięć, pięcioma, pięciu. В Narzędnik женское dwiema - единственная форма, где род ещё виден.
+Числительные от 5 до 90 склоняются по образцу pięć: pięciu, pięciu, pięć, pięcioma, pięciu. Sto и сотни имеют свои модели. В Narzędnik женское dwiema сохраняет род.
 Порядковые
 1pierwszy2drugi3trzeci4czwarty5piąty6szósty7siódmy8ósmy9dziewiąty10dziesiąty11jedenasty12dwunasty13trzynasty14czternasty15piętnasty16szesnasty17siedemnasty18osiemnasty19dziewiętnasty20dwudziesty30trzydziesty40czterdziesty50pięćdziesiąty100setny1000tysięczny
 Склоняются как обычные прилагательные: pierwszy, pierwszego, pierwszemu… В составных порядковыми становятся только десятки и единицы - последние два слова; сотни и тысячи остаются количественными: dwudziesty pierwszy · tysiąc dziewięćset dziewięćdziesiąty dziewiąty.
 Собирательные
-Обязательны для детей, смешанных групп людей и слов, у которых нет единственного числа. Требуют Dopełniacz и глагол в среднем роде. Исключение - oboje rodzice: Mianownik и обычное согласование.
+Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. Требуют Dopełniacz и глагол в среднем роде. Исключение - oboje rodzice: Mianownik и обычное согласование.
 формапереводпример
 dwojeдвоеdwoje dzieci · dwoje ludzitrojeтроеtroje rodzeństwa · troje drzwiczworoчетвероczworo studentów - смешанная группа студентовpięcioroпятероpięcioro kurczątobojeоба (он и она)oboje rodzice (не «rodziców») · obojga rodzicówkilkoroнесколько (о людях)kilkoro znajomych
 Troje dzieci bawiło się w ogrodzie. - глагол в среднем роде единственного числа. Три женщины - это trzy kobiety, а мужчина с женщиной - dwoje ludzi.
@@ -814,7 +816,7 @@ za tydzień - это «через неделю», а не «за неделю».
 Часть времени вообще обходится без предлога. rano, wieczorem, nocą, latem, zimą - Narzędnik без w. Но w nocy и nocą сосуществуют, а rankiem звучит книжно рядом с обычным rano.
 Возраст, деньги, счёт
 Сколько тебе лет?Ile masz lat?
-1 / 2–4 / 5+rok · lata · lat - mam 21 lat, 22 lata, 25 lat
+1 / 2-4 / остальныеrok · lata · lat - mam 21 lat, 22 lata, 25 lat
 деньгиzłoty · złote · złotych - 2 złote, 5 złotych, 22 złote
 неточный счётkilka · kilkanaście (11–19) · kilkadziesiąt · parę
 ile / ilu: сначала определи падеж всей группы. В Mianownik и Biernik после ile существительное стоит в Dopełniacz множественного числа: ile osób, ile lat, ile pieniędzy; у несчётных - в единственном: ile czasu, ile cukru. О мужчинах - форма ilu: ilu studentów, ilu ludzi, а глагол обычно в среднем роде единственного числа: Ilu ludzi przyszło? В косвенных падежах склоняется вся группа: Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?
@@ -823,11 +825,11 @@ ile / ilu: сначала определи падеж всей группы. В 
 1/2pół · połowapół godziny · połowa klasy · o pół roku starszy1/4ćwierććwierć litra · kwadrans - это четверть часа3/4trzy czwartetrzy czwarte szklanki1,5półtora · półtorejpółtora roku (м. и ср.) · półtorej godziny (ж.)2,5dwa i półdwa i pół tygodnia
 półtora или półtorej. Единственная дробь с родом: półtora roku, półtora kilo - мужской и средний, półtorej godziny, półtorej minuty - женский. После pół и półtora существительное идёт в Dopełniacz.
 Десятичные
-0,5zero przecinek pięć3,14trzy przecinek czternaście2,75dwa przecinek siedemdziesiąt pięć1,20 złjeden złoty dwadzieścia36,6°trzydzieści sześć i sześć
+0,5zero przecinek pięć3,14trzy przecinek czternaście2,75dwa przecinek siedemdziesiąt pięć1,20 złjeden złoty dwadzieścia groszy36,6°trzydzieści sześć przecinek sześć stopnia
 Разделитель дробной части - запятая, читается przecinek. Точка в этой роли не используется вообще.
 Проценты
 1%jeden procent2%dwa procent5%pięć procent20%dwadzieścia procent0,5%pół procent100%sto procent
-procent после числительного не склоняется. dwa procent, pięć procent, sto procent - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: pół procent, półtora procent, dwa i pół procent - и остаётся такой во всех падежах: o dwóch i pół procent. Формы pół procenta, półtora procenta часто слышны в живой речи, но словарная норма их не рекомендует. Склоняется procent только там, где числительного рядом нет: w stu procentach («на все сто»), wysokość procentu.
+procent после количественного числительного. В Mianownik, Dopełniacz и Biernik форма обычно остаётся procent: dwa procent, pięć procent, sto procent. В Dativ, Narzędnik и Miejscownik она склоняется: stu procentom, z pięcioma procentami, o czterdziestu procentach. После дробных числительных форма застывает во всех падежах: pół procent, półtora procent, dwa i pół procent, o pięciu i pół procent.
 СпряженияВременаНаклоненияПричастия и пассивУправление
 Четыре спряжения
 Тип определяется парой форм «я» и «ты»: -ę/-esz, -ę/-isz, -am/-asz, -em/-esz. Знаешь пару - знаешь всю парадигму.
@@ -836,7 +838,7 @@ procent после числительного не склоняется. dwa pro
 I-ę / -eszII-ę / -iszIII-am / -aszIV-em / -esz
 ja-ę-ę-am-emty-esz-isz / -ysz-asz-eszon / ona-e-i / -y-a-emy-emy-imy / -ymy-amy-emywy-ecie-icie / -ycie-acie-ecieoni / one-ą-ą-ają / -adzą-eją / -edzą
 Как определить спряжение по инфинитиву
-I Односложные на -ić/-yć/-uć (pić, żyć, czuć) · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · всё на -ować / -ywać / -iwać / -awać · часть глаголов на -ać (pisać, brać, jechać, płakać).II Двусложные и длиннее на -ić / -yć (mówić, robić, tańczyć, uczyć) · многие на -eć (widzieć, siedzieć, myśleć, słyszeć).III Большинство глаголов на -ać: czytać, mieszkać, czekać, kochać, pytać, słuchać, śpiewać, oglądać, pamiętać, sprzątać, zaczynać, wracać.IV wiedzieć · jeść · umieć · rozumieć · śmieć - и всё, что от них: powiedzieć, opowiedzieć, zjeść, zrozumieć.
+I Односложные на -ić/-yć/-uć (pić, żyć, czuć) · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · большинство на -ować и часть на -ywać / -iwać · часть глаголов на -ać (pisać, brać, jechać, płakać).II Двусложные и длиннее на -ić / -yć (mówić, robić, tańczyć, uczyć) · многие на -eć (widzieć, siedzieć, myśleć, słyszeć).III Большинство глаголов на -ać: czytać, mieszkać, czekać, kochać, pytać, słuchać, śpiewać, oglądać, pamiętać, sprzątać, zaczynać, wracać.IV wiedzieć · jeść · umieć · rozumieć · śmieć - и всё, что от них: powiedzieć, opowiedzieć, zjeść, zrozumieć.
 Приём для -ać и -eć. Переведи глагол на русский и поставь в форму «ты». Слышишь -ае- (читаешь) → III: czytasz. Слышишь -и- (стоишь) → II: stoisz. Слышишь -е- (пишешь) → I: piszesz. Работает только на похожих словах.
 Правило бабочки
 У глагола максимум две основы. Маленькое крыло - ja и oni, большое - ty, on, my, wy. Знаешь по одному слову из каждого крыла - достроишь всю таблицу.
@@ -966,23 +968,23 @@ oni umieją
 powiedziećсказать
 powiempowieszpowiepowiemypowieciepowiedzą
 совершенный вид → будущее время
--ować · -ywać · -iwać → -uj-
-Отбрасываем окончание, ставим -uj-, дальше окончания I спряжения. Огромная группа, всегда предсказуема.
+-ować и часть глаголов на -ywać / -iwać → -uj-
+У большинства глаголов на -ować и у части глаголов на -ywać / -iwać отбрасываем окончание, ставим -uj-, дальше окончания I спряжения.
 pracowaćработатьjatyon / onamywyoni / one
 pracujępracujeszpracujepracujemypracujeciepracują
 kupować → kupuję · studiować → studiuję · gotować → gotuję · dziękować → dziękuję · fotografować → fotografuję · wychowywać → wychowuję · pokazywać → pokazuję · zapisywać → zapisuję
-Условие: после отбрасывания должен остаться хотя бы слог. Поэтому chować не сюда: chowam, chowasz - III спряжение.
+Не все глаголы с похожим окончанием идут по этой модели: bywać → bywam, zdobywać → zdobywam, przeżywać → przeżywam. chować → chowam, chowasz тоже относится к III спряжению.
 Глаголы на -nąć
 Настоящее (или простое будущее, если вид совершенный) - по I спряжению: zamknę, zamkniesz, zamknie, zamkniemy, zamkniecie, zamkną.
 типпрошедшеепример
--ną- остаётся (ą → ę)zamknął / zamknęłazamknąć, ciągnąć, krzyknąć
--ną- выпадаетrósł / rosła / roślirosnąć, marznąć, zniknąć
+-ną- остаётся (ą → ę)zamknął / zamknęłazamknąć, ciągnąć, krzyknąć, zniknąć
+-ną- выпадаетrósł / rosła / roślirosnąć, marznąć
 две формыniknął = nikłniknąć, więdnąć
-Правило большого пальца: совершенные обычно сохраняют -ną-, несовершенные чаще теряют.
+Вид не предсказывает форму: ciągnąć несовершенный, но ciągnął; zniknąć совершенный, но zniknął. Форму прошедшего времени у таких глаголов нужно запоминать вместе с инфинитивом.
 Чередования в основе
 былосталогде
 s → szpisać → piszę, piszeszIk → czpłakać → płaczę · piec → pieczeszIg → żmóc → możesz · strzec → strzeżeszIr → rzbrać → bierzesz · prać → pierzeszIt → czszeptać → szepczęIst → szczchlustać → chluszczęId → dzijechać → jedziesz · iść → idzieszIsi → szprosić → proszę · musieć → muszęIIzi → żwozić → wożę · grozić → grożęIIci → cpłacić → płacę · wrócić → wrócęIIdzi → dzchodzić → chodzę · widzieć → widzęIIździ → żdżjeździć → jeżdżęIIści → szczczyścić → czyszczęII
-Важно. В II спряжении чередование живёт только в формах ja и oni: proszę / proszą, но prosisz, prosi, prosimy, prosicie. В I спряжении - наоборот, чаще во всех формах, кроме ja/oni.
+Важно. Таблица показывает частые модели, а не одно правило для всех спряжений. У многих глаголов II спряжения чередование видно в ja и oni: proszę / proszą, но prosisz, prosi, prosimy, prosicie. У глаголов I спряжения распределение другое: piszę, piszesz, piszą; jadę, jedziesz, jadą. Учи форму ja, форму ty и форму oni как модель конкретного глагола.
 być - отдельная песня
 byćбытьjatyon / onamywyoni / one
 настоящееjestemjesteśjestjesteśmyjesteściesą
@@ -997,16 +999,18 @@ znać или wiedzieć. Критерий не «объект или факт», 
 Времён три, но выбор формы начинается с вида глагола. Сначала вид - потом время.
 Главное правило. У совершенного вида нет настоящего времени. zrobię - это «сделаю», а не «делаю». Настоящее возможно только у несовершенного: robię.
 Как образуется вид
-Список пар ниже проще запомнить, если видеть механизм: способов всего четыре, и три из них предсказуемы.
+Список пар ниже проще запоминать, если видеть механизм. Но приставка или суффикс не гарантируют нужную пару: значение и вид всегда проверяй по словарю.
 способчто делаетпримеры
 приставканесовершенный → совершенныйrobić → zrobić · pisać → napisać · czytać → przeczytać · jeść → zjeść · pić → wypić · dzwonić → zadzwonićсуффикс -ywa- · -iwa- · -owa- · -a-совершенный → вторичный несовершенныйdać → dawać · kupić → kupować · otworzyć → otwierać · zamknąć → zamykać · pokazać → pokazywać · zapisać → zapisywaćчередование в корнепара без приставкиzacząć → zaczynać · wrócić → wracać · spotkać → spotykać · rzucić → rzucaćразные словасупплетивы, учить паройbrać → wziąć · mówić → powiedzieć · widzieć → zobaczyć · oglądać → obejrzeć · kłaść → położyć
 Приставка меняет не только вид. pisać → napisać - тот же смысл, только законченный. Но pisać → podpisać (подписать), przepisać (переписать), zapisać (записать), wypisać (выписать) - это уже другие глаголы. «Чистая» приставка, которая меняет только вид, у каждого глагола своя, и её учат вместе со словом.
 Цепочка работает в обе стороны. pisać (несов.) → podpisać (сов., новое значение) → podpisywać (несов. от нового значения). Приставка даёт совершенный вид, суффикс возвращает несовершенный. Так устроена почти вся глагольная лексика: czytać → przeczytać, но czytać → odczytać → odczytywać.
+Вид не генерируется механически
+Запоминай не приставку, а цепочку. Сначала проверь словарную пару: czytać → przeczytać. Если приставка создаёт новое значение, это уже новое слово: pisać → podpisać. Для такого совершенного глагола при необходимости учи и вторичный несовершенный: podpisać → podpisywać. В записи слова полезно держать сразу три пометы: значение, вид и управление.
 Вид: пары глаголов
 несовершенныйсовершенныйперевод
 robićzrobićделатьpisaćnapisaćписатьczytaćprzeczytaćчитатьjeśćzjeśćестьpićwypićпитьkupowaćkupićпокупатьdawaćdaćдаватьbraćwziąćбратьmówićpowiedziećговоритьwidziećzobaczyćвидетьoglądaćobejrzećсмотретьiśćpójśćидтиwracaćwrócićвозвращатьсяzaczynaćzacząćначинатьkończyćskończyćзаканчиватьotwieraćotworzyćоткрыватьzamykaćzamknąćзакрыватьspotykać sięspotkać sięвстречатьсяsprzedawaćsprzedaćпродаватьdzwonićzadzwonićзвонитьpytaćzapytaćспрашиватьuczyć sięnauczyć sięучить(ся)pamiętaćzapamiętaćпомнить / запомнить
 Как выбрать вид
-Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Здесь русская интуиция работает почти один в один, и это редкий участок, где её можно не перепроверять.
+Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Русская интуиция здесь часто помогает, но пары и управление лучше сверять, особенно у приставочных глаголов.
 что говоримвидпример
 процесс, «был этим занят»несов.Wczoraj czytałem tę książkę.результат достигнутсов.Wczoraj przeczytałem tę książkę.регулярно, повторяетсянесов.Codziennie robię zakupy.один раз, целикомсов.Dziś zrobiłem zakupy.фон, на котором что-то случилосьнесов.Kiedy czytałem, zadzwonił telefon.само событие на фонесов.Kiedy czytałem, zadzwonił telefon.после chcieć, musieć - процесснесов.Chcę czytać. · Muszę robić to codziennie.после chcieć, musieć - результатсов.Chcę przeczytać. · Muszę zrobić to dziś.сколько длилосьнесов.Czytałem przez godzinę.за какой срок уложилсясов.Przeczytałem to w godzinę.отрицание общего фактанесов.Nie czytałem tej książki.приказсов.Zrób to!запретнесов.Nie rób tego!
 слова-маркерыкакие
@@ -1024,13 +1028,13 @@ przez godzinę и w godzinę - не одно и то же. Czytałem przez godzi
 jarobiłemrobiłam-tyrobiłeśrobiłaś-on / ona / onorobiłrobiłarobiłomyrobiliśmyrobiłyśmy-wyrobiliścierobiłyście-oni / onerobilirobiły-
 Множественное различает только два рода: мужско-личный (есть хоть один мужчина) - robili, и всё остальное - robiły.
 Чередования в прошедшем
-инфинитив на -eće → amusieć → musiał, musiała, но musieli
+часть глаголов на -eće → amusieć → musiał, musiała, но musieli
 инфинитив на -ąćą → ęzacząć → zaczął, но zaczęła, zaczęli
 основа на -o-o → ómóc → mógł, nieść → niósł (но mogła, niosła)
 Нерегулярные в прошедшем
 глаголjaon · onaoni · one
 iśćszedłem / szłamszedł · szłaszli · szłyполностью другая основаjeśćjadłem / jadłamjadł · jadłajedli · jadłya → e только в мужско-личномmócmogłem / mogłammógł · mogłamogli · mogłymógł - с ómiećmiałem / miałammiał · miałamieli · miały-eć → -ał, но -elimusiećmusiałem / musiałammusiał · musiałamusieli · musiałyто же правилоchciećchciałem / chciałamchciał · chciałachcieli · chciałyто же правилоwziąćwziąłem / wzięłamwziął · wzięławzięli · wzięłyмуж. ед.: wziąłem, wziąłeś, wziął; жен., ср. и мн. имеют основу wzię-zacząćzacząłem / zaczęłamzaczął · zaczęłazaczęli · zaczęłyмуж. ед.: zacząłem, zacząłeś, zaczął; жен., ср. и мн. имеют основу zaczę-znaleźćznalazłem / znalazłamznalazł · znalazłaznaleźli · znalazłynieśćniosłem / niosłamniósł · niosłanieśli · niosłyniósł - с óusiąśćusiadłem / usiadłamusiadł · usiadłausiedli · usiadłybyćbyłem / byłambył · byłabyli · byłyопора для всего остального
-Подвижные окончания. -m, -ś, -śmy, -ście умеют отрываться и уезжать к первому слову: gdzie byłeś? = gdzieś był?; my to zrobiliśmy = myśmy to zrobili. И ударение: в byliśmy, byliście оно на третьем слоге от конца - единственное системное исключение из правила предпоследнего слога.
+Подвижные окончания. -m, -ś, -śmy, -ście могут присоединяться к другому слову: my to zrobiliśmy = myśmy to zrobili. В нейтральном вопросе: Gdzie byłeś? И ударение: в byliśmy, byliście оно на третьем слоге от конца - единственное системное исключение из правила предпоследнего слога.
 Будущее: совершенный вид → простое
 Совершенный глагол спрягается как настоящее время, а значит будущее.
 zrobię, zrobisz, zrobi, zrobimy, zrobicie, zrobią · napiszę · kupię · powiem · pójdę · zjem · wrócę
@@ -1303,7 +1307,7 @@ znam
 znasz
 znają
 znałznała
-poznaćновое состояниепара: poznawać ↔ poznać
+poznaćновое состояние: poznać; poznawać - вторичный несовершенный
 myśleć
 думать
 II
@@ -1311,7 +1315,7 @@ myślę
 myślisz
 myślą
 myślałmyślała
-pomyślećнедолго
+pomyślećнедолго: pomyśleć
 chcieć
 хотеть
 I
@@ -1447,7 +1451,7 @@ mieszkam
 mieszkasz
 mieszkają
 mieszkałmieszkała
-zamieszkaćначало состояния
+zamieszkaćначало состояния: zamieszkać
 pracować
 работать
 I
@@ -1487,7 +1491,7 @@ lubię
 lubisz
 lubią
 lubiłlubiła
-polubićначало состояния
+polubićначало состояния: polubić
 kochać
 любить
 III
@@ -1495,7 +1499,7 @@ kocham
 kochasz
 kochają
 kochałkochała
-pokochaćначало состояния
+pokochaćначало состояния: pokochać
 widzieć
 видеть
 II
@@ -1511,7 +1515,7 @@ patrzę
 patrzysz
 patrzą
 patrzyłpatrzyła
-popatrzećнедолго
+popatrzećнедолго: popatrzeć
 oglądać
 смотреть (фильм)
 III
@@ -1527,7 +1531,7 @@ słucham
 słuchasz
 słuchają
 słuchałsłuchała
-posłuchaćнедолго
+posłuchaćнедолго: posłuchać
 słyszeć
 слышать
 II
@@ -1559,7 +1563,7 @@ uczę się
 uczysz się
 uczą się
 uczył sięuczyła się
-nauczyć sięрезультат
+nauczyć sięрезультат: nauczyć się
 pamiętać
 помнить
 III
@@ -1567,7 +1571,7 @@ pamiętam
 pamiętasz
 pamiętają
 pamiętałpamiętała
-zapamiętaćрезультатпара: zapamiętywać ↔ zapamiętać
+zapamiętaćрезультат: zapamiętać; zapamiętywać - вторичный несовершенный
 zapomnieć
 забыть
 II
@@ -1607,7 +1611,7 @@ siedzę
 siedzisz
 siedzą
 siedziałsiedziała
-usiąśćсмена состоянияпара: siadać ↔ usiąść
+usiąśćсмена состояния: usiąść; siadać - вторичный несовершенный
 leżeć
 лежать
 II
@@ -1623,7 +1627,7 @@ czekam
 czekasz
 czekają
 czekałczekała
-poczekaćнедолго
+poczekaćнедолго: poczekać
 szukać
 искать
 III
@@ -1631,7 +1635,7 @@ szukam
 szukasz
 szukają
 szukałszukała
-znaleźćрезультатпара: znajdować ↔ znaleźć
+znaleźćрезультат: znaleźć; znajdować - вторичный несовершенный
 znaleźć
 найти
 I
@@ -1679,7 +1683,7 @@ rozmawiam
 rozmawiasz
 rozmawiają
 rozmawiałrozmawiała
-porozmawiaćнедолго
+porozmawiaćнедолго: porozmawiać
 dzwonić
 звонить
 II
@@ -1831,7 +1835,7 @@ niosę
 niesiesz
 niosą
 niósłniosła
-zanieśćрезультат
+zanieśćрезультат: zanieść
 pomagać
 помогать
 III
@@ -3291,7 +3295,7 @@ noну; да, агаNo tak. · No nie wiem.właśnieименно; вот-вот;
 no wiesz…ну, знаешь…No wiesz, trochę się stresuję.wie pan / wie pani…понимаете…Wie pani, nie jestem pewien.jak to powiedzieć…как это сказать…Jak to powiedzieć… nie do końca rozumiem.no więc…ну так вот…No więc, spotkaliśmy się wczoraj.słuchaj…слушай…Słuchaj, mam pytanie.coś takiego / takie cośчто-то такое; такая штукаTo było coś takiego jak małe spotkanie.nieważneневажно; ладноNieważne, zacznę jeszcze raz.w każdym razieво всяком случае; в общемW każdym razie, muszę już iść.powiedzmy / że tak powiemскажем; так сказатьPowiedzmy, że było ciekawie.
 Смягчить мнение или передать ход собеседнику
 по-польскипо-русскивариант для себя
-chybaнаверное; кажетсяChyba jutro pada.raczejскорееRaczej nie dam rady.generalnieв целомGeneralnie wszystko jest w porządku.tak naprawdęна самом делеTak naprawdę wolę zostać w domu.jasneясно; конечно— Możesz pomóc? — Jasne.no nie? / prawda?да?; правда?To dobry plan, no nie?
+chybaнаверное; кажетсяChyba jutro pada.raczejскорееRaczej nie dam rady.generalnieв целомGeneralnie wszystko jest w porządku.tak naprawdęна самом делеTak naprawdę wolę zostać w domu.jasneясно; конечно- Możesz pomóc? - Jasne.no nie? / prawda?да?; правда?To dobry plan, no nie?
 Как это произносить. Связка должна быть короткой и в обычном темпе: no, znaczy…, потом сразу мысль. Не растягивай znaczyyy: лучше короткая пауза после него. Не злоупотребляй jakby - это польское «как бы», которое у многих уже стало словом-паразитом.
 Конструктор фраз
 Выбери варианты в строке - ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.
@@ -3301,13 +3305,13 @@ chybaнаверное; кажетсяChyba jutro pada.raczejскорееRaczej n
 4. Как себя чувствуешьсостояниеNie mam dziś dużo energiiCzuję się bardzo dobrzeMam dziś dobry humorчто дальшеi dlatego chcę odpocząći dlatego zostaję w domuale chcę jeszcze trochę się uczyćNie mam dziś dużo energii i dlatego chcę odpocząć.
 Мини-задание. Возьми любой шаблон и произнеси три варианта о себе. Не ищи идеальную грамматику во время речи: сначала закончи мысль, потом проверь один непонятный момент в справочнике.
 Мини-диалоги
-Знакомый спрашивает о выходных— Co robiłeś w weekend?— W weekend odpoczywałem w domu. W niedzielę spotkałem się ze znajomymi.Твоя очередь: ответь, что делал именно ты. Достаточно двух фраз.
-Разговор о польском— Jak długo uczysz się polskiego?— Uczę się od … . Jeszcze nie mówię dobrze, ale staram się rozmawiać z ludźmi.Замени срок и добавь, что тебе даётся легко или трудно.
-Приглашение— Może pójdziemy jutro na kawę?— Chętnie. O której? / Niestety, jutro nie mogę. Może w piątek?Сначала согласись, затем в другом варианте вежливо откажись и предложи время.
-Не понял собеседника— …— Przepraszam, czy możesz powtórzyć trochę wolniej? Rozumiem mniej więcej, ale nie wszystko.Это не ошибка, а нормальный ход разговора.
+Знакомый спрашивает о выходных- Co robiłeś w weekend?- W weekend odpoczywałem w domu. W niedzielę spotkałem się ze znajomymi.Твоя очередь: ответь, что делал именно ты. Достаточно двух фраз.
+Разговор о польском- Jak długo uczysz się polskiego?- Uczę się od … . Jeszcze nie mówię dobrze, ale staram się rozmawiać z ludźmi.Замени срок и добавь, что тебе даётся легко или трудно.
+Приглашение- Może pójdziemy jutro na kawę?- Chętnie. O której? / Niestety, jutro nie mogę. Może w piątek?Сначала согласись, затем в другом варианте вежливо откажись и предложи время.
+Не понял собеседника- …- Przepraszam, czy możesz powtórzyć trochę wolniej? Rozumiem mniej więcej, ale nie wszystko.Это не ошибка, а нормальный ход разговора.
 Фразы спасения
 по-польскипо-русскивариант для себя
-Chwileczkę, muszę się zastanowić.Секундочку, мне нужно подумать.Даёт время сформулировать ответ.Nie wiem, jak to powiedzieć po polsku, ale…Не знаю, как сказать это по-польски, но…После этого скажи проще или покажи слово.Czy możesz powiedzieć to trochę wolniej?Можешь сказать немного медленнее?Нормальная вежливая просьба.Czy możesz powtórzyć?Можешь повторить?Коротко и естественно.Rozumiem mniej więcej.Я примерно понимаю.Если общий смысл понятен, но не всё.Nie rozumiem jeszcze wszystkiego.Я пока не всё понимаю.Честно и без извинений.Jak to znaczy po rosyjsku?Что это значит по-русски?Можно заменить rosyjsku на angielsku.Czy dobrze rozumiem, że…?Я правильно понимаю, что…?Повтори смысл своими словами.Możesz podać przykład?Можешь привести пример?Когда новое слово неясно.Uczę się, więc czasem robię błędy.Я учусь, поэтому иногда ошибаюсь.Снимает напряжение в начале разговора.
+Chwileczkę, muszę się zastanowić.Секундочку, мне нужно подумать.Даёт время сформулировать ответ.Nie wiem, jak to powiedzieć po polsku, ale…Не знаю, как сказать это по-польски, но…После этого скажи проще или покажи слово.Czy możesz powiedzieć to trochę wolniej?Можешь сказать немного медленнее?Нормальная вежливая просьба.Czy możesz powtórzyć?Можешь повторить?Коротко и естественно.Rozumiem mniej więcej.Я примерно понимаю.Если общий смысл понятен, но не всё.Nie rozumiem jeszcze wszystkiego.Я пока не всё понимаю.Честно и без извинений.Co to znaczy po rosyjsku?Что это значит по-русски?Можно заменить rosyjsku на angielsku.Czy dobrze rozumiem, że…?Я правильно понимаю, что…?Повтори смысл своими словами.Możesz podać przykład?Можешь привести пример?Когда новое слово неясно.Uczę się, więc czasem robię błędy.Я учусь, поэтому иногда ошибаюсь.Снимает напряжение в начале разговора.
 Отрицание
 Как и в русском, отрицательные слова в предложении накапливаются, а не взаимоисключают друг друга.
 Множественное отрицание обязательно
@@ -3333,17 +3337,19 @@ Nie mam ani czasu, ani pieniędzy.
 вопроснейтральный ответновое
 Gdzie są klucze?Klucze są na stole.na stole - где именноCo jest na stole?Na stole są klucze.klucze - что именноKto kupił bilety?Bilety kupiła Anna.Anna - кто именно
 Это тенденция, не железная схема. Контрастное ударение может выделить почти любое слово, но без особого контекста новое сообщение естественнее звучит в конце: Klucze są na stole и Na stole są klucze описывают ту же сцену, но не сообщают одно и то же.
+Нейтрально и с акцентом
+Сначала строй нейтрально, затем переставляй только ради смысла. Widziałem go wczoraj сообщает факт; Go widziałem wczoraj выделяет именно его. Czy podoba ci się ten film? - нейтральный порядок клитик; другой порядок возможен, если нужно выделить адресата. В вопросе Ile kosztuje bilet? нейтрально, а Ile bilet kosztuje? подчёркивает bilet.
 Клитики: mi, ci, go, mu, się…
-Короткие безударные слова никогда не открывают предложение и никогда не идут сразу после предлога. Обычно они льнут ко второму месту в предложении - сразу после первого ударного слова или перед глаголом.
+В нейтральной фразе короткие безударные слова обычно не открывают предложение и не идут сразу после предлога. Обычно они льнут ко второму месту в предложении - сразу после первого ударного слова или перед глаголом. При контрасте порядок может меняться.
 клитиказначениепример
 sięвозвратная частицаUczę się polskiego.miмнеPowiedz mi prawdę.ciтебеPodoba ci się?goего (Biernik)Znam go dobrze.muемуPomogę mu jutro.jejейDam jej kwiaty.
 Позиция się
 Русское «-ся» приклеено к глаголу намертво. Польское się - отдельное слово и гуляет по предложению.
-Jak się nazywasz?się - вторым словом, перед глаголомне в начале и не в концеNazywam się Jan.się стоит рядом с глаголом; часто - после негопозиция зависит от всей фразы: Jak się nazywasz?Nie martw się.się - в конце короткой фразыпосле отрицания + глаголCzy podoba ci się ten film?сначала ci, потом się - порядок клитик фиксированci się, не się ciWidziałem go wczoraj.go (местоимение) - не в начале предложения*Go widziałem wczoraj - режет слух
+Jak się nazywasz?się - после вопросительного слова, перед глаголомне в началеNazywam się Jan.się стоит рядом с глаголом; часто - после негопозиция зависит от всей фразы: Jak się nazywasz?Nie martw się.się - в конце короткой фразыпосле отрицания + глаголCzy podoba ci się ten film?ci się - нейтральный порядокsię ci возможно при выделении ciWidziałem go wczoraj.нейтральный порядокGo widziałem wczoraj - выделяет объект
 Две жёсткие границы. się никогда не ставится первым словом предложения и никогда не идёт сразу после предлога. После предлога вместо него используется полная форма: не bez się, а bez siebie - «без самого себя»; не ze się, а rozmawiam sam ze sobą - «разговариваю сам с собой».
 Вопросительное слово + глагол
 В нейтральной речи глагол идёт сразу за вопросительным словом, не после подлежащего.
-Ile kosztuje bilet?верно: вопросительное слово + глагол сразуGdzie mieszka twoja siostra?вопросительное слово + глагол + подлежащееKiedy wraca ojciec?то же самое
+Ile kosztuje bilet?нейтрально: вопросительное слово + глагол + подлежащееGdzie mieszka twoja siostra?вопросительное слово + глагол + подлежащееKiedy wraca ojciec?то же самое
 Прилагательное: качество или тип
 Тоже вопрос порядка слов, хоть и внутри одной именной группы: качество - перед словом, вид или тип - после. Подробнее и с примерами - во вкладке «Прилагательные».
 czarna kawa (какой кофе) · kawa rozpuszczalna (какой вид кофе) · język polski · dzień dobry
@@ -3370,8 +3376,8 @@ np.na przykładнапримерitd.i tak dalejи так далееitp.i tym podo
 nie wolno и nie można - не одно и то же. Nie wolno palić - прямой запрет: курить запрещено. Nie można wejść, bo drzwi są zamknięte - войти невозможно из-за обстоятельств; в правилах nie można тоже встречается, но звучит мягче. Человека при необходимости ставим в дательный: nie wolno mi palić, nie można nam wejść.
 Номера, которые спросят в любом окне. PESEL - личный идентификатор жителя, NIP - налоговый номер, REGON - номер организации в статистике, KRS - судебный реестр компаний. Это не сокращения в обычном смысле: они не расшифровываются в речи и склоняются как обычные мужские слова - podaj PESEL, numer NIP-u.
 Союзы
-Не склоняются, но от них зависит запятая - а это единственное место в польской пунктуации, которое действительно отличается от русского на практике.
-Главное правило запятой. Перед że, żeby, ponieważ, bo, jeśli, gdy, chociaż и другими подчинительными союзами запятая ставится всегда. Перед простым соединительным i - обычно нет: Poszedłem do sklepu i kupiłem chleb.
+Не склоняются, но помогают увидеть границы частей предложения. Запятая в польском часто похожа на русскую, но её ставят по синтаксической границе, а не автоматически перед отдельным словом.
+Главное правило запятой. Придаточное обычно отделяется запятой: Wiem, że on przyjdzie; Zostanę, jeśli będzie czas. Но перед вторым że запятой нет, если союзы соединяют однородные придаточные: Powiedział, że zadzwoni i że przyjdzie. Перед простым соединительным i запятая обычно не нужна: Poszedłem do sklepu i kupiłem chleb.
 Сочинительные - соединяют равноправное
 союззначениепример
 iиKupiłem chleb i mleko.без запятой, просто соединяетaаOn czyta, a ja piszę.лёгкое противопоставление, с запятойaleноChciałem pójść, ale nie mogłem.сильное противопоставление, с запятойlub / alboилиHerbata lub kawa. · Albo ty, albo ja.albo часто взаимоисключающееani… aniни… ниNie mam ani czasu, ani pieniędzy.двойное отрицание при глаголе сохраняетсяwięc / zatemпоэтому, итакSpóźniłem się, więc pobiegłem.следствиеdlategoпоэтомуByłem chory, dlatego nie przyszedłem.следствие, чуть более книжное чем więcnatomiast / jednakоднако, затоJa lubię herbatę, natomiast on kawę. · Chciałem wyjść. Zostałem jednak w domu.оба выражают противопоставление, но не всегда взаимозаменяемы: natomiast сопоставляет элементы, jednak мобильнее в предложенииczyliто естьJest weekend, czyli sobota i niedziela.пояснениеorazа такжеZaprosiłem rodzinę oraz przyjaciół.официальный синоним i
@@ -3429,7 +3435,7 @@ Aż tyle? · Czekałem aż trzy godziny.Удивление количеству.
 Ani słowa! · Ani jeden.Усиленное отрицание.
 Разряды
 разрядчастицыпример
-вопросительныеczy, czyż, czyżbyCzy Ania wróciła?утвердительныеtak, no, owszem, wszakTak, trochę.отрицательныеnie, ani, wcaleTo nie jest problem.условныеby, bym, byś, byśmy, byścieOn by to zrobił dobrze.сомненияchyba, może, pewnie, bodajMoże mógłbyś wysłać mi maila.побудительныеniech, oby, żebyNiech ona to skończy!усилительныеprzecież, ależ, -że, toAleż oczywiście!ограничительныеtylko, jedynie, nawet, chociażMam tylko pięć złotych.неопределённыеbyle, lada, -kolwiek, -śNie rzucaj byle gdzie.
+вопросительныеczy, czyż, czyżbyCzy Ania wróciła?утвердительныеtak, no, owszem, wszakTak, trochę.отрицательныеnie, ani, wcaleTo nie jest problem.условныеby, bym, byś, byśmy, byścieOn by to zrobił dobrze.сомненияchyba, może, pewnie, bodajMoże mógłbyś wysłać mi maila.побудительныеniech, oby, żebyNiech ona to skończy!усилительныеprzecież, ależ, -że, to, nawetAleż oczywiście!ограничительныеtylko, jedynieMam tylko pięć złotych.неопределённыеbyle, lada, -kolwiek, -śNie rzucaj byle gdzie.
 Неопределённость: -ś, -kolwiek, byle
 элементзначениепримеры
 -ś-то, -нибудьktoś · coś · gdzieś · kiedyś · jakiś-kolwiek-нибудь (любой)ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiekbyleлишь бы, кое-какbyle kto · byle gdzie · byle jakladaлюбой, первый попавшийсяlada dzień · lada chwila · lada ktonie-ни- / не-nikt · nic · nigdy · nigdzie · żaden
@@ -3462,6 +3468,8 @@ Czy pan ma chwilę?к мужчинеглагол в 3-м лице единств
 państwo - три разных слова. Вежливое «вы» к смешанной компании (Czy państwo są gotowi?), «супруги» (państwo Kowalscy) и «государство» (средний род: państwo polskie, w tym państwie). Различает только контекст.
 Дистанция задаётся тем, что стоит после pan. Proszę pana - незнакомый. Panie Adamie - знакомы, но на «вы». Pan Kowalski - официально и обычно о третьем лице, а не в лицо.
 На «ты» переходят по предложению, а не молча. Może przejdziemy na ty? Предлагает старший по возрасту или по положению; самому перейти первым - невежливо.
+Регистр и уважительное обращение
+Сначала выбирай безопасный вариант. К незнакомому человеку - pan / pani и глагол в третьем лице: Czy pani ma chwilę? В публичном тексте предпочтительны w Ukrainie / do Ukrainy, хотя традиционные варианты с na тоже нормативны. В названиях профессий и уменьшительных нет одного обязательного выбора: учитывай регистр и известное предпочтение человека; в сомнении выбирай нейтральную, неуменьшительную форму.
 Имена и фамилии: склонение
 Мужские имена и фамилии склоняются обязательно - в том числе иностранные. Не склонить в письме или на конверте считается ошибкой.
 падежAdam KowalskiAnna KowalskaKowalscy
@@ -3473,22 +3481,22 @@ MianownikAdam KowalskiAnna KowalskaKowalscyDopełniaczAdama KowalskiegoAnny Kowa
 Фамилии на -ski ведут себя как прилагательные. Значит, и род у них настоящий: Kowalski / Kowalska, а во множественном - мужско-личное Kowalscy (вся семья или супруги) против Kowalskie (только женщины). Отсюда и państwo Kowalscy byli, а не «były».
 Страны, национальности, языки
 странагдекудаононаязык
-Polskaw Polscedo PolskiPolakPolkapo polskuBiałoruśna Białorusina BiałoruśBiałorusinBiałorusinkapo białoruskuUkrainaw / na Ukrainiedo / na UkrainęUkrainiecUkrainkapo ukraińskuLitwana Litwiena LitwęLitwinLitwinkapo litewskuŁotwana Łotwiena ŁotwęŁotyszŁotyszkapo łotewskuWęgryna Węgrzechna WęgryWęgierWęgierkapo węgierskuSłowacjana Słowacjina SłowacjęSłowakSłowaczkapo słowackuRosjaw Rosjido RosjiRosjaninRosjankapo rosyjskuNiemcyw Niemczechdo NiemiecNiemiecNiemkapo niemieckuCzechyw Czechachdo CzechCzechCzeszkapo czeskuWłochywe Włoszechdo WłochWłochWłoszkapo włoskuFrancjawe Francjido FrancjiFrancuzFrancuzkapo francuskuAngliaw Angliido AngliiAnglikAngielkapo angielskuStany Zjednoczonew Stanachdo StanówAmerykaninAmerykankapo angielsku
-w или na - список закрытый, и вывести его из сегодняшнего языка нельзя. Историческое объяснение есть, но предсказательной силы у него нет: na берут соседи с юга и востока, которые исторически воспринимались как области (na Litwie, na Białorusi, na Ukrainie, na Węgrzech, na Słowacji, na Łotwie), и острова (na Cyprze, na Malcie, na Islandii, na Kubie). Всё остальное - w, включая w Niemczech, w Czechach, we Włoszech, хотя они тоже множественного числа.
-Украина - живая норма. С 2022 года Совет польского языка рекомендует w Ukrainie / do Ukrainy - по образцу самостоятельных государств. Старое na Ukrainie тоже остаётся правильным и в разговоре звучит чаще, но в официальных текстах и в прессе всё заметнее w.
+Polskaw Polscedo PolskiPolakPolkapo polskuBiałoruśw / na Białorusido / na BiałoruśBiałorusinBiałorusinkapo białoruskuUkrainaw Ukrainie / na Ukrainiedo Ukrainy / na UkrainęUkrainiecUkrainkapo ukraińskuLitwana Litwiena LitwęLitwinLitwinkapo litewskuŁotwana Łotwiena ŁotwęŁotyszŁotyszkapo łotewskuWęgryna Węgrzechna WęgryWęgierWęgierkapo węgierskuSłowacjana Słowacjina SłowacjęSłowakSłowaczkapo słowackuRosjaw Rosjido RosjiRosjaninRosjankapo rosyjskuNiemcyw Niemczechdo NiemiecNiemiecNiemkapo niemieckuCzechyw Czechachdo CzechCzechCzeszkapo czeskuWłochywe Włoszechdo WłochWłochWłoszkapo włoskuFrancjawe Francjido FrancjiFrancuzFrancuzkapo francuskuAngliaw Angliido AngliiAnglikAngielkapo angielskuStany Zjednoczonew Stanach Zjednoczonych / w Stanachdo Stanów Zjednoczonych / do StanówAmerykaninAmerykankapo angielsku
+w или na - не всегда предсказуемо. Традиционно говорят na Litwie, na Białorusi, na Ukrainie, na Węgrzech, na Słowacji, na Łotwie и na Cyprze, na Malcie, na Islandii, na Kubie. Для части названий существуют и варианты с w / do; их лучше учить вместе с названием страны. В остальных привычных случаях: w Niemczech, w Czechach, we Włoszech.
+Украина и Беларусь - живая норма. Обе пары правильны: w Ukrainie / do Ukrainy и na Ukrainie / na Ukrainę. Rada Języka Polskiego рекомендует особенно в публичной речи первую пару; вторая остаётся традиционной и нормативной. Аналогичная эволюция возможна с Białoruś, Litwa, Łotwa, Słowacja и Węgry.
 Язык: четыре разные конструкции
 фразаформачто значит
 Mówię po polsku.наречие, не склоняетсякак говорюUczę się polskiego.Dopełniacz - управление uczyć sięчто учуZnam polski.Biernik - управление znaćчем владеюTłumaczę na polski.na + Biernikна какой перевожуz rosyjskiego na polskiz + Dopełniacz, na + Biernikс какого на какойJestem Polakiem. · Jestem Polką.Narzędnik после byćкто я по национальности
-Название языка меняет форму вместе с конструкцией. po polsku - наречие и не склоняется вообще, polskiego - родительный после uczyć się, polski - винительный после znać. Сказать uczę się po polsku нельзя: это значит «учусь по-польски», то есть на польском языке.
+Название языка меняет форму вместе с конструкцией. po polsku - наречие и не склоняется вообще, polskiego - родительный после uczyć się, polski - винительный после znać. Для «я учу польский» - Uczę się polskiego. Uczę się po polsku грамматично, но значит «я учусь на польском языке».
 Женские формы профессий
 Образуются от мужской формы суффиксом. Список открытый: новые формы появляются на глазах и не всегда успевают закрепиться.
 суффикскогдапримеры
--kaсамый продуктивный, основа не меняетсяstudent → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka-arz → -arkaу слов на -arz, -erz согласная уходитlekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka-ka, k → czтолько у слов на -nik и -kprawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka-ka, g → żу слов на -log и -gpsycholog → psycholożka · filolog → filolożka · pedagog → pedagożka-ca → -czyniпродуктивно у слов на -casprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni-ica · -nicaнебольшая группаpracownik → pracownica · robotnik → robotnicaособые формывне моделей, запоминатьgospodarz → gospodyni · gość → gościni · król → królowapani + мужская формакогда женской формы нет или она спорнаяpani doktor · pani prezes · pani minister · pani inżynier - не склоняется
-Когда женской формы нет - берётся pani плюс мужская форма, несклоняемая. pani doktor, pani prezes, pani minister: byłem u pani doktor, не «u pani doktorki» в официальной речи. Формы doktorka, profesorka, ministra, gościni живые и частые в прессе, но в документах и в обращении к незнакомой держится pani + мужская форма.
+-kaсамый продуктивный, основа не меняетсяstudent → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka-arz → -arkaу слов на -arz, -erz согласная уходитlekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka-ka, k → czтолько у слов на -nik и -kprawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka-ka, g → żу слов на -log и -gpsycholog → psycholożka · filolog → filolożka · pedagog → pedagożka-ca → -czyniпродуктивно у слов на -casprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni-ica · -nicaнебольшая группаpracownik → pracownica · robotnik → robotnicaособые формывне моделей, запоминатьgospodarz → gospodyni · gość → gościni · król → królowapani + мужская формаодин из вариантов, особенно в официальном обращенииpani doktor · pani prezes · pani minister · pani inżynier; название профессии после pani не склоняется
+Выбор зависит от контекста и предпочтения человека. Pani doktor, pani prezes, pani minister широко употребляются, особенно в официальном обращении. Формы doktorka, profesorka, ministra, gościni тоже грамматичны и живы. Поэтому u pani doktorki не ошибка; если предпочтение человека известно, лучше следовать ему, а без такой информации в официальном контакте безопасна модель pani + название должности.
 После być - творительный. Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką. Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.
 Уменьшительные формы
-В польском их используют гораздо шире, чем в русском - не только для «маленького», но и как знак вежливости и тепла в обычном разговоре.
-Это не про размер. Poproszę kawusię в кафе не значит «маленькую чашечку» - это просто дружелюбный, смягчённый тон. Продавщица может предложить bułeczkę взрослому покупателю, а не ребёнку.
+В польском их используют гораздо шире, чем в русском - не только для «маленького», но и для тепла, сервисной вежливости, иронии или подчёркнутой близости.
+Это не всегда про размер. Poproszę kawusię в кафе не значит «маленькую чашечку» - это дружелюбный, смягчённый тон. Продавщица может предложить bułeczkę взрослому покупателю. Но в неподходящем контексте уменьшительное способно прозвучать иронично или слишком фамильярно.
 Существительные: мужской род
 словоуменьшительноеещё уменьшительнееперевод
 kotkotekkoteczekкотpiespiesekpieseczekпёсdomdomekdomeczekдомchłopiecchłopczykмальчикbratbraciszekбратząbząbekзубnosnosekносstółstolikстолkwiatkwiatekkwiatuszekцветок
@@ -3505,12 +3513,12 @@ małymalutkimaluteńki / maciupeńkiмаленькийładnyładniutkiкраси
 Имена и обращения
 полное имяобычное уменьшительноеласковоепо-русски похоже на
 AnnaAniaAnusia / AnkaАня, АнечкаPiotrPiotrekPiotruśПетя, ПетенькаKatarzynaKasiaKasieńkaКатя, КатенькаMichałMichałekMisiekМиша, МишенькаElżbietaElaEluniaЭля, Элечкаbabciababcia → babuniaбабушка → бабуля
-Практический совет. Услышал незнакомое ласковое слово от продавца, официанта или коллеги - это не панибратство, а норма вежливого общения. В официальных документах и с незнакомыми по имени-фамилии уменьшительные, разумеется, не используют.
+Практический совет. Услышал уменьшительное от продавца, официанта или коллеги - чаще всего это дружелюбный сервисный стиль, а не панибратство. Но не копируй его автоматически: с незнакомым человеком и в официальном тексте безопаснее нейтральная форма.
 Предлог → падеж
 Один предлог часто управляет двумя падежами. Разница обычно «где / куда».
 всеMianownikBiernikDopełniaczCelownikNarzędnikMiejscownik
 предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikв какой деньw środę, w poniedziałeknaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом сobok sklepuprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпослеpo pracy, po obiedziepoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzed / nad / pod / za / międzyNarzędnikгдеprzed domem, nad stołemprzed / nad / pod / za / międzyBiernikкудаidę pod stółdziękiCelownikблагодаряdzięki tobie
-Правило движения. Стоишь - Miejscownik или Narzędnik. Двигаешься - Biernik. Jestem na poczcie / idę na pocztę.
+Где / куда у парных предлогов. У w, na, pod, nad, za, przed, między положение обычно требует Miejscownik или Narzędnik, направление - Biernik: Jestem na poczcie / idę na pocztę. Само движение не всегда означает Biernik: idę do sklepu требует Dopełniacz, а idę ulicą - Narzędnik. Учи предлог вместе с падежом.
 Беглое e: w → we, z → ze
 Перед скоплением согласных или похожим звуком предлог обрастает гласной - иначе не выговорить.
 предлогс беглым eпримеры
@@ -3530,7 +3538,7 @@ kawa (кава) · herbata (гарбата) · dziękuję (дзякуй) · ciek
 sklepмагазинсклеп - grobowiec / kryptamagazynсклад; журнал, телепередачамагазин - sklepdywanковёрдиван - kanapalustroзеркалолюстра - żyrandolpuszkaбанка, жестянкапушка - armata / działostółстолстул - krzesłokrzesłoстулкресло - fotelkubekкружкакубок - pucharszklankaстакансклянка, бутылка - butelkateczkaпапка, портфельтечка - rujaportfelкошелёкпортфель - teczka / aktówkagarniturкостюмгарнитур, набор - zestawpodłogaполподлог - fałszerstwopłotзаборплот - tratwapierogiвареники, пельменипечёные пироги - placki / ciastadyniaтыквадыня - melonowoceфруктыовощи - warzyważabaлягушкажаба - ropuchareceptaрецепт врачакулинарный рецепт - przepisprzepisправило; рецепт блюдарецепт врача - recepta
 Время и пространство
 словозначитне значит
-ranoутромрано - wcześniejutroзавтраутро - rano / poranekczasвремячас - godzinaniedzielaвоскресеньенеделя - tydzieńczasemиногдачасами - godzinaminigdyникогданигде - nigdziewcześnieрановечно - wieczniepółnocсевер; полночьтолько полночьpołudnieюг; полденьтолько полденьrokгодрок, судьба - loskrajстранакрай - skraj / regionmiastoгородместо - miejscedworzecвокзалдворец - pałacpokójкомната; миртолько покой - spokójogródсадогород - warzywnik
+ranoутромрано - wcześniejutroзавтраутро - rano / poranekczasвремячас - godzinaniedzielaвоскресеньенеделя - tydzieńczasemиногдачасами - godzinaminigdyникогданигде - nigdziewcześnieрановечно - wieczniepółnocсевер; полночьтолько полночьpołudnieюг; полденьтолько полденьrokгодрок, судьба - loskrajстранакрай - skraj / regionmiastoгородместо - miejscedworzecвокзалдворец - pałacpokójкомната; миртолько покой - spokójogródсадогород - ogród warzywny / warzywnik
 Люди и качества
 словозначитне значит
 urodaкрасота, внешностьурод - potwórgrzecznyвежливый, послушныйгрешный - grzesznygrubyтолстый, большой по толщинегрубый - niegrzeczny / szorstkiwygodnyудобныйвыгодный - opłacalnyordynarnyхамский, вульгарныйобычный - zwyczajnynagłyвнезапныйнаглый - bezczelnydziwnyстранныйдивный, прекрасный - cudownysmutnyгрустныйсмутный, неясный - niejasnybezpiecznyбезопасныйбеспечный - beztroskiprzykryнеприятный, печальныйприкрытый - przykrytypilnyстарательный; срочныйпыльный - zakurzonyprzystojnyкрасивый, статныйпристойный - przyzwoitychytryхитрый; жадныйпросто сообразительный - sprytnyprzyjacielблизкий другпросто приятель, знакомый - kolega / znajomysławnyзнаменитыйславный, милый - miłyprezydentпрезидент; мэр крупного городатолько глава государстваobywatelгражданинобыватель - filister / laikposełдепутат; посланникпосол - ambasadorrodzinaсемьяродина - ojczyznachłopкрестьянин; разг. мужикхолоп, раб - niewolnik
@@ -3539,5 +3547,6 @@ urodaкрасота, внешностьурод - potwórgrzecznyвежливы�
 zapominać / zapomniećзабывать / забытьзапоминать - zapamiętywaćpytaćспрашиватьпытать - torturowaćpukaćстучатьпукать - puszczać bąkiuważaćсчитать, полагать; беречьсяуважать - szanowaćliczyćсчитать; рассчитыватьлечить - leczyćleczyćлечитьсчитать - liczyćsprzątaćубирать, наводить порядокспрятать - schowaćubrać (się)одеть(ся)убрать, удалить - posprzątać / usunąćnaprawićпочинить, исправитьнаправить, послать - skierowaćgadaćразговаривать, болтатьгадать - zgadywać / wróżyćmylić (się)путать(ся), ошибатьсямылить - mydlićkurzyćпылитькурить - palićzabićубитьзабить гвоздь / гол - wbić / strzelićpożyczyćодолжить или взять взаймыпожить - pomieszkaćzapraszaćприглашатьспрашивать - pytaćskazaćприговорить, осудитьсказать - powiedziećoszukaćобманутьобыскать - przeszukaćruszaćдвигать(ся), трогатьсярушить, разрушать - burzyćpodróżowaćпутешествоватьподружиться - zaprzyjaźnić sięzawracaćразворачивать(ся); надоедатьзаворачивать, оборачивать - owijać
 Учёба, работа и другие ловушки
 словозначитне значит
-urządучреждение, ведомствоурод - potwórzawódпрофессия; разочарованиезавод - fabrykapensjaзарплатапенсия - emeryturaawansповышение по службеаванс - zaliczkazakazзапретзаказ - zamówienieuwagaвнимание; замечаниеуважение - szacuneksprawaдело, вопроссправа - z prawejrzeczвещь; делоречь - mowazdanieпредложение; мнениездание - budynekprzykładпримерприклад ружья - kolbaprzypadekслучай; падежприпадок - napadmandatштраф; мандаттолько мандатdelegacjaкомандировка; делегациятолько делегацияdietaдиета; суточныетолько диетаnałógзависимость, порокналог - podatekbrakотсутствие, нехваткабрак - małżeństwo; wadalistписьмолист - liść / kartkarozprawaсудебное заседание; диссертациярасправа - samosądżałobaтрауржалоба - skargaczaszkaчерепчашка - filiżankaakademikстуденческое общежитиеакадемик - członek akademiibieliznaнижнее или постельное бельёбелизна - bielceraкожа, цвет лицасера - siarkastrychчердакстричь - strzycdziałkaучасток, дачасделка - transakcja
+urządучреждение, ведомствоурод - potwórzawódпрофессия; разочарованиезавод - fabrykapensjaзарплатапенсия - emeryturaawansповышение по службеаванс - zaliczkazakazзапретзаказ - zamówienieuwagaвнимание; замечаниеуважение - szacuneksprawaдело, вопроссправа - po prawej stronie / z prawej stronyrzeczвещь; делоречь - mowazdanieпредложение; мнениездание - budynekprzykładпримерприклад ружья - kolbaprzypadekслучай; падежприпадок - napadmandatштраф; мандаттолько мандатdelegacjaкомандировка; делегациятолько делегацияdietaдиета; суточныетолько диетаnałógзависимость, порокналог - podatekbrakотсутствие, нехваткабрак - małżeństwo; wadalistписьмолист - liść / kartkarozprawaсудебное заседание; диссертациярасправа - samosądżałobaтрауржалоба - skargaczaszkaчерепчашка - filiżankaakademikстуденческое общежитиеакадемик - członek akademiibieliznaнижнее или постельное бельёбелизна - bielceraкожа, цвет лицасера - siarkastrychчердакстричь - strzycdziałkaучасток, дачасделка - transakcja
 Ударение - всегда предпоследний слог (кроме исключений в разделе «Алфавит»).
+Нашли ошибку или есть пожелания по содержанию? Напишите на mail@hamanovich.com.

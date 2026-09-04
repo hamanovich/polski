@@ -1,8 +1,8 @@
 function renderConj(){
   $("#s-conj").innerHTML = `<div class="panel">
     <h2>Союзы</h2>
-    <p class="lead">Не склоняются, но от них зависит запятая - а это единственное место в польской пунктуации, которое действительно отличается от русского на практике.</p>
-    <div class="tip"><b>Главное правило запятой.</b> Перед <span class="pl">że, żeby, ponieważ, bo, jeśli, gdy, chociaż</span> и другими подчинительными союзами запятая ставится <b>всегда</b>. Перед простым соединительным <span class="pl">i</span> - обычно нет: <span class="pl">Poszedłem do sklepu i kupiłem chleb.</span></div>
+    <p class="lead">Не склоняются, но помогают увидеть границы частей предложения. Запятая в польском часто похожа на русскую, но её ставят по синтаксической границе, а не автоматически перед отдельным словом.</p>
+    <div class="tip"><b>Главное правило запятой.</b> Придаточное обычно отделяется запятой: <span class="pl">Wiem, że on przyjdzie</span>; <span class="pl">Zostanę, jeśli będzie czas</span>. Но перед вторым <span class="pl">że</span> запятой нет, если союзы соединяют однородные придаточные: <span class="pl">Powiedział, że zadzwoni i że przyjdzie.</span> Перед простым соединительным <span class="pl">i</span> запятая обычно не нужна: <span class="pl">Poszedłem do sklepu i kupiłem chleb.</span></div>
 
     <h3>Сочинительные - соединяют равноправное</h3>
     <div class="scroll"><table class="vt">
@@ -73,6 +73,9 @@ function renderLudzie(){
       <li><b>На «ты» переходят по предложению, а не молча.</b> <span class="pl">Może przejdziemy na ty?</span> Предлагает старший по возрасту или по положению; самому перейти первым - невежливо.</li>
     </ol>
 
+    <h3>Регистр и уважительное обращение</h3>
+    <div class="tip"><b>Сначала выбирай безопасный вариант.</b> К незнакомому человеку - <span class="pl">pan / pani</span> и глагол в третьем лице: <span class="pl">Czy pani ma chwilę?</span> В публичном тексте предпочтительны <span class="pl">w Ukrainie / do Ukrainy</span>, хотя традиционные варианты с <span class="pl">na</span> тоже нормативны. В названиях профессий и уменьшительных нет одного обязательного выбора: учитывай регистр и известное предпочтение человека; в сомнении выбирай нейтральную, неуменьшительную форму.</div>
+
     <h3>Имена и фамилии: склонение</h3>
     <p class="lead">Мужские имена и фамилии склоняются обязательно - в том числе иностранные. Не склонить в письме или на конверте считается ошибкой.</p>
     <div class="scroll"><table class="vt">
@@ -93,15 +96,15 @@ function renderLudzie(){
       <tr><th>страна</th><th>где</th><th>куда</th><th>он</th><th>она</th><th>язык</th></tr>
       ${KRAJE.map(k => `<tr><td class="w">${k[0]}</td><td class="g">${k[1]}</td><td class="g">${k[2]}</td><td class="w">${k[3]}</td><td class="w">${k[4]}</td><td class="w">${k[5]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">w</span> или <span class="pl">na</span> - список закрытый, и вывести его из сегодняшнего языка нельзя.</b> Историческое объяснение есть, но предсказательной силы у него нет: <span class="pl">na</span> берут соседи с юга и востока, которые исторически воспринимались как области (<span class="pl">na Litwie, na Białorusi, na Ukrainie, na Węgrzech, na Słowacji, na Łotwie</span>), и острова (<span class="pl">na Cyprze, na Malcie, na Islandii, na Kubie</span>). Всё остальное - <span class="pl">w</span>, включая <span class="pl">w Niemczech, w Czechach, we Włoszech</span>, хотя они тоже множественного числа.</div>
-    <div class="tip"><b>Украина - живая норма.</b> С 2022 года Совет польского языка рекомендует <span class="pl">w Ukrainie / do Ukrainy</span> - по образцу самостоятельных государств. Старое <span class="pl">na Ukrainie</span> тоже остаётся правильным и в разговоре звучит чаще, но в официальных текстах и в прессе всё заметнее <span class="pl">w</span>.</div>
+    <div class="tip"><b><span class="pl">w</span> или <span class="pl">na</span> - не всегда предсказуемо.</b> Традиционно говорят <span class="pl">na Litwie, na Białorusi, na Ukrainie, na Węgrzech, na Słowacji, na Łotwie</span> и <span class="pl">na Cyprze, na Malcie, na Islandii, na Kubie</span>. Для части названий существуют и варианты с <span class="pl">w / do</span>; их лучше учить вместе с названием страны. В остальных привычных случаях: <span class="pl">w Niemczech, w Czechach, we Włoszech</span>.</div>
+    <div class="tip"><b>Украина и Беларусь - живая норма.</b> Обе пары правильны: <span class="pl">w Ukrainie / do Ukrainy</span> и <span class="pl">na Ukrainie / na Ukrainę</span>. Rada Języka Polskiego рекомендует особенно в публичной речи первую пару; вторая остаётся традиционной и нормативной. Аналогичная эволюция возможна с <span class="pl">Białoruś, Litwa, Łotwa, Słowacja</span> и <span class="pl">Węgry</span>.</div>
 
     <h3>Язык: четыре разные конструкции</h3>
     <div class="scroll"><table class="vt">
       <tr><th>фраза</th><th>форма</th><th>что значит</th></tr>
       ${JEZYK.map(j => `<tr><td class="w">${j[0]}</td><td class="c">${j[1]}</td><td style="color:var(--muted);white-space:normal">${j[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Название языка меняет форму вместе с конструкцией.</b> <span class="pl">po polsku</span> - наречие и не склоняется вообще, <span class="pl">polskiego</span> - родительный после <span class="pl">uczyć się</span>, <span class="pl">polski</span> - винительный после <span class="pl">znać</span>. Сказать <span class="bad">uczę się po polsku</span> нельзя: это значит «учусь по-польски», то есть на польском языке.</div>
+    <div class="tip"><b>Название языка меняет форму вместе с конструкцией.</b> <span class="pl">po polsku</span> - наречие и не склоняется вообще, <span class="pl">polskiego</span> - родительный после <span class="pl">uczyć się</span>, <span class="pl">polski</span> - винительный после <span class="pl">znać</span>. Для «я учу польский» - <span class="pl">Uczę się polskiego.</span> <span class="pl">Uczę się po polsku</span> грамматично, но значит «я учусь на польском языке».</div>
 
     <h3>Женские формы профессий</h3>
     <p class="lead">Образуются от мужской формы суффиксом. Список открытый: новые формы появляются на глазах и не всегда успевают закрепиться.</p>
@@ -109,7 +112,7 @@ function renderLudzie(){
       <tr><th>суффикс</th><th>когда</th><th>примеры</th></tr>
       ${FEMIN.map(f => `<tr><td class="c">${f[0]}</td><td style="color:var(--muted);white-space:normal">${f[1]}</td><td class="g" style="white-space:normal">${f[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Когда женской формы нет - берётся <span class="pl">pani</span> плюс мужская форма, несклоняемая.</b> <span class="pl">pani doktor, pani prezes, pani minister</span>: <span class="pl">byłem u pani doktor</span>, не «u pani doktorki» в официальной речи. Формы <span class="pl">doktorka, profesorka, ministra, gościni</span> живые и частые в прессе, но в документах и в обращении к незнакомой держится <span class="pl">pani + мужская форма</span>.</div>
+    <div class="tip"><b>Выбор зависит от контекста и предпочтения человека.</b> <span class="pl">Pani doktor, pani prezes, pani minister</span> широко употребляются, особенно в официальном обращении. Формы <span class="pl">doktorka, profesorka, ministra, gościni</span> тоже грамматичны и живы. Поэтому <span class="pl">u pani doktorki</span> не ошибка; если предпочтение человека известно, лучше следовать ему, а без такой информации в официальном контакте безопасна модель <span class="pl">pani + название должности</span>.</div>
     <div class="tip"><b>После <span class="pl">być</span> - творительный.</b> <span class="pl">Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką.</span> Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.</div>
   </div>${topicPracticeHTML(PEOPLE_PRACTICE, "people")}`;
 }
@@ -117,8 +120,8 @@ function renderLudzie(){
 function renderDim(){
   $("#s-dim").innerHTML = `<div class="panel">
     <h2>Уменьшительные формы</h2>
-    <p class="lead">В польском их используют гораздо шире, чем в русском - не только для «маленького», но и как знак вежливости и тепла в обычном разговоре.</p>
-    <div class="tip"><b>Это не про размер.</b> <span class="pl">Poproszę kawusię</span> в кафе не значит «маленькую чашечку» - это просто дружелюбный, смягчённый тон. Продавщица может предложить <span class="pl">bułeczkę</span> взрослому покупателю, а не ребёнку.</div>
+    <p class="lead">В польском их используют гораздо шире, чем в русском - не только для «маленького», но и для тепла, сервисной вежливости, иронии или подчёркнутой близости.</p>
+    <div class="tip"><b>Это не всегда про размер.</b> <span class="pl">Poproszę kawusię</span> в кафе не значит «маленькую чашечку» - это дружелюбный, смягчённый тон. Продавщица может предложить <span class="pl">bułeczkę</span> взрослому покупателю. Но в неподходящем контексте уменьшительное способно прозвучать иронично или слишком фамильярно.</div>
 
     <h3>Существительные: мужской род</h3>
     <div class="scroll"><table class="vt">
@@ -150,7 +153,7 @@ function renderDim(){
       <tr><th>полное имя</th><th>обычное уменьшительное</th><th>ласковое</th><th>по-русски похоже на</th></tr>
       ${DIM_NAME.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Практический совет.</b> Услышал незнакомое ласковое слово от продавца, официанта или коллеги - это не панибратство, а норма вежливого общения. В официальных документах и с незнакомыми по имени-фамилии уменьшительные, разумеется, не используют.</div>
+    <div class="tip"><b>Практический совет.</b> Услышал уменьшительное от продавца, официанта или коллеги - чаще всего это дружелюбный сервисный стиль, а не панибратство. Но не копируй его автоматически: с незнакомым человеком и в официальном тексте безопаснее нейтральная форма.</div>
   </div>${topicPracticeHTML(DIM_PRACTICE, "diminutive")}`;
 }
 
@@ -532,31 +535,31 @@ function vConj(){
       <p class="lead">${c.who}</p>
       ${konTable(c)}`).join("")}
 
-    <h3>-ować · -ywać · -iwać → -uj-</h3>
-    <p>Отбрасываем окончание, ставим <b>-uj-</b>, дальше окончания I спряжения. Огромная группа, всегда предсказуема.</p>
+    <h3>-ować и часть глаголов на -ywać / -iwać → -uj-</h3>
+    <p>У большинства глаголов на <b>-ować</b> и у части глаголов на <b>-ywać / -iwać</b> отбрасываем окончание, ставим <b>-uj-</b>, дальше окончания I спряжения.</p>
     <div class="scroll"><table class="vt">
       <tr><th>pracować<span class="tr">работать</span></th>${PERS.map(p => `<th>${p}</th>`).join("")}</tr>
       <tr><td class="note"></td>${["pracuję","pracujesz","pracuje","pracujemy","pracujecie","pracują"].map((f,i) => `<td class="f">${vform(f,"I",i)}</td>`).join("")}</tr>
     </table></div>
     <p class="pl" style="margin-top:10px">kupować → kupuję · studiować → studiuję · gotować → gotuję · dziękować → dziękuję · fotografować → fotografuję · wychowywać → wychowuję · pokazywać → pokazuję · zapisywać → zapisuję</p>
-    <div class="tip">Условие: после отбрасывания должен остаться хотя бы слог. Поэтому <span class="pl">chować</span> не сюда: <span class="pl">chowam, chowasz</span> - III спряжение.</div>
+    <div class="tip">Не все глаголы с похожим окончанием идут по этой модели: <span class="pl">bywać → bywam, zdobywać → zdobywam, przeżywać → przeżywam</span>. <span class="pl">chować → chowam, chowasz</span> тоже относится к III спряжению.</div>
 
     <h3>Глаголы на -nąć</h3>
     <p>Настоящее (или простое будущее, если вид совершенный) - по I спряжению: <span class="pl">zamknę, zamkniesz, zamknie, zamkniemy, zamkniecie, zamkną</span>.</p>
     <div class="scroll"><table>
       <tr><th>тип</th><th>прошедшее</th><th>пример</th></tr>
-      <tr><td>-ną- остаётся (ą → ę)</td><td class="c">zamknął / zamknęła</td><td class="w">zamknąć, ciągnąć, krzyknąć</td></tr>
-      <tr><td>-ną- выпадает</td><td class="c">rósł / rosła / rośli</td><td class="w">rosnąć, marznąć, zniknąć</td></tr>
+      <tr><td>-ną- остаётся (ą → ę)</td><td class="c">zamknął / zamknęła</td><td class="w">zamknąć, ciągnąć, krzyknąć, zniknąć</td></tr>
+      <tr><td>-ną- выпадает</td><td class="c">rósł / rosła / rośli</td><td class="w">rosnąć, marznąć</td></tr>
       <tr><td>две формы</td><td class="c">niknął = nikł</td><td class="w">niknąć, więdnąć</td></tr>
     </table></div>
-    <p class="lead">Правило большого пальца: совершенные обычно сохраняют -ną-, несовершенные чаще теряют.</p>
+    <p class="lead">Вид не предсказывает форму: <span class="pl">ciągnąć</span> несовершенный, но <span class="pl">ciągnął</span>; <span class="pl">zniknąć</span> совершенный, но <span class="pl">zniknął</span>. Форму прошедшего времени у таких глаголов нужно запоминать вместе с инфинитивом.</p>
 
     <h3>Чередования в основе</h3>
     <div class="scroll"><table>
       <tr><th>было</th><th>стало</th><th>где</th></tr>
       ${KALT.map(a => `<tr><td class="c">${a[0]}</td><td class="w">${a[1]}</td><td class="g">${a[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Важно.</b> В II спряжении чередование живёт только в формах <b>ja</b> и <b>oni</b>: <span class="pl">proszę / proszą</span>, но <span class="pl">prosisz, prosi, prosimy, prosicie</span>. В I спряжении - наоборот, чаще во всех формах, кроме ja/oni.</div>
+    <div class="tip"><b>Важно.</b> Таблица показывает частые модели, а не одно правило для всех спряжений. У многих глаголов II спряжения чередование видно в <b>ja</b> и <b>oni</b>: <span class="pl">proszę / proszą</span>, но <span class="pl">prosisz, prosi, prosimy, prosicie</span>. У глаголов I спряжения распределение другое: <span class="pl">piszę, piszesz, piszą</span>; <span class="pl">jadę, jedziesz, jadą</span>. Учи форму <b>ja</b>, форму <b>ty</b> и форму <b>oni</b> как модель конкретного глагола.</div>
 
     <h3>być - отдельная песня</h3>
     <div class="scroll"><table class="vt">
@@ -581,13 +584,16 @@ function vCzasy(){
     <div class="tip"><b>Главное правило.</b> У совершенного вида <b>нет настоящего времени</b>. <span class="pl">zrobię</span> - это «сделаю», а не «делаю». Настоящее возможно только у несовершенного: <span class="pl">robię</span>.</div>
 
     <h3>Как образуется вид</h3>
-    <p class="lead">Список пар ниже проще запомнить, если видеть механизм: способов всего четыре, и три из них предсказуемы.</p>
+    <p class="lead">Список пар ниже проще запоминать, если видеть механизм. Но приставка или суффикс не гарантируют нужную пару: значение и вид всегда проверяй по словарю.</p>
     <div class="scroll"><table class="vt">
       <tr><th>способ</th><th>что делает</th><th>примеры</th></tr>
       ${ASPEKT_JAK.map(a => `<tr><td class="c">${a[0]}</td><td style="color:var(--muted);white-space:normal">${a[1]}</td><td class="g" style="white-space:normal">${a[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Приставка меняет не только вид.</b> <span class="pl">pisać → napisać</span> - тот же смысл, только законченный. Но <span class="pl">pisać → podpisać</span> (подписать), <span class="pl">przepisać</span> (переписать), <span class="pl">zapisać</span> (записать), <span class="pl">wypisać</span> (выписать) - это уже другие глаголы. «Чистая» приставка, которая меняет только вид, у каждого глагола своя, и её учат вместе со словом.</div>
     <div class="tip"><b>Цепочка работает в обе стороны.</b> <span class="pl">pisać</span> (несов.) → <span class="pl">podpisać</span> (сов., новое значение) → <span class="pl">podpisywać</span> (несов. от нового значения). Приставка даёт совершенный вид, суффикс возвращает несовершенный. Так устроена почти вся глагольная лексика: <span class="pl">czytać → przeczytać</span>, но <span class="pl">czytać → odczytać → odczytywać</span>.</div>
+
+    <h3>Вид не генерируется механически</h3>
+    <div class="tip"><b>Запоминай не приставку, а цепочку.</b> Сначала проверь словарную пару: <span class="pl">czytać → przeczytać</span>. Если приставка создаёт новое значение, это уже новое слово: <span class="pl">pisać → podpisać</span>. Для такого совершенного глагола при необходимости учи и вторичный несовершенный: <span class="pl">podpisać → podpisywać</span>. В записи слова полезно держать сразу три пометы: значение, вид и управление.</div>
 
     <h3>Вид: пары глаголов</h3>
     <div class="scroll"><table>
@@ -596,7 +602,7 @@ function vCzasy(){
     </table></div>
 
     <h3>Как выбрать вид</h3>
-    <p class="lead">Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Здесь русская интуиция работает почти один в один, и это редкий участок, где её можно не перепроверять.</p>
+    <p class="lead">Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Русская интуиция здесь часто помогает, но пары и управление лучше сверять, особенно у приставочных глаголов.</p>
     <div class="scroll"><table class="vt">
       <tr><th>что говорим</th><th>вид</th><th>пример</th></tr>
       ${WYBOR.map(w => `<tr><td class="w" style="white-space:normal">${w[0]}</td><td class="c">${w[1]}</td><td class="g" style="white-space:normal">${w[2]}</td></tr>`).join("")}
@@ -626,7 +632,7 @@ function vCzasy(){
 
     <h3>Чередования в прошедшем</h3>
     <div class="scroll"><table>
-      <tr><td style="width:34%">инфинитив на <b>-eć</b></td><td class="c">e → a</td><td class="w">musieć → musiał, musiała, <b>но</b> musieli</td></tr>
+      <tr><td style="width:34%">часть глаголов на <b>-eć</b></td><td class="c">e → a</td><td class="w">musieć → musiał, musiała, <b>но</b> musieli</td></tr>
       <tr><td>инфинитив на <b>-ąć</b></td><td class="c">ą → ę</td><td class="w">zacząć → zaczął, <b>но</b> zaczęła, zaczęli</td></tr>
       <tr><td>основа на <b>-o-</b></td><td class="c">o → ó</td><td class="w">móc → mógł, nieść → niósł (но mogła, niosła)</td></tr>
     </table></div>
@@ -636,7 +642,7 @@ function vCzasy(){
       <tr><th>глагол</th><th>ja</th><th>on · ona</th><th>oni · one</th><th></th></tr>
       ${PASTIRR.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td><td class="w">${p[3]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[4]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> умеют отрываться и уезжать к первому слову: <span class="pl">gdzie byłeś?</span> = <span class="pl">gdzieś był?</span>; <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. И ударение: в <span class="pl">byliśmy, byliście</span> оно на третьем слоге от конца - единственное системное исключение из правила предпоследнего слога.</div>
+    <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В нейтральном вопросе: <span class="pl">Gdzie byłeś?</span> И ударение: в <span class="pl">byliśmy, byliście</span> оно на третьем слоге от конца - единственное системное исключение из правила предпоследнего слога.</div>
 
     <h3>Будущее: совершенный вид → простое</h3>
     <p>Совершенный глагол спрягается как настоящее время, а значит будущее.</p>
@@ -870,7 +876,7 @@ function listHTML(q){
       <td class="f">${vform(v[4], v[2], 1)}</td>
       <td class="f">${vform(v[5], v[2], 5)}</td>
       <td class="w">${v[6]}</td><td class="w">${v[7]}</td>
-      <td class="${v[8]==="сов."||v[8]==="-"?"":"g"}" style="${v[8]==="сов."||v[8]==="-"?"color:var(--muted);font-size:var(--fs-note)":"white-space:normal"}">${v[8]}${(ASPEKT_UWAGI[v[0]]||[])[0]?`<span style="display:block;font-family:var(--sans);font-size:var(--fs-micro);color:var(--alt)">${ASPEKT_UWAGI[v[0]][0]}</span>`:""}${(ASPEKT_UWAGI[v[0]]||[])[1]?`<span style="display:block;font-family:var(--sans);font-size:var(--fs-micro);color:var(--muted)">пара: ${ASPEKT_UWAGI[v[0]][1]} ↔ ${v[8]}</span>`:""}</td>
+      <td class="${v[8]==="сов."||v[8]==="-"?"":"g"}" style="${v[8]==="сов."||v[8]==="-"?"color:var(--muted);font-size:var(--fs-note)":"white-space:normal"}">${v[8]}${ASPEKT_UWAGI[v[0]]?`<span style="display:block;font-family:var(--sans);font-size:var(--fs-micro);color:var(--alt)">${ASPEKT_UWAGI[v[0]]}</span>`:""}</td>
     </tr>`).join("")}
   </table>${rows.length ? "" : `<p class="lead" style="padding:12px 0">Ничего не нашлось.</p>`}`;
 }
@@ -894,21 +900,24 @@ function renderNum(){
   $("#s-num").innerHTML = `<div class="panel">
     <h2>Числительные</h2>
     <p class="lead">Главная сложность не в самих числах, а в том, какой падеж они требуют от существительного и что делают с глаголом.</p>
-    <div class="tip"><b>Три режима.</b> <span class="pl">1</span> → всё в единственном числе. <span class="pl">2, 3, 4</span> → Mianownik множественного, глагол во множественном. <span class="pl">5 и больше</span> → Dopełniacz множественного, глагол в среднем роде единственного: <span class="pl">pięć osób było</span>.</div>
+    <div class="tip"><b>Три основных режима.</b> Числительное на <span class="pl">1</span>, кроме 11, требует Mianownik единственного: <span class="pl">dwadzieścia jeden dom był</span>. На <span class="pl">2, 3, 4</span>, кроме 12-14, - Mianownik множественного и глагол во множественном: <span class="pl">dwadzieścia dwa domy były</span>. На <span class="pl">5-9, 0</span> и на <span class="pl">11-14</span> - Dopełniacz множественного и глагол в среднем роде единственного: <span class="pl">pięć osób było</span>.</div>
 
     <h3>Количественные: 0–20</h3>
     ${ngrid(NUM)}
     <h3>Десятки, сотни, тысячи</h3>
     ${ngrid(NUM10)}
     <p class="lead" style="margin-top:10px">Составные пишутся раздельно и без «и»: <span class="pl">dwadzieścia jeden</span> (21) · <span class="pl">sto trzydzieści siedem</span> (137) · <span class="pl">dwa tysiące dwadzieścia sześć</span> (2026).</p>
-    <div class="tip"><b>Род есть только у 1 и 2.</b> <span class="pl">jeden dom · jedna książka · jedno okno</span>; <span class="pl">dwa domy · dwie książki · dwa okna</span>. Начиная с trzy род не различается.</div>
+    <div class="tip"><b>У базовых количественных форм род различается у 1 и 2.</b> <span class="pl">jeden dom · jedna książka · jedno okno</span>; <span class="pl">dwa domy · dwie książki · dwa okna</span>. У мужско-личных групп есть отдельные формы <span class="pl">dwaj, trzej, czterej</span>.</div>
 
     <h3>Согласование с существительным</h3>
     <div class="scroll"><table class="vt">
       <tr><th>число</th><th>существительное</th><th>пример</th><th>глагол</th></tr>
       ${NAGR.map(n => `<tr><td class="c">${n[0]}</td><td class="g">${n[1]}</td><td class="w">${n[2]}</td><td class="w">${n[3]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Смотрим только на последнее слово числительного. Но <span class="pl">11–14</span> всегда ведут себя как «5 и больше»: <span class="pl">dwanaście domów</span>, не «dwanaście domy».</p>
+    <p class="lead">В составных числительных смотрим на последнюю цифру: <span class="pl">22 domy</span>, <span class="pl">25 domów</span>. Исключение - <span class="pl">11-14</span>: они всегда требуют Dopełniacz множественного, <span class="pl">dwanaście domów</span>, не «dwanaście domy».</p>
+
+    <h3>Число на что оканчивается?</h3>
+    <div class="tip"><b>Быстрая схема.</b> <span class="pl">21, 31, 41...</span> обычно требуют единственного числа: <span class="pl">dwadzieścia jeden dom</span>. Окончания <span class="pl">2-4</span>, кроме 12-14, дают множественное: <span class="pl">22 domy</span>. Окончания <span class="pl">5-9, 0</span> и числа 11-14 - Dopełniacz множественного: <span class="pl">25 domów, 30 domów, 114 domów</span>. Возраст запоминай отдельно: <span class="pl">mam 21 lat, 22 lata, 25 lat</span>. Для мужчин есть свои формы: <span class="pl">dwaj / dwóch studentów</span>.</div>
 
     <h3>Мужско-личные формы</h3>
     <p>Если считаем мужчин, у числительного появляется отдельная форма - и она меняет весь остальной падеж и глагол.</p>
@@ -924,8 +933,8 @@ function renderNum(){
       <tr><th>число</th><th>группа</th><th>падеж группы</th><th>глагол</th><th>пример</th></tr>
       ${LICZ_GRUPA.map(l => `<tr><td class="c">${l[0]}</td><td class="w" style="white-space:normal">${l[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${l[2]}</td><td class="g">${l[3]}</td><td class="w" style="white-space:normal">${l[4]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Прилагательное согласуется с существительным, а не с числительным.</b> При <span class="pl">5+</span> вся группа целиком уходит в Dopełniacz множественного: <span class="pl">pięć <b>dużych domów</b></span>, <span class="pl">dziesięć <b>nowych samochodów</b></span>, <span class="pl">pięć <b>dużych książek</b></span>. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.</div>
-    <div class="tip"><b>Самое трудное место - пассив и прошедшее при 5+.</b> Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: <span class="pl">Pięć dużych domów <b>zostało sprzedanych</b></span>. Сравни с 2-4, где всё обычное: <span class="pl">Dwa duże domy <b>zostały sprzedane</b></span>. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.</div>
+    <div class="tip"><b>Прилагательное согласуется с существительным, а не с числительным.</b> При числительных на <span class="pl">5-9, 0</span> и при <span class="pl">11-14</span> вся группа целиком уходит в Dopełniacz множественного: <span class="pl">pięć <b>dużych domów</b></span>, <span class="pl">dziesięć <b>nowych samochodów</b></span>, <span class="pl">pięć <b>dużych książek</b></span>. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.</div>
+    <div class="tip"><b>Самое трудное место - пассив и прошедшее при числительных на 5-9, 0 и 11-14.</b> Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: <span class="pl">Pięć dużych domów <b>zostało sprzedanych</b></span>. Сравни с 2-4, где всё обычное: <span class="pl">Dwa duże domy <b>zostały sprzedane</b></span>. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.</div>
     <div class="tip"><b>Женский род ничем не отличается.</b> <span class="pl">dwie duże książki są</span> · <span class="pl">pięć dużych książek jest</span>. Род виден только у <span class="pl">dwa / dwie</span>, дальше механика та же.</div>
 
     <h3>Склонение</h3>
@@ -933,14 +942,14 @@ function renderNum(){
       <tr><th>падеж</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
       ${NDEKL.map(d => `<tr><td style="color:var(--muted)">${d[0]}</td><td class="w">${d[1]}</td><td class="w">${d[2]}</td><td class="w">${d[3]}</td><td class="w">${d[4]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Все числительные от 5 до 100 склоняются по образцу <span class="pl">pięć</span>: <span class="pl">pięciu, pięciu, pięć, pięcioma, pięciu</span>. В <span class="pl">Narzędnik</span> женское <span class="pl">dwiema</span> - единственная форма, где род ещё виден.</p>
+    <p class="lead">Числительные от 5 до 90 склоняются по образцу <span class="pl">pięć</span>: <span class="pl">pięciu, pięciu, pięć, pięcioma, pięciu</span>. <span class="pl">Sto</span> и сотни имеют свои модели. В <span class="pl">Narzędnik</span> женское <span class="pl">dwiema</span> сохраняет род.</p>
 
     <h3>Порядковые</h3>
     ${ngrid(ORD)}
     <p class="lead" style="margin-top:10px">Склоняются как обычные прилагательные: <span class="pl">pierwszy, pierwszego, pierwszemu…</span> В составных порядковыми становятся только десятки и единицы - последние два слова; сотни и тысячи остаются количественными: <span class="pl">dwudziesty pierwszy</span> · <span class="pl">tysiąc dziewięćset dziewięćdziesiąty dziewiąty</span>.</p>
 
     <h3>Собирательные</h3>
-    <p>Обязательны для детей, смешанных групп людей и слов, у которых нет единственного числа. Требуют Dopełniacz и глагол в среднем роде. Исключение - <span class="pl">oboje rodzice</span>: Mianownik и обычное согласование.</p>
+    <p>Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. Требуют Dopełniacz и глагол в среднем роде. Исключение - <span class="pl">oboje rodzice</span>: Mianownik и обычное согласование.</p>
     <div class="scroll"><table>
       <tr><th>форма</th><th>перевод</th><th>пример</th></tr>
       ${ZBIOR.map(z => `<tr><td class="g">${z[0]}</td><td style="color:var(--muted)">${z[1]}</td><td class="w">${z[2]}</td></tr>`).join("")}
@@ -990,7 +999,7 @@ function renderNum(){
     <h3>Возраст, деньги, счёт</h3>
     <div class="scroll"><table>
       <tr><td style="width:38%">Сколько тебе лет?</td><td class="w">Ile masz lat?</td></tr>
-      <tr><td>1 / 2–4 / 5+</td><td class="w">rok · lata · lat - <span class="g">mam 21 lat, 22 lata, 25 lat</span></td></tr>
+      <tr><td>1 / 2-4 / остальные</td><td class="w">rok · lata · lat - <span class="g">mam 21 lat, 22 lata, 25 lat</span></td></tr>
       <tr><td>деньги</td><td class="w">złoty · złote · złotych - <span class="g">2 złote, 5 złotych, 22 złote</span></td></tr>
       <tr><td>неточный счёт</td><td class="w">kilka · kilkanaście (11–19) · kilkadziesiąt · parę</td></tr>
     </table></div>
@@ -1013,7 +1022,7 @@ function renderNum(){
     <table>
       ${PROCENT.map(p => `<tr><td style="width:22%" class="c">${p[0]}</td><td class="w">${p[1]}</td></tr>`).join("")}
     </table>
-    <div class="tip"><b><span class="pl">procent</span> после числительного не склоняется.</b> <span class="pl">dwa procent, pięć procent, sto procent</span> - одна форма, в отличие от русского «два процента». С дробными числительными форма тоже застывает: <span class="pl">pół procent</span>, <span class="pl">półtora procent</span>, <span class="pl">dwa i pół procent</span> - и остаётся такой во всех падежах: <span class="pl">o dwóch i pół procent</span>. Формы <span class="pl">pół procenta, półtora procenta</span> часто слышны в живой речи, но словарная норма их не рекомендует. Склоняется <span class="pl">procent</span> только там, где числительного рядом нет: <span class="pl">w stu procentach</span> («на все сто»), <span class="pl">wysokość procentu</span>.</div>
+    <div class="tip"><b><span class="pl">procent</span> после количественного числительного.</b> В Mianownik, Dopełniacz и Biernik форма обычно остаётся <span class="pl">procent</span>: <span class="pl">dwa procent, pięć procent, sto procent</span>. В Dativ, Narzędnik и Miejscownik она склоняется: <span class="pl">stu procentom, z pięcioma procentami, o czterdziestu procentach</span>. После дробных числительных форма застывает во всех падежах: <span class="pl">pół procent, półtora procent, dwa i pół procent, o pięciu i pół procent</span>.</div>
 
   </div>${topicPracticeHTML(NUM_PRACTICE, "numeral")}`;
 }
@@ -1189,8 +1198,11 @@ function renderOrder(){
     </table></div>
     <div class="tip"><b>Это тенденция, не железная схема.</b> Контрастное ударение может выделить почти любое слово, но без особого контекста новое сообщение естественнее звучит в конце: <span class="pl">Klucze są na stole</span> и <span class="pl">Na stole są klucze</span> описывают ту же сцену, но не сообщают одно и то же.</div>
 
+    <h3>Нейтрально и с акцентом</h3>
+    <div class="tip"><b>Сначала строй нейтрально, затем переставляй только ради смысла.</b> <span class="pl">Widziałem go wczoraj</span> сообщает факт; <span class="pl">Go widziałem wczoraj</span> выделяет именно его. <span class="pl">Czy podoba ci się ten film?</span> - нейтральный порядок клитик; другой порядок возможен, если нужно выделить адресата. В вопросе <span class="pl">Ile kosztuje bilet?</span> нейтрально, а <span class="pl">Ile bilet kosztuje?</span> подчёркивает <span class="pl">bilet</span>.</div>
+
     <h3>Клитики: mi, ci, go, mu, się…</h3>
-    <p>Короткие безударные слова никогда не открывают предложение и никогда не идут сразу после предлога. Обычно они льнут ко второму месту в предложении - сразу после первого ударного слова или перед глаголом.</p>
+    <p>В нейтральной фразе короткие безударные слова обычно не открывают предложение и не идут сразу после предлога. Обычно они льнут ко второму месту в предложении - сразу после первого ударного слова или перед глаголом. При контрасте порядок может меняться.</p>
     <div class="scroll"><table class="vt">
       <tr><th>клитика</th><th>значение</th><th>пример</th></tr>
       ${CLITICS.map(c => `<tr><td class="w">${c[0]}</td><td style="color:var(--muted)">${c[1]}</td><td class="g">${c[2]}</td></tr>`).join("")}
@@ -1261,7 +1273,7 @@ function renderPreps(){
     <div class="chips" id="pfilter">${cs.map((c,i) =>
       `<button class="chip" data-f="${c}" aria-pressed="${i===0}"><span class="cp">${c}</span></button>`).join("")}</div>
     <div class="scroll"><table id="ptable" class="vt"></table></div>
-    <div class="tip"><b>Правило движения.</b> Стоишь - Miejscownik или Narzędnik. Двигаешься - Biernik. <span class="pl">Jestem na poczcie</span> / <span class="pl">idę na pocztę</span>.</div>
+    <div class="tip"><b>Где / куда у парных предлогов.</b> У <span class="pl">w, na, pod, nad, za, przed, między</span> положение обычно требует Miejscownik или Narzędnik, направление - Biernik: <span class="pl">Jestem na poczcie</span> / <span class="pl">idę na pocztę</span>. Само движение не всегда означает Biernik: <span class="pl">idę do sklepu</span> требует Dopełniacz, а <span class="pl">idę ulicą</span> - Narzędnik. Учи предлог вместе с падежом.</div>
 
     <h3>Беглое e: w → we, z → ze</h3>
     <p class="lead">Перед скоплением согласных или похожим звуком предлог обрастает гласной - иначе не выговорить.</p>
@@ -1301,7 +1313,7 @@ function renderPrepPractice(){
 function renderAdj(){
   $("#s-adj").innerHTML = `<div class="panel">
     <h2>Прилагательные</h2>
-    <p class="lead">Одна парадигма на все прилагательные, притяжательные (<span class="pl">mój, twój, nasz</span>) и указательные. Выучив её, закрываешь сразу три класса слов.</p>
+    <p class="lead">Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (<span class="pl">mój, twój, nasz</span>). <span class="pl">Jego, jej, ich</span> - исключение: они не склоняются.</p>
     <h3>dobry - полная парадигма</h3>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужчины</th><th>мн. остальное</th></tr>
@@ -1420,7 +1432,7 @@ function renderPron(){
       ${PRON.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
     <ol class="pit" style="margin-top:14px">
-      <li><b>Формы на n- ставятся только после предлога.</b> <span class="pl">Widzę go</span>, но <span class="pl">idę do niego</span>. <span class="pl">Mówię jej</span>, но <span class="pl">mówię o niej</span>. Это механическое правило, ошибок не даёт, если помнить о нём.</li>
+      <li><b>Формы <span class="pl">niego, niej, nich</span> ставятся после предлога.</b> <span class="pl">Widzę go</span>, но <span class="pl">idę do niego</span>. <span class="pl">Mówię jej</span>, но <span class="pl">mówię o niej</span>. В творительном формы <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
       <li><b>Короткие формы <span class="pl">go, mu, cię, ci, mi</span> безударные.</b> Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: <span class="pl">Mnie to nie interesuje</span>.</li>
       <li><b>Личное местоимение обычно опускается.</b> Окончание глагола уже содержит лицо: <span class="pl">idę</span>, а не <span class="pl">ja idę</span>. Постоянное <span class="pl">ja</span> звучит либо как нажим, либо как речь иностранца.</li>
       <li><b>Вежливое обращение - третье лицо.</b> <span class="pl">Czy pan ma paragon?</span> Форма на <span class="pl">ty</span> с незнакомым воспринимается как хамство, в отличие от русского, где «вы» - просто множественное.</li>
@@ -1624,7 +1636,7 @@ function renderTalk(){
     ["Czy możesz powtórzyć?", "Можешь повторить?", "Коротко и естественно."],
     ["Rozumiem mniej więcej.", "Я примерно понимаю.", "Если общий смысл понятен, но не всё."],
     ["Nie rozumiem jeszcze wszystkiego.", "Я пока не всё понимаю.", "Честно и без извинений."],
-    ["Jak to znaczy po rosyjsku?", "Что это значит по-русски?", "Можно заменить rosyjsku на angielsku."],
+    ["Co to znaczy po rosyjsku?", "Что это значит по-русски?", "Можно заменить rosyjsku на angielsku."],
     ["Czy dobrze rozumiem, że…?", "Я правильно понимаю, что…?", "Повтори смысл своими словами."],
     ["Możesz podać przykład?", "Можешь привести пример?", "Когда новое слово неясно."],
     ["Uczę się, więc czasem robię błędy.", "Я учусь, поэтому иногда ошибаюсь.", "Снимает напряжение в начале разговора."],
@@ -1653,7 +1665,7 @@ function renderTalk(){
     ["raczej", "скорее", "Raczej nie dam rady.", "Мягкое несогласие или отказ."],
     ["generalnie", "в целом", "Generalnie wszystko jest w porządku.", "Удобно для общего вывода."],
     ["tak naprawdę", "на самом деле", "Tak naprawdę wolę zostać w domu.", "Уточняет настоящую причину или мнение."],
-    ["jasne", "ясно; конечно", "— Możesz pomóc? — Jasne.", "Короткое естественное согласие."],
+    ["jasne", "ясно; конечно", "- Możesz pomóc? - Jasne.", "Короткое естественное согласие."],
     ["no nie? / prawda?", "да?; правда?", "To dobry plan, no nie?", "Мягко передаёт ход собеседнику и ждёт подтверждения."],
   ];
   $("#s-talk").innerHTML = `<div class="panel talk-panel">
@@ -1694,10 +1706,10 @@ function renderTalk(){
 
     <h3>Мини-диалоги</h3>
     <div class="talk-dialogues">
-      <article><p class="talk-situation">Знакомый спрашивает о выходных</p><p><b>— Co robiłeś w weekend?</b><br>— W weekend odpoczywałem w domu. W niedzielę spotkałem się ze znajomymi.</p><p class="talk-prompt">Твоя очередь: ответь, что делал именно ты. Достаточно двух фраз.</p></article>
-      <article><p class="talk-situation">Разговор о польском</p><p><b>— Jak długo uczysz się polskiego?</b><br>— Uczę się od … . Jeszcze nie mówię dobrze, ale staram się rozmawiać z ludźmi.</p><p class="talk-prompt">Замени срок и добавь, что тебе даётся легко или трудно.</p></article>
-      <article><p class="talk-situation">Приглашение</p><p><b>— Może pójdziemy jutro na kawę?</b><br>— Chętnie. O której? / Niestety, jutro nie mogę. Może w piątek?</p><p class="talk-prompt">Сначала согласись, затем в другом варианте вежливо откажись и предложи время.</p></article>
-      <article><p class="talk-situation">Не понял собеседника</p><p><b>— …</b><br>— Przepraszam, czy możesz powtórzyć trochę wolniej? Rozumiem mniej więcej, ale nie wszystko.</p><p class="talk-prompt">Это не ошибка, а нормальный ход разговора.</p></article>
+      <article><p class="talk-situation">Знакомый спрашивает о выходных</p><p><b>- Co robiłeś w weekend?</b><br>- W weekend odpoczywałem w domu. W niedzielę spotkałem się ze znajomymi.</p><p class="talk-prompt">Твоя очередь: ответь, что делал именно ты. Достаточно двух фраз.</p></article>
+      <article><p class="talk-situation">Разговор о польском</p><p><b>- Jak długo uczysz się polskiego?</b><br>- Uczę się od … . Jeszcze nie mówię dobrze, ale staram się rozmawiać z ludźmi.</p><p class="talk-prompt">Замени срок и добавь, что тебе даётся легко или трудно.</p></article>
+      <article><p class="talk-situation">Приглашение</p><p><b>- Może pójdziemy jutro na kawę?</b><br>- Chętnie. O której? / Niestety, jutro nie mogę. Może w piątek?</p><p class="talk-prompt">Сначала согласись, затем в другом варианте вежливо откажись и предложи время.</p></article>
+      <article><p class="talk-situation">Не понял собеседника</p><p><b>- …</b><br>- Przepraszam, czy możesz powtórzyć trochę wolniej? Rozumiem mniej więcej, ale nie wszystko.</p><p class="talk-prompt">Это не ошибка, а нормальный ход разговора.</p></article>
     </div>
 
     <h3>Фразы спасения</h3>
@@ -1902,6 +1914,7 @@ function linkHeadings(root){
     while(used.has(id)) id = base + "-" + (i++);
     used.add(id);
     h.dataset.h = id;
+    if(!h.closest(".content-variant")) h.id = "~" + id;
     const b = document.createElement("button");
     b.type = "button";
     b.className = "alink";
@@ -2138,7 +2151,7 @@ const idxSubHTML = id => IDX_SUB[id]
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
-    <p class="index-intro">Польская грамматика без лишней теории: выберите тему или найдите нужную форму поиском.</p>
+    <p class="index-intro">Без лишней теории: выберите тему или найдите нужную форму поиском.</p>
     <div class="idx">${GROUPS.map(g => `<section>
       <h3>${g[0]}</h3>
       ${g[1].map(([id, note]) => `<a class="idx-a" href="#${id}" data-s="${id}">

@@ -2,44 +2,37 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 import vm from "node:vm";
 import { parseHTML } from "linkedom";
+import { pages, extraPages } from "./pages.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const baseURL = "https://polski.hamanovich.com/";
-const pages = [
-  {id:"s-index", path:"", title:"Польская грамматика - таблицы, правила и примеры", description:"Практический справочник польской грамматики на русском с опорой на белорусский: падежи, глаголы, местоимения, числительные и примеры."},
-  {id:"s-alpha", path:"alphabet", title:"Польский алфавит и произношение - правила и примеры", description:"Польский алфавит, диграфы, носовые гласные, ударение, оглушение и ассимиляция с объяснениями для русско- и белорусскоязычных."},
-  {id:"s-rodz", path:"gender", title:"Род существительных в польском языке", description:"Мужской, женский и средний род в польском, три типа мужского рода, исключения и несклоняемые существительные на -um."},
-  {id:"s-cases", path:"cases", title:"Падежи польского языка - окончания и примеры", description:"Семь падежей польского языка: вопросы, предлоги, окончания единственного и множественного числа, чередования и исключения."},
-  {id:"s-alt", path:"alternations", title:"Чередования в польском языке - сводная карта", description:"Типовые польские чередования ó/o, ą/ę и изменения согласных при склонении существительных и спряжении глаголов."},
-  {id:"s-adj", path:"adjectives", title:"Польские прилагательные - склонение и сравнение", description:"Склонение польских прилагательных, степени сравнения, согласование и практические таблицы с примерами."},
-  {id:"s-adv", path:"adverbs", title:"Наречия польского языка - образование и степени сравнения", description:"Образование польских наречий, сравнительная и превосходная степени, формы места, времени и образа действия."},
-  {id:"s-pron", path:"pronouns", title:"Местоимения польского языка - полные таблицы", description:"Личные, притяжательные, возвратные и указательные местоимения польского языка: склонение, краткие формы и примеры."},
-  {id:"s-q", path:"questions", title:"Вопросы в польском языке - czy, gdzie, dokąd и który", description:"Общие и частные вопросы по-польски, склонение kto и co, различие jaki и który, а также где, куда, откуда и каким путём."},
-  {id:"s-num", path:"numerals", title:"Числительные польского языка - склонение и согласование", description:"Польские количественные, порядковые и собирательные числительные, склонение, согласование с существительным и глаголом."},
-  {id:"s-verbs", path:"verbs", title:"Польские глаголы - спряжение, времена, вид и управление", description:"Спряжения польских глаголов, прошедшее и будущее время, вид, наклонения, причастия, пассив и управление падежами."},
-  {id:"s-vocab", path:"vocabulary", title:"Словарь польского языка - 400 полезных слов", description:"Практический польский словарь: 100 полезных глаголов, существительных, прилагательных и наречий с ключевыми формами и живыми примерами."},
-  {id:"s-talk", path:"speaking", title:"Разговорный польский - фразы, шаблоны и мини-диалоги", description:"Разговорный польский для начинающих: готовые фразы для жизни, конструкторы предложений, короткие диалоги и фразы, которые помогают не потерять разговор."},
-  {id:"s-neg", path:"negation", title:"Отрицание в польском языке - правила и примеры", description:"Польское отрицание nie, двойное отрицание, родительный падеж после отрицания и конструкции ani, nikt, nic."},
-  {id:"s-order", path:"word-order", title:"Порядок слов в польском языке", description:"Нейтральный и выразительный порядок слов в польском предложении, место клитик się, mi, ci и логическое ударение."},
-  {id:"s-impers", path:"impersonal", title:"Безличные конструкции в польском языке", description:"Польские безличные конструкции объявлений, вывесок и официальной речи: można, trzeba, wolno, формы на -no и -to."},
-  {id:"s-conj", path:"conjunctions", title:"Союзы и сложные предложения в польском языке", description:"Польские сочинительные и подчинительные союзы, запятые, косвенная речь и преобразование придаточного в короткую конструкцию."},
-  {id:"s-part", path:"particles", title:"Частицы польского языка - значения и примеры", description:"Частые польские частицы no, czy, chyba, może, niech, oby, właśnie и другие с оттенками значения и примерами."},
-  {id:"s-ludzie", path:"people", title:"Обращение, имена и национальности по-польски", description:"Вежливое обращение pan, pani, państwo, склонение польских имён и фамилий, названия стран, жителей и языков."},
-  {id:"s-dim", path:"diminutives", title:"Уменьшительные формы в польском языке", description:"Польские уменьшительные существительные, прилагательные и имена: типовые суффиксы, оттенки вежливости и живые примеры."},
-  {id:"s-preps", path:"prepositions", title:"Предлоги польского языка и управление падежами", description:"Польские предлоги по падежам, различие места и направления, предлоги с двумя падежами и практические примеры."},
-  {id:"s-bridge", path:"language-bridges", title:"Польский через русский и белорусский - языковые мосты", description:"Фонетические соответствия польского, русского и белорусского языков, полезные ассоциации и ложные друзья переводчика."}
-];
 const pageById = new Map(pages.map(page => [page.id, page]));
-const [template, dataSource, appSource, clientSource, styleSource] = await Promise.all([
+const [template, notFoundTemplate, dataSource, appSource, clientSource, styleSource] = await Promise.all([
   readFile(resolve(root, "index.template.html"), "utf8"),
+  readFile(resolve(root, "404.template.html"), "utf8"),
   readFile(resolve(root, "data.js"), "utf8"),
   readFile(resolve(root, "app.js"), "utf8"),
   readFile(resolve(root, "client.js"), "utf8"),
   readFile(resolve(root, "style.css"), "utf8")
 ]);
 const fingerprint = source => createHash("sha256").update(source).digest("hex").slice(0, 10);
+const runGit = promisify(execFile);
+const gitDate = async (...paths) => {
+  try{
+    const { stdout } = await runGit("git", ["log", "-1", "--format=%cI", "--", ...paths], {cwd:root});
+    return stdout.trim().slice(0, 10) || null;
+  }catch{
+    return null;
+  }
+};
+const today = new Date().toISOString().slice(0, 10);
+const contentDate = await gitDate("data.js", "app.js", "index.template.html", "scripts/build.mjs") || today;
+const extraDates = new Map(await Promise.all(extraPages.map(async extra =>
+  [extra.path, await gitDate(extra.source) || today])));
 
 const { window, document } = parseHTML(template);
 const noop = () => {};
@@ -179,7 +172,10 @@ const assetHashes = {
   client:fingerprint(clientSource),
   search:fingerprint(searchSource)
 };
+const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
+await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
 
+const TOC_MIN = 6;
 const pageHref = (from, targetId) => {
   const target = pageById.get(targetId) || pages[0];
   if(!from.path) return target.path ? `${target.path}/` : "./";
@@ -200,6 +196,45 @@ groups.forEach(([, items], index) => items.forEach(([id]) => groupOf.set(id, ind
 const readingOrder = ["s-index", ...groups.flatMap(([, items]) => items.map(([id]) => id))];
 const labelOf = new Map(JSON.parse(vm.runInContext("JSON.stringify(TABS)", sandbox)));
 
+const jsonLD = (page, canonical) => {
+  const webpage = {
+    "@type":page.id === "s-index" ? ["WebPage", "CollectionPage"] : ["WebPage", "LearningResource"],
+    "@id":`${canonical}#webpage`,
+    url:canonical,
+    name:page.title,
+    headline:page.h1,
+    description:page.description,
+    inLanguage:"ru",
+    isPartOf:{"@id":`${baseURL}#website`},
+    isAccessibleForFree:true,
+    dateModified:contentDate,
+    about:{"@type":"Thing", name:"Польский язык"}
+  };
+  const graph = [{
+    "@type":"WebSite",
+    "@id":`${baseURL}#website`,
+    url:baseURL,
+    name:"Polski: końcówki",
+    alternateName:"Польская грамматика",
+    description:pages[0].description,
+    inLanguage:"ru"
+  }, webpage];
+  if(page.id !== "s-index"){
+    webpage.learningResourceType = "reference";
+    webpage.teaches = page.h1;
+    webpage.breadcrumb = {"@id":`${canonical}#breadcrumb`};
+    graph.push({
+      "@type":"BreadcrumbList",
+      "@id":`${canonical}#breadcrumb`,
+      itemListElement:[
+        {"@type":"ListItem", position:1, name:"Справочник", item:baseURL},
+        {"@type":"ListItem", position:2, name:page.h1}
+      ]
+    });
+  }
+  return JSON.stringify({"@context":"https://schema.org", "@graph":graph}).replace(/</g, "\\u003c");
+};
+
 const masterHTML = document.documentElement.outerHTML;
 const generated = [];
 for(const page of pages){
@@ -212,6 +247,9 @@ for(const page of pages){
   const canonical = new URL(page.path ? `${page.path}/` : "", baseURL).href;
   pageDocument.querySelector('link[rel="canonical"]').setAttribute("href", canonical);
   pageDocument.querySelector('meta[property="og:url"]').setAttribute("content", canonical);
+  const socialCard = new URL(`og/${page.path || "index"}.png`, baseURL).href;
+  pageDocument.querySelector('meta[property="og:image"]').setAttribute("content", socialCard);
+  pageDocument.querySelector('meta[property="og:image:alt"]').setAttribute("content", page.h1);
 
   for(const section of pageDocument.querySelectorAll(".sec")){
     if(section.id !== page.id) section.remove();
@@ -259,12 +297,23 @@ for(const page of pages){
     brandLink.innerHTML = brandHeading.innerHTML;
     brandHeading.replaceWith(brandLink);
   }
-  const topicHeading = pageDocument.querySelector(".sec h2");
-  if(topicHeading){
-    const pageHeading = pageDocument.createElement("h1");
-    pageHeading.className = "page-title";
-    pageHeading.innerHTML = topicHeading.innerHTML;
-    topicHeading.replaceWith(pageHeading);
+  const topicSection = pageDocument.querySelector(".sec");
+  const pageHeading = pageDocument.createElement("h1");
+  pageHeading.className = "page-title";
+  pageHeading.textContent = page.h1;
+  const topicHeading = topicSection.querySelector("h2");
+  if(topicHeading && !topicHeading.closest(".content-variant")) topicHeading.replaceWith(pageHeading);
+  else topicSection.prepend(pageHeading);
+
+  const tocHeadings = [...topicSection.querySelectorAll("h3[id]")].filter(heading => !heading.closest(".practice"));
+  if(page.id !== "s-index" && tocHeadings.length >= TOC_MIN){
+    const toc = pageDocument.createElement("nav");
+    toc.className = "toc";
+    toc.setAttribute("aria-label", "Содержание раздела");
+    toc.innerHTML = `<p class="toc-title">На этой странице</p><ol>${tocHeadings.map(heading =>
+      `<li><a href="#${heading.id}">${clean(heading.textContent)}</a></li>`).join("")}</ol>`;
+    const lead = pageHeading.nextElementSibling;
+    (lead?.classList.contains("lead") ? lead : pageHeading).after(toc);
   }
 
   for(const link of pageDocument.querySelectorAll("#nav [data-s],#navmenu [data-s],.idx-a[data-s]")){
@@ -287,6 +336,11 @@ for(const page of pages){
     const href = icon.getAttribute("href");
     if(href && !/^(?:[a-z]+:|\/)/i.test(href)) icon.setAttribute("href", prefix + href);
   }
+  const linkedData = pageDocument.createElement("script");
+  linkedData.type = "application/ld+json";
+  linkedData.textContent = jsonLD(page, canonical);
+  pageDocument.head.append(linkedData);
+
   const clientScript = pageDocument.createElement("script");
   clientScript.src = `${prefix}client.js?v=${assetHashes.client}`;
   clientScript.dataset.searchSrc = `${prefix}search-index.js?v=${assetHashes.search}`;
@@ -299,7 +353,11 @@ for(const page of pages){
   generated.push({page, bytes:Buffer.byteLength(html)});
 }
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(page => `  <url>\n    <loc>${new URL(page.path ? `${page.path}/` : "", baseURL).href}</loc>\n  </url>`).join("\n")}\n</urlset>\n`;
+const sitemapEntries = [
+  ...pages.map(page => [page.path, contentDate]),
+  ...extraPages.map(extra => [extra.path, extraDates.get(extra.path)])
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries.map(([path, lastmod]) => `  <url>\n    <loc>${new URL(path ? `${path}/` : "", baseURL).href}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(resolve(root, "sitemap.xml"), sitemap, "utf8");
 
 const totalBytes = generated.reduce((sum, item) => sum + item.bytes, 0);
