@@ -612,7 +612,7 @@ function vCzasy(){
       ${WYBOR_SLOWA.map(w => `<tr><td class="w">${w[0]}</td><td class="g" style="white-space:normal">${w[1]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Единственная настоящая ловушка - настоящее время.</b> Русское «я делаю» нельзя перевести совершенным: <span class="bad">zrobię</span> значит «сделаю». Если действие происходит сейчас, вид только несовершенный, без вариантов: <span class="pl">robię, czytam, piszę</span>.</div>
-    <div class="tip"><b><span class="pl">przez godzinę</span> и <span class="pl">w godzinę</span> - не одно и то же.</b> <span class="pl">Czytałem przez godzinę</span> - час читал, дочитал или нет, неизвестно. <span class="pl">Przeczytałem to w godzinę</span> - уложился за час и закончил. Русское «за час» покрывает оба, польский выбирает видом. Подробнее - «Отрезки времени» во вкладке «Числительные».</div>
+    <div class="tip"><b><span class="pl">przez godzinę</span> и <span class="pl">w godzinę</span> - не одно и то же.</b> <span class="pl">Czytałem przez godzinę</span> - час читал, дочитал или нет, неизвестно. <span class="pl">Przeczytałem to w godzinę</span> - уложился за час и закончил. В русском это тоже две разные конструкции: «читал час» и «прочитал за час». Различие несёт предлог: <span class="pl">przez</span> + Biernik - сколько длилось, <span class="pl">w</span> + Biernik - за какой срок уложился, а вид просто согласуется. Подробнее - «Отрезки времени» во вкладке «Числительные».</div>
 
     <h3>Сетка: какой вид в каком времени</h3>
     <div class="scroll"><table>
@@ -623,7 +623,7 @@ function vCzasy(){
     </table></div>
 
     <h3>Прошедшее время</h3>
-    <p>Основа: инфинитив минус <b>-ć</b>, дальше <b>-ł-</b> и окончание рода и лица. Род есть у всех лиц - в русском такого нет.</p>
+    <p>Основа: инфинитив минус <b>-ć</b>, дальше <b>-ł-</b> и окончание рода и лица. В единственном числе род есть и в русском («я делал / делала»), польская особенность - родовые формы ещё и в 1-м и 2-м лице множественного: <span class="pl">robiliśmy / robiłyśmy</span>, <span class="pl">robiliście / robiłyście</span>.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>м. род</th><th>ж. род</th><th>ср. род</th></tr>
       ${PAST.map(p => `<tr><td style="color:var(--muted)">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td><td class="${p[3]==="-"?"":"w"}" style="${p[3]==="-"?"color:var(--line)":""}">${p[3]}</td></tr>`).join("")}
@@ -642,7 +642,7 @@ function vCzasy(){
       <tr><th>глагол</th><th>ja</th><th>on · ona</th><th>oni · one</th><th></th></tr>
       ${PASTIRR.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td><td class="w">${p[3]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[4]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В нейтральном вопросе: <span class="pl">Gdzie byłeś?</span> И ударение: в <span class="pl">byliśmy, byliście</span> оно на третьем слоге от конца - единственное системное исключение из правила предпоследнего слога.</div>
+    <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В нейтральном вопросе: <span class="pl">Gdzie byłeś?</span> И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - <span class="pl">by-LI-śmy</span>, <span class="pl">ro-BI-li-śmy</span>, <span class="pl">czy-TA-li-ście</span>. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.</div>
 
     <h3>Будущее: совершенный вид → простое</h3>
     <p>Совершенный глагол спрягается как настоящее время, а значит будущее.</p>
@@ -711,7 +711,8 @@ function vTryby(){
       <tr><td class="w">Chętnie bym pojechał.</td><td>раздельно после наречия</td></tr>
       <tr><td class="w">Należałoby zadzwonić.</td><td>безличная форма</td></tr>
     </table>
-    <div class="tip"><b>Условие целиком.</b> <span class="pl">Gdyby + условное, to + условное</span>: <span class="pl">Gdybym miał czas, poszedłbym z tobą.</span> Оба глагола в условном - в отличие от русского «если бы у меня было время, я бы пошёл», где первая часть без «бы».</div>
+    <div class="tip"><b>Условие целиком.</b> <span class="pl">Gdyby + условное, to + условное</span>: <span class="pl">Gdybym miał czas, poszedłbym z tobą.</span> Оба глагола в условном. Русское «бы» тоже стоит в обеих частях («если бы у меня было время, я бы пошёл»), но оно неизменяемо, а польская <span class="pl">-by</span> спрягается по лицам: <span class="pl">gdybym, gdybyś, gdybyśmy</span>.</div>
+    <div class="tip"><b>Ударение в условном.</b> Оно тоже сдвигается: <span class="pl">ZRO-bił-bym</span>, <span class="pl">ro-BI-li-by</span> - третий слог от конца, <span class="pl">ro-BI-li-by-śmy</span>, <span class="pl">ro-BI-li-by-ście</span> - четвёртый.</div>
     <p class="lead">Рабочие вежливые заготовки: <span class="pl">Chciałbym / Chciałabym…</span> · <span class="pl">Czy mógłbym prosić o…?</span> · <span class="pl">Czy mogłaby pani powtórzyć?</span> · <span class="pl">Wolałbym nie.</span></p>
 
     <h3>powinien - «следует»</h3>
@@ -720,10 +721,10 @@ function vTryby(){
       <tr><th>лицо</th><th>м. род</th><th>ж. род</th></tr>
       ${POWINIEN.map(p => `<tr><td style="color:var(--muted)">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Род обязателен, как в прошедшем времени.</b> Мужчина говорит <span class="pl">powinienem</span>, женщина - <span class="pl">powinnam</span>. И ударение то же исключение, что у <span class="pl">byliśmy</span>: <span class="pl">po-WIN-ni-śmy</span>, <span class="pl">po-WIN-ni-ście</span> - третий слог от конца.</div>
+    <div class="tip"><b>Род обязателен, как в прошедшем времени.</b> Мужчина говорит <span class="pl">powinienem</span>, женщина - <span class="pl">powinnam</span>. И ударение то же, что в прошедшем времени: <span class="pl">po-WIN-ni-śmy</span>, <span class="pl">po-WIN-ni-ście</span> - третий слог от конца.</div>
 
     <h3>powinien в прошедшем</h3>
-    <p class="lead">Добавляется <span class="pl">był / była / byli</span> - «надо было, а я не сделал». В разговоре часто обходятся одной формой настоящего, но письменная норма требует связки.</p>
+    <p class="lead">Добавляется <span class="pl">był / była / byli</span> - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. В разговоре часто обходятся одной формой настоящего, но письменная норма требует связки.</p>
     <table>
       ${POWINIEN_PAST.map(p => `<tr><td style="width:44%" class="w">${p[0]}</td><td>${p[1]}</td></tr>`).join("")}
     </table>
@@ -748,9 +749,10 @@ function vFormy(){
       <tr><th>глагол</th><th>от чего</th><th>причастие</th><th>перевод</th></tr>
       ${IMIES_CZ.map(i => `<tr><td class="w">${i[0]}</td><td style="color:var(--muted)">${i[1]}</td><td class="g">${i[2]}</td><td style="color:var(--muted)">${i[3]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead"><span class="pl">kobieta czytająca gazetę</span> - «женщина, читающая газету» = <span class="pl">kobieta, która czyta gazetę</span>. В речи почти всегда звучит второй вариант.</p>
+    <p class="lead"><span class="pl">Kobieta czytająca gazetę siedzi przy oknie.</span> = <span class="pl">Kobieta, która czyta gazetę, siedzi przy oknie.</span> - «женщина, читающая газету, сидит у окна». Придаточное с <span class="pl">która</span> отделяется запятыми с двух сторон, причастный оборот - нет. В разговоре чаще звучит второй вариант, но в объявлениях и документах причастие обычно: <span class="pl">osoby mieszkające w Polsce</span>.</p>
 
     <h3>Страдательное причастие: -ny / -ony / -ty</h3>
+    <p>Только от переходных глаголов, то есть от тех, у которых есть прямое дополнение в Bierniku. От <span class="pl">korzystać z</span>, <span class="pl">opiekować się</span>, <span class="pl">iść</span> его нет: форм <span class="bad">korzystany</span>, <span class="bad">zaopiekowany</span> не существует.</p>
     <div class="scroll"><table class="vt">
       <tr><th>тип</th><th>примеры</th></tr>
       ${IMIES_B.map(i => `<tr><td>${i[0]}</td><td class="w">${i[1]}</td></tr>`).join("")}
@@ -767,7 +769,7 @@ function vFormy(){
     </table></div>
     <div class="tip"><b>Два ограничения.</b> 1) Субъект деепричастия и главного глагола - один и тот же человек: <span class="pl">Idąc do pracy, zgubiłem telefon</span> - шёл и потерял один и тот же «я». 2) Форма на <span class="pl">-wszy / -łszy</span> - книжная; в разговоре вместо <span class="pl">Zrobiwszy zakupy…</span> скажут <span class="pl">Kiedy zrobiłem zakupy…</span></div>
 
-    <h3>Настоящий пассив: zostać / być + причастие</h3>
+    <h3>Страдательный залог: zostać / być + причастие</h3>
     <p>Причастие согласуется с подлежащим в роде и числе. Исполнитель - через <span class="pl">przez + Biernik</span>: <span class="pl">zbudowany przez znaną firmę</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>конструкция</th><th>смысл</th><th>примеры</th></tr>
@@ -799,9 +801,10 @@ function vRekcja(){
         <td class="w">${r[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Отрицание съедает Biernik.</b> При <span class="pl">nie</span> прямое дополнение уходит в Dopełniacz: <span class="pl">Mam czas → Nie mam czasu</span> · <span class="pl">Znam ją → Nie znam jej</span> · <span class="pl">Lubię kawę → Nie lubię kawy</span>.</div>
-    <h3>Глаголы движения: пара «конкретный / многократный»</h3>
+    <h3>Глаголы движения: пара «однонаправленный / разнонаправленный»</h3>
+    <p class="lead">Первый глагол - движение в одну сторону в конкретный момент, второй - движение туда и обратно, вообще или по привычке. Ровно как русское «иду / хожу».</p>
     <div class="scroll"><table class="vt">
-      <tr><th>сейчас, один раз</th><th>вообще, регулярно</th><th>перевод</th><th>пример</th></tr>
+      <tr><th>в одну сторону, сейчас</th><th>в разные стороны, вообще</th><th>перевод</th><th>пример</th></tr>
       ${RUCH.map(r => `<tr><td class="g">${r[0]}</td><td class="w">${r[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
     </table></div>
 
@@ -819,7 +822,7 @@ function vRekcja(){
       ${PREF_ASPEKT.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td><td class="g">${p[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Основа меняется предсказуемо.</b> <span class="pl">-jść → -chodzić</span>, <span class="pl">-jechać → -jeżdżać</span>, <span class="pl">-nieść → -nosić</span>, <span class="pl">-wieźć → -wozić</span>, <span class="pl">-lecieć → -latywać</span>. Отсюда <span class="pl">przyniosę / przynoszę</span>, <span class="pl">przywiozę / przywożę</span>. Формы <span class="bad">przyiść</span> или <span class="bad">przyjeżdżeć</span> не существуют.</div>
-    <div class="tip"><b>Зачем это нужно на практике.</b> «Поезд отходит в пять» - регулярно, значит несовершенный: <span class="pl">Pociąg odjeżdża o piątej</span>. «Поезд ушёл» - однократно и законченно: <span class="pl">Pociąg odjechał</span>. Оба слова от <span class="pl">jechać</span>, но берутся из разных половин пары.</div>
+    <div class="tip"><b>Зачем это нужно на практике.</b> «Поезд отходит в пять» - настоящее время, а у совершенного вида его нет, значит несовершенный: <span class="pl">Pociąg odjeżdża o piątej</span>. Так же говорят о расписании и о запланированном будущем. «Поезд ушёл» - однократно и законченно: <span class="pl">Pociąg odjechał</span>. Оба слова от <span class="pl">jechać</span>, но берутся из разных половин пары.</div>
     <h3>iść с приставками: рабочие фразы</h3>
     <div class="scroll"><table>
       <tr><th>глагол</th><th>перевод</th><th>пример</th></tr>

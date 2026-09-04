@@ -119,7 +119,7 @@ const CASES = [
     {l:"мужской", f:[{a:"",b:"sklep|"},{a:"",b:"kot|"},{a:"",b:"pan|"},{a:"",b:"nauczyciel|"},{a:"",b:"dzień|"}], n:"нулевое окончание"},
     {l:"женский", f:[{a:"",b:"kaw|a"},{a:"",b:"książk|a"},{a:"",b:"restauracj|a"},{a:"",b:"noc|"},{a:"",b:"pan|i"}], n:"-a; реже согласная или -i"},
     {l:"средний", f:[{a:"",b:"piw|o"},{a:"",b:"mieszkani|e"},{a:"",b:"imi|ę"},{a:"",b:"muzeum|"}], n:"-o / -e / -ę / -um"},
-    {l:"муж. на -a", f:[{a:"",b:"koleg|a"},{a:"",b:"mężczyzn|a"},{a:"",b:"kierowc|a"}], n:"склоняются по-женски, согласуются по-мужски: ten kolega"}
+    {l:"муж. на -a", f:[{a:"",b:"koleg|a"},{a:"",b:"mężczyzn|a"},{a:"",b:"kierowc|a"}], n:"в ед. ч. склоняются по-женски, во мн. ч. - по мужско-личному; согласование всегда мужское: ten kolega, ci koledzy"}
   ],
   pl:[
     {l:"мужско-личный", f:[{a:"student",b:"studen|c|i"},{a:"sąsiad",b:"sąsie|dzi|"},{a:"Polak",b:"Pola|c|y"},{a:"lekarz",b:"lekarz|e"},{a:"pan",b:"pan|owie"}], n:"только про мужчин: -i / -y / -e / -owie, почти всегда с чередованием"},
@@ -158,13 +158,14 @@ const CASES = [
   "<b>Отрицание сносит винительный в родительный.</b> <span class='pl'>Mam bilet → nie mam biletu.</span> Автоматически и почти без исключений - самая частая точка отказа у русскоязычных на B1. Винительный удерживается только там, где <span class='pl'>nie</span> отрицает не глагол, а отдельное слово: <span class='pl'>Widziałem nie Annę, a Marię</span>.",
   "<b>Одушевлённость работает только в мужском единственном.</b> Во множественном граница проходит иначе: <span class='pl'>widzę psy</span> (животные - как неодушевлённые), но <span class='pl'>widzę panów</span>.",
   "<b>na / w + винительный = движение</b>, + предложный = положение. <span class='pl'>Idę na pocztę</span> ↔ <span class='pl'>jestem na poczcie</span>. Одна пара предлогов, два падежа, разный смысл.",
-  "<b>Глаголы, которые в русском требуют другого падежа:</b> <span class='pl'>czekam na autobus</span> (жду автобус), <span class='pl'>proszę o rachunek</span> (прошу счёт), <span class='pl'>pytam o cenę</span> (спрашиваю о цене)."],
+  "<b>Глаголы, которые в русском требуют другого падежа:</b> <span class='pl'>czekam na autobus</span> (жду автобус), <span class='pl'>proszę o rachunek</span> (прошу счёт), <span class='pl'>pytam o cenę</span> (спрашиваю о цене).",
+  "<b>Часть неодушевлённых ведёт себя как одушевлённые.</b> Разговорная норма ставит <span class='pl'>-a</span> у названий еды, игр, техники, валют и марок: <span class='pl'>zjem pomidora, mam laptopa, gram w tenisa, wysłałem maila, daj loda, kup papierosa</span>. Форма без <span class='pl'>-a</span> (<span class='pl'>mam laptop</span>) тоже встречается и в письменной речи считается более осторожной, но в живой речи вы услышите именно <span class='pl'>-a</span>. Закрытого списка нет: такие слова набираются вместе с лексикой."],
   sent:[["Poproszę kawę i dwie bułki.","Мне, пожалуйста, кофе и две булки."],["Czekam na autobus już dziesięć minut.","Жду автобус уже десять минут."],["Idę na pocztę, a potem do apteki.","Иду на почту, а потом в аптеку."],["Mam czas w środę wieczorem.","У меня есть время в среду вечером."],["Widzę tego pana codziennie.","Вижу этого пана каждый день."]],
   trap:"Само окончание <span class='pl'>-ę</span> у тебя стоит с первого блока. Ошибки идут не отсюда, а из соседних клеток: числительные, отрицание, глагольное управление."
 },
 {
   id:"dop", name:"Dopełniacz", ru:"Родительный", q:"kogo? czego?",
-  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После числительных на 5-9 и 0, а также после 11-14: <span class='pl'>pięć biletów, dwanaście biletów</span>. Также после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>."],
+  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После числительных на 5-9 и 0, а также после 11-14: <span class='pl'>pięć biletów, dwanaście biletów</span>. Также после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>.","Часть вместо целого: <span class='pl'>kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy</span> - против <span class='pl'>kup chleb</span> (конкретную буханку). Русская модель «купи хлеба / купи хлеб» переносится один в один."],
   preps:"do, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast",
   sg:[
     {l:"муж. одушевл.", f:[{a:"pan",b:"pan|a"},{a:"brat",b:"brat|a"},{a:"pies",b:"ps|a"}], n:"-a, без вариантов"},
@@ -222,7 +223,7 @@ const CASES = [
   ],
   pl:[
     {l:"все роды: регулярно", f:[{a:"bilety",b:"bilet|ami"},{a:"kawy",b:"kaw|ami"},{a:"studenci",b:"student|ami"}], n:"-ami"},
-    {l:"исключения -mi", f:[{a:"ludzie",b:"ludź|mi"},{a:"dzieci",b:"dzieć|mi"},{a:"pieniądze",b:"pieniędz|mi"},{a:"goście",b:"gość|mi"},{a:"bracia",b:"brać|mi"},{a:"konie",b:"koń|mi"}], n:"короткий список, стоит выучить целиком"}
+    {l:"исключения -mi", f:[{a:"ludzie",b:"ludź|mi"},{a:"dzieci",b:"dzieć|mi"},{a:"pieniądze",b:"pieniędz|mi"},{a:"goście",b:"gość|mi"},{a:"bracia",b:"brać|mi"},{a:"konie",b:"koń|mi"},{a:"przyjaciele",b:"przyjaciół|mi"}], n:"короткий список, стоит выучить целиком"}
   ],
   agree:[["ten dobry lekarz","tym dobrym lekarzem"],["ta dobra kawa","tą dobrą kawą"],["to dobre piwo","tym dobrym piwem"],["мн. любое","tymi dobrymi ludźmi"]],
   exc:[["ja / ty","mną / tobą",""],["on / ona","nim / nią","после предлога: z nim, z nią"],["my / wy","nami / wami",""]],
@@ -231,7 +232,8 @@ const CASES = [
   "<b>Но прилагательное после <span class='pl'>być</span> остаётся в именительном.</b> <span class='pl'>Jestem zmęczony</span> ✅, <span class='pl'>jestem lekarzem</span> ✅, вместе - <span class='pl'>jestem dobrym lekarzem</span>. Проверка: есть существительное - творительный, нет - именительный.",
   "<b>Предлог <span class='pl'>z</span> управляет двумя падежами, и смысл разный.</b> <span class='pl'>z Warszawy</span> (родительный) = из Варшавы; <span class='pl'>z bratem</span> (творительный) = с братом.",
   "<b>Транспорт идёт без предлога.</b> <span class='pl'>Jadę autobusem, tramwajem, samochodem, pociągiem</span>. Русское «на автобусе» тянет вставить <span class='pl'>na</span> - это ошибка.",
-  "<b><span class='pl'>przed / nad / pod / za / między</span> + творительный = где, + винительный = куда.</b> <span class='pl'>Stoję przed domem</span> ↔ <span class='pl'>idę przed dom</span>."],
+  "<b><span class='pl'>przed / nad / pod / za / między</span> + творительный = где, + винительный = куда.</b> <span class='pl'>Stoję przed domem</span> ↔ <span class='pl'>idę przed dom</span>.",
+  "<b>Связка <span class='pl'>to</span> отменяет творительный.</b> <span class='pl'>Anna jest lekarką</span>, но <span class='pl'>Anna to lekarka</span> - после <span class='pl'>to</span> обе части стоят в именительном: <span class='pl'>Warszawa to stolica Polski</span>. Вариант с <span class='pl'>to</span> звучит определительно, «это и есть»; вариант с <span class='pl'>być</span> нейтрален. Смешивать модели нельзя: <span class='pl'>Anna to lekarką</span> - ошибка."],
   sent:[["Jestem programistą, pracuję zdalnie.","Я программист, работаю удалённо."],["Jadę tramwajem do pracy.","Еду на трамвае на работу."],["Poproszę kawę z mlekiem.","Мне, пожалуйста, кофе с молоком."],["Spotykamy się przed sklepem o piątej.","Встречаемся перед магазином в пять."],["Moja siostra jest lekarką.","Моя сестра - врач."]],
   trap:"Здесь ошибка не в окончании, а в самом решении поставить падеж. Окончания <span class='pl'>-em / -ą</span> простые, чередований почти нет. Вся сложность - вспомнить, что после <span class='pl'>być</span> нужен именно этот падеж."
 },
@@ -252,7 +254,7 @@ const CASES = [
   alt:[["t","ci","brat → o bracie"],["d","dzi","woda → w wodzie"],["st","ści","miasto → w mieście"],["sł","śl","krzesło → na krześle"],["ł","l","szkoła → w szkole"],["r","rz","teatr → w teatrze"],["k","c","apteka → w aptece"],["g","dz","droga → na drodze"],["ch","sz","mucha → o musze"],["n","ni","okno → w oknie"],["b p w m f","bi pi wi mi fi","sklep → w sklepie"],["s z","si zi","nos → o nosie"]],
   pit:["<b>Как выбрать между -e и -u.</b> Для мужского и среднего рода сначала найди конец основы. <span class='pl'>k, g, ch</span> или мягкая / исторически мягкая согласная обычно дают <span class='pl'>-u</span>: <span class='pl'>na parkingu, o lekarzu</span>. Многие другие твёрдые согласные дают <span class='pl'>-e</span> с чередованием: <span class='pl'>w sklepie, o obiedzie</span>. Формы <span class='pl'>w domu, o panu, o synu</span> запоминаются отдельно. У женского рода своя развилка: твёрдая основа обычно даёт <span class='pl'>-e</span>, мягкая - <span class='pl'>-i/-y</span>.",
   "<b>Чередование бери из белорусского, не из русского.</b> <span class='pl'>у вадзе → w wodzie</span>, <span class='pl'>у хаце → w chacie</span>, <span class='pl'>у школе → w szkole</span>. Русский даст «в воде» и выведет на <span class='pl'>w wode</span>.",
-  "<b>Развилка -e / -u.</b> Основная модель: <span class='pl'>k, g, ch</span> и мягкие / исторически мягкие согласные обычно дают <span class='pl'>-u</span>; многие другие твёрдые основы - <span class='pl'>-e</span> с чередованием. Частотные исключения вроде <span class='pl'>w domu, o panu, o synu</span> учи отдельными готовыми формами.",
+  "<b>Одушевлённость на предложный не влияет.</b> <span class='pl'>o psie, o bracie, o stole</span> - одна модель. Это единственный падеж, где всё решают род и мягкость основы, а живое или неживое не спрашивают вовсе.",
   "<b>Чередование ó → o.</b> У многих слов <span class='pl'>ó</span> меняется на <span class='pl'>o</span> в косвенных формах: <span class='pl'>stół → na stole</span>, <span class='pl'>samochód → w samochodzie</span>, <span class='pl'>ogród → w ogrodzie</span>, <span class='pl'>pokój → w pokoju</span>. Конкретную основу лучше запоминать сразу вместе с формой.",
   "<b>Предлог не всегда совпадает с русским.</b> <span class='pl'>w pracy</span> (не «на»), <span class='pl'>na poczcie, na dworcu, na lotnisku, na stacji, na przystanku, na uniwersytecie, na ulicy, na wsi, na basenie</span>. Учить парой предлог+слово.",
   "<b>Без предлога падежа нет.</b> Если предлог не нужен - значит, и падеж другой. Это единственный такой падеж, используй как проверку."],
@@ -382,7 +384,7 @@ const CASE_PRACTICE = [
     {id:"cel-1", prompt:"Pomagam starszej ___ (sąsiadka).", answers:["sąsiadce"], explanation:"Pomagać требует дательного; sąsiadka → sąsiadce с чередованием k → c."},
     {id:"cel-2", prompt:"Dziękuję ___ za pomoc.", options:["pan","pana","panu","panem"], answers:["panu"], explanation:"Dziękować требует дательного: dziękuję panu."},
     {id:"cel-3", prompt:"Kupiliśmy ___ prezenty.", options:["dzieci","dzieciom","dziećmi"], answers:["dzieciom"], explanation:"Дательный множественного для всех родов имеет окончание -om: dzieciom."},
-    {id:"cel-4", prompt:"___ się ten film nie podoba.", options:["Ja","Mi","Mną"], answers:["Mi"], explanation:"В конструкции podoba mi się тот, кому нравится, стоит в дательном."},
+    {id:"cel-4", prompt:"___ się ten film nie podoba.", options:["Mnie","Mi","Mną"], answers:["Mnie"], explanation:"Тот, кому нравится, стоит в дательном, но в начале фразы работает только полная форма: Mnie się ten film nie podoba. Краткое mi в первую позицию не ставится."},
     {id:"cel-5", prompt:"Daję książkę nowemu ___ (student).", answers:["studentowi"], explanation:"Основное мужское окончание дательного: -owi, studentowi."},
     {id:"cel-6", prompt:"Pomagam młodszemu ___ (brat).", answers:["bratu"], explanation:"Brat входит в небольшой список мужских слов с окончанием -u: bratu."},
     {id:"cel-7", prompt:"Przyglądam się małemu ___ (dziecko).", answers:["dziecku"], explanation:"Средний род в дательном единственного получает -u: dziecku."},
@@ -393,7 +395,7 @@ const CASE_PRACTICE = [
     {id:"cel-12", prompt:"Czy możesz powiedzieć ___ prawdę? (ja)", answers:["mi"], explanation:"Powiedzieć komu? mi - дательный."},
     {id:"cel-13", prompt:"Lekarz pomaga choremu ___ (dziecko).", answers:["dziecku"], explanation:"Dziecko в дательном: dziecku."},
     {id:"cel-14", prompt:"Wierzę mojemu ___ (przyjaciel).", answers:["przyjacielowi"], explanation:"Wierzyć требует дательного: przyjacielowi."},
-    {id:"cel-15", prompt:"___ temu człowiekowi trudno pomóc.", options:["Ten","Tego","Temu"], answers:["Temu"], explanation:"Pomóc komu? temu człowiekowi."},
+    {id:"cel-15", prompt:"___ człowiekowi trudno pomóc.", options:["Ten","Tego","Temu"], answers:["Temu"], explanation:"Pomóc komu? temu człowiekowi."},
     {id:"cel-16", prompt:"Przyglądamy się małym ___ (kot).", answers:["kotom"], explanation:"Дательный множественного обычно оканчивается на -om: kotom."},
     {id:"cel-17", prompt:"Nie ufam temu ___ (sprzedawca).", answers:["sprzedawcy"], explanation:"Ufać требует дательного; sprzedawca → sprzedawcy."},
     {id:"cel-18", prompt:"Rodzice kupili dzieciom nowe ___.", options:["rowery","rowerów","rowerami"], answers:["rowery"], explanation:"Dzieciom - дательный адресата; rowery - винительный прямого объекта."},
@@ -671,7 +673,7 @@ const VERB_EXTRA = {
     ["Dzieci ___ już spać. (powinien)","powinny","Dzieci - немужско-личная группа: powinny."],
     ["___ dokument. (podpisać, pan)","Proszę podpisać","Формула вежливой просьбы: proszę + инфинитив."],
     ["Gdybyśmy byli bogaci, ___ dom. (kupić)","kupilibyśmy","Условное my: kupilibyśmy."],
-    ["___ na mnie chwilę! (czekać, ty)","Poczekaj","Повелительное от poczekać: poczekaj."],
+    ["___ na mnie chwilę! (poczekać, ty)","Poczekaj","Повелительное от poczekać: poczekaj."],
     ["Niech oni ___ jutro. (zadzwonić)","zadzwonią","Пусть они: niech + форма oni."]
   ],
   formy:[
@@ -969,6 +971,8 @@ const POWINIEN_PAST = [
 const MODAL_MUST = [
  ["muszę iść","должен, обязан","внешняя необходимость, выбора нет"],
  ["powinienem iść","следует, надо бы","совет и моральный долг - выбор остаётся"],
+ ["to musi być prawda","должно быть, наверняка","вывод, а не обязанность: Musi być zmęczony."],
+ ["pociąg powinien przyjechać o ósmej","должен, по идее","ожидание, а не долг: Powinno być gotowe."],
  ["trzeba iść","надо","безлично, лица нет вообще"],
  ["mam iść","мне велено идти","чужое распоряжение: Mam to zrobić do piątku."],
  ["nie muszę iść","не обязан","необходимости нет - но можно"],
@@ -989,7 +993,7 @@ const REKCJA = [
  ["bać się","czego?","Dopełniacz","бояться чего","Boję się psów."],
  ["cieszyć się","z czego?","z + Dopełniacz","радоваться чему","Cieszę się z prezentu.",1],
  ["korzystać","z czego?","z + Dopełniacz","пользоваться чем","Korzystam z internetu.",1],
- ["śmiać się · żartować","z kogo?","z + Dopełniacz","смеяться над кем","Śmieję się z tego.",1],
+ ["śmiać się · żartować","z kogo? z czego?","z + Dopełniacz","смеяться над кем","Śmieję się z tego.",1],
  ["być dumnym","z kogo?","z + Dopełniacz","гордиться кем","Jestem z ciebie dumny.",1],
  ["składać się","z czego?","z + Dopełniacz","состоять из чего","Egzamin składa się z dwóch części."],
  ["chorować","na co?","na + Biernik","болеть чем","Choruję na grypę.",1],
@@ -1008,10 +1012,10 @@ const REKCJA = [
  ["tęsknić","za kim? za czym?","za + Narzędnik","скучать по кому","Tęsknię za domem.",1],
  ["zakochać się","w kim?","w + Miejscownik","влюбиться в кого","Zakochałem się w niej.",1],
  ["być podobnym","do kogo?","do + Dopełniacz","быть похожим на кого","Jestem podobny do ojca.",1],
- ["wierzyć","w co? komu?","w + Biernik / Celownik","верить во что","Wierzę w ciebie."],
+ ["wierzyć","w kogo? w co? komu?","w + Biernik / Celownik","верить во что","Wierzę w ciebie. · Wierzę ci."],
  ["gratulować","komu? czego?","Celownik + Dopełniacz","поздравлять с чем","Gratuluję ci sukcesu.",1],
  ["życzyć","komu? czego?","Celownik + Dopełniacz","желать чего","Życzę ci zdrowia."],
- ["grać","w co? na czym?","w / na","играть во что · на чём","Gram w piłkę. Gram na gitarze.",1],
+ ["grać","w co? na czym?","w + Biernik · na + Miejscownik","играть во что · на чём","Gram w piłkę. Gram na gitarze.",1],
  ["iść","po co?","po + Biernik","идти за чем","Idę po chleb.",1]
 ];
 
@@ -1081,7 +1085,9 @@ const IMIES_B = [
  ["-ać → -any","przeczytać → przeczytany · napisać → napisany · sprzedać → sprzedany"],
  ["-ić / -yć → -ony, с тем же чередованием, что в 1-м лице","zrobić → zrobiony · kupić → kupiony · zaprosić → zaproszony · zapłacić → zapłacony"],
  ["-eć → -any / -iany","widzieć → widziany · słyszeć → słyszany"],
- ["-ąć и корни на гласный → -ty","zamknąć → zamknięty · wziąć → wzięty · umyć → umyty · zająć → zajęty · otworzyć → otwarty"]
+ ["-ąć / -nąć → -ęty","zamknąć → zamknięty · wziąć → wzięty · zająć → zajęty · zacząć → zaczęty"],
+ ["односложный корень на гласный → -ty","umyć → umyty · pić → pity · zabić → zabity · nakryć → nakryty"],
+ ["нерегулярное","otworzyć → otwarty"]
 ];
 const IMIES_SIGNS = [
  ["Zamknięte","закрыто"],["Otwarte","открыто"],["Zajęte","занято"],
@@ -1926,8 +1932,9 @@ const WYBOR = [
  ["запрет","несов.","Nie rób tego!"]
 ];
 const WYBOR_SLOWA = [
- ["несовершенный тянут","zawsze · często · zwykle · codziennie · długo · przez godzinę · ciągle · nigdy"],
- ["совершенный тянут","nagle · wreszcie · w końcu · już · od razu · nareszcie · w godzinę"]
+ ["несовершенный тянут","zawsze · często · zwykle · codziennie · długo · przez godzinę · ciągle"],
+ ["совершенный тянут","nagle · wreszcie · w końcu · od razu · nareszcie · w godzinę"],
+ ["тянут в обе стороны","już · nigdy: Już to zrobiłem - сов., Już czytam - несов., Nigdy tego nie zrobiłem - сов."]
 ];
 
 const LICZ_GRUPA = [

@@ -1,4 +1,4 @@
-# Проект: gramatyka-polski
+# Проект: polski
 
 ## Архитектура
 
