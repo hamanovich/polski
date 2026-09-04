@@ -68,7 +68,7 @@ for(const [id, path] of routes){
   }else{
     assert.equal(currentGroups.length, 1, `${path} must highlight its group`);
     assert(currentGroups[0].contains(document.querySelector('#nav a[aria-current="page"]')));
-    /* Нижний пейджер есть всегда, серединный - ровно там, где есть практика. */
+
     const practice = document.querySelector(".sec .practice");
     assert.equal(pagers.length, practice ? 2 : 1, `${path} must offer previous/next topics next to its practice`);
     if(practice) assert(pagers[0].compareDocumentPosition(practice) & 4, `${path}: mid pager must precede the practice`);

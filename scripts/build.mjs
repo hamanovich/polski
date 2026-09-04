@@ -144,7 +144,6 @@ const nodeText = node => {
   return clean(node.textContent);
 };
 
-/* A compact, shared full-text index keeps search global after the content is split across pages. */
 const searchEntries = [];
 const seenSearchEntries = new Set();
 for(const section of document.querySelectorAll(".sec")){
@@ -195,7 +194,6 @@ const modernHash = legacyHash => {
   return anchor ? `#${anchor}` : "";
 };
 
-/* Порядок чтения и группа раздела берутся из GROUPS: по ним строится «предыдущий / следующий». */
 const groups = JSON.parse(vm.runInContext("JSON.stringify(GROUPS)", sandbox));
 const groupOf = new Map();
 groups.forEach(([, items], index) => items.forEach(([id]) => groupOf.set(id, index)));
@@ -245,8 +243,7 @@ for(const page of pages){
         `<a class="pager-${side}" href="${pageHref(page, id)}"><small>${caption}</small><b>${labelOf.get(id)}</b></a>`).join("");
       return pager;
     };
-    /* Второй пейджер - на стыке теории и практики: дочитал раздел и можешь идти дальше,
-       не пролистывая два десятка упражнений и тест. Ставим перед первым блоком с практикой. */
+
     const topic = pageDocument.querySelector(".sec");
     const practiceHost = [...topic.children].find(child =>
       child.classList.contains("practice") || child.querySelector(".practice"));

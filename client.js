@@ -1,6 +1,3 @@
-/* Progressive enhancement for prerendered topic pages.
-   Content and navigation already work without JavaScript; this file adds filters,
-   global search, heading links, theme controls and compact URL state. */
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 const clean = value => value.replace(/\s+/g, " ").trim();
@@ -21,7 +18,6 @@ $$("#navmenu [data-s]").forEach(link => {
   else link.removeAttribute("aria-current");
 });
 
-/* ---------- cases and verb subsections ---------- */
 function showCase(id, number){
   const variants = $$(".case-variant");
   if(!variants.length) return;
@@ -81,7 +77,6 @@ $("#vchips")?.addEventListener("click", event => {
   writeHash();
 });
 
-/* ---------- local filters ---------- */
 function filterPreps(value){
   $$("#pfilter [data-f]").forEach(item => item.setAttribute("aria-pressed", item.dataset.f === value));
   $$("#ptable tr").forEach((row, index) => {
@@ -102,7 +97,6 @@ function filterVerbs(query){
 }
 verbSearch?.addEventListener("input", event => filterVerbs(event.target.value));
 
-/* ---------- exercises ---------- */
 const EXERCISE_STORAGE_KEY = "polski-exercises-v1";
 let exerciseState = {values:{}, results:{}, scores:{}};
 try{
@@ -261,7 +255,6 @@ initExerciseSection($("#s-alpha"));
 initExerciseSection($("#s-dim"));
 initExerciseSection($("#s-bridge"));
 
-/* ---------- URL state, legacy hashes and heading links ---------- */
 function hashFor(suffix = ""){
   const tail = suffix ? `/${suffix}` : "";
   if(currentPage === "s-cases") return `#${curCase}/${curNum}${tail}`;
@@ -326,7 +319,6 @@ document.addEventListener("click", event => {
   try{ navigator.clipboard.writeText(location.href).then(ok, ok); }catch{ ok(); }
 });
 
-/* ---------- global full-text search ---------- */
 let INDEX = [];
 let searchLoad;
 function loadSearchIndex(){
@@ -462,8 +454,6 @@ document.addEventListener("keydown", event => {
   }
 });
 
-/* Кнопка «наверх»: именно кнопка, а не ссылка на "#" - клик по ссылке стёр бы состояние
-   раздела, которое живёт в hash (/cases/#dop/pl). Появляется, когда прокрутка ушла за экран. */
 const toTop = $(".totop");
 if(toTop){
   let toTopPending = false;
@@ -484,7 +474,18 @@ if(toTop){
   syncToTop();
 }
 
-/* ---------- theme, menu and sticky header ---------- */
+document.addEventListener("click", event => {
+  if(!matchMedia("(max-width:620px)").matches) return;
+  if(event.target.closest("a,button,input,select,label,summary")) return;
+  const cell = event.target.closest("table.vt td,table.vt th");
+  if(!cell) return;
+  const table = cell.closest("table");
+  if(!table.querySelector("tr > :nth-child(4)")) return;
+  const row = cell.parentElement, on = !row.classList.contains("row-on");
+  table.querySelectorAll("tr.row-on").forEach(item => item.classList.remove("row-on"));
+  row.classList.toggle("row-on", on);
+});
+
 const THEMES = [["light", "светлая"], ["dark", "тёмная"]];
 const SYSTEM_DARK = matchMedia("(prefers-color-scheme: dark)");
 function readTheme(){
@@ -505,14 +506,12 @@ $("#theme").addEventListener("click", event => {
 });
 SYSTEM_DARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
 
-/* Двухуровневое меню: группы в строке, разделы в выпадающих списках; на узком экране - общий список. */
 function closeNavPops(except){
   $$("#nav .navgroup-btn[aria-expanded='true']").forEach(button => {
     if(button !== except) button.setAttribute("aria-expanded", "false");
   });
 }
-/* На узком экране меню - лист во всю высоту под шапкой. Пока он открыт, документ под ним
-   подмораживаем: иначе жест прокрутки уходит в страницу, а список остаётся на месте. */
+
 function setNavMenuOpen(open){
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", String(open));
@@ -542,7 +541,6 @@ document.addEventListener("keydown", event => {
 document.addEventListener("click", event => { if(!event.target.closest("#navwrap")) closeNav(); });
 document.addEventListener("focusin", event => { if(!event.target.closest("#navwrap")) closeNav(); });
 
-/* ---------- разговорный конструктор ---------- */
 function updateTalkBuilder(builder){
   const output = builder.querySelector("output");
   if(!output) return;
@@ -560,12 +558,10 @@ function setHeadH(){
   const narrow = matchMedia("(max-width:700px)").matches;
   document.documentElement.style.setProperty("--brand-h", (narrow ? offset : 0) + "px");
   document.documentElement.style.setProperty("--head-h", (narrow ? header.offsetHeight - offset : header.offsetHeight) + "px");
-  /* Полная высота шапки: от неё отсчитывается лист меню на узком экране. */
+
   document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
 }
-/* Семь групп либо помещаются в одну строку, либо целиком уступают место кнопке
-   «Все разделы»: перенос на вторую строку выглядит случайным и сбивает поиск нужной группы.
-   Ширину строки меряем один раз в скрытом состоянии, чтобы решение не зависело от breakpoint. */
+
 let navRowWidth = 0;
 function measureNavRow(){
   const wrap = $("#navwrap");
@@ -586,7 +582,6 @@ function fitNav(){
 window.addEventListener("resize", () => { fitNav(); setHeadH(); });
 document.fonts?.ready.then(() => { navRowWidth = 0; fitNav(); });
 
-/* ---------- start ---------- */
 if(currentPage === "s-cases") showCase("mian", "sg");
 if(currentPage === "s-verbs") showVerb("conj");
 if(currentPage === "s-preps") filterPreps("все");

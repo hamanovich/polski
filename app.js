@@ -1,5 +1,3 @@
-/* Логика: рендер разделов, навигация, адрес страницы, поиск.
-   Требует уже загруженный data.js. */
 function renderConj(){
   $("#s-conj").innerHTML = `<div class="panel">
     <h2>Союзы</h2>
@@ -51,7 +49,6 @@ function renderConj(){
   </div>${topicPracticeHTML(CONJ_PRACTICE, "conjunction")}`;
 }
 
-/* --- люди: обращение, имена, национальности --- */
 function renderLudzie(){
   $("#s-ludzie").innerHTML = `<div class="panel">
     <h2>Люди: обращение, имена, национальности</h2>
@@ -157,7 +154,6 @@ function renderDim(){
   </div>${topicPracticeHTML(DIM_PRACTICE, "diminutive")}`;
 }
 
-/* ============ РЕНДЕР ============ */
 const $ = s => document.querySelector(s);
 
 function form(str){
@@ -176,7 +172,6 @@ function board(rows){
     <div class="legend"><span><i class="l1">окончание</i></span><span><i class="l2">чередование в основе</i></span><span>основа - чёрным</span></div>`;
 }
 
-/* --- род существительного --- */
 function renderRod(){
   $("#s-rodz").innerHTML = `<div class="panel">
     <h2>Род существительного</h2>
@@ -224,7 +219,6 @@ function renderRod(){
   </div>${topicPracticeHTML(ROD_PRACTICE, "gender")}`;
 }
 
-/* --- сводная карта чередований --- */
 function renderAlt(){
   $("#s-alt").innerHTML = `<div class="panel">
     <h2>Чередования: сводная карта</h2>
@@ -261,7 +255,6 @@ function renderAlt(){
   </div>${topicPracticeHTML(ALT_PRACTICE, "alternation")}`;
 }
 
-/* --- алфавит и произношение --- */
 function renderAlpha(){
   $("#s-alpha").innerHTML = `<div class="panel">
     <h2>Алфавит и произношение</h2>
@@ -358,7 +351,7 @@ function renderAlpha(){
 
 let curCase = "mian", curNum = "sg";
 const NUMS = [["sg","единственное"],["pl","множественное"]];
-/* число управляется из той же липкой строки, что и падеж: это один фильтр одного экрана */
+
 function renderNumTog(){
   $("#numtog").innerHTML = NUMS.map(([n, label]) =>
     `<button type="button" data-n="${n}" aria-pressed="${n===curNum}">${label}</button>`).join("");
@@ -488,8 +481,6 @@ function renderCase(){
   renderCasePractice();
 }
 
-/* --- глаголы --- */
-/* подсвечивает личное окончание: split("uczę się", "II", 0) → uczę + się */
 function vform(f, kon, i){
   const refl = / się$/.test(f);
   const w = refl ? f.slice(0, -4) : f;
@@ -896,7 +887,6 @@ function renderVerbs(){
   renderVerbPractice();
 }
 
-/* --- числительные --- */
 const ngrid = list => `<div class="ngrid">${list.map(n =>
   `<div><b>${n[0]}</b><span>${n[1]}</span></div>`).join("")}</div>`;
 
@@ -1028,7 +1018,6 @@ function renderNum(){
   </div>${topicPracticeHTML(NUM_PRACTICE, "numeral")}`;
 }
 
-/* --- частицы --- */
 function renderPart(){
   $("#s-part").innerHTML = `<div class="panel">
     <h2>Частицы</h2>
@@ -1077,7 +1066,6 @@ function renderPart(){
   </div>${topicPracticeHTML(PART_PRACTICE, "particle")}`;
 }
 
-/* --- вопросы и который --- */
 function renderQ(){
   $("#s-q").innerHTML = `<div class="panel">
     <h2>Вопросы</h2>
@@ -1155,7 +1143,6 @@ function renderQ(){
   </div>${topicPracticeHTML(QUESTION_PRACTICE, "question")}`;
 }
 
-/* --- отрицание --- */
 function renderNeg(){
   $("#s-neg").innerHTML = `<div class="panel">
     <h2>Отрицание</h2>
@@ -1189,7 +1176,6 @@ function renderNeg(){
   </div>${topicPracticeHTML(NEG_PRACTICE, "negation")}`;
 }
 
-/* --- порядок слов --- */
 function renderOrder(){
   $("#s-order").innerHTML = `<div class="panel">
     <h2>Порядок слов</h2>
@@ -1229,7 +1215,6 @@ function renderOrder(){
   </div>${topicPracticeHTML(ORDER_PRACTICE, "word-order")}`;
 }
 
-/* --- безличные конструкции --- */
 function renderImpers(){
   $("#s-impers").innerHTML = `<div class="panel">
     <h2>Безличные конструкции</h2>
@@ -1552,7 +1537,6 @@ function renderBridge(){
   </div>${topicPracticeHTML(BRIDGE_PRACTICE, "bridge")}`;
 }
 
-/* --- базовый словарь и разговорная практика --- */
 function vocabularyTable(words, labels){
   return `<div class="scroll vocabulary-list"><table class="vt">
     <thead><tr>${labels.map(label => `<th>${label}</th>`).join("")}</tr></thead>
@@ -1721,13 +1705,10 @@ function renderTalk(){
   </div>`;
 }
 
-/* ============ НАВИГАЦИЯ И АДРЕС СТРАНИЦЫ ============ */
 const LABEL = Object.fromEntries(TABS);
 const VLABEL = Object.fromEntries(VTABS);
 let curTab = TABS[0][0];
 
-/* Навигация двухуровневая: в строке - семь смысловых групп, разделы внутри выпадающих списков.
-   Двадцать две вкладки в одну строку не помещались, а горизонтальная прокрутка прятала состав справочника. */
 const GROUP_OF = {};
 GROUPS.forEach((g, i) => g[1].forEach(([id]) => GROUP_OF[id] = i));
 
@@ -1741,7 +1722,6 @@ $("#nav").innerHTML =
     <div class="navpop" id="ngp-${i}" aria-labelledby="ng-${i}">${g[1].map(([id, note]) => navItemHTML(id, note)).join("")}</div>
   </div>`).join("");
 
-/* полный список: на узком экране он заменяет группы, на широком остаётся быстрым способом увидеть всё */
 $("#navmenu").innerHTML = `<section><h4>Начало</h4>
     <a data-s="${TABS[0][0]}" href="#${TABS[0][0]}">${LABEL[TABS[0][0]]}</a></section>` +
   GROUPS.map(g => `<section><h4>${g[0]}</h4>
@@ -1787,8 +1767,7 @@ $("#nav").addEventListener("click", e => {
     closeNavPops(btn);
     closeNavMenu();
     btn.setAttribute("aria-expanded", open);
-    /* Фокус остаётся на кнопке-триггере. Следующий Tab естественно ведёт в
-       выпадающее меню, зато браузер не прокручивает документ к его пунктам. */
+
     requestAnimationFrame(() => {
       if(window.scrollY !== scrollTop) window.scrollTo(0, scrollTop);
     });
@@ -1832,8 +1811,6 @@ document.addEventListener("focusin", e => {
   if(!e.target.closest("#navwrap")) closeNav();
 });
 
-/* высота липкой части шапки: от неё отсчитывается строка падежей.
-   на узком экране шапка липнет с отрицательным top, так что видимой остаётся только полоса навигации */
 function setHeadH(){
   const hdr = document.querySelector("header"), nav = $("#navwrap");
   const off = nav.getBoundingClientRect().top - hdr.getBoundingClientRect().top;
@@ -1842,9 +1819,7 @@ function setHeadH(){
   st.setProperty("--brand-h", (narrow ? off : 0) + "px");
   st.setProperty("--head-h", (narrow ? hdr.offsetHeight - off : hdr.offsetHeight) + "px");
 }
-/* Семь групп либо помещаются в одну строку, либо целиком уступают место кнопке
-   «Все разделы»: перенос на вторую строку выглядит случайным и сбивает поиск нужной группы.
-   Ширину строки меряем один раз в скрытом состоянии, чтобы решение не зависело от breakpoint. */
+
 let navRowWidth = 0;
 function measureNavRow(){
   const wrap = $("#navwrap");
@@ -1867,7 +1842,7 @@ if(document.fonts) document.fonts.ready.then(() => { navRowWidth = 0; fitNav(); 
 markNav(curTab);
 fitNav();
 setHeadH();
-/* адрес вида #s-cases/dop/pl или #s-verbs/rekcja */
+
 function hashFor(){
   if(curTab === "s-cases") return `#s-cases/${curCase}/${curNum}`;
   if(curTab === "s-verbs") return `#s-verbs/${curV}`;
@@ -1893,7 +1868,7 @@ function applyHash(){
     renderVerbs();
   }
   showTab(tab);
-  /* последний сегмент вида ~slug - ссылка на подзаголовок внутри раздела */
+
   const anchor = parts.find(p => p.startsWith("~"));
   if(anchor) scrollToHeading(tab, anchor.slice(1));
 }
@@ -1902,7 +1877,7 @@ const SMOOTH = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" :
 function scrollToHeading(tab, h){
   const el = document.querySelector(`#${tab} [data-h="${CSS.escape(h)}"]`);
   if(!el) return;
-  /* считаем позицию сами: scrollBy поверх плавного scrollIntoView гасит его на полпути */
+
   const off = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 0;
   const y = window.scrollY + el.getBoundingClientRect().top - off - 12;
   window.scrollTo({top:Math.max(0, y), behavior:SMOOTH});
@@ -1917,8 +1892,6 @@ window.addEventListener("hashchange", () => {
   applyHash();
 });
 
-/* ============ ССЫЛКИ НА ПОДЗАГОЛОВКИ ============ */
-/* кнопка пустая, решётку рисует CSS: иначе символ попал бы в поисковый индекс и в fulltext.txt */
 const slug = s => norm(s).replace(/[^a-zа-яё0-9]+/g, "-").replace(/^-+|-+$/g, "");
 function linkHeadings(root){
   const used = new Set();
@@ -1948,10 +1921,8 @@ document.addEventListener("click", e => {
   try{ navigator.clipboard.writeText(location.href).then(ok, ok); }catch(err){ ok(); }
 });
 
-/* ============ ПОИСК ПО ВСЕМУ СПРАВОЧНИКУ ============ */
 let INDEX = [];
 
-/* текст узла: ячейки таблицы и части сетки склеиваем через разделитель, иначе слова слипаются */
 const clean = s => s.replace(/\s+/g, " ").trim();
 function nodeText(node){
   if(node.tagName === "TR")
@@ -1961,7 +1932,6 @@ function nodeText(node){
   return clean(node.textContent);
 }
 
-/* достаёт из готовой разметки поисковые строки: заголовок раздела + текст строки */
 function harvest(html, entry){
   const box = document.createElement("div");
   box.innerHTML = html;
@@ -1990,21 +1960,21 @@ function harvest(html, entry){
 
 function buildIndex(){
   INDEX = [];
-  /* обычные вкладки - берём то, что уже отрисовано в DOM */
+
   for(const [id, label] of TABS){
     if(id === "s-index" || id === "s-cases" || id === "s-verbs") continue;
     harvest($("#" + id).innerHTML, {tab:id, label});
   }
-  /* падежи: все семь × два числа */
+
   for(const c of CASES)
     for(const num of ["sg","pl"])
       harvest(casePanelHTML(c, num),
         {tab:"s-cases", label:"Существительные", sub:`${c.name} · ${num==="sg"?"ед. ч.":"мн. ч."}`, cs:c.id, num});
-  /* глаголы: все пять подвкладок */
+
   const VMAP = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja};
   for(const key of Object.keys(VMAP))
     harvest(VMAP[key](), {tab:"s-verbs", label:"Глаголы", sub:VLABEL[key], vs:key});
-  /* дубли не нужны: у падежа общая часть одинакова в обоих числах - оставляем первое вхождение */
+
   const seen = new Set();
   INDEX = INDEX.filter(e => {
     const k = `${e.tab}|${e.cs || e.vs || ""}|${e.key}`;
@@ -2027,14 +1997,13 @@ function search(q){
       score += at;
     }
     if(!ok) continue;
-    /* раньше в строке и короче строка - выше в выдаче */
+
     hits.push({e, score: score / ts.length + e.text.length / 40});
   }
   hits.sort((a,b) => a.score - b.score);
   return {list: hits.slice(0, 30).map(h => h.e), total: hits.length};
 }
 
-/* подсветка: norm() не меняет длину строки, поэтому позиции совпадают с исходным текстом */
 function mark(text, q){
   const key = norm(text), ranges = [];
   for(const t of tokens(q)){
@@ -2064,7 +2033,6 @@ function openSearch(on){
   if(!on){ $("#gsearch").removeAttribute("aria-activedescendant"); hitSel = -1; }
 }
 
-/* активный результат: без стрелок список был доступен только мышью */
 function selectHit(i){
   const items = $("#sres").querySelectorAll(".sr");
   if(!items.length) return;
@@ -2105,12 +2073,12 @@ function goTo(e){
   showTab(e.tab, false);
   writeHash();
   closeSearch();
-  /* подсветить и промотать к найденной строке */
+
   const sec = $("#" + e.tab);
   sec.querySelectorAll(".hit").forEach(x => x.classList.remove("hit"));
   const target = [...sec.querySelectorAll("tr, li, p, .tip, .ngrid div")]
     .find(n => nodeText(n) === e.text);
-  /* фокус в панель: иначе после поиска с клавиатуры непонятно, куда попал */
+
   sec.focus({preventScroll:true});
   if(target){
     target.classList.add("hit");
@@ -2159,10 +2127,6 @@ document.addEventListener("keydown", e => {
   }
 });
 
-/* --- оглавление --- */
-/* Подразделы, у которых есть собственный адрес: на самой странице они показаны чипсами,
-   в оглавлении работают как прямые ссылки. Формат ссылки старый (#s-…), его переписывает
-   сборка - так оглавление не знает ничего о маршрутах. */
 const IDX_SUB = {
   "s-cases":CASES.map(c => [`#s-cases/${c.id}/sg`, c.name]),
   "s-verbs":VTABS.map(([id, label]) => [`#s-verbs/${id}`, label])
@@ -2197,8 +2161,6 @@ $("#s-index").addEventListener("click", e => {
   writeHash();
 });
 
-/* ============ ТЕМА ============ */
-/* две кнопки; пока выбора не было, идём за системной настройкой и следим за её сменой */
 const THEMES = [["light","светлая"],["dark","тёмная"]];
 const SYSDARK = matchMedia("(prefers-color-scheme: dark)");
 function readTheme(){
@@ -2223,13 +2185,12 @@ function applyTheme(v){
 SYSDARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
 applyTheme(readTheme());
 
-/* ============ СТАРТ ============ */
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
 renderNumTog();
 buildIndex();
 renderIndex();
-/* якоря вешаем после сборки индекса: разметка меняется, текст - нет */
+
 document.querySelectorAll(".sec").forEach(linkHeadings);
 setHeadH();
 if(location.hash) applyHash();

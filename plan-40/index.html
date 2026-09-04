@@ -607,8 +607,7 @@
 </main>
 <button class="totop" type="button" aria-label="Наверх"><span aria-hidden="true">↑</span></button>
 <script>
-/* Переключатель темы справочника. Логика повторяет applyTheme() из client.js:
-   справочник грузит client.js целиком, этой странице нужна только эта часть. */
+
 (function(){
   var THEMES = [["light", "светлая"], ["dark", "тёмная"]];
   var bar = document.getElementById("theme");
@@ -637,7 +636,6 @@
   systemDark.addEventListener("change", function(){ if(!readTheme()) applyTheme(null); });
   applyTheme(readTheme());
 
-  /* Липкая шапка закрывает якорь: её высоту отдаём в --head-h, оттуда её берёт scroll-padding-top. */
   var header = document.querySelector("header");
   function setHeadH(){
     document.documentElement.style.setProperty("--head-h", header.offsetHeight + "px");
@@ -645,7 +643,6 @@
   setHeadH();
   addEventListener("resize", setHeadH);
 
-  /* Подсветка круга, который сейчас на экране: номер в шапке говорит, где ты в плане. */
   var marks = [].slice.call(document.querySelectorAll("nav.circles a[href^='#k']"));
   var sections = marks.map(function(link){ return document.getElementById(link.hash.slice(1)); });
   var toTop = document.querySelector(".totop");
@@ -662,8 +659,7 @@
     });
     toTop.classList.toggle("on", window.scrollY > window.innerHeight * 0.8);
   }
-  /* Кнопка «наверх»: та же, что в справочнике. Кнопка, а не ссылка на "#", чтобы клик
-     не оставлял в адресе пустой якорь поверх #d17 или #k3. */
+
   var smooth = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
   toTop.addEventListener("click", function(){ window.scrollTo({top:0, behavior:smooth}); });
   addEventListener("scroll", function(){

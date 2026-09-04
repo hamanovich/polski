@@ -25,7 +25,7 @@
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
   --w:1120px;
   --fs-micro:11.5px;
-  --fs-note:13px; 
+  --fs-note:13px;
   --fs-base:14px;
   --fs-lead:16px;
   --fs-h2:18px;
@@ -137,9 +137,6 @@ header{border-bottom:1px solid var(--line);background:var(--paper);position:stic
 #navmenu a[aria-current="page"]{color:var(--ui);font-weight:600}
 #navmenu a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 
-/* Как только семь групп перестают помещаться в одну строку, они уступают место
-   одной кнопке с полным списком: перенос на вторую строку выглядел бы случайным.
-   Переключение считает JS по фактической ширине, media-запрос - подстраховка до его запуска. */
 @media (max-width:920px){
   .js #nav{display:none}
   .js #navall{display:inline-flex}
@@ -243,7 +240,7 @@ html:not(.js) .navpop a span{display:none}
 }
 .casebar .chips{flex:1 1 320px;padding:0}
 .casebar .tog{flex:0 0 auto}
-/* падежи переносятся по строкам: горизонтальная прокрутка прятала половину списка */
+
 .chips{display:flex;flex-wrap:wrap;gap:6px;padding:14px 0 2px}
 .chip{
   font:inherit;text-align:left;background:var(--panel);border:1px solid var(--line-ui);
@@ -287,7 +284,6 @@ html:not(.js) .navpop a span{display:none}
 .legend .l1{color:var(--end)}
 .legend .l2{color:var(--alt)}
 
-/* Практика по падежам */
 .practice{margin-top:28px;padding:20px}
 .practice-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:4px}
 .practice-kicker{
@@ -457,7 +453,7 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
   #sres{right:auto;left:0;width:100%}
   #gsearch,.src{font-size:var(--fs-lead)}
   header{top:calc(-1 * var(--brand-h,0px))}
-  /* меню открывается листом во всю ширину шапки, поэтому позиционируется от неё */
+
   #navwrap{margin-top:8px;padding-bottom:8px;position:static}
   #navall{width:100%;justify-content:flex-start;padding:10px 12px;margin-bottom:0}
   #navmenu{
@@ -473,7 +469,7 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
     background:var(--ui);margin-right:7px;vertical-align:-1px}
   .pager a{flex:1 1 100%}
   .pager-next{text-align:left}
-  /* падежи переносятся по строкам: горизонтальная прокрутка прячет половину падежей */
+
   .casebar{gap:8px;padding:8px 0;position:static;margin:0;border-bottom:0}
   .casebar .chips{flex:1 1 100%}
   .chips{flex-wrap:wrap;overflow:visible;padding:0}
@@ -530,11 +526,6 @@ footer a:hover{color:var(--ui)}
   footer{margin-top:16px}
 }
 
-/* --------------------------------------------------------------------------
-   Editorial redesign. The original selectors remain in place so that the
-   static pages and their progressive interactions retain exactly the same
-   structure. This layer establishes one typographic and spacing system.
-   -------------------------------------------------------------------------- */
 :root{
   --paper:light-dark(#f8f8f5,#161918);
   --panel:light-dark(#ffffff,#1d211f);
@@ -621,7 +612,7 @@ h3:first-child{margin-top:0}
 .idx-a b{font-family:var(--sans);font-size:16px;font-weight:680;letter-spacing:-.02em}
 .idx-a span{font-size:13px;line-height:1.46;margin-top:3px}
 .idx-a:hover b{color:var(--end);text-decoration:none}
-/* Подразделы под карточкой: у записи с ними нижнюю границу держит уже .idx-sub. */
+
 .idx-a:has(+ .idx-sub){border-bottom:0;padding-bottom:6px}
 .idx-sub{display:flex;flex-wrap:wrap;gap:5px;padding:0 0 11px;border-bottom:1px solid var(--line)}
 .idx-sub:last-child{border-bottom:0}
@@ -681,8 +672,6 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
   .practice{border-radius:12px;margin-top:24px}.scroll{margin-left:-2px;margin-right:-2px;border-radius:8px}.brow{grid-template-columns:1fr}.pager{margin-top:26px}footer{margin-top:34px}
 }
 
-/* Search suggestions must stay attached to their input.  Anchoring them to the
-   left edge avoids the right-aligned panel escaping from a wide compact header. */
 #sres{
   left:0;right:auto;width:100%;max-width:min(560px,calc(100vw - 32px));
   overscroll-behavior:contain;
@@ -694,19 +683,12 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
   #navall{width:100%;justify-content:flex-start}
 }
 
-/* Личный 40-дневный план. Использует токены и контейнеры справочника; здесь
-   только раскладка элементов, которых в самом справочнике нет. */
-/* Шапка липкая, поэтому якорь должен вставать под неё. Высоту меряет скрипт страницы
-   и кладёт в --head-h - тот же приём, что в справочнике; литерал остаётся для случая без JS. */
 html:has(body.plan-page){scroll-padding-top:calc(var(--head-h, 84px) + 12px)}
 body.plan-page main{font-size:var(--fs-base);line-height:1.5}
 body.plan-page header.top.plan-header{background:var(--paper);border-bottom:1px solid var(--line)}
-/* В справочнике низ шапки держит #navwrap; здесь навигации нет, поэтому отступ задаётся явно. */
+
 body.plan-page .head-in{padding-bottom:14px}
-/* Строку шапки в справочнике распирает поле поиска - но только пока оно помещается
-   рядом с названием, то есть примерно с 1010px (перенос задаёт содержимое, а не
-   медиазапрос). На этой же ширине держим высоту строки и здесь, иначе логотип
-   центрируется по другой высоте и заметно прыгает при переходе со страницы справочника. */
+
 @media (min-width:1010px){ body.plan-page .brand{min-height:41.5px} }
 body.plan-page .circles a:focus-visible,
 body.plan-page .board a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
@@ -816,7 +798,6 @@ body.plan-page .chat b{color:var(--muted-s);font-weight:600}
 body.plan-page ol.err{font-size:var(--fs-base);line-height:1.55;color:var(--muted)}
 body.plan-page footer{font-size:var(--fs-note);line-height:1.5;color:var(--muted);padding:28px 0 46px;border-color:var(--line)}
 
-/* Структура плана: эти компоненты существуют только на этой странице. */
 body.plan-page a.ref{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--end) 42%,transparent)}
 body.plan-page nav.circles{display:flex;align-items:center}
 body.plan-page nav.circles a{display:grid;place-items:center;text-decoration:none}
@@ -841,6 +822,10 @@ body.plan-page ul.plain{list-style:none;padding:0;margin:0}
 body.plan-page ol.err{padding-left:22px;max-width:var(--measure)}
 body.plan-page ol.err li{padding:6px 0}
 body.plan-page footer{margin:0;max-width:none}
+@media (max-width:700px){
+  body.plan-page .brand span{display:none}
+}
+
 @media (max-width:650px){
   body.plan-page .head-in{padding-top:12px;padding-bottom:12px}
   body.plan-page .brand{align-items:center}
@@ -853,12 +838,7 @@ body.plan-page footer{margin:0;max-width:none}
 }
 
 @media (max-width:700px){
-  /* Лист открывается под всей шапкой: --head-h считает только строку навигации, поэтому
-     меню накрывало собой и поиск, и собственную кнопку. Высоту ограничиваем, а не задаём:
-     короткий список остаётся коротким, длинный упирается в низ экрана и скроллится сам.
-     Первый max-height - запасной для Safari без поддержки dvh. */
-  /* Лист открывается под всей шапкой и всегда достаёт до низа экрана: высоту задают top и
-     bottom, а не вычисления с dvh - тогда её нечему сломать при смене адресной строки. */
+
   #navmenu{
     position:fixed;top:var(--header-h,140px);left:0;right:0;bottom:0;
     width:auto;height:auto;min-height:0;max-height:none;
@@ -867,8 +847,7 @@ body.plan-page footer{margin:0;max-width:none}
     padding:10px 20px 28px;border:0;border-top:1px solid var(--line);border-radius:0;
     box-shadow:0 18px 48px var(--shadow);column-count:auto;column-width:auto;
   }
-  /* backdrop-filter делает шапку containing block для position:fixed, и лист начинает ездить
-     вместе с ней. Пока меню открыто, оно закрывает всё под шапкой, так что размытие не нужно. */
+
   html.nav-open header{backdrop-filter:none;-webkit-backdrop-filter:none}
   #navmenu section{break-inside:auto}
   #navmenu h4{font-family:var(--sans);font-size:12px;letter-spacing:.08em;color:var(--end);padding:16px 0 4px}
@@ -876,15 +855,10 @@ body.plan-page footer{margin:0;max-width:none}
   .pron-possesive-table{margin-top:12px}
 }
 
-/* iOS Safari зумит страницу, когда фокус попадает в поле со шрифтом меньше 16px, и обратно
-   уже не отъезжает. Поэтому на узком экране все текстовые поля и списки поднимаем до 16px:
-   селекторы намеренно перебивают и базовый слой, и слой редизайна. */
 @media (max-width:700px){
   #gsearch,.src,.talk-fields select,input,select,textarea{font-size:16px}
 }
 
-/* Кнопка «наверх». Одна на весь сайт, включая план: круглая, появляется после экрана
-   прокрутки и поднимает плавно. Без JS не работает, поэтому там скрыта. */
 .totop{
   position:fixed;right:20px;bottom:20px;z-index:20;
   width:44px;height:44px;border-radius:999px;
@@ -904,4 +878,44 @@ html:not(.js) .totop{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   .totop{transition:none}
+}
+
+@media (max-width:620px){
+
+  .page-title,.sec h2,.sec h3{hyphens:auto;overflow-wrap:break-word}
+
+  table:not(:has(tr > :nth-child(4))){width:100%;min-width:0}
+
+  table:not(:has(tr > :nth-child(4))){table-layout:fixed}
+  table:not(:has(tr > :nth-child(3))) :is(th,td):first-child{width:46% !important;min-width:0;max-width:none}
+  table:has(tr > :nth-child(3)):not(:has(tr > :nth-child(4))) :is(th,td):first-child{width:38%;min-width:0;max-width:none}
+
+  table:not(:has(tr > :nth-child(4))) :is(td,th):not(:first-child):not(.f){
+    white-space:normal;hyphens:auto;
+  }
+
+  table:not(:has(tr > :nth-child(4))) :is(td,th):first-child:not(.f):not(.cq){
+    white-space:normal;overflow-wrap:break-word;hyphens:auto;
+  }
+
+  table:not(:has(tr > :nth-child(4))) th:not(:first-child){overflow-wrap:anywhere}
+  table:not(:has(tr > :nth-child(4))) td:not(:first-child):not(.f){overflow-wrap:break-word}
+
+  table.vt:has(tr > :nth-child(4)) tr:nth-child(even) td{background:var(--hover)}
+  table.vt:has(tr > :nth-child(4)) th:not(:first-child),
+  table.vt:has(tr > :nth-child(4)) td:not(:first-child){border-left:1px solid var(--line)}
+
+  .scroll:has(tr > :nth-child(4)){
+    scroll-snap-type:x proximity;
+    scroll-padding-left:clamp(104px,34vw,140px);
+  }
+  .scroll:has(tr > :nth-child(4)) table.vt th{scroll-snap-align:start}
+
+  table.vt:has(tr > :nth-child(4)) tr.row-on td,
+  table.vt:has(tr > :nth-child(4)) tr.row-on th{background:var(--mark)}
+}
+
+@media (max-width:620px){
+  .exercise-field{max-width:100%;flex-wrap:wrap}
+  .exercise-field .exercise-control{max-width:100%}
 }

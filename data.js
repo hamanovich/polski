@@ -1,6 +1,3 @@
-/* Данные справочника. Только массивы и объекты - никакой логики.
-   Подключается перед app.js: объявления отсюда видны в app.js. */
-/* ============ ДАННЫЕ: алфавит и произношение ============ */
 const ABASE = [
  ["a","как русское а"],["b","как русское б"],["c","ц, не к: cena - «цена»"],["d","как русское д"],
  ["e","как русское э"],["f","как русское ф"],["g","г, никогда не [дж]: gol, noga; перед i смягчается: drogi"],
@@ -43,7 +40,7 @@ const NASAL = [
  ["перед ł, l","теряется, чистое o / e","minął [minoł], zaczęli [zaczeli]"],
  ["на конце слова","ą - носовое; ę - часто теряет носовость","idą [идон]; proszę ≈ [proше]"]
 ];
-/* ============ ДАННЫЕ: звонкие / глухие и прописная буква ============ */
+
 const DZW_PARY = [
  ["b","p","chleb → [chlep]"],
  ["d","t","sad → [sat]"],
@@ -113,8 +110,6 @@ const ORTHO_U = [
  ["u","в уменьшительных на -uni, -uś, -utki","babuni, dziadziuś, malutki"]
 ];
 
-/* ============ ДАННЫЕ: падежи ============ */
-/* формат формы: "stem|ending" или "stem|чередование|ending" */
 const CASES = [
 {
   id:"mian", name:"Mianownik", ru:"Именительный", q:"kto? co?",
@@ -289,9 +284,6 @@ const CASES = [
 }
 ];
 
-/* ============ ДАННЫЕ: практика по падежам ============ */
-/* options превращает поле в выбор; без options пользователь вводит ответ сам.
-   passage - небольшой связный текст, где объекты между строками становятся пропусками. */
 const CASE_PRACTICE = [
 {
   id:"mian", title:"Именительный на месте",
@@ -537,7 +529,6 @@ const CASE_TEST = {
   ]
 };
 
-/* ============ ДАННЫЕ: практика по глаголам ============ */
 const VERB_PRACTICE = [
 {
   id:"conj", title:"Спряжение в живых фразах",
@@ -774,9 +765,6 @@ const VERB_TEST = {
   ]
 };
 
-/* ============ ДАННЫЕ: глаголы ============ */
-/* окончания настоящего времени по спряжениям - для подсветки */
-/* ============ ДАННЫЕ: род существительного ============ */
 const ROD_ZNAK = [
  ["мужской","согласная на конце","student · dom · pies · telefon · stół · nauczyciel","плюс закрытая группа на -a: mężczyzna, kolega, kierowca, turysta, poeta, artysta"],
  ["женский","-a","kobieta · kawa · praca · książka · ulica","плюс на согласную: noc, rzecz, mysz, sól, twarz, krew, marchew - и всё на -ość: miłość, radość, wolność"],
@@ -879,7 +867,6 @@ const KON = [
   ]}
 ];
 
-/* правило бабочки: маленькое крыло (ja, oni) против большого (ty, on, my, wy) */
 const MOTYL = [
  ["nieść","niosę · niosą","niesiesz · niesie · niesiemy · niesiecie"],
  ["móc","mogę · mogą","możesz · może · możemy · możecie"],
@@ -889,7 +876,6 @@ const MOTYL = [
  ["chodzić","chodzę · chodzą","chodzisz · chodzi · chodzimy · chodzicie"]
 ];
 
-/* чередования в основе настоящего времени */
 const KALT = [
  ["s → sz","pisać → piszę, piszesz","I"],
  ["k → cz","płakać → płaczę · piec → pieczesz","I"],
@@ -906,8 +892,6 @@ const KALT = [
  ["ści → szcz","czyścić → czyszczę","II"]
 ];
 
-/* прошедшее время */
-/* как образуется вид */
 const ASPEKT_JAK = [
  ["приставка","несовершенный → совершенный","robić → zrobić · pisać → napisać · czytać → przeczytać · jeść → zjeść · pić → wypić · dzwonić → zadzwonić"],
  ["суффикс -ywa- · -iwa- · -owa- · -a-","совершенный → вторичный несовершенный","dać → dawać · kupić → kupować · otworzyć → otwierać · zamknąć → zamykać · pokazać → pokazywać · zapisać → zapisywać"],
@@ -938,7 +922,6 @@ const PASTIRR = [
  ["być","byłem / byłam","był · była","byli · były","опора для всего остального"]
 ];
 
-/* вид глагола */
 const ASPECT = [
  ["robić","zrobić","делать"],["pisać","napisać","писать"],["czytać","przeczytać","читать"],
  ["jeść","zjeść","есть"],["pić","wypić","пить"],["kupować","kupić","покупать"],
@@ -950,7 +933,6 @@ const ASPECT = [
  ["uczyć się","nauczyć się","учить(ся)"],["pamiętać","zapamiętać","помнить / запомнить"]
 ];
 
-/* повелительное наклонение */
 const IMPER = [
  ["pisać","ty piszesz","pisz!","piszmy!","piszcie!","niech pisze!","I спр.: берём форму ty, убираем окончание"],
  ["mówić","ty mówisz","mów!","mówmy!","mówcie!","niech mówi!","II спр.: то же самое"],
@@ -970,7 +952,6 @@ const IMPER = [
  ["powiedzieć","oni powiedzą","powiedz!","powiedzmy!","powiedzcie!","niech powie!",""]
 ];
 
-/* powinien - «следует»: по форме прилагательное, по функции модальный глагол */
 const POWINIEN = [
  ["ja","powinienem","powinnam"],
  ["ty","powinieneś","powinnaś"],
@@ -995,7 +976,6 @@ const MODAL_MUST = [
  ["nie wolno iść","нельзя","прямой запрет"]
 ];
 
-/* управление глаголов */
 const REKCJA = [
  ["dziękować","komu? za co?","Celownik + za","благодарить кого","Dziękuję ci za pomoc.",1],
  ["pomagać","komu?","Celownik","помогать кому","Pomagam mamie."],
@@ -1035,7 +1015,6 @@ const REKCJA = [
  ["iść","po co?","po + Biernik","идти за чем","Idę po chleb.",1]
 ];
 
-/* управление прилагательных и существительных */
 const REKCJA_ADJ = [
  ["dumny","z + Dopełniacz","гордиться кем","Jestem dumny z syna."],
  ["zadowolony","z + Dopełniacz","доволен чем","Jestem zadowolony z pracy."],
@@ -1070,7 +1049,6 @@ const REKCJA_N = [
  ["okazja","do + Dopełniacz","okazja do świętowania"]
 ];
 
-/* глаголы движения */
 const RUCH = [
  ["iść","chodzić","идти / ходить","Idę do sklepu. · Chodzę tam co dzień."],
  ["jechać","jeździć","ехать / ездить","Jadę do Krakowa. · Jeżdżę pociągiem."],
@@ -1091,7 +1069,6 @@ const PREF = [
  ["obejść","обойти","Obeszliśmy całe miasto."]
 ];
 
-/* отглагольные формы: причастия, пассив, существительные на -anie/-enie/-cie */
 const IMIES_CZ = [
  ["czytać","oni czytają","czytający / czytająca / czytające","читающий"],
  ["pracować","oni pracują","pracujący","работающий"],
@@ -1132,7 +1109,6 @@ const VNOUN_SIGNS = [
  ["Uwaga, malowanie!","осторожно, идёт покраска"]
 ];
 
-/* частотные глаголы: [инфинитив, перевод, спряжение, ja, ty, oni, он, она, сов. вид] */
 const VERBS = [
  ["być","быть","-","jestem","jesteś","są","był","była","-"],
  ["mieć","иметь","III","mam","masz","mają","miał","miała","-"],
@@ -1236,7 +1212,6 @@ const VERBS = [
  ["powiedzieć","сказать","IV","powiem","powiesz","powiedzą","powiedział","powiedziała","сов."]
 ];
 
-/* ============ ДАННЫЕ: числительные ============ */
 const NUM = [
  [0,"zero"],[1,"jeden"],[2,"dwa"],[3,"trzy"],[4,"cztery"],[5,"pięć"],[6,"sześć"],[7,"siedem"],
  [8,"osiem"],[9,"dziewięć"],[10,"dziesięć"],[11,"jedenaście"],[12,"dwanaście"],[13,"trzynaście"],
@@ -1256,7 +1231,7 @@ const ORD = [
  [19,"dziewiętnasty"],[20,"dwudziesty"],[30,"trzydziesty"],[40,"czterdziesty"],[50,"pięćdziesiąty"],
  [100,"setny"],[1000,"tysięczny"]
 ];
-/* склонение числительных */
+
 const NDEKL = [
  ["Mianownik","dwa · dwie · dwaj","trzy · trzej","cztery · czterej","pięć · pięciu"],
  ["Dopełniacz","dwóch","trzech","czterech","pięciu"],
@@ -1265,7 +1240,7 @@ const NDEKL = [
  ["Narzędnik","dwoma · dwiema","trzema","czterema","pięcioma"],
  ["Miejscownik","dwóch","trzech","czterech","pięciu"]
 ];
-/* согласование числительного с существительным */
+
 const NAGR = [
  ["1","Mianownik ед. ч.","jeden dom · jedna książka · jedno okno","jest / był"],
  ["2, 3, 4","Mianownik мн. ч.","dwa domy · trzy książki · cztery okna","są / były"],
@@ -1274,13 +1249,13 @@ const NAGR = [
  ["22, 23, 24","Mianownik мн. ч.","dwadzieścia dwa domy · trzydzieści trzy książki","są / były"],
  ["21, 25, 31…","Dopełniacz мн. ч.","dwadzieścia jeden domów · trzydzieści pięć książek","jest / było"]
 ];
-/* мужско-личные формы */
+
 const MOSNUM = [
  ["dwaj · trzej · czterej","Mianownik мн. ч.","глагол во мн. ч.","Dwaj studenci czytają. · Trzej panowie śpiewali."],
  ["dwóch · trzech · czterech","Dopełniacz мн. ч.","глагол в ср. роде ед. ч.","Dwóch studentów czyta. · Trzech panów śpiewało."],
  ["pięciu · sześciu · dziesięciu","Dopełniacz мн. ч.","глагол в ср. роде ед. ч.","Pięciu studentów czekało. · Dwudziestu ludzi przyszło."]
 ];
-/* собирательные */
+
 const ZBIOR = [
  ["dwoje","двое","dwoje dzieci · dwoje ludzi"],
  ["troje","трое","troje rodzeństwa · troje drzwi"],
@@ -1289,7 +1264,7 @@ const ZBIOR = [
  ["oboje","оба (он и она)","oboje rodzice (не «rodziców») · obojga rodziców"],
  ["kilkoro","несколько (о людях)","kilkoro znajomych"]
 ];
-/* дроби, десятичные, проценты */
+
 const ULAM = [
  ["1/2","pół · połowa","pół godziny · połowa klasy · o pół roku starszy"],
  ["1/4","ćwierć","ćwierć litra · kwadrans - это четверть часа"],
@@ -1333,7 +1308,6 @@ const GODZ = [
  ["15:50","za dziesięć czwarta","za dziesięć czwarta"]
 ];
 
-/* ============ ДАННЫЕ: союзы ============ */
 const CONJ_COORD = [
  ["i","и","Kupiłem chleb i mleko.","без запятой, просто соединяет"],
  ["a","а","On czyta, a ja piszę.","лёгкое противопоставление, с запятой"],
@@ -1361,7 +1335,6 @@ const CONJ_SUB = [
  ["skoro","раз уж, поскольку","Skoro już tu jesteś, zostań na obiad.",""]
 ];
 
-/* ============ ДАННЫЕ: частицы ============ */
 const PART = [
  ["no","ну","No dobrze, mów. · No i co? · Chodź no tutaj!","Самая частая в разговоре. Не «но» - «но» это <span class='pl'>ale</span>."],
  ["czy","ли","Czy jesteś głodny? · Nie wiem, czy przyjdzie.","Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается."],
@@ -1417,8 +1390,6 @@ const NIEOKR = [
  ["nie-","ни- / не-","nikt · nic · nigdy · nigdzie · żaden"]
 ];
 
-/* ============ ДАННЫЕ: уменьшительные формы ============ */
-/* ============ ДАННЫЕ: люди - обращение, имена, национальности ============ */
 const PAN_DEKL = [
  ["Mianownik","pan","pani","państwo","panowie","panie"],
  ["Dopełniacz","pana","pani","państwa","panów","pań"],
@@ -1501,7 +1472,6 @@ const DIM_NAME = [["Anna","Ania","Anusia / Anka","Аня, Анечка"],["Piotr
  ["Katarzyna","Kasia","Kasieńka","Катя, Катенька"],["Michał","Michałek","Misiek","Миша, Мишенька"],
  ["Elżbieta","Ela","Elunia","Эля, Элечка"],["babcia","babcia → babunia","","бабушка → бабуля"]];
 
-/* ============ ДАННЫЕ: вопросы и który ============ */
 const QWORDS = [
  ["kto","кто","Kto to jest?"],
  ["co","что","Co to jest?"],
@@ -1547,7 +1517,6 @@ const KTORY_SENT = [
  ["mężczyzna, którego znam","мужчина, которого я знаю","Biernik м. р., одуш. - forma którego, не który"]
 ];
 
-/* kto / co - склонение и вся семья */
 const KTO_CO = [
  ["Mianownik","kto","co"],
  ["Dopełniacz","kogo","czego"],
@@ -1564,7 +1533,6 @@ const KTO_RODZ = [
  ["ten, kto… · to, co…","тот, кто… · то, что…","Ten, kto to zrobił. · Nie wierzę w to, co mówisz."]
 ];
 
-/* ============ ДАННЫЕ: отрицание ============ */
 const NIKT_DEKL = [
  ["Mianownik","nikt","nic"],
  ["Dopełniacz","nikogo","niczego"],
@@ -1588,7 +1556,6 @@ const NIEMA_JEST = [
  ["Ona nie jest w domu.","Miejscownik","она не находится дома - утверждение о месте, просто с nie"]
 ];
 
-/* ============ ДАННЫЕ: порядок слов ============ */
 const SIE_POS = [
  ["Jak się nazywasz?","się - вторым словом, перед глаголом","не в начале и не в конце"],
  ["Nazywam się Jan.","się стоит рядом с глаголом; часто - после него","позиция зависит от всей фразы: Jak się nazywasz?"],
@@ -1615,7 +1582,6 @@ const QVERB_ORDER = [
  ["Kiedy wraca ojciec?","то же самое",""]
 ];
 
-/* ============ ДАННЫЕ: безличные конструкции ============ */
 const IMPERS_MODAL = [
  ["trzeba","надо, нужно","Trzeba iść do lekarza."],
  ["można","можно","Można tu parkować?"],
@@ -1638,7 +1604,6 @@ const PASSIVE_NO = [
  ["zrobić → zrobiony","zrobiono","Wszystko zrobiono na czas."]
 ];
 
-/* ============ ДАННЫЕ: беглое e в предлогах ============ */
 const PREP_E = [
  ["w","we","we Wrocławiu, we wtorek, we mnie"],
  ["z","ze","ze mną, ze szkoły, ze sobą"],
@@ -1647,7 +1612,6 @@ const PREP_E = [
  ["pod","pode","pode mną"]
 ];
 
-/* ============ ДАННЫЕ: предлоги ============ */
 const PREPS = [
  ["w","Miejscownik","где","w sklepie, w domu, w pracy"],
  ["w","Biernik","в какой день","w środę, w poniedziałek"],
@@ -1857,7 +1821,7 @@ DIM_PRACTICE.tasks = [
   {id:"dim-19",prompt:"Обычная краткая форма имени Katarzyna:",options:["Kasia","Kasieńka","Katarzynka"],answers:["Kasia"],explanation:"Kasia - обычная форма; Kasieńka - более ласковая."},
   {id:"dim-20",prompt:"Обычная краткая форма имени Elżbieta:",options:["Ela","Elunia","Elżbietka"],answers:["Ela"],explanation:"Ela - обычная форма; Elunia - более ласковая."}
 ];
-/* ============ ДАННЫЕ: приставки, сокращения, косвенная речь, отрезки времени ============ */
+
 const PREF_ALL = [
  ["przy-","приближение, прибытие","przyjść · przyjechać","przynieść · przywieźć · przypisać"],
  ["od-","удаление, обратное действие","odejść · odjechać","oddać · odpisać (ответить) · odłożyć"],
@@ -1929,7 +1893,6 @@ const CZAS_WYR = [
  ["o + Miejscownik","во сколько","o piątej · o wpół do ósmej"]
 ];
 
-/* пометки к словарю глаголов: где связка не является чистой видовой парой */
 const ASPEKT_UWAGI = {
  "znać":       ["новое состояние","poznawać"],
  "myśleć":     ["недолго",""],
@@ -1947,7 +1910,6 @@ const ASPEKT_UWAGI = {
  "nieść":      ["результат",""]
 };
 
-/* выбор вида */
 const WYBOR = [
  ["процесс, «был этим занят»","несов.","Wczoraj czytałem tę książkę."],
  ["результат достигнут","сов.","Wczoraj przeczytałem tę książkę."],
@@ -1968,7 +1930,6 @@ const WYBOR_SLOWA = [
  ["совершенный тянут","nagle · wreszcie · w końcu · już · od razu · nareszcie · w godzinę"]
 ];
 
-/* число + прилагательное + существительное + глагол */
 const LICZ_GRUPA = [
  ["1","jeden duży dom","Mianownik ед.","jest · był","Jeden duży dom stoi pusty."],
  ["2, 3, 4","dwa duże domy","Mianownik мн.","są · były","Dwa duże domy zostały sprzedane."],
@@ -2058,7 +2019,6 @@ const PRON_PRACTICE = {
 
 const TABS = [["s-index","Оглавление"],["s-alpha","Алфавит"],["s-rodz","Род"],["s-cases","Существительные"],["s-alt","Чередования"],["s-adj","Прилагательные"],["s-adv","Наречия"],["s-pron","Местоимения"],["s-q","Вопросы"],["s-num","Числительные"],["s-verbs","Глаголы"],["s-vocab","Словарь"],["s-talk","Разговорная практика"],["s-neg","Отрицание"],["s-order","Порядок слов"],["s-impers","Безличные"],["s-conj","Союзы"],["s-part","Частицы"],["s-ludzie","Люди"],["s-dim","Уменьшительные"],["s-preps","Предлоги"],["s-bridge","Мосты"]];
 
-/* оглавление: группы разделов с одной строкой описания - порядок здесь независим от TABS */
 const GROUPS = [
   ["Основы", [
     ["s-alpha","32 буквы, диграфы, носовые, ударение и ассимиляция"],
@@ -2099,9 +2059,6 @@ const GROUPS = [
 
 const VTABS = [["conj","Спряжения"],["czasy","Времена"],["tryby","Наклонения"],["formy","Причастия и пассив"],["rekcja","Управление"]];
 
-/* ============ БАЗОВЫЙ СЛОВАРЬ ============
-   Не корпусный «топ вообще», а слова, которые помогают начать говорить о своей жизни.
-   Формы даны только те, с которыми слово чаще всего нужно в начальной речи. */
 const VOCAB_NOUNS = [
  ["czas","время","m · czasu · czasy","Nie mam dziś dużo czasu."],["dzień","день","m · dnia · dni","To był dobry dzień."],
  ["rok","год","m · roku · lata","W tym roku uczę się polskiego."],["chwila","минута, момент","ż · chwili · chwile","Poczekaj chwilę."],
@@ -2270,8 +2227,6 @@ const VOCAB_ADVERBS = [
  ["najbardziej","больше всего","-","Najbardziej lubię rozmowy."],["mniej więcej","примерно","-","Rozumiem mniej więcej."]
 ];
 
-/* ============ МНОЖЕСТВЕННОЕ ЧИСЛО ============ */
-/* показывается внутри падежа, когда включено «множественное» */
 const MOS = [
  ["t → ci","student → studenci"],["d → dzi","sąsiad → sąsiedzi"],["ch → si","Czech → Czesi"],
  ["st → ści","artysta → artyści"],["k → cy","Polak → Polacy"],
@@ -2283,7 +2238,7 @@ const IRR = [
  ["dziecko","dzieci","dzieci"],["oko","oczy","oczu"],["ucho","uszy","uszu"],["ręka","ręce","rąk"],
  ["przyjaciel","przyjaciele","przyjaciół"],["tydzień","tygodnie","tygodni"],["pieniądz","pieniądze","pieniędzy"]
 ];
-/* дополнения к падежу, когда выбрано множественное число */
+
 const PLX = {
  mian:`
    <div class="tip"><b>Тест на род.</b> Подставь указательное: <span class="pl">ci</span> - мужско-личный, <span class="pl">te</span> - всё остальное. <span class="pl">Ci studenci</span>, но <span class="pl">te psy</span>, <span class="pl">te dzieci</span>, <span class="pl">te kobiety</span>. Достаточно одного мужчины в компании, чтобы вся группа стала мужско-личной.</div>
@@ -2329,7 +2284,6 @@ const PLX = {
  "woł":`<div class="tip"><b>Во множественном Wołacz = Mianownik.</b> Отдельной формы нет: <span class="pl">Panowie! · Drodzy państwo! · Kochani!</span></div>`
 };
 
-/* ============ ПРИЛАГАТЕЛЬНЫЕ ============ */
 const ADJ_PRACTICE = [
 {
   id:"agree", title:"Согласование всей группы",
@@ -2421,7 +2375,6 @@ const ADJ = [
  ["Miejscownik","dobrym","dobrej","dobrym","dobrych","dobrych"]
 ];
 
-/* степени сравнения: как образуется */
 const STOPN = [
  ["-szy","на конце основы одна согласная","nowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · twardy → twardszy · głupi → głupszy · ciekawy → ciekawszy"],
  ["-ejszy","на конце основы скопление согласных","ładny → ładniejszy · trudny → trudniejszy · zimny → zimniejszy · łatwy → łatwiejszy · piękny → piękniejszy · mądry → mądrzejszy"],
@@ -2459,7 +2412,6 @@ const POROWN = [
  ["ze wszystkich · w …","самый из / в","najlepszy ze wszystkich · najstarszy w rodzinie"]
 ];
 
-/* ============ НАРЕЧИЯ ============ */
 const ADV_O = ["szybki→szybko","wolny→wolno","ciepły→ciepło","zimny→zimno","łatwy→łatwo","trudny→trudno","głośny→głośno","cichy→cicho","prosty→prosto","tani→tanio","brzydki→brzydko"];
 const ADV_E = ["ładny→ładnie","dokładny→dokładnie","szczęśliwy→szczęśliwie","ciekawy→ciekawie","miły→mile","piękny→pięknie","straszny→strasznie","wygodny→wygodnie","spokojny→spokojnie","grzeczny→grzecznie"];
 const ADV_IRR = [
@@ -2483,7 +2435,6 @@ const ADV_LIST = [
  ["степень, количество","jak bardzo? ile razy?","bardzo, trochę, dużo, mało, zupełnie, całkiem, prawie, wyjątkowo"]
 ];
 
-/* ============ МЕСТОИМЕНИЯ ============ */
 const PRON = [
  ["ja","mnie","mi / mnie","mnie","mną","mnie"],
  ["ty","ciebie / cię","ci / tobie","ciebie / cię","tobą","tobie"],
@@ -2496,7 +2447,6 @@ const PRON = [
  ["one","ich / nich","im / nim","je / nie","nimi","nich"]
 ];
 
-/* возвратное siebie */
 const SIEBIE = [
  ["Mianownik","-","формы нет: возвратное не бывает подлежащим"],
  ["Dopełniacz","siebie / się","Nie lubię siebie na zdjęciach. · Boję się."],
@@ -2536,7 +2486,6 @@ const SAM = [
  ["Miejscownik","samym","samej","samym","samych","samych"]
 ];
 
-/* четыре функции się и указательные ten / tamten / taki */
 const SIE_FUNC = [
  ["возвратность","myję się · ubieram się · czeszę się","действие на самого себя; можно подставить siebie: myję siebie"],
  ["взаимность","spotykamy się · znamy się · kochają się","друг друга; можно добавить nawzajem: znamy się nawzajem"],
@@ -2575,7 +2524,6 @@ const OKRESL = [
  ["obaj · oba · obie · oboje","оба, обе","obaj / obydwaj panowie (мужчины) · oba domy (вещи) · obie książki (женский) · oboje rodzice (он и она). Косвенные падежи общие: obu / obydwu, obiema."]
 ];
 
-/* --- мосты --- */
 const PHON = [
  ["-оро-, -оло-, -ере-","-ro-, -ło-, -rze-","корова → krowa, золото → złoto, берег → brzeg, голова → głowa"],
  ["у, я (из носовых)","ą, ę","рука → ręka, зуб → ząb, пять → pięć, мука → mąka"],
@@ -2585,7 +2533,7 @@ const PHON = [
  ["ц, ч","c, cz","цена → cena, час → czas"]
 ];
 const FALSE = [
- /* Быт, вещи и еда */
+
  ["sklep","магазин","склеп - grobowiec / krypta","Быт, вещи и еда"],
  ["magazyn","склад; журнал, телепередача","магазин - sklep","Быт, вещи и еда"],
  ["dywan","ковёр","диван - kanapa","Быт, вещи и еда"],
@@ -2607,7 +2555,6 @@ const FALSE = [
  ["recepta","рецепт врача","кулинарный рецепт - przepis","Быт, вещи и еда"],
  ["przepis","правило; рецепт блюда","рецепт врача - recepta","Быт, вещи и еда"],
 
- /* Время и пространство */
  ["rano","утром","рано - wcześnie","Время и пространство"],
  ["jutro","завтра","утро - rano / poranek","Время и пространство"],
  ["czas","время","час - godzina","Время и пространство"],
@@ -2624,7 +2571,6 @@ const FALSE = [
  ["pokój","комната; мир","только покой - spokój","Время и пространство"],
  ["ogród","сад","огород - warzywnik","Время и пространство"],
 
- /* Люди и качества */
  ["uroda","красота, внешность","урод - potwór","Люди и качества"],
  ["grzeczny","вежливый, послушный","грешный - grzeszny","Люди и качества"],
  ["gruby","толстый, большой по толщине","грубый - niegrzeczny / szorstki","Люди и качества"],
@@ -2646,7 +2592,6 @@ const FALSE = [
  ["rodzina","семья","родина - ojczyzna","Люди и качества"],
  ["chłop","крестьянин; разг. мужик","холоп, раб - niewolnik","Люди и качества"],
 
- /* Действия */
  ["zapominać / zapomnieć","забывать / забыть","запоминать - zapamiętywać","Действия"],
  ["pytać","спрашивать","пытать - torturować","Действия"],
  ["pukać","стучать","пукать - puszczać bąki","Действия"],
@@ -2668,7 +2613,6 @@ const FALSE = [
  ["podróżować","путешествовать","подружиться - zaprzyjaźnić się","Действия"],
  ["zawracać","разворачивать(ся); надоедать","заворачивать, оборачивать - owijać","Действия"],
 
- /* Учёба, работа и абстрактные слова */
  ["urząd","учреждение, ведомство","урод - potwór","Учёба, работа и другие ловушки"],
  ["zawód","профессия; разочарование","завод - fabryka","Учёба, работа и другие ловушки"],
  ["pensja","зарплата","пенсия - emerytura","Учёба, работа и другие ловушки"],
