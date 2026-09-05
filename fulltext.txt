@@ -122,32 +122,33 @@ rzчередуется с rgóra → górzysty, rycerz → rycerstworzпосле
 Что изменилось с 1 января 2026. Жители городов, районов и деревень теперь пишутся с большой: Warszawianin, Mokotowianin, Zakopianin - раньше было с маленькой. Родовое слово в названиях городских объектов тоже поднялось: Plac Zbawiciela, Aleja Róż, Park Kościuszki. Единственное исключение - ulica, она осталась строчной: ulica Długa. В книгах и вывесках, изданных раньше, встретится старое написание.
 Pan / Pani / Państwo с большой только в переписке. Szanowna Pani, dziękuję Pani za wiadomość - это вежливость, а не правило орфографии. В обычном тексте с маленькой: ten pan czeka od godziny. То же с Ty, Ciebie, Tobie, Wasz в письме.
 Род существительного
-Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. Сам род почти всегда переносится из русского - работа в другом: мужской в польском делится на три.
-Быстрая проверка согласования. Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: ten stół (мужской), ta książka (женский), to okno (средний). Во множественном числе проверь, группа ли это мужчин: ci studenci, но te książki, te kobiety, te psy. Форма ci означает только мужско-личное множественное; te - всё остальное.
+Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. У родственных слов основной род часто совпадает с русским и белорусским, но угадывать по переводу нельзя: частотные расхождения собраны ниже. Главное новое - три типа польского мужского рода.
+Быстрая проверка согласования. Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: ten stół (мужской), ta książka (женский), to okno (средний). Во множественном числе проверь, мужско-личная ли это форма: ci studenci, но te książki, te kobiety, te psy. Форма ci означает только мужско-личное множественное; te - всё остальное.
 Как определить род
 родпризнакпримерыисключения
-мужскойсогласная на концеstudent · dom · pies · telefon · stół · nauczycielплюс закрытая группа на -a: mężczyzna, kolega, kierowca, turysta, poeta, artystaженский-akobieta · kawa · praca · książka · ulicaплюс на согласную: noc, rzecz, mysz, sól, twarz, krew, marchew - и всё на -ość: miłość, radość, wolnośćсредний-o · -e · -ę · -umokno · mieszkanie · imię · muzeum · dzieckoна -um в единственном числе не склоняется: w muzeum, do muzeum
+мужскойобычно согласная на концеstudent · dom · pies · telefon · stół · nauczycielчасть мужских названий лиц оканчивается на -a: mężczyzna, kolega, kierowca, turysta, poeta, artystaженский-akobieta · kawa · praca · książka · ulicaплюс на согласную: noc, rzecz, mysz, sól, twarz, krew, marchew - и всё на -ość: miłość, radość, wolnośćсредний-o · -e · -ę; у ряда заимствований -umokno · mieszkanie · imię · muzeum · dzieckoсредние на -um в единственном не склоняются: w muzeum, do muzeum; но ten album, kostium, rum - мужские. Окончание -ę тоже не гарантирует средний род: ten książę, księcia - это m1
 Три мужских рода
-В русском мужской род один, поэтому опоры нет никакой. В польском их три, и от выбора зависит винительный падеж, множественное число, указательное местоимение и форма прошедшего времени.
+m1, m2 и m3 - постоянные классы существительных: слово не меняет род между единственным и множественным числом. От класса зависит Biernik, а во множественном также форма существительного, указательного слова и прошедшего времени.
+Мост из русского и белорусского. В единственном польское widzę studenta · psa / kota · telefon устроено почти как русское «вижу студента · пса / кота · телефон» и белорусское «бачу студэнта · сабаку / ката · тэлефон». Главное расхождение появляется во множественном: по-русски «вижу котов», по-белорусски «бачу катоў», но по-польски widzę koty; только m1 сохраняет модель widzę studentów.
 подродкто этоBiernik ед.Biernik мн.Mianownik мн.указат.прош.
-m1 · męskoosobowyмужчины= Dopełniacz= Dopełniacz мн.-i / -y / -e / -owie + чередованиеcibylim2 · męskożywotnyживотные и часть неживого= Dopełniacz= Mianownik мн.-y / -i / -etebyłym3 · męskorzeczowyвещи, всё неживое= Mianownik= Mianownik мн.-y / -i / -etebyły
-m2 - класс грамматический, а не биологический. Живое существо туда попадает почти всегда, но и часть неживого ведёт себя так же: palę papierosa · jem hamburgera · tańczę poloneza · kupiłem opla · zjadłem banana. Никакой логики в списке нет, и биология не помогает - надёжен только тест: если Biernik единственного совпадает с Dopełniacz, это m2. У части слов норма колеблется: mam laptop и разговорное mam laptopa оба встречаются.
-Одна тройка слов на всю систему
-Достаточно запомнить student · pies · telefon - и любую форму можно достроить по аналогии.
+m1 · męskoosobowyмужские названия лиц; в согласовании также смешанные группы= Dopełniacz= Dopełniacz мн.-i / -y / -e / -owie + чередованиеcibylim2 · męskozwierzęcy (męskożywotny)мужские названия животных и часть неживого= Dopełniacz= Mianownik мн.-y / -i / -etebyłym3 · męskorzeczowyбольшинство названий неживого= Mianownik= Mianownik мн.-y / -i / -etebyły
+m2 - класс грамматический, а не только биологический. Мужские названия животных обычно относятся к m2. К этой же модели лексически присоединяются некоторые неживые слова и смысловые серии: palę papierosa · jem hamburgera · tańczę poloneza · kupiłem opla · zjadłem banana. Тенденции есть, но полностью надёжного списка нет. Если слово не называет лицо мужского пола, Biernik единственного помогает отличить m2 от m3: совпадение с Dopełniacz указывает на m2, с Mianownik - на m3. У части слов норма колеблется: mam laptop и разговорное mam laptopa оба встречаются.
+Три опорных слова для главных различий
+По тройке student · pies · telefon легко проверить Biernik и согласование. Остальные падежные окончания и формы Mianownik множественного нужно сверять по таблицам склонения.
 m1 · studentm2 · piesm3 · telefonчто показывает
-Widzę studenta.Widzę psa.Widzę telefon.Biernik ед.: Dopełniacz берут m1 и m2, m3 остаётся MianownikWidzę studentów.Widzę psy.Widzę telefony.Biernik мн.: Dopełniacz берёт только m1 - животные уходят к вещамci studencite psyte telefonyуказательное: ci - признак m1, всё остальное testudenci bylipsy byłytelefony byłyпрошедшее: -li только у m1
+Widzę studenta.Widzę psa.Widzę telefon.Biernik ед.: Dopełniacz берут m1 и m2, m3 остаётся MianownikWidzę studentów.Widzę psy.Widzę telefony.Biernik мн.: Dopełniacz берёт только m1; у m2 форма совпадает с m3ci studencite psyte telefonyуказательное: ci - признак m1, всё остальное testudenci bylipsy byłytelefony byłyпрошедшее: -li только у m1
 Род расходится с русским
 Короткий список, но бьёт больно: род тянет за собой прилагательное, указательное и всю парадигму.
 словородпо-русски
 problemм.проблема - ж.programм.программа - ж.systemм.система - ж.tematм.тема - ж.bólм.боль - ж.celм.цель - ж.stopieńм.степень - ж.podpis · napisм.подпись, надпись - ж.medalм.медаль - ж.metodaж.метод - м.kontrolaж.контроль - м.pomarańczaж.апельсин - м.muzeumср.музей - м.
 Проверка. ten problem, не «ta problema». ta metoda, не «ten metod». Ошибка в роде здесь не одиночная - за ней сразу идут tego problemu, tą metodą и так далее по всей парадигме.
 Подводные камни
-Мужские на -a - единственная группа, где окончание врёт. mężczyzna, kolega, kierowca, turysta, poeta склоняются по женскому образцу, а согласуются по мужскому: ten dobry kolega. Во множественном идут в m1: ci dobrzy koledzy.
-Одушевлённость и m1 - разные вещи. pies живой, но не мужско-личный: в единственном ведёт себя как m1 (widzę psa), во множественном - как m3 (widzę psy). Граница переезжает между числами, и это самая частая ошибка на B1.
+Часть мужских названий лиц оканчивается на -a. mężczyzna, kolega, kierowca, turysta, poeta, artysta в единственном склоняются по модели на -a, но согласуются как мужские: ten dobry kolega. Во множественном это m1: ci dobrzy koledzy.
+Одушевлённость и m1 - разные вещи. Pies всегда относится к m2. В Biernik единственного его форма совпадает с m1 (widzę psa), а в Biernik множественного и согласовании - с немужско-личной моделью (widzę psy · te psy były). Совпадение форм меняется, сам род не меняется.
 Достаточно одного мужчины. Anna, Ewa i Piotr przyszli - вся группа становится мужско-личной, даже если мужчина один из десяти. Без него - przyszły.
 dzieci - не m1, хотя это люди. te dzieci, dzieci były, widzę dzieci. То же с niemowlęta и вообще со всем средним родом.
-Слова только во множественном рода не имеют. drzwi, spodnie, okulary, nożyczki, urodziny, wakacje, pieniądze - все не-мужско-личные: drzwi były otwarte. Но rodzice, ludzie, państwo - мужско-личные: rodzice byli.
-Слова на -um среднего рода и в единственном не склоняются. muzeum, w muzeum, do muzeum - одна форма на все падежи. Во множественном склоняются нормально: muzea, muzeów, w muzeach.
+У pluralia tantum нет формы единственного числа. Для речи важен тип согласования во множественном. Drzwi, spodnie, okulary, nożyczki, urodziny, wakacje, pieniądze согласуются как немужско-личные: te drzwi były otwarte. Rodzice и ludzie не относятся к pluralia tantum: у них есть rodzic и człowiek. У państwo согласование зависит от значения: państwo było о государстве, но państwo Kowalscy przyszli о семье.
+Не любое слово на -um среднего рода. Средние заимствования типа muzeum, centrum, forum, akwarium в единственном не склоняются: w muzeum, do muzeum. Во множественном они склоняются: muzea, muzeów, w muzeach. Но ten album, kostium, rum - мужские и склоняемые: z albumu, w kostiumie, bez rumu.
 MianownikИменительный
 BiernikВинительный
 DopełniaczРодительный
@@ -180,7 +181,7 @@ kolegamężczyznakierowca
 ten dobry sklepten dobry sklepta dobra kawata dobra kawato dobre piwoto dobre piwoмн. мужчиныci dobrzy studenciмн. остальноеte dobre książki
 Исключения и особые формы
 człowiekludzieво мн. ч. другое словоroklataто жеbratbraciaksiądzksiężadzieckodziecioko / uchooczy / uszyв анатомии; в приборах - oka, ucharękaręceprzyjacielprzyjaciele
-Подводные камниКак построить именительный. В единственном числе бери словарную форму и согласуй с ten / ta / to. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (ci studenci, państwo Kowalscy); женщины, а также существительные dzieci, названия животных и предметов - немужско-личного (te kobiety, dzieci, psy, książki). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой student - studenci.Мужско-личный род (męskoosobowy). В русском во множественном рода нет вообще, поэтому опоры нет никакой. Тест простой: подставь ci или te. Ci studenci, но te psy - животные идут в «остальное», даже если это самцы.Мужские слова на -a. kolega, mężczyzna, kierowca, turysta, poeta - склоняются как женские, а согласуются как мужские: ten dobry kolega. Мн. ч. - мужско-личное: ci koledzy.To не меняется. To jest mój brat / to są moje dzieci - форма to одна на всё, меняется только глагол.Państwo - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: państwo Kowalscy byli.
+Подводные камниКак построить именительный. В единственном числе бери словарную форму и согласуй с ten / ta / to. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (ci studenci, państwo Kowalscy); женщины, а также существительные dzieci, названия животных и предметов - немужско-личного (te kobiety, dzieci, psy, książki). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой student - studenci.Мужско-личный род (męskoosobowy). В русском во множественном рода нет, поэтому прямой опоры нет. Частичная есть: widzę studentów устроено как «вижу студентов», но на животных она обрывается - widzę koty, а не «вижу котов». Тест простой: подставь ci или te. Ci studenci, но te psy - животные идут в «остальное», даже если это самцы.Мужские слова на -a. kolega, mężczyzna, kierowca, turysta, poeta - склоняются как женские, а согласуются как мужские: ten dobry kolega. Мн. ч. - мужско-личное: ci koledzy.To не меняется. To jest mój brat / to są moje dzieci - форма to одна на всё, меняется только глагол.Państwo - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: państwo Kowalscy byli.
 Примеры в предложенияхTo jest mój sąsiad.Это мой сосед.To są moi sąsiedzi.Это мои соседи.Ci lekarze są bardzo dobrzy.Эти врачи очень хорошие.Te książki są nowe.Эти книги новые.Mój kolega mieszka w Krakowie.Мой приятель живёт в Кракове.
 Итог по падежу
 Единственная реальная работа здесь - множественное число. Единственное ты и так строишь правильно, потому что оно совпадает со словарной формой.
@@ -225,7 +226,7 @@ człowiekludzieludziroklatalatbratbraciabraciksiądzksiężaksiężydzieckodziec
 ten dobry sklepten dobry sklepta dobra kawata dobra kawato dobre piwoto dobre piwoмн. мужчиныci dobrzy studenciмн. остальноеte dobre książki
 Исключения и особые формы
 człowiekludzieво мн. ч. другое словоroklataто жеbratbraciaksiądzksiężadzieckodziecioko / uchooczy / uszyв анатомии; в приборах - oka, ucharękaręceprzyjacielprzyjaciele
-Подводные камниКак построить именительный. В единственном числе бери словарную форму и согласуй с ten / ta / to. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (ci studenci, państwo Kowalscy); женщины, а также существительные dzieci, названия животных и предметов - немужско-личного (te kobiety, dzieci, psy, książki). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой student - studenci.Мужско-личный род (męskoosobowy). В русском во множественном рода нет вообще, поэтому опоры нет никакой. Тест простой: подставь ci или te. Ci studenci, но te psy - животные идут в «остальное», даже если это самцы.Мужские слова на -a. kolega, mężczyzna, kierowca, turysta, poeta - склоняются как женские, а согласуются как мужские: ten dobry kolega. Мн. ч. - мужско-личное: ci koledzy.To не меняется. To jest mój brat / to są moje dzieci - форма to одна на всё, меняется только глагол.Państwo - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: państwo Kowalscy byli.
+Подводные камниКак построить именительный. В единственном числе бери словарную форму и согласуй с ten / ta / to. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (ci studenci, państwo Kowalscy); женщины, а также существительные dzieci, названия животных и предметов - немужско-личного (te kobiety, dzieci, psy, książki). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой student - studenci.Мужско-личный род (męskoosobowy). В русском во множественном рода нет, поэтому прямой опоры нет. Частичная есть: widzę studentów устроено как «вижу студентов», но на животных она обрывается - widzę koty, а не «вижу котов». Тест простой: подставь ci или te. Ci studenci, но te psy - животные идут в «остальное», даже если это самцы.Мужские слова на -a. kolega, mężczyzna, kierowca, turysta, poeta - склоняются как женские, а согласуются как мужские: ten dobry kolega. Мн. ч. - мужско-личное: ci koledzy.To не меняется. To jest mój brat / to są moje dzieci - форма to одна на всё, меняется только глагол.Państwo - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: państwo Kowalscy byli.
 Примеры в предложенияхTo jest mój sąsiad.Это мой сосед.To są moi sąsiedzi.Это мои соседи.Ci lekarze są bardzo dobrzy.Эти врачи очень хорошие.Te książki są nowe.Эти книги новые.Mój kolega mieszka w Krakowie.Мой приятель живёт в Кракове.
 Итог по падежу
 Единственная реальная работа здесь - множественное число. Единственное ты и так строишь правильно, потому что оно совпадает со словарной формой.
@@ -707,23 +708,28 @@ każdy, inny, żaden, oba
 словозначениекак ведёт себя
 każdy / każda / każdeкаждыйсклоняется как прилагательное, множественного числа нет - вместо него wszyscy: Każdy z nas. · Każdego dnia.inny / inna / inneдругойDaj mi inny. · innym razem - в другой разżaden / żadna / żadneникакойобычно требует nie при глаголе: Żaden z nich nie przyszedł. Но после bez, pod, przed обходится без него: bez żadnego problemu, pod żadnym pozorem.obaj · oba · obie · obojeоба, обеobaj / obydwaj panowie (мужчины) · oba domy (вещи) · obie książki (женский) · oboje rodzice (он и она). Косвенные падежи общие: obu / obydwu, obiema.
 Вопросы
-Общий вопрос строится через czy, частный - вопросительным словом. Русский почти всегда обходится одним словом там, где польский различает два.
+Общий вопрос строится с czy или одной вопросительной интонацией, частный - с вопросительным словом. Русский и белорусский дают хорошую опору для gdzie / dokąd / skąd; особого внимания требует польское противопоставление jaki / który.
 Общий вопрос: czy
-czy открывает вопрос, на который отвечают «да / нет»: Czy jesteś głodny? Czy lubisz kawę? В устной речи часто опускается и заменяется вопросительной интонацией, но на письме и в вежливой речи ожидается.
+czy открывает вопрос, на который отвечают «да / нет»: Czy jesteś głodny? Czy lubisz kawę? Если вопросительность и так понятна из контекста, знака вопроса или интонации, частицу можно опустить: Czy masz czas? = Masz czas? Обе модели нормативны и в устной, и в письменной речи. Вежливость создают вся конструкция и форма обращения: Czy ma pani chwilę? · Ma pani chwilę? · Mógłby mi pan pomóc?
 Вопросительные слова
 словозначениепример
-ktoктоKto to jest?coчтоCo to jest?jaki / jaka / jakieкакой (качество, любой признак)Jaki jest dzisiaj dzień? - Słoneczny.który / która / któreкоторый (выбор из известного набора)Który dzień tygodnia lubisz najbardziej?czyj / czyja / czyjeчейCzyja to torba?ileсколькоIle to kosztuje?gdzieгдеGdzie mieszkasz?dokądкудаDokąd idziesz?skądоткудаSkąd jesteś?kiedyкогдаKiedy wracasz?dlaczegoпочемуDlaczego się spóźniłeś?jakкакJak się masz?po coзачемPo co to robisz?
+ktoктоKto to jest?coчтоCo to jest?jaki / jaka / jakieкакой (качество, любой признак)Jaki jest ten film? - Ciekawy.który / która / któreкоторый (выбор из известного набора)Który dzień tygodnia lubisz najbardziej?czyj / czyja / czyjeчейCzyja to torba?ileсколькоIle to kosztuje?gdzieгдеGdzie mieszkasz?dokądкудаDokąd idziesz?skądоткудаSkąd jesteś?kiedyкогдаKiedy wracasz?dlaczego / czemuпочему; czemu - разговорноеDlaczego się spóźniłeś? · Czemu jesteś smutny?jakкакJak się masz?po coзачемPo co to robisz?
+Прямой и косвенный вопрос
+прямой вопроскосвенный вопрос
+Czy przyjdzie?Nie wiem, czy przyjdzie.
+Gdzie mieszka?Powiedz, gdzie mieszka.
+В косвенном вопросе сохраняется czy или вопросительное слово. Перед придаточной частью ставится запятая, а конечный знак определяется главной частью: Chciałam zapytać, czy jutro jest zebranie., но Czy możesz powiedzieć, gdzie jest bank? Подробнее - в разделе Союзы.
 Место и направление: одна система
 вопросчто спрашиваемответ
 Gdzie jesteś?где - положениеW domu. · Tutaj.
 Dokąd idziesz?куда - цель движенияDo domu. · Tam.
 Skąd wracasz?откуда - исходная точкаZ pracy. · Stamtąd.
 Którędy iść?каким путёмTędy. · Tamtędy.
-В разговоре gdzie часто заменяет dokąd. Gdzie idziesz? звучит естественно, но точная система различает положение gdzie? и направление dokąd?. Пары ответов: tu / tutaj - здесь, tam - там/туда, stąd - отсюда, stamtąd - оттуда, tędy / tamtędy - этим/тем путём.
+В разговоре gdzie часто заменяет dokąd. Gdzie idziesz? звучит естественно, но точная система различает положение gdzie? и направление dokąd?. Пары ответов: tu / tutaj - здесь, а при движении также сюда (Chodź tutaj); tam - там/туда, stąd - отсюда, stamtąd - оттуда, tędy / tamtędy - этим/тем путём.
 В придаточном места
 связкапример
 tam, gdzie…Zostań tam, gdzie jesteś.
-tam, dokąd…Idź tam, dokąd prowadzi znak.
+tam, dokąd…Idź tam, dokąd prowadzi ta droga.
 stamtąd, skąd…Wrócił stamtąd, skąd wyjechał.
 tędy, którędy…Idź tędy, którędy szliśmy wczoraj.
 kto и co: склонение
@@ -731,10 +737,11 @@ kto и co: склонение
 падежktoco
 MianownikktocoDopełniaczkogoczegoCelownikkomuczemuBiernikkogocoNarzędnikkimczymMiejscownik(o) kim(o) czym
 Падеж диктует глагол. szukać czego? → Czego szukasz? · pomagać komu? → Komu pomagasz? · interesować się czym? → Czym się interesujesz? · bać się czego? → Czego się boisz? Полный список - во вкладке Глаголы → Управление.
+У czemu два употребления. Это Celownik от co: Czemu się przyglądasz? - Obrazowi. Одновременно разговорное czemu значит «почему»: Czemu jesteś smutny? - Bo tęsknię. Нейтральный синоним - dlaczego.
 Вся семья: ktoś, nikt, ktokolwiek
 Приставка и суффикс едут на готовой форме: склоняется середина, а не край. Выучив kto / co, получаешь ещё три ряда бесплатно.
 словозначениекосвенные формы
-kto · coвопросKogo szukasz? · Czym piszesz? · O czym myślisz?ktoś · cośкто-то, что-тоkogoś · komuś · kimś czegoś · czemuś · czymśnikt · nicникто, ничтоnikogo · nikomu · nikim niczego · niczemu · niczymktokolwiek · cokolwiekкто угодно, что угодноkogokolwiek · komukolwiek czegokolwiek · czymkolwiekten, kto… · to, co…тот, кто… · то, что…Ten, kto to zrobił. · Nie wierzę w to, co mówisz.
+kto · coвопросKogo szukasz? · Czym piszesz? · O czym myślisz?ktoś · cośкто-то, что-тоkogoś · komuś · kimś czegoś · czemuś · czymśnikt · nicникто, ничтоnikogo · nikomu · nikim niczego · niczemu · niczymktokolwiek · cokolwiekкто угодно, что угодноkogokolwiek · komukolwiek czegokolwiek · czymkolwiekten, kto… · to, co…тот, кто… · то, что…Ten, kto to zrobił, powinien przeprosić. · Nie wierzę w to, co mówisz.
 jaki или który
 jaki - какой по качеству, признак из неограниченного набора: Jaki jest ten film? - Nudny. który - выбор из известного, ограниченного набора: Który film chcesz obejrzeć? - Ten pierwszy. Русский язык это различие обычно не делает - оба переводятся как «какой».
 Jaki masz samochód?какой у тебя автомобиль (марка, качество - открытый вопрос)
@@ -742,15 +749,15 @@ Który z tych samochodów jest twój?который из этих (выбор и
 Вопросы с предлогом
 Предлог всегда идёт перед вопросительным словом, никогда не остаётся в конце, как в английском.
 вопросзначениепример
-o czymо чёмO czym myślisz?o kimо комO kim mówisz?z kimс кемZ kim idziesz do kina?do kogoк комуDo kogo dzwonisz?dla kogoдля когоDla kogo to jest?na coна чтоNa co czekasz?na kogoна когоNa kogo czekasz?u kogoу когоU kogo mieszkasz?za coза чтоZa co mi dziękujesz?w czymв чёмW czym problem?z czegoиз чегоZ czego to jest zrobione?
-który: полное склонение
+o czymо чёмO czym myślisz?o kimо комO kim mówisz?z kimс кемZ kim idziesz do kina?do kogoк комуDo kogo dzwonisz?dla kogoдля когоDla kogo to jest?na coна чтоNa co czekasz?na kogoна когоNa kogo czekasz?u kogoу когоU kogo mieszkasz?za coза чтоZa co mi dziękujesz?w czym / na czymв чём; первая модель разговорнаяW czym problem? · Na czym polega problem?z czegoиз чегоZ czego to jest zrobione?
+który: склонение в вопросах
 Склоняется как прилагательное dobry - та же парадигма, что уже знакома по прилагательным.
 падежмуж.жен.ср.мн. мужско-личноемн. остальное
-MianownikktóryktóraktórektórzyktóreDopełniaczktóregoktórejktóregoktórychktórychCelownikktóremuktórejktóremuktórymktórymBiernikktóry / któregoktórąktórektórychktóreNarzędnikktórymktórąktórymktórymiktórymiMiejscownikktórymktórejktórymktórychktórych
+MianownikktóryktóraktórektórzyktóreDopełniaczktóregoktórejktóregoktórychktórychCelownikktóremuktórejktóremuktórymktórymBiernikktóry (m3) / którego (m1, m2)którąktórektórychktóreNarzędnikktórymktórąktórymktórymiktórymiMiejscownikktórymktórejktórymktórychktórych
 który как относительное местоимение
 Присоединяет придаточное к существительному. Род и число - от существительного, к которому относится; падеж - от того, какую роль który играет внутри своего придаточного.
 sklep, w którym pracujęмагазин, в котором я работаюMiejscownik м. р. - согласован со sklep, падеж от pracować w czym?kobieta, którą znamженщина, которую я знаюBiernik ж. р. - согласован с kobieta, падеж от znać co? kogo?ludzie, którzy przyszliлюди, которые пришлиMianownik мн. мужско-личное - który здесь подлежащее придаточногоpani, której szukamженщина, которую я ищуDopełniacz ж. р. - согласован с pani, но падеж от szukać kogo? czego?dom, który kupiłemдом, который я купилBiernik м. р., неодуш. - forma który, не któregomężczyzna, którego znamмужчина, которого я знаюBiernik м. р., одуш. - forma którego, не który
-Без который не построить сложное предложение. Именно он позволяет сказать не «Это магазин. Я там работаю», а «Это магазин, в котором я работаю» - то есть перейти от двух коротких фраз к одной развёрнутой.
+Który связывает существительное с уточняющим придаточным. Вместо двух фраз To jest sklep. Pracuję w tym sklepie. получаем одну: To jest sklep, w którym pracuję. Другие средства строят другие типы придаточных: tam, gdzie… · ten, kto… · nie wiem, czy…
 Числительные
 Главная сложность не в самих числах, а в том, какой падеж они требуют от существительного и что делают с глаголом.
 Три основных режима. Числительное на 1, кроме 11, требует Mianownik единственного: dwadzieścia jeden dom był. На 2, 3, 4, кроме 12-14, - Mianownik множественного и глагол во множественном: dwadzieścia dwa domy były. На 5-9, 0 и на 11-14 - Dopełniacz множественного и глагол в среднем роде единственного: pięć osób było.

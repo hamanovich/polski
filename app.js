@@ -183,8 +183,8 @@ function board(rows){
 function renderRod(){
   $("#s-rodz").innerHTML = `<div class="panel">
     <h2>Род существительного</h2>
-    <p class="lead">Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. Сам род почти всегда переносится из русского - работа в другом: мужской в польском делится на три.</p>
-    <div class="tip"><b>Быстрая проверка согласования.</b> Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: <span class="pl">ten stół</span> (мужской), <span class="pl">ta książka</span> (женский), <span class="pl">to okno</span> (средний). Во множественном числе проверь, группа ли это мужчин: <span class="pl">ci studenci</span>, но <span class="pl">te książki, te kobiety, te psy</span>. Форма <span class="pl">ci</span> означает только мужско-личное множественное; <span class="pl">te</span> - всё остальное.</div>
+    <p class="lead">Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. У родственных слов основной род часто совпадает с русским и белорусским, но угадывать по переводу нельзя: частотные расхождения собраны ниже. Главное новое - три типа польского мужского рода.</p>
+    <div class="tip"><b>Быстрая проверка согласования.</b> Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: <span class="pl">ten stół</span> (мужской), <span class="pl">ta książka</span> (женский), <span class="pl">to okno</span> (средний). Во множественном числе проверь, мужско-личная ли это форма: <span class="pl">ci studenci</span>, но <span class="pl">te książki, te kobiety, te psy</span>. Форма <span class="pl">ci</span> означает только мужско-личное множественное; <span class="pl">te</span> - всё остальное.</div>
 
     <h3>Как определить род</h3>
     <div class="scroll"><table class="vt">
@@ -193,15 +193,16 @@ function renderRod(){
     </table></div>
 
     <h3>Три мужских рода</h3>
-    <p class="lead">В русском мужской род один, поэтому опоры нет никакой. В польском их три, и от выбора зависит винительный падеж, множественное число, указательное местоимение и форма прошедшего времени.</p>
+    <p class="lead">m1, m2 и m3 - постоянные классы существительных: слово не меняет род между единственным и множественным числом. От класса зависит Biernik, а во множественном также форма существительного, указательного слова и прошедшего времени.</p>
+    <div class="tip"><b>Мост из русского и белорусского.</b> В единственном польское <span class="pl">widzę studenta · psa / kota · telefon</span> устроено почти как русское «вижу студента · пса / кота · телефон» и белорусское «бачу студэнта · сабаку / ката · тэлефон». Главное расхождение появляется во множественном: по-русски «вижу котов», по-белорусски «бачу катоў», но по-польски <span class="pl">widzę koty</span>; только m1 сохраняет модель <span class="pl">widzę studentów</span>.</div>
     <div class="scroll"><table class="vt">
       <tr><th>подрод</th><th>кто это</th><th>Biernik ед.</th><th>Biernik мн.</th><th>Mianownik мн.</th><th>указат.</th><th>прош.</th></tr>
       ${ROD_M.map(r => `<tr><td class="c">${r[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g" style="white-space:normal">${r[4]}</td><td class="w">${r[5]}</td><td class="w">${r[6]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>m2 - класс грамматический, а не биологический.</b> Живое существо туда попадает почти всегда, но и часть неживого ведёт себя так же: <span class="pl">palę papierosa · jem hamburgera · tańczę poloneza · kupiłem opla · zjadłem banana</span>. Никакой логики в списке нет, и биология не помогает - надёжен только тест: если Biernik единственного совпадает с Dopełniacz, это m2. У части слов норма колеблется: <span class="pl">mam laptop</span> и разговорное <span class="pl">mam laptopa</span> оба встречаются.</div>
+    <div class="tip"><b>m2 - класс грамматический, а не только биологический.</b> Мужские названия животных обычно относятся к m2. К этой же модели лексически присоединяются некоторые неживые слова и смысловые серии: <span class="pl">palę papierosa · jem hamburgera · tańczę poloneza · kupiłem opla · zjadłem banana</span>. Тенденции есть, но полностью надёжного списка нет. Если слово не называет лицо мужского пола, Biernik единственного помогает отличить m2 от m3: совпадение с Dopełniacz указывает на m2, с Mianownik - на m3. У части слов норма колеблется: <span class="pl">mam laptop</span> и разговорное <span class="pl">mam laptopa</span> оба встречаются.</div>
 
-    <h3>Одна тройка слов на всю систему</h3>
-    <p class="lead">Достаточно запомнить <span class="pl">student · pies · telefon</span> - и любую форму можно достроить по аналогии.</p>
+    <h3>Три опорных слова для главных различий</h3>
+    <p class="lead">По тройке <span class="pl">student · pies · telefon</span> легко проверить Biernik и согласование. Остальные падежные окончания и формы Mianownik множественного нужно сверять по таблицам склонения.</p>
     <div class="scroll"><table class="vt">
       <tr><th>m1 · student</th><th>m2 · pies</th><th>m3 · telefon</th><th>что показывает</th></tr>
       ${ROD_TEST.map(r => `<tr><td class="w">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${r[3]}</td></tr>`).join("")}
@@ -217,12 +218,12 @@ function renderRod(){
 
     <h3>Подводные камни</h3>
     <ol class="pit">
-      <li><b>Мужские на -a - единственная группа, где окончание врёт.</b> <span class="pl">mężczyzna, kolega, kierowca, turysta, poeta</span> склоняются по женскому образцу, а согласуются по мужскому: <span class="pl">ten dobry kolega</span>. Во множественном идут в m1: <span class="pl">ci dobrzy koledzy</span>.</li>
-      <li><b>Одушевлённость и m1 - разные вещи.</b> <span class="pl">pies</span> живой, но не мужско-личный: в единственном ведёт себя как m1 (<span class="pl">widzę psa</span>), во множественном - как m3 (<span class="pl">widzę psy</span>). Граница переезжает между числами, и это самая частая ошибка на B1.</li>
+      <li><b>Часть мужских названий лиц оканчивается на -a.</b> <span class="pl">mężczyzna, kolega, kierowca, turysta, poeta, artysta</span> в единственном склоняются по модели на <span class="pl">-a</span>, но согласуются как мужские: <span class="pl">ten dobry kolega</span>. Во множественном это m1: <span class="pl">ci dobrzy koledzy</span>.</li>
+      <li><b>Одушевлённость и m1 - разные вещи.</b> <span class="pl">Pies</span> всегда относится к m2. В Biernik единственного его форма совпадает с m1 (<span class="pl">widzę psa</span>), а в Biernik множественного и согласовании - с немужско-личной моделью (<span class="pl">widzę psy · te psy były</span>). Совпадение форм меняется, сам род не меняется.</li>
       <li><b>Достаточно одного мужчины.</b> <span class="pl">Anna, Ewa i Piotr przyszli</span> - вся группа становится мужско-личной, даже если мужчина один из десяти. Без него - <span class="pl">przyszły</span>.</li>
       <li><b>dzieci - не m1, хотя это люди.</b> <span class="pl">te dzieci, dzieci były, widzę dzieci</span>. То же с <span class="pl">niemowlęta</span> и вообще со всем средним родом.</li>
-      <li><b>Слова только во множественном рода не имеют.</b> <span class="pl">drzwi, spodnie, okulary, nożyczki, urodziny, wakacje, pieniądze</span> - все не-мужско-личные: <span class="pl">drzwi były otwarte</span>. Но <span class="pl">rodzice, ludzie, państwo</span> - мужско-личные: <span class="pl">rodzice byli</span>.</li>
-      <li><b>Слова на -um среднего рода и в единственном не склоняются.</b> <span class="pl">muzeum, w muzeum, do muzeum</span> - одна форма на все падежи. Во множественном склоняются нормально: <span class="pl">muzea, muzeów, w muzeach</span>.</li>
+      <li><b>У pluralia tantum нет формы единственного числа.</b> Для речи важен тип согласования во множественном. <span class="pl">Drzwi, spodnie, okulary, nożyczki, urodziny, wakacje, pieniądze</span> согласуются как немужско-личные: <span class="pl">te drzwi były otwarte</span>. <span class="pl">Rodzice</span> и <span class="pl">ludzie</span> не относятся к pluralia tantum: у них есть <span class="pl">rodzic</span> и <span class="pl">człowiek</span>. У <span class="pl">państwo</span> согласование зависит от значения: <span class="pl">państwo było</span> о государстве, но <span class="pl">państwo Kowalscy przyszli</span> о семье.</li>
+      <li><b>Не любое слово на -um среднего рода.</b> Средние заимствования типа <span class="pl">muzeum, centrum, forum, akwarium</span> в единственном не склоняются: <span class="pl">w muzeum, do muzeum</span>. Во множественном они склоняются: <span class="pl">muzea, muzeów, w muzeach</span>. Но <span class="pl">ten album, kostium, rum</span> - мужские и склоняемые: <span class="pl">z albumu, w kostiumie, bez rumu</span>.</li>
     </ol>
   </div>${topicPracticeHTML(ROD_PRACTICE, "gender")}`;
 }
@@ -1088,16 +1089,24 @@ function renderPart(){
 function renderQ(){
   $("#s-q").innerHTML = `<div class="panel">
     <h2>Вопросы</h2>
-    <p class="lead">Общий вопрос строится через <span class="pl">czy</span>, частный - вопросительным словом. Русский почти всегда обходится одним словом там, где польский различает два.</p>
+    <p class="lead">Общий вопрос строится с <span class="pl">czy</span> или одной вопросительной интонацией, частный - с вопросительным словом. Русский и белорусский дают хорошую опору для <span class="pl">gdzie / dokąd / skąd</span>; особого внимания требует польское противопоставление <span class="pl">jaki / który</span>.</p>
 
     <h3>Общий вопрос: czy</h3>
-    <p><span class="pl">czy</span> открывает вопрос, на который отвечают «да / нет»: <span class="pl">Czy jesteś głodny? Czy lubisz kawę?</span> В устной речи часто опускается и заменяется вопросительной интонацией, но на письме и в вежливой речи ожидается.</p>
+    <p><span class="pl">czy</span> открывает вопрос, на который отвечают «да / нет»: <span class="pl">Czy jesteś głodny? Czy lubisz kawę?</span> Если вопросительность и так понятна из контекста, знака вопроса или интонации, частицу можно опустить: <span class="pl">Czy masz czas? = Masz czas?</span> Обе модели нормативны и в устной, и в письменной речи. Вежливость создают вся конструкция и форма обращения: <span class="pl">Czy ma pani chwilę? · Ma pani chwilę? · Mógłby mi pan pomóc?</span></p>
 
     <h3>Вопросительные слова</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>пример</th></tr>
       ${QWORDS.map(q => `<tr><td class="w">${q[0]}</td><td style="color:var(--muted)">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
     </table></div>
+
+    <h3>Прямой и косвенный вопрос</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>прямой вопрос</th><th>косвенный вопрос</th></tr>
+      <tr><td class="w">Czy przyjdzie?</td><td class="g">Nie wiem, czy przyjdzie.</td></tr>
+      <tr><td class="w">Gdzie mieszka?</td><td class="g">Powiedz, gdzie mieszka.</td></tr>
+    </table></div>
+    <div class="tip"><b>В косвенном вопросе сохраняется <span class="pl">czy</span> или вопросительное слово.</b> Перед придаточной частью ставится запятая, а конечный знак определяется главной частью: <span class="pl">Chciałam zapytać, czy jutro jest zebranie.</span>, но <span class="pl">Czy możesz powiedzieć, gdzie jest bank?</span> Подробнее - в разделе <a href="#s-conj">Союзы</a>.</div>
 
     <h3>Место и направление: одна система</h3>
     <div class="scroll"><table class="vt">
@@ -1107,12 +1116,12 @@ function renderQ(){
       <tr><td class="w" style="white-space:normal">Skąd wracasz?</td><td style="white-space:normal">откуда - исходная точка</td><td class="g" style="white-space:normal">Z pracy. · Stamtąd.</td></tr>
       <tr><td class="w" style="white-space:normal">Którędy iść?</td><td style="white-space:normal">каким путём</td><td class="g" style="white-space:normal">Tędy. · Tamtędy.</td></tr>
     </table></div>
-    <div class="tip"><b>В разговоре <span class="pl">gdzie</span> часто заменяет <span class="pl">dokąd</span>.</b> <span class="pl">Gdzie idziesz?</span> звучит естественно, но точная система различает положение <span class="pl">gdzie?</span> и направление <span class="pl">dokąd?</span>. Пары ответов: <span class="pl">tu / tutaj</span> - здесь, <span class="pl">tam</span> - там/туда, <span class="pl">stąd</span> - отсюда, <span class="pl">stamtąd</span> - оттуда, <span class="pl">tędy / tamtędy</span> - этим/тем путём.</div>
+    <div class="tip"><b>В разговоре <span class="pl">gdzie</span> часто заменяет <span class="pl">dokąd</span>.</b> <span class="pl">Gdzie idziesz?</span> звучит естественно, но точная система различает положение <span class="pl">gdzie?</span> и направление <span class="pl">dokąd?</span>. Пары ответов: <span class="pl">tu / tutaj</span> - здесь, а при движении также сюда (<span class="pl">Chodź tutaj</span>); <span class="pl">tam</span> - там/туда, <span class="pl">stąd</span> - отсюда, <span class="pl">stamtąd</span> - оттуда, <span class="pl">tędy / tamtędy</span> - этим/тем путём.</div>
     <h3>В придаточном места</h3>
     <div class="scroll"><table class="vt">
       <tr><th>связка</th><th>пример</th></tr>
       <tr><td class="w" style="white-space:normal">tam, gdzie…</td><td class="g" style="white-space:normal">Zostań tam, gdzie jesteś.</td></tr>
-      <tr><td class="w" style="white-space:normal">tam, dokąd…</td><td class="g" style="white-space:normal">Idź tam, dokąd prowadzi znak.</td></tr>
+      <tr><td class="w" style="white-space:normal">tam, dokąd…</td><td class="g" style="white-space:normal">Idź tam, dokąd prowadzi ta droga.</td></tr>
       <tr><td class="w" style="white-space:normal">stamtąd, skąd…</td><td class="g" style="white-space:normal">Wrócił stamtąd, skąd wyjechał.</td></tr>
       <tr><td class="w" style="white-space:normal">tędy, którędy…</td><td class="g" style="white-space:normal">Idź tędy, którędy szliśmy wczoraj.</td></tr>
     </table></div>
@@ -1124,6 +1133,7 @@ function renderQ(){
       ${KTO_CO.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td></tr>`).join("")}
     </table>
     <div class="tip"><b>Падеж диктует глагол.</b> <span class="pl">szukać czego? → Czego szukasz?</span> · <span class="pl">pomagać komu? → Komu pomagasz?</span> · <span class="pl">interesować się czym? → Czym się interesujesz?</span> · <span class="pl">bać się czego? → Czego się boisz?</span> Полный список - во вкладке Глаголы → Управление.</div>
+    <div class="tip"><b>У <span class="pl">czemu</span> два употребления.</b> Это Celownik от <span class="pl">co</span>: <span class="pl">Czemu się przyglądasz? - Obrazowi.</span> Одновременно разговорное <span class="pl">czemu</span> значит «почему»: <span class="pl">Czemu jesteś smutny? - Bo tęsknię.</span> Нейтральный синоним - <span class="pl">dlaczego</span>.</div>
 
     <h3>Вся семья: ktoś, nikt, ktokolwiek</h3>
     <p class="lead">Приставка и суффикс едут на готовой форме: склоняется середина, а не край. Выучив <span class="pl">kto / co</span>, получаешь ещё три ряда бесплатно.</p>
@@ -1146,7 +1156,7 @@ function renderQ(){
       ${QPREP.map(q => `<tr><td class="w">${q[0]}</td><td style="color:var(--muted)">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
     </table></div>
 
-    <h3>który: полное склонение</h3>
+    <h3>który: склонение в вопросах</h3>
     <p class="lead">Склоняется как прилагательное <span class="pl">dobry</span> - та же парадигма, что уже знакома по прилагательным.</p>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
@@ -1158,7 +1168,7 @@ function renderQ(){
     <div class="scroll"><table>
       ${KTORY_SENT.map(k => `<tr><td style="width:36%" class="w">${k[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${k[1]}</td><td class="g" style="font-size:var(--fs-note)">${k[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Без который не построить сложное предложение.</b> Именно он позволяет сказать не «Это магазин. Я там работаю», а «Это магазин, в котором я работаю» - то есть перейти от двух коротких фраз к одной развёрнутой.</div>
+    <div class="tip"><b><span class="pl">Który</span> связывает существительное с уточняющим придаточным.</b> Вместо двух фраз <span class="pl">To jest sklep. Pracuję w tym sklepie.</span> получаем одну: <span class="pl">To jest sklep, w którym pracuję.</span> Другие средства строят другие типы придаточных: <span class="pl">tam, gdzie… · ten, kto… · nie wiem, czy…</span></div>
   </div>${topicPracticeHTML(QUESTION_PRACTICE, "question")}`;
 }
 

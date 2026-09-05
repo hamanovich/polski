@@ -129,7 +129,7 @@ const CASES = [
   agree:[["ten dobry sklep","ten dobry sklep"],["ta dobra kawa","ta dobra kawa"],["to dobre piwo","to dobre piwo"],["мн. мужчины","ci dobrzy studenci"],["мн. остальное","te dobre książki"]],
   exc:[["człowiek","ludzie","во мн. ч. другое слово"],["rok","lata","то же"],["brat","bracia",""],["ksiądz","księża",""],["dziecko","dzieci",""],["oko / ucho","oczy / uszy","в анатомии; в приборах - oka, ucha"],["ręka","ręce",""],["przyjaciel","przyjaciele",""]],
   pit:["<b>Как построить именительный.</b> В единственном числе бери словарную форму и согласуй с <span class='pl'>ten / ta / to</span>. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (<span class='pl'>ci studenci, państwo Kowalscy</span>); женщины, а также существительные <span class='pl'>dzieci</span>, названия животных и предметов - немужско-личного (<span class='pl'>te kobiety, dzieci, psy, książki</span>). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой <span class='pl'>student - studenci</span>.",
-  "<b>Мужско-личный род (męskoosobowy).</b> В русском во множественном рода нет вообще, поэтому опоры нет никакой. Тест простой: подставь <span class='pl'>ci</span> или <span class='pl'>te</span>. <span class='pl'>Ci studenci</span>, но <span class='pl'>te psy</span> - животные идут в «остальное», даже если это самцы.",
+  "<b>Мужско-личный род (męskoosobowy).</b> В русском во множественном рода нет, поэтому прямой опоры нет. Частичная есть: <span class='pl'>widzę studentów</span> устроено как «вижу студентов», но на животных она обрывается - <span class='pl'>widzę koty</span>, а не «вижу котов». Тест простой: подставь <span class='pl'>ci</span> или <span class='pl'>te</span>. <span class='pl'>Ci studenci</span>, но <span class='pl'>te psy</span> - животные идут в «остальное», даже если это самцы.",
   "<b>Мужские слова на -a.</b> <span class='pl'>kolega, mężczyzna, kierowca, turysta, poeta</span> - склоняются как женские, а согласуются как мужские: <span class='pl'>ten dobry kolega</span>. Мн. ч. - мужско-личное: <span class='pl'>ci koledzy</span>.",
   "<b><span class='pl'>To</span> не меняется.</b> <span class='pl'>To jest mój brat</span> / <span class='pl'>to są moje dzieci</span> - форма <span class='pl'>to</span> одна на всё, меняется только глагол.",
   "<b><span class='pl'>Państwo</span></b> - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: <span class='pl'>państwo Kowalscy byli</span>."],
@@ -768,18 +768,18 @@ const VERB_TEST = {
 };
 
 const ROD_ZNAK = [
- ["мужской","согласная на конце","student · dom · pies · telefon · stół · nauczyciel","плюс закрытая группа на -a: mężczyzna, kolega, kierowca, turysta, poeta, artysta"],
+ ["мужской","обычно согласная на конце","student · dom · pies · telefon · stół · nauczyciel","часть мужских названий лиц оканчивается на -a: mężczyzna, kolega, kierowca, turysta, poeta, artysta"],
  ["женский","-a","kobieta · kawa · praca · książka · ulica","плюс на согласную: noc, rzecz, mysz, sól, twarz, krew, marchew - и всё на -ość: miłość, radość, wolność"],
- ["средний","-o · -e · -ę · -um","okno · mieszkanie · imię · muzeum · dziecko","на -um в единственном числе не склоняется: w muzeum, do muzeum"]
+ ["средний","-o · -e · -ę; у ряда заимствований -um","okno · mieszkanie · imię · muzeum · dziecko","средние на -um в единственном не склоняются: w muzeum, do muzeum; но ten album, kostium, rum - мужские. Окончание -ę тоже не гарантирует средний род: ten książę, księcia - это m1"]
 ];
 const ROD_M = [
- ["m1 · męskoosobowy","мужчины","= Dopełniacz","= Dopełniacz мн.","-i / -y / -e / -owie + чередование","ci","byli"],
- ["m2 · męskożywotny","животные и часть неживого","= Dopełniacz","= Mianownik мн.","-y / -i / -e","te","były"],
- ["m3 · męskorzeczowy","вещи, всё неживое","= Mianownik","= Mianownik мн.","-y / -i / -e","te","były"]
+ ["m1 · męskoosobowy","мужские названия лиц; в согласовании также смешанные группы","= Dopełniacz","= Dopełniacz мн.","-i / -y / -e / -owie + чередование","ci","byli"],
+ ["m2 · męskozwierzęcy (męskożywotny)","мужские названия животных и часть неживого","= Dopełniacz","= Mianownik мн.","-y / -i / -e","te","były"],
+ ["m3 · męskorzeczowy","большинство названий неживого","= Mianownik","= Mianownik мн.","-y / -i / -e","te","były"]
 ];
 const ROD_TEST = [
  ["Widzę studenta.","Widzę psa.","Widzę telefon.","Biernik ед.: Dopełniacz берут m1 и m2, m3 остаётся Mianownik"],
- ["Widzę studentów.","Widzę psy.","Widzę telefony.","Biernik мн.: Dopełniacz берёт только m1 - животные уходят к вещам"],
+ ["Widzę studentów.","Widzę psy.","Widzę telefony.","Biernik мн.: Dopełniacz берёт только m1; у m2 форма совпадает с m3"],
  ["ci studenci","te psy","te telefony","указательное: ci - признак m1, всё остальное te"],
  ["studenci byli","psy były","telefony były","прошедшее: -li только у m1"]
 ];
@@ -1484,7 +1484,7 @@ const DIM_NAME = [["Anna","Ania","Anusia / Anka","Аня, Анечка"],["Piotr
 const QWORDS = [
  ["kto","кто","Kto to jest?"],
  ["co","что","Co to jest?"],
- ["jaki / jaka / jakie","какой (качество, любой признак)","Jaki jest dzisiaj dzień? - Słoneczny."],
+ ["jaki / jaka / jakie","какой (качество, любой признак)","Jaki jest ten film? - Ciekawy."],
  ["który / która / które","который (выбор из известного набора)","Który dzień tygodnia lubisz najbardziej?"],
  ["czyj / czyja / czyje","чей","Czyja to torba?"],
  ["ile","сколько","Ile to kosztuje?"],
@@ -1492,7 +1492,7 @@ const QWORDS = [
  ["dokąd","куда","Dokąd idziesz?"],
  ["skąd","откуда","Skąd jesteś?"],
  ["kiedy","когда","Kiedy wracasz?"],
- ["dlaczego","почему","Dlaczego się spóźniłeś?"],
+ ["dlaczego / czemu","почему; czemu - разговорное","Dlaczego się spóźniłeś? · Czemu jesteś smutny?"],
  ["jak","как","Jak się masz?"],
  ["po co","зачем","Po co to robisz?"]
 ];
@@ -1506,14 +1506,14 @@ const QPREP = [
  ["na kogo","на кого","Na kogo czekasz?"],
  ["u kogo","у кого","U kogo mieszkasz?"],
  ["za co","за что","Za co mi dziękujesz?"],
- ["w czym","в чём","W czym problem?"],
+ ["w czym / na czym","в чём; первая модель разговорная","W czym problem? · Na czym polega problem?"],
  ["z czego","из чего","Z czego to jest zrobione?"]
 ];
 const KTORY = [
  ["Mianownik","który","która","które","którzy","które"],
  ["Dopełniacz","którego","której","którego","których","których"],
  ["Celownik","któremu","której","któremu","którym","którym"],
- ["Biernik","który / którego","którą","które","których","które"],
+ ["Biernik","który (m3) / którego (m1, m2)","którą","które","których","które"],
  ["Narzędnik","którym","którą","którym","którymi","którymi"],
  ["Miejscownik","którym","której","którym","których","których"]
 ];
@@ -1539,7 +1539,7 @@ const KTO_RODZ = [
  ["ktoś · coś","кто-то, что-то","kogoś · komuś · kimś || czegoś · czemuś · czymś"],
  ["nikt · nic","никто, ничто","nikogo · nikomu · nikim || niczego · niczemu · niczym"],
  ["ktokolwiek · cokolwiek","кто угодно, что угодно","kogokolwiek · komukolwiek || czegokolwiek · czymkolwiek"],
- ["ten, kto… · to, co…","тот, кто… · то, что…","Ten, kto to zrobił. · Nie wierzę w to, co mówisz."]
+ ["ten, kto… · to, co…","тот, кто… · то, что…","Ten, kto to zrobił, powinien przeprosić. · Nie wierzę w to, co mówisz."]
 ];
 
 const NIKT_DEKL = [
@@ -1793,7 +1793,28 @@ const ALPHA_PRACTICE={id:"alphabet",title:"Практика: алфавит и �
 const DIM_PRACTICE={id:"diminutives",title:"Практика: уменьшительные",lead:"20 заданий на формы и уместность уменьшительных.",tasks:[...DIM_M,...DIM_F,...DIM_N,...DIM_ADJ,...DIM_NAME].slice(0,20).map((item,index)=>({id:`dim-${index+1}`,prompt:`Уменьшительная форма слова «${item[0]}»:`,answers:[item[1].split(" / ")[0]],explanation:`Первая обычная уменьшительная форма: ${item[1]}.`}))};
 const BRIDGE_PRACTICE={id:"bridges",title:"Практика: мосты и ложные друзья",lead:"20 заданий на значения похожих польских слов.",get tasks(){return FALSE.slice(0,20).map((item,index)=>({id:`bridge-${index+1}`,prompt:`Что по-польски означает «${item[0]}»?`,answers:[item[1]],explanation:`Не «${item[2]}».`}));}};
 const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, даты и время.",tasks:topicTasks("num",[["dwa ___ (dom)","domy","После dwa: mianownik множественного."],["pięć ___ (dom)","domów","После pięć: dopełniacz множественного."],["dwie ___ (książka)","książki","Женский род после dwie."],["trzy ___ (okno)","okna","После trzy: okna."],["dwanaście ___ (student)","studentów","11–14: родительный множественного."],["dwadzieścia dwa ___ (kot)","koty","Последнее число dwa."],["dwadzieścia pięć ___ (kot)","kotów","Последнее число pięć."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? - o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["we ___ (wtorek)","wtorek","Устойчиво: we wtorek."],["w ___ (maj)","maju","W maju."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["pięć ___ (złoty)","złotych","После 5: złotych."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["Wrócę za ___ (tydzień)","tydzień","За неделю в будущем."],["w ciągu ___ (tydzień)","tygodnia","В течение срока: w ciągu tygodnia."]] )};
-const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на вопросительные слова и падежные формы.",tasks:topicTasks("question",[["___ mieszkasz? - W Gdańsku.","Gdzie","Где: gdzie?"],["___ idziesz? - Do sklepu.","Dokąd","Куда: dokąd?"],["___ wracasz? - Z pracy.","Skąd","Откуда: skąd?"],["___ to kosztuje?","Ile","Сколько: ile?"],["___ jesteś smutny?","Dlaczego","Почему: dlaczego?"],["___ jest ten film? - Ciekawy.","Jaki","Качество: jaki?"],["___ z tych filmów wybierasz?","Który","Выбор: który?"],["___ szukasz? (książka)","Czego","Szukać чего: czego?"],["___ pomagasz? (sąsiad)","Komu","Pomagać кому: komu?"],["___ piszesz? (długopis)","Czym","Чем: czym?"],["___ rozmawiasz? (Anna)","Z kim","С кем: z kim?"],["___ czekasz? (autobus)","Na co","Ждать что: na co?"],["___ dzwonisz? (lekarz)","Do kogo","Dzwonić требует do + родительный: do lekarza → do kogo?"],["___ jest ta torba?","Czyja","Чья: czyja?"],["___ wracasz? - Wieczorem.","Kiedy","Когда: kiedy?"],["___ mówisz po polsku? - Dobrze.","Jak","Как: jak?"],["___ to robisz? - Żeby pomóc.","Po co","Зачем: po co?"],["___ dojeżdżasz do szkoły? - Autobusem.","Jak","Как добираешься: jak?"],["___ jest problem? - W tym, że komputer się nie włącza.","W czym","В чём: w czym?"],["___ dni zostało do wakacji?","Ile","Сколько дней: ile dni?"]] )};
+const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на общий и косвенный вопрос, вопросительные слова, падежные формы и относительное który.",tasks:topicTasks("question",[
+  ["___ mieszkasz? - W Gdańsku.","Gdzie","Спрашиваем о месте: gdzie?",["Gdzie","Skąd","Dokąd"]],
+  ["___ idziesz? (точно: куда?) - Do sklepu.","Dokąd","Точный вопрос о конечной точке движения: dokąd? В разговоре возможно Gdzie idziesz?",["Dokąd","Skąd","Którędy"]],
+  ["___ wracasz? - Z pracy.","Skąd","Спрашиваем об исходной точке: skąd?",["Skąd","Gdzie","Dokąd"]],
+  ["___ masz dziś czas?","Czy","Общий вопрос «да / нет» можно явно открыть частицей czy.",["Czy","Kto","Co"]],
+  ["___ jesteś smutny? - Bo tęsknię. (нейтрально)","Dlaczego","Ответ причиной исключает kiedy: спрашиваем «почему». Нейтральное слово - dlaczego, разговорный синоним - czemu.",["Dlaczego","Kiedy","Czyj"]],
+  ["___ jest ten film? - Ciekawy.","Jaki","Спрашиваем о качестве: jaki?",["Jaki","Który","Czyj"]],
+  ["___ z tych filmów wybierasz?","Który","Выбор из конкретного набора: który?",["Który","Jaki","Czyj"]],
+  ["___ szukasz? (książka)","Czego","Szukać требует Dopełniacz: czego?",["Czego","Co","Czemu"]],
+  ["___ pomagasz? (sąsiad)","Komu","Pomagać требует Celownik: komu?",["Komu","Kogo","Kim"]],
+  ["___ piszesz? (орудие письма: długopis)","Czym","Орудие действия стоит в Narzędnik: czym?",["Czym","Czemu","Co"]],
+  ["___ rozmawiasz teraz przez telefon? (Anna - собеседница)","Z kim","Собеседник вводится через z + Narzędnik: z kim?",["Z kim","O kim","Do kogo"]],
+  ["___ czekasz? (autobus)","Na co","Czekać na co? - na autobus.",["Na co","Na kogo","Do czego"]],
+  ["___ dzwonisz? (lekarz - адресат звонка)","Do kogo","Dzwonić do kogo? - do lekarza.",["Do kogo","O kim","Z kim"]],
+  ["___ to torba? - Anny.","Czyja","Спрашиваем о принадлежности: czyja?",["Czyja","Jaka","Która"]],
+  ["___ wracasz? - Wieczorem.","Kiedy","Спрашиваем о времени: kiedy?",["Kiedy","Skąd","Dokąd"]],
+  ["___ mówisz po polsku? - Dobrze.","Jak","Спрашиваем о способе или качестве: jak?",["Jak","Czy","Dlaczego"]],
+  ["___ to robisz? (вопрос именно о цели) - Żeby pomóc.","Po co","Вопрос о цели: po co?",["Po co","Kiedy","Czym"]],
+  ["___ dni zostało do wakacji?","Ile","Ile требует Dopełniacz множественного: ile dni?",["Ile","Jak","Które"]],
+  ["Nie wiem, ___ jutro pracujesz. (косвенный вопрос «да / нет»)","czy","В косвенном общем вопросе используется czy; перед придаточной частью стоит запятая.",["czy","że","żeby"]],
+  ["To jest sklep, w ___ pracuję.","którym","Род и число от sklep, Miejscownik требуется предлогом w: w którym.",["którym","którego","który"]]
+] )};
 const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",lead:"20 заданий на nie, отрицательные местоимения и nie ma.",tasks:topicTasks("neg",[["Nie mam ___. (czas)","czasu","После nie: родительный."],["Nikt nic nie ___. (wiedzieć)","wie","Nie остаётся при глаголе."],["Nigdy tam nie ___. (być, ja)","byłem","Nigdy nie byłem."],["Nie ma ___ w domu. (Anna)","Anny","Nie ma + родительный."],["Anna nie ___ lekarzem.","jest","Nie jest lekarzem."],["Nie widzę żadnego ___. (pies)","psa","Żadnego psa."],["Nie mam ani ___, ani pieniędzy. (czas)","czasu","Ani czasu."],["Nigdzie nie ___ kluczy. (widzieć, ja)","widzę","Nigdzie nie widzę."],["Nie chcę ___. (kawa)","kawy","Nie chcę kawy."],["Czy ktoś dzwoni? - Nie, ___.","nikt","Nikt."],["Nie wiem ___ o tym problemie. (nic)","nic","После wiedzieć употребляется nic: Nie wiem nic o tym problemie."],["On nie ___ w pracy.","jest","Nie jest w pracy."],["W lodówce nie ma ___. (mleko)","mleka","Nie ma mleka."],["Żaden z nich nie ___. (przyjść)","przyszedł","Żaden nie przyszedł."],["Nie mogę znaleźć swoich ___. (okulary)","okularów","Родительный множественного."],["Nikomu nic nie ___. (mówić, ja)","mówię","Nikomu nic nie mówię."],["To nie ___ prawda.","jest","Nie jest prawda."],["Nie słyszę ___ (muzyka)","muzyki","Nie słyszę muzyki."],["Nikt nie ___, gdzie on jest. (wiedzieć)","wie","Nikt nie wie."],["Bez ciebie nie ___. (móc, ja)","mogę","Nie mogę."]] )};
 const ORDER_PRACTICE={id:"word-order",title:"Практика: порядок слов",lead:"20 заданий на клитики, się и нейтральный порядок.",tasks:topicTasks("order",[["Jak ___ nazywasz?","się","Się не открывает фразу."],["Czy możesz ___ pomóc? (ja)","mi","Краткая клитика mi."],["Nie martw ___.","się","Nie martw się."],["Powiedz ___ prawdę. (ja)","mi","Powiedz mi."],["Czy podoba ___ się ten film? (ty)","ci","Порядок: ci się."],["Widzę ___ codziennie. (on)","go","Краткая форма: go."],["Idę do ___. (on)","niego","После предлога: niego."],["Mnie to nie ___. (interesować)","interesuje","Полная форма для акцента."],["Gdzie ___ twoja siostra? (mieszkać)","mieszka","Вопросительное слово + глагол."],["Ile ___ bilet? (kosztować)","kosztuje","Ile kosztuje bilet?"],["Klucze są ___ stole. (na)","na","Новый факт: na stole."],["Na stole są ___. (klucze)","klucze","Ответ на «что?» - klucze."],["Czy Anna ___ zna? (ty)","cię","Винительный: cię."],["Nie ___ się tego. (bać, ty)","bój","Nie bój się."],["On ___ dał książkę. (ja)","mi","On mi dał."],["Wczoraj ___ go w kinie. (widzieć, ja)","widziałem","Вчера видел: widziałem."],["Czy ___ to zrobić? (móc, ty)","możesz","Czy możesz…"],["Z kim ___ spotykasz?","się","Spotykać się z kimś: здесь нужна частица się."],["Proszę, ___ mi pomóc.","pomóż","Pomóż mi."],["Dzisiaj ___ do pracy. (iść, ja)","idę","Dzisiaj idę."]] )};
 const IMPERS_PRACTICE={id:"impersonal",title:"Практика: безличные конструкции",lead:"20 заданий на trzeba, można, nie wolno, -no/-to и mówi się.",tasks:topicTasks("impers",[["Tu nie ___ palić.","wolno","Прямой запрет: nie wolno."],["Nie ___ wejść, bo drzwi są zamknięte.","można","Нет возможности: nie można."],["___ wypełnić formularz.","Trzeba","Необходимость: trzeba."],["___ to przeczytać.","Warto","Рекомендация: warto."],["W regulaminie: ___ zapłacić do piątku.","należy","Официальная инструкция: należy."],["Wczoraj nie ___ tu parkować.","można było","Прошедшее: nie można było."],["Trzeba ___ wcześniej. (wyjść)","było","Trzeba było wyjść."],["Wczoraj ___ formularz.","wypełniono","Безличное действие: wypełniono."],["Drzwi ___ o ósmej.","otwarto","Форма на -to: otwarto."],["Po polsku ___ się «dzień dobry».","mówi","Mówi się."],["Tu się nie ___. (palić)","pali","Tu się nie pali."],["Nie wolno ___ zdjęć. (robić)","robić","После nie wolno - инфинитив."],["Czy ___ tu usiąść?","można","Можно ли: czy można?"],["___ mi wejść?","Wolno","Можно ли мне: wolno mi?"],["Nie ___ nam rozmawiać głośno.","wolno","Nie wolno nam."],["Wczoraj ___ remont.","wykonano","Wykonano remont."],["Jak ___ dojeżdża na lotnisko?","się","Jak się dojeżdża?"],["___ było spróbować tej zupy.","Warto","Warto było."],["W urzędzie ___ złożyć wniosek online.","można","Возможность: można."],["Nie ___ było wejść po zamknięciu.","wolno","Запрет в прошлом: nie wolno było."]] )};
@@ -1991,10 +2012,10 @@ const ROD_PRACTICE = {
   id:"gender", title:"Практика: род существительных", lead:"20 заданий на род, согласование и три типа мужских существительных.",
   tasks:[
     {id:"gender-1",prompt:"___ książka leży na stole.",options:["Ten","Ta","To"],answers:["Ta"],explanation:"Książka - женский род: ta książka."},
-    {id:"gender-2",prompt:"___ okno jest otwarte.",options:["Ten","Ta","To"],answers:["To"],explanation:"Okno - средний род: to okno."},
+    {id:"gender-2",prompt:"___ album leży na stole.",options:["Ten","Ta","To"],answers:["Ten"],explanation:"Album заканчивается буквами -um, но это склоняемое существительное мужского рода: ten album, z albumu."},
     {id:"gender-3",prompt:"___ telefon jest nowy.",options:["Ten","Ta","To"],answers:["Ten"],explanation:"Telefon - мужской род: ten telefon."},
     {id:"gender-4",prompt:"To jest dobry ___ (kolega).",answers:["kolega"],explanation:"Kolega оканчивается на -a, но обозначает мужчину: dobry kolega."},
-    {id:"gender-5",prompt:"___ studenci przyszli pierwsi.",options:["Ci","Te","Tych"],answers:["Ci"],explanation:"Группа мужчин - мужско-личное множественное: ci studenci."},
+    {id:"gender-5",prompt:"___ studenci przyszli pierwsi.",options:["Ci","Te","Tych"],answers:["Ci"],explanation:"Studenci требует мужско-личной формы множественного числа: ci studenci."},
     {id:"gender-6",prompt:"___ kobiety przyszły pierwsze.",options:["Ci","Te","Tych"],answers:["Te"],explanation:"Группа женщин не является мужско-личной: te kobiety."},
     {id:"gender-7",prompt:"___ psy są bardzo spokojne.",options:["Ci","Te","Tych"],answers:["Te"],explanation:"Животные во множественном - не мужско-личные: te psy."},
     {id:"gender-8",prompt:"Anna i Piotr ___ już w domu.",options:["byli","były","było"],answers:["byli"],explanation:"В смешанной группе есть мужчина, поэтому мужско-личная форма: byli."},
@@ -2002,9 +2023,9 @@ const ROD_PRACTICE = {
     {id:"gender-10",prompt:"Widzę dobrego ___ (pies).",answers:["psa"],explanation:"Pies - m2: в винительном единственного форма как в родительном, psa."},
     {id:"gender-11",prompt:"Widzę nowy ___ (telefon).",answers:["telefon"],explanation:"Telefon - m3: винительный совпадает с именительным, telefon."},
     {id:"gender-12",prompt:"Widzę nowych ___ (student).",answers:["studentów"],explanation:"Student - m1: винительный множественного совпадает с родительным, studentów."},
-    {id:"gender-13",prompt:"Widzę dwa małe ___ (pies).",answers:["psy"],explanation:"Во множественном pies относится к не-мужско-личным: psy."},
-    {id:"gender-14",prompt:"___ muzeum jest blisko centrum.",options:["Ten","Ta","To"],answers:["To"],explanation:"Muzeum - средний род, несмотря на окончание -um."},
-    {id:"gender-15",prompt:"W muzeum oglądam stare ___.",options:["obrazy","obrazów","obrazami"],answers:["obrazy"],explanation:"Obraz - m3, поэтому винительный множественного совпадает с именительным: obrazy."},
+    {id:"gender-13",prompt:"Widzę dwa małe ___ (pies).",answers:["psy"],explanation:"Во множественном m2 использует немужско-личную модель: dwa małe psy."},
+    {id:"gender-14",prompt:"___ muzeum jest blisko centrum.",options:["Ten","Ta","To"],answers:["To"],explanation:"Muzeum - среднее заимствованное существительное на -um: to muzeum."},
+    {id:"gender-15",prompt:"Palę ___. (papieros)",options:["papieros","papierosa","papierosem"],answers:["papierosa"],explanation:"Papieros обозначает вещь, но лексически относится к m2: Biernik единственного совпадает с Dopełniacz, papierosa."},
     {id:"gender-16",prompt:"___ mężczyzna czeka przed domem.",options:["Ten","Ta","To"],answers:["Ten"],explanation:"Mężczyzna на -a, но это мужской род: ten mężczyzna."},
     {id:"gender-17",prompt:"Moi rodzice ___ bardzo zmęczeni.",options:["byli","były","było"],answers:["byli"],explanation:"Rodzice - мужско-личное множественное: byli."},
     {id:"gender-18",prompt:"___ drzwi są zamknięte.",options:["Ci","Te","Tych"],answers:["Te"],explanation:"Drzwi существуют только во множественном и не являются мужско-личными: te drzwi."},
