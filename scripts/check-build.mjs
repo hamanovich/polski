@@ -210,8 +210,11 @@ assert(order.html.includes("Go widziałem wczoraj"));
 const pronouns = documents.get("s-pron");
 assert(pronouns.html.includes("Interesuję się nim"));
 
-assert(documents.get("s-talk").html.includes("Co to znaczy po rosyjsku?"));
+assert(documents.get("s-talk").html.includes("Jak to będzie po rosyjsku?"));
 assert(!documents.get("s-talk").html.includes("Jak to znaczy po rosyjsku?"));
+assert(documents.get("s-talk").html.includes("około dziesięciu minut"));
+assert(!documents.get("s-talk").html.includes("Poproszę kawę i wodę, proszę"));
+assert(documents.get("s-talk").html.includes(", ale chcę jeszcze trochę się uczyć"));
 
 assert(dataSource.includes('"martwić się","o kogo?","o + Biernik"'));
 assert(dataSource.includes('"znać": "новое состояние: poznać'));
@@ -222,6 +225,14 @@ assert(!appSource.includes("подчинительными союзами зап
 const particles = documents.get("s-part");
 assert(particles.html.includes("Норма с 1 января 2026 года"));
 assert(particles.html.includes("nielepszy, nienajlepszy"));
+assert(particles.html.includes("Wcale nie śmieszny ten żart"));
+assert(particles.html.includes("Film był nie najlepszy, ale też nie najgorszy"));
+assert(particles.html.includes("On by to zrobił · My byśmy dokończyli · Czerwony by się zrobił"));
+assert(particles.html.includes("nie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomo"));
+assert(particles.html.includes("jakby · jakoby · niby"));
+assert(!particles.html.includes(">nie-<"));
+assert.equal(particles.document.querySelectorAll(".particle-practice .exercise-item").length, 20);
+assert.equal(particles.document.querySelectorAll(".particle-practice .exercise-item select.exercise-control").length, 20);
 
 const bridge = documents.get("s-bridge");
 const falseFriendCells = [...bridge.document.querySelectorAll(".false-friends tr td:first-child")];

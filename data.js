@@ -1343,13 +1343,13 @@ const CONJ_SUB = [
 
 const PART = [
  ["no","ну","No dobrze, mów. · No i co? · Chodź no tutaj!","Самая частая в разговоре. Не «но» - «но» это <span class='pl'>ale</span>."],
- ["czy","ли","Czy jesteś głodny? · Nie wiem, czy przyjdzie.","Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается."],
+ ["czy","ли","Czy jesteś głodny? · Nie wiem, czy przyjdzie.","Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается. В <span class='pl'>nie wiem, czy…</span> это уже союз."],
  ["chyba","наверное, кажется","Chyba tak. · Chyba będzie padać.","Неуверенность. <span class='pl'>chyba że</span> - «разве что»."],
  ["może","может быть","Może pójdziemy do kina? · Może masz rację.","Ещё и мягкое предложение."],
  ["pewnie","наверняка","Pewnie śpi. · No pewnie!","<span class='pl'>No pewnie!</span> - «ну конечно!»"],
  ["niech","пусть","Niech pan wejdzie. · Niech oni poczekają.","Повелительное для 3-го лица и вежливое обращение."],
  ["oby","хоть бы, дай бог","Oby się udało! · Oby nie padało.","Пожелание."],
- ["żeby","чтобы, вот бы","Żebyś wiedział! · Żeby tylko zdążyć.","Сливается с окончаниями: żebym, żebyś, żebyśmy."],
+ ["żeby","чтобы, вот бы","Żebyś wiedział! · Żeby tylko zdążyć.","По разряду это союз; в восклицании передаёт желание. Сливается с окончаниями: żebym, żebyś, żebyśmy."],
  ["przecież","ведь","Przecież mówiłem! · Przecież to oczywiste.","Возражение и напоминание."],
  ["właśnie","именно, как раз","Właśnie o tym mówię. · Właśnie!","Одиночное <span class='pl'>Właśnie!</span> = «вот именно!»"],
  ["akurat","как раз","Jest akurat pięć jabłek. · Akurat!","Одиночное <span class='pl'>Akurat!</span> - ирония: «ага, конечно»."],
@@ -1358,7 +1358,7 @@ const PART = [
  ["nawet","даже","Nawet nie wiedziałem. · Nawet ładne.","Усиление."],
  ["wcale","вовсе","Wcale nie! · Wcale mi się nie podoba.","Почти всегда с <span class='pl'>nie</span>."],
  ["dopiero","только (о времени)","Dopiero przyszedł. · Jest dopiero piąta.","Не путать с <span class='pl'>tylko</span>: <span class='pl'>dopiero</span> - про время."],
- ["owszem","да, конечно","Owszem, zgadzam się.","Вежливое согласие, часто в ответ на вопрос."],
+ ["owszem","да, конечно","Owszem, zgadzam się.","Вежливое, чуть книжное согласие, часто с оговоркой следом: <span class='pl'>Owszem, ale…</span>"],
  ["ależ","да что ты, ну конечно","Ależ oczywiście! · Ależ nie!","Эмоциональное усиление."],
  ["niby","якобы, вроде","Niby się uczy. · Niby wszystko dobrze.","Сомнение в чужих словах."],
  ["raczej","скорее","Raczej nie. · Raczej tak.","Мягкий ответ вместо резкого «нет»."],
@@ -1379,21 +1379,23 @@ const PARTKL = [
 const PARTPIS = [
  ["слитно","-że, -ż с глаголами и вопросительными","idźże! · chodźże! · dlaczegoż · cóż · któż"],
  ["слитно","by, bym, byś с личной формой глагола","zrobiłbym · chciałabyś · poszliby"],
- ["слитно","закреплённые слова - целиком, а не «союз + by»","gdyby · żeby · aby · choćby · chociażby · czyżby · oby"],
- ["слитно","nie с существительными, прилагательными, наречиями, причастиями","nieprawda · niegrzeczny · niedaleko · niepalący"],
+ ["слитно","закреплённые слова - целиком, а не «союз + by»","aby · ażeby · byleby · chociażby · choćby · czyżby · gdyby · jakby · jakoby · niby · żeby · oby"],
+ ["слитно","nie с существительными, прилагательными, наречиями, причастиями - вне противопоставления","nieprawda · niegrzeczny · niedaleko · niepalący"],
  ["слитно · норма-2026","nie с прилагательным и наречием в любой степени","nielepszy · nienajlepszy · niegorzej · nienajlepiej"],
  ["раздельно","no, czy, niech, oby, bodaj как отдельные слова","Podejdź no tutaj! · Czy wiesz? · Niech wejdzie."],
  ["раздельно","nie с глаголами","nie wiem · nie mam · nie chcę"],
+ ["раздельно","nie со словами глагольного значения","nie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomo"],
  ["раздельно","nie с числительными и местоимениями","nie pięć · nie ja · nie ten"],
- ["раздельно","by после союза, если сочетание не закреплённое слово","czy by · albo by · to by · jak by"],
+ ["раздельно · норма-2026","by после союза - всегда","czy by · bo by · jeśli byś · to byś"],
+ ["раздельно","by, bym, byś после существительного, прилагательного, наречия, числительного или местоимения","On by to zrobił · My byśmy dokończyli · Czerwony by się zrobił"],
  ["раздельно","by с безличными формами","można by · trzeba by · warto by"]
 ];
 const NIEOKR = [
  ["-ś","-то, -нибудь","ktoś · coś · gdzieś · kiedyś · jakiś"],
  ["-kolwiek","-нибудь (любой)","ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiek"],
- ["byle","лишь бы, кое-как","byle kto · byle gdzie · byle jak"],
+ ["byle","кто, где, как попало; в другой конструкции «лишь бы»","byle kto · byle gdzie · byle jak · Byle zdążyć na pociąg."],
  ["lada","любой, первый попавшийся","lada dzień · lada chwila · lada kto"],
- ["nie-","ни- / не-","nikt · nic · nigdy · nigdzie · żaden"]
+ ["отрицательные слова","требуют nie при глаголе","nikt · nic · nigdy · nigdzie · żaden"]
 ];
 
 const PAN_DEKL = [
@@ -1781,7 +1783,7 @@ const PREP_TEST = {
     {id:"preptest-25", prompt:"Dzieci bawią się przed ___. (dom)", answers:["domem"], explanation:"Положение перед домом: przed + творительный."}
   ]
 };
-const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation}));
+const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation,options],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation,...(options?{options}:{})}));
 const CONJ_PRACTICE={id:"conjunctions",title:"Практика: союзы",lead:"20 заданий на значение союза, запятую и тип связи.",tasks:[...CONJ_COORD,...CONJ_SUB].slice(0,20).map((item,index)=>({id:`conj-${index+1}`,prompt:`Какой союз выражает значение «${item[1]}»?`,answers:item[0].split(" / "),explanation:item[3]||"Подчинительный союз вводит придаточное; перед ним ставится запятая."}))};
 const PART_PRACTICE={id:"particles",title:"Практика: частицы",lead:"20 заданий на смысл и употребление частиц.",tasks:PART.slice(0,20).map((item,index)=>({id:`part-${index+1}`,prompt:`Какая частица выражает «${item[1]}»?`,answers:[item[0]],explanation:`${item[3]} Пример: ${item[2]}`}))};
 const ALT_PRACTICE={id:"alternations",title:"Практика: чередования",lead:"20 заданий на узнавание чередований в падежах, множественном числе и глаголах.",tasks:topicTasks("alt",[["komputer → w komputer___","ze","Miejscownik на -e: r → rz."],["apteka → w apte___","ce","K → c перед -e."],["ręka → w rę___","ce","K → c перед -e."],["Polak → Pola___","cy","Мужско-личное множественное: k → c + y."],["student → studen___","ci","T → ci в mianownik множественного."],["brat → bra___","cie","T → ci перед мягким окончанием."],["woda → wo___","dzie","D → dzi перед -e."],["droga → dro___","dze","G → dz перед -e."],["mucha → mu___","sze","Ch → sz перед -e."],["szkoła → szko___","le","Ł → l перед -e."],["stół → sto___","le","Ł → l: stole."],["pisać → pi___","szę","S → sz в форме ja."],["móc → mo___esz","ż","G → ż: możesz."],["brać → bie___esz","rz","Основа bierz-."],["jechać → ja___","dę","Jechać: jadę."],["nieść → nio___ę","s","Niosę: основа nios-."],["róg → ro___u","g","В rogu чередования нет."],["król → kró___","la","Król → króla."],["książka → książ___","ce","K → c: książce."],["lekarz → lekarz___","u","Исторически мягкое rz: lekarzu."]] )};
@@ -1803,7 +1805,26 @@ CONJ_PRACTICE.tasks = topicTasks("conj",[
   ["Kupiłem chleb ___ mleko.","i","Соединяем два предмета: i."],["On czyta, ___ ja piszę.","a","Лёгкое противопоставление: a."],["Chciałem pójść, ___ nie mogłem.","ale","Сильное противопоставление: ale."],["Możesz zamówić herbatę ___ kawę.","lub","Обычный выбор в утверждении: lub."],["Nie mam ani czasu, ___ pieniędzy.","ani","Парная конструкция ani… ani."],["Spóźniłem się, ___ pobiegłem.","więc","Следствие: więc."],["Byłem chory, ___ nie przyszedłem.","dlatego","Следствие в отдельной части: dlatego."],["Ja lubię herbatę, ___ on kawę.","natomiast","Сопоставляем два элемента: natomiast."],["Jest weekend, ___ sobota i niedziela.","czyli","Пояснение другими словами: czyli."],["Zaprosiłem rodzinę ___ przyjaciół.","oraz","Официальнее, чем i: oraz."],["Wiem, ___ przyjdzie.","że","После глагола знания: że."],["Chcę, ___ przyszedł wcześniej.","żeby","Желание / цель: żeby."],["Nie przyszedłem, ___ byłem chory.","ponieważ","Причина в нейтрально-письменном стиле: ponieważ."],["Nie idę, ___ pada deszcz.","bo","Разговорное объяснение причины: bo."],["___ będziesz gotowy, zadzwoń.","jeśli","Реальное условие: jeśli."],["___ miał czas, poszedłby.","Gdyby","Нереальное условие: gdyby."],["Zadzwonię, ___ przyjadę.","gdy","Будущее время в придаточном: gdy."],["Poszedłem, ___ padał deszcz.","chociaż","Уступка: chociaż."],["___ wyjdziesz, zamknij okno.","Zanim","Сначала одно действие, потом другое: zanim."],["___ tu mieszkam, jestem szczęśliwy.","Odkąd","Начальная точка длительного состояния: odkąd."]
 ]);
 PART_PRACTICE.tasks = topicTasks("part",[
-  ["___ dobrze, mów.","No","Разговорное «ну»: no."],["___ jesteś głodny?","Czy","Вопрос да/нет: czy."],["___ będzie padać.","Chyba","Неуверенное предположение: chyba."],["___ pójdziemy do kina?","Może","Мягкое предложение: może."],["On ___ śpi.","pewnie","Уверенное предположение: pewnie."],["___ pan wejdzie.","Niech","Вежливое побуждение: niech."],["___ się udało!","Oby","Пожелание: oby."],["___ tylko zdążyć na pociąg!","Żeby","Пожелание / восклицание: żeby."],["___ mówiłem, że będzie trudno.","Przecież","Напоминание собеседнику: przecież."],["- To dokładnie o tym mówiłem. - ___.","Właśnie","Подтверждение «вот именно»: właśnie."],["Jest ___ pięć miejsc, więc wszyscy się zmieścimy.","akurat","Ровно столько, сколько нужно: akurat."],["___ nie wiem, gdzie on jest.","Naprawdę","Усиление искренности: naprawdę."],["Mam ___ pięć złotych.","tylko","Ограничение количества: tylko."],["___ nie wiedziałem o tej zmianie.","Nawet","Усиление: nawet."],["To mi się ___ nie podoba.","wcale","«Совсем не» с nie: wcale."],["Jest ___ piąta, mamy czas.","dopiero","«Только» о времени: dopiero."],["- Czy zgadzasz się? - ___, ale mam pytanie.","Owszem","Вежливое согласие: owszem."],["___ nie! To niemożliwe.","Ależ","Эмоциональное усиление: ależ."],["On ___ się uczy, ale nie widzę efektów.","niby","Сомнение в видимости действия: niby."],["___ nie pójdę dziś na spotkanie.","Raczej","Мягкое «скорее нет»: raczej."]
+  ["___ dobrze, mów.","No","Разговорное «ну»: no.",["Wcale","No","Dopiero"]],
+  ["___ jesteś głodny?","Czy","Вопрос да/нет: czy.",["Czy","Niby","Aż"]],
+  ["___ będzie padać.","Chyba","Неуверенное предположение: chyba.",["Owszem","Wcale","Chyba"]],
+  ["___ pójdziemy do kina?","Może","Мягкое предложение: może.",["Może","Wcale","Dopiero"]],
+  ["On ___ śpi.","pewnie","Уверенное предположение: pewnie.",["ależ","pewnie","owszem"]],
+  ["___ pan wejdzie.","Niech","Вежливое побуждение: niech.",["Czy","Wcale","Niech"]],
+  ["___ się udało!","Oby","Пожелание: oby.",["Oby","Wcale","Owszem"]],
+  ["___ tylko zdążyć na pociąg!","Żeby","Пожелание / восклицание: żeby.",["Nawet","Żeby","Przecież"]],
+  ["___ mówiłem, że będzie trudno.","Przecież","Напоминание собеседнику: przecież.",["Wcale","Dopiero","Przecież"]],
+  ["- To dokładnie o tym mówiłem. - ___.","Właśnie","Подтверждение «вот именно»: właśnie.",["Właśnie","Dopiero","Nawet"]],
+  ["Jest ___ pięć miejsc, więc wszyscy się zmieścimy.","akurat","Ровно столько, сколько нужно: akurat.",["dopiero","akurat","wcale"]],
+  ["___ nie wiem, gdzie on jest.","Naprawdę","Усиление искренности: naprawdę.",["Dopiero","Owszem","Naprawdę"]],
+  ["Mam ___ pięć złotych.","tylko","Ограничение количества: tylko.",["tylko","niby","owszem"]],
+  ["___ nie wiedziałem o tej zmianie.","Nawet","Усиление: nawet.",["Nawet","Dopiero","Owszem"]],
+  ["To mi się ___ nie podoba.","wcale","«Совсем не» с nie: wcale.",["dopiero","wcale","owszem"]],
+  ["Jest ___ piąta, mamy czas.","dopiero","«Только» о времени: dopiero.",["akurat","nawet","dopiero"]],
+  ["- Czy zgadzasz się? - ___, ale mam pytanie.","Owszem","Вежливое согласие: owszem.",["Wcale","Owszem","Ależ"]],
+  ["___ nie! To niemożliwe.","Ależ","Эмоциональное усиление: ależ.",["Dopiero","Owszem","Ależ"]],
+  ["On ___ się uczy, ale nie widzę efektów.","niby","Сомнение в видимости действия: niby.",["niby","akurat","owszem"]],
+  ["___ nie pójdę dziś na spotkanie.","Raczej","Мягкое «скорее нет»: raczej.",["Raczej","Owszem","Dopiero"]]
 ]);
 DIM_PRACTICE.tasks = [
   {id:"dim-1",prompt:"Обычная уменьшительная форма от kot:",options:["kotek","kotunia","kociątko"],answers:["kotek"],explanation:"Обычная уменьшительная форма: kotek."},

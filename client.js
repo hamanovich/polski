@@ -545,7 +545,8 @@ function updateTalkBuilder(builder){
   const output = builder.querySelector("output");
   if(!output) return;
   const parts = [...builder.querySelectorAll("select")].map(select => select.value.trim()).filter(Boolean);
-  output.textContent = parts.length ? `${parts.join(" ")}.` : "";
+  const phrase = parts.reduce((acc, part) => !acc ? part : part.startsWith(",") ? acc + part : `${acc} ${part}`, "");
+  output.textContent = phrase ? `${phrase}.` : "";
 }
 document.addEventListener("change", event => {
   const select = event.target.closest("[data-talk-builder] select");

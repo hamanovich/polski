@@ -579,7 +579,7 @@ Mianownik множественного - мужско-личные формы Po
 Спряжения: изменения основы - pisać → piszę, móc → możesz и другие модели.
 Прошедшее время - musiał, zaczęła, mógł.
 Прилагательные
-Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (mój, twój, nasz). У ten из неё выпадают три формы: ten, ci, tę. Jego, jej, ich - исключение: они не склоняются.
+Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (mój, twój, nasz). У ten из неё выпадают четыре формы: ten, to, ci, tę. Jego, jej, ich - исключение: они не склоняются.
 dobry - полная парадигма
 падежмуж.жен.ср.мн. мужско-личноемн. остальное
 MianownikdobrydobradobredobrzydobreDopełniaczdobregodobrejdobregodobrychdobrychCelownikdobremudobrejdobremudobrymdobrymBiernikdobry / dobregodobrądobredobrychdobreNarzędnikdobrymdobrądobrymdobrymidobrymiMiejscownikdobrymdobrejdobrymdobrychdobrych
@@ -3282,15 +3282,15 @@ Rozumiem mniej więcej.
 Mam na imię … i mieszkam w … .Меня зовут …, и я живу в … .Podstaw swoje imię i miasto.Uczę się polskiego od … .Я учу польский уже … .od miesiąca / od rokuMój polski jest jeszcze słaby, ale staram się mówić.Мой польский пока слабый, но я стараюсь говорить.bardzo słaby / coraz lepszyPracuję jako … / studiuję … .Я работаю … / учусь на … .Powiedz tylko tyle, ile chcesz.W wolnym czasie lubię … .В свободное время я люблю … .czytać / podróżować / spotykać się ze znajomymiOstatnio dużo …, dlatego … .В последнее время я много …, поэтому … .pracuję / uczę się / odpoczywam
 Готовые фразы: день, выходные и планы
 по-польскипо-русскивариант для себя
-Dzisiaj miałem / miałam dość intensywny dzień.Сегодня у меня был довольно насыщенный день.spokojny / dobry / trudnyRano …, a potem … .Утром я …, а потом … .pracowałem / poszedłem na spacerPo pracy chcę trochę odpocząć.После работы хочу немного отдохнуть.ugotować kolację / spotkać się z …W weekend spotkałem / spotkałam się ze znajomymi.На выходных я встретился/-ась с друзьями.byłem / byłam w domuJutro planuję … .Завтра я планирую … .uczyć się / pójść do … / nic szczególnego
+Dzisiaj miałem / miałam dość intensywny dzień.Сегодня у меня был довольно насыщенный день.spokojny / dobry / trudnyRano …, a potem … .Утром я …, а потом … .pracowałem / pracowałam · poszedłem / poszłam na spacerPo pracy chcę trochę odpocząć.После работы хочу немного отдохнуть.ugotować kolację / spotkać się z …W weekend spotkałem / spotkałam się ze znajomymi.На выходных я встретился/-ась с друзьями.byłem / byłam w domuJutro planuję … .Завтра я планирую … .uczyć się / pójść do … / nic szczególnego
 Кафе и магазин
 по-польскипо-русскивариант для себя
-Poproszę kawę i wodę, proszę.Мне, пожалуйста, кофе и воду.Zmień napój albo dodaj ciasto.Czy mogę prosić o menu?Можно меню, пожалуйста?Короткая вежливая просьба.Dla mnie będzie … .Для меня будет … .kawa z mlekiem / zupa / kanapkaCzy mogę zapłacić kartą?Можно оплатить картой?Картой - kartą, наличными - gotówką.Poproszę rachunek.Счёт, пожалуйста.В Польше это естественная формула.
+Poproszę kawę i wodę.Мне, пожалуйста, кофе и воду.Zmień napój albo dodaj ciasto.Czy mogę prosić o menu?Можно меню, пожалуйста?Короткая вежливая просьба.Dla mnie będzie … .Для меня будет … .kawa z mlekiem / zupa / kanapkaCzy mogę zapłacić kartą?Можно оплатить картой?Картой - kartą, наличными - gotówką.Poproszę rachunek.Счёт, пожалуйста.В Польше это естественная формула.
 по-польскипо-русскивариант для себя
 Szukam … .Я ищу … .prezentu / ładowarki / sklepu spożywczegoCzy mają państwo …?У вас есть …?Размер, товар или нужная вещь.Czy mogę to przymierzyć?Можно это примерить?Для одежды и обуви.Ile to kosztuje?Сколько это стоит?Простой вопрос о цене.Wezmę to.Я это возьму.Когда решил купить.
 Транспорт и дорога
 по-польскипо-русскивариант для себя
-Przepraszam, gdzie jest przystanek?Извините, где остановка?Можно уточнить: autobusowy / tramwajowy.Czy ten autobus jedzie do centrum?Этот автобус едет в центр?Замени centrum на нужное место.O której odjeżdża pociąg?Во сколько отправляется поезд?Odjeżdża - отправляется по расписанию.Muszę wysiąść na następnym przystanku.Мне нужно выйти на следующей остановке.Wysiąść - выйти из транспорта.Czy to jest daleko stąd?Это далеко отсюда?Ответ часто: blisko / daleko / około dziesięć minut.
+Przepraszam, gdzie jest przystanek?Извините, где остановка?Можно уточнить: autobusowy / tramwajowy.Czy ten autobus jedzie do centrum?Этот автобус едет в центр?Замени centrum на нужное место.O której odjeżdża pociąg?Во сколько отправляется поезд?Odjeżdża - отправляется по расписанию.Muszę wysiąść na następnym przystanku.Мне нужно выйти на следующей остановке.Wysiąść - выйти из транспорта.Czy to daleko stąd?Это далеко отсюда?Ответ часто: blisko / daleko / około dziesięciu minut.
 Слова-смазки: чтобы речь не останавливалась
 Это не «мусорные» слова, а маленькие опоры для живой речи. Возьми сначала шесть из первой таблицы: они помогут выиграть секунду, переформулировать мысль и звучать естественнее, не маскируя ошибку.
 по-польскипо-русскивариант для себя
@@ -3300,7 +3300,7 @@ noну; да, агаNo tak. · No nie wiem.właśnieименно; вот-вот;
 no wiesz…ну, знаешь…No wiesz, trochę się stresuję.wie pan / wie pani…понимаете…Wie pani, nie jestem pewien.jak to powiedzieć…как это сказать…Jak to powiedzieć… nie do końca rozumiem.no więc…ну так вот…No więc, spotkaliśmy się wczoraj.słuchaj…слушай…Słuchaj, mam pytanie.coś takiego / takie cośчто-то такое; такая штукаTo było coś takiego jak małe spotkanie.nieważneневажно; ладноNieważne, zacznę jeszcze raz.w każdym razieво всяком случае; в общемW każdym razie, muszę już iść.powiedzmy / że tak powiemскажем; так сказатьPowiedzmy, że było ciekawie.
 Смягчить мнение или передать ход собеседнику
 по-польскипо-русскивариант для себя
-chybaнаверное; кажетсяChyba jutro pada.raczejскорееRaczej nie dam rady.generalnieв целомGeneralnie wszystko jest w porządku.tak naprawdęна самом делеTak naprawdę wolę zostać w domu.jasneясно; конечно- Możesz pomóc? - Jasne.no nie? / prawda?да?; правда?To dobry plan, no nie?
+chybaнаверное; кажетсяChyba jutro będzie padać.raczejскорееRaczej nie dam rady.generalnieв целомGeneralnie wszystko jest w porządku.tak naprawdęна самом делеTak naprawdę wolę zostać w domu.jasneясно; конечно- Możesz pomóc? - Jasne.no nie? / prawda?да?; правда?To dobry plan, no nie?
 Как это произносить. Связка должна быть короткой и в обычном темпе: no, znaczy…, потом сразу мысль. Не растягивай znaczyyy: лучше короткая пауза после него. Не злоупотребляй jakby - это польское «как бы», которое у многих уже стало словом-паразитом.
 Конструктор фраз
 Выбери варианты в строке - ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.
@@ -3316,7 +3316,7 @@ chybaнаверное; кажетсяChyba jutro pada.raczejскорееRaczej n
 Не понял собеседника- …- Przepraszam, czy możesz powtórzyć trochę wolniej? Rozumiem mniej więcej, ale nie wszystko.Это не ошибка, а нормальный ход разговора.
 Фразы спасения
 по-польскипо-русскивариант для себя
-Chwileczkę, muszę się zastanowić.Секундочку, мне нужно подумать.Даёт время сформулировать ответ.Nie wiem, jak to powiedzieć po polsku, ale…Не знаю, как сказать это по-польски, но…После этого скажи проще или покажи слово.Czy możesz powiedzieć to trochę wolniej?Можешь сказать немного медленнее?Нормальная вежливая просьба.Czy możesz powtórzyć?Можешь повторить?Коротко и естественно.Rozumiem mniej więcej.Я примерно понимаю.Если общий смысл понятен, но не всё.Nie rozumiem jeszcze wszystkiego.Я пока не всё понимаю.Честно и без извинений.Co to znaczy po rosyjsku?Что это значит по-русски?Можно заменить rosyjsku на angielsku.Czy dobrze rozumiem, że…?Я правильно понимаю, что…?Повтори смысл своими словами.Możesz podać przykład?Можешь привести пример?Когда новое слово неясно.Uczę się, więc czasem robię błędy.Я учусь, поэтому иногда ошибаюсь.Снимает напряжение в начале разговора.
+Chwileczkę, muszę się zastanowić.Секундочку, мне нужно подумать.Даёт время сформулировать ответ.Nie wiem, jak to powiedzieć po polsku, ale…Не знаю, как сказать это по-польски, но…После этого скажи проще или покажи слово.Czy możesz mówić trochę wolniej?Можешь говорить немного медленнее?Просьба про темп речи в целом; про одну фразу - строкой ниже.Czy możesz powtórzyć?Можешь повторить?Коротко и естественно.Rozumiem mniej więcej.Я примерно понимаю.Если общий смысл понятен, но не всё.Nie rozumiem jeszcze wszystkiego.Я пока не всё понимаю.Честно и без извинений.Jak to będzie po rosyjsku?Как это будет по-русски?Можно заменить rosyjsku на angielsku.Czy dobrze rozumiem, że…?Я правильно понимаю, что…?Повтори смысл своими словами.Możesz podać przykład?Можешь привести пример?Когда новое слово неясно.Uczę się, więc czasem robię błędy.Я учусь, поэтому иногда ошибаюсь.Снимает напряжение в начале разговора.
 Отрицание
 Как и в русском, отрицательные слова в предложении накапливаются, а не взаимоисключают друг друга.
 Множественное отрицание обязательно
@@ -3412,18 +3412,18 @@ Uczę się, żeby zdać egzamin.Uczę się w celu zdania egzaminu. официа�
 Меняются только лицо и обстоятельства. Местоимения и окончания глагола переходят на новое лицо, а слова «здесь и сейчас» сдвигаются: jutro → następnego dnia, wczoraj → dzień wcześniej, tutaj → tam, teraz → wtedy. Само время глагола остаётся тем же.
 В косвенном вопросе - обычный порядок слов. Сохраняется вопросительное слово или czy, а дальше фраза строится как утверждение: Zapytał, gdzie mieszkam. Никакой перестановки, как в английском, в польском нет и в прямом вопросе. Для вопросов «да/нет» вводится czy: Nie wiem, czy przyjdzie. Запятая перед że, czy, gdzie, kiedy - всегда.
 Частицы
-Не переводятся по словарю и не склоняются, но именно они делают речь живой. Без них польский звучит как учебник.
+Здесь собраны частицы и другие короткие неизменяемые слова, которые меняют оттенок высказывания. Постоянного русского перевода у них обычно нет: значение задаёт конструкция и интонация. Часть из них по разряду ближе к союзам, и это отмечено в таблице.
 Рабочий минимум
 частицазначениепримеры
 noну
 No dobrze, mów. · No i co? · Chodź no tutaj!Самая частая в разговоре. Не «но» - «но» это ale.czyли
-Czy jesteś głodny? · Nie wiem, czy przyjdzie.Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается.chybaнаверное, кажется
+Czy jesteś głodny? · Nie wiem, czy przyjdzie.Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается. В nie wiem, czy… это уже союз.chybaнаверное, кажется
 Chyba tak. · Chyba będzie padać.Неуверенность. chyba że - «разве что».możeможет быть
 Może pójdziemy do kina? · Może masz rację.Ещё и мягкое предложение.pewnieнаверняка
 Pewnie śpi. · No pewnie!No pewnie! - «ну конечно!»niechпусть
 Niech pan wejdzie. · Niech oni poczekają.Повелительное для 3-го лица и вежливое обращение.obyхоть бы, дай бог
 Oby się udało! · Oby nie padało.Пожелание.żebyчтобы, вот бы
-Żebyś wiedział! · Żeby tylko zdążyć.Сливается с окончаниями: żebym, żebyś, żebyśmy.przecieżведь
+Żebyś wiedział! · Żeby tylko zdążyć.По разряду это союз; в восклицании передаёт желание. Сливается с окончаниями: żebym, żebyś, żebyśmy.przecieżведь
 Przecież mówiłem! · Przecież to oczywiste.Возражение и напоминание.właśnieименно, как раз
 Właśnie o tym mówię. · Właśnie!Одиночное Właśnie! = «вот именно!»akuratкак раз
 Jest akurat pięć jabłek. · Akurat!Одиночное Akurat! - ирония: «ага, конечно».naprawdęправда, действительно
@@ -3432,7 +3432,7 @@ Mam tylko pięć złotych. · Tylko nie to!Ограничение.nawetдаже
 Nawet nie wiedziałem. · Nawet ładne.Усиление.wcaleвовсе
 Wcale nie! · Wcale mi się nie podoba.Почти всегда с nie.dopieroтолько (о времени)
 Dopiero przyszedł. · Jest dopiero piąta.Не путать с tylko: dopiero - про время.owszemда, конечно
-Owszem, zgadzam się.Вежливое согласие, часто в ответ на вопрос.ależда что ты, ну конечно
+Owszem, zgadzam się.Вежливое, чуть книжное согласие, часто с оговоркой следом: Owszem, ale…ależда что ты, ну конечно
 Ależ oczywiście! · Ależ nie!Эмоциональное усиление.nibyякобы, вроде
 Niby się uczy. · Niby wszystko dobrze.Сомнение в чужих словах.raczejскорее
 Raczej nie. · Raczej tak.Мягкий ответ вместо резкого «нет».ażаж
@@ -3443,12 +3443,14 @@ Ani słowa! · Ani jeden.Усиленное отрицание.
 вопросительныеczy, czyż, czyżbyCzy Ania wróciła?утвердительныеtak, no, owszem, wszakTak, trochę.отрицательныеnie, ani, wcaleTo nie jest problem.условныеby, bym, byś, byśmy, byścieOn by to zrobił dobrze.сомненияchyba, może, pewnie, bodajMoże mógłbyś wysłać mi maila.побудительныеniech, oby, żebyNiech ona to skończy!усилительныеprzecież, ależ, -że, to, nawetAleż oczywiście!ограничительныеtylko, jedynieMam tylko pięć złotych.неопределённыеbyle, lada, -kolwiek, -śNie rzucaj byle gdzie.
 Неопределённость: -ś, -kolwiek, byle
 элементзначениепримеры
--ś-то, -нибудьktoś · coś · gdzieś · kiedyś · jakiś-kolwiek-нибудь (любой)ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiekbyleлишь бы, кое-какbyle kto · byle gdzie · byle jakladaлюбой, первый попавшийсяlada dzień · lada chwila · lada ktonie-ни- / не-nikt · nic · nigdy · nigdzie · żaden
+-ś-то, -нибудьktoś · coś · gdzieś · kiedyś · jakiś-kolwiek-нибудь (любой)ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiekbyleкто, где, как попало; в другой конструкции «лишь бы»byle kto · byle gdzie · byle jak · Byle zdążyć na pociąg.ladaлюбой, первый попавшийсяlada dzień · lada chwila · lada ktoотрицательные словатребуют nie при глаголеnikt · nic · nigdy · nigdzie · żaden
 Двойное отрицание обязательно. Nikt nic nie wie. · Nigdy tam nie byłem. - nie при глаголе остаётся, даже когда уже есть nikt или nigdy. Здесь польский совпадает с русским и расходится с английским.
 Слитно или раздельно
 какправилопримеры
-слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»gdyby · żeby · aby · choćby · chociażby · czyżby · obyслитноnie с существительными, прилагательными, наречиями, причастиямиnieprawda · niegrzeczny · niedaleko · niepalącyслитно · норма-2026nie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельноby после союза, если сочетание не закреплённое словоczy by · albo by · to by · jak byраздельноby с безличными формамиmożna by · trzeba by · warto by
+слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»aby · ażeby · byleby · chociażby · choćby · czyżby · gdyby · jakby · jakoby · niby · żeby · obyслитноnie с существительными, прилагательными, наречиями, причастиями - вне противопоставленияnieprawda · niegrzeczny · niedaleko · niepalącyслитно · норма-2026nie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie со словами глагольного значенияnie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomoраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельно · норма-2026by после союза - всегдаczy by · bo by · jeśli byś · to byśраздельноby, bym, byś после существительного, прилагательного, наречия, числительного или местоименияOn by to zrobił · My byśmy dokończyli · Czerwony by się zrobiłраздельноby с безличными формамиmożna by · trzeba by · warto by
 Норма с 1 января 2026 года. Теперь nie пишется слитно с прилагательными и образованными от них наречиями во всех степенях: nielepszy, nienajlepszy, niegorzej, nienajlepiej. В старых словарях и текстах ещё встречается прежнее раздельное написание.
+Но слитно не везде. Реформа сняла зависимость от степени сравнения, а не все случаи раздельного написания. nie остаётся отдельным словом при явном противопоставлении (nie czarne, ale białe), при промежуточном состоянии (Film był nie najlepszy, ale też nie najgorszy), после wcale и bynajmniej (Wcale nie śmieszny ten żart), при ani (woda nie gorąca ani nie zimna), а также после byle nie, gdyby nie, jeszcze nie, już nie, tylko nie.
+by подвижна. С личной формой глагола она пишется слитно: zrobiłbym. Но может уйти к другому слову - и тогда пишется отдельно: Ja bym to zrobił · On by to zrobił · My byśmy dokończyli. Оба варианта нормативны, смысл один.
 -że усиливает и подгоняет приказ. Idź! - команда, Idźże! - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: chodźże, weźże, dajże.
 Готовые реплики
 No dobra. · No jasne. · No pewnie.ну ладно · ну ясно · ну конечно

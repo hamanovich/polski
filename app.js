@@ -1033,7 +1033,7 @@ function renderNum(){
 function renderPart(){
   $("#s-part").innerHTML = `<div class="panel">
     <h2>Частицы</h2>
-    <p class="lead">Не переводятся по словарю и не склоняются, но именно они делают речь живой. Без них польский звучит как учебник.</p>
+    <p class="lead">Здесь собраны частицы и другие короткие неизменяемые слова, которые меняют оттенок высказывания. Постоянного русского перевода у них обычно нет: значение задаёт конструкция и интонация. Часть из них по разряду ближе к союзам, и это отмечено в таблице.</p>
 
     <h3>Рабочий минимум</h3>
     <div class="scroll"><table class="vt">
@@ -1061,6 +1061,8 @@ function renderPart(){
       ${PARTPIS.map(p => `<tr><td class="${p[0].startsWith("слитно")?"c":"cq"}">${p[0]}</td><td>${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Норма с 1 января 2026 года.</b> Теперь <span class="pl">nie</span> пишется слитно с прилагательными и образованными от них наречиями во всех степенях: <span class="pl">nielepszy, nienajlepszy, niegorzej, nienajlepiej</span>. В старых словарях и текстах ещё встречается прежнее раздельное написание.</div>
+    <div class="tip"><b>Но слитно не везде.</b> Реформа сняла зависимость от степени сравнения, а не все случаи раздельного написания. <span class="pl">nie</span> остаётся отдельным словом при явном противопоставлении (<span class="pl">nie czarne, ale białe</span>), при промежуточном состоянии (<span class="pl">Film był nie najlepszy, ale też nie najgorszy</span>), после <span class="pl">wcale</span> и <span class="pl">bynajmniej</span> (<span class="pl">Wcale nie śmieszny ten żart</span>), при <span class="pl">ani</span> (<span class="pl">woda nie gorąca ani nie zimna</span>), а также после <span class="pl">byle nie, gdyby nie, jeszcze nie, już nie, tylko nie</span>.</div>
+    <div class="tip"><b><span class="pl">by</span> подвижна.</b> С личной формой глагола она пишется слитно: <span class="pl">zrobiłbym</span>. Но может уйти к другому слову - и тогда пишется отдельно: <span class="pl">Ja bym to zrobił</span> · <span class="pl">On by to zrobił</span> · <span class="pl">My byśmy dokończyli</span>. Оба варианта нормативны, смысл один.</div>
     <div class="tip"><b>-że усиливает и подгоняет приказ.</b> <span class="pl">Idź!</span> - команда, <span class="pl">Idźże!</span> - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: <span class="pl">chodźże, weźże, dajże</span>.</div>
 
     <h3>Готовые реплики</h3>
@@ -1316,7 +1318,7 @@ function renderPrepPractice(){
 function renderAdj(){
   $("#s-adj").innerHTML = `<div class="panel">
     <h2>Прилагательные</h2>
-    <p class="lead">Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (<span class="pl">mój, twój, nasz</span>). У <span class="pl">ten</span> из неё выпадают три формы: <span class="pl">ten</span>, <span class="pl">ci</span>, <span class="pl">tę</span>. <span class="pl">Jego, jej, ich</span> - исключение: они не склоняются.</p>
+    <p class="lead">Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (<span class="pl">mój, twój, nasz</span>). У <span class="pl">ten</span> из неё выпадают четыре формы: <span class="pl">ten</span>, <span class="pl">to</span>, <span class="pl">ci</span>, <span class="pl">tę</span>. <span class="pl">Jego, jej, ich</span> - исключение: они не склоняются.</p>
     <h3>dobry - полная парадигма</h3>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
@@ -1608,13 +1610,13 @@ function renderTalk(){
   ];
   const day = [
     ["Dzisiaj miałem / miałam dość intensywny dzień.", "Сегодня у меня был довольно насыщенный день.", "spokojny / dobry / trudny"],
-    ["Rano …, a potem … .", "Утром я …, а потом … .", "pracowałem / poszedłem na spacer"],
+    ["Rano …, a potem … .", "Утром я …, а потом … .", "pracowałem / pracowałam · poszedłem / poszłam na spacer"],
     ["Po pracy chcę trochę odpocząć.", "После работы хочу немного отдохнуть.", "ugotować kolację / spotkać się z …"],
     ["W weekend spotkałem / spotkałam się ze znajomymi.", "На выходных я встретился/-ась с друзьями.", "byłem / byłam w domu"],
     ["Jutro planuję … .", "Завтра я планирую … .", "uczyć się / pójść do … / nic szczególnego"],
   ];
   const cafe = [
-    ["Poproszę kawę i wodę, proszę.", "Мне, пожалуйста, кофе и воду.", "Zmień napój albo dodaj ciasto."],
+    ["Poproszę kawę i wodę.", "Мне, пожалуйста, кофе и воду.", "Zmień napój albo dodaj ciasto."],
     ["Czy mogę prosić o menu?", "Можно меню, пожалуйста?", "Короткая вежливая просьба."],
     ["Dla mnie będzie … .", "Для меня будет … .", "kawa z mlekiem / zupa / kanapka"],
     ["Czy mogę zapłacić kartą?", "Можно оплатить картой?", "Картой - kartą, наличными - gotówką."],
@@ -1632,16 +1634,16 @@ function renderTalk(){
     ["Czy ten autobus jedzie do centrum?", "Этот автобус едет в центр?", "Замени centrum на нужное место."],
     ["O której odjeżdża pociąg?", "Во сколько отправляется поезд?", "Odjeżdża - отправляется по расписанию."],
     ["Muszę wysiąść na następnym przystanku.", "Мне нужно выйти на следующей остановке.", "Wysiąść - выйти из транспорта."],
-    ["Czy to jest daleko stąd?", "Это далеко отсюда?", "Ответ часто: blisko / daleko / około dziesięć minut."],
+    ["Czy to daleko stąd?", "Это далеко отсюда?", "Ответ часто: blisko / daleko / około dziesięciu minut."],
   ];
   const rescue = [
     ["Chwileczkę, muszę się zastanowić.", "Секундочку, мне нужно подумать.", "Даёт время сформулировать ответ."],
     ["Nie wiem, jak to powiedzieć po polsku, ale…", "Не знаю, как сказать это по-польски, но…", "После этого скажи проще или покажи слово."],
-    ["Czy możesz powiedzieć to trochę wolniej?", "Можешь сказать немного медленнее?", "Нормальная вежливая просьба."],
+    ["Czy możesz mówić trochę wolniej?", "Можешь говорить немного медленнее?", "Просьба про темп речи в целом; про одну фразу - строкой ниже."],
     ["Czy możesz powtórzyć?", "Можешь повторить?", "Коротко и естественно."],
     ["Rozumiem mniej więcej.", "Я примерно понимаю.", "Если общий смысл понятен, но не всё."],
     ["Nie rozumiem jeszcze wszystkiego.", "Я пока не всё понимаю.", "Честно и без извинений."],
-    ["Co to znaczy po rosyjsku?", "Что это значит по-русски?", "Можно заменить rosyjsku на angielsku."],
+    ["Jak to będzie po rosyjsku?", "Как это будет по-русски?", "Можно заменить rosyjsku на angielsku."],
     ["Czy dobrze rozumiem, że…?", "Я правильно понимаю, что…?", "Повтори смысл своими словами."],
     ["Możesz podać przykład?", "Можешь привести пример?", "Когда новое слово неясно."],
     ["Uczę się, więc czasem robię błędy.", "Я учусь, поэтому иногда ошибаюсь.", "Снимает напряжение в начале разговора."],
@@ -1666,7 +1668,7 @@ function renderTalk(){
     ["powiedzmy / że tak powiem", "скажем; так сказать", "Powiedzmy, że było ciekawie.", "Помечает приблизительность; że tak powiem звучит чуть книжнее."],
   ];
   const fillersSoft = [
-    ["chyba", "наверное; кажется", "Chyba jutro pada.", "Лучший способ не рисковать категоричным утверждением."],
+    ["chyba", "наверное; кажется", "Chyba jutro będzie padać.", "Лучший способ не рисковать категоричным утверждением."],
     ["raczej", "скорее", "Raczej nie dam rady.", "Мягкое несогласие или отказ."],
     ["generalnie", "в целом", "Generalnie wszystko jest w porządku.", "Удобно для общего вывода."],
     ["tak naprawdę", "на самом деле", "Tak naprawdę wolę zostać w domu.", "Уточняет настоящую причину или мнение."],
@@ -1705,7 +1707,7 @@ function renderTalk(){
       <article class="talk-builder" data-talk-builder><b>1. Что происходит сегодня</b><div class="talk-fields"><label><span>когда</span><select><option>Dzisiaj</option><option>W weekend</option><option>Ostatnio</option></select></label><label><span>что делаю</span><select><option>uczę się polskiego</option><option>pracuję w domu</option><option>spotykam się ze znajomymi</option></select></label></div><output class="talk-example" aria-live="polite">Dzisiaj uczę się polskiego.</output></article>
       <article class="talk-builder" data-talk-builder><b>2. Что планируешь</b><div class="talk-fields"><label><span>когда</span><select><option>Jutro</option><option>W tym tygodniu</option><option>W weekend</option></select></label><label><span>план</span><select><option>chcę odpocząć</option><option>planuję pójść na spacer</option><option>chcę spotkać się z przyjaciółmi</option></select></label></div><output class="talk-example" aria-live="polite">Jutro chcę odpocząć.</output></article>
       <article class="talk-builder" data-talk-builder><b>3. Что думаешь</b><div class="talk-fields"><label><span>начало</span><select><option>Moim zdaniem</option><option>Myślę, że</option><option>Wydaje mi się, że</option></select></label><label><span>мнение</span><select><option>to dobry pomysł</option><option>ten film jest ciekawy</option><option>to miejsce jest bardzo miłe</option></select></label></div><output class="talk-example" aria-live="polite">Moim zdaniem to dobry pomysł.</output></article>
-      <article class="talk-builder" data-talk-builder><b>4. Как себя чувствуешь</b><div class="talk-fields"><label><span>состояние</span><select><option>Nie mam dziś dużo energii</option><option>Czuję się bardzo dobrze</option><option>Mam dziś dobry humor</option></select></label><label><span>что дальше</span><select><option>i dlatego chcę odpocząć</option><option>i dlatego zostaję w domu</option><option>ale chcę jeszcze trochę się uczyć</option></select></label></div><output class="talk-example" aria-live="polite">Nie mam dziś dużo energii i dlatego chcę odpocząć.</output></article>
+      <article class="talk-builder" data-talk-builder><b>4. Как себя чувствуешь</b><div class="talk-fields"><label><span>состояние</span><select><option>Nie mam dziś dużo energii</option><option>Czuję się bardzo dobrze</option><option>Mam dziś dobry humor</option></select></label><label><span>что дальше</span><select><option>i dlatego chcę odpocząć</option><option>i dlatego zostaję w domu</option><option value=", ale chcę jeszcze trochę się uczyć">ale chcę jeszcze trochę się uczyć</option></select></label></div><output class="talk-example" aria-live="polite">Nie mam dziś dużo energii i dlatego chcę odpocząć.</output></article>
     </div>
     <div class="tip"><b>Мини-задание.</b> Возьми любой шаблон и произнеси три варианта о себе. Не ищи идеальную грамматику во время речи: сначала закончи мысль, потом проверь один непонятный момент в справочнике.</div>
 
