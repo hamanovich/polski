@@ -5,10 +5,13 @@ function renderConj(){
     <div class="tip"><b>Главное правило запятой.</b> Придаточное обычно отделяется запятой: <span class="pl">Wiem, że on przyjdzie</span>; <span class="pl">Zostanę, jeśli będzie czas</span>. Но перед вторым <span class="pl">że</span> запятой нет, если союзы соединяют однородные придаточные: <span class="pl">Powiedział, że zadzwoni i że przyjdzie.</span> Перед простым соединительным <span class="pl">i</span> запятая обычно не нужна: <span class="pl">Poszedłem do sklepu i kupiłem chleb.</span></div>
 
     <h3>Сочинительные - соединяют равноправное</h3>
+    <p class="note">Здесь собраны союзы и другие средства связи: <span class="pl">jednak</span>, <span class="pl">dlatego</span> и <span class="pl">więc</span> современные словари описывают как связующие частицы, но в пунктуации они ведут себя так же.</p>
     <div class="scroll"><table class="vt">
       <tr><th>союз</th><th>значение</th><th>пример</th><th></th></tr>
       ${CONJ_COORD.map(c => `<tr><td class="w">${c[0]}</td><td style="color:var(--muted)">${c[1]}</td><td class="g">${c[2]}</td><td class="note">${c[3]}</td></tr>`).join("")}
     </table></div>
+
+    <div class="tip"><b>Запятая при сочинении - короткая карта.</b> Обычно без запятой одиночные <span class="pl">i, oraz, lub, albo, ani</span>: <span class="pl">chleb i mleko</span>. Обычно с запятой <span class="pl">a, ale, lecz, natomiast, więc, zatem, dlatego, czyli</span>: <span class="pl">On czyta, a ja piszę</span>. При повторе запятая идёт перед вторым и каждым следующим: <span class="pl">ani czasu, ani pieniędzy</span> · <span class="pl">albo dziś, albo jutro</span> · <span class="pl">i chleb, i mleko</span>. Отдельно <span class="pl">a</span> без запятой в <span class="pl">między Anną a Piotrem</span> и в сопоставительных заголовках.</div>
 
     <h3>Подчинительные - вводят придаточное</h3>
     <div class="scroll"><table class="vt">
@@ -19,10 +22,11 @@ function renderConj(){
     <h3>że или żeby</h3>
     <table>
       <tr><td style="width:46%" class="w">Wiem, że on przyjdzie.</td><td>факт: «знаю, что придёт» - просто изъяснение</td></tr>
-      <tr><td class="w">Chcę, żeby on przyszedł.</td><td>желание/цель, субъект другой - обязательно żeby</td></tr>
-      <tr><td class="w">Chcę przyjść.</td><td>субъект тот же - просто инфинитив, без że/żeby</td></tr>
+      <tr><td class="w">Chcę, żeby on przyszedł.</td><td>желание, исполнитель другой - нужен <span class="pl">żeby / aby</span>, а не <span class="pl">że</span></td></tr>
+      <tr><td class="w">Chcę przyjść.</td><td>после <span class="pl">chcieć</span> при одном исполнителе - просто инфинитив, без że/żeby</td></tr>
+      <tr><td class="w">Uczę się, żeby zdać egzamin.</td><td>придаточное цели: <span class="pl">żeby</span> + инфинитив нормально и при одном исполнителе</td></tr>
     </table>
-    <div class="tip"><b>bo vs ponieważ vs dlatego że.</b> Значение одинаковое, разница в регистре: <span class="pl">bo</span> - разговорное и самое частое, <span class="pl">ponieważ</span> - нейтральное и письменное, <span class="pl">dlatego że</span> - подчёркивает причину сильнее обоих.</div>
+    <div class="tip"><b>bo vs ponieważ vs dlatego że.</b> <span class="pl">bo</span> - разговорное и самое частое, <span class="pl">ponieważ</span> - нейтральное, особенно в письменной речи, <span class="pl">gdyż</span> - книжное. <span class="pl">dlatego że</span> отличается не регистром, а строением: это составной союз, и запятая идёт перед всей конструкцией - <span class="pl">Zostałem, dlatego że padało</span>. Но если <span class="pl">dlatego</span> относится к главной части и на нём смысловой акцент, граница проходит перед <span class="pl">że</span>: <span class="pl">Zrobiłem to dlatego, że mnie prosiłeś</span>.</div>
 
     <h3>Из придаточного - в короткую конструкцию</h3>
     <p class="lead">Ту же мысль часто можно выразить без придаточного - через существительное или отглагольное существительное. Это особенно обычно в письменной и официальной речи.</p>
@@ -39,13 +43,14 @@ function renderConj(){
     <div class="tip"><b>Проверь, кто выполняет действие.</b> При одном субъекте сокращение прямое: <span class="pl">Kiedy wróciłem, zadzwoniłem → Po powrocie zadzwoniłem</span>. Если субъекты разные, их нужно назвать: <span class="pl">Kiedy wróciłem, Anna zadzwoniła → Po moim powrocie Anna zadzwoniła</span>. Без <span class="pl">moim</span> смысл станет двусмысленным.</div>
 
     <h3>Косвенная речь</h3>
-    <p class="lead">Главное здесь - то, чего <b>не</b> происходит: время не сдвигается. Польский сохраняет ту же форму, что была в прямой речи, ровно как русский.</p>
+    <p class="lead">Главное здесь - в польском нет обязательного сдвига времён, как в английском. Форма времени не меняется механически, а выбирается по смыслу и моменту пересказа, как в русском.</p>
     <div class="scroll"><table class="vt">
       <tr><th>прямая речь</th><th>косвенная</th><th>что произошло</th></tr>
       ${MOWA_ZAL.map(m => `<tr><td class="w">${m[0]}</td><td class="g" style="white-space:normal">${m[1]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${m[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Меняются только лицо и обстоятельства.</b> Местоимения и окончания глагола переходят на новое лицо, а слова «здесь и сейчас» сдвигаются: <span class="pl">jutro → następnego dnia</span>, <span class="pl">wczoraj → dzień wcześniej</span>, <span class="pl">tutaj → tam</span>, <span class="pl">teraz → wtedy</span>. Само время глагола остаётся тем же.</div>
-    <div class="tip"><b>В косвенном вопросе - обычный порядок слов.</b> Сохраняется вопросительное слово или <span class="pl">czy</span>, а дальше фраза строится как утверждение: <span class="pl">Zapytał, gdzie mieszkam</span>. Никакой перестановки, как в английском, в польском нет и в прямом вопросе. Для вопросов «да/нет» вводится <span class="pl">czy</span>: <span class="pl">Nie wiem, czy przyjdzie</span>. Запятая перед <span class="pl">że, czy, gdzie, kiedy</span> - всегда.</div>
+    <div class="tip"><b>Могут измениться лицо и точка отсчёта.</b> Местоимения и окончания глагола переходят на новое лицо. Слова «здесь и сейчас» сдвигаются только если сдвинулась точка отсчёта: при позднем пересказе <span class="pl">jutro → następnego dnia</span>, <span class="pl">wczoraj → dzień wcześniej</span>, <span class="pl">tutaj → tam</span>, <span class="pl">teraz → wtedy</span>. Если пересказываешь в тот же день и в том же месте, <span class="pl">jutro</span> и <span class="pl">tutaj</span> остаются на месте. Обязательного сдвига времени нет: <span class="pl">Powiedział, że jest chory</span> означает, что состояние представлено как актуальное, а <span class="pl">Powiedział, że był chory</span> относит его к прошлому.</div>
+    <div class="tip"><b>В косвенном вопросе - обычный порядок слов.</b> Сохраняется вопросительное слово или <span class="pl">czy</span>, а дальше фраза строится как утверждение: <span class="pl">Zapytał, gdzie mieszkam</span>. Никакой перестановки, как в английском, в польском нет и в прямом вопросе. Для вопросов «да/нет» вводится <span class="pl">czy</span>: <span class="pl">Nie wiem, czy przyjdzie</span>. Запятая отделяет придаточное от главного, но она отмечает границу, а не ставится автоматически перед самим словом <span class="pl">że</span> или <span class="pl">czy</span> - см. врезку ниже.</div>
+    <div class="tip"><b>Где запятая на самом деле.</b> Три модели, которые надо различать. Обычный союз - запятая прямо перед ним: <span class="pl">Wiem, że przyjdzie</span>. Составной союз - запятая перед всей конструкцией, а не перед вторым словом: <span class="pl">Zostałem w domu, mimo że padało</span>, не <span class="bad">mimo, że</span>; так же <span class="pl">chyba że, zwłaszcza że, podczas gdy</span>. Два союза подряд - между ними запятой нет: <span class="pl">Miał nadzieję, że jeśli wróci, porozmawiają</span>, не <span class="bad">że, jeśli</span>. И при повторе показателя после <span class="pl">i</span> или <span class="pl">albo</span> запятая не нужна: <span class="pl">Powiedział, że zadzwoni i że przyjdzie</span>.</div>
   </div>${topicPracticeHTML(CONJ_PRACTICE, "conjunction")}`;
 }
 
@@ -1044,7 +1049,7 @@ function renderPart(){
 
     <h3>Разряды</h3>
     <div class="scroll"><table>
-      <tr><th>разряд</th><th>частицы</th><th>пример</th></tr>
+      <tr><th>разряд</th><th>слова и элементы</th><th>пример</th></tr>
       ${PARTKL.map(k => `<tr><td style="color:var(--muted)">${k[0]}</td><td class="w">${k[1]}</td><td class="g">${k[2]}</td></tr>`).join("")}
     </table></div>
 

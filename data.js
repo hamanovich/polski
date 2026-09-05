@@ -1321,15 +1321,16 @@ const CONJ_COORD = [
  ["lub / albo","или","Herbata lub kawa. · Albo ty, albo ja.","albo часто взаимоисключающее"],
  ["ani… ani","ни… ни","Nie mam ani czasu, ani pieniędzy.","двойное отрицание при глаголе сохраняется"],
  ["więc / zatem","поэтому, итак","Spóźniłem się, więc pobiegłem.","следствие"],
- ["dlatego","поэтому","Byłem chory, dlatego nie przyszedłem.","следствие, чуть более книжное чем więc"],
+ ["dlatego","поэтому","Byłem chory, dlatego nie przyszedłem.","следствие; отдельное dlatego нейтрально"],
  ["natomiast / jednak","однако, зато","Ja lubię herbatę, natomiast on kawę. · Chciałem wyjść. Zostałem jednak w domu.","оба выражают противопоставление, но не всегда взаимозаменяемы: natomiast сопоставляет элементы, jednak мобильнее в предложении"],
  ["czyli","то есть","Jest weekend, czyli sobota i niedziela.","пояснение"],
- ["oraz","а также","Zaprosiłem rodzinę oraz przyjaciół.","официальный синоним i"]
+ ["oraz","а также","Zaprosiłem rodzinę oraz przyjaciół.","соединяет однородные элементы; по значению близок i"]
 ];
 const CONJ_SUB = [
  ["że","что","Wiem, że przyjdzie.","вводит факт после глаголов знания/речи"],
- ["żeby / aby","чтобы","Chcę, żebyś przyszedł.","цель или желание; после żeby - сослагательные окончания"],
- ["ponieważ / gdyż","потому что","Nie przyszedłem, ponieważ byłem chory.","нейтрально-письменное"],
+ ["żeby / aby","чтобы","Chcę, żebyś przyszedł.","цель или желание; после żeby - сослагательные окончания. В самостоятельном восклицании это частица: <a href='#s-part'>Żebyś wiedział!</a>"],
+ ["ponieważ","потому что, поскольку","Nie przyszedłem, ponieważ byłem chory. · Ponieważ byłem chory, nie przyszedłem.","нейтральное, частое в письменной и официальной речи; может открывать предложение"],
+ ["gdyż","так как, ибо","Nie przyszedłem, gdyż byłem chory.","книжное; обычно идёт после главной части, а не перед ней"],
  ["bo","потому что","Nie przyszedłem, bo byłem chory.","разговорное, то же значение"],
  ["jeśli / jeżeli","если","Jeśli będziesz gotowy, zadzwoń.","условие"],
  ["gdyby","если бы","Gdybym miał czas, poszedłbym.","нереальное условие, требует условного наклонения"],
@@ -1337,19 +1338,19 @@ const CONJ_SUB = [
  ["chociaż / mimo że","хотя, несмотря на то что","Poszedłem, chociaż padał deszcz.",""],
  ["zanim","прежде чем","Zanim wyjdziesz, zamknij okno.",""],
  ["odkąd","с тех пор как","Odkąd tu mieszkam, jestem szczęśliwy.",""],
- ["dopóki (nie)","пока (не)","Czekam, dopóki nie zadzwonisz.","при dopóki nie глагол обычно совершенного вида; просто dopóki («пока») - несовершенного"],
+ ["dopóki (nie)","пока (не)","Dopóki czekam, czytam. · Czekam, dopóki nie zadzwonisz.","dopóki - пока длится состояние; dopóki nie - до момента наступления события. Вид глагола выбирается по смыслу, а не по союзу: <span class='pl'>Dopóki nie widać rośliny, nie domyślamy się jej istnienia</span>"],
  ["skoro","раз уж, поскольку","Skoro już tu jesteś, zostań na obiad.",""]
 ];
 
 const PART = [
  ["no","ну","No dobrze, mów. · No i co? · Chodź no tutaj!","Самая частая в разговоре. Не «но» - «но» это <span class='pl'>ale</span>."],
- ["czy","ли","Czy jesteś głodny? · Nie wiem, czy przyjdzie.","Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается. В <span class='pl'>nie wiem, czy…</span> это уже союз."],
+ ["czy","ли","Czy jesteś głodny? · Nie wiem, czy przyjdzie.","Открывает вопрос, на который отвечают «да/нет». В разговоре часто опускается. В <span class='pl'>nie wiem, czy…</span> это уже союз - см. <a href='#s-conj'>Союзы</a>."],
  ["chyba","наверное, кажется","Chyba tak. · Chyba będzie padać.","Неуверенность. <span class='pl'>chyba że</span> - «разве что»."],
  ["może","может быть","Może pójdziemy do kina? · Może masz rację.","Ещё и мягкое предложение."],
  ["pewnie","наверняка","Pewnie śpi. · No pewnie!","<span class='pl'>No pewnie!</span> - «ну конечно!»"],
  ["niech","пусть","Niech pan wejdzie. · Niech oni poczekają.","Повелительное для 3-го лица и вежливое обращение."],
  ["oby","хоть бы, дай бог","Oby się udało! · Oby nie padało.","Пожелание."],
- ["żeby","чтобы, вот бы","Żebyś wiedział! · Żeby tylko zdążyć.","По разряду это союз; в восклицании передаёт желание. Сливается с окончаниями: żebym, żebyś, żebyśmy."],
+ ["żeby","чтобы, вот бы","Żebyś wiedział! · Żeby tylko zdążyć.","В придаточном это союз (<a href='#s-conj'>Союзы</a>), здесь - частица желания в самостоятельном восклицании. Сливается с окончаниями: żebym, żebyś, żebyśmy."],
  ["przecież","ведь","Przecież mówiłem! · Przecież to oczywiste.","Возражение и напоминание."],
  ["właśnie","именно, как раз","Właśnie o tym mówię. · Właśnie!","Одиночное <span class='pl'>Właśnie!</span> = «вот именно!»"],
  ["akurat","как раз","Jest akurat pięć jabłek. · Akurat!","Одиночное <span class='pl'>Akurat!</span> - ирония: «ага, конечно»."],
@@ -1784,7 +1785,7 @@ const PREP_TEST = {
   ]
 };
 const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation,options],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation,...(options?{options}:{})}));
-const CONJ_PRACTICE={id:"conjunctions",title:"Практика: союзы",lead:"20 заданий на значение союза, запятую и тип связи.",tasks:[...CONJ_COORD,...CONJ_SUB].slice(0,20).map((item,index)=>({id:`conj-${index+1}`,prompt:`Какой союз выражает значение «${item[1]}»?`,answers:item[0].split(" / "),explanation:item[3]||"Подчинительный союз вводит придаточное; перед ним ставится запятая."}))};
+const CONJ_PRACTICE={id:"conjunctions",title:"Практика: союзы",lead:"20 заданий на выбор союза по контексту.",tasks:[...CONJ_COORD,...CONJ_SUB].slice(0,20).map((item,index)=>({id:`conj-${index+1}`,prompt:`Какой союз выражает значение «${item[1]}»?`,answers:item[0].split(" / "),explanation:item[3]||"Подчинительный союз вводит придаточное; перед ним ставится запятая."}))};
 const PART_PRACTICE={id:"particles",title:"Практика: частицы",lead:"20 заданий на смысл и употребление частиц.",tasks:PART.slice(0,20).map((item,index)=>({id:`part-${index+1}`,prompt:`Какая частица выражает «${item[1]}»?`,answers:[item[0]],explanation:`${item[3]} Пример: ${item[2]}`}))};
 const ALT_PRACTICE={id:"alternations",title:"Практика: чередования",lead:"20 заданий на узнавание чередований в падежах, множественном числе и глаголах.",tasks:topicTasks("alt",[["komputer → w komputer___","ze","Miejscownik на -e: r → rz."],["apteka → w apte___","ce","K → c перед -e."],["ręka → w rę___","ce","K → c перед -e."],["Polak → Pola___","cy","Мужско-личное множественное: k → c + y."],["student → studen___","ci","T → ci в mianownik множественного."],["brat → bra___","cie","T → ci перед мягким окончанием."],["woda → wo___","dzie","D → dzi перед -e."],["droga → dro___","dze","G → dz перед -e."],["mucha → mu___","sze","Ch → sz перед -e."],["szkoła → szko___","le","Ł → l перед -e."],["stół → sto___","le","Ł → l: stole."],["pisać → pi___","szę","S → sz в форме ja."],["móc → mo___esz","ż","G → ż: możesz."],["brać → bie___esz","rz","Основа bierz-."],["jechać → ja___","dę","Jechać: jadę."],["nieść → nio___ę","s","Niosę: основа nios-."],["róg → ro___u","g","В rogu чередования нет."],["król → kró___","la","Król → króla."],["książka → książ___","ce","K → c: książce."],["lekarz → lekarz___","u","Исторически мягкое rz: lekarzu."]] )};
 const PEOPLE_PRACTICE={id:"people",title:"Практика: люди и вежливость",lead:"20 заданий на pan/pani, обращения, фамилии, страны и языки.",tasks:topicTasks("people",[["Czy pan ___ czas? (mieć)","ma","Pan требует 3-го лица."],["Czy pani ___ pomóc? (móc)","może","Pani + 3-е лицо."],["Dziękuję ___ za pomoc. (pan)","panu","Дательный: panu."],["Rozmawiam z ___. (pani)","panią","Творительный: z panią."],["Proszę ___, gdzie jest bank? (pan)","pana","Устойчивая формула: proszę pana."],["Panie ___, mam pytanie. (Adam)","Adamie","Обращение: Adamie."],["Pani ___, zapraszam. (Anna)","Anno","Имя в звательном: Anno."],["Nie ma pana ___. (Kowalski)","Kowalskiego","Мужская фамилия склоняется."],["Dla pani ___ (Nowak)","Nowak","Женская фамилия на согласную не склоняется."],["Państwo Kowalscy ___ gotowi.","są","Państwo вежливо: 3-е лицо множественного."],["Jestem z ___. (Polska)","Polski","Z + родительный: z Polski."],["Mieszkam w ___. (Polska)","Polsce","W + предложный: w Polsce."],["Jadę do ___. (Polska)","Polski","Do + родительный: do Polski."],["Mówię po ___. (polski)","polsku","Po polsku - наречие."],["Uczę się ___. (polski)","polskiego","Uczyć się + родительный."],["Znam ___ język. (polski)","polski","Znać + винительный."],["Ona jest ___. (Polak)","Polką","Женская национальность: Polka в творительном."],["On jest ___. (Niemiec)","Niemcem","Niemiec в творительном: Niemcem."],["W ___ mieszkają moi znajomi. (Niemcy)","Niemczech","W Niemczech."],["Na ___ jest ciepło. (Węgry)","Węgrzech","Na Węgrzech - закрытая норма."]] )};
@@ -1802,7 +1803,26 @@ ORDER_PRACTICE.tasks[18] = {id:"order-19",prompt:"Proszę mi ___.",answers:["pom
 NUM_PRACTICE.tasks[17].explanation = "В этой конструкции после dwa: dwa procent. Слово procent в других падежах склоняется: o dwóch procentach.";
 NUM_PRACTICE.tasks[18].explanation = "Za tydzień = через неделю. Для срока выполнения употребляют другие конструкции, например w tydzień.";
 CONJ_PRACTICE.tasks = topicTasks("conj",[
-  ["Kupiłem chleb ___ mleko.","i","Соединяем два предмета: i."],["On czyta, ___ ja piszę.","a","Лёгкое противопоставление: a."],["Chciałem pójść, ___ nie mogłem.","ale","Сильное противопоставление: ale."],["Możesz zamówić herbatę ___ kawę.","lub","Обычный выбор в утверждении: lub."],["Nie mam ani czasu, ___ pieniędzy.","ani","Парная конструкция ani… ani."],["Spóźniłem się, ___ pobiegłem.","więc","Следствие: więc."],["Byłem chory, ___ nie przyszedłem.","dlatego","Следствие в отдельной части: dlatego."],["Ja lubię herbatę, ___ on kawę.","natomiast","Сопоставляем два элемента: natomiast."],["Jest weekend, ___ sobota i niedziela.","czyli","Пояснение другими словами: czyli."],["Zaprosiłem rodzinę ___ przyjaciół.","oraz","Официальнее, чем i: oraz."],["Wiem, ___ przyjdzie.","że","После глагола знания: że."],["Chcę, ___ przyszedł wcześniej.","żeby","Желание / цель: żeby."],["Nie przyszedłem, ___ byłem chory.","ponieważ","Причина в нейтрально-письменном стиле: ponieważ."],["Nie idę, ___ pada deszcz.","bo","Разговорное объяснение причины: bo."],["___ będziesz gotowy, zadzwoń.","jeśli","Реальное условие: jeśli."],["___ miał czas, poszedłby.","Gdyby","Нереальное условие: gdyby."],["Zadzwonię, ___ przyjadę.","gdy","Будущее время в придаточном: gdy."],["Poszedłem, ___ padał deszcz.","chociaż","Уступка: chociaż."],["___ wyjdziesz, zamknij okno.","Zanim","Сначала одно действие, потом другое: zanim."],["___ tu mieszkam, jestem szczęśliwy.","Odkąd","Начальная точка длительного состояния: odkąd."]
+  ["Kupiłem chleb ___ mleko.","i","Соединяем два предмета: i. Здесь также возможно oraz.",["i","ale","więc"]],
+  ["On czyta, ___ ja piszę.","a","Лёгкое противопоставление: a.",["a","oraz","czyli"]],
+  ["Chciałem pójść, ___ nie mogłem.","ale","Сильное противопоставление: ale.",["ale","czyli","oraz"]],
+  ["Możesz zamówić herbatę ___ kawę.","lub","Обычный выбор в утверждении: lub.",["lub","ale","więc"]],
+  ["Nie mam ani czasu, ___ pieniędzy.","ani","Парная конструкция ani… ani, запятая перед вторым ani.",["ani","lub","oraz"]],
+  ["Spóźniłem się, ___ pobiegłem.","więc","Следствие: więc.",["więc","czyli","oraz"]],
+  ["Byłem chory, ___ nie przyszedłem.","dlatego","Следствие в отдельной части: dlatego.",["dlatego","oraz","ani"]],
+  ["Ja lubię herbatę, ___ on kawę.","natomiast","Сопоставляем два элемента: natomiast.",["natomiast","czyli","bo"]],
+  ["Jest weekend, ___ sobota i niedziela.","czyli","Пояснение другими словами: czyli.",["czyli","ale","oraz"]],
+  ["Zaprosiłem rodzinę ___ przyjaciół.","oraz","Соединяем однородные элементы: oraz. Здесь также возможно i.",["oraz","ale","ani"]],
+  ["Wiem, ___ przyjdzie.","że","После глагола знания: że.",["że","żeby","gdyby"]],
+  ["Chcę, ___ przyszedł wcześniej.","żeby","Желание при разных субъектах: żeby. Книжный синоним - aby.",["żeby","że","bo"]],
+  ["Nie przyszedłem, ___ byłem chory. (нейтрально-письменно)","ponieważ","Нейтральная причина: ponieważ. Разговорно было бы bo, книжно - gdyż.",["ponieważ","bo","gdyż"]],
+  ["Nie idę, ___ pada deszcz. (разговорно)","bo","Разговорное объяснение причины: bo.",["bo","ponieważ","gdyż"]],
+  ["___ będziesz gotowy, zadzwoń.","Jeśli","Реальное условие: jeśli. Равноправный вариант - jeżeli.",["Jeśli","Gdyby","Odkąd"]],
+  ["___ miał czas, poszedłby.","Gdyby","Нереальное условие: gdyby, дальше условное наклонение.",["Gdyby","Odkąd","Zanim"]],
+  ["Zadzwonię, ___ przyjadę.","gdy","Время будущего действия: gdy. Равноправный вариант - kiedy.",["gdy","czyli","chociaż"]],
+  ["Poszedłem, ___ padał deszcz.","chociaż","Уступка: chociaż. Синоним - mimo że, но запятая тогда идёт перед mimo.",["chociaż","czyli","oraz"]],
+  ["___ wyjdziesz, zamknij okno.","Zanim","Сначала одно действие, потом другое: zanim.",["Zanim","Odkąd","Czyli"]],
+  ["___ tu mieszkam, jestem szczęśliwy.","Odkąd","Начальная точка длительного состояния: odkąd.",["Odkąd","Zanim","Czyli"]]
 ]);
 PART_PRACTICE.tasks = topicTasks("part",[
   ["___ dobrze, mów.","No","Разговорное «ну»: no.",["Wcale","No","Dopiero"]],
