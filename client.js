@@ -383,15 +383,15 @@ function initTrainer(host){
       : "";
   }
 
+  const draw = list => list[Math.floor(Math.random() * list.length)];
+
   function pick(){
     if(!pool.length) return null;
-    const missed = pool.filter(item => state.missed.includes(item.key));
-    const source = missed.length && Math.random() < 0.4 ? missed : pool;
-    for(let attempt = 0; attempt < 8; attempt += 1){
-      const item = source[Math.floor(Math.random() * source.length)];
-      if(!recent.includes(item.key)) return item;
-    }
-    return source[Math.floor(Math.random() * source.length)];
+    const window = Math.min(TRAINER_RECENT, pool.length - 1);
+    const skip = recent.slice(recent.length - window);
+    const base = pool.filter(item => !skip.includes(item.key));
+    const missed = base.filter(item => state.missed.includes(item.key));
+    return missed.length && Math.random() < 0.4 ? draw(missed) : draw(base);
   }
 
   function ask(){
