@@ -647,12 +647,12 @@ const VERB_EXTRA = {
     ["Wczoraj Ewa ___ film. (oglądać)","oglądała","Прошедшее, женщина: oglądała."],
     ["Wczoraj dzieci ___ w parku. (bawić się)","bawiły się","Dzieci - немужско-личное множественное: bawiły się."],
     ["Jutro ___ zakupy. (zrobić, ja)","zrobię","Совершенный вид: простое будущее zrobię."],
-    ["Jutro o tej porze ___ w pociągu. (jechać, ja)","będę jechać","Несовершенный вид: będę jechać."],
+    ["Jutro o tej porze ___ w pociągu. (jechać, ja)",["będę jechać","będę jechał","będę jechała"],"Несовершенный вид даёт составное будущее. Нормативны обе модели: będę jechać и będę jechał / jechała."],
     ["Teraz ___ obiad. (gotować, my)","gotujemy","Teraz задаёт настоящее: gotujemy."],
     ["W zeszłym roku oni ___ w Krakowie. (mieszkać)","mieszkali","Мужско-личное множественное: mieszkali."],
     ["Za godzinę pociąg ___. (odjechać)","odjedzie","Совершенный odjechać: простое будущее odjedzie."],
     ["Kiedy byłem dzieckiem, często ___ na rowerze. (jeździć, мужчина)","jeździłem","Повторяющееся действие в прошлом: jeździłem."],
-    ["Wieczorem ___ ten film. (oglądać, ona)","będzie oglądać","Несовершенный вид в будущем: będzie oglądać."],
+    ["Wieczorem ___ ten film. (oglądać, ona)",["będzie oglądać","będzie oglądała"],"Несовершенный вид в будущем. Нормативны обе модели: będzie oglądać и będzie oglądała."],
     ["Wczoraj my ___ późno. (wrócić, женщины)","wróciłyśmy","Женская группа: wróciłyśmy."],
     ["Dziś rano ___ już śniadanie. (zjeść, ja, мужчина)","zjadłem","Совершенный результат в прошлом: zjadłem."],
     ["Jutro oni ___ nowy projekt. (zacząć)","zaczną","Zacząć: простое будущее zaczną."],
@@ -662,16 +662,16 @@ const VERB_EXTRA = {
   tryby:[
     ["___ tutaj! (przyjść, ty)","przyjdź","Повелительное от przyjść: przyjdź."],
     ["Nie ___ tak głośno! (mówić, ty)","mów","Запрет: не совершенный, а mów."],
-    ["___ mi adres. (podać, pan)","Proszę podać","Вежливая просьба: Proszę podać mi adres."],
+    ["___ mi adres. (podać, pan - через proszę)","Proszę podać","Вежливая просьба: Proszę podać mi adres."],
     ["Gdybym miała czas, ___ więcej. (czytać, женщина)","czytałabym","Условная форма женского рода: czytałabym."],
-    ["Czy ___ mi pan pomóc? (móc)","mógłby","Вежливая просьба: mógłby mi pan."],
+    ["Ona ___ była wcześniej zadzwonić. (powinien)","powinna","Прошедшее powinien для ona: powinna była zadzwonić."],
     ["My ___ wcześniej wyjść. (powinien, мужчины/смешанная группа)","powinniśmy","Powinien в форме my: powinniśmy."],
     ["Niech pani ___ spokojnie. (usiąść)","usiądzie","Вежливая форма повелительного: niech pani usiądzie."],
     ["___ ostrożnie! (jechać, ty)","Jedź","Повелительное от jechać: jedź."],
     ["___ tego bez pytania. (brać, ty)","Nie bierz","Запрет: nie bierz."],
     ["Ja na twoim miejscu ___ z lekarzem. (porozmawiać, мужчина)","porozmawiałbym","Условная форма: porozmawiałbym."],
     ["Dzieci ___ już spać. (powinien)","powinny","Dzieci - немужско-личная группа: powinny."],
-    ["___ dokument. (podpisać, pan)","Proszę podpisać","Формула вежливой просьбы: proszę + инфинитив."],
+    ["___ dokument. (podpisać, pan - через proszę)","Proszę podpisać","Формула вежливой просьбы: proszę + инфинитив."],
     ["Gdybyśmy byli bogaci, ___ dom. (kupić)","kupilibyśmy","Условное my: kupilibyśmy."],
     ["___ na mnie chwilę! (poczekać, ty)","Poczekaj","Повелительное от poczekać: poczekaj."],
     ["Niech oni ___ jutro. (zadzwonić)","zadzwonią","Пусть они: niech + форма oni."]
@@ -696,7 +696,7 @@ const VERB_EXTRA = {
   rekcja:[
     ["Boję się dużych ___. (pies)","psów","Bać się + родительный: psów."],
     ["Dziękuję ___ za pomoc. (ty)","ci","Dziękować komu? ci."],
-    ["Czekamy na ___ (autobus)","autobus","Czekać na + винительный: autobus."],
+    ["Czekamy na ___. (autobus)","autobus","Czekać na + винительный: autobus."],
     ["Myślę o mojej ___. (przyszłość)","przyszłości","Myśleć o + предложный: przyszłości."],
     ["Ufam temu ___. (lekarz)","lekarzowi","Ufać + дательный: lekarzowi."],
     ["Proszę o szklankę ___. (woda)","wody","Prosić o + винительный; после szklankę - родительный воды."],
@@ -731,7 +731,7 @@ const VERB_EXTRA = {
 
 for(const practice of VERB_PRACTICE){
   VERB_EXTRA[practice.id].forEach(([prompt, answer, explanation], index) => practice.tasks.push({
-    id:`v${practice.id}-extra-${index + 1}`, prompt, answers:[answer], explanation
+    id:`v${practice.id}-extra-${index + 1}`, prompt, answers:[answer].flat(), explanation
   }));
 }
 
@@ -810,7 +810,7 @@ const PERS = ["ja","ty","on / ona","my","wy","oni / one"];
 const KON = [
  {n:"I", mark:"-ę / -esz",
   who:"Самая большая и самая пёстрая группа. Основа часто меняется - её надо запомнить, окончания всегда одни.",
-  find:"Односложные на -ić/-yć/-uć (pić, żyć, czuć) · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · большинство на -ować и часть на -ywać / -iwać · часть глаголов на -ać (pisać, brać, jechać, płakać).",
+  find:"Односложные на -ić/-yć/-uć (pić, żyć, czuć) и всё приставочное от них: wypić → wypiję, umyć → umyję, zabić → zabiję · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · большинство на -ować и часть на -ywać / -iwać · часть глаголов на -ać (pisać, brać, jechać, płakać).",
   verbs:[
    ["pisać","писать",["piszę","piszesz","pisze","piszemy","piszecie","piszą"],"s → sz во всех формах"],
    ["iść","идти",["idę","idziesz","idzie","idziemy","idziecie","idą"],"d → dzi в большом крыле"],
@@ -828,7 +828,7 @@ const KON = [
   ]},
  {n:"II", mark:"-ę / -isz · -ysz",
   who:"Второй по величине тип. Чередование в основе - только в формах ja и oni.",
-  find:"Двусложные и длиннее на -ić / -yć (mówić, robić, tańczyć, uczyć) · многие на -eć (widzieć, siedzieć, myśleć, słyszeć).",
+  find:"Двусложные и длиннее на -ić / -yć (mówić, robić, tańczyć, uczyć), но не приставочные от односложных: wypić и umyć остаются в I · многие на -eć (widzieć, siedzieć, myśleć, słyszeć).",
   verbs:[
    ["mówić","говорить",["mówię","mówisz","mówi","mówimy","mówicie","mówią"],"основа ровная"],
    ["robić","делать",["robię","robisz","robi","robimy","robicie","robią"],""],
@@ -884,7 +884,6 @@ const KALT = [
  ["g → ż","móc → możesz · strzec → strzeżesz","I"],
  ["r → rz","brać → bierzesz · prać → pierzesz","I"],
  ["t → cz","szeptać → szepczę","I"],
- ["st → szcz","chlustać → chluszczę","I"],
  ["d → dzi","jechać → jedziesz · iść → idziesz","I"],
  ["si → sz","prosić → proszę · musieć → muszę","II"],
  ["zi → ż","wozić → wożę · grozić → grożę","II"],
@@ -950,7 +949,7 @@ const IMPER = [
  ["wziąć","ty weźmiesz","weź!","weźmy!","weźcie!","niech weźmie!","нерегулярный"],
  ["iść","ty idziesz","idź!","idźmy!","idźcie!","niech idzie!",""],
  ["pomóc","ty pomożesz","pomóż!","pomóżmy!","pomóżcie!","niech pomoże!",""],
- ["dać","ty dasz","daj!","dajmy!","dajcie!","niech da!",""],
+ ["dać","ty dasz","daj!","dajmy!","dajcie!","niech da!","нерегулярный"],
  ["powiedzieć","oni powiedzą","powiedz!","powiedzmy!","powiedzcie!","niech powie!",""]
 ];
 
@@ -963,7 +962,7 @@ const POWINIEN = [
  ["oni / one","powinni","powinny"]
 ];
 const POWINIEN_PAST = [
- ["powinienem był zadzwonić","надо было позвонить - а я не позвонил"],
+ ["powinienem był zadzwonić","мне следовало позвонить"],
  ["powinnam była wiedzieć","мне следовало знать"],
  ["powinien był przyjść","ему следовало прийти"],
  ["powinni byli zapytać","им следовало спросить"]
@@ -1000,10 +999,10 @@ const REKCJA = [
  ["czekać","na kogo? na co?","na + Biernik","ждать кого","Czekam na autobus.",1],
  ["patrzeć","na co?","na + Biernik","смотреть на что","Patrzę na zdjęcie."],
  ["zapraszać","kogo? na co?","na + Biernik","приглашать на что","Zapraszam cię na kawę."],
- ["prosić","o co?","o + Biernik","просить о чём","Proszę o pomoc."],
- ["pytać","o co?","o + Biernik","спрашивать о чём","Pytam o cenę."],
- ["martwić się","o kogo?","o + Biernik","беспокоиться о ком","Martwię się o ciebie."],
- ["dbać","o co?","o + Biernik","заботиться о чём","Dbam o zdrowie."],
+ ["prosić","o co?","o + Biernik","просить о чём","Proszę o pomoc.",1],
+ ["pytać","o co?","o + Biernik","спрашивать о чём","Pytam o cenę.",1],
+ ["martwić się","o kogo?","o + Biernik","беспокоиться о ком","Martwię się o ciebie.",1],
+ ["dbać","o co?","o + Biernik","заботиться о чём","Dbam o zdrowie.",1],
  ["interesować się","czym?","Narzędnik","интересоваться чем","Interesuję się muzyką."],
  ["zajmować się","czym?","Narzędnik","заниматься чем","Zajmuję się dziećmi."],
  ["opiekować się","kim?","Narzędnik","ухаживать за кем","Opiekuję się babcią.",1],
@@ -1094,7 +1093,7 @@ const IMIES_SIGNS = [
  ["Zarezerwowane","забронировано"],["Sprzedane","продано"],["dla palących","для курящих"]
 ];
 const IMIES_PRZYS = [
- ["współczesny · -ąc","одновременно, только несов. вид","oni czytają → czytając · są → będąc","Idąc do pracy, słucham muzyki. · Czekając na autobus, czytam."],
+ ["współczesny · -ąc","одновременно, только несов. вид; у być - от будущего będą, не от są","oni czytają → czytając · oni będą → będąc","Idąc do pracy, słucham muzyki. · Czekając na autobus, czytam."],
  ["uprzedni · -wszy / -łszy","раньше главного действия, только сов. вид","zrobić → zrobiwszy · przyjść → przyszedłszy","Zrobiwszy zakupy, wróciłem do domu."]
 ];
 const PASSIVE_Z = [
@@ -1104,7 +1103,8 @@ const PASSIVE_Z = [
 const VNOUN = [
  ["-ać → -anie","czytać → czytanie · pisać → pisanie · parkować → parkowanie · sprzątać → sprzątanie"],
  ["-ić / -yć / -eć → -enie","palić → palenie · mówić → mówienie · myśleć → myślenie · uczyć się → uczenie się"],
- ["-ąć и корни на гласный → -cie","zamknąć → zamknięcie · otworzyć → otwarcie · myć → mycie · żyć → życie · wziąć → wzięcie"]
+ ["-ąć и корни на гласный → -cie","zamknąć → zamknięcie · myć → mycie · żyć → życie · wziąć → wzięcie"],
+ ["нерегулярное","otworzyć → otwarcie"]
 ];
 const VNOUN_SIGNS = [
  ["Zakaz palenia","курить запрещено"],

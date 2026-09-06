@@ -98,7 +98,7 @@ bpchleb → [chlep]dtsad → [sat]gkBóg → [buk]wfstaw → [staf]zsteraz → [
 prz-, trz-, krz- звучат как [пш-], [тш-], [кш-]. После глухой согласной rz оглушается в sz: przepraszam [пшепрашам] · przez [пшес] · trzy [тшы] · krzesło [кшэсўо] · chrzan [хшан]. Это самое частое расхождение написания и звука во всём языке - и начинаются с этих сочетаний десятки бытовых слов.
 Русский здесь помогает целиком. «Хлеб» → [хлеп], «лодка» → [лотка], «сделать» → [зделать] - механизм тот же, переносится без переучивания. Единственная новая работа - не дать оглушению попасть на письмо: пишем chleb, nóż, weź, даже когда слышим глухой.
 Ударение
-Основное правило. Всегда предпоследний слог: Pol-SKA, War-SZA-wa, ko-BIE-ta, do-BRZE. Практически без исключений в базовых словах.
+Основное правило. Всегда предпоследний слог: POL-ska, War-SZA-wa, ko-BIE-ta, DO-brze. Практически без исключений в базовых словах.
 случайударениепримеры
 форма на -śmy / -ście в прошедшем3-й слог от концаbyliśmy, spacerowaliścieусловное наклонение на -by-3-й слог от концаzrobiłbym, pojechałabyусловное мы/вы: -libyśmy / -łybyście4-й слог от концаzrobilibyśmy, poszłybyścieзаимствования на -yka / -ika3-й слог от концаfizyka, matematyka, gramatykaнекоторые числительные3-й слог от концаczterysta, siedemsetнекоторые заимствованиявариативное ударениеу prezydent нормативны 2-й и 3-й слоги от конца; учи произношение словарноодносложные слована единственный слогbić, żyć, dom
 Правописание: ch или h
@@ -849,10 +849,10 @@ procent после количественного числительного. В
 I-ę / -eszII-ę / -iszIII-am / -aszIV-em / -esz
 ja-ę-ę-am-emty-esz-isz / -ysz-asz-eszon / ona-e-i / -y-a-emy-emy-imy / -ymy-amy-emywy-ecie-icie / -ycie-acie-ecieoni / one-ą-ą-ają / -adzą-eją / -edzą
 Как определить спряжение по инфинитиву
-I Односложные на -ić/-yć/-uć (pić, żyć, czuć) · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · большинство на -ować и часть на -ywać / -iwać · часть глаголов на -ać (pisać, brać, jechać, płakać).II Двусложные и длиннее на -ić / -yć (mówić, robić, tańczyć, uczyć) · многие на -eć (widzieć, siedzieć, myśleć, słyszeć).III Большинство глаголов на -ać: czytać, mieszkać, czekać, kochać, pytać, słuchać, śpiewać, oglądać, pamiętać, sprzątać, zaczynać, wracać.IV wiedzieć · jeść · umieć · rozumieć · śmieć - и всё, что от них: powiedzieć, opowiedzieć, zjeść, zrozumieć.
+I Односложные на -ić/-yć/-uć (pić, żyć, czuć) и всё приставочное от них: wypić → wypiję, umyć → umyję, zabić → zabiję · всё на -ąć / -nąć · всё на -c (móc, piec, biec) · согласный + ć (nieść, wieźć, iść) · большинство на -ować и часть на -ywać / -iwać · часть глаголов на -ać (pisać, brać, jechać, płakać).II Двусложные и длиннее на -ić / -yć (mówić, robić, tańczyć, uczyć), но не приставочные от односложных: wypić и umyć остаются в I · многие на -eć (widzieć, siedzieć, myśleć, słyszeć).III Большинство глаголов на -ać: czytać, mieszkać, czekać, kochać, pytać, słuchać, śpiewać, oglądać, pamiętać, sprzątać, zaczynać, wracać.IV wiedzieć · jeść · umieć · rozumieć · śmieć - и всё, что от них: powiedzieć, opowiedzieć, zjeść, zrozumieć.
 Приём для -ać и -eć. Переведи глагол на русский и поставь в форму «ты». Слышишь -ае- (читаешь) → III: czytasz. Слышишь -и- (стоишь) → II: stoisz. Слышишь -е- (пишешь) → I: piszesz. Работает только на похожих словах.
 Правило бабочки
-У глагола максимум две основы. Маленькое крыло - ja и oni, большое - ty, on, my, wy. Знаешь по одному слову из каждого крыла - достроишь всю таблицу.
+В настоящем времени у глагола максимум две основы. Маленькое крыло - ja и oni, большое - ty, on, my, wy. Знаешь по одному слову из каждого крыла - достроишь всю таблицу. Прошедшее и будущее строятся отдельно, а być вне схемы: jestem идёт с большим крылом, są остаётся в малом.
 глаголмалое крыло · ja, oniбольшое крыло · ty, on, my, wy
 nieśćniosę · niosąniesiesz · niesie · niesiemy · niesieciemócmogę · mogąmożesz · może · możemy · możeciebraćbiorę · biorąbierzesz · bierze · bierzemy · bierzeciejechaćjadę · jadąjedziesz · jedzie · jedziemy · jedziecieprosićproszę · prosząprosisz · prosi · prosimy · prosiciechodzićchodzę · chodząchodzisz · chodzi · chodzimy · chodzicie
 Спряжение I · -ę / -esz
@@ -994,7 +994,7 @@ kupować → kupuję · studiować → studiuję · gotować → gotuję · dzi�
 Вид не предсказывает форму: ciągnąć несовершенный, но ciągnął; zniknąć совершенный, но zniknął. Форму прошедшего времени у таких глаголов нужно запоминать вместе с инфинитивом.
 Чередования в основе
 былосталогде
-s → szpisać → piszę, piszeszIk → czpłakać → płaczę · piec → pieczeszIg → żmóc → możesz · strzec → strzeżeszIr → rzbrać → bierzesz · prać → pierzeszIt → czszeptać → szepczęIst → szczchlustać → chluszczęId → dzijechać → jedziesz · iść → idzieszIsi → szprosić → proszę · musieć → muszęIIzi → żwozić → wożę · grozić → grożęIIci → cpłacić → płacę · wrócić → wrócęIIdzi → dzchodzić → chodzę · widzieć → widzęIIździ → żdżjeździć → jeżdżęIIści → szczczyścić → czyszczęII
+s → szpisać → piszę, piszeszIk → czpłakać → płaczę · piec → pieczeszIg → żmóc → możesz · strzec → strzeżeszIr → rzbrać → bierzesz · prać → pierzeszIt → czszeptać → szepczęId → dzijechać → jedziesz · iść → idzieszIsi → szprosić → proszę · musieć → muszęIIzi → żwozić → wożę · grozić → grożęIIci → cpłacić → płacę · wrócić → wrócęIIdzi → dzchodzić → chodzę · widzieć → widzęIIździ → żdżjeździć → jeżdżęIIści → szczczyścić → czyszczęII
 Важно. Таблица показывает частые модели, а не одно правило для всех спряжений. У многих глаголов II спряжения чередование видно в ja и oni: proszę / proszą, но prosisz, prosi, prosimy, prosicie. У глаголов I спряжения распределение другое: piszę, piszesz, piszą; jadę, jedziesz, jadą. Учи форму ja, форму ty и форму oni как модель конкретного глагола.
 być - отдельная песня
 byćбытьjatyon / onamywyoni / one
@@ -1045,7 +1045,7 @@ jarobiłemrobiłam-tyrobiłeśrobiłaś-on / ona / onorobiłrobiłarobiłomyrobi
 Нерегулярные в прошедшем
 глаголjaon · onaoni · one
 iśćszedłem / szłamszedł · szłaszli · szłyполностью другая основаjeśćjadłem / jadłamjadł · jadłajedli · jadłya → e только в мужско-личномmócmogłem / mogłammógł · mogłamogli · mogłymógł - с ómiećmiałem / miałammiał · miałamieli · miały-eć → -ał, но -elimusiećmusiałem / musiałammusiał · musiałamusieli · musiałyто же правилоchciećchciałem / chciałamchciał · chciałachcieli · chciałyто же правилоwziąćwziąłem / wzięłamwziął · wzięławzięli · wzięłyмуж. ед.: wziąłem, wziąłeś, wziął; жен., ср. и мн. имеют основу wzię-zacząćzacząłem / zaczęłamzaczął · zaczęłazaczęli · zaczęłyмуж. ед.: zacząłem, zacząłeś, zaczął; жен., ср. и мн. имеют основу zaczę-znaleźćznalazłem / znalazłamznalazł · znalazłaznaleźli · znalazłynieśćniosłem / niosłamniósł · niosłanieśli · niosłyniósł - с óusiąśćusiadłem / usiadłamusiadł · usiadłausiedli · usiadłybyćbyłem / byłambył · byłabyli · byłyопора для всего остального
-Подвижные окончания. -m, -ś, -śmy, -ście могут присоединяться к другому слову: my to zrobiliśmy = myśmy to zrobili. В нейтральном вопросе: Gdzie byłeś? И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - by-LI-śmy, ro-BI-li-śmy, czy-TA-li-ście. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.
+Подвижные окончания. -m, -ś, -śmy, -ście могут присоединяться к другому слову: my to zrobiliśmy = myśmy to zrobili. В вопросе то же самое: Gdzie byłeś? - нейтрально, Gdzieś ty był? - окончание переехало на вопросительное слово, так говорят в разговоре. И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - BY-li-śmy, ro-BI-li-śmy, czy-TA-li-ście. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.
 Будущее: совершенный вид → простое
 Совершенный глагол спрягается как настоящее время, а значит будущее.
 zrobię, zrobisz, zrobi, zrobimy, zrobicie, zrobią · napiszę · kupię · powiem · pójdę · zjem · wrócę
@@ -1096,7 +1096,7 @@ pomócty pomożesz
 pomóż!pomóżmy!pomóżcie!niech pomoże!
 daćty dasz
 daj!dajmy!dajcie!niech da!
-powiedziećoni powiedzą
+нерегулярныйpowiedziećoni powiedzą
 powiedz!powiedzmy!powiedzcie!niech powie!
 Смягчение на конце. si → ś, zi → ź, ci → ć, dzi → dź, ni → ń: prosić → proś, wozić → woź, chodzić → chodź, zaprosić → zaproś. Если основа не выговаривается - добавляем -ij / -yj: spać → śpij, zapomnieć → zapomnij, zamknąć → zamknij, trzeć → trzyj. Отдельно: otworzyć → otwórz, pomóc → pomóż - здесь o → ó.
 Вежливость вместо приказа
@@ -1131,7 +1131,7 @@ japowinienempowinnamtypowinieneśpowinnaśon / ona / onopowinienpowinna · powin
 Род обязателен, как в прошедшем времени. Мужчина говорит powinienem, женщина - powinnam. И ударение то же, что в прошедшем времени: po-WIN-ni-śmy, po-WIN-ni-ście - третий слог от конца.
 powinien в прошедшем
 Добавляется był / była / byli - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. В разговоре часто обходятся одной формой настоящего, но письменная норма требует связки.
-powinienem był zadzwonićнадо было позвонить - а я не позвонилpowinnam była wiedziećмне следовало знатьpowinien był przyjśćему следовало прийтиpowinni byli zapytaćим следовало спросить
+powinienem był zadzwonićмне следовало позвонитьpowinnam była wiedziećмне следовало знатьpowinien był przyjśćему следовало прийтиpowinni byli zapytaćим следовало спросить
 musieć · powinien · trzeba: что выбрать
 формазначениечем отличается
 muszę iśćдолжен, обязанвнешняя необходимость, выбора нетpowinienem iśćследует, надо бысовет и моральный долг - выбор остаётсяto musi być prawdaдолжно быть, навернякавывод, а не обязанность: Musi być zmęczony.pociąg powinien przyjechać o ósmejдолжен, по идееожидание, а не долг: Powinno być gotowe.trzeba iśćнадобезлично, лица нет вообщеmam iśćмне велено идтичужое распоряжение: Mam to zrobić do piątku.nie muszę iśćне обязаннеобходимости нет - но можноnie mogę iśćне могунет возможностиnie wolno iśćнельзяпрямой запрет
@@ -1151,7 +1151,7 @@ Kobieta czytająca gazetę siedzi przy oknie. = Kobieta, która czyta gazetę, s
 ZamknięteзакрытоOtwarteоткрытоZajęteзанятоZarezerwowaneзабронированоSprzedaneпроданоdla palącychдля курящих
 Деепричастия: -ąc и -wszy / -łszy
 типкогдаобразованиепример
-współczesny · -ącодновременно, только несов. видoni czytają → czytając · są → będącIdąc do pracy, słucham muzyki. · Czekając na autobus, czytam.uprzedni · -wszy / -łszyраньше главного действия, только сов. видzrobić → zrobiwszy · przyjść → przyszedłszyZrobiwszy zakupy, wróciłem do domu.
+współczesny · -ącодновременно, только несов. вид; у być - от будущего będą, не от sąoni czytają → czytając · oni będą → będącIdąc do pracy, słucham muzyki. · Czekając na autobus, czytam.uprzedni · -wszy / -łszyраньше главного действия, только сов. видzrobić → zrobiwszy · przyjść → przyszedłszyZrobiwszy zakupy, wróciłem do domu.
 Два ограничения. 1) Субъект деепричастия и главного глагола - один и тот же человек: Idąc do pracy, zgubiłem telefon - шёл и потерял один и тот же «я». 2) Форма на -wszy / -łszy - книжная; в разговоре вместо Zrobiwszy zakupy… скажут Kiedy zrobiłem zakupy…
 Страдательный залог: zostać / być + причастие
 Причастие согласуется с подлежащим в роде и числе. Исполнитель - через przez + Biernik: zbudowany przez znaną firmę.
@@ -1161,11 +1161,11 @@ zostać + причастиесобытие, совершенный видDom zos
 Отглагольные существительные: -anie / -enie / -cie
 Средний род, склоняются как mieszkanie. Дополнение уходит в Dopełniacz: palenie papierosów, mycie rąk. Отрицание пишется слитно: niepalenie.
 типпримеры
--ać → -anieczytać → czytanie · pisać → pisanie · parkować → parkowanie · sprzątać → sprzątanie-ić / -yć / -eć → -eniepalić → palenie · mówić → mówienie · myśleć → myślenie · uczyć się → uczenie się-ąć и корни на гласный → -ciezamknąć → zamknięcie · otworzyć → otwarcie · myć → mycie · żyć → życie · wziąć → wzięcie
+-ać → -anieczytać → czytanie · pisać → pisanie · parkować → parkowanie · sprzątać → sprzątanie-ić / -yć / -eć → -eniepalić → palenie · mówić → mówienie · myśleć → myślenie · uczyć się → uczenie się-ąć и корни на гласный → -ciezamknąć → zamknięcie · myć → mycie · żyć → życie · wziąć → wzięcieнерегулярноеotworzyć → otwarcie
 Язык вывесок и запретов:
 Zakaz paleniaкурить запрещеноZakaz parkowaniaпарковка запрещенаGodziny otwarciaчасы работыDo wynajęciaсдаётсяMycie rąk obowiązkoweмытьё рук обязательноUwaga, malowanie!осторожно, идёт покраска
 Управление
-Самая частая ошибка русскоязычных - не окончание, а падеж после слова. У глаголов это заметно сразу, у прилагательных и существительных - нет, но механизм тот же. Красным помечено то, где польский расходится с русским.
+Самая частая ошибка русскоязычных - не окончание, а падеж после слова. У глаголов это заметно сразу, у прилагательных и существительных - нет, но механизм тот же. В таблице глаголов красным помечено то, где польский расходится с русским.
 глаголвопростребуетпо-русскипример
 dziękowaćkomu? za co?
 Celownik + zaблагодарить кого

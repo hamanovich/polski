@@ -316,7 +316,7 @@ function renderAlpha(){
     <div class="tip"><b>Русский здесь помогает целиком.</b> «Хлеб» → [хлеп], «лодка» → [лотка], «сделать» → [зделать] - механизм тот же, переносится без переучивания. Единственная новая работа - не дать оглушению попасть на письмо: пишем <span class="pl">chleb, nóż, weź</span>, даже когда слышим глухой.</div>
 
     <h3>Ударение</h3>
-    <p><b>Основное правило.</b> Всегда предпоследний слог: <span class="pl">Pol-SKA, War-SZA-wa, ko-BIE-ta, do-BRZE</span>. Практически без исключений в базовых словах.</p>
+    <p><b>Основное правило.</b> Всегда предпоследний слог: <span class="pl">${akcent("Polska",["Pol","ska"],2)}, ${akcent("Warszawa",["War","sza","wa"],2)}, ${akcent("kobieta",["ko","bie","ta"],2)}, ${akcent("dobrze",["do","brze"],2)}</span>. Практически без исключений в базовых словах.</p>
     <div class="scroll"><table class="vt">
       <tr><th>случай</th><th>ударение</th><th>примеры</th></tr>
       ${STRESS_EXC.map(s => `<tr><td>${s[0]}</td><td class="c">${s[1]}</td><td class="w">${s[2]}</td></tr>`).join("")}
@@ -490,6 +490,15 @@ function renderCase(){
   renderCasePractice();
 }
 
+function akcent(word, syllables, fromEnd){
+  if(syllables.join("") !== word)
+    throw new Error(`akcent: "${syllables.join("-")}" не складывается в "${word}"`);
+  const index = syllables.length - fromEnd;
+  if(index < 0)
+    throw new Error(`akcent: в слове "${word}" ${syllables.length} слога, ударение не может быть ${fromEnd}-м от конца`);
+  return syllables.map((part, i) => i === index ? part.toLocaleUpperCase("pl") : part).join("-");
+}
+
 function vform(f, kon, i){
   const refl = / się$/.test(f);
   const w = refl ? f.slice(0, -4) : f;
@@ -530,7 +539,7 @@ function vConj(){
     <div class="tip"><b>Приём для -ać и -eć.</b> Переведи глагол на русский и поставь в форму «ты». Слышишь <b>-ае-</b> (чит<b>ае</b>шь) → III: <span class="pl">czytasz</span>. Слышишь <b>-и-</b> (сто<b>и</b>шь) → II: <span class="pl">stoisz</span>. Слышишь <b>-е-</b> (п<b>и</b>ш<b>е</b>шь) → I: <span class="pl">piszesz</span>. Работает только на похожих словах.</div>
 
     <h3>Правило бабочки</h3>
-    <p class="lead">У глагола максимум две основы. Маленькое крыло - <b>ja</b> и <b>oni</b>, большое - <b>ty, on, my, wy</b>. Знаешь по одному слову из каждого крыла - достроишь всю таблицу.</p>
+    <p class="lead">В настоящем времени у глагола максимум две основы. Маленькое крыло - <b>ja</b> и <b>oni</b>, большое - <b>ty, on, my, wy</b>. Знаешь по одному слову из каждого крыла - достроишь всю таблицу. Прошедшее и будущее строятся отдельно, а <span class="pl">być</span> вне схемы: <span class="pl">jestem</span> идёт с большим крылом, <span class="pl">są</span> остаётся в малом.</p>
     <div class="scroll"><table>
       <tr><th>глагол</th><th>малое крыло · ja, oni</th><th>большое крыло · ty, on, my, wy</th></tr>
       ${MOTYL.map(m => `<tr><td class="w">${m[0]}</td><td class="g">${m[1]}</td><td class="w">${m[2]}</td></tr>`).join("")}
@@ -648,7 +657,7 @@ function vCzasy(){
       <tr><th>глагол</th><th>ja</th><th>on · ona</th><th>oni · one</th><th></th></tr>
       ${PASTIRR.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td><td class="w">${p[3]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[4]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В нейтральном вопросе: <span class="pl">Gdzie byłeś?</span> И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - <span class="pl">by-LI-śmy</span>, <span class="pl">ro-BI-li-śmy</span>, <span class="pl">czy-TA-li-ście</span>. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.</div>
+    <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В вопросе то же самое: <span class="pl">Gdzie byłeś?</span> - нейтрально, <span class="pl">Gdzieś ty był?</span> - окончание переехало на вопросительное слово, так говорят в разговоре. И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - <span class="pl">${akcent("byliśmy",["by","li","śmy"],3)}</span>, <span class="pl">${akcent("robiliśmy",["ro","bi","li","śmy"],3)}</span>, <span class="pl">${akcent("czytaliście",["czy","ta","li","ście"],3)}</span>. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.</div>
 
     <h3>Будущее: совершенный вид → простое</h3>
     <p>Совершенный глагол спрягается как настоящее время, а значит будущее.</p>
@@ -718,7 +727,7 @@ function vTryby(){
       <tr><td class="w">Należałoby zadzwonić.</td><td>безличная форма</td></tr>
     </table>
     <div class="tip"><b>Условие целиком.</b> <span class="pl">Gdyby + условное, to + условное</span>: <span class="pl">Gdybym miał czas, poszedłbym z tobą.</span> Оба глагола в условном. Русское «бы» тоже стоит в обеих частях («если бы у меня было время, я бы пошёл»), но оно неизменяемо, а польская <span class="pl">-by</span> спрягается по лицам: <span class="pl">gdybym, gdybyś, gdybyśmy</span>.</div>
-    <div class="tip"><b>Ударение в условном.</b> Оно тоже сдвигается: <span class="pl">ZRO-bił-bym</span>, <span class="pl">ro-BI-li-by</span> - третий слог от конца, <span class="pl">ro-BI-li-by-śmy</span>, <span class="pl">ro-BI-li-by-ście</span> - четвёртый.</div>
+    <div class="tip"><b>Ударение в условном.</b> Оно тоже сдвигается: <span class="pl">${akcent("zrobiłbym",["zro","bił","bym"],3)}</span>, <span class="pl">${akcent("robiliby",["ro","bi","li","by"],3)}</span> - третий слог от конца, <span class="pl">${akcent("robilibyśmy",["ro","bi","li","by","śmy"],4)}</span>, <span class="pl">${akcent("robilibyście",["ro","bi","li","by","ście"],4)}</span> - четвёртый.</div>
     <p class="lead">Рабочие вежливые заготовки: <span class="pl">Chciałbym / Chciałabym…</span> · <span class="pl">Czy mógłbym prosić o…?</span> · <span class="pl">Czy mogłaby pani powtórzyć?</span> · <span class="pl">Wolałbym nie.</span></p>
 
     <h3>powinien - «следует»</h3>
@@ -727,7 +736,7 @@ function vTryby(){
       <tr><th>лицо</th><th>м. род</th><th>ж. род</th></tr>
       ${POWINIEN.map(p => `<tr><td style="color:var(--muted)">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Род обязателен, как в прошедшем времени.</b> Мужчина говорит <span class="pl">powinienem</span>, женщина - <span class="pl">powinnam</span>. И ударение то же, что в прошедшем времени: <span class="pl">po-WIN-ni-śmy</span>, <span class="pl">po-WIN-ni-ście</span> - третий слог от конца.</div>
+    <div class="tip"><b>Род обязателен, как в прошедшем времени.</b> Мужчина говорит <span class="pl">powinienem</span>, женщина - <span class="pl">powinnam</span>. И ударение то же, что в прошедшем времени: <span class="pl">${akcent("powinniśmy",["po","win","ni","śmy"],3)}</span>, <span class="pl">${akcent("powinniście",["po","win","ni","ście"],3)}</span> - третий слог от конца.</div>
 
     <h3>powinien в прошедшем</h3>
     <p class="lead">Добавляется <span class="pl">był / była / byli</span> - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. В разговоре часто обходятся одной формой настоящего, но письменная норма требует связки.</p>
@@ -799,7 +808,7 @@ function vFormy(){
 function vRekcja(){
   return `<div class="panel">
     <h2>Управление</h2>
-    <p class="lead">Самая частая ошибка русскоязычных - не окончание, а падеж после слова. У глаголов это заметно сразу, у прилагательных и существительных - нет, но механизм тот же. Красным помечено то, где польский расходится с русским.</p>
+    <p class="lead">Самая частая ошибка русскоязычных - не окончание, а падеж после слова. У глаголов это заметно сразу, у прилагательных и существительных - нет, но механизм тот же. В таблице глаголов красным помечено то, где польский расходится с русским.</p>
     <div class="scroll"><table class="vt">
       <tr><th>глагол</th><th>вопрос</th><th>требует</th><th>по-русски</th><th>пример</th></tr>
       ${REKCJA.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted);white-space:nowrap">${r[1]}</td>

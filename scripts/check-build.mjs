@@ -2,6 +2,7 @@ import { readFile, readdir, access } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
+import vm from "node:vm";
 import { parseHTML } from "linkedom";
 import { cardManifest } from "./og-card.mjs";
 
@@ -290,6 +291,98 @@ assert(dataSource.includes('"znać": "новое состояние: poznać'));
 assert(!dataSource.includes("dwadzieścia jeden domów"));
 assert(!appSource.includes("Двигаешься - Biernik."));
 assert(!appSource.includes("подчинительными союзами запятая ставится <b>всегда</b>"));
+
+const dataSandbox = vm.createContext({});
+vm.runInContext(dataSource, dataSandbox, {filename:"data.js"});
+const fromData = name => vm.runInContext(name, dataSandbox);
+
+const exerciseSets = [
+  "CASE_PRACTICE", "CASE_TEST", "VERB_PRACTICE", "VERB_TEST", "PREP_PRACTICE", "PREP_TEST",
+  "ADJ_PRACTICE", "ADJ_TEST", "ROD_PRACTICE", "ADV_PRACTICE", "PRON_PRACTICE",
+  "CONJ_PRACTICE", "PART_PRACTICE", "ALT_PRACTICE", "PEOPLE_PRACTICE", "ALPHA_PRACTICE",
+  "DIM_PRACTICE", "BRIDGE_PRACTICE", "NUM_PRACTICE", "QUESTION_PRACTICE", "NEG_PRACTICE",
+  "ORDER_PRACTICE", "IMPERS_PRACTICE"
+];
+const answerSets = [];
+for(const name of exerciseSets)
+  for(const practice of [fromData(name)].flat())
+    for(const task of practice.tasks){
+      if(task.answers) answerSets.push({where:`${name} · ${task.id}`, answers:task.answers, fixed:!!task.options});
+      for(const part of task.passage || [])
+        if(part?.answers) answerSets.push({where:`${name} · ${task.id}/${part.key}`, answers:part.answers, fixed:!!part.options});
+    }
+assert(answerSets.length > 400, "Every practice block must be reachable from exerciseSets");
+
+const beMarker = "(?:będę|będziesz|będzie|będziemy|będziecie|będą)";
+const futureWithInfinitive = new RegExp(`^${beMarker} \\S+ć( się)?$`);
+const futureWithPastForm = new RegExp(`^${beMarker} \\S+(ł|ła|ło|li|ły)( się)?$`);
+for(const {where, answers, fixed} of answerSets){
+  if(fixed) continue;
+  const withInfinitive = answers.some(answer => futureWithInfinitive.test(answer));
+  const withPastForm = answers.some(answer => futureWithPastForm.test(answer));
+  if(withInfinitive || withPastForm)
+    assert(withInfinitive && withPastForm,
+      `${where}: составное будущее нормативно и как "będę czytać", и как "będę czytał" - свободный ввод обязан принимать обе модели`);
+}
+
+const caseOf = {Mianownik:"M", Dopełniacz:"D", Celownik:"C", Biernik:"B", Narzędnik:"N", Miejscownik:"Ms"};
+const prepositionOf = {z:["с","из"], o:["о"], na:["на"], w:["в"], za:["за"], do:["к","до"], po:["по"], od:["от"], u:["у"], przed:["перед"]};
+const questionCase = {кого:"B", что:"B", кому:"C", чему:"C", чего:"D", кем:"N", чем:"N", ком:"Ms", чём:"Ms"};
+const russianPrepositions = new Set(["о","на","в","во","с","со","за","по","из","над","к","от","у","перед","до"]);
+const rekcjaManual = new Map([
+  ["dziękować", "два дополнения: komu + za co"],
+  ["gratulować", "два дополнения: komu + czego"],
+  ["życzyć", "два дополнения: komu + czego"],
+  ["grać", "пометка стоит за выбор w против na, а не за расхождение с русским"]
+]);
+let rekcjaDerived = 0;
+for(const row of fromData("REKCJA")){
+  const [verb, , requires, gloss] = row;
+  if(rekcjaManual.has(verb)) continue;
+  const [polishPreposition, polishCase] = requires.split(" / ")[0].split(" + ").length === 2
+    ? requires.split(" / ")[0].split(" + ")
+    : [null, requires.split(" / ")[0]];
+  assert(caseOf[polishCase], `REKCJA · ${verb}: не разобран падеж "${requires}"`);
+  const words = gloss.trim().split(/\s+/);
+  const russianCase = questionCase[words.at(-1)];
+  assert(russianCase, `REKCJA · ${verb}: не разобран русский вопрос в "${gloss}"`);
+  const russianPreposition = russianPrepositions.has(words.at(-2)) ? words.at(-2).replace(/^(во|со)$/, match => match[0]) : null;
+  const sameCase = caseOf[polishCase] === russianCase;
+  const samePreposition = polishPreposition === null
+    ? russianPreposition === null
+    : russianPreposition !== null && (prepositionOf[polishPreposition] || []).includes(russianPreposition);
+  assert.equal(!!row[5], !(sameCase && samePreposition),
+    `REKCJA · ${verb}: "${requires}" против "${gloss}" ${sameCase && samePreposition ? "с русским совпадает, красной пометки быть не должно" : "с русским расходится, нужна красная пометка"}`);
+  rekcjaDerived += 1;
+}
+assert.equal(rekcjaDerived + rekcjaManual.size, fromData("REKCJA").length);
+
+for(const row of fromData("IMIES_CZ"))
+  assert.equal(row[2].split(" / ")[0], `${row[1].replace(/^oni /, "")}cy`,
+    `IMIES_CZ · ${row[0]}: причастие обязано быть формой oni плюс -cy`);
+for(const row of fromData("IMIES_PRZYS")){
+  if(!row[0].includes("-ąc")) continue;
+  for(const pair of row[2].split(" · ")){
+    const [base, derived] = pair.split(" → ");
+    assert.equal(derived, `${base.replace(/^oni /, "")}c`,
+      `IMIES_PRZYS · ${pair}: деепричастие обязано быть показанной формой плюс -c`);
+  }
+}
+
+const imperativeSoftening = [["dzi", "dź"], ["si", "ś"], ["zi", "ź"], ["ci", "ć"], ["ni", "ń"], ["dz", "dź"], ["s", "ś"], ["z", "ź"], ["n", "ń"]];
+for(const row of fromData("IMPER")){
+  const [verb, base, imperative, , , , note] = row;
+  if(base === "-"){
+    assert(note, `IMPER · ${verb}: форма без исходной опоры обязана нести помету`);
+    continue;
+  }
+  const stem = base.replace(/^(ty|oni) /, "").replace(/(esz|isz|ysz|asz|ą)$/, "");
+  const softened = imperativeSoftening.reduce((list, [from, to]) =>
+    stem.endsWith(from) ? [...list, `${stem.slice(0, -from.length)}${to}`] : list, [stem]);
+  const candidates = softened.flatMap(form => [form, form.replace(/o([^o]*)$/, "ó$1"), `${form}ij`, `${form}yj`]);
+  if(!candidates.includes(imperative.replace(/!$/, "")))
+    assert(note, `IMPER · ${verb}: "${base}" не даёт "${imperative}" ни одним правилом раздела - нужна помета в последней колонке`);
+}
 
 const particles = documents.get("s-part");
 assert(particles.html.includes("Норма с 1 января 2026 года"));
