@@ -1,0 +1,32 @@
+#!/bin/sh
+# Не пускаем в push то, что упадёт в CI: сборка, проверки и drift по сгенерированным файлам.
+# Обойти разово: git push --no-verify
+
+if [ -n "$SKIP_VERIFY" ]; then
+  echo "pre-push: SKIP_VERIFY, проверка пропущена"
+  exit 0
+fi
+
+only_delete=1
+while read -r _local_ref local_sha _remote_ref _remote_sha; do
+  [ -z "$local_sha" ] && continue
+  case "$local_sha" in *[!0]*) only_delete=0 ;; esac
+done
+[ "$only_delete" = 1 ] && exit 0
+
+if [ ! -d node_modules ]; then
+  echo "pre-push: нет node_modules, сначала npm install"
+  exit 1
+fi
+
+root=$(git rev-parse --show-toplevel)
+cd "$root" || exit 1
+
+if ! npm run verify --silent; then
+  echo ""
+  echo "pre-push: npm run verify упал, push отменён."
+  echo "Если разошлись сгенерированные файлы, они уже пересобраны в рабочем дереве:"
+  echo "  git add -A && git commit --amend --no-edit   (или отдельным коммитом)"
+  echo "  git push"
+  exit 1
+fi

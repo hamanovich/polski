@@ -1,0 +1,15 @@
+exclude:
+  - 404.template.html
+  - AGENTS.md
+  - CLAUDE.md
+  - LINGUIST.md
+  - README.md
+  - app.js
+  - content-manifest.json
+  - data.js
+  - fulltext.txt
+  - index.template.html
+  - og/manifest.json
+  - package-lock.json
+  - package.json
+  - scripts

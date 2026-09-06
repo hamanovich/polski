@@ -2,8 +2,6 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
-import { execFile } from "node:child_process";
-import { promisify } from "node:util";
 import vm from "node:vm";
 import { parseHTML } from "linkedom";
 import { pages, extraPages } from "./pages.mjs";
@@ -20,19 +18,20 @@ const [template, notFoundTemplate, dataSource, appSource, clientSource, styleSou
   readFile(resolve(root, "style.css"), "utf8")
 ]);
 const fingerprint = source => createHash("sha256").update(source).digest("hex").slice(0, 10);
-const runGit = promisify(execFile);
-const gitDate = async (...paths) => {
-  try{
-    const { stdout } = await runGit("git", ["log", "-1", "--format=%cI", "--", ...paths], {cwd:root});
-    return stdout.trim().slice(0, 10) || null;
-  }catch{
-    return null;
-  }
+const today = new Date().toLocaleDateString("sv-SE");
+const dateSlot = "__CONTENT_DATE__";
+const manifestPath = resolve(root, "content-manifest.json");
+const storedManifest = await readFile(manifestPath, "utf8").then(JSON.parse).catch(() => ({}));
+const previousSitemap = await readFile(resolve(root, "sitemap.xml"), "utf8").catch(() => "");
+const previousDates = new Map([...previousSitemap.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map(match => [match[1], match[2]]));
+const contentSignature = html => createHash("sha256").update(html.replace(/\?v=[0-9a-f]{10}/g, "?v=")).digest("hex");
+const nextManifest = {};
+const stampDate = (key, canonical, hash) => {
+  const stored = storedManifest[key];
+  const date = stored && stored.hash === hash ? stored.date : (!stored && previousDates.get(canonical)) || today;
+  nextManifest[key] = {hash, date};
+  return date;
 };
-const today = new Date().toISOString().slice(0, 10);
-const contentDate = await gitDate("data.js", "app.js", "index.template.html", "scripts/build.mjs") || today;
-const extraDates = new Map(await Promise.all(extraPages.map(async extra =>
-  [extra.path, await gitDate(extra.source) || today])));
 
 const { window, document } = parseHTML(template);
 const noop = () => {};
@@ -175,7 +174,7 @@ const assetHashes = {
 const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
 
-const TOC_MIN = 6;
+const TOC_MIN = 5;
 const pageHref = (from, targetId) => {
   const target = pageById.get(targetId) || pages[0];
   if(!from.path) return target.path ? `${target.path}/` : "./";
@@ -207,7 +206,7 @@ const jsonLD = (page, canonical) => {
     inLanguage:"ru",
     isPartOf:{"@id":`${baseURL}#website`},
     isAccessibleForFree:true,
-    dateModified:contentDate,
+    dateModified:dateSlot,
     about:{"@type":"Thing", name:"Польский язык"}
   };
   const graph = [{
@@ -237,6 +236,7 @@ const jsonLD = (page, canonical) => {
 
 const masterHTML = document.documentElement.outerHTML;
 const generated = [];
+const pageDates = new Map();
 for(const page of pages){
   const { document:pageDocument } = parseHTML(`<!DOCTYPE html>\n${masterHTML}`);
   pageDocument.documentElement.dataset.page = page.id;
@@ -346,16 +346,28 @@ for(const page of pages){
   clientScript.dataset.searchSrc = `${prefix}search-index.js?v=${assetHashes.search}`;
   pageDocument.body.append(clientScript);
 
-  const html = `<!DOCTYPE html>\n${pageDocument.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");
+  const draft = `<!DOCTYPE html>\n${pageDocument.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");
+  const date = stampDate(page.path || "index", canonical, contentSignature(draft));
+  pageDates.set(page.path, date);
+  const html = draft.replace(dateSlot, date);
   const outputDir = page.path ? resolve(root, page.path) : root;
   await mkdir(outputDir, {recursive:true});
   await writeFile(resolve(outputDir, "index.html"), html, "utf8");
   generated.push({page, bytes:Buffer.byteLength(html)});
 }
 
+const extraEntries = [];
+for(const extra of extraPages){
+  const source = await readFile(resolve(root, extra.source), "utf8").catch(() => "");
+  const canonical = new URL(`${extra.path}/`, baseURL).href;
+  extraEntries.push([extra.path, stampDate(extra.path, canonical, contentSignature(source))]);
+}
+const orderedManifest = Object.fromEntries(Object.keys(nextManifest).sort().map(key => [key, nextManifest[key]]));
+await writeFile(manifestPath, `${JSON.stringify(orderedManifest, null, 2)}\n`, "utf8");
+
 const sitemapEntries = [
-  ...pages.map(page => [page.path, contentDate]),
-  ...extraPages.map(extra => [extra.path, extraDates.get(extra.path)])
+  ...pages.map(page => [page.path, pageDates.get(page.path)]),
+  ...extraEntries
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries.map(([path, lastmod]) => `  <url>\n    <loc>${new URL(path ? `${path}/` : "", baseURL).href}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`).join("\n")}\n</urlset>\n`;
 await writeFile(resolve(root, "sitemap.xml"), sitemap, "utf8");

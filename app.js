@@ -1475,10 +1475,10 @@ function renderPron(){
       ${PRON.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
     <ol class="pit" style="margin-top:14px">
-      <li><b>Формы <span class="pl">niego, niej, nich</span> ставятся после предлога.</b> <span class="pl">Widzę go</span>, но <span class="pl">idę do niego</span>. <span class="pl">Mówię jej</span>, но <span class="pl">mówię o niej</span>. В творительном формы <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
+      <li><b>После предлога выбираем форму с начальным <span class="pl">n-</span>.</b> Сравни: <span class="pl">widzę go / patrzę na niego</span>, <span class="pl">daję jej / mówię o niej</span>, <span class="pl">widzę je / patrzę na nie</span>. К постпредложным относятся также <span class="pl">niemu, nim, nią, nich, nimi</span>. В творительном <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n-</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
       <li><b>Короткие формы <span class="pl">go, mu, cię, ci, mi</span> безударные.</b> Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: <span class="pl">Mnie to nie interesuje</span>.</li>
       <li><b>Личное местоимение обычно опускается.</b> Окончание глагола уже содержит лицо: <span class="pl">idę</span>, а не <span class="pl">ja idę</span>. Постоянное <span class="pl">ja</span> звучит либо как нажим, либо как речь иностранца.</li>
-      <li><b>Вежливое обращение - третье лицо.</b> <span class="pl">Czy pan ma paragon?</span> Форма на <span class="pl">ty</span> с незнакомым воспринимается как хамство, в отличие от русского, где «вы» - просто множественное.</li>
+      <li><b>В нейтрально-вежливом обращении нужны <span class="pl">pan / pani</span> и третье лицо.</b> <span class="pl">Czy pan ma paragon?</span> Русскому и белорусскому вежливому «вы» соответствует не польское <span class="pl">wy</span>, а <span class="pl">pan / pani</span>. На <span class="pl">ty</span> переходят по взаимной договорённости или по принятой в конкретной среде норме.</li>
     </ol>
 
     <h3>Возвратное: siebie</h3>
@@ -1489,15 +1489,15 @@ function renderPron(){
     </table></div>
     <div class="tip"><b><span class="pl">się</span> - безударная форма возвратного местоимения.</b> Она встречается в Dopełniacz и Biernik: <span class="pl">boję się, myję się</span>; кроме того, <span class="pl">się</span> выполняет нефлексионные функции при глаголах. Полное <span class="pl">siebie</span> нужно под ударением и после предлога: <span class="pl">bez siebie, do siebie, ze sobą</span>. Сказать <span class="bad">bez się</span> нельзя.</div>
 
-    <h3>Четыре разных się</h3>
-    <p class="lead">Форма одна, работы четыре. Понимать, какая именно, нужно затем, что от этого зависит, можно ли заменить <span class="pl">się</span> на <span class="pl">siebie</span> и переводится ли оно вообще.</p>
+    <h3>Основные функции się</h3>
+    <p class="lead">Одна форма выполняет несколько разных задач. Таблица показывает основные модели этого уровня, но не является исчерпывающей классификацией.</p>
     <div class="scroll"><table class="vt">
       <tr><th>функция</th><th>примеры</th><th>признак</th></tr>
       ${SIE_FUNC.map(r => `<tr><td class="w">${r[0]}</td><td class="w" style="white-space:normal">${r[1]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${r[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Проверка работает в одну сторону.</b> Поставь вместо <span class="pl">się</span> полное <span class="pl">siebie</span>. Встало - это точно возвратность: <span class="pl">Myję się → Myję siebie, nie dziecko</span>. Не встало - значит один из трёх остальных случаев, и какой именно, тест не скажет: <span class="pl">znamy się</span> (взаимность), <span class="pl">boję się</span> (приросло к глаголу), <span class="pl">mówi się</span> (безличность). Их различают по смыслу, а не по подстановке.</div>
+    <div class="tip"><b>Подстановка <span class="pl">siebie</span> только помогает, но не решает задачу механически.</b> Если полная форма сохраняет значение действия на самого деятеля, перед нами возвратность: <span class="pl">Myję się → Myję siebie, nie dziecko</span>. При множественном подлежащем отдельно проверь взаимность: <span class="pl">Znamy się</span> обычно значит «знаем друг друга», а <span class="pl">Znamy siebie</span> - «знаем самих себя». Безличное <span class="pl">mówi się</span> и словарное <span class="pl">boję się</span> определяются по конструкции и смыслу.</div>
 
-    <h3>Устойчивое с siebie и sobie</h3>
+    <h3>Возвратные и взаимные обороты</h3>
     <div class="scroll"><table class="vt">
       <tr><th>оборот</th><th>значение</th><th>пример</th></tr>
       ${SIEBIE_PHR.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td class="g" style="white-space:normal">${r[2]}</td></tr>`).join("")}
@@ -1509,7 +1509,7 @@ function renderPron(){
       <tr><th>глагол</th><th>значение</th><th>пример</th></tr>
       ${SOBIE_V.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td class="g" style="white-space:normal">${r[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">Czego pan sobie życzy?</span></b> - стандартный вопрос продавца и официанта. Здесь без <span class="pl">sobie</span> фраза не складывается. А в <span class="pl">Idź sobie!</span> оно как раз отделимо - и добавляет пренебрежения к простому <span class="pl">Idź!</span></div>
+    <div class="tip"><b><span class="pl">Czego pan sobie życzy?</span></b> - стандартный вопрос продавца и официанта. В вопросе о желании клиента используется конструкция <span class="pl">życzyć sobie</span>. Без <span class="pl">sobie</span> глагол имеет другую модель: <span class="pl">Życzę panu powodzenia</span>. В <span class="pl">Idź sobie!</span> местоимение отделимо и добавляет пренебрежения к простому <span class="pl">Idź!</span></div>
     <h3>ten / ta / to</h3>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
@@ -1520,14 +1520,14 @@ function renderPron(){
       <tr><td>Narzędnik</td><td class="w">tym</td><td class="w">tą</td><td class="w">tym</td><td class="g">tymi</td><td class="g">tymi</td></tr>
       <tr><td>Miejscownik</td><td class="w">tym</td><td class="w">tej</td><td class="w">tym</td><td class="g">tych</td><td class="g">tych</td></tr>
     </table></div>
-    <div class="tip"><b>tę или tą.</b> Литературная норма винительного - <span class="pl">tę kawę</span>. В живой речи повсеместно звучит <span class="pl">tą</span>, потому что совпадает с творительным. На письме держись <span class="pl">tę</span>.</div>
+    <div class="tip"><b>tę или tą.</b> Нейтральная и письменная норма винительного - <span class="pl">tę kawę</span>. В разговорной речи часто встречается <span class="pl">tą</span>, совпадающее с формой творительного.</div>
     <h3>ten · tamten · taki</h3>
     <p class="lead"><span class="pl">tamten</span> склоняется точно как <span class="pl">ten</span> (<span class="pl">tamtego, tamtemu, tamtym, tamtą</span>), <span class="pl">taki</span> - как прилагательное <span class="pl">dobry</span> (<span class="pl">takiego, takiemu, takim, taką</span>). Отдельных парадигм учить не надо.</p>
     <div class="scroll"><table>
       <tr><th></th><th>этот</th><th>тот</th><th>такой</th></tr>
       ${TAMTEN.map(r => `<tr><td style="color:var(--muted)">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b><span class="pl">ten</span> покрывает и «этот», и «тот».</b> Русское «тот фильм, о котором я говорил» по-польски - <span class="pl">ten film, o którym mówiłem</span>. <span class="pl">tamten</span> нужен только при явном противопоставлении здесь и там: <span class="pl">Nie ten, tamten.</span> · <span class="pl">Ten jest tańszy niż tamten.</span> Ставить <span class="pl">tamten</span> везде, где по-русски «тот», - типичная калька.</div>
+    <div class="tip"><b><span class="pl">ten</span> покрывает и «этот», и анафорическое «тот».</b> Русское «тот фильм, о котором я говорил» по-польски - <span class="pl">ten film, o którym mówiłem</span>. <span class="pl">Tamten</span> выбирают, когда объект явно отодвинут в пространстве или времени либо противопоставлен другому: <span class="pl">tamten dom, tamtego dnia, nie ten, tamten</span>. Ставить <span class="pl">tamten</span> везде, где по-русски «тот», - типичная калька.</div>
 
     <h3>Притяжательные</h3>
     <div class="scroll pron-possesive-table"><table>
@@ -1540,7 +1540,7 @@ function renderPron(){
       <tr><td>wy</td><td class="w">wasz / wasza / wasze</td><td>да</td></tr>
       <tr><td>oni / one</td><td class="w">ich</td><td class="c">нет</td></tr>
     </table></div>
-    <div class="tip"><b>Свой собственный: <span class="pl">swój</span>.</b> Если обладатель - подлежащее, поляк ставит <span class="pl">swój</span>: <span class="pl">Biorę swój bilet</span>. Правило то же, что с русским «свой», но в польском оно соблюдается строже, чем в русской разговорной речи.</div>
+    <div class="tip"><b>Свой собственный: <span class="pl">swój</span>.</b> Если обладатель - подлежащее, в образцовой и нейтральной модели выбирай <span class="pl">swój</span>: <span class="pl">Biorę swój bilet</span>. В разговорной речи встречаются <span class="pl">mój, twój, nasz, wasz</span> без специального контраста. В третьем лице различие особенно важно: <span class="pl">Jan wziął swoją książkę</span> - свою, <span class="pl">Jan wziął jego książkę</span> - книгу другого мужчины.</div>
 
     <h3>sam: сам, один, тот же</h3>
     <div class="scroll"><table>
@@ -1552,7 +1552,7 @@ function renderPron(){
     <h3>wszyscy / wszystko</h3>
     <p class="lead">Мужско-личное <span class="pl">wszyscy</span> и не-мужско-личное <span class="pl">wszystkie</span> расходятся только в именительном и винительном - в остальных падежах форма общая.</p>
     <div class="scroll"><table>
-      <tr><th>падеж</th><th>все - мужчины</th><th>все - остальное</th><th>всё - ср. ед.</th></tr>
+      <tr><th>падеж</th><th>все - мужско-личная группа</th><th>все - остальное</th><th>всё - ср. ед.</th></tr>
       ${WSZ.map(r => `<tr><td>${r[0]}</td><td class="g">${r[1]}</td><td class="g">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>wszyscy или wszystkie.</b> О людях, где есть хоть один мужчина, - <span class="pl">wszyscy</span>: <span class="pl">Wszyscy przyszli</span>. О вещах, животных, женщинах и детях - <span class="pl">wszystkie</span>: <span class="pl">Wszystkie bilety są sprzedane</span>. Тот же тест <span class="pl">ci / te</span>, что и у существительных.</div>
@@ -1563,7 +1563,7 @@ function renderPron(){
       ${WSZ_PHR.map(r => `<tr><td class="w">${r[0]}</td><td>${r[1]}</td><td class="note">${r[2]}</td></tr>`).join("")}
     </table></div>
 
-    <h3>każdy, inny, żaden, oba</h3>
+    <h3>każdy, inny, żaden, oba / oboje</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>как ведёт себя</th></tr>
       ${OKRESL.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td style="white-space:normal;font-size:var(--fs-note)">${r[2]}</td></tr>`).join("")}

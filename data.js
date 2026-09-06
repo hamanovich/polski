@@ -2072,7 +2072,7 @@ const ADV_PRACTICE = {
 };
 
 const PRON_PRACTICE = {
-  id:"pronouns", title:"Практика: местоимения", lead:"20 заданий на личные, возвратные, указательные и притяжательные местоимения.",
+  id:"pronouns", title:"Практика: местоимения", lead:"30 заданий на личные, возвратные, указательные, притяжательные и обобщающие местоимения.",
   tasks:[
     {id:"pron-1",prompt:"В нейтральной фразе: Znam Adama. Często ___ widzę.",options:["go","nim","jemu"],answers:["go"],explanation:"Нейтральная безударная форма винительного от on - go; полное jego возможно при контрастном ударении."},
     {id:"pron-2",prompt:"Idę do Adama. Idę do ___.",options:["go","niego","jemu"],answers:["niego"],explanation:"После предлога появляется n-: do niego."},
@@ -2081,19 +2081,29 @@ const PRON_PRACTICE = {
     {id:"pron-5",prompt:"Нейтрально, без противопоставления: Myję ___.",options:["się","sobie","sobą"],answers:["się"],explanation:"Нейтральная краткая форма: myję się. Полное siebie возможно при противопоставлении: Myję siebie, nie dziecko."},
     {id:"pron-6",prompt:"Nie myśl tylko o ___.",options:["się","siebie","sobą"],answers:["sobie"],explanation:"O + предложный: o sobie."},
     {id:"pron-7",prompt:"To jest ___ książka. (ja)",options:["mój","moja","moje"],answers:["moja"],explanation:"Książka - женского рода: moja książka."},
-    {id:"pron-8",prompt:"Нейтрально, без противопоставления: Biorę ___ bilet. (обладатель - я)",options:["mój","swój","jego"],answers:["swój"],explanation:"Когда обладатель совпадает с подлежащим, нейтрально используем swój: biorę swój bilet. Mój возможен при контрасте."},
+    {id:"pron-8",prompt:"Нейтрально, без противопоставления: Biorę ___ bilet. (обладатель - я)",options:["mój","swój","jego"],answers:["swój"],explanation:"В образцовой и нейтральной модели при совпадении обладателя с подлежащим используем swój. Разговорное mój тоже возможно, но здесь тренируется нейтральная модель."},
     {id:"pron-9",prompt:"___ ludzie czekają na autobus.",options:["Ci","Te","Tych"],answers:["Ci"],explanation:"Мужско-личный именительный множественного: ci ludzie."},
     {id:"pron-10",prompt:"Widzę ___ kobietę.",options:["ta","tę","tą"],answers:["tę"],explanation:"Литературная норма винительного женского рода: tę kobietę."},
     {id:"pron-11",prompt:"Nie znam ___ adresu.",options:["ten","tego","tym"],answers:["tego"],explanation:"После отрицания прямое дополнение в родительном: tego adresu."},
     {id:"pron-12",prompt:"Dzwonię do ___ codziennie. (ty)",options:["cię","ciebie","tobą"],answers:["ciebie"],explanation:"Do + родительный: do ciebie."},
-    {id:"pron-13",prompt:"Czy mogę z ___ porozmawiać? (pan)",options:["pan","pana","panem"],answers:["panem"],explanation:"Z + творительный: z panem."},
+    {id:"pron-13",prompt:"Interesuję się Adamem. Interesuję się ___.",options:["nim","niego","go"],answers:["nim"],explanation:"Творительный местоимения on: nim, также без предлога."},
     {id:"pron-14",prompt:"Maria zrobiła to ___.",options:["sam","sama","sobie"],answers:["sama"],explanation:"Maria - женский род: sama, без чужой помощи."},
-    {id:"pron-15",prompt:"To nie mój długopis, tylko ___. (ty)",options:["twój","twoje","tobie"],answers:["twój"],explanation:"Długopis - мужской род: twój długopis."},
+    {id:"pron-15",prompt:"Idę z Anną. Idę z ___.",options:["nią","niej","ją"],answers:["nią"],explanation:"После z нужен творительный: z nią."},
     {id:"pron-16",prompt:"___ przyszli na spotkanie.",options:["Wszyscy","Wszystkie","Wszystko"],answers:["Wszyscy"],explanation:"Группа мужчин или смешанная группа: wszyscy."},
-    {id:"pron-17",prompt:"Nie mam ___ do powiedzenia.",options:["nic","nikt","nigdzie"],answers:["nic"],explanation:"Nic - «ничего», прямое дополнение при отрицании."},
-    {id:"pron-18",prompt:"Czy widziałeś ___ wczoraj? (my)",options:["nas","nam","nami"],answers:["nas"],explanation:"Widzieć kogo? nas - винительный."},
+    {id:"pron-17",prompt:"Patrzę na okno. Patrzę na ___.",options:["nie","je","nim"],answers:["nie"],explanation:"После предлога na форма je получает n-: patrzę na nie."},
+    {id:"pron-18",prompt:"Daję Piotrowi książkę. Daję ___ książkę. (нейтрально)",options:["mu","jemu","niego"],answers:["mu"],explanation:"Нейтральная безударная форма дательного от on - mu."},
     {id:"pron-19",prompt:"To jest dom ___ rodziców.",options:["ich","ichni","nimi"],answers:["ich"],explanation:"Ich - неизменяемое притяжательное местоимение: их родителей."},
-    {id:"pron-20",prompt:"Ktoś dzwoni. Czy znasz ___?",options:["go","mu","nim"],answers:["go"],explanation:"Znać kogo? go - винительный без предлога."}
+    {id:"pron-20",prompt:"Какую функцию выполняет się во фразе Drzwi się otworzyły?",options:["изменение состояния","взаимность","безличность"],answers:["изменение состояния"],explanation:"Двери изменили состояние без названного внешнего деятеля."},
+    {id:"pron-21",prompt:"Tylko Piotrowi ufam. Tylko ___ ufam.",options:["jemu","mu","niego"],answers:["jemu"],explanation:"После tylko местоимение логически выделено, поэтому нужна полная форма jemu."},
+    {id:"pron-22",prompt:"Rozmawiam z rodzicami. Rozmawiam z ___.",options:["nimi","ich","nie"],answers:["nimi"],explanation:"После z нужен творительный множественного: z nimi."},
+    {id:"pron-23",prompt:"Ten kubek jest przy mnie, a ___ stoi na drugim końcu sali.",options:["tamten","ten","taki"],answers:["tamten"],explanation:"Tamten явно отодвигает второй предмет в пространстве."},
+    {id:"pron-24",prompt:"Od roku mieszkamy w ___ domu.",options:["tym samym","takim samym","tamtym"],answers:["tym samym"],explanation:"Ten sam означает тот же конкретный объект: w tym samym domu."},
+    {id:"pron-25",prompt:"Pod żadnym pozorem ___ otwieraj drzwi.",options:["nie","bez","nic"],answers:["nie"],explanation:"Żaden сохраняет отрицание при сказуемом: pod żadnym pozorem nie otwieraj."},
+    {id:"pron-26",prompt:"___ rodzice przyszli na zebranie.",options:["Oboje","Oba","Obaj"],answers:["Oboje"],explanation:"О родителях как смешанной паре: oboje rodzice."},
+    {id:"pron-27",prompt:"Rozmawiam z ___ rodziców.",options:["obojgiem","obiema","obu"],answers:["obojgiem"],explanation:"Творительный собирательного oboje: z obojgiem rodziców."},
+    {id:"pron-28",prompt:"___ dzieci wróciły już do domu.",options:["Wszystkie","Wszyscy","Wszystko"],answers:["Wszystkie"],explanation:"Dzieci относятся к немужско-личной группе: wszystkie dzieci."},
+    {id:"pron-29",prompt:"___ uczeń dostał własną kartę pracy.",options:["Każdy","Wszyscy","Wszystkie"],answers:["Każdy"],explanation:"Распределительное значение «каждый отдельно»: każdy uczeń."},
+    {id:"pron-30",prompt:"Nie zostawiaj dziecka ___.",options:["samego","sam","sobą"],answers:["samego"],explanation:"При отрицании дополнение стоит в родительном: dziecka samego."}
   ]
 };
 
@@ -2550,7 +2560,7 @@ const SIEBIE_PHR = [
  ["między sobą","между собой","Rozmawiają między sobą."],
  ["sam ze sobą","сам с собой","Mówi sam ze sobą."],
  ["być sobą","быть собой","Po prostu bądź sobą."],
- ["nawzajem","взаимно, и вам того же","- Wesołych świąt! - Nawzajem!"]
+ ["siebie nawzajem / sobie nawzajem","друг друга","Szanują siebie nawzajem. · Pomagają sobie nawzajem."]
 ];
 const SOBIE_V = [
  ["radzić sobie","справляться","Jak sobie radzisz? · Dam sobie radę."],
@@ -2574,8 +2584,9 @@ const SAM = [
 const SIE_FUNC = [
  ["возвратность","myję się · ubieram się · czeszę się","действие на самого себя; можно подставить siebie: myję siebie"],
  ["взаимность","spotykamy się · znamy się · kochają się","друг друга; можно добавить nawzajem: znamy się nawzajem"],
- ["часть глагола","boję się · śmieję się · starać się · podoba mi się","без się глагола просто не существует: формы bać, śmiać, starać нет"],
- ["безличность","mówi się · tu się nie pali · jak to się robi","подлежащего нет вообще - вкладка «Безличные»"]
+ ["часть словарной модели глагола","boję się · śmieję się · starać się · podoba mi się","się входит в запоминаемую конструкцию и не обозначает отдельное дополнение «себя»"],
+ ["безличность","mówi się · tu się nie pali · jak to się robi","подлежащего нет вообще - вкладка «Безличные»"],
+ ["изменение состояния / средняя конструкция","drzwi się otworzyły · książka dobrze się czyta","предмет меняет состояние или конструкция описывает, как протекает действие"]
 ];
 const TAMTEN = [
  ["муж.","ten","tamten","taki"],
@@ -2603,10 +2614,11 @@ const WSZ_PHR = [
  ["To wszystko.","Это всё.","в магазине - «больше ничего»"]
 ];
 const OKRESL = [
- ["każdy / każda / każde","каждый","склоняется как прилагательное, множественного числа нет - вместо него wszyscy: Każdy z nas. · Każdego dnia."],
+ ["każdy / każda / każde","каждый","обычно употребляется в единственном числе: Każdy z nas. · Każdego dnia. Ограниченные формы множественного встречаются, например, в każde drzwi. Для всей группы: wszyscy / wszystkie."],
  ["inny / inna / inne","другой","Daj mi inny. · innym razem - в другой раз"],
- ["żaden / żadna / żadne","никакой","обычно требует nie при глаголе: Żaden z nich nie przyszedł. Но после bez, pod, przed обходится без него: bez żadnego problemu, pod żadnym pozorem."],
- ["obaj · oba · obie · oboje","оба, обе","obaj / obydwaj panowie (мужчины) · oba domy (вещи) · obie książki (женский) · oboje rodzice (он и она). Косвенные падежи общие: obu / obydwu, obiema."]
+ ["żaden / żadna / żadne","никакой","с отрицательным сказуемым сохраняется nie: Żaden nie przyszedł. · Nie mam żadnego problemu. · Pod żadnym pozorem nie otwieraj. В bez żadnego problemu отрицание уже выражено через bez."],
+ ["obaj · oba · obie","оба, обе","obaj / obydwaj panowie · oba domy · obie książki. Косвенные: obu; Narzędnik oboma, для женского также obiema."],
+ ["oboje","оба, обе в смешанной паре и с особыми существительными","oboje rodzice · oboje dzieci · oboje drzwi. Косвенные: obojga, obojgu, obojgiem."]
 ];
 
 const PHON = [

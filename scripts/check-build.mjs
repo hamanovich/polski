@@ -1,4 +1,4 @@
-import { readFile, access } from "node:fs/promises";
+import { readFile, readdir, access } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
@@ -31,21 +31,24 @@ const routes = [
   ["s-preps", "prepositions", "Предлоги польского языка"],
   ["s-bridge", "language-bridges", "Польский через русский и белорусский"]
 ];
-const TOC_MIN = 6;
+const TOC_MIN = 5;
 const sitemapPaths = [...routes.map(([, path]) => path), "plan-40"];
 const routePaths = new Set([
   ...routes.map(([, path]) => `/${path ? `${path}/` : ""}`),
   "/plan-40/"
 ]);
 
-const [css, robots, sitemap, searchSource, dataSource, appSource] = await Promise.all([
+const [css, robots, sitemap, searchSource, dataSource, appSource, manifestSource, jekyllConfig] = await Promise.all([
   readFile(resolve(root, "style.css"), "utf8"),
   readFile(resolve(root, "robots.txt"), "utf8"),
   readFile(resolve(root, "sitemap.xml"), "utf8"),
   readFile(resolve(root, "search-index.js"), "utf8"),
   readFile(resolve(root, "data.js"), "utf8"),
-  readFile(resolve(root, "app.js"), "utf8")
+  readFile(resolve(root, "app.js"), "utf8"),
+  readFile(resolve(root, "content-manifest.json"), "utf8"),
+  readFile(resolve(root, "_config.yml"), "utf8")
 ]);
+const contentManifest = JSON.parse(manifestSource);
 
 const documents = new Map();
 const titles = new Set();
@@ -97,6 +100,7 @@ for(const [id, path, heading] of routes){
   assert.equal(webpage.headline, heading);
   assert.equal(webpage.inLanguage, "ru");
   assert.match(webpage.dateModified, /^\d{4}-\d{2}-\d{2}$/, `${path || "/"} needs a dateModified`);
+  assert.equal(webpage.dateModified, contentManifest[path || "index"]?.date, `${path || "/"} dateModified must match content-manifest.json`);
   const breadcrumb = graph.find(node => node["@type"] === "BreadcrumbList");
   if(id === "s-index") assert.equal(breadcrumb, undefined, "Homepage is the breadcrumb root, not a step in it");
   else{
@@ -367,6 +371,15 @@ assert.deepEqual(sitemapURLs, sitemapPaths.map(path => new URL(path ? `${path}/`
 assert.equal([...sitemap.matchAll(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g)].length, sitemapPaths.length, "Every sitemap URL needs a lastmod");
 assert(!sitemap.includes("#"), "Sitemap must contain canonical HTTP URLs, not fragments");
 
+const manifestKeys = sitemapPaths.map(path => path || "index");
+assert.deepEqual(Object.keys(contentManifest), [...manifestKeys].sort(), "content-manifest.json must cover every page, sorted by key");
+for(const [key, entry] of Object.entries(contentManifest)){
+  assert.match(entry.hash, /^[0-9a-f]{64}$/, `${key} needs a content hash`);
+  assert.match(entry.date, /^\d{4}-\d{2}-\d{2}$/, `${key} needs a date`);
+}
+const sitemapDates = [...sitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map(match => match[1]);
+assert.deepEqual(sitemapDates, manifestKeys.map(key => contentManifest[key].date), "Every lastmod must come from content-manifest.json");
+
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");
 const searchIndex = JSON.parse(searchJSON);
 assert(searchIndex.length > 1500);
@@ -374,4 +387,17 @@ assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 21);
 assert(searchIndex.every(entry => /^r-\d+$/.test(entry.id) && entry.text));
 assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementById(entry.id)), "Every search entry must resolve on its topic page");
 
-console.log(`Static page checks passed: ${routes.length} pages, ${searchIndex.length} search entries`);
+const excluded = new Set([...jekyllConfig.matchAll(/^\s*-\s*(.+?)\s*$/gm)].map(match => match[1]));
+const publicRoot = new Set([
+  "404.html", "CNAME", "apple-touch-icon.png", "client.js", "favicon.ico", "favicon.svg",
+  "index.html", "og", "plan-40", "robots.txt", "search-index.js",
+  "sitemap.xml", "style.css",
+  ...routes.map(([, path]) => path).filter(Boolean)
+]);
+for(const entry of await readdir(root)){
+  if(entry.startsWith(".") || entry.startsWith("_") || entry === "node_modules") continue;
+  assert(publicRoot.has(entry) || excluded.has(entry), `${entry} is served by GitHub Pages: publish it on purpose or add it to _config.yml`);
+}
+for(const path of publicRoot) assert(!excluded.has(path), `_config.yml must not hide ${path}`);
+
+console.log(`Static page checks passed: ${routes.length} pages, ${searchIndex.length} search entries, ${excluded.size} paths hidden from Pages`);

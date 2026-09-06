@@ -1,0 +1,94 @@
+{
+  "adjectives": {
+    "hash": "d13f93402101ad5d552a025635733d7836dcec5d1717d40ca0f1c1fb1706c725",
+    "date": "2026-09-06"
+  },
+  "adverbs": {
+    "hash": "a2cef5b1dcab55587496e70a76bdf83b9fd69ab1a4e33b00ecad6beecde6d3fd",
+    "date": "2026-09-06"
+  },
+  "alphabet": {
+    "hash": "747d58bcdac6e9a086de741f7d7ce2c721ae56ba16042c478efbe81f59a86519",
+    "date": "2026-09-06"
+  },
+  "alternations": {
+    "hash": "59dd1f98abf6f6af66866709f7d6b41649707cfa6d1138853d7275be3e7f88a8",
+    "date": "2026-09-06"
+  },
+  "cases": {
+    "hash": "48e7cef9c9f800a5036e857cc94847d4e9243d89960be88bc302a069bf55acd4",
+    "date": "2026-09-06"
+  },
+  "conjunctions": {
+    "hash": "57b3eeed736271a260115c7cb9b52df57de35aa58f3916e2ebb0543ed682629b",
+    "date": "2026-09-06"
+  },
+  "diminutives": {
+    "hash": "ceb16f56f87b269fd80de6e8aaad01caf7e04871c2153b6a921522a31bf3cb70",
+    "date": "2026-09-06"
+  },
+  "gender": {
+    "hash": "71295ab59e93cb36d5b059f14dc26cd2e6f522591137d73a5a19fec844c3bb9e",
+    "date": "2026-09-06"
+  },
+  "impersonal": {
+    "hash": "a56d18b2075be6219baa0b1efc62cb00fd4a9bcafb82c025c43516974efb593b",
+    "date": "2026-09-06"
+  },
+  "index": {
+    "hash": "5b318d5615fd27b787e2c40f908fa1296cb99c604be67d4c383b28ef2f1f1a54",
+    "date": "2026-09-06"
+  },
+  "language-bridges": {
+    "hash": "008870c6946899d578839cef8618b09343ef037cd5d11482c372766016c03023",
+    "date": "2026-09-06"
+  },
+  "negation": {
+    "hash": "7b62c475ed6623a3ce58c2e493066cd18cde834bf47a30948fbe0a57275bbc84",
+    "date": "2026-09-06"
+  },
+  "numerals": {
+    "hash": "6c903a56a4df4bf4efe38982f2ca066a3c196dba8c3918a4a2e1465d94b77618",
+    "date": "2026-09-06"
+  },
+  "particles": {
+    "hash": "c37e7eeba93cd17a20f897698ea4c6fe9b4c7dd67dbd899b16a285ab2a33f6fd",
+    "date": "2026-09-06"
+  },
+  "people": {
+    "hash": "7d265cc2435cc598f463cd192acc3c6bcd082d7adcf4d3150fb122848c2a6d4a",
+    "date": "2026-09-06"
+  },
+  "plan-40": {
+    "hash": "d595d98d79554688e92677db2b7179db6a72eee1861f734d09124fb49ba2ef10",
+    "date": "2026-09-04"
+  },
+  "prepositions": {
+    "hash": "ce7c12b649cfbe415279142ee3f4a2eb91511fc415085a0364df8d14ce106f7e",
+    "date": "2026-09-06"
+  },
+  "pronouns": {
+    "hash": "cb9bd2aebddf5757ac1221887b51acc0ffc0eb6ea0ef4e91d6128cf8b575b0ab",
+    "date": "2026-09-06"
+  },
+  "questions": {
+    "hash": "977b232c335bdaf0462ecf4bd612bb0ae90d3631223f7eed5d0dd92c38efd4aa",
+    "date": "2026-09-06"
+  },
+  "speaking": {
+    "hash": "3b3d45565bcf8c8247e1fada0f2e1d8a345dd698e6dedc275db0a46893f7b4a6",
+    "date": "2026-09-06"
+  },
+  "verbs": {
+    "hash": "f51dff69920bffb42841f0d7aea9ade51e51da7cd1e577f4a2191aab38395dd2",
+    "date": "2026-09-06"
+  },
+  "vocabulary": {
+    "hash": "1388135e2408a898b6293b72fb9777269f37e1afcd73c23ac8f8b45b76d991e2",
+    "date": "2026-09-06"
+  },
+  "word-order": {
+    "hash": "0faf8ed3ade9b507a32d5f91358545d98a5120fd224fba8bd87b829d9da4684d",
+    "date": "2026-09-06"
+  }
+}

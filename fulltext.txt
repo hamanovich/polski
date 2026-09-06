@@ -648,28 +648,28 @@ szybkoszybciejnajszybciej-ko → -ciejładnieładniejnajładniejciepłocieplejna
 Личные
 ктокого / чегокомукого / чтокем(о) ком
 jamniemi / mniemniemnąmnietyciebie / cięci / tobieciebie / ciętobątobieonjego / go / niegomu / jemu / niemujego / go / niegonimnimonojego / go / niegomu / jemu / niemuje / nienimnimonajej / niejjej / niejją / niąniąniejmynasnamnasnaminaswywaswamwaswamiwasoniich / nichim / nimich / nichniminichoneich / nichim / nimje / nieniminich
-Формы niego, niej, nich ставятся после предлога. Widzę go, но idę do niego. Mówię jej, но mówię o niej. В творительном формы nim, nią, nimi имеют n и без предлога: Interesuję się nim.
+После предлога выбираем форму с начальным n-. Сравни: widzę go / patrzę na niego, daję jej / mówię o niej, widzę je / patrzę na nie. К постпредложным относятся также niemu, nim, nią, nich, nimi. В творительном nim, nią, nimi имеют n- и без предлога: Interesuję się nim.
 Короткие формы go, mu, cię, ci, mi безударные. Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: Mnie to nie interesuje.
 Личное местоимение обычно опускается. Окончание глагола уже содержит лицо: idę, а не ja idę. Постоянное ja звучит либо как нажим, либо как речь иностранца.
-Вежливое обращение - третье лицо. Czy pan ma paragon? Форма на ty с незнакомым воспринимается как хамство, в отличие от русского, где «вы» - просто множественное.
+В нейтрально-вежливом обращении нужны pan / pani и третье лицо. Czy pan ma paragon? Русскому и белорусскому вежливому «вы» соответствует не польское wy, а pan / pani. На ty переходят по взаимной договорённости или по принятой в конкретной среде норме.
 Возвратное: siebie
 Одна форма на все лица и оба числа - как русское «себя». Именительного падежа нет.
 падежформапример
 Mianownik-формы нет: возвратное не бывает подлежащимDopełniaczsiebie / sięNie lubię siebie na zdjęciach. · Boję się.CelowniksobieKup sobie kawę.Bierniksiebie / sięWidzę siebie w lustrze. · Myję się.NarzędniksobąWeź parasol ze sobą.Miejscownik(o) sobieOpowiedz o sobie.
 się - безударная форма возвратного местоимения. Она встречается в Dopełniacz и Biernik: boję się, myję się; кроме того, się выполняет нефлексионные функции при глаголах. Полное siebie нужно под ударением и после предлога: bez siebie, do siebie, ze sobą. Сказать bez się нельзя.
-Четыре разных się
-Форма одна, работы четыре. Понимать, какая именно, нужно затем, что от этого зависит, можно ли заменить się на siebie и переводится ли оно вообще.
+Основные функции się
+Одна форма выполняет несколько разных задач. Таблица показывает основные модели этого уровня, но не является исчерпывающей классификацией.
 функцияпримерыпризнак
-возвратностьmyję się · ubieram się · czeszę sięдействие на самого себя; можно подставить siebie: myję siebieвзаимностьspotykamy się · znamy się · kochają sięдруг друга; можно добавить nawzajem: znamy się nawzajemчасть глаголаboję się · śmieję się · starać się · podoba mi sięбез się глагола просто не существует: формы bać, śmiać, starać нетбезличностьmówi się · tu się nie pali · jak to się robiподлежащего нет вообще - вкладка «Безличные»
-Проверка работает в одну сторону. Поставь вместо się полное siebie. Встало - это точно возвратность: Myję się → Myję siebie, nie dziecko. Не встало - значит один из трёх остальных случаев, и какой именно, тест не скажет: znamy się (взаимность), boję się (приросло к глаголу), mówi się (безличность). Их различают по смыслу, а не по подстановке.
-Устойчивое с siebie и sobie
+возвратностьmyję się · ubieram się · czeszę sięдействие на самого себя; можно подставить siebie: myję siebieвзаимностьspotykamy się · znamy się · kochają sięдруг друга; можно добавить nawzajem: znamy się nawzajemчасть словарной модели глаголаboję się · śmieję się · starać się · podoba mi sięsię входит в запоминаемую конструкцию и не обозначает отдельное дополнение «себя»безличностьmówi się · tu się nie pali · jak to się robiподлежащего нет вообще - вкладка «Безличные»изменение состояния / средняя конструкцияdrzwi się otworzyły · książka dobrze się czytaпредмет меняет состояние или конструкция описывает, как протекает действие
+Подстановка siebie только помогает, но не решает задачу механически. Если полная форма сохраняет значение действия на самого деятеля, перед нами возвратность: Myję się → Myję siebie, nie dziecko. При множественном подлежащем отдельно проверь взаимность: Znamy się обычно значит «знаем друг друга», а Znamy siebie - «знаем самих себя». Безличное mówi się и словарное boję się определяются по конструкции и смыслу.
+Возвратные и взаимные обороты
 оборотзначениепример
-u siebieу себя, домаJestem u siebie.do siebieк себеWracam do siebie.po sobieза собойPosprzątaj po sobie.przy sobieпри себеNie mam przy sobie dokumentów.ze sobąс собойWeź to ze sobą.dla siebieдля себяKupiłem to dla siebie.między sobąмежду собойRozmawiają między sobą.sam ze sobąсам с собойMówi sam ze sobą.być sobąбыть собойPo prostu bądź sobą.nawzajemвзаимно, и вам того же- Wesołych świąt! - Nawzajem!
+u siebieу себя, домаJestem u siebie.do siebieк себеWracam do siebie.po sobieза собойPosprzątaj po sobie.przy sobieпри себеNie mam przy sobie dokumentów.ze sobąс собойWeź to ze sobą.dla siebieдля себяKupiłem to dla siebie.między sobąмежду собойRozmawiają między sobą.sam ze sobąсам с собойMówi sam ze sobą.być sobąбыть собойPo prostu bądź sobą.siebie nawzajem / sobie nawzajemдруг другаSzanują siebie nawzajem. · Pomagają sobie nawzajem.
 Частые конструкции с sobie
 Две разные вещи под одной формой. radzić sobie, zdawać sobie sprawę, wyobrazić sobie - готовые конструкции, где sobie неотделимо и не переводится. robić sobie kawę, kupić sobie, iść sobie - обычный дательный «себе» плюс оттенок непринуждённости; эти глаголы прекрасно живут и без него.
 глаголзначениепример
 radzić sobieсправлятьсяJak sobie radzisz? · Dam sobie radę.wyobrazić sobieпредставитьWyobraź sobie!przypomnieć sobieвспомнитьNie mogę sobie przypomnieć.zdawać sobie sprawęотдавать себе отчётZdaję sobie sprawę, że to trudne.życzyć sobieжелатьCzego pan sobie życzy?pozwolić sobieпозволить себеNie mogę sobie na to pozwolić.robić sobieделать себеRobię sobie kawę.iść sobieуйтиIdź sobie!
-Czego pan sobie życzy? - стандартный вопрос продавца и официанта. Здесь без sobie фраза не складывается. А в Idź sobie! оно как раз отделимо - и добавляет пренебрежения к простому Idź!
+Czego pan sobie życzy? - стандартный вопрос продавца и официанта. В вопросе о желании клиента используется конструкция życzyć sobie. Без sobie глагол имеет другую модель: Życzę panu powodzenia. В Idź sobie! местоимение отделимо и добавляет пренебрежения к простому Idź!
 ten / ta / to
 падежмуж.жен.ср.мн. мужско-личноемн. остальное
 Mianowniktentatocite
@@ -678,12 +678,12 @@ Celowniktemutejtemutymtym
 Biernikten / tegotętotychte
 Narzędniktymtątymtymitymi
 Miejscowniktymtejtymtychtych
-tę или tą. Литературная норма винительного - tę kawę. В живой речи повсеместно звучит tą, потому что совпадает с творительным. На письме держись tę.
+tę или tą. Нейтральная и письменная норма винительного - tę kawę. В разговорной речи часто встречается tą, совпадающее с формой творительного.
 ten · tamten · taki
 tamten склоняется точно как ten (tamtego, tamtemu, tamtym, tamtą), taki - как прилагательное dobry (takiego, takiemu, takim, taką). Отдельных парадигм учить не надо.
 этоттоттакой
 муж.tentamtentakiжен.tatamtatakaср.totamtotakieмн. мужчиныcitamcitacyмн. остальноеtetamtetakie
-ten покрывает и «этот», и «тот». Русское «тот фильм, о котором я говорил» по-польски - ten film, o którym mówiłem. tamten нужен только при явном противопоставлении здесь и там: Nie ten, tamten. · Ten jest tańszy niż tamten. Ставить tamten везде, где по-русски «тот», - типичная калька.
+ten покрывает и «этот», и анафорическое «тот». Русское «тот фильм, о котором я говорил» по-польски - ten film, o którym mówiłem. Tamten выбирают, когда объект явно отодвинут в пространстве или времени либо противопоставлен другому: tamten dom, tamtego dnia, nie ten, tamten. Ставить tamten везде, где по-русски «тот», - типичная калька.
 Притяжательные
 лицоформасклоняется
 jamój / moja / mojeда, как прилагательное
@@ -693,22 +693,22 @@ onajejнет
 mynasz / nasza / naszeда
 wywasz / wasza / waszeда
 oni / oneichнет
-Свой собственный: swój. Если обладатель - подлежащее, поляк ставит swój: Biorę swój bilet. Правило то же, что с русским «свой», но в польском оно соблюдается строже, чем в русской разговорной речи.
+Свой собственный: swój. Если обладатель - подлежащее, в образцовой и нейтральной модели выбирай swój: Biorę swój bilet. В разговорной речи встречаются mój, twój, nasz, wasz без специального контраста. В третьем лице различие особенно важно: Jan wziął swoją książkę - свою, Jan wziął jego książkę - книгу другого мужчины.
 sam: сам, один, тот же
 падежмуж.жен.ср.мн. мужско-личноемн. остальное
 MianowniksamsamasamosamisameDopełniaczsamegosamejsamegosamychsamychCelowniksamemusamejsamemusamymsamymBierniksam / samegosamąsamosamychsameNarzędniksamymsamąsamymsamymisamymiMiejscowniksamymsamejsamymsamychsamych
 Три значения. Zrobiłem to sam - сам, без чужой помощи. Mieszkam sam - один. ten sam dom - тот же самый. И не путать: ten sam - «тот же самый», taki sam - «такой же».
 wszyscy / wszystko
 Мужско-личное wszyscy и не-мужско-личное wszystkie расходятся только в именительном и винительном - в остальных падежах форма общая.
-падежвсе - мужчинывсе - остальноевсё - ср. ед.
+падежвсе - мужско-личная группавсе - остальноевсё - ср. ед.
 MianownikwszyscywszystkiewszystkoDopełniaczwszystkichwszystkichwszystkiegoCelownikwszystkimwszystkimwszystkiemuBiernikwszystkichwszystkiewszystkoNarzędnikwszystkimiwszystkimiwszystkimMiejscownikwszystkichwszystkichwszystkim
 wszyscy или wszystkie. О людях, где есть хоть один мужчина, - wszyscy: Wszyscy przyszli. О вещах, животных, женщинах и детях - wszystkie: Wszystkie bilety są sprzedane. Тот же тест ci / te, что и у существительных.
 Готовые обороты со wszystko
 оборотпереводчто за форма
 Wszystkiego najlepszego!Всего наилучшего!Dopełniacz - стандартное поздравлениеPrzede wszystkimпрежде всегоprzed + Narzędnik, с беглым ePo wszystkim.Всё кончено.MiejscownikZe wszystkich stronсо всех сторонDopełniacz мн. ч.Dziękuję wszystkim.Спасибо всем.CelownikWszyscy przyszli.Все пришли.мужско-личное - о людяхWszystkie bilety sprzedane.Все билеты проданы.не-мужско-личное - о вещахTo wszystko.Это всё.в магазине - «больше ничего»
-każdy, inny, żaden, oba
+każdy, inny, żaden, oba / oboje
 словозначениекак ведёт себя
-każdy / każda / każdeкаждыйсклоняется как прилагательное, множественного числа нет - вместо него wszyscy: Każdy z nas. · Każdego dnia.inny / inna / inneдругойDaj mi inny. · innym razem - в другой разżaden / żadna / żadneникакойобычно требует nie при глаголе: Żaden z nich nie przyszedł. Но после bez, pod, przed обходится без него: bez żadnego problemu, pod żadnym pozorem.obaj · oba · obie · obojeоба, обеobaj / obydwaj panowie (мужчины) · oba domy (вещи) · obie książki (женский) · oboje rodzice (он и она). Косвенные падежи общие: obu / obydwu, obiema.
+każdy / każda / każdeкаждыйобычно употребляется в единственном числе: Każdy z nas. · Każdego dnia. Ограниченные формы множественного встречаются, например, в każde drzwi. Для всей группы: wszyscy / wszystkie.inny / inna / inneдругойDaj mi inny. · innym razem - в другой разżaden / żadna / żadneникакойс отрицательным сказуемым сохраняется nie: Żaden nie przyszedł. · Nie mam żadnego problemu. · Pod żadnym pozorem nie otwieraj. В bez żadnego problemu отрицание уже выражено через bez.obaj · oba · obieоба, обеobaj / obydwaj panowie · oba domy · obie książki. Косвенные: obu; Narzędnik oboma, для женского также obiema.obojeоба, обе в смешанной паре и с особыми существительнымиoboje rodzice · oboje dzieci · oboje drzwi. Косвенные: obojga, obojgu, obojgiem.
 Вопросы
 Общий вопрос строится с czy или одной вопросительной интонацией, частный - с вопросительным словом. Русский и белорусский дают хорошую опору для gdzie / dokąd / skąd; особого внимания требует польское противопоставление jaki / który.
 Общий вопрос: czy
