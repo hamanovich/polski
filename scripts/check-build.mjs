@@ -74,7 +74,10 @@ for(const [id, path, heading] of routes){
   assert(!headings.has(heading), `Duplicate h1: ${heading}`);
   headings.add(heading);
   assert(document.querySelector(".site-title[href]"));
-  assert.equal(document.querySelector('footer a[href="mailto:mail@hamanovich.com"]')?.textContent.trim(), "mail@hamanovich.com");
+  assert.equal(document.querySelector('footer a[href="mailto:polski@hamanovich.com"]')?.textContent.trim(), "polski@hamanovich.com");
+  assert.equal(document.querySelector('footer a[href="https://polski.hamanovich.com/"]')?.textContent.trim(), "polski.hamanovich.com");
+  assert(document.querySelector("footer")?.textContent.includes("© 2026"));
+  assert(!document.querySelector("footer")?.textContent.includes("Ударение - всегда предпоследний слог"));
 
   const canonical = new URL(path ? `${path}/` : "", baseURL).href;
   assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute("href"), canonical);
@@ -429,6 +432,102 @@ for(const [name, fingerprint] of Object.entries(expectedCards)){
   assert.equal(ogManifest[name], fingerprint, `og/${name}.png is stale: rerun npm run og`);
 }
 
+const trainerPages = [
+  ["s-verbs", "verbs", "Тренажёр глагольных форм", ["tense", "gender"]],
+  ["s-cases", "cases", "Тренажёр падежных форм", ["case", "number"]],
+  ["s-adj", "adjectives", "Тренажёр форм прилагательных", ["kind", "gender"]]
+];
+for(const [id, path, heading, filters] of trainerPages){
+  const page = documents.get(id).document;
+  const block = page.querySelector(".sec .trainer");
+  assert(block, `${path} must host its trainer`);
+  assert.equal(page.querySelectorAll(".sec .trainer").length, 1);
+  assert.equal(block.querySelector(".practice-heading h2")?.textContent.trim(), heading);
+  assert(block.classList.contains("practice"), "The trainer is a practice block, so it stays out of search and fulltext");
+  assert.deepEqual([...block.querySelectorAll("[data-trainer-filter]")].map(bar => bar.dataset.trainerFilter), filters);
+  assert.equal(block.querySelectorAll("[data-trainer-chip]").length, 3);
+  assert(block.querySelector("[data-trainer-stage]")?.hasAttribute("hidden"));
+  assert(block.querySelector("noscript"), `${path}: the trainer must say what to read when scripts do not run`);
+  assert.match(page.querySelector("script[src]").dataset.trainerSrc, /trainer-data\.js\?v=[a-f0-9]{10}$/);
+}
+assert.equal(documents.get("s-verbs").document.querySelector('.trainer [data-trainer-filter="tense"]')?.querySelectorAll("button").length, 4);
+assert.equal(documents.get("s-verbs").document.querySelector('.trainer [data-trainer-filter="gender"]')?.querySelectorAll("button").length, 3);
+assert.equal(documents.get("s-cases").document.querySelector('.trainer [data-trainer-filter="case"]')?.querySelectorAll("button").length, 8);
+assert.equal(documents.get("s-cases").document.querySelector('.trainer [data-trainer-filter="number"]')?.querySelectorAll("button").length, 3);
+assert.equal(documents.get("s-adj").document.querySelector('.trainer [data-trainer-filter="kind"]')?.querySelectorAll("button").length, 4);
+assert.equal(documents.get("s-adj").document.querySelector('.trainer [data-trainer-filter="gender"]')?.querySelectorAll("button").length, 6);
+
+const trainerData = await readFile(resolve(root, "trainer-data.js"), "utf8");
+const trainerDecks = JSON.parse(trainerData.replace(/^globalThis\.TRAINER_DATA=/, "").replace(/;\s*$/, ""));
+const trainerVerbs = trainerDecks.verbs;
+assert.equal(trainerVerbs.length, 100, "The trainer drills the whole verb table");
+const trainerByLemma = new Map(trainerVerbs.map(verb => [verb.l, verb]));
+assert.deepEqual(trainerByLemma.get("być").pr, ["jestem", "jesteś", "jest", "jesteśmy", "jesteście", "są"]);
+assert.deepEqual(trainerByLemma.get("być").fu, ["będę", "będziesz", "będzie", "będziemy", "będziecie", "będą"]);
+assert.deepEqual(trainerByLemma.get("iść").pa,
+  ["szedłem", "szłam", "szedłeś", "szłaś", "szedł", "szła", "szło", "szliśmy", "szłyśmy", "szliście", "szłyście", "szli", "szły"]);
+assert.deepEqual(trainerByLemma.get("wziąć").pa.slice(0, 2), ["wziąłem", "wzięłam"]);
+assert.equal(trainerByLemma.get("jeść").pa[11], "jedli");
+assert.equal(trainerByLemma.get("nieść").pa[11], "nieśli");
+assert.equal(trainerByLemma.get("mieć").pa[11], "mieli");
+assert.equal(trainerByLemma.get("móc").pa[0], "mogłem");
+assert.equal(trainerByLemma.get("kupić").pr, null, "A perfective verb has no present tense to drill");
+assert.equal(trainerByLemma.get("kupić").fk, "s");
+assert.deepEqual(trainerByLemma.get("kupić").fu, ["kupię", "kupisz", "kupi", "kupimy", "kupicie", "kupią"]);
+assert.deepEqual(trainerByLemma.get("robić").fu[0], ["będę robił", "będę robić"]);
+assert.deepEqual(trainerByLemma.get("uczyć się").fu[1], ["będę się uczyła", "będę uczyła się", "będę się uczyć", "będę uczyć się"]);
+assert.equal(trainerByLemma.get("uczyć się").pa[7], "uczyliśmy się");
+for(const verb of trainerVerbs){
+  assert.equal(verb.pa.length, 13, `${verb.l}: the past tense needs every person and gender`);
+  assert.equal(verb.fu.length, verb.fk === "s" ? 6 : 13, `${verb.l}: future shape must match its aspect`);
+  if(verb.pr) assert.equal(verb.pr.length, 6);
+  const forms = [...(verb.pr || []), ...verb.pa, ...verb.fu.flat()];
+  assert(forms.every(form => typeof form === "string" && form.trim() === form && form),
+    `${verb.l}: every drilled form must be a trimmed string`);
+}
+assert.deepEqual(trainerByLemma.get("dać").fu, ["dam", "dasz", "da", "damy", "dacie", "dadzą"]);
+assert.deepEqual(trainerByLemma.get("wiedzieć").pr, ["wiem", "wiesz", "wie", "wiemy", "wiecie", "wiedzą"]);
+
+const trainerNouns = trainerDecks.nouns;
+assert.equal(trainerNouns.length, 171, "The noun trainer drills every declension example that carries a dictionary form");
+assert.deepEqual(trainerDecks.cases.map(([id]) => id), ["mian", "bier", "dop", "cel", "narz", "miej", "woł"]);
+assert(trainerNouns.every(item => item.l && item.f && item.c && (item.n === "sg" || item.n === "pl")),
+  "Every noun question needs a lemma, a form, a case and a number");
+const nounKeys = trainerNouns.map(item => `${item.l}|${item.c}|${item.n}`);
+assert.equal(new Set(nounKeys).size, nounKeys.length, "One lemma in one case and number must have one answer");
+const nounAnswer = (lemma, caseId, number) =>
+  trainerNouns.find(item => item.l === lemma && item.c === caseId && item.n === number)?.f;
+assert.equal(nounAnswer("kawa", "bier", "sg"), "kawę");
+assert.equal(nounAnswer("pies", "bier", "sg"), "psa");
+assert.equal(nounAnswer("student", "mian", "pl"), "studenci");
+assert.equal(nounAnswer("sklep", "miej", "sg"), "sklepie");
+assert.equal(nounAnswer("Piotr", "woł", "sg"), "Piotrze");
+assert(!trainerNouns.some(item => item.c === "mian" && item.n === "sg"),
+  "Nominative singular is the dictionary form, so there is nothing to drill");
+
+const trainerAdjectives = trainerDecks.adjectives;
+assert.equal(trainerAdjectives.length, 317, "Two forms per adjective, two degrees where they exist, plus the dobry paradigm");
+assert(trainerAdjectives.every(item => item.l && item.t && item.d && item.a.length && ["gender", "degree", "case"].includes(item.k)),
+  "Every adjective question needs a lemma, a caption, a target and answers");
+assert(trainerAdjectives.every(item => ["m", "f", "n", "mos", "nmos"].includes(item.g)));
+assert(trainerAdjectives.every(item => item.g !== "mos" && item.g !== "nmos" || item.k === "case"),
+  "Only the declension table distinguishes the two plural genders");
+const adjectiveKeys = trainerAdjectives.map(item => `${item.l}|${item.k}|${item.t}|${item.d}`);
+assert.equal(new Set(adjectiveKeys).size, adjectiveKeys.length, "One adjective question must have one answer");
+const adjectiveAnswer = (lemma, kind, detail) =>
+  trainerAdjectives.find(item => item.l === lemma && item.k === kind && item.d === detail)?.a;
+assert.deepEqual(adjectiveAnswer("dobry", "gender", "женский"), ["dobra"]);
+assert.deepEqual(adjectiveAnswer("dobry", "degree", "сравнительная"), ["lepszy"]);
+assert.deepEqual(adjectiveAnswer("dobry", "degree", "превосходная"), ["najlepszy"]);
+assert.deepEqual(adjectiveAnswer("zły", "degree", "превосходная"), ["najgorszy"]);
+assert.deepEqual(adjectiveAnswer("chory", "degree", "превосходная"), ["najbardziej chory"]);
+assert.equal(adjectiveAnswer("potrzebny", "degree", "сравнительная"), undefined,
+  "An adjective without a comparative is not asked for one");
+assert.deepEqual(trainerAdjectives.find(item => item.k === "case" && item.t.startsWith("Biernik") && item.d === "мужской род")?.a,
+  ["dobry", "dobrego"], "Both accusative masculine forms count");
+assert(!trainerAdjectives.some(item => item.k === "case" && item.t.startsWith("Mianownik")),
+  "The nominative row is the dictionary form and duplicates the gender drill");
+
 const planHTML = await readFile(resolve(root, "plan-40", "index.html"), "utf8");
 const plan = parseHTML(planHTML).document;
 assert.equal(plan.querySelectorAll("h1").length, 1, "plan-40 is hand written but still needs one h1");
@@ -449,7 +548,7 @@ assert.equal(notFound.querySelector("h1")?.textContent.trim(), "Этой стр�
 assert.equal(notFound.querySelector('meta[name="robots"]')?.getAttribute("content"), "noindex");
 assert.equal(notFound.querySelector('a[href="/"]')?.textContent.trim(), "Polski: końcówki");
 assert.equal(notFound.querySelector(".error-actions a[href='/']")?.textContent.trim(), "На главную");
-assert.equal(notFound.querySelector('a[href="mailto:mail@hamanovich.com"]')?.textContent.trim(), "mail@hamanovich.com");
+assert.equal(notFound.querySelector('a[href="mailto:polski@hamanovich.com"]')?.textContent.trim(), "polski@hamanovich.com");
 assert.match(notFound.querySelector('link[rel="stylesheet"]')?.getAttribute("href") || "", /^\/style\.css\?v=[a-f0-9]{10}$/);
 for(const node of notFound.querySelectorAll("link[href],script[src],a[href]")){
   const url = node.getAttribute("href") || node.getAttribute("src");
@@ -483,7 +582,7 @@ assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementB
 const excluded = new Set([...jekyllConfig.matchAll(/^\s*-\s*(.+?)\s*$/gm)].map(match => match[1]));
 const publicRoot = new Set([
   "404.html", "CNAME", "apple-touch-icon.png", "client.js", "favicon.ico", "favicon.svg",
-  "index.html", "og", "plan-40", "robots.txt", "search-index.js",
+  "index.html", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
   "sitemap.xml", "style.css",
   ...routes.map(([, path]) => path).filter(Boolean)
 ]);

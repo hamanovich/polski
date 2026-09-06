@@ -107,6 +107,7 @@ vm.runInContext(`
   practiceHost.className = "variant-host";
   practiceHost.innerHTML = CASE_PRACTICE.map((practice, index) => casePracticeHTML(practice, index === 0)).join("");
   document.querySelector("#caseTest").innerHTML = caseTestHTML();
+  document.querySelector("#caseTrainer").innerHTML = caseTrainerHTML();
 
   const verbPracticeHost = document.querySelector("#verbPractice");
   verbPracticeHost.className = "variant-host";
@@ -114,6 +115,8 @@ vm.runInContext(`
     .filter(practice => VTABS.some(tab => tab[0] === practice.id))
     .map((practice, index) => verbPracticeHTML(practice, index === 0)).join("");
   document.querySelector("#verbTest").innerHTML = verbTestHTML();
+  document.querySelector("#verbTrainer").innerHTML = verbTrainerHTML();
+  document.querySelector("#adjTrainer").innerHTML = adjectiveTrainerHTML();
 
   document.querySelectorAll(".case-variant,.verb-variant").forEach(linkHeadings);
 `, sandbox, {filename:"scripts/build-content.js"});
@@ -166,10 +169,20 @@ for(const section of document.querySelectorAll(".sec")){
 
 const searchSource = `globalThis.SEARCH_INDEX=${JSON.stringify(searchEntries)};\n`;
 await writeFile(resolve(root, "search-index.js"), searchSource, "utf8");
+
+const trainerSource = `globalThis.TRAINER_DATA=${JSON.stringify({
+  verbs:sandbox.trainerVerbs(),
+  nouns:sandbox.trainerNouns(),
+  adjectives:sandbox.trainerAdjectives(),
+  cases:sandbox.trainerCaseLabels()
+})};\n`;
+await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");
+
 const assetHashes = {
   style:fingerprint(styleSource),
   client:fingerprint(clientSource),
-  search:fingerprint(searchSource)
+  search:fingerprint(searchSource),
+  trainer:fingerprint(trainerSource)
 };
 const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
@@ -344,6 +357,7 @@ for(const page of pages){
   const clientScript = pageDocument.createElement("script");
   clientScript.src = `${prefix}client.js?v=${assetHashes.client}`;
   clientScript.dataset.searchSrc = `${prefix}search-index.js?v=${assetHashes.search}`;
+  clientScript.dataset.trainerSrc = `${prefix}trainer-data.js?v=${assetHashes.trainer}`;
   pageDocument.body.append(clientScript);
 
   const draft = `<!DOCTYPE html>\n${pageDocument.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");

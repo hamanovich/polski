@@ -902,13 +902,218 @@ function renderVerbs(){
   $("#s-verbs").innerHTML =
     `<div class="casebar"><div class="chips" id="vchips" role="group" aria-label="Раздел о глаголах">${
       VTABS.map(t => `<button class="chip" data-v="${t[0]}" aria-pressed="${t[0]===curV}"><span class="cp">${t[1]}</span></button>`).join("")
-    }</div></div><div id="vPanel"></div><div id="verbPractice"></div><div id="verbTest"></div>`;
+    }</div></div><div id="vPanel"></div><div id="verbPractice"></div><div id="verbTest"></div><div id="verbTrainer"></div>`;
   $("#vchips").querySelectorAll(".chip").forEach(b => b.onclick = () => {
     curV = b.dataset.v; renderVerbs(); writeHash();
   });
   $("#vPanel").innerHTML = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja}[curV]();
   linkHeadings($("#vPanel"));
   renderVerbPractice();
+}
+
+const trainSplit = form => {
+  const at = form.indexOf(" się");
+  return at < 0 ? [form, ""] : [form.slice(0, at), form.slice(at)];
+};
+const trainAdd = (form, suffix) => {
+  const [stem, refl] = trainSplit(form);
+  return stem + suffix + refl;
+};
+const trainCut = (form, tail, suffix) => {
+  const [stem, refl] = trainSplit(form);
+  if(!stem.endsWith(tail)) throw new Error(`${form} does not end with ${tail}`);
+  return stem.slice(0, stem.length - tail.length) + suffix + refl;
+};
+
+function trainPresent(row){
+  if(row[0] === "być") return TRAIN_BYC_PRES.slice();
+  const on = trainCut(row[4], "sz", "");
+  return [row[3], row[4], on, trainAdd(on, "my"), trainAdd(on, "cie"), row[5]];
+}
+
+function trainPast(row){
+  const irr = TRAIN_IRR.find(item => item[0] === row[0]) || [];
+  const ona = row[7];
+  const stem = trainSplit(ona)[0];
+  const one = trainCut(ona, "a", "y");
+  const oni = irr[2] || (
+    stem.endsWith("ęła") ? trainCut(ona, "ęła", "ęli")
+    : trainSplit(row[0])[0].endsWith("eć") && stem.endsWith("ała") ? trainCut(ona, "ała", "eli")
+    : trainCut(ona, "ła", "li")
+  );
+  const ja = irr[1] || (stem.endsWith("ęła") ? trainCut(ona, "ęła", "ąłem") : trainCut(ona, "a", "em"));
+  return [
+    ja, trainAdd(ona, "m"),
+    trainCut(ja, "em", "eś"), trainAdd(ona, "ś"),
+    row[6], ona, trainCut(ona, "a", "o"),
+    trainAdd(oni, "śmy"), trainAdd(one, "śmy"),
+    trainAdd(oni, "ście"), trainAdd(one, "ście"),
+    oni, one
+  ];
+}
+
+const TRAIN_AUX_OF = [0, 0, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 5];
+const TRAIN_PART_OF = [4, 5, 4, 5, 4, 5, 6, 11, 12, 11, 12, 11, 12];
+
+function trainFutureCell(aux, participle, infinitive){
+  const [part, refl] = trainSplit(participle);
+  const [inf] = trainSplit(infinitive);
+  if(!refl) return [`${aux} ${part}`, `${aux} ${inf}`];
+  return [`${aux} się ${part}`, `${aux} ${part} się`, `${aux} się ${inf}`, `${aux} ${inf} się`];
+}
+
+function trainerNouns(){
+  const questions = [];
+  for(const item of CASES) for(const number of ["sg", "pl"]) for(const group of item[number])
+    for(const cell of group.f){
+      if(!cell.a) continue;
+      questions.push({
+        c:item.id, n:number, g:group.l,
+        l:cell.a, f:cell.b.replace(/\|/g, ""),
+        r:group.n
+      });
+    }
+  return questions;
+}
+
+const TRAIN_ADJ_COLUMNS = [
+  ["m", "мужской род"],
+  ["f", "женский род"],
+  ["n", "средний род"],
+  ["mos", "мн. мужско-личное"],
+  ["nmos", "мн. остальное"]
+];
+const trainSuperlative = form => form.startsWith("bardziej ")
+  ? `najbardziej ${form.slice("bardziej ".length)}`
+  : `naj${form}`;
+
+function trainerAdjectives(){
+  const russian = new Map(CASES.map(item => [item.name, item.ru]));
+  const questions = [];
+  for(const row of VOCAB_ADJECTIVES){
+    const [feminine, neuter, comparative] = row[2].split(" · ");
+    questions.push({k:"gender", g:"f", l:row[0], t:"род", d:"женский", a:[feminine]});
+    questions.push({k:"gender", g:"n", l:row[0], t:"род", d:"средний", a:[neuter]});
+    if(comparative === "-") continue;
+    questions.push({k:"degree", g:"m", l:row[0], t:"степень сравнения", d:"сравнительная", a:[comparative]});
+    questions.push({k:"degree", g:"m", l:row[0], t:"степень сравнения", d:"превосходная", a:[trainSuperlative(comparative)]});
+  }
+  for(const row of ADJ){
+    if(row[0] === "Mianownik") continue;
+    TRAIN_ADJ_COLUMNS.forEach(([gender, label], column) => {
+      questions.push({
+        k:"case", g:gender, l:"dobry",
+        t:`${row[0]} · ${russian.get(row[0])}`, d:label,
+        a:row[column + 1].split(" / ")
+      });
+    });
+  }
+  return questions;
+}
+
+function trainerCaseLabels(){
+  return CASES.map(item => [item.id, item.name, item.ru]);
+}
+
+function trainerVerbs(){
+  return VERBS.map(row => {
+    const past = trainPast(row);
+    const perfective = row[8] === "сов.";
+    const synthetic = perfective || row[0] === "być";
+    return {
+      l:row[0],
+      a:perfective ? "pf" : "impf",
+      pr:perfective ? null : trainPresent(row),
+      pa:past,
+      fk:synthetic ? "s" : "g",
+      fu:row[0] === "być" ? TRAIN_AUX.slice()
+        : perfective ? trainPresent(row)
+        : TRAIN_AUX_OF.map((aux, cell) => trainFutureCell(TRAIN_AUX[aux], past[TRAIN_PART_OF[cell]], row[0]))
+    };
+  });
+}
+
+function trainerHTML(config){
+  return `<section class="practice panel trainer" data-trainer="${config.deck}">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">${config.kicker}</p><h2>${config.title}</h2></div>
+      <div class="trainer-score" aria-live="polite" aria-label="Счёт серии"></div>
+    </div>
+    <p class="lead">${config.lead}</p>
+    <div class="trainer-filters">${config.filters.map(filter => `
+      <div class="trainer-filter">
+        <span class="trainer-legend" id="trainer-${config.deck}-${filter.key}-label">${filter.label}</span>
+        <div class="tog trainer-tog" data-trainer-filter="${filter.key}" role="group" aria-labelledby="trainer-${config.deck}-${filter.key}-label">${filter.values.map(([value, caption], index) =>
+          `<button type="button" data-value="${value}" aria-pressed="${index === 0}">${caption}</button>`).join("")}</div>
+      </div>`).join("")}
+    </div>
+    <div class="trainer-stage" data-trainer-stage hidden>
+      <p class="trainer-meta"><span data-trainer-chip="0"></span><span data-trainer-chip="1"></span><span data-trainer-chip="2" hidden></span></p>
+      <p class="trainer-word" lang="pl" data-trainer-word></p>
+      <form class="trainer-form" data-trainer-form novalidate>
+        <label class="trainer-field">
+          <span class="trainer-legend">${config.field}</span>
+          <input class="trainer-input exercise-control" type="text" lang="pl" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" data-trainer-input>
+        </label>
+        <div class="trainer-buttons">
+          <button class="exercise-button" type="submit" data-trainer-submit>Проверить</button>
+          <button class="exercise-link" type="button" data-trainer-skip>Не помню</button>
+        </div>
+      </form>
+      <p class="trainer-feedback" aria-live="polite" data-trainer-feedback></p>
+    </div>
+    <p class="trainer-empty" data-trainer-empty hidden>${config.empty}</p>
+    <noscript><p class="note">${config.noscript}</p></noscript>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-trainer-reset>Сбросить счёт и ошибки</button></div>
+  </section>`;
+}
+
+function verbTrainerHTML(){
+  return trainerHTML({
+    deck:"verbs",
+    kicker:`Тренажёр · время, лицо и род · глаголов в колоде: ${VERBS.length}`,
+    title:"Тренажёр глагольных форм",
+    lead:"Задание называет глагол, время, лицо и род. Напишите нужную форму и нажмите Enter. Ошибки возвращаются в очередь и переживают перезагрузку страницы.",
+    field:"Форма глагола",
+    filters:[
+      {key:"tense", label:"Время", values:[["all","все"],["present","настоящее"],["past","прошедшее"],["future","будущее"]]},
+      {key:"gender", label:"Род", values:[["all","все"],["m","мужской"],["f","женский"]]}
+    ],
+    empty:"Для этого сочетания времени и рода форм нет: в настоящем времени род не различается. Выберите прошедшее или будущее время либо снимите фильтр рода.",
+    noscript:"Тренажёр работает только со скриптами. Все формы, которые он спрашивает, разобраны выше в таблицах спряжений и времён."
+  });
+}
+
+function adjectiveTrainerHTML(){
+  return trainerHTML({
+    deck:"adjectives",
+    kicker:`Тренажёр · род, степень и падеж · форм в колоде: ${trainerAdjectives().length}`,
+    title:"Тренажёр форм прилагательных",
+    lead:"Задание называет словарную форму и то, что нужно от неё получить: род, степень сравнения или падеж. Напишите форму и нажмите Enter. Ошибки возвращаются в очередь и переживают перезагрузку страницы.",
+    field:"Форма прилагательного",
+    filters:[
+      {key:"kind", label:"Форма", values:[["all","все"],["gender","род"],["degree","степень"],["case","падеж"]]},
+      {key:"gender", label:"Род", values:[["all","все"],["m","мужской"],["f","женский"],["n","средний"],["mos","мужско-личный"],["nmos","немужско-личный"]]}
+    ],
+    empty:"Для этого сочетания форм нет: степени сравнения спрашиваются в мужском роде, а мужско-личный и немужско-личный род есть только у падежных форм. Снимите один из фильтров.",
+    noscript:"Тренажёр работает только со скриптами. Все формы, которые он спрашивает, стоят выше в парадигме и в таблицах степеней сравнения."
+  });
+}
+
+function caseTrainerHTML(){
+  return trainerHTML({
+    deck:"nouns",
+    kicker:`Тренажёр · семь падежей и два числа · форм в колоде: ${trainerNouns().length}`,
+    title:"Тренажёр падежных форм",
+    lead:"Задание называет исходную форму, падеж и число: в единственном числе это словарная форма, во множественном - именительный падеж множественного. Напишите нужную форму и нажмите Enter. Ошибки возвращаются в очередь и переживают перезагрузку страницы.",
+    field:"Форма существительного",
+    filters:[
+      {key:"case", label:"Падеж", values:[["all","все"], ...CASES.map(item => [item.id, item.name])]},
+      {key:"number", label:"Число", values:[["all","оба"],["sg","единственное"],["pl","множественное"]]}
+    ],
+    empty:"Для этого падежа в выбранном числе примеров нет. Снимите один из фильтров.",
+    noscript:"Тренажёр работает только со скриптами. Все формы, которые он спрашивает, стоят выше в таблицах падежей."
+  });
 }
 
 const ngrid = list => `<div class="ngrid">${list.map(n =>
@@ -1416,7 +1621,7 @@ function renderAdj(){
       <li><b>Порядок слов.</b> Качество - перед словом (<span class="pl">czarna kawa</span>), вид или тип - после (<span class="pl">kawa rozpuszczalna</span>, <span class="pl">język polski</span>, <span class="pl">dzień dobry</span>). Русский тут почти всегда ставит перед. Само приветствие пишется с маленькой - <span class="pl">Powiedziałem dzień dobry</span>; большая появляется только в начале реплики: <span class="pl">Dzień dobry!</span></li>
       <li><b>Женское <span class="pl">-ą</span> в винительном и творительном совпадает.</b> <span class="pl">Widzę dobrą kawę</span> / <span class="pl">z dobrą kawą</span> - форма одна, падежи разные.</li>
     </ol>
-  </div><div id="adjPractice"></div><div id="adjTest"></div>`;
+  </div><div id="adjPractice"></div><div id="adjTest"></div><div id="adjTrainer"></div>`;
   renderAdjPractice();
 }
 function adjectivePracticeHTML(practice){

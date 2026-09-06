@@ -22,7 +22,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="../style.css?v=f455ed0588">
+<link rel="stylesheet" href="../style.css?v=fa93caf3a1">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("theme");if(t&&t!=="auto")document.documentElement.dataset.theme=t}catch(e){}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://polski.hamanovich.com/#website","url":"https://polski.hamanovich.com/","name":"Polski: końcówki","alternateName":"Польская грамматика","description":"Практический справочник польской грамматики на русском с опорой на белорусский: падежи, глаголы, местоимения, числительные и примеры.","inLanguage":"ru"},{"@type":["WebPage","LearningResource"],"@id":"https://polski.hamanovich.com/cases/#webpage","url":"https://polski.hamanovich.com/cases/","name":"Падежи польского языка - окончания и примеры","headline":"Падежи польского языка","description":"Семь падежей польского языка: вопросы, предлоги, окончания единственного и множественного числа, чередования и исключения.","inLanguage":"ru","isPartOf":{"@id":"https://polski.hamanovich.com/#website"},"isAccessibleForFree":true,"dateModified":"2026-09-06","about":{"@type":"Thing","name":"Польский язык"},"learningResourceType":"reference","teaches":"Падежи польского языка","breadcrumb":{"@id":"https://polski.hamanovich.com/cases/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://polski.hamanovich.com/cases/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Справочник","item":"https://polski.hamanovich.com/"},{"@type":"ListItem","position":2,"name":"Падежи польского языка"}]}]}</script></head>
@@ -2258,6 +2258,41 @@
       <button type="button" class="exercise-link" data-action="reset-test">Начать заново</button>
     </div>
   </section></div>
+    <div id="caseTrainer"><section class="practice panel trainer" data-trainer="nouns">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Тренажёр · семь падежей и два числа · форм в колоде: 171</p><h2>Тренажёр падежных форм</h2></div>
+      <div class="trainer-score" aria-live="polite" aria-label="Счёт серии"></div>
+    </div>
+    <p class="lead">Задание называет исходную форму, падеж и число: в единственном числе это словарная форма, во множественном - именительный падеж множественного. Напишите нужную форму и нажмите Enter. Ошибки возвращаются в очередь и переживают перезагрузку страницы.</p>
+    <div class="trainer-filters">
+      <div class="trainer-filter">
+        <span class="trainer-legend" id="trainer-nouns-case-label">Падеж</span>
+        <div class="tog trainer-tog" data-trainer-filter="case" role="group" aria-labelledby="trainer-nouns-case-label"><button type="button" data-value="all" aria-pressed="true">все</button><button type="button" data-value="mian" aria-pressed="false">Mianownik</button><button type="button" data-value="bier" aria-pressed="false">Biernik</button><button type="button" data-value="dop" aria-pressed="false">Dopełniacz</button><button type="button" data-value="cel" aria-pressed="false">Celownik</button><button type="button" data-value="narz" aria-pressed="false">Narzędnik</button><button type="button" data-value="miej" aria-pressed="false">Miejscownik</button><button type="button" data-value="woł" aria-pressed="false">Wołacz</button></div>
+      </div>
+      <div class="trainer-filter">
+        <span class="trainer-legend" id="trainer-nouns-number-label">Число</span>
+        <div class="tog trainer-tog" data-trainer-filter="number" role="group" aria-labelledby="trainer-nouns-number-label"><button type="button" data-value="all" aria-pressed="true">оба</button><button type="button" data-value="sg" aria-pressed="false">единственное</button><button type="button" data-value="pl" aria-pressed="false">множественное</button></div>
+      </div>
+    </div>
+    <div class="trainer-stage" data-trainer-stage="" hidden>
+      <p class="trainer-meta"><span data-trainer-chip="0"></span><span data-trainer-chip="1"></span><span data-trainer-chip="2" hidden></span></p>
+      <p class="trainer-word" lang="pl" data-trainer-word=""></p>
+      <form class="trainer-form" data-trainer-form="" novalidate>
+        <label class="trainer-field">
+          <span class="trainer-legend">Форма существительного</span>
+          <input class="trainer-input exercise-control" type="text" lang="pl" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" data-trainer-input="">
+        </label>
+        <div class="trainer-buttons">
+          <button class="exercise-button" type="submit" data-trainer-submit="">Проверить</button>
+          <button class="exercise-link" type="button" data-trainer-skip="">Не помню</button>
+        </div>
+      </form>
+      <p class="trainer-feedback" aria-live="polite" data-trainer-feedback=""></p>
+    </div>
+    <p class="trainer-empty" data-trainer-empty="" hidden>Для этого падежа в выбранном числе примеров нет. Снимите один из фильтров.</p>
+    <noscript><p class="note">Тренажёр работает только со скриптами. Все формы, которые он спрашивает, стоят выше в таблицах падежей.</p></noscript>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-trainer-reset="">Сбросить счёт и ошибки</button></div>
+  </section></div>
   </section>
 
 
@@ -2280,8 +2315,8 @@
 
 
   <nav aria-label="Соседние разделы" class="pager"><a class="pager-prev" href="../alternations/"><small>Предыдущий раздел</small><b>Чередования</b></a><a class="pager-next" href="../adjectives/"><small>Следующий раздел</small><b>Прилагательные</b></a></nav><footer>
-    <p>Ударение - всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</p>
-    <p>Нашли ошибку или есть пожелания по содержанию? Напишите на <a href="mailto:mail@hamanovich.com">mail@hamanovich.com</a>.</p>
+    <p>© 2026 Polski: końcówki. Копирование материалов с сайта допускается только с указанием активной ссылки на <a href="https://polski.hamanovich.com/">polski.hamanovich.com</a>.</p>
+    <p>Нашли ошибку или есть пожелания по содержанию? Напишите на <a href="mailto:polski@hamanovich.com">polski@hamanovich.com</a>.</p>
   </footer>
 </main>
 
@@ -2289,5 +2324,5 @@
 
 
 
-<script data-search-src="../search-index.js?v=2b22bc16ef" src="../client.js?v=b341149428"></script></body>
+<script data-trainer-src="../trainer-data.js?v=dc2043b9f8" data-search-src="../search-index.js?v=2b22bc16ef" src="../client.js?v=1c84fd763d"></script></body>
 </html>

@@ -1218,6 +1218,16 @@ const VERBS = [
  ["powiedzieć","сказать","IV","powiem","powiesz","powiedzą","powiedział","powiedziała","сов."]
 ];
 
+const TRAIN_IRR = [
+ ["iść","szedłem","szli"],
+ ["przyjść","przyszedłem","przyszli"],
+ ["jeść","jadłem","jedli"],
+ ["znaleźć","znalazłem","znaleźli"],
+ ["nieść","niosłem","nieśli"]
+];
+const TRAIN_BYC_PRES = ["jestem","jesteś","jest","jesteśmy","jesteście","są"];
+const TRAIN_AUX = ["będę","będziesz","będzie","będziemy","będziecie","będą"];
+
 const NUM = [
  [0,"zero"],[1,"jeden"],[2,"dwa"],[3,"trzy"],[4,"cztery"],[5,"pięć"],[6,"sześć"],[7,"siedem"],
  [8,"osiem"],[9,"dziewięć"],[10,"dziesięć"],[11,"jedenaście"],[12,"dwanaście"],[13,"trzynaście"],

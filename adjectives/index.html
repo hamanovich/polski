@@ -22,7 +22,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="../style.css?v=f455ed0588">
+<link rel="stylesheet" href="../style.css?v=fa93caf3a1">
 <script>document.documentElement.classList.add("js")</script>
 <script>try{var t=localStorage.getItem("theme");if(t&&t!=="auto")document.documentElement.dataset.theme=t}catch(e){}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://polski.hamanovich.com/#website","url":"https://polski.hamanovich.com/","name":"Polski: końcówki","alternateName":"Польская грамматика","description":"Практический справочник польской грамматики на русском с опорой на белорусский: падежи, глаголы, местоимения, числительные и примеры.","inLanguage":"ru"},{"@type":["WebPage","LearningResource"],"@id":"https://polski.hamanovich.com/adjectives/#webpage","url":"https://polski.hamanovich.com/adjectives/","name":"Польские прилагательные - склонение и сравнение","headline":"Польские прилагательные","description":"Склонение польских прилагательных, степени сравнения, согласование и практические таблицы с примерами.","inLanguage":"ru","isPartOf":{"@id":"https://polski.hamanovich.com/#website"},"isAccessibleForFree":true,"dateModified":"2026-09-06","about":{"@type":"Thing","name":"Польский язык"},"learningResourceType":"reference","teaches":"Польские прилагательные","breadcrumb":{"@id":"https://polski.hamanovich.com/adjectives/#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://polski.hamanovich.com/adjectives/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Справочник","item":"https://polski.hamanovich.com/"},{"@type":"ListItem","position":2,"name":"Польские прилагательные"}]}]}</script></head>
@@ -574,6 +574,40 @@
       <button type="button" class="exercise-button" data-action="check-test">Проверить тест</button>
       <button type="button" class="exercise-link" data-action="reset-test">Начать заново</button>
     </div>
+  </section></div><div id="adjTrainer"><section class="practice panel trainer" data-trainer="adjectives">
+    <div class="practice-heading">
+      <div><p class="practice-kicker">Тренажёр · род, степень и падеж · форм в колоде: 317</p><h2>Тренажёр форм прилагательных</h2></div>
+      <div class="trainer-score" aria-live="polite" aria-label="Счёт серии"></div>
+    </div>
+    <p class="lead">Задание называет словарную форму и то, что нужно от неё получить: род, степень сравнения или падеж. Напишите форму и нажмите Enter. Ошибки возвращаются в очередь и переживают перезагрузку страницы.</p>
+    <div class="trainer-filters">
+      <div class="trainer-filter">
+        <span class="trainer-legend" id="trainer-adjectives-kind-label">Форма</span>
+        <div class="tog trainer-tog" data-trainer-filter="kind" role="group" aria-labelledby="trainer-adjectives-kind-label"><button type="button" data-value="all" aria-pressed="true">все</button><button type="button" data-value="gender" aria-pressed="false">род</button><button type="button" data-value="degree" aria-pressed="false">степень</button><button type="button" data-value="case" aria-pressed="false">падеж</button></div>
+      </div>
+      <div class="trainer-filter">
+        <span class="trainer-legend" id="trainer-adjectives-gender-label">Род</span>
+        <div class="tog trainer-tog" data-trainer-filter="gender" role="group" aria-labelledby="trainer-adjectives-gender-label"><button type="button" data-value="all" aria-pressed="true">все</button><button type="button" data-value="m" aria-pressed="false">мужской</button><button type="button" data-value="f" aria-pressed="false">женский</button><button type="button" data-value="n" aria-pressed="false">средний</button><button type="button" data-value="mos" aria-pressed="false">мужско-личный</button><button type="button" data-value="nmos" aria-pressed="false">немужско-личный</button></div>
+      </div>
+    </div>
+    <div class="trainer-stage" data-trainer-stage="" hidden>
+      <p class="trainer-meta"><span data-trainer-chip="0"></span><span data-trainer-chip="1"></span><span data-trainer-chip="2" hidden></span></p>
+      <p class="trainer-word" lang="pl" data-trainer-word=""></p>
+      <form class="trainer-form" data-trainer-form="" novalidate>
+        <label class="trainer-field">
+          <span class="trainer-legend">Форма прилагательного</span>
+          <input class="trainer-input exercise-control" type="text" lang="pl" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" data-trainer-input="">
+        </label>
+        <div class="trainer-buttons">
+          <button class="exercise-button" type="submit" data-trainer-submit="">Проверить</button>
+          <button class="exercise-link" type="button" data-trainer-skip="">Не помню</button>
+        </div>
+      </form>
+      <p class="trainer-feedback" aria-live="polite" data-trainer-feedback=""></p>
+    </div>
+    <p class="trainer-empty" data-trainer-empty="" hidden>Для этого сочетания форм нет: степени сравнения спрашиваются в мужском роде, а мужско-личный и немужско-личный род есть только у падежных форм. Снимите один из фильтров.</p>
+    <noscript><p class="note">Тренажёр работает только со скриптами. Все формы, которые он спрашивает, стоят выше в парадигме и в таблицах степеней сравнения.</p></noscript>
+    <div class="practice-actions"><button type="button" class="exercise-link" data-trainer-reset="">Сбросить счёт и ошибки</button></div>
   </section></div></section>
 
 
@@ -593,8 +627,8 @@
 
 
   <nav aria-label="Соседние разделы" class="pager"><a class="pager-prev" href="../cases/"><small>Предыдущий раздел</small><b>Существительные</b></a><a class="pager-next" href="../pronouns/"><small>Следующий раздел</small><b>Местоимения</b></a></nav><footer>
-    <p>Ударение - всегда предпоследний слог (кроме <a href="../alphabet/#~ударение">исключений в разделе «Алфавит»</a>).</p>
-    <p>Нашли ошибку или есть пожелания по содержанию? Напишите на <a href="mailto:mail@hamanovich.com">mail@hamanovich.com</a>.</p>
+    <p>© 2026 Polski: końcówki. Копирование материалов с сайта допускается только с указанием активной ссылки на <a href="https://polski.hamanovich.com/">polski.hamanovich.com</a>.</p>
+    <p>Нашли ошибку или есть пожелания по содержанию? Напишите на <a href="mailto:polski@hamanovich.com">polski@hamanovich.com</a>.</p>
   </footer>
 </main>
 
@@ -602,5 +636,5 @@
 
 
 
-<script data-search-src="../search-index.js?v=2b22bc16ef" src="../client.js?v=b341149428"></script></body>
+<script data-trainer-src="../trainer-data.js?v=dc2043b9f8" data-search-src="../search-index.js?v=2b22bc16ef" src="../client.js?v=1c84fd763d"></script></body>
 </html>

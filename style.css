@@ -514,7 +514,7 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
   td.note{min-width:110px}
 }
 footer{font-size:var(--fs-note);color:var(--muted);margin-top:28px;text-align:center;line-height:1.7}
-footer p{margin:0 0 8px}
+footer p{margin:0 0 4px}
 footer p:last-child{margin-bottom:0}
 footer a{color:var(--muted)}
 footer a:hover{color:var(--ui)}
@@ -678,7 +678,7 @@ table.vt th:first-child,table.vt td:first-child{background:var(--panel)}
 .toc a:hover{color:var(--end);text-decoration-color:currentColor}
 @media (max-width:620px){.toc{padding:16px 18px}.toc ol{columns:1}}
 .pager{gap:14px;margin-top:36px}.pager a{padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.pager a:hover{border-color:var(--end)}.pager b{font-family:var(--sans);font-size:16px;letter-spacing:-.02em}
-footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
+footer{margin:40px auto 0;font-size:14px}
 :focus-visible{outline:3px solid color-mix(in srgb,var(--alt) 70%,transparent);outline-offset:3px}
 @media (prefers-reduced-motion:no-preference){a,button,input,select{transition:color .16s ease,background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .12s ease}.panel{animation:page-in .32s ease-out both}@keyframes page-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto !important;animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
@@ -704,6 +704,33 @@ footer{max-width:70ch;margin:52px auto 0;text-align:left;font-size:13px}
   #sres{max-width:calc(100vw - 28px)}
   #navwrap{padding-bottom:8px}
   #navall{width:100%;justify-content:flex-start}
+}
+
+.trainer .trainer-score{font-size:var(--fs-note);color:var(--muted);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.trainer .trainer-filters{display:flex;gap:18px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trainer .trainer-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.trainer .trainer-legend{font-size:var(--fs-micro);font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.trainer .trainer-stage{padding:26px 0 4px}
+.trainer .trainer-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0;color:var(--muted);font-size:var(--fs-note)}
+.trainer .trainer-meta span{padding:4px 9px;border:1px solid var(--line);border-radius:999px}
+.trainer .trainer-word{font-family:var(--serif);font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.05;letter-spacing:-.05em;margin:16px 0 20px}
+.trainer .trainer-form{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.trainer .trainer-field{display:flex;flex-direction:column;gap:6px;flex:0 1 320px;min-width:0}
+.trainer .trainer-input{width:100%;max-width:none;font-family:var(--serif);font-size:clamp(1.1rem,2.6vw,1.4rem);padding:6px 6px}
+.trainer .trainer-input.is-correct{color:var(--ok);border-color:var(--ok);background:var(--ok-bg)}
+.trainer .trainer-input[aria-invalid="true"]{color:var(--end);border-color:var(--end);background:var(--wrong-bg)}
+.trainer .trainer-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.trainer .trainer-feedback{min-height:26px;margin:14px 0 0;font-size:var(--fs-note)}
+.trainer .trainer-feedback.is-correct{color:var(--ok)}
+.trainer .trainer-feedback.is-wrong{color:var(--end)}
+.trainer .trainer-empty{margin:20px 0 0;color:var(--muted);font-size:var(--fs-note)}
+html:not(.js) .trainer .trainer-filters,html:not(.js) .trainer .trainer-stage,html:not(.js) .trainer .practice-actions{display:none}
+@media (max-width:560px){
+  .trainer .trainer-filters{gap:12px}
+  .trainer .trainer-form{gap:10px}
+  .trainer .trainer-buttons{width:100%}
+  .trainer .trainer-buttons .exercise-button{flex:1 1 auto}
+  .trainer .trainer-filters .tog button{padding:6px 9px;font-size:12px}
 }
 
 html:has(body.plan-page){scroll-padding-top:calc(var(--head-h, 84px) + 12px)}

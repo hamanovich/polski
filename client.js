@@ -3,6 +3,7 @@ const $$ = selector => [...document.querySelectorAll(selector)];
 const clean = value => value.replace(/\s+/g, " ").trim();
 const norm = value => value.toLowerCase().replace(/ł/g, "l").normalize("NFD").replace(/\p{M}/gu, "");
 const SEARCH_INDEX_SRC = document.currentScript?.dataset.searchSrc || "search-index.js";
+const TRAINER_DATA_SRC = document.currentScript?.dataset.trainerSrc || "trainer-data.js";
 
 const currentPage = document.documentElement.dataset.page || "s-index";
 const navLinks = $$("#nav [data-s]");
@@ -235,6 +236,267 @@ function initExerciseSection(section){
     if(action === "reset-test") resetExerciseGroup(practice, true);
   });
 }
+const TRAINER_STORAGE_KEY = "polski-trainer-v1";
+const TRAINER_TENSES = {present:"настоящее", past:"прошедшее", future:"будущее"};
+const TRAINER_NUMBERS = {sg:"единственное число", pl:"множественное число"};
+const TRAINER_SIMPLE = [
+  ["ja", ""], ["ty", ""], ["on / ona / ono", ""],
+  ["my", ""], ["wy", ""], ["oni / one", ""]
+];
+const TRAINER_FULL = [
+  ["ja", "мужской род"], ["ja", "женский род"],
+  ["ty", "мужской род"], ["ty", "женский род"],
+  ["on", ""], ["ona", ""], ["ono", ""],
+  ["my", "мужско-личная"], ["my", "немужско-личная"],
+  ["wy", "мужско-личная"], ["wy", "немужско-личная"],
+  ["oni", ""], ["one", ""]
+];
+const TRAINER_GENDER_OF = ["m", "f", "m", "f", "m", "f", "n", "m", "f", "m", "f", "m", "f"];
+const TRAINER_MISSED_LIMIT = 60;
+const TRAINER_RECENT = 12;
+
+let trainerData = null;
+let trainerLoad;
+function loadTrainerData(){
+  if(trainerData) return Promise.resolve();
+  if(trainerLoad) return trainerLoad;
+  const settle = () => { trainerData = globalThis.TRAINER_DATA || {verbs:[], nouns:[], adjectives:[], cases:[]}; };
+  trainerLoad = new Promise(resolve => {
+    const script = document.createElement("script");
+    script.src = TRAINER_DATA_SRC;
+    script.onload = () => { settle(); resolve(); };
+    script.onerror = () => { settle(); resolve(); };
+    document.head.append(script);
+  });
+  return trainerLoad;
+}
+
+function trainerVerbCells(verb, tense){
+  if(tense === "present")
+    return verb.pr ? verb.pr.map((form, cell) => ({cell, labels:TRAINER_SIMPLE[cell], gender:"", answers:[form]})) : [];
+  if(tense === "past")
+    return verb.pa.map((form, cell) => ({cell, labels:TRAINER_FULL[cell], gender:TRAINER_GENDER_OF[cell], answers:[form]}));
+  if(verb.fk === "s")
+    return verb.fu.map((form, cell) => ({cell, labels:TRAINER_SIMPLE[cell], gender:"", answers:[form]}));
+  return verb.fu.map((answers, cell) => ({cell, labels:TRAINER_FULL[cell], gender:TRAINER_GENDER_OF[cell], answers}));
+}
+
+const TRAINER_DECKS = {
+  verbs:{
+    defaults:{tense:"all", gender:"all"},
+    questions(state){
+      const tenses = state.tense === "all" ? ["present", "past", "future"] : [state.tense];
+      const list = [];
+      for(const verb of trainerData.verbs) for(const tense of tenses) for(const item of trainerVerbCells(verb, tense)){
+        if(state.gender !== "all" && item.gender !== state.gender) continue;
+        const aspect = tense === "future" && verb.a === "pf" ? " · совершенный вид" : "";
+        list.push({
+          key:`${verb.l}|${tense}|${item.cell}`,
+          word:verb.l,
+          chips:[TRAINER_TENSES[tense] + aspect, item.labels[0], item.labels[1]],
+          answers:item.answers,
+          hint:""
+        });
+      }
+      return list;
+    }
+  },
+  adjectives:{
+    defaults:{kind:"all", gender:"all"},
+    questions(state){
+      const list = [];
+      for(const item of trainerData.adjectives){
+        if(state.kind !== "all" && item.k !== state.kind) continue;
+        if(state.gender !== "all" && item.g !== state.gender) continue;
+        list.push({
+          key:`${item.l}|${item.k}|${item.t}|${item.d}`,
+          word:item.l,
+          chips:[item.t, item.d, ""],
+          answers:item.a,
+          hint:""
+        });
+      }
+      return list;
+    }
+  },
+  nouns:{
+    defaults:{case:"all", number:"all"},
+    questions(state){
+      const names = new Map(trainerData.cases.map(([id, name, ru]) => [id, `${name} · ${ru}`]));
+      const list = [];
+      for(const item of trainerData.nouns){
+        if(state.case !== "all" && item.c !== state.case) continue;
+        if(state.number !== "all" && item.n !== state.number) continue;
+        list.push({
+          key:`${item.l}|${item.c}|${item.n}`,
+          word:item.l,
+          chips:[names.get(item.c) || item.c, TRAINER_NUMBERS[item.n], ""],
+          answers:[item.f],
+          hint:`${item.g}: ${item.r}`
+        });
+      }
+      return list;
+    }
+  }
+};
+
+function initTrainer(host){
+  const deck = TRAINER_DECKS[host.dataset.trainer];
+  if(!deck) return;
+  const stage = host.querySelector("[data-trainer-stage]");
+  const empty = host.querySelector("[data-trainer-empty]");
+  const form = host.querySelector("[data-trainer-form]");
+  const input = host.querySelector("[data-trainer-input]");
+  const submit = host.querySelector("[data-trainer-submit]");
+  const skip = host.querySelector("[data-trainer-skip]");
+  const feedback = host.querySelector("[data-trainer-feedback]");
+  const word = host.querySelector("[data-trainer-word]");
+  const score = host.querySelector(".trainer-score");
+  const chips = [0, 1, 2].map(index => host.querySelector(`[data-trainer-chip="${index}"]`));
+  const bars = [...host.querySelectorAll("[data-trainer-filter]")];
+
+  const blank = {...deck.defaults, total:0, correct:0, streak:0, best:0, missed:[]};
+  let store = {};
+  try{ store = JSON.parse(localStorage.getItem(TRAINER_STORAGE_KEY) || "{}") || {}; }catch{}
+  const saved = store[host.dataset.trainer];
+  let state = saved && typeof saved === "object"
+    ? {...blank, ...saved, missed:Array.isArray(saved.missed) ? saved.missed : []}
+    : {...blank};
+
+  let pool = [];
+  let current = null;
+  let reviewing = false;
+  const recent = [];
+
+  const save = () => {
+    try{
+      store[host.dataset.trainer] = state;
+      localStorage.setItem(TRAINER_STORAGE_KEY, JSON.stringify(store));
+    }catch{}
+  };
+  const setBar = bar => bar.querySelectorAll("button").forEach(button =>
+    button.setAttribute("aria-pressed", String(button.dataset.value === state[bar.dataset.trainerFilter])));
+
+  function paintScore(){
+    score.textContent = state.total
+      ? `${state.correct} из ${state.total} · серия ${state.streak} · рекорд ${state.best}`
+      : "";
+  }
+
+  function pick(){
+    if(!pool.length) return null;
+    const missed = pool.filter(item => state.missed.includes(item.key));
+    const source = missed.length && Math.random() < 0.4 ? missed : pool;
+    for(let attempt = 0; attempt < 8; attempt += 1){
+      const item = source[Math.floor(Math.random() * source.length)];
+      if(!recent.includes(item.key)) return item;
+    }
+    return source[Math.floor(Math.random() * source.length)];
+  }
+
+  function ask(){
+    current = pick();
+    reviewing = false;
+    if(!current) return;
+    recent.push(current.key);
+    while(recent.length > TRAINER_RECENT) recent.shift();
+    chips.forEach((chip, index) => {
+      chip.textContent = current.chips[index] || "";
+      chip.hidden = !current.chips[index];
+    });
+    word.textContent = current.word;
+    input.value = "";
+    input.disabled = false;
+    input.removeAttribute("aria-invalid");
+    input.classList.remove("is-correct");
+    feedback.textContent = "";
+    feedback.className = "trainer-feedback";
+    submit.textContent = "Проверить";
+    skip.hidden = false;
+  }
+
+  function refill(){
+    pool = deck.questions(state);
+    stage.hidden = !pool.length;
+    empty.hidden = !!pool.length;
+    paintScore();
+    if(pool.length) ask();
+  }
+
+  function settle(correct, prefix){
+    reviewing = true;
+    state.total += 1;
+    if(correct){
+      state.correct += 1;
+      state.streak += 1;
+      state.best = Math.max(state.best, state.streak);
+      state.missed = state.missed.filter(item => item !== current.key);
+    }else{
+      state.streak = 0;
+      state.missed = [current.key, ...state.missed.filter(item => item !== current.key)].slice(0, TRAINER_MISSED_LIMIT);
+    }
+    input.disabled = true;
+    input.classList.toggle("is-correct", correct);
+    if(!correct) input.setAttribute("aria-invalid", "true");
+    feedback.textContent = correct
+      ? "Верно."
+      : `${prefix} Правильно: ${current.answers.join(" · ")}${current.hint ? `. ${current.hint}` : ""}`;
+    feedback.className = `trainer-feedback ${correct ? "is-correct" : "is-wrong"}`;
+    submit.textContent = "Дальше";
+    skip.hidden = true;
+    paintScore();
+    save();
+    submit.focus();
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    if(reviewing){ ask(); input.focus(); return; }
+    const value = exerciseNorm(input.value);
+    if(!value){
+      feedback.textContent = "Сначала напишите форму.";
+      feedback.className = "trainer-feedback is-wrong";
+      input.focus();
+      return;
+    }
+    settle(current.answers.some(answer => exerciseNorm(answer) === value), "Пока нет.");
+  });
+  skip.addEventListener("click", () => settle(false, "Запомните."));
+  host.querySelector("[data-trainer-reset]").addEventListener("click", () => {
+    state = {...state, total:0, correct:0, streak:0, best:0, missed:[]};
+    save();
+    paintScore();
+    if(pool.length) ask();
+    input.focus();
+  });
+  for(const bar of bars){
+    bar.addEventListener("click", event => {
+      const button = event.target.closest("[data-value]");
+      const field = bar.dataset.trainerFilter;
+      if(!button || button.dataset.value === state[field]) return;
+      state[field] = button.dataset.value;
+      setBar(bar);
+      save();
+      refill();
+      if(pool.length) input.focus();
+    });
+    setBar(bar);
+  }
+
+  paintScore();
+  let started = false;
+  const start = () => {
+    if(started) return;
+    started = true;
+    loadTrainerData().then(() => { host.dataset.ready = "true"; refill(); });
+  };
+  host.addEventListener("pointerdown", start);
+  host.addEventListener("focusin", start);
+  if(typeof requestIdleCallback === "function") requestIdleCallback(start, {timeout:2000});
+  else setTimeout(start, 200);
+}
+$$(".trainer").forEach(initTrainer);
+
 initExerciseSection($("#s-cases"));
 initExerciseSection($("#s-rodz"));
 initExerciseSection($("#s-verbs"));
