@@ -620,28 +620,30 @@ coraz и im…, tym… берут только сравнительную сте
 Порядок слов. Качество - перед словом (czarna kawa), вид или тип - после (kawa rozpuszczalna, język polski, dzień dobry). Русский тут почти всегда ставит перед. Само приветствие пишется с маленькой - Powiedziałem dzień dobry; большая появляется только в начале реплики: Dzień dobry!
 Женское -ą в винительном и творительном совпадает. Widzę dobrą kawę / z dobrą kawą - форма одна, падежи разные.
 Наречия
-Не склоняются и не спрягаются - единственная сложность в том, что они образуются от прилагательных не по одному жёсткому правилу, а списком типовых окончаний.
+Наречия не изменяются по падежам, числам, родам и лицам. Многие образуются от прилагательных на -o или -e / -ie, но конкретную форму надёжнее учить вместе с исходным словом. Качественные наречия могут иметь степени сравнения.
 Образование: -o
-Самая большая и продуктивная группа.
+Одна из двух основных моделей образования наречий от прилагательных.
 szybki→szybko · wolny→wolno · ciepły→ciepło · zimny→zimno · łatwy→łatwo · trudny→trudno · głośny→głośno · cichy→cicho · prosty→prosto · tani→tanio · brzydki→brzydko
 Образование: -e / -ie
-Прилагательные с мягкой основой чаще уходят сюда.
-ładny→ładnie · dokładny→dokładnie · szczęśliwy→szczęśliwie · ciekawy→ciekawie · miły→mile · piękny→pięknie · straszny→strasznie · wygodny→wygodnie · spokojny→spokojnie · grzeczny→grzecznie
-Жёсткого правила «это слово точно -o, а то точно -e» нет - прилагательные на -ny, -wy распределяются по обеим группам, форму лучше запоминать вместе со словом. Но если сомневаешься - -o угадывается чаще.
-Степени сравнения: нерегулярные
+Вторая частотная модель; перед -e / -ie основа нередко чередуется или смягчается.
+ładny→ładnie · dokładny→dokładnie · szczęśliwy→szczęśliwie · ciekawy→ciekawie · miły→miło / mile · piękny→pięknie · straszny→strasznie · wygodny→wygodnie · spokojny→spokojnie · grzeczny→grzecznie
+Универсального выбора между -o и -e / -ie нет. Даже похожие прилагательные дают разные модели: trudny → trudno, но ładny → ładnie. Поэтому учи готовую пару и проверяй незнакомую форму по словарю.
+Miło и mile. Обе формы связаны с miły, но не всегда взаимозаменяемы: Miło mi. · Tu jest miło., зато mile widziany · mile spędzić czas.
+Четыре супплетивных ряда
 обычнаясравнительнаяпревосходная
-dobry / dobrzelepiejnajlepiejzły / źlegorzejnajgorzejduży (много) / dużowięcejnajwięcejmały (мало) / małomniejnajmniej
-Те же четыре слова-исключения, что и у прилагательных (dobry/lepszy, zły/gorszy, duży/większy, mały/mniejszy) - только в форме наречия.
-Степени сравнения: регулярные
+dobrzelepiejnajlepiejźlegorzejnajgorzejdużowięcejnajwięcejmałomniejnajmniej
+В этих четырёх рядах сравнительная степень строится от другой основы. Они соотносятся с рядами прилагательных dobry / lepszy, zły / gorszy, duży / większy, mały / mniejszy, но dużo значит «много», а mało - «мало».
+Частые синтетические формы
 обычнаясравнительнаяпревосходная
-szybkoszybciejnajszybciejk → c, как в прилагательномładnieładniejnajładniejciepłocieplejnajcieplejo → etaniotaniejnajtaniejczęstoczęściejnajczęściejst → ścidrogodrożejnajdrożejg → ż
-Превосходная - всегда просто naj- перед сравнительной. Длинные и заимствованные наречия сравниваются аналитически: bardziej szczegółowo → najbardziej szczegółowo.
+szybkoszybciejnajszybciej-ko → -ciejładnieładniejnajładniejciepłocieplejnajcieplej-ło → -lejtaniotaniejnajtaniejczęstoczęściejnajczęściej-sto → -ściejdrogodrożejnajdrożejg → żbliskobliżejnajbliżejособая основаdalekodalejnajdalejособая основаwysokowyżejnajwyżejособая основаniskoniżejnajniżejособая основа
+Не все наречия сравниваются: степень образуют прежде всего градуируемые качественные значения. В синтетической модели naj- пишется слитно со сравнительной формой: szybciej → najszybciej. В аналитической модели используются отдельные слова: bardziej szczegółowo → najbardziej szczegółowo. Выбор модели зависит от конкретного слова и значения.
 «Чем». Как и у прилагательных - niż или od + Dopełniacz: Biegam szybciej niż on. · Biegam szybciej od niego.
 Конструкции сравнения общие с прилагательными. coraz szybciej · im wcześniej, tym lepiej · jak najszybciej · o wiele taniej · za wolno - полная таблица во вкладке «Прилагательные».
 Частые наречия по смыслу
 группавопроспримеры
-местоgdzie?tu, tutaj, tam, wszędzie, gdzieś, nigdzie, blisko, daleko, wysoko, niskoвремяkiedy?teraz, wtedy, zawsze, nigdy, czasem, często, rzadko, wcześnie, późno, jutro, wczoraj, potemобраз действияjak?dobrze, źle, szybko, wolno, głośno, cicho, ładnie, mocno, słabo, razemстепень, количествоjak bardzo? ile razy?bardzo, trochę, dużo, mało, zupełnie, całkiem, prawie, wyjątkowo
-Не путать с прилагательным. Наречие относится к глаголу и не склоняется: On mówi dobrze (наречие) vs To jest dobry pomysł (прилагательное, согласуется с существительным).
+местоgdzie?tu, tutaj, tam, wszędzie, gdzieś, nigdzie, blisko, daleko, wysoko, niskoвремяkiedy?teraz, wtedy, wcześnie, późno, jutro, wczoraj, potemчастотностьjak często?zawsze, nigdy, czasem, często, rzadko, codziennieобраз действияjak?dobrze, źle, szybko, wolno, głośno, cicho, ładnie, mocno, słabo, razemстепень и мераjak bardzo? ile?bardzo, trochę, dużo, mało, zupełnie, całkiem, prawie, wyjątkowo
+Ложный друг: rano не значит «рано». Польское rano - «утром», а русскому «рано» и белорусскому «рана» соответствует wcześnie: Rano wstaję wcześnie. - «Утром я встаю рано».
+Не путать с прилагательным. Наречие не согласуется с существительным и чаще всего характеризует действие или состояние: On mówi dobrze. · Tu jest miło. Оно также может определять прилагательное или другое наречие: bardzo dobry pomysł · wyjątkowo szybko. Прилагательное согласуется с существительным: To jest dobry pomysł.
 Местоимения
 Личные
 ктокого / чегокомукого / чтокем(о) ком
@@ -2936,7 +2938,7 @@ dokładniej · najdokładniej
 Dokładnie tak.
 normalnie
 нормально
-normalniej
+normalniej · najnormalniej
 Dzisiaj pracuję normalnie.
 naprawdę
 действительно
@@ -3144,7 +3146,7 @@ wcale
 Wcale się nie martw.
 szczerze
 честно
-szczerzej
+szczerzej · najszczerzej
 Szczerze mówiąc, nie wiem.
 moim zdaniem
 по-моему
@@ -3156,11 +3158,11 @@ bezpośrednio
 Powiedz mi to bezpośrednio.
 spokojnie
 спокойно
-spokojniej
+spokojniej · najspokojniej
 Spokojnie, mamy czas.
 ostrożnie
 осторожно
-ostrożniej
+ostrożniej · najostrożniej
 Jedź ostrożnie.
 głośno
 громко
@@ -3184,7 +3186,7 @@ niedawno
 Niedawno przyjechałem do Polski.
 dawno
 давно
-dawniej
+dawniej · najdawniej
 Dawno się nie widzieliśmy.
 codziennie
 каждый день
@@ -3533,15 +3535,28 @@ małymalutkimaluteńki / maciupeńkiмаленькийładnyładniutkiкраси
 AnnaAniaAnusia / AnkaАня, АнечкаPiotrPiotrekPiotruśПетя, ПетенькаKatarzynaKasiaKasieńkaКатя, КатенькаMichałMichałekMisiekМиша, МишенькаElżbietaElaEluniaЭля, Элечкаbabciababcia → babuniaбабушка → бабуля
 Практический совет. Услышал уменьшительное от продавца, официанта или коллеги - чаще всего это дружелюбный сервисный стиль, а не панибратство. Но не копируй его автоматически: с незнакомым человеком и в официальном тексте безопаснее нейтральная форма.
 Предлог → падеж
-Один предлог часто управляет двумя падежами. Разница обычно «где / куда».
-всеMianownikBiernikDopełniaczCelownikNarzędnikMiejscownik
-предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikв какой деньw środę, w poniedziałeknaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом сobok sklepuprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпослеpo pracy, po obiedziepoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzed / nad / pod / za / międzyNarzędnikгдеprzed domem, nad stołemprzed / nad / pod / za / międzyBiernikкудаidę pod stółdziękiCelownikблагодаряdzięki tobie
-Где / куда у парных предлогов. У w, na, pod, nad, za, przed, między положение обычно требует Miejscownik или Narzędnik, направление - Biernik: Jestem na poczcie / idę na pocztę. Само движение не всегда означает Biernik: idę do sklepu требует Dopełniacz, а idę ulicą - Narzędnik. Учи предлог вместе с падежом.
-Беглое e: w → we, z → ze
-Перед скоплением согласных или похожим звуком предлог обрастает гласной - иначе не выговорить.
+Один предлог может управлять разными падежами и менять значение. У пространственных пар важно различать область действия и направленное перемещение в новую область.
+всеBiernikDopełniaczCelownikNarzędnikMiejscownik
+предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikкуда, внутрь; в какой деньw torbę, w góry, w środęnaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом сobok sklepuprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпосле; по территории или поверхностиpo pracy, chodzić po parkupoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzedNarzędnikгде; перед чемprzed domem, przed spotkaniemprzedBiernikкуда, в пространство передwyjść przed domnadNarzędnikгде, в области надlatać nad miastemnadBiernikкуда, в область надwzbić się nad miastopodNarzędnikгде, в области подspać pod stołempodBiernikкуда, в область подwejść pod stółzaNarzędnikгде, в области заstać za domemzaBiernikкуда, в область заpobiec za dommiędzyNarzędnikгде, между объектамиmiędzy stołem a oknemmiędzyBiernikкуда, в пространство междуwejść między drzewadziękiCelownikблагодаряdzięki tobie
+Область или новое направление у парных предлогов. Miejscownik или Narzędnik описывает область, где предмет находится или где происходит действие: Dron lata nad miastem. Biernik задаёт направленное перемещение в новую область: Dron wzbił się nad miasto. Сам глагол движения не выбирает Biernik: idę do sklepu требует Dopełniacz, idę ulicą - Narzędnik.
+Куда, где, откуда
+Предлоги места удобно учить тройками. Название места запоминай сразу вместе с предлогом: по одному общему правилу нельзя вывести все сочетания w и na.
+кудагдеоткуда
+do sklepuw sklepieze sklepu
+na pocztęna poczciez poczty
+do lekarzau lekarzaod lekarza
+W или na учим со словом. w domu, w pracy, w szkole, но na poczcie, na uniwersytecie, na dworcu, na lotnisku. Особенно запомни польское w pracy, которому соответствует русское «на работе».
+Четыре отношения во времени
+отношениепредлогпример
+через сколько от настоящего?za + BiernikPrzyjdę za godzinę.
+как долго?przez + BiernikCzekałem przez godzinę.
+с какого момента?od + DopełniaczMieszkam tu od pięciu lat.
+спустя сколько?po + MiejscownikWrócił po godzinie.
+Краткие и расширенные формы
+Формы с e зависят от конкретного сочетания и часто закреплены узусом. Надёжнее запоминать частотные модели, а не добавлять e перед любой группой согласных.
 предлогс беглым eпримеры
-wwewe Wrocławiu, we wtorek, we mniezzeze mną, ze szkoły, ze sobąododeode mnieprzedprzedeprzede wszystkimpodpodepode mną
-Чаще всего это происходит перед местоимениями mną, mnie и словом wszystkim, а также когда следующее слово начинается на ту же букву или на скопление согласных.
+wwewe Wrocławiu, we wtorek, we mniezzeze mną, ze szkoły, ze sobąododeode mniebezbezebeze mnieprzezprzezeprzeze mnieprzedprzedeprzede wszystkimpodpodepode mnąnadnadenade mną
+Запомни местоименные сочетания we mnie, ze mną, ode mnie, beze mnie, przeze mnie, przede mną, pode mną, nade mną. С существительными выбор не автоматический: we Wrocławiu, но w Warszawie; ze szkoły, но z pracy.
 Фонетические соответствия
 Работает на любом незнакомом слове.
 русскийпольскийпримеры

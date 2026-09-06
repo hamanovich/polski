@@ -1617,13 +1617,16 @@ const PREP_E = [
  ["w","we","we Wrocławiu, we wtorek, we mnie"],
  ["z","ze","ze mną, ze szkoły, ze sobą"],
  ["od","ode","ode mnie"],
+ ["bez","beze","beze mnie"],
+ ["przez","przeze","przeze mnie"],
  ["przed","przede","przede wszystkim"],
- ["pod","pode","pode mną"]
+ ["pod","pode","pode mną"],
+ ["nad","nade","nade mną"]
 ];
 
 const PREPS = [
  ["w","Miejscownik","где","w sklepie, w domu, w pracy"],
- ["w","Biernik","в какой день","w środę, w poniedziałek"],
+ ["w","Biernik","куда, внутрь; в какой день","w torbę, w góry, w środę"],
  ["na","Miejscownik","где (на поверхности, на мероприятии)","na stole, na poczcie, na uniwersytecie"],
  ["na","Biernik","куда","idę na pocztę, na obiad"],
  ["do","Dopełniacz","куда, к кому","do sklepu, do lekarza, do domu"],
@@ -1637,11 +1640,19 @@ const PREPS = [
  ["przy","Miejscownik","при, возле","przy oknie, przy kasie"],
  ["o","Miejscownik","о чём; во сколько","o pogodzie, o piątej"],
  ["o","Biernik","просить/спрашивать о","proszę o pomoc, pytam o cenę"],
- ["po","Miejscownik","после","po pracy, po obiedzie"],
+ ["po","Miejscownik","после; по территории или поверхности","po pracy, chodzić po parku"],
  ["po","Biernik","за чем-то (сходить)","idę po chleb"],
  ["przez","Biernik","через, в течение","przez miasto, przez godzinę"],
- ["przed / nad / pod / za / między","Narzędnik","где","przed domem, nad stołem"],
- ["przed / nad / pod / za / między","Biernik","куда","idę pod stół"],
+ ["przed","Narzędnik","где; перед чем","przed domem, przed spotkaniem"],
+ ["przed","Biernik","куда, в пространство перед","wyjść przed dom"],
+ ["nad","Narzędnik","где, в области над","latać nad miastem"],
+ ["nad","Biernik","куда, в область над","wzbić się nad miasto"],
+ ["pod","Narzędnik","где, в области под","spać pod stołem"],
+ ["pod","Biernik","куда, в область под","wejść pod stół"],
+ ["za","Narzędnik","где, в области за","stać za domem"],
+ ["za","Biernik","куда, в область за","pobiec za dom"],
+ ["między","Narzędnik","где, между объектами","między stołem a oknem"],
+ ["między","Biernik","куда, в пространство между","wejść między drzewa"],
  ["dzięki","Celownik","благодаря","dzięki tobie"]
 ];
 
@@ -1666,14 +1677,14 @@ const PREP_PRACTICE = [
 },
 {
   id:"space", title:"Где или куда",
-  lead:"Один предлог меняет падеж вместе со смыслом: положение - предложный или творительный, направление - винительный.",
+  lead:"Предложный или творительный описывает область, где предмет находится или происходит действие. Винительный задаёт направленное перемещение в новую область.",
   tasks:[
     {id:"prepsp-1", prompt:"Jestem na ___. (poczta)", answers:["poczcie"], explanation:"Где? Na + предложный: na poczcie."},
     {id:"prepsp-2", prompt:"Idę na ___. (poczta)", answers:["pocztę"], explanation:"Куда? Na + винительный: na pocztę."},
     {id:"prepsp-3", prompt:"Kot śpi pod ___. (stół)", answers:["stołem"], explanation:"Где? Pod + творительный: pod stołem."},
-    {id:"prepsp-4", prompt:"Kot schował się pod ___. (stół)", answers:["stół"], explanation:"Куда? Pod + винительный: pod stół."},
+    {id:"prepsp-4", prompt:"Kot wbiegł z korytarza pod ___ i tam się zatrzymał. (stół)", answers:["stół"], explanation:"Кот переместился в новую область под столом: pod + винительный, pod stół."},
     {id:"prepsp-5", prompt:"Czekam przed ___. (dom)", answers:["domem"], explanation:"Положение перед объектом: przed + творительный."},
-    {id:"prepsp-6", prompt:"Wyszedłem przed ___. (dom)", answers:["dom"], explanation:"Движение в пространство перед домом: przed + винительный."},
+    {id:"prepsp-6", prompt:"Z ogrodu przeszedłem przed ___ i tam czekałem. (dom)", answers:["dom"], explanation:"Конечная область движения находится перед домом: przed + винительный, przed dom."},
     {id:"prepsp-7", prompt:"Latem jedziemy w ___. (góry)", answers:["góry"], explanation:"Направление: устойчиво w góry, винительный."},
     {id:"prepsp-text", prompt:"Переставляем вещи", passage:[
       "Klucze leżą na ",{key:"a",answers:["stole"],hint:"stół · где",label:"форма stół после na"},". Kładę telefon na ",
@@ -1684,7 +1695,7 @@ const PREP_PRACTICE = [
 },
 {
   id:"meaning", title:"Одинаковый предлог - разные конструкции",
-  lead:"Различай z, o и po по смыслу, а также выбирай формы we, ze, ode, przede и pode там, где без e трудно произнести.",
+  lead:"Различай z, o и po по смыслу, а расширенные формы we, ze, ode, beze, przeze, przede, pode и nade запоминай в частотных сочетаниях.",
   tasks:[
     {id:"prepme-1", prompt:"Kawa ___ mlekiem.", options:["z","ze","od"], answers:["z"], explanation:"Z + творительный означает совместность: z mlekiem."},
     {id:"prepme-2", prompt:"Wychodzę ___ domu.", options:["z","ze","od"], answers:["z"], explanation:"Z + родительный означает движение изнутри: z domu."},
@@ -1708,9 +1719,9 @@ const PREP_EXTRA = {
     ["Spotkajmy się obok ___. (kino)","kina","Obok + родительный: obok kina."],
     ["Nie ma tu nikogo oprócz ___. (ja)","mnie","Oprócz + родительный: oprócz mnie."],
     ["Idę do ___ po receptę. (apteka)","apteki","Do + родительный: do apteki."],
-    ["Mieszkamy koło ___. (rzeka)","rzeki","Koło + родительный: koło rzeki."],
+    ["Wracam z ___. (apteka)","apteki","Пара к do apteki: возвращаемся z apteki, z + родительный."],
     ["Książka leży między ___ a lampą. (komputer)","komputerem","Положение: między + творительный."],
-    ["Czekam na ciebie przed ___. (spotkanie)","spotkaniem","Przed здесь означает время: «до встречи» и требует творительного."],
+    ["Czekam na ciebie przed ___. (spotkanie)","spotkaniem","Przed здесь означает время «перед встречей, до начала встречи» и требует творительного."],
     ["Mówimy o tym po ___. (polski)","polsku","Устойчиво: po polsku."],
     ["Pracuję od ___ do piątku. (poniedziałek)","poniedziałku","Od + родительный: od poniedziałku."],
     ["Dzieci są teraz w ___. (szkoła)","szkole","W + предложный: w szkole."],
@@ -1721,11 +1732,11 @@ const PREP_EXTRA = {
     ["Książka leży w ___. (torba)","torbie","Где? W + предложный: w torbie."],
     ["Wkładam książkę w ___. (torba)","torbę","Куда? W + винительный: w torbę."],
     ["Samochód stoi za ___. (sklep)","sklepem","Где? Za + творительный."],
-    ["Samochód jedzie za ___. (sklep)","sklep","Куда? Za + винительный."],
+    ["Samochód przejechał z parkingu za ___ i tam się zatrzymał. (sklep)","sklep","Конечная область находится за магазином: za + винительный, za sklep."],
     ["Lampa wisi nad ___. (stół)","stołem","Где? Nad + творительный."],
-    ["Wieszam lampę nad ___. (stół)","stół","Куда? Nad + винительный."],
+    ["Wieszam lampę nad ___. (stół)","stołem","Лампа получает устойчивое расположение над столом: nad + творительный."],
     ["Siedzimy między ___ a Anną. (Piotr)","Piotrem","Положение между: творительный."],
-    ["Siadam między ___ a Annę. (Piotr)","Piotra","Направление: винительный."],
+    ["Siadam między ___ a Anną. (Piotr)","Piotrem","Итоговое место между людьми: między + творительный, między Piotrem a Anną."],
     ["Jestem w ___. (Warszawa)","Warszawie","Где? W Warszawie."],
     ["Jadę do ___ (Warszawa)","Warszawy","Направление к городу: do Warszawy."],
     ["Dzieci biegają po ___. (park)","parku","По пространству: po + предложный."],
@@ -1733,17 +1744,17 @@ const PREP_EXTRA = {
   ],
   meaning:[
     ["Wracam ___ lekarza.","od","От человека: od lekarza."],
-    ["Chcę herbatę ___ cytryną.","z","С добавкой: z cytryną."],
+    ["Nie idź ___ mnie.","beze","Устойчивая расширенная форма перед mnie: beze mnie."],
     ["Zadzwonię do ciebie ___ obiedzie.","po","После обеда: po obiedzie."],
     ["Czekam ___ autobus już dziesięć minut.","na","Ждать кого/что: czekać na."],
     ["Płacę ___ bilet kartą.","za","Платить за: płacić za."],
     ["Przyjadę ___ godzinę.","za","Через час: za godzinę."],
     ["Mieszkam tu ___ 2020 roku.","od","С 2020 года: od."],
-    ["To jest kawa ___ wynos.","na","Кофе с собой: na wynos."],
+    ["Ten tekst został napisany ___ mnie.","przeze","Устойчивая расширенная форма перед mnie: przeze mnie."],
     ["Idę ___ lekarza, bo jestem chory.","do","К врачу: do lekarza."],
     ["Rozmawialiśmy ___ pracy.","o","О работе: o pracy."],
     ["Jestem gotowy ___ wszystko.","na","Готов к чему: gotowy na + винительный."],
-    ["Dziecko stoi ___ mamie.","przy","Рядом с мамой: przy + предложный."]
+    ["Lampa wisi ___ mną.","nade","Устойчивая расширенная форма перед mną: nade mną."]
   ]
 };
 
@@ -1767,21 +1778,21 @@ const PREP_TEST = {
     {id:"preptest-8", prompt:"Po ___ odpoczywam. (praca)", answers:["pracy"], explanation:"После чего: po + предложный, po pracy."},
     {id:"preptest-9", prompt:"Idę po ___. (kawa)", answers:["kawę"], explanation:"За чем: po + винительный, po kawę."},
     {id:"preptest-10", prompt:"Dron lata nad ___. (miasto)", answers:["miastem"], explanation:"Где движется? Nad + творительный: nad miastem."},
-    {id:"preptest-11", prompt:"Dron wleciał nad ___. (miasto)", answers:["miasto"], explanation:"Куда направился? Nad + винительный: nad miasto."},
+    {id:"preptest-11", prompt:"Dron wzbił się nad ___. (miasto)", answers:["miasto"], explanation:"Дрон поднялся в новую область над городом: nad + винительный, nad miasto."},
     {id:"preptest-12", prompt:"Samochód stoi za ___. (dom)", answers:["domem"], explanation:"Где? Za + творительный: za domem."},
-    {id:"preptest-13", prompt:"Jedziemy ___ miasto.", options:["przez","po","od"], answers:["przez"], explanation:"Через пространство: przez + винительный."},
+    {id:"preptest-13", prompt:"Czekałem ___ godzinę.", options:["przez","po","od"], answers:["przez"], explanation:"Длительность действия: przez godzinę."},
     {id:"preptest-14", prompt:"Pracuję ___ poniedziałku.", options:["od","ode","z"], answers:["od"], explanation:"Перед обычным существительным: od poniedziałku."},
     {id:"preptest-15", prompt:"Dostałem wiadomość ___ niego.", options:["od","ode","z"], answers:["od"], explanation:"Нормально od niego; форма ode нужна прежде всего перед mnie."},
-    {id:"preptest-16", prompt:"Ten prezent jest ___ mnie.", options:["dla","do","u"], answers:["dla"], explanation:"Для кого: dla + родительный, dla mnie."},
+    {id:"preptest-16", prompt:"Nie idź ___ mnie.", options:["beze","bez","ode"], answers:["beze"], explanation:"Перед mnie употребляется расширенная форма: beze mnie."},
     {id:"preptest-17", prompt:"Dzięki ___ zdążyliśmy. (ty)", answers:["tobie"], explanation:"Dzięki требует дательного: dzięki tobie."},
     {id:"preptest-18", prompt:"Usiądź między ___ a Piotrem. (Anna)", answers:["Anną"], explanation:"Положение между объектами: między + творительный, między Anną a Piotrem."},
     {id:"preptest-19", prompt:"Wkładam telefon do ___. (torba)", answers:["torby"], explanation:"Do + родительный: do torby."},
     {id:"preptest-20", prompt:"Telefon leży w ___. (torba)", answers:["torbie"], explanation:"W + положение требует предложного: w torbie."},
-    {id:"preptest-21", prompt:"Idziemy ___ spacer po pracy.", options:["na","w","do"], answers:["na"], explanation:"На прогулку: iść na spacer."},
+    {id:"preptest-21", prompt:"Ten list został napisany ___ mnie.", options:["przeze","przez","beze"], answers:["przeze"], explanation:"Перед mnie употребляется расширенная форма: przeze mnie."},
     {id:"preptest-22", prompt:"Mieszkam tu ___ pięciu lat.", options:["od","za","przez"], answers:["od"], explanation:"С какого времени: od pięciu lat."},
     {id:"preptest-23", prompt:"Przyjdę ___ dziesięć minut.", options:["za","od","po"], answers:["za"], explanation:"Через десять минут: za dziesięć minut."},
-    {id:"preptest-24", prompt:"Rozmawiamy ___ nowym projekcie.", options:["o","na","za"], answers:["o"], explanation:"О теме: o + предложный."},
-    {id:"preptest-25", prompt:"Dzieci bawią się przed ___. (dom)", answers:["domem"], explanation:"Положение перед домом: przed + творительный."}
+    {id:"preptest-24", prompt:"Wrócił ___ godzinie.", options:["po","przez","za"], answers:["po"], explanation:"Возвращение спустя час: po godzinie."},
+    {id:"preptest-25", prompt:"Lampa wisi ___ mną.", options:["nade","nad","pode"], answers:["nade"], explanation:"Перед mną употребляется расширенная форма: nade mną."}
   ]
 };
 const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation,options],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation,...(options?{options}:{})}));
@@ -2037,24 +2048,24 @@ const ROD_PRACTICE = {
 const ADV_PRACTICE = {
   id:"adverbs", title:"Практика: наречия", lead:"20 заданий на форму наречия, время, место, частотность и сравнение.",
   tasks:[
-    {id:"adv-1",prompt:"Mówię po polsku ___. (dobry)",answers:["dobrze"],explanation:"Наречие от dobry - dobrze: говорит как?"},
+    {id:"adv-1",prompt:"Mówię ___ po polsku. (dobry)",answers:["dobrze"],explanation:"Наречие от dobry - dobrze: говорит как?"},
     {id:"adv-2",prompt:"Pociąg jedzie bardzo ___. (szybki)",answers:["szybko"],explanation:"Наречие от szybki - szybko."},
-    {id:"adv-3",prompt:"Dzisiaj pracuję w domu, a ___ idę do biura.",options:["wczoraj","jutro","nigdy"],answers:["jutro"],explanation:"Завтра - jutro."},
-    {id:"adv-4",prompt:"___ mieszkasz? - W Warszawie.",options:["Kiedy","Gdzie","Jak"],answers:["Gdzie"],explanation:"О месте спрашиваем gdzie?"},
+    {id:"adv-3",prompt:"Z całej grupy Anna mówi po polsku ___.",options:["dobrze","lepiej","najlepiej"],answers:["najlepiej"],explanation:"Сравнение со всей группой требует превосходной степени: najlepiej."},
+    {id:"adv-4",prompt:"Ten raport opisuje problem ___ niż poprzedni.",options:["szczegółowo","bardziej szczegółowo","najbardziej szczegółowo"],answers:["bardziej szczegółowo"],explanation:"Niż вводит второй элемент сравнения, поэтому нужна аналитическая сравнительная степень: bardziej szczegółowo."},
     {id:"adv-5",prompt:"On mówi ___ niż ja. (cicho)",answers:["ciszej"],explanation:"Сравнительная степень от cicho - ciszej."},
     {id:"adv-6",prompt:"Autobus jest już ___.",options:["blisko","bliski","bliską"],answers:["blisko"],explanation:"Blisko - неизменяемое наречие «близко»."},
     {id:"adv-7",prompt:"W weekend wstaję ___. (późny)",answers:["późno"],explanation:"Наречие от późny - późno."},
     {id:"adv-8",prompt:"Czy możesz mówić trochę ___? (wolno)",answers:["wolniej"],explanation:"Сравнительная степень: wolno → wolniej."},
-    {id:"adv-9",prompt:"Zwykle piję kawę ___ rano.",options:["bardzo","już","nigdy"],answers:["bardzo"],explanation:"Bardzo усиливает наречие rano: очень рано."},
+    {id:"adv-9",prompt:"Rano wstaję bardzo ___.",options:["wcześnie","rano","wczoraj"],answers:["wcześnie"],explanation:"Rano значит «утром», а wcześnie - «рано»: Rano wstaję wcześnie."},
     {id:"adv-10",prompt:"Nie mieszkam tutaj; mieszkam ___.",options:["tam","teraz","zawsze"],answers:["tam"],explanation:"Tam - там, противопоставляется tutaj - здесь."},
     {id:"adv-11",prompt:"Ona śpiewa ___. (piękny)",answers:["pięknie"],explanation:"Наречие от piękny - pięknie."},
     {id:"adv-12",prompt:"___ chodzę na basen - dwa razy w tygodniu.",options:["Jak często","Dokąd","Dlaczego"],answers:["Jak często"],explanation:"О частоте спрашиваем jak często?"},
     {id:"adv-13",prompt:"Robię to ___ niż wcześniej. (łatwo)",answers:["łatwiej"],explanation:"Сравнительная степень наречия: łatwo → łatwiej."},
-    {id:"adv-14",prompt:"Biegaj ___, bo jest ślisko. (ostrożny)",answers:["ostrożnie"],explanation:"Наречие от ostrożny - ostrożnie."},
-    {id:"adv-15",prompt:"On rozumie po polsku ___. (źle)",answers:["źle"],explanation:"Źle - нерегулярное наречие от zły."},
+    {id:"adv-14",prompt:"Idź ___, bo jest ślisko. (ostrożny)",answers:["ostrożnie"],explanation:"Наречие от ostrożny - ostrożnie."},
+    {id:"adv-15",prompt:"On ___ rozumie po polsku. (zły)",answers:["źle"],explanation:"От прилагательного zły образуется наречие źle."},
     {id:"adv-16",prompt:"Im wcześniej wyjdziemy, tym ___.",options:["dobrze","lepiej","najlepiej"],answers:["lepiej"],explanation:"В конструкции im…, tym… используются сравнительные формы: tym lepiej."},
-    {id:"adv-17",prompt:"Dzieci bawią się ___.",options:["na zewnątrz","zewnętrzne","na zewnętrznym"],answers:["na zewnątrz"],explanation:"На улице: na zewnątrz. В разговоре возможно и одно zewnątrz, но здесь тренируем устойчивое сочетание."},
-    {id:"adv-18",prompt:"Proszę, usiądź ___.",options:["tutaj","ten","tej"],answers:["tutaj"],explanation:"Tutaj - здесь; это наречие места."},
+    {id:"adv-17",prompt:"Dzieci bawią się ___.",options:["na zewnątrz","zewnętrzne","na zewnętrznym"],answers:["na zewnątrz"],explanation:"В этой конструкции естественно устойчивое сочетание bawić się na zewnątrz."},
+    {id:"adv-18",prompt:"Usiądź trochę ___, proszę. (blisko)",options:["blisko","bliżej","najbliżej"],answers:["bliżej"],explanation:"Trochę указывает на изменение относительно нынешнего положения: blisko → bliżej."},
     {id:"adv-19",prompt:"W tym sklepie jest ___. (tani)",answers:["taniej"],explanation:"Сравнительная степень наречия: tanio → taniej."},
     {id:"adv-20",prompt:"Wracam do domu ___.",options:["codziennie","codzienny","codzienna"],answers:["codziennie"],explanation:"Codziennie - каждый день, наречие частоты."}
   ]
@@ -2246,7 +2257,7 @@ const VOCAB_ADVERBS = [
  ["szybko","быстро","szybciej · najszybciej","Mówisz za szybko."],["wolno","медленно","wolniej · najwolniej","Proszę mówić wolniej."],
  ["łatwo","легко","łatwiej · najłatwiej","Nie jest łatwo."],["trudno","трудно","trudniej · najtrudniej","Trudno mi to powiedzieć."],
  ["ładnie","красиво","ładniej · najładniej","Mówisz bardzo ładnie."],["ciekawie","интересно","ciekawiej · najciekawiej","To brzmi ciekawie."],
- ["dokładnie","точно","dokładniej · najdokładniej","Dokładnie tak."],["normalnie","нормально","normalniej","Dzisiaj pracuję normalnie."],
+ ["dokładnie","точно","dokładniej · najdokładniej","Dokładnie tak."],["normalnie","нормально","normalniej · najnormalniej","Dzisiaj pracuję normalnie."],
  ["naprawdę","действительно","-","Naprawdę tak myślę."],["chyba","наверное","-","Chyba masz rację."],
  ["może","может быть","-","Może pójdziemy na kawę?"],["oczywiście","конечно","-","Oczywiście, nie ma problemu."],
  ["pewnie","наверное; конечно","-","Pewnie, pomogę ci."],["właśnie","как раз","-","Właśnie o tym myślałem."],
@@ -2274,12 +2285,12 @@ const VOCAB_ADVERBS = [
  ["całkiem","вполне","-","Całkiem dobrze mówię po polsku."],["raczej","скорее","-","Raczej nie mam czasu."],
  ["przynajmniej","по крайней мере","-","Przynajmniej próbuję mówić."],["nawet","даже","-","Nawet nie wiedziałem."],
  ["wcale","совсем, вовсе","-","Wcale się nie martw."],
- ["szczerze","честно","szczerzej","Szczerze mówiąc, nie wiem."],["moim zdaniem","по-моему","-","Moim zdaniem to dobry pomysł."],
+ ["szczerze","честно","szczerzej · najszczerzej","Szczerze mówiąc, nie wiem."],["moim zdaniem","по-моему","-","Moim zdaniem to dobry pomysł."],
  ["bezpośrednio","напрямую","-","Powiedz mi to bezpośrednio."],
- ["spokojnie","спокойно","spokojniej","Spokojnie, mamy czas."],["ostrożnie","осторожно","ostrożniej","Jedź ostrożnie."],
+ ["spokojnie","спокойно","spokojniej · najspokojniej","Spokojnie, mamy czas."],["ostrożnie","осторожно","ostrożniej · najostrożniej","Jedź ostrożnie."],
  ["głośno","громко","głośniej · najgłośniej","Mów trochę głośniej."],["cicho","тихо","ciszej · najciszej","Proszę mówić ciszej."],
  ["wcześnie","рано","wcześniej · najwcześniej","Wstaję wcześnie."],["późno","поздно","później · najpóźniej","Jest już późno."],
- ["niedawno","недавно","-","Niedawno przyjechałem do Polski."],["dawno","давно","dawniej","Dawno się nie widzieliśmy."],
+ ["niedawno","недавно","-","Niedawno przyjechałem do Polski."],["dawno","давно","dawniej · najdawniej","Dawno się nie widzieliśmy."],
  ["codziennie","каждый день","-","Codziennie uczę się piętnaście minut."],["regularnie","регулярно","-","Ćwiczę regularnie."],
  ["natychmiast","немедленно","-","Nie musisz odpowiadać natychmiast."],["krótko","кратко","krócej · najkrócej","Powiem krótko."],
  ["jasno","ясно","jaśniej · najjaśniej","Powiedz to jaśniej."],["prosto","просто","prościej · najprościej","Mów prosto."],
@@ -2482,26 +2493,31 @@ const POROWN = [
 ];
 
 const ADV_O = ["szybki→szybko","wolny→wolno","ciepły→ciepło","zimny→zimno","łatwy→łatwo","trudny→trudno","głośny→głośno","cichy→cicho","prosty→prosto","tani→tanio","brzydki→brzydko"];
-const ADV_E = ["ładny→ładnie","dokładny→dokładnie","szczęśliwy→szczęśliwie","ciekawy→ciekawie","miły→mile","piękny→pięknie","straszny→strasznie","wygodny→wygodnie","spokojny→spokojnie","grzeczny→grzecznie"];
+const ADV_E = ["ładny→ładnie","dokładny→dokładnie","szczęśliwy→szczęśliwie","ciekawy→ciekawie","miły→miło / mile","piękny→pięknie","straszny→strasznie","wygodny→wygodnie","spokojny→spokojnie","grzeczny→grzecznie"];
 const ADV_IRR = [
- ["dobry / dobrze","lepiej","najlepiej"],
- ["zły / źle","gorzej","najgorzej"],
- ["duży (много) / dużo","więcej","najwięcej"],
- ["mały (мало) / mało","mniej","najmniej"]
+ ["dobrze","lepiej","najlepiej"],
+ ["źle","gorzej","najgorzej"],
+ ["dużo","więcej","najwięcej"],
+ ["mało","mniej","najmniej"]
 ];
 const ADV_REG = [
- ["szybko","szybciej","najszybciej","k → c, как в прилагательном"],
+ ["szybko","szybciej","najszybciej","-ko → -ciej"],
  ["ładnie","ładniej","najładniej",""],
- ["ciepło","cieplej","najcieplej","o → e"],
+ ["ciepło","cieplej","najcieplej","-ło → -lej"],
  ["tanio","taniej","najtaniej",""],
- ["często","częściej","najczęściej","st → ści"],
- ["drogo","drożej","najdrożej","g → ż"]
+ ["często","częściej","najczęściej","-sto → -ściej"],
+ ["drogo","drożej","najdrożej","g → ż"],
+ ["blisko","bliżej","najbliżej","особая основа"],
+ ["daleko","dalej","najdalej","особая основа"],
+ ["wysoko","wyżej","najwyżej","особая основа"],
+ ["nisko","niżej","najniżej","особая основа"]
 ];
 const ADV_LIST = [
  ["место","gdzie?","tu, tutaj, tam, wszędzie, gdzieś, nigdzie, blisko, daleko, wysoko, nisko"],
- ["время","kiedy?","teraz, wtedy, zawsze, nigdy, czasem, często, rzadko, wcześnie, późno, jutro, wczoraj, potem"],
+ ["время","kiedy?","teraz, wtedy, wcześnie, późno, jutro, wczoraj, potem"],
+ ["частотность","jak często?","zawsze, nigdy, czasem, często, rzadko, codziennie"],
  ["образ действия","jak?","dobrze, źle, szybko, wolno, głośno, cicho, ładnie, mocno, słabo, razem"],
- ["степень, количество","jak bardzo? ile razy?","bardzo, trochę, dużo, mało, zupełnie, całkiem, prawie, wyjątkowo"]
+ ["степень и мера","jak bardzo? ile?","bardzo, trochę, dużo, mało, zupełnie, całkiem, prawie, wyjątkowo"]
 ];
 
 const PRON = [

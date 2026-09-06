@@ -1286,22 +1286,41 @@ function renderImpers(){
 }
 
 function renderPreps(){
-  const cs = ["все","Mianownik","Biernik","Dopełniacz","Celownik","Narzędnik","Miejscownik"];
+  const cs = ["все","Biernik","Dopełniacz","Celownik","Narzędnik","Miejscownik"];
   $("#s-preps").innerHTML = `<div class="panel">
     <h2>Предлог → падеж</h2>
-    <p class="lead">Один предлог часто управляет двумя падежами. Разница обычно «где / куда».</p>
+    <p class="lead">Один предлог может управлять разными падежами и менять значение. У пространственных пар важно различать область действия и направленное перемещение в новую область.</p>
     <div class="chips" id="pfilter">${cs.map((c,i) =>
       `<button class="chip" data-f="${c}" aria-pressed="${i===0}"><span class="cp">${c}</span></button>`).join("")}</div>
     <div class="scroll"><table id="ptable" class="vt"></table></div>
-    <div class="tip"><b>Где / куда у парных предлогов.</b> У <span class="pl">w, na, pod, nad, za, przed, między</span> положение обычно требует Miejscownik или Narzędnik, направление - Biernik: <span class="pl">Jestem na poczcie</span> / <span class="pl">idę na pocztę</span>. Само движение не всегда означает Biernik: <span class="pl">idę do sklepu</span> требует Dopełniacz, а <span class="pl">idę ulicą</span> - Narzędnik. Учи предлог вместе с падежом.</div>
+    <div class="tip"><b>Область или новое направление у парных предлогов.</b> Miejscownik или Narzędnik описывает область, где предмет находится или где происходит действие: <span class="pl">Dron lata nad miastem</span>. Biernik задаёт направленное перемещение в новую область: <span class="pl">Dron wzbił się nad miasto</span>. Сам глагол движения не выбирает Biernik: <span class="pl">idę do sklepu</span> требует Dopełniacz, <span class="pl">idę ulicą</span> - Narzędnik.</div>
 
-    <h3>Беглое e: w → we, z → ze</h3>
-    <p class="lead">Перед скоплением согласных или похожим звуком предлог обрастает гласной - иначе не выговорить.</p>
+    <h3>Куда, где, откуда</h3>
+    <p class="lead">Предлоги места удобно учить тройками. Название места запоминай сразу вместе с предлогом: по одному общему правилу нельзя вывести все сочетания <span class="pl">w</span> и <span class="pl">na</span>.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>куда</th><th>где</th><th>откуда</th></tr>
+      <tr><td class="w">do sklepu</td><td class="w">w sklepie</td><td class="w">ze sklepu</td></tr>
+      <tr><td class="w">na pocztę</td><td class="w">na poczcie</td><td class="w">z poczty</td></tr>
+      <tr><td class="w">do lekarza</td><td class="w">u lekarza</td><td class="w">od lekarza</td></tr>
+    </table></div>
+    <div class="tip"><b><span class="pl">W</span> или <span class="pl">na</span> учим со словом.</b> <span class="pl">w domu, w pracy, w szkole</span>, но <span class="pl">na poczcie, na uniwersytecie, na dworcu, na lotnisku</span>. Особенно запомни польское <span class="pl">w pracy</span>, которому соответствует русское «на работе».</div>
+
+    <h3>Четыре отношения во времени</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>отношение</th><th>предлог</th><th>пример</th></tr>
+      <tr><td>через сколько от настоящего?</td><td class="c">za + Biernik</td><td class="w">Przyjdę za godzinę.</td></tr>
+      <tr><td>как долго?</td><td class="c">przez + Biernik</td><td class="w">Czekałem przez godzinę.</td></tr>
+      <tr><td>с какого момента?</td><td class="c">od + Dopełniacz</td><td class="w">Mieszkam tu od pięciu lat.</td></tr>
+      <tr><td>спустя сколько?</td><td class="c">po + Miejscownik</td><td class="w">Wrócił po godzinie.</td></tr>
+    </table></div>
+
+    <h3>Краткие и расширенные формы</h3>
+    <p class="lead">Формы с <span class="pl">e</span> зависят от конкретного сочетания и часто закреплены узусом. Надёжнее запоминать частотные модели, а не добавлять <span class="pl">e</span> перед любой группой согласных.</p>
     <div class="scroll"><table class="vt">
       <tr><th>предлог</th><th>с беглым e</th><th>примеры</th></tr>
       ${PREP_E.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Чаще всего это происходит перед местоимениями <span class="pl">mną, mnie</span> и словом <span class="pl">wszystkim</span>, а также когда следующее слово начинается на ту же букву или на скопление согласных.</p>
+    <p class="lead">Запомни местоименные сочетания <span class="pl">we mnie, ze mną, ode mnie, beze mnie, przeze mnie, przede mną, pode mną, nade mną</span>. С существительными выбор не автоматический: <span class="pl">we Wrocławiu</span>, но <span class="pl">w Warszawie</span>; <span class="pl">ze szkoły</span>, но <span class="pl">z pracy</span>.</p>
   </div><div id="prepPractice"></div><div id="prepTest"></div>`;
   const draw = f => $("#ptable").innerHTML =
     `<tr><th>предлог</th><th>падеж</th><th>значение</th><th>пример</th></tr>` +
@@ -1410,30 +1429,31 @@ function renderAdjPractice(){
 function renderAdv(){
   $("#s-adv").innerHTML = `<div class="panel">
     <h2>Наречия</h2>
-    <p class="lead">Не склоняются и не спрягаются - единственная сложность в том, что они образуются от прилагательных не по одному жёсткому правилу, а списком типовых окончаний.</p>
+    <p class="lead">Наречия не изменяются по падежам, числам, родам и лицам. Многие образуются от прилагательных на <span class="pl">-o</span> или <span class="pl">-e / -ie</span>, но конкретную форму надёжнее учить вместе с исходным словом. Качественные наречия могут иметь степени сравнения.</p>
 
     <h3>Образование: -o</h3>
-    <p class="lead">Самая большая и продуктивная группа.</p>
+    <p class="lead">Одна из двух основных моделей образования наречий от прилагательных.</p>
     <p class="pl">${ADV_O.join(" · ")}</p>
 
     <h3>Образование: -e / -ie</h3>
-    <p class="lead">Прилагательные с мягкой основой чаще уходят сюда.</p>
+    <p class="lead">Вторая частотная модель; перед <span class="pl">-e / -ie</span> основа нередко чередуется или смягчается.</p>
     <p class="pl">${ADV_E.join(" · ")}</p>
-    <div class="tip">Жёсткого правила «это слово точно -o, а то точно -e» нет - прилагательные на <span class="pl">-ny, -wy</span> распределяются по обеим группам, форму лучше запоминать вместе со словом. Но если сомневаешься - <span class="pl">-o</span> угадывается чаще.</div>
+    <div class="tip"><b>Универсального выбора между <span class="pl">-o</span> и <span class="pl">-e / -ie</span> нет.</b> Даже похожие прилагательные дают разные модели: <span class="pl">trudny → trudno</span>, но <span class="pl">ładny → ładnie</span>. Поэтому учи готовую пару и проверяй незнакомую форму по словарю.</div>
+    <div class="tip"><b><span class="pl">Miło</span> и <span class="pl">mile</span>.</b> Обе формы связаны с <span class="pl">miły</span>, но не всегда взаимозаменяемы: <span class="pl">Miło mi. · Tu jest miło.</span>, зато <span class="pl">mile widziany · mile spędzić czas</span>.</div>
 
-    <h3>Степени сравнения: нерегулярные</h3>
+    <h3>Четыре супплетивных ряда</h3>
     <div class="scroll"><table class="vt">
       <tr><th>обычная</th><th>сравнительная</th><th>превосходная</th></tr>
       ${ADV_IRR.map(a => `<tr><td class="w">${a[0]}</td><td class="g">${a[1]}</td><td class="g">${a[2]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Те же четыре слова-исключения, что и у прилагательных <span class="pl">(dobry/lepszy, zły/gorszy, duży/większy, mały/mniejszy)</span> - только в форме наречия.</p>
+    <p class="lead">В этих четырёх рядах сравнительная степень строится от другой основы. Они соотносятся с рядами прилагательных <span class="pl">dobry / lepszy, zły / gorszy, duży / większy, mały / mniejszy</span>, но <span class="pl">dużo</span> значит «много», а <span class="pl">mało</span> - «мало».</p>
 
-    <h3>Степени сравнения: регулярные</h3>
+    <h3>Частые синтетические формы</h3>
     <div class="scroll"><table class="vt">
       <tr><th>обычная</th><th>сравнительная</th><th>превосходная</th><th></th></tr>
       ${ADV_REG.map(a => `<tr><td class="w">${a[0]}</td><td class="g">${a[1]}</td><td class="g">${a[2]}</td><td class="note">${a[3]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Превосходная - всегда просто <span class="pl">naj-</span> перед сравнительной. Длинные и заимствованные наречия сравниваются аналитически: <span class="pl">bardziej szczegółowo → najbardziej szczegółowo</span>.</p>
+    <p class="lead">Не все наречия сравниваются: степень образуют прежде всего градуируемые качественные значения. В синтетической модели <span class="pl">naj-</span> пишется слитно со сравнительной формой: <span class="pl">szybciej → najszybciej</span>. В аналитической модели используются отдельные слова: <span class="pl">bardziej szczegółowo → najbardziej szczegółowo</span>. Выбор модели зависит от конкретного слова и значения.</p>
     <div class="tip"><b>«Чем».</b> Как и у прилагательных - <span class="pl">niż</span> или <span class="pl">od</span> + Dopełniacz: <span class="pl">Biegam szybciej niż on. · Biegam szybciej od niego.</span></div>
     <div class="tip"><b>Конструкции сравнения общие с прилагательными.</b> <span class="pl">coraz szybciej</span> · <span class="pl">im wcześniej, tym lepiej</span> · <span class="pl">jak najszybciej</span> · <span class="pl">o wiele taniej</span> · <span class="pl">za wolno</span> - полная таблица во вкладке «Прилагательные».</div>
 
@@ -1442,7 +1462,8 @@ function renderAdv(){
       <tr><th>группа</th><th>вопрос</th><th>примеры</th></tr>
       ${ADV_LIST.map(a => `<tr><td class="w">${a[0]}</td><td style="color:var(--muted)">${a[1]}</td><td class="g">${a[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Не путать с прилагательным.</b> Наречие относится к глаголу и не склоняется: <span class="pl">On mówi dobrze</span> (наречие) vs <span class="pl">To jest dobry pomysł</span> (прилагательное, согласуется с существительным).</div>
+    <div class="tip"><b>Ложный друг: <span class="pl">rano</span> не значит «рано».</b> Польское <span class="pl">rano</span> - «утром», а русскому «рано» и белорусскому «рана» соответствует <span class="pl">wcześnie</span>: <span class="pl">Rano wstaję wcześnie.</span> - «Утром я встаю рано».</div>
+    <div class="tip"><b>Не путать с прилагательным.</b> Наречие не согласуется с существительным и чаще всего характеризует действие или состояние: <span class="pl">On mówi dobrze. · Tu jest miło.</span> Оно также может определять прилагательное или другое наречие: <span class="pl">bardzo dobry pomysł · wyjątkowo szybko</span>. Прилагательное согласуется с существительным: <span class="pl">To jest dobry pomysł.</span></div>
   </div>${topicPracticeHTML(ADV_PRACTICE, "adverb")}`;
 }
 function renderPron(){
