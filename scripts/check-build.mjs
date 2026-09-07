@@ -220,6 +220,15 @@ assert.deepEqual([...alphabetItems[17].querySelectorAll("option")].slice(1).map(
 const vocabulary = documents.get("s-vocab");
 assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list").length, 4);
 assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list tr").length, 404);
+assert(vocabulary.html.includes("У несовершенных глаголов это настоящее время, у совершенных - простое будущее"));
+assert(vocabulary.html.includes("pl · pieniędzy · pieniądze"));
+assert(vocabulary.html.includes("pl · drzwi · drzwi"));
+assert(vocabulary.html.includes("pl · wakacji · wakacje"));
+assert(vocabulary.html.includes("lubię coś - мне что-то нравится"));
+assert(vocabulary.html.includes("udało się komuś - у кого-то получилось"));
+assert(vocabulary.html.includes("приятный, располагающий"));
+assert(!vocabulary.html.includes("Три формы дают всю парадигму"));
+assert(!vocabulary.html.includes("нуждаться; быть нужным"));
 const speaking = documents.get("s-talk");
 assert(speaking.html.includes("Фразы спасения"));
 assert(speaking.html.includes("Co robiłeś w weekend?"));
@@ -241,6 +250,44 @@ assert(!impersonal.html.includes("Действие совершено, но ке
 assert(!impersonal.html.includes("не «dom został zbudowany»"));
 assert.equal(impersonal.document.querySelectorAll(".impersonal-practice .exercise-item").length, 20);
 assert.equal(impersonal.document.querySelectorAll(".impersonal-practice select.exercise-control").length, 20);
+const wordOrder = documents.get("s-order");
+assert(wordOrder.html.includes("Одного обязательного «второго места» в современном польском нет"));
+assert(wordOrder.html.includes("Jego widziałem wczoraj, nie Piotra"));
+assert(wordOrder.html.includes("Czy tobie podoba się ten film?"));
+assert(wordOrder.html.includes("Z kim Piotr wyjechał?"));
+assert(wordOrder.html.includes("On myśli tylko o sobie"));
+assert(!wordOrder.html.includes("Go widziałem wczoraj</span>"));
+assert(!wordOrder.html.includes("dzień dobry"));
+assert.equal(wordOrder.document.querySelectorAll(".word-order-practice .exercise-item").length, 20);
+assert.equal(wordOrder.document.querySelectorAll(".word-order-practice select.exercise-control").length, 20);
+const people = documents.get("s-ludzie");
+assert(people.html.includes("Kościuszko - не склоняется"));
+assert(people.html.includes("большинство иностранных фамилий склоняются"));
+assert(people.html.includes("na / we Węgrzech"));
+assert(people.html.includes("na Węgry / do Węgier"));
+assert(people.html.includes("нормативны и употребляются, но различаются по регистру"));
+assert(people.html.includes("После pani название профессии в этой модели не склоняется: z panią doktor"));
+assert(people.html.includes("Женская форма psycholożka после być стоит в творительном"));
+assert(!people.html.includes("Na Węgrzech - закрытая норма"));
+assert.equal(people.document.querySelectorAll(".people-practice .exercise-item").length, 20);
+const diminutives = documents.get("s-dim");
+assert(diminutives.html.includes("Вторая степень усиливает малость и/или экспрессию"));
+assert(diminutives.html.includes("Форма может стать обычным названием"));
+assert(diminutives.html.includes("Anusia - ласково; Anka - фамильярно"));
+assert(diminutives.html.includes("разговорно-экспрессивная форма, уместность зависит от тона"));
+assert(!diminutives.html.includes("гораздо шире, чем в русском"));
+assert.equal(diminutives.document.querySelectorAll(".diminutive-practice .exercise-item").length, 20);
+assert.equal(diminutives.document.querySelectorAll(".diminutive-practice select.exercise-control").length, 20);
+const bridges = documents.get("s-bridge");
+assert(appSource.includes("<h2>Частые соответствия в родственных словах</h2>"));
+assert(bridges.html.includes("это не алгоритм перевода"));
+assert(bridges.html.includes("обычно студенческое общежитие; также член академии"));
+assert(bridges.html.includes("нейтральное «курить» обычно palić"));
+assert(bridges.html.includes("Во множественном braki может означать бракованные изделия"));
+assert(!bridges.html.includes("Работает на любом незнакомом слове"));
+assert(!bridges.html.includes("ё, е"));
+assert.equal(bridges.document.querySelectorAll(".bridge-practice .exercise-item").length, 20);
+assert.equal(bridges.document.querySelectorAll(".bridge-practice select.exercise-control").length, 20);
 assert(!documents.get("s-ludzie").html.includes("Wołacz - вкладка"));
 assert(documents.get("s-num").html.includes("Z iloma osobami rozmawiałeś?"));
 assert(documents.get("s-num").html.includes("o czterdziestu procentach"));
@@ -551,7 +598,7 @@ assert.deepEqual(trainerByLemma.get("dać").fu, ["dam", "dasz", "da", "damy", "d
 assert.deepEqual(trainerByLemma.get("wiedzieć").pr, ["wiem", "wiesz", "wie", "wiemy", "wiecie", "wiedzą"]);
 
 const trainerNouns = trainerDecks.nouns;
-assert.equal(trainerNouns.length, 171, "The noun trainer drills every declension example that carries a dictionary form");
+assert.equal(trainerNouns.length, 213, "The noun trainer drills every declension example that carries a dictionary form");
 assert.deepEqual(trainerDecks.cases.map(([id]) => id), ["mian", "bier", "dop", "cel", "narz", "miej", "woł"]);
 assert(trainerNouns.every(item => item.l && item.f && item.c && (item.n === "sg" || item.n === "pl")),
   "Every noun question needs a lemma, a form, a case and a number");
@@ -563,9 +610,17 @@ assert.equal(nounAnswer("kawa", "bier", "sg"), "kawę");
 assert.equal(nounAnswer("pies", "bier", "sg"), "psa");
 assert.equal(nounAnswer("student", "mian", "pl"), "studenci");
 assert.equal(nounAnswer("sklep", "miej", "sg"), "sklepie");
+assert.equal(nounAnswer("Niemcy", "miej", "pl"), "Niemczech");
+assert.equal(nounAnswer("Włochy", "miej", "pl"), "Włoszech");
+assert.equal(nounAnswer("Węgry", "miej", "pl"), "Węgrzech");
 assert.equal(nounAnswer("Piotr", "woł", "sg"), "Piotrze");
 assert(!trainerNouns.some(item => item.c === "mian" && item.n === "sg"),
   "Nominative singular is the dictionary form, so there is nothing to drill");
+for(const [caseId] of trainerDecks.cases) for(const number of ["sg", "pl"]){
+  if(caseId === "mian" && number === "sg") continue;
+  assert(trainerNouns.filter(item => item.c === caseId && item.n === number).length >= 13,
+    `${caseId} ${number}: the noun trainer needs 13 words to preserve a 12-word no-repeat window`);
+}
 
 const trainerAdjectives = trainerDecks.adjectives;
 assert.equal(trainerAdjectives.length, 317, "Two forms per adjective, two degrees where they exist, plus the dobry paradigm");

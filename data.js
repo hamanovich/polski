@@ -159,8 +159,8 @@ const CASES = [
     {l:"средний", f:[{a:"mleko",b:"mleko|"},{a:"piwo",b:"piwo|"}], n:"не меняется"}
   ],
   pl:[
-    {l:"мужско-личный", f:[{a:"panowie",b:"pan|ów"},{a:"lekarze",b:"lekarz|y"},{a:"nauczyciele",b:"nauczyciel|i"}], n:"= родительный"},
-    {l:"всё остальное", f:[{a:"bilety",b:"bilet|y"},{a:"psy",b:"ps|y"},{a:"kawy",b:"kaw|y"},{a:"piwa",b:"piw|a"}], n:"= именительный, включая животных"}
+    {l:"мужско-личный", f:[{a:"panowie",b:"pan|ów"},{a:"lekarze",b:"lekarz|y"},{a:"nauczyciele",b:"nauczyciel|i"},{a:"studenci",b:"student|ów"},{a:"sąsiedzi",b:"sąsiad|ów"},{a:"przyjaciele",b:"przyjaciół|"}], n:"= родительный"},
+    {l:"всё остальное", f:[{a:"bilety",b:"bilet|y"},{a:"psy",b:"ps|y"},{a:"kawy",b:"kaw|y"},{a:"piwa",b:"piw|a"},{a:"książki",b:"książk|i"},{a:"dzieci",b:"dzieci|"},{a:"okna",b:"okn|a"}], n:"= именительный, включая животных"}
   ],
   agree:[["ten dobry chleb","ten dobry chleb"],["ten dobry pies","tego dobrego psa"],["ta dobra kawa","tę dobrą kawę"],["to dobre piwo","to dobre piwo"],["мн. мужчины","tych dobrych lekarzy"],["мн. остальное","te dobre kawy"]],
   exc:[["pieniądze","pieniądze","не мужско-личное: mam pieniądze"],["ręka","rękę",""],["pani","panią","единственное женское на -ą"],["ta","tę","литературная норма; в речи слышно tą"]],
@@ -213,7 +213,7 @@ const CASES = [
     {l:"женский: мягкая основа → -i / -y", f:[{a:"pani",b:"pan|i"},{a:"ulica",b:"ulic|y"},{a:"praca",b:"prac|y"},{a:"ziemia",b:"ziem|i"}], n:"после мягких и исторически мягких; форма совпадает с предложным"},
     {l:"средний", f:[{a:"dziecko",b:"dzieck|u"},{a:"okno",b:"okn|u"}], n:"-u"}
   ],
-  pl:[{l:"все роды", f:[{a:"studenci",b:"student|om"},{a:"kobiety",b:"kobiet|om"},{a:"dzieci",b:"dzieci|om"}], n:"-om, без вариантов"}],
+  pl:[{l:"все роды", f:[{a:"studenci",b:"student|om"},{a:"kobiety",b:"kobiet|om"},{a:"dzieci",b:"dzieci|om"},{a:"panowie",b:"pan|om"},{a:"lekarze",b:"lekarz|om"},{a:"sąsiedzi",b:"sąsiad|om"},{a:"domy",b:"dom|om"},{a:"kawy",b:"kaw|om"},{a:"okna",b:"okn|om"},{a:"nauczyciele",b:"nauczyciel|om"},{a:"bilety",b:"bilet|om"},{a:"psy",b:"ps|om"},{a:"ulice",b:"ulic|om"}], n:"-om, без вариантов"}],
   agree:[["ten dobry student","temu dobremu studentowi"],["ta dobra kobieta","tej dobrej kobiecie"],["to dobre dziecko","temu dobremu dziecku"],["мн. любое","tym dobrym ludziom"]],
   exc:[["ja","mi / mnie","короткая mi - обычная, mnie - под ударением"],["ty","ci / tobie",""],["on","mu / jemu / niemu","niemu - только после предлога"]],
   pit:["<b>Как выбрать окончание.</b> Мужское обычно получает <span class='pl'>-owi</span>; небольшой список частых слов - <span class='pl'>-u</span> (<span class='pl'>panu, bratu, ojcu, psu</span>). Средний род получает <span class='pl'>-u</span>. У женского твёрдая основа обычно даёт <span class='pl'>-e</span> с чередованием (<span class='pl'>kobiecie, koleżance</span>), мягкая - <span class='pl'>-i/-y</span> (<span class='pl'>pani, ulicy</span>). Во множественном всегда <span class='pl'>-om</span>.",
@@ -229,11 +229,11 @@ const CASES = [
   use:["Профессия и роль после <span class='pl'>być, zostać, zostawać</span>: <span class='pl'>jestem programistą</span>.","Орудие: <span class='pl'>piszę długopisem</span>.","Транспорт: <span class='pl'>jadę autobusem</span> - без предлога.","Совместность: <span class='pl'>kawa z mlekiem, idę z bratem</span>.","Глаголы: <span class='pl'>interesować się, zajmować się, opiekować się</span> + творительный."],
   preps:"z (с кем/чем), nad, pod, przed, za, między, poza - все в значении «где»",
   sg:[
-    {l:"муж. и средний", f:[{a:"autobus",b:"autobus|em"},{a:"brat",b:"brat|em"},{a:"piwo",b:"piw|em"},{a:"pociąg",b:"pocią|gi|em"},{a:"mleko",b:"mle|ki|em"}], n:"-em; после k, g вставляется i: -kiem, -giem"},
-    {l:"женский", f:[{a:"kawa",b:"kaw|ą"},{a:"woda",b:"wod|ą"},{a:"pani",b:"pani|ą"},{a:"noc",b:"noc|ą"}], n:"-ą, одна форма на всё"}
+    {l:"муж. и средний", f:[{a:"autobus",b:"autobus|em"},{a:"brat",b:"brat|em"},{a:"piwo",b:"piw|em"},{a:"pociąg",b:"pocią|gi|em"},{a:"mleko",b:"mle|ki|em"},{a:"lekarz",b:"lekarz|em"},{a:"dziecko",b:"dziec|ki|em"}], n:"-em; после k, g вставляется i: -kiem, -giem"},
+    {l:"женский", f:[{a:"kawa",b:"kaw|ą"},{a:"woda",b:"wod|ą"},{a:"pani",b:"pani|ą"},{a:"noc",b:"noc|ą"},{a:"książka",b:"książk|ą"},{a:"ulica",b:"ulic|ą"}], n:"-ą, одна форма на всё"}
   ],
   pl:[
-    {l:"все роды: регулярно", f:[{a:"bilety",b:"bilet|ami"},{a:"kawy",b:"kaw|ami"},{a:"studenci",b:"student|ami"}], n:"-ami"},
+    {l:"все роды: регулярно", f:[{a:"bilety",b:"bilet|ami"},{a:"kawy",b:"kaw|ami"},{a:"studenci",b:"student|ami"},{a:"domy",b:"dom|ami"},{a:"okna",b:"okn|ami"},{a:"ulice",b:"ulic|ami"}], n:"-ami"},
     {l:"исключения -mi", f:[{a:"ludzie",b:"ludź|mi"},{a:"dzieci",b:"dzieć|mi"},{a:"pieniądze",b:"pieniędz|mi"},{a:"goście",b:"gość|mi"},{a:"bracia",b:"brać|mi"},{a:"konie",b:"koń|mi"},{a:"przyjaciele",b:"przyjaciół|mi"}], n:"короткий список, стоит выучить целиком"}
   ],
   agree:[["ten dobry lekarz","tym dobrym lekarzem"],["ta dobra kawa","tą dobrą kawą"],["to dobre piwo","tym dobrym piwem"],["мн. любое","tymi dobrymi ludźmi"]],
@@ -259,7 +259,7 @@ const CASES = [
     {l:"жен. → -e", f:[{a:"kawa",b:"ka|wi|e"},{a:"woda",b:"wo|dzi|e"},{a:"szkoła",b:"szko|l|e"},{a:"książka",b:"książ|c|e"},{a:"apteka",b:"apte|c|e"},{a:"droga",b:"dro|dz|e"}], n:"с чередованием - тем же, что в белорусском"},
     {l:"жен. → -y / -i", f:[{a:"ulica",b:"ulic|y"},{a:"praca",b:"prac|y"},{a:"noc",b:"noc|y"},{a:"kuchnia",b:"kuchn|i"},{a:"sól",b:"sol|i"}], n:"после мягких и шипящих"}
   ],
-  pl:[{l:"почти все роды", f:[{a:"sklepy",b:"sklep|ach"},{a:"ulice",b:"ulic|ach"},{a:"miasta",b:"miast|ach"},{a:"dzieci",b:"dzieci|ach"}], n:"обычно -ach; важные традиционные исключения: w Niemczech, we Włoszech, na Węgrzech"}],
+  pl:[{l:"почти все роды", f:[{a:"sklepy",b:"sklep|ach"},{a:"ulice",b:"ulic|ach"},{a:"miasta",b:"miast|ach"},{a:"dzieci",b:"dzieci|ach"},{a:"domy",b:"dom|ach"},{a:"restauracje",b:"restauracj|ach"},{a:"okna",b:"okn|ach"},{a:"pociągi",b:"pociąg|ach"},{a:"kawy",b:"kaw|ach"},{a:"psy",b:"ps|ach"},{a:"Niemcy",b:"Niem|czech"},{a:"Włochy",b:"Wło|szech"},{a:"Węgry",b:"Wę|grzech"}], n:"обычно -ach; важные традиционные исключения: w Niemczech, we Włoszech, na Węgrzech"}],
   agree:[["ten duży sklep","w tym dużym sklepie"],["ta nowa praca","w tej nowej pracy"],["to małe miasto","w tym małym mieście"],["мн. любое","w tych dużych sklepach"]],
   exc:[["dom","w domu","не domie"],["syn","o synu",""],["pan","o panu",""],["państwo","o państwu",""],["muzeum","w muzeum","в ед. ч. не склоняется"],["ręka","w ręce / w ręku","обе формы живые"],["stół / ogród","na stole / w ogrodzie","ó → o"]],
   alt:[["t","ci","brat → o bracie"],["d","dzi","woda → w wodzie"],["st","ści","miasto → w mieście"],["sł","śl","krzesło → na krześle"],["ł","l","szkoła → w szkole"],["r","rz","teatr → w teatrze"],["k","c","apteka → w aptece"],["g","dz","droga → na drodze"],["ch","sz","mucha → o musze"],["n","ni","okno → w oknie"],["b p w m f","bi pi wi mi fi","sklep → w sklepie"],["s z","si zi","nos → o nosie"]],
@@ -284,7 +284,7 @@ const CASES = [
     {l:"уменьшительные", f:[{a:"Kasia",b:"Kasi|u"},{a:"Ania",b:"Ani|u"},{a:"babcia",b:"babci|u"}], n:"-u"},
     {l:"средний / pani", f:[{a:"dziecko",b:"dziecko|"},{a:"pani",b:"pani|"}], n:"= именительный"}
   ],
-  pl:[{l:"все роды", f:[{a:"panowie",b:"panowie|"},{a:"dzieci",b:"dzieci|"},{a:"studenci",b:"studenci|"}], n:"= именительный, всегда"}],
+  pl:[{l:"все роды", f:[{a:"panowie",b:"panowie|"},{a:"dzieci",b:"dzieci|"},{a:"studenci",b:"studenci|"},{a:"lekarze",b:"lekarze|"},{a:"sąsiedzi",b:"sąsiedzi|"},{a:"Polacy",b:"Polacy|"},{a:"nauczyciele",b:"nauczyciele|"},{a:"kobiety",b:"kobiety|"},{a:"koledzy",b:"koledzy|"},{a:"przyjaciele",b:"przyjaciele|"},{a:"kawy",b:"kawy|"},{a:"książki",b:"książki|"},{a:"okna",b:"okna|"}], n:"= именительный, всегда"}],
   agree:[["drogi Marek","drogi Marku"],["droga Anna","droga Anno"],["szanowni panowie","szanowni panowie"]],
   exc:[["syn","synu","твёрдая основа, но традиционное -u"],["Bóg","Boże","не Bogu"],["ojciec","ojcze",""],["chłopiec","chłopcze",""],["ksiądz","księże",""]],
   pit:["<b>Как выбрать между -e и -u.</b> Смотри не просто на последнюю букву, а на конец основы: <span class='pl'>Marek → Marka</span>, поэтому основа <span class='pl'>Mark-</span>. Если она заканчивается на <span class='pl'>k, g, ch</span> или мягкую / исторически мягкую согласную - ставь <span class='pl'>-u</span>: <span class='pl'>Marku, lekarzu, nauczycielu</span>. После остальных твёрдых согласных обычно ставь <span class='pl'>-e</span> и учитывай чередование: <span class='pl'>panie, Piotrze, Adamie</span>. Формы <span class='pl'>synu, Boże, ojcze</span> запоминаются отдельно.",
@@ -843,7 +843,7 @@ const KON = [
   verbs:[
    ["mówić","говорить",["mówię","mówisz","mówi","mówimy","mówicie","mówią"],"основа ровная"],
    ["robić","делать",["robię","robisz","robi","robimy","robicie","robią"],""],
-   ["lubić","нравиться, любить",["lubię","lubisz","lubi","lubimy","lubicie","lubią"],""],
+   ["lubić","любить; lubię coś - мне что-то нравится",["lubię","lubisz","lubi","lubimy","lubicie","lubią"],""],
    ["prosić","просить",["proszę","prosisz","prosi","prosimy","prosicie","proszą"],"si → sz только в ja / oni"],
    ["wozić","возить",["wożę","wozisz","wozi","wozimy","wozicie","wożą"],"zi → ż только в ja / oni"],
    ["płacić","платить",["płacę","płacisz","płaci","płacimy","płacicie","płacą"],"ci → c только в ja / oni"],
@@ -1156,7 +1156,7 @@ const VERBS = [
  ["kupować","покупать","I","kupuję","kupujesz","kupują","kupował","kupowała","kupić"],
  ["kupić","купить","II","kupię","kupisz","kupią","kupił","kupiła","сов."],
  ["płacić","платить","II","płacę","płacisz","płacą","płacił","płaciła","zapłacić"],
- ["lubić","нравиться, любить","II","lubię","lubisz","lubią","lubił","lubiła","polubić"],
+ ["lubić","любить; lubię coś - мне что-то нравится","II","lubię","lubisz","lubią","lubił","lubiła","polubić"],
  ["kochać","любить","III","kocham","kochasz","kochają","kochał","kochała","pokochać"],
  ["widzieć","видеть","II","widzę","widzisz","widzą","widział","widziała","zobaczyć"],
  ["patrzeć","смотреть на","II","patrzę","patrzysz","patrzą","patrzył","patrzyła","popatrzeć"],
@@ -1211,7 +1211,7 @@ const VERBS = [
  ["czuć się","чувствовать себя","I","czuję się","czujesz się","czują się","czuł się","czuła się","poczuć się"],
  ["wydawać się","казаться","I","wydaję się","wydajesz się","wydają się","wydawał się","wydawała się","wydać się"],
  ["wyglądać","выглядеть","III","wyglądam","wyglądasz","wyglądają","wyglądał","wyglądała","-"],
- ["udać się","получиться; отправиться","III","udam się","udasz się","udadzą się","udał się","udała się","сов."],
+ ["udać się","отправиться; udało się komuś - у кого-то получилось","III","udam się","udasz się","udadzą się","udał się","udała się","сов."],
  ["okazać się","оказаться, выясниться","I","okażę się","okażesz się","okażą się","okazał się","okazała się","сов."],
  ["uważać","считать, полагать; быть осторожным","III","uważam","uważasz","uważają","uważał","uważała","-"],
  ["prowadzić","вести; водить","II","prowadzę","prowadzisz","prowadzą","prowadził","prowadziła","poprowadzić"],
@@ -1226,7 +1226,7 @@ const VERBS = [
  ["istnieć","существовать","I","istnieję","istniejesz","istnieją","istniał","istniała","-"],
  ["liczyć","считать; рассчитывать на","II","liczę","liczysz","liczą","liczył","liczyła","policzyć"],
  ["wierzyć","верить","II","wierzę","wierzysz","wierzą","wierzył","wierzyła","uwierzyć"],
- ["potrzebować","нуждаться; быть нужным","I","potrzebuję","potrzebujesz","potrzebują","potrzebował","potrzebowała","-"],
+ ["potrzebować","нуждаться в чём-либо","I","potrzebuję","potrzebujesz","potrzebują","potrzebował","potrzebowała","-"],
  ["powiedzieć","сказать","IV","powiem","powiesz","powiedzą","powiedział","powiedziała","сов."]
 ];
 
@@ -1435,7 +1435,7 @@ const PAN_USE = [
  ["Czy państwo są gotowi?","к смешанной группе","3-е лицо множественного, мужско-личное"],
  ["Czy panowie czekają?","к нескольким мужчинам","мужско-личное"],
  ["Czy panie sobie życzą?","к нескольким женщинам","не мужско-личное"],
- ["Państwo Kowalscy byli wczoraj.","супруги Ковальские","мужско-личное согласование"],
+ ["Państwo Kowalscy byli wczoraj u nas.","супруги Ковальские","мужско-личное согласование"],
  ["Proszę pana! · Proszę pani!","оклик незнакомого","устойчивое обращение, не Wołacz"],
  ["Panie Adamie · Pani Anno","имя после pan / pani","знакомы, но на «вы»"]
 ];
@@ -1450,7 +1450,7 @@ const NAZW_DEKL = [
 const NAZW_TYP = [
  ["-ski · -cki · -dzki","Kowalski","склоняется как прилагательное","Kowalska - тоже как прилагательное","Kowalscy"],
  ["согласная","Nowak","как существительное: Nowaka, Nowakowi, Nowakiem","Nowak - не склоняется вообще","Nowakowie"],
- ["-o","Kościuszko","по женскому образцу: Kościuszki, Kościuszce, Kościuszkę","-","Kościuszkowie"],
+ ["-o","Kościuszko","по женскому образцу: Kościuszki, Kościuszce, Kościuszkę","Kościuszko - не склоняется","Kościuszkowie"],
  ["-a","Zaręba","по женскому образцу: Zaręby, Zarębie, Zarębę","Zaręba - так же, по женскому","Zarębowie"],
  ["иностранная на согласную","Smith","как польская мужская: Smitha, Smithem","Smith - не склоняется","Smithowie"]
 ];
@@ -1460,7 +1460,7 @@ const KRAJE = [
  ["Ukraina","w Ukrainie / na Ukrainie","do Ukrainy / na Ukrainę","Ukrainiec","Ukrainka","po ukraińsku"],
  ["Litwa","na Litwie","na Litwę","Litwin","Litwinka","po litewsku"],
  ["Łotwa","na Łotwie","na Łotwę","Łotysz","Łotyszka","po łotewsku"],
- ["Węgry","na Węgrzech","na Węgry","Węgier","Węgierka","po węgiersku"],
+ ["Węgry","na / we Węgrzech","na Węgry / do Węgier","Węgier","Węgierka","po węgiersku"],
  ["Słowacja","na Słowacji","na Słowację","Słowak","Słowaczka","po słowacku"],
  ["Rosja","w Rosji","do Rosji","Rosjanin","Rosjanka","po rosyjsku"],
  ["Niemcy","w Niemczech","do Niemiec","Niemiec","Niemka","po niemiecku"],
@@ -1495,11 +1495,11 @@ const DIM_M = [["kot","kotek","koteczek","кот"],["pies","piesek","pieseczek",
 const DIM_F = [["książka","książeczka","","книга"],["kawa","kawka / kawusia","","кофе"],["mama","mamusia","","мама"],
  ["córka","córeczka","","дочь"],["ręka","rączka","","рука"],["gwiazda","gwiazdka","","звезда"],
  ["torba","torebka","","сумка"],["chwila","chwilka","","момент"],["siostra","siostrzyczka","","сестра"]];
-const DIM_N = [["okno","okienko","","окно"],["dziecko","dzieciątko","","ребёнок"],["mleko","mleczko","","молоко"],
+const DIM_N = [["okno","okienko","","окно"],["dziecko","dzieciątko","ласково, чаще о младенце","ребёнок"],["mleko","mleczko","","молоко"],
  ["słońce","słoneczko","","солнце"],["jajko","jajeczko","","яйцо"],["piwo","piwko","","пиво"]];
 const DIM_ADJ = [["mały","malutki","maluteńki / maciupeńki","маленький"],["ładny","ładniutki","","красивый"],
  ["cichy","cichutki","cichuteńki","тихий"],["słodki","słodziutki","","сладкий, милый"],["biedny","biedniutki","","бедный, бедняжка"]];
-const DIM_NAME = [["Anna","Ania","Anusia / Anka","Аня, Анечка"],["Piotr","Piotrek","Piotruś","Петя, Петенька"],
+const DIM_NAME = [["Anna","Ania","Anusia - ласково; Anka - фамильярно","Аня, Анечка"],["Piotr","Piotrek","Piotruś","Петя, Петенька"],
  ["Katarzyna","Kasia","Kasieńka","Катя, Катенька"],["Michał","Michałek","Misiek","Миша, Мишенька"],
  ["Elżbieta","Ela","Elunia","Эля, Элечка"],["babcia","babcia → babunia","","бабушка → бабуля"]];
 
@@ -1608,16 +1608,16 @@ const SIE_POS = [
  ["Jak się nazywasz?","się - после вопросительного слова, перед глаголом","не в начале"],
  ["Nazywam się Jan.","się стоит рядом с глаголом; часто - после него","позиция зависит от всей фразы: Jak się nazywasz?"],
  ["Nie martw się.","się - в конце короткой фразы","после отрицания + глагол"],
- ["Czy podoba ci się ten film?","ci się - нейтральный порядок","się ci возможно при выделении ci"],
- ["Widziałem go wczoraj.","нейтральный порядок","Go widziałem wczoraj - выделяет объект"]
+ ["Czy podoba ci się ten film?","ci się - нейтральный порядок","при выделении адресата: Czy tobie podoba się ten film?"],
+ ["Widziałem go wczoraj.","go - нейтральная краткая форма","при выделении: Jego widziałem wczoraj, nie Piotra."]
 ];
 const CLITICS = [
  ["się","возвратная частица","Uczę się polskiego."],
  ["mi","мне","Powiedz mi prawdę."],
  ["ci","тебе","Podoba ci się?"],
- ["go","его (Biernik)","Znam go dobrze."],
+ ["go","здесь: его (Biernik)","Znam go dobrze."],
  ["mu","ему","Pomogę mu jutro."],
- ["jej","ей","Dam jej kwiaty."]
+ ["jej","здесь: ей (Celownik)","Dam jej kwiaty."]
 ];
 const TEMA_REMA = [
  ["Gdzie są klucze?","Klucze są na stole.","na stole - где именно"],
@@ -1884,7 +1884,7 @@ const ALPHA_PRACTICE={id:"alphabet",title:"Практика: алфавит и �
  ["Как по действующей с 2026 года норме пишутся эти городские названия?","Plac Zbawiciela; ulica Długa","Родовое слово в названии городского объекта пишется с большой, но ulica остаётся исключением со строчной.",["Plac Zbawiciela; ulica Długa","plac Zbawiciela; Ulica Długa","plac zbawiciela; ulica długa"]]
 ])};
 const DIM_PRACTICE={id:"diminutives",title:"Практика: уменьшительные",lead:"20 заданий на формы и уместность уменьшительных.",tasks:[...DIM_M,...DIM_F,...DIM_N,...DIM_ADJ,...DIM_NAME].slice(0,20).map((item,index)=>({id:`dim-${index+1}`,prompt:`Уменьшительная форма слова «${item[0]}»:`,answers:[item[1].split(" / ")[0]],explanation:`Первая обычная уменьшительная форма: ${item[1]}.`}))};
-const BRIDGE_PRACTICE={id:"bridges",title:"Практика: мосты и ложные друзья",lead:"20 заданий на значения похожих польских слов.",get tasks(){return FALSE.slice(0,20).map((item,index)=>({id:`bridge-${index+1}`,prompt:`Что по-польски означает «${item[0]}»?`,answers:[item[1]],explanation:`Не «${item[2]}».`}));}};
+const BRIDGE_PRACTICE={id:"bridges",title:"Практика: мосты и ложные друзья",lead:"20 контекстных заданий из всех пяти тематических групп.",tasks:[]};
 const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, согласование, склонение, даты и время.",tasks:topicTasks("num",[["dwadzieścia jeden ___ (dom)","domów","Числа на jeden, кроме ровно 1, требуют dopełniacz множественного: dwadzieścia jeden domów."],["pięć ___ domów (duży)","dużych","После pięć вся именная группа стоит в dopełniacz множественного: pięć dużych domów."],["dwie ___ (książka)","książki","Женский род после dwie."],["Dwa okna ___ otwarte. (być, прошедшее)","były","После dwa сказуемое стоит во множественном числе: dwa okna były."],["___ studentów przyszło. (12)","Dwunastu","С мужско-личным существительным нужна форма dwunastu: Dwunastu studentów przyszło."],["dwadzieścia dwa ___ (kot)","koty","Последний член dwa требует mianownik множественного."],["dwadzieścia pięć ___ (kot)","kotów","Последний член pięć требует dopełniacz множественного."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? - o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["___ studenci czytają. (2)","Dwaj","Форма dwaj требует mianownik множественного и сказуемое во множественном: Dwaj studenci czytają."],["___ dobrych studentów czekało. (5)","Pięciu","При мужско-личном существительном употребляется pięciu: Pięciu dobrych studentów czekało."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["Rozmawiam z ___ studentami. (3)","trzema","В narzędnik числительное trzy имеет форму trzema."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["To wydarzyło się w roku tysiąc osiemset ___. (1)","pierwszym","Если в составном порядковом числительном нет десятков, изменяется только последнее слово: w roku tysiąc osiemset pierwszym."],["Zapisz słownie 3,14.","trzy przecinek czternaście","Десятичный разделитель читается przecinek: trzy przecinek czternaście."]] )};
 const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на общий, альтернативный и косвенный вопрос, вопросительные слова, падежные формы и относительное który.",tasks:topicTasks("question",[
   ["___ mieszkasz? - W Gdańsku.","Gdzie","Спрашиваем о месте: gdzie?",["Gdzie","Skąd","Dokąd"]],
@@ -1954,8 +1954,32 @@ IMPERS_PRACTICE.tasks = topicTasks("impers",[
   ["В каком предложении используется настоящий пассив?","Książka została napisana po polsku.","Została napisana согласуется с подлежащим książka и образует пассив.",["Napisano książkę po polsku.","Książka została napisana po polsku.","Po polsku pisano książkę."]],
   ["Разрешение относится лично к говорящему:","Czy wolno mi wejść?","Лицо при wolno ставится в Celownik: mi.",["Czy wolno mnie wejść?","Czy wolno ja wejść?","Czy wolno mi wejść?"]]
 ]);
-ORDER_PRACTICE.tasks[15] = {id:"order-16",prompt:"Wczoraj ___ go w kinie. (widzieć, ja, мужчина)",answers:["widziałem"],explanation:"Вчера видел: widziałem."};
-ORDER_PRACTICE.tasks[18] = {id:"order-19",prompt:"Proszę mi ___.",answers:["pomóc"],explanation:"Вежливая конструкция: proszę mi pomóc."};
+ORDER_PRACTICE.tasks = topicTasks("order",[
+  ["Нейтральный вопрос о собеседнике:","Jak się nazywasz?","Się не открывает предложение и здесь стоит перед глаголом.",["Się jak nazywasz?","Jak się nazywa ty?","Jak się nazywasz?"]],
+  ["Нейтральная просьба о помощи:","Czy możesz mi pomóc?","Краткая безударная форма mi стоит при глагольной группе.",["Czy możesz mnie pomóc?","Czy możesz mi pomóc?","Czy możesz mi pomagam?"]],
+  ["Выберите естественный короткий запрет:","Nie martw się.","В короткой фразе się может стоять после глагола.",["Się nie martw.","Nie się martw.","Nie martw się."]],
+  ["Нейтральная просьба сказать правду:","Powiedz mi prawdę.","Без контраста употребляется краткая форма mi.",["Powiedz mnie prawdę.","Powiedz mi prawdę.","Powiedz mi mówię prawdę."]],
+  ["Нейтральный порядок двух клитик:","Czy podoba ci się ten film?","Для активной речи полезно запомнить частотный порядок ci się.",["Czy podoba ciebie ten film?","Czy podoba ci się ten film?","Czy ci się podobać ten film?"]],
+  ["Нейтрально: «Я его хорошо знаю».","Znam go dobrze.","Без логического выделения употребляется краткая форма go.",["Go znam dobrze.","Znam on dobrze.","Znam go dobrze."]],
+  ["После предлога do:","Idę do niego.","После предлога нужна форма niego, а не краткое go.",["Idę do go.","Idę do niego.","Idę go do."]],
+  ["Выделите именно его, а не Петра:","Jego widziałem wczoraj, nie Piotra.","В начале и при контрасте употребляется полная форма jego.",["Go widziałem wczoraj, nie Piotra.","Jego widziałem wczoraj, nie Piotra.","Widziałem go wczoraj, nie jego."]],
+  ["Нейтральный короткий вопрос о сестре:","Gdzie mieszka twoja siostra?","Частотная модель: вопросительное слово + глагол + подлежащее.",["Gdzie mieszkać twoja siostra?","Gdzie mieszka twoja siostra?","Mieszka gdzie twoja siostra czy?"]],
+  ["Выберите нормативный вопрос, где подлежащее стоит перед глаголом:","Z kim Piotr wyjechał?","После вопросительной группы подлежащее может стоять перед глаголом.",["Z kim Piotr wyjechał?","Z kim wyjechał się Piotr?","Piotr z kim wyjechał czy?"]],
+  ["Ответ на Co jest na stole?:","Na stole są klucze.","Новое сообщение klucze естественно стоит в конце.",["Klucze są na stole.","Na stole są klucze.","Są klucze na stole co?"]],
+  ["Ответ на Gdzie są klucze?:","Klucze są na stole.","Тема klucze стоит раньше, новое место na stole - в конце.",["Na stole są klucze.","Klucze na stole są co.","Klucze są na stole."]],
+  ["Ответ с билетами как уже известной темой на Kto kupił bilety?:","Bilety kupiła Anna.","Тема bilety стоит раньше, новое сообщение Anna - в конце.",["Bilety kupił Anna.","Bilety kupiła Anna.","Kupiła bilety Anna kto."]],
+  ["Выделите адресата: «Тебе нравится этот фильм?»","Czy tobie podoba się ten film?","При логическом выделении ci заменяется полной формой tobie.",["Czy ci podoba się ten film?","Czy się ci podoba ten film?","Czy tobie podoba się ten film?"]],
+  ["После предлога o:","On myśli tylko o sobie.","После предлога нужна падежная форма sobie, а не się.",["On myśli tylko o się.","On myśli tylko o sobie.","On myśli tylko się sobie."]],
+  ["«Я разговариваю сам с собой»:","Rozmawiam sam ze sobą.","После ze употребляется творительный sobą.",["Rozmawiam sam ze się.","Rozmawiam sam ze siebie.","Rozmawiam sam ze sobą."]],
+  ["Какое предложение нарушает запрет начальной позиции się?","Się uczę polskiego.","Się не может быть первым словом предложения.",["Uczę się polskiego.","Polskiego się uczę.","Się uczę polskiego."]],
+  ["Нейтральное название типа языка:","Uczę się języka polskiego.","Классифицирующее прилагательное polski обычно стоит после существительного język.",["Uczę się polskiego języka.","Uczę się języka polskiego.","Polskiego uczę języka się."]],
+  ["Контраст: я пригласил тебя, а не его.","Zaprosiłem ciebie, a nie jego.","При противопоставлении употребляются полные формы ciebie и jego.",["Zaprosiłem ciebie, a nie on.","Zaprosiłem ciebie, a nie jego.","Zaprosiłem ty, a nie jego."]],
+  ["Какое предложение нарушает жёсткую границу позиции się?","Się jeszcze uczę.","Начальное się ненормативно; два других порядка возможны.",["Jeszcze się uczę.","Uczę się jeszcze.","Się jeszcze uczę."]]
+]);
+PEOPLE_PRACTICE.tasks[11] = {id:"people-12",prompt:"Rozmawiam z panią ___. (doktor)",answers:["doktor"],explanation:"После pani название профессии в этой модели не склоняется: z panią doktor."};
+PEOPLE_PRACTICE.tasks[12] = {id:"people-13",prompt:"Ona jest ___. (psycholog)",answers:["psycholożką"],explanation:"Женская форма psycholożka после być стоит в творительном: psycholożką."};
+PEOPLE_PRACTICE.tasks[15] = {id:"people-16",prompt:"Znam ___. (polski)",answers:["polski"],explanation:"Znać + Biernik: Znam polski."};
+PEOPLE_PRACTICE.tasks[19].explanation = "Na Węgrzech - традиционный и наиболее привычный вариант; современная норма допускает также we Węgrzech.";
 NUM_PRACTICE.tasks[17].explanation = "В этой конструкции после dwa: dwa procent. Слово procent в других падежах склоняется: o dwóch procentach.";
 NUM_PRACTICE.tasks[18].explanation = "Za tydzień = через неделю. Для срока выполнения употребляют другие конструкции, например w tydzień.";
 CONJ_PRACTICE.tasks = topicTasks("conj",[
@@ -2007,22 +2031,22 @@ DIM_PRACTICE.tasks = [
   {id:"dim-2",prompt:"Нейтральное уменьшительное от pies:",options:["piesek","piesunia","psiak"],answers:["piesek"],explanation:"Нейтральная уменьшительная форма: piesek."},
   {id:"dim-3",prompt:"Нейтральное уменьшительное от dom:",options:["domek","domunia","domczek"],answers:["domek"],explanation:"Нейтральная уменьшительная форма: domek."},
   {id:"dim-4",prompt:"Нейтральное уменьшительное от książka:",options:["książeczka","książunia","książkaś"],answers:["książeczka"],explanation:"Нейтральная уменьшительная форма: książeczka."},
-  {id:"dim-5",prompt:"Нейтральное уменьшительное от kawa:",options:["kawka","kawunia","kawieczka"],answers:["kawka"],explanation:"Kawka - нейтральное уменьшение; kawusia - более ласковое."},
+  {id:"dim-5",prompt:"Разговорно-экспрессивная форма от kawa:",options:["kawka","kawunia","kawieczka"],answers:["kawka"],explanation:"Kawka - частотная разговорно-экспрессивная форма; нейтральное слово - kawa."},
   {id:"dim-6",prompt:"Обычная ласковая форма от mama:",options:["mamusia","mamulka","mamka"],answers:["mamusia"],explanation:"Обычная ласковая форма: mamusia."},
   {id:"dim-7",prompt:"Нейтральное уменьшительное от córka:",options:["córeczka","córunia","córeńka"],answers:["córeczka"],explanation:"Нейтральная уменьшительная форма: córeczka."},
   {id:"dim-8",prompt:"Нейтральное уменьшительное от ręka:",options:["rączka","ręczka","rękusia"],answers:["rączka"],explanation:"Чередование: ręka → rączka."},
   {id:"dim-9",prompt:"Нейтральное уменьшительное от okno:",options:["okienko","oknoś","okieneczko"],answers:["okienko"],explanation:"Нейтральная уменьшительная форма: okienko."},
   {id:"dim-10",prompt:"Нейтральное уменьшительное от mleko:",options:["mleczko","mleczunia","mleczek"],answers:["mleczko"],explanation:"Нейтральная уменьшительная форма: mleczko."},
   {id:"dim-11",prompt:"Обычная уменьшительная форма от słońce:",options:["słoneczko","słońcko","słoneko"],answers:["słoneczko"],explanation:"Słoneczko - обычная уменьшительная форма; słonko тоже живое ласковое слово."},
-  {id:"dim-12",prompt:"Нейтральное уменьшительное от jajko:",options:["jajeczko","jajunia","jajoś"],answers:["jajeczko"],explanation:"Нейтральная уменьшительная форма: jajeczko."},
+  {id:"dim-12",prompt:"Какая форма может быть обычным названием небольшой сумки, а не выражением нежности?",options:["torebka","torunia","toreńka"],answers:["torebka"],explanation:"Torebka лексикализовалась в значениях небольшой сумки и упаковки."},
   {id:"dim-13",prompt:"Форма от mały с суффиксом -utki:",options:["malutki","maleńki","małuszek"],answers:["malutki"],explanation:"Форма с суффиксом -utki: malutki. Maleńki - тоже нормальное слово, но образовано иначе."},
-  {id:"dim-14",prompt:"Нейтральное уменьшительное от ładny:",options:["ładniutki","ładniuszek","ładnicek"],answers:["ładniutki"],explanation:"Нейтральная уменьшительная форма: ładniutki."},
-  {id:"dim-15",prompt:"Нейтральное уменьшительное от cichy:",options:["cichutki","cichuszek","cichyś"],answers:["cichutki"],explanation:"Нейтральная уменьшительная форма: cichutki."},
-  {id:"dim-16",prompt:"Нейтральное уменьшительное от słodki:",options:["słodziutki","słodkuszek","słodeczek"],answers:["słodziutki"],explanation:"Нейтральная уменьшительная форма: słodziutki."},
+  {id:"dim-14",prompt:"Экспрессивная форма от ładny:",options:["ładniutki","ładniuszek","ładnicek"],answers:["ładniutki"],explanation:"Ładniutki добавляет положительную оценку: хорошенький."},
+  {id:"dim-15",prompt:"В официальном письме выберите нейтральную просьбу об оплате:",options:["Proszę o przesłanie pieniążków.","Proszę o przesłanie pieniędzy.","Podeślij pieniążki."],answers:["Proszę o przesłanie pieniędzy."],explanation:"В официальном письме безопасна нейтральная форма pieniędzy."},
+  {id:"dim-16",prompt:"Медсестра обращается к незнакомому взрослому пациенту:",options:["Pobierzemy krew do probówki.","Pobierzemy krewkę do probóweczki.","Weźmiemy krwieczkę."],answers:["Pobierzemy krew do probówki."],explanation:"Уменьшительные krewka и probóweczka могут прозвучать инфантилизирующе; нейтральны krew и probówka."},
   {id:"dim-17",prompt:"Наиболее нейтральная разговорная форма имени Anna:",options:["Ania","Anusia","Anka"],answers:["Ania"],explanation:"Ania - наиболее нейтральная форма; Anusia и Anka тоже употребляются, но несут другой оттенок."},
-  {id:"dim-18",prompt:"Обычная краткая форма имени Piotr:",options:["Piotrek","Piotruś","Piotruń"],answers:["Piotrek"],explanation:"Piotrek - обычная форма; Piotruś - более ласковая."},
-  {id:"dim-19",prompt:"Обычная краткая форма имени Katarzyna:",options:["Kasia","Kasieńka","Katarzynka"],answers:["Kasia"],explanation:"Kasia - обычная форма; Kasieńka - более ласковая."},
-  {id:"dim-20",prompt:"Обычная краткая форма имени Elżbieta:",options:["Ela","Elunia","Elżbietka"],answers:["Ela"],explanation:"Ela - обычная форма; Elunia - более ласковая."}
+  {id:"dim-18",prompt:"Официант говорит Kawka dla pani? Как точнее описать kawka?",options:["разговорно-экспрессивная форма, уместность зависит от тона","полностью нейтральный термин меню","обязательно маленькая чашка"],answers:["разговорно-экспрессивная форма, уместность зависит от тона"],explanation:"Kawka часто звучит дружелюбно, но остаётся экспрессивной и не сообщает размер порции."},
+  {id:"dim-19",prompt:"Родитель утешает ребёнка после царапины. Выберите естественную реплику:",options:["Pokaż rączkę.","Proszę okazać rękę.","Pokaż ręka."],answers:["Pokaż rączkę."],explanation:"В близком общении с ребёнком ласковое rączkę естественно."},
+  {id:"dim-20",prompt:"Что верно о форме dzieciątko?",options:["это ласковая форма, особенно частая о младенце","это нейтральное название любого взрослого","это обязательное множественное число"],answers:["это ласковая форма, особенно частая о младенце"],explanation:"Dzieciątko чаще относится к младенцу; о старшем ребёнке может звучать шутливо или иронически."}
 ];
 
 const PREF_ALL = [
@@ -2255,7 +2279,7 @@ const GROUPS = [
   ["Предложение", [
     ["s-q","czy для общего вопроса, вопросительное слово для частного"],
     ["s-neg","Отрицания накапливаются, а не гасят друг друга"],
-    ["s-order","Свободный порядок слов, но у клитик жёсткие места"],
+    ["s-order","Тема, новое сообщение и ограничения для безударных слов"],
     ["s-impers","Язык объявлений, вывесок и учреждений"],
   ]],
   ["Служебные слова", [
@@ -2266,7 +2290,7 @@ const GROUPS = [
   ]],
   ["Живая речь", [
     ["s-ludzie","Вежливое «вы» - третье лицо; имена, фамилии, национальности"],
-    ["s-dim","Уменьшительные шире, чем в русском: вежливость и тепло"],
+    ["s-dim","Размер, эмоциональная оценка, близость и ирония"],
     ["s-bridge","Фонетические соответствия, белорусский мост, ложные друзья"],
   ]],
 ];
@@ -2291,7 +2315,7 @@ const VOCAB_NOUNS = [
  ["sprawa","дело, вопрос","ż · sprawy · sprawy","Muszę załatwić tę sprawę."],["pomysł","идея","m · pomysłu · pomysły","To świetny pomysł."],
  ["wiadomość","сообщение, известие","ż · wiadomości · wiadomości","Mam dla ciebie wiadomość."],["rozmowa","разговор","ż · rozmowy · rozmowy","To była miła rozmowa."],
  ["telefon","телефон","m · telefonu · telefony","Gdzie jest mój telefon?"],["internet","интернет","m · internetu · -","Nie mam teraz internetu."],
- ["pieniądze","деньги","pl · pieniędzy · -","Nie mam przy sobie pieniędzy."],["cena","цена","ż · ceny · ceny","Jaka jest cena?"],
+ ["pieniądze","деньги","pl · pieniędzy · pieniądze","Nie mam przy sobie pieniędzy."],["cena","цена","ż · ceny · ceny","Jaka jest cena?"],
  ["bilet","билет","m · biletu · bilety","Poproszę jeden bilet."],["samochód","машина","m · samochodu · samochody","Nie mam samochodu."],
  ["autobus","автобус","m · autobusu · autobusy","Czekam na autobus."],["pociąg","поезд","m · pociągu · pociągi","Pociąg już jedzie."],
  ["droga","дорога, путь","ż · drogi · drogi","To długa droga."],["podróż","поездка, путешествие","ż · podróży · podróże","Podróż była spokojna."],
@@ -2315,7 +2339,7 @@ const VOCAB_NOUNS = [
  ["imię","имя","n · imienia · imiona","Jak masz na imię?"],["numer","номер","m · numeru · numery","Jaki jest twój numer telefonu?"],
  ["Polska","Польша","ż · Polski · -","Mieszkam teraz w Polsce."],
  ["ręka","рука","ż · ręki · ręce","Boli mnie ręka."],
- ["drzwi","дверь, двери","pl · drzwi · -","Drzwi są otwarte."],
+ ["drzwi","дверь, двери","pl · drzwi · drzwi","Drzwi są otwarte."],
  ["koniec","конец","m · końca · końce","To jeszcze nie koniec."],["początek","начало","m · początku · początki","To dopiero początek."],
  ["zmiana","изменение","ż · zmiany · zmiany","Potrzebuję małej zmiany."],["plan","план","m · planu · plany","Jaki masz plan na dziś?"],
  ["decyzja","решение","ż · decyzji · decyzje","Muszę podjąć decyzję."],["pomoc","помощь","ż · pomocy · pomoce","Dziękuję za pomoc."],
@@ -2327,7 +2351,7 @@ const VOCAB_NOUNS = [
  ["minuta","минута","ż · minuty · minuty","Poczekaj minutę."],["adres","адрес","m · adresu · adresy","Jaki jest twój adres?"],
  ["klucz","ключ","m · klucza · klucze","Gdzie są moje klucze?"],
  ["nauka","учёба, обучение","ż · nauki · nauki","Nauka języka wymaga czasu."],["spotkanie","встреча","n · spotkania · spotkania","Mam jutro spotkanie."],
- ["wakacje","каникулы, отпуск","pl · wakacji · -","Czekam na wakacje."]
+ ["wakacje","каникулы, отпуск","pl · wakacji · wakacje","Czekam na wakacje."]
 ];
 
 const VOCAB_ADJECTIVES = [
@@ -2339,14 +2363,14 @@ const VOCAB_ADJECTIVES = [
  ["trudny","трудный","trudna · trudne · trudniejszy","To trudne pytanie."],["prosty","простой","prosta · proste · prostszy","To prosty przykład."],
  ["ciekawy","интересный","ciekawa · ciekawe · ciekawszy","To bardzo ciekawy film."],["nudny","скучный","nudna · nudne · nudniejszy","Ten film jest nudny."],
  ["ładny","красивый, милый","ładna · ładne · ładniejszy","To ładne zdjęcie."],["piękny","красивый","piękna · piękne · piękniejszy","Dzisiaj jest piękny dzień."],
- ["miły","приятный, добрый","miła · miłe · milszy","To bardzo miła osoba."],["sympatyczny","симпатичный, приятный","sympatyczna · sympatyczne · -","Mam sympatycznych sąsiadów."],
+ ["miły","приятный, добрый","miła · miłe · milszy","To bardzo miła osoba."],["sympatyczny","приятный, располагающий","sympatyczna · sympatyczne · -","Mam sympatycznych sąsiadów."],
  ["szczęśliwy","счастливый","szczęśliwa · szczęśliwe · -","Jestem dziś szczęśliwy."],["smutny","грустный","smutna · smutne · smutniejszy","Dlaczego jesteś smutny?"],
  ["zmęczony","уставший","zmęczona · zmęczone · -","Jestem trochę zmęczony."],["zajęty","занятый","zajęta · zajęte · -","Jestem teraz zajęty."],
- ["wolny","свободный","wolna · wolne · wolniejszy","Masz dziś wolny wieczór?"],["gotowy","готовый","gotowa · gotowe · -","Jestem gotowy."],
+ ["wolny","свободный; медленный","wolna · wolne · wolniejszy","Mam wolny wieczór. · To wolne tempo."],["gotowy","готовый","gotowa · gotowe · -","Jestem gotowy."],
  ["pewny","уверенный","pewna · pewne · pewniejszy","Nie jestem tego pewny."],["spokojny","спокойный","spokojna · spokojne · spokojniejszy","To spokojne miejsce."],
  ["nerwowy","нервный","nerwowa · nerwowe · -","Przed egzaminem jestem nerwowy."],["zdrowy","здоровый","zdrowa · zdrowe · zdrowszy","Chcę być zdrowy."],
  ["chory","больной","chora · chore · bardziej chory","Dzisiaj jestem chory."],["głodny","голодный","głodna · głodne · -","Jestem już głodny."],
- ["spragniony","хотящий пить","spragniona · spragnione · -","Jestem bardzo spragniony."],["ciepły","тёплый","ciepła · ciepłe · cieplejszy","Herbata jest jeszcze ciepła."],
+ ["spragniony","испытывающий жажду","spragniona · spragnione · -","Jestem bardzo spragniony."],["ciepły","тёплый","ciepła · ciepłe · cieplejszy","Herbata jest jeszcze ciepła."],
  ["zimny","холодный","zimna · zimne · zimniejszy","Woda jest zimna."],["gorący","горячий","gorąca · gorące · gorętszy","Kawa jest gorąca."],
  ["szybki","быстрый","szybka · szybkie · szybszy","To szybki pociąg."],["cichy","тихий","cicha · ciche · cichszy","To ciche miejsce."],
  ["bliski","близкий","bliska · bliskie · bliższy","To jest bliski przyjaciel."],["daleki","далёкий","daleka · dalekie · dalszy","To daleka droga."],
@@ -2368,7 +2392,7 @@ const VOCAB_ADJECTIVES = [
  ["młody","молодой","młoda · młode · młodszy","Jest jeszcze młody."],
  ["wysoki","высокий","wysoka · wysokie · wyższy","To wysoki budynek."],["niski","низкий","niska · niskie · niższy","Stół jest niski."],
  ["silny","сильный","silna · silne · silniejszy","To silny wiatr."],["słaby","слабый","słaba · słabe · słabszy","Mój polski jest jeszcze słaby."],
- ["jasny","светлый, ясный","jasna · jasne · jaśniejszy","To jasny pokój."],["ciemny","тёмный","ciemna · ciemne · ciemniejszy","Jest już ciemno."],
+ ["jasny","светлый, ясный","jasna · jasne · jaśniejszy","To jasny pokój."],["ciemny","тёмный","ciemna · ciemne · ciemniejszy","To ciemny pokój."],
  ["czerwony","красный","czerwona · czerwone · -","Mam czerwony plecak."],["zielony","зелёный","zielona · zielone · -","Lubię zieloną herbatę."],
  ["biały","белый","biała · białe · -","Ściany są białe."],["czarny","чёрный","czarna · czarne · -","Mam czarną kawę."],
  ["niebieski","синий","niebieska · niebieskie · -","Niebo jest niebieskie."],["konieczny","необходимый","konieczna · konieczne · -","To jest konieczne."],
@@ -2748,7 +2772,6 @@ const OKRESL = [
 const PHON = [
  ["-оро-, -оло-, -ере-","-ro-, -ło-, -rze-","корова → krowa, золото → złoto, берег → brzeg, голова → głowa"],
  ["у, я (из носовых)","ą, ę","рука → ręka, зуб → ząb, пять → pięć, мука → mąka"],
- ["ё, е","io / ió, ie","мёд → miód, лёд → lód, несёт → niesie"],
  ["-ть","-ć","быть → być, читать → czytać"],
  ["х","ch","хлеб → chleb, ухо → ucho"],
  ["ц, ч","c, cz","цена → cena, час → czas"]
@@ -2766,7 +2789,7 @@ const FALSE = [
  ["szklanka","стакан","склянка, бутылка - butelka","Быт, вещи и еда"],
  ["teczka","папка, портфель","течка - ruja","Быт, вещи и еда"],
  ["portfel","кошелёк","портфель - teczka / aktówka","Быт, вещи и еда"],
- ["garnitur","костюм","гарнитур, набор - zestaw","Быт, вещи и еда"],
+ ["garnitur","костюм; также набор, комплект","в бытовой речи очень часто означает костюм","Быт, вещи и еда"],
  ["podłoga","пол","подлог - fałszerstwo","Быт, вещи и еда"],
  ["płot","забор","плот - tratwa","Быт, вещи и еда"],
  ["pierogi","вареники, пельмени","печёные пироги - placki / ciasta","Быт, вещи и еда"],
@@ -2794,7 +2817,7 @@ const FALSE = [
 
  ["uroda","красота, внешность","урод - potwór","Люди и качества"],
  ["grzeczny","вежливый, послушный","грешный - grzeszny","Люди и качества"],
- ["gruby","толстый, большой по толщине","грубый - niegrzeczny / szorstki","Люди и качества"],
+ ["gruby","толстый, большой по толщине; в отдельных сочетаниях грубый, непристойный","о грубом человеке обычно niegrzeczny / chamski","Люди и качества"],
  ["wygodny","удобный","выгодный - opłacalny","Люди и качества"],
  ["ordynarny","хамский, вульгарный","обычный - zwyczajny","Люди и качества"],
  ["nagły","внезапный","наглый - bezczelny","Люди и качества"],
@@ -2824,7 +2847,7 @@ const FALSE = [
  ["naprawić","починить, исправить","направить, послать - skierować","Действия"],
  ["gadać","разговаривать, болтать","гадать - zgadywać / wróżyć","Действия"],
  ["mylić (się)","путать(ся), ошибаться","мылить - mydlić","Действия"],
- ["kurzyć","пылить","курить - palić","Действия"],
+ ["kurzyć","пылить; разговорно курить","нейтральное «курить» обычно palić","Действия"],
  ["zabić","убить","забить гвоздь / гол - wbić / strzelić","Действия"],
  ["pożyczyć","одолжить или взять взаймы","пожить - pomieszkać","Действия"],
  ["zapraszać","приглашать","спрашивать - pytać","Действия"],
@@ -2849,14 +2872,36 @@ const FALSE = [
  ["delegacja","командировка; делегация","только делегация","Учёба, работа и другие ловушки"],
  ["dieta","диета; суточные","только диета","Учёба, работа и другие ловушки"],
  ["nałóg","зависимость, порок","налог - podatek","Учёба, работа и другие ловушки"],
- ["brak","отсутствие, нехватка","брак - małżeństwo; wada","Учёба, работа и другие ловушки"],
+ ["brak","отсутствие, нехватка; также бракованное изделие, часто braki","брак как супружество - małżeństwo; изъян - wada","Учёба, работа и другие ловушки"],
  ["list","письмо","лист - liść / kartka","Учёба, работа и другие ловушки"],
  ["rozprawa","судебное заседание; диссертация","расправа - samosąd","Учёба, работа и другие ловушки"],
  ["żałoba","траур","жалоба - skarga","Учёба, работа и другие ловушки"],
  ["czaszka","череп","чашка - filiżanka","Учёба, работа и другие ловушки"],
- ["akademik","студенческое общежитие","академик - członek akademii","Учёба, работа и другие ловушки"],
+ ["akademik","обычно студенческое общежитие; также член академии","в бытовом Mieszkam w akademiku речь идёт об общежитии","Учёба, работа и другие ловушки"],
  ["bielizna","нижнее или постельное бельё","белизна - biel","Учёба, работа и другие ловушки"],
  ["cera","кожа, цвет лица","сера - siarka","Учёба, работа и другие ловушки"],
  ["strych","чердак","стричь - strzyc","Учёба, работа и другие ловушки"],
  ["działka","участок, дача","сделка - transakcja","Учёба, работа и другие ловушки"]
 ];
+BRIDGE_PRACTICE.tasks = topicTasks("bridge",[
+  ["Idę do ___ po chleb.","sklepu","Sklep означает магазин, а не склеп.",["sklepu","grobowca","magazynu"]],
+  ["Jabłka i gruszki to ___.","owoce","Owoce - фрукты; овощи - warzywa.",["warzywa","owoce","owce"]],
+  ["Na spotkanie założył elegancki ___.","garnitur","В этом бытовом контексте garnitur означает костюм.",["garnitur","zestaw mebli","mundurek"]],
+  ["W książce kucharskiej znalazłem dobry ___.","przepis","Кулинарный рецепт - przepis; recepta относится к лекарствам.",["receptę","przepis","regulamin"]],
+  ["___ piję kawę, ale nie zawsze wcześnie wstaję.","Rano","Rano значит утром, а рано - wcześnie.",["Wcześnie","Rano","Jutro"]],
+  ["Spotkamy się ___, czyli następnego dnia.","jutro","Jutro значит завтра, не утро.",["rano","jutro","wieczorem"]],
+  ["W Polsce ___ to dzień tygodnia.","niedziela","Niedziela - воскресенье; неделя - tydzień.",["tydzień","niedziela","poniedziałek"]],
+  ["Pociąg odjeżdża z głównego ___.","dworca","Dworzec - вокзал; дворец - pałac.",["pałacu","dworca","dziedzińca"]],
+  ["Ten mur jest bardzo ___.","gruby","Gruby обычно описывает толщину; грубый человек - niegrzeczny или chamski.",["gruby","chamski","wygodny"]],
+  ["To krzesło jest bardzo ___.","wygodne","Wygodny значит удобный; выгодный - opłacalny.",["opłacalne","wygodne","wygrane"]],
+  ["Piotr to mój bliski ___.","przyjaciel","Przyjaciel - близкий друг; знакомый - znajomy.",["znajomy","przyjaciel","kolega z widzenia"]],
+  ["___ Warszawy kieruje władzami miasta.","Prezydent","В крупных польских городах prezydent может означать мэра.",["Prezydent","Ambasador","Poseł"]],
+  ["Nie chcę ___ o spotkaniu.","zapomnieć","Zapomnieć - забыть; запомнить - zapamiętać.",["zapamiętać","zapomnieć","wspominać"]],
+  ["___, że to dobry pomysł.","Uważam","Uważać может означать считать или полагать; уважать - szanować.",["Szanuję","Uważam","Uwagam"]],
+  ["Umiem ___ do stu po polsku.","liczyć","Liczyć - считать; лечить - leczyć.",["leczyć","liczyć","czytać"]],
+  ["W pokoju nie wolno ___. (нейтрально: курить)","palić","Kurzyć в значении курить разговорно; нейтрально употребляется palić.",["kurzyć","palić","pylić"]],
+  ["Co miesiąc dostaję ___.","pensję","Pensja - зарплата; пенсия - emerytura.",["emeryturę","pensję","zaliczkę"]],
+  ["Dostała ___ na stanowisko kierowniczki.","awans","Awans - повышение; аванс - zaliczka.",["zaliczkę","awans","mandat"]],
+  ["W magazynie znaleziono produkcyjne ___.","braki","Во множественном braki может означать бракованные изделия.",["małżeństwa","braki","wady charakteru"]],
+  ["Student mieszka w ___.","akademiku","В бытовом контексте akademik - студенческое общежитие.",["akademiku","akademii","instytucie"]]
+]);
