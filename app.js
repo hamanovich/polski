@@ -1123,7 +1123,7 @@ function renderNum(){
   $("#s-num").innerHTML = `<div class="panel">
     <h2>Числительные</h2>
     <p class="lead">Главная сложность не в самих числах, а в том, какой падеж они требуют от существительного и что делают с глаголом.</p>
-    <div class="tip"><b>Три основных режима.</b> Числительное на <span class="pl">1</span>, кроме 11, требует Mianownik единственного: <span class="pl">dwadzieścia jeden dom był</span>. На <span class="pl">2, 3, 4</span>, кроме 12-14, - Mianownik множественного и глагол во множественном: <span class="pl">dwadzieścia dwa domy były</span>. На <span class="pl">5-9, 0</span> и на <span class="pl">11-14</span> - Dopełniacz множественного и глагол в среднем роде единственного: <span class="pl">pięć osób było</span>.</div>
+    <div class="tip"><b>Три основных режима для немужско-личных существительных.</b> Ровно <span class="pl">1</span> требует Mianownik единственного: <span class="pl">jeden dom był</span>. Числа <span class="pl">2, 3, 4</span> и составные, последний член которых - <span class="pl">2, 3, 4</span>, кроме 12-14, требуют Mianownik множественного и глагол во множественном: <span class="pl">dwadzieścia dwa domy były</span>. Все остальные - Dopełniacz множественного и глагол в среднем роде единственного: <span class="pl">dwadzieścia jeden domów było · pięć osób było</span>.</div>
 
     <h3>Количественные: 0–20</h3>
     ${ngrid(NUM)}
@@ -1137,10 +1137,10 @@ function renderNum(){
       <tr><th>число</th><th>существительное</th><th>пример</th><th>глагол</th></tr>
       ${NAGR.map(n => `<tr><td class="c">${n[0]}</td><td class="g">${n[1]}</td><td class="w">${n[2]}</td><td class="w">${n[3]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">В составных числительных смотрим на последнюю цифру: <span class="pl">22 domy</span>, <span class="pl">25 domów</span>. Исключение - <span class="pl">11-14</span>: они всегда требуют Dopełniacz множественного, <span class="pl">dwanaście domów</span>, не «dwanaście domy».</p>
+    <p class="lead">В составных числительных смотрим на последний член: <span class="pl">22 domy</span>, <span class="pl">25 domów</span>. Исключение - <span class="pl">12-14</span>: они всегда требуют Dopełniacz множественного, <span class="pl">dwanaście domów</span>, не «dwanaście domy». Числа на <span class="pl">1</span> тоже требуют Dopełniacz множественного: <span class="pl">21 domów</span>.</p>
 
     <h3>Число на что оканчивается?</h3>
-    <div class="tip"><b>Быстрая схема.</b> <span class="pl">21, 31, 41...</span> обычно требуют единственного числа: <span class="pl">dwadzieścia jeden dom</span>. Окончания <span class="pl">2-4</span>, кроме 12-14, дают множественное: <span class="pl">22 domy</span>. Окончания <span class="pl">5-9, 0</span> и числа 11-14 - Dopełniacz множественного: <span class="pl">25 domów, 30 domów, 114 domów</span>. Возраст запоминай отдельно: <span class="pl">mam 21 lat, 22 lata, 25 lat</span>. Для мужчин есть свои формы: <span class="pl">dwaj / dwóch studentów</span>.</div>
+    <div class="tip"><b>Быстрая схема.</b> Ровно <span class="pl">1</span> даёт единственное число: <span class="pl">jeden dom</span>. Последний член <span class="pl">2-4</span>, кроме 12-14, даёт Mianownik множественного: <span class="pl">22 domy</span>. Все остальные числа требуют Dopełniacz множественного: <span class="pl">21 domów, 25 domów, 30 domów, 114 domów</span>. Та же схема работает с возрастом: <span class="pl">mam 21 lat, 22 lata, 25 lat</span>. Для мужчин есть свои пары: <span class="pl">dwaj studenci / dwóch studentów</span>.</div>
 
     <h3>Мужско-личные формы</h3>
     <p>Если считаем мужчин, у числительного появляется отдельная форма - и она меняет весь остальной падеж и глагол.</p>
@@ -1169,10 +1169,10 @@ function renderNum(){
 
     <h3>Порядковые</h3>
     ${ngrid(ORD)}
-    <p class="lead" style="margin-top:10px">Склоняются как обычные прилагательные: <span class="pl">pierwszy, pierwszego, pierwszemu…</span> В составных порядковыми становятся только десятки и единицы - последние два слова; сотни и тысячи остаются количественными: <span class="pl">dwudziesty pierwszy</span> · <span class="pl">tysiąc dziewięćset dziewięćdziesiąty dziewiąty</span>.</p>
+    <p class="lead" style="margin-top:10px">Склоняются как обычные прилагательные: <span class="pl">pierwszy, pierwszego, pierwszemu…</span> В составном числительном с десятками и единицами порядковыми становятся два последних слова: <span class="pl">tysiąc dziewięćset dziewięćdziesiąty dziewiąty</span>. Если десятков нет, порядковым становится только последнее слово: <span class="pl">tysiąc osiemset pierwszy · tysiąc osiemsetny</span>.</p>
 
     <h3>Собирательные</h3>
-    <p>Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. Требуют Dopełniacz и глагол в среднем роде. Исключение - <span class="pl">oboje rodzice</span>: Mianownik и обычное согласование.</p>
+    <p>Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. В Mianownik и Biernik существительное стоит в Dopełniacz множественного, а глагол при подлежащем - в среднем роде единственного: <span class="pl">troje dzieci bawiło się</span>. В косвенных падежах склоняется вся группа: <span class="pl">nie ma trojga dzieci · przyglądam się trojgu dzieciom · idę z trojgiem dzieci · mówię o trojgu dzieciach</span>. Исключение - <span class="pl">oboje rodzice</span>: Mianownik и обычное согласование.</p>
     <div class="scroll"><table>
       <tr><th>форма</th><th>перевод</th><th>пример</th></tr>
       ${ZBIOR.map(z => `<tr><td class="g">${z[0]}</td><td style="color:var(--muted)">${z[1]}</td><td class="w">${z[2]}</td></tr>`).join("")}
@@ -1217,7 +1217,7 @@ function renderNum(){
     <div class="tip"><b><span class="pl">za tydzień</span> - это «через неделю», а не «за неделю».</b> «За неделю» в смысле «в течение» - <span class="pl">przez tydzień</span> (столько длилось) или <span class="pl">w ciągu tygodnia</span> (успею к сроку). Три разные конструкции на один русский предлог: <span class="pl">Wrócę za tydzień</span> · <span class="pl">Byłem tam przez tydzień</span> · <span class="pl">Zrobię to w ciągu tygodnia</span>.</div>
     <div class="tip"><b>Срок поездки - через <span class="pl">na</span>.</b> <span class="pl">Jadę do Polski na tydzień</span> - на сколько еду. <span class="pl">Byłem w Polsce przez tydzień</span> - сколько там пробыл. Русское «на неделю» тянет <span class="pl">na</span> в обе фразы, но во второй нужен <span class="pl">przez</span>.</div>
     <div class="tip"><b>Один предлог <span class="pl">w</span>, два падежа - и вывести правилом не получится.</b> Дни недели и названия периодов-событий берут Biernik: <span class="pl">w poniedziałek, w sobotę, w weekend, w święta, w wakacje, w ferie</span>. Неделя, месяц, год - Miejscownik: <span class="pl">w tym tygodniu, w maju, w 2026 roku</span>. Через длину отрезка это не объясняется: <span class="pl">w weekend</span> длиннее суток, но Biernik, а <span class="pl">w dzień</span> и <span class="pl">w nocy</span> одинаковы по длине и стоят в разных падежах. Учить двумя списками.</div>
-    <div class="tip"><b>Часть времени вообще обходится без предлога.</b> <span class="pl">rano, wieczorem, nocą, latem, zimą</span> - Narzędnik без <span class="pl">w</span>. Но <span class="pl">w nocy</span> и <span class="pl">nocą</span> сосуществуют, а <span class="pl">rankiem</span> звучит книжно рядом с обычным <span class="pl">rano</span>.</div>
+    <div class="tip"><b>Часть времени вообще обходится без предлога.</b> <span class="pl">rano, wieczorem, nocą, latem, zimą</span> - формы без <span class="pl">w</span>. При этом <span class="pl">w nocy</span> и <span class="pl">nocą</span> сосуществуют, а <span class="pl">rankiem</span> также употребляется в значении <span class="pl">rano</span>.</div>
 
     <h3>Возраст, деньги, счёт</h3>
     <div class="scroll"><table>
@@ -1245,7 +1245,7 @@ function renderNum(){
     <table>
       ${PROCENT.map(p => `<tr><td style="width:22%" class="c">${p[0]}</td><td class="w">${p[1]}</td></tr>`).join("")}
     </table>
-    <div class="tip"><b><span class="pl">procent</span> после количественного числительного.</b> В Mianownik, Dopełniacz и Biernik форма обычно остаётся <span class="pl">procent</span>: <span class="pl">dwa procent, pięć procent, sto procent</span>. В Dativ, Narzędnik и Miejscownik она склоняется: <span class="pl">stu procentom, z pięcioma procentami, o czterdziestu procentach</span>. После дробных числительных форма застывает во всех падежах: <span class="pl">pół procent, półtora procent, dwa i pół procent, o pięciu i pół procent</span>.</div>
+    <div class="tip"><b><span class="pl">procent</span> после количественного числительного.</b> В Mianownik, Dopełniacz и Biernik форма обычно остаётся <span class="pl">procent</span>: <span class="pl">dwa procent, pięć procent, sto procent</span>. Исключение в Dopełniacz с <span class="pl">jeden</span>: <span class="pl">jednego procenta / jednego procentu</span>. В Celownik, Narzędnik и Miejscownik форма склоняется: <span class="pl">stu procentom, z pięcioma procentami, o czterdziestu procentach</span>. После дробных числительных форма застывает во всех падежах: <span class="pl">pół procent, półtora procent, dwa i pół procent, o pięciu i pół procent</span>.</div>
 
   </div>${topicPracticeHTML(NUM_PRACTICE, "numeral")}`;
 }
@@ -1273,7 +1273,7 @@ function renderPart(){
       <tr><th>элемент</th><th>значение</th><th>примеры</th></tr>
       ${NIEOKR.map(n => `<tr><td class="c">${n[0]}</td><td style="color:var(--muted)">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Двойное отрицание обязательно.</b> <span class="pl">Nikt nic nie wie.</span> · <span class="pl">Nigdy tam nie byłem.</span> - <span class="pl">nie</span> при глаголе остаётся, даже когда уже есть <span class="pl">nikt</span> или <span class="pl">nigdy</span>. Здесь польский совпадает с русским и расходится с английским.</div>
+    <div class="tip"><b>Двойное отрицание обязательно.</b> <span class="pl">Nikt nic nie wie.</span> · <span class="pl">Nigdy tam nie byłem.</span> - <span class="pl">nie</span> при сказуемом остаётся, даже когда уже есть <span class="pl">nikt</span> или <span class="pl">nigdy</span>. В стандартном английском используется другая модель: <span class="pl">Nobody knows</span>.</div>
 
     <h3>Слитно или раздельно</h3>
     <div class="scroll"><table class="vt">
@@ -1307,12 +1307,19 @@ function renderQ(){
 
     <h3>Общий вопрос: czy</h3>
     <p><span class="pl">czy</span> открывает вопрос, на который отвечают «да / нет»: <span class="pl">Czy jesteś głodny? Czy lubisz kawę?</span> Если вопросительность и так понятна из контекста, знака вопроса или интонации, частицу можно опустить: <span class="pl">Czy masz czas? = Masz czas?</span> Обе модели нормативны и в устной, и в письменной речи. Вежливость создают вся конструкция и форма обращения: <span class="pl">Czy ma pani chwilę? · Ma pani chwilę? · Mógłby mi pan pomóc?</span></p>
+    <div class="scroll"><table class="vt">
+      <tr><th>тип вопроса</th><th>пример</th><th>ожидаемый ответ</th></tr>
+      <tr><td>да / нет</td><td class="w">Czy pijesz kawę?</td><td class="g">Tak. / Nie.</td></tr>
+      <tr><td>выбор</td><td class="w">Wolisz kawę czy herbatę?</td><td class="g">Herbatę.</td></tr>
+    </table></div>
+    <div class="tip"><b>В альтернативном вопросе <span class="pl">czy</span> значит «или» и соединяет варианты.</b> Сравни: <span class="pl">Czy pijesz kawę?</span> спрашивает о самом факте, а <span class="pl">Kawa czy herbata?</span> просит выбрать один из вариантов.</div>
 
     <h3>Вопросительные слова</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>пример</th></tr>
       ${QWORDS.map(q => `<tr><td class="w">${q[0]}</td><td style="color:var(--muted)">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
     </table></div>
+    <div class="tip"><b><span class="pl">Ile</span> или <span class="pl">ilu</span>.</b> В Mianownik и Biernik с мужско-личным существительным употребляется <span class="pl">ilu</span>: <span class="pl">Ilu studentów przyszło?</span> В этих же падежах с другими группами - <span class="pl">ile</span>: <span class="pl">Ile studentek przyszło? · Ile osób przyszło?</span> В косвенных падежах форма меняется у всех групп; полное склонение разобрано в разделе <a href="#s-num">Числительные</a>.</div>
 
     <h3>Прямой и косвенный вопрос</h3>
     <div class="scroll"><table class="vt">
@@ -1357,10 +1364,17 @@ function renderQ(){
     </table></div>
 
     <h3>jaki или który</h3>
-    <p><span class="pl">jaki</span> - какой по качеству, признак из неограниченного набора: <span class="pl">Jaki jest ten film? - Nudny.</span> <span class="pl">który</span> - выбор из известного, ограниченного набора: <span class="pl">Który film chcesz obejrzeć? - Ten pierwszy.</span> Русский язык это различие обычно не делает - оба переводятся как «какой».</p>
+    <p><span class="pl">jaki</span> - вопрос о качестве или вариант из открытого набора: <span class="pl">Jaki jest ten film? - Nudny. · Jakiego języka się uczysz? - Polskiego.</span> <span class="pl">który</span> - выбор из известного, ограниченного набора: <span class="pl">Który film chcesz obejrzeć? - Ten pierwszy.</span> В русском тоже есть «какой» и «который», но границы их употребления не совпадают с польскими полностью, поэтому ориентируйся на тип выбора, а не на дословный перевод.</p>
     <div class="scroll"><table>
       <tr><td style="width:46%" class="w">Jaki masz samochód?</td><td>какой у тебя автомобиль (марка, качество - открытый вопрос)</td></tr>
       <tr><td class="w">Który z tych samochodów jest twój?</td><td>который из этих (выбор из конкретного набора)</td></tr>
+    </table></div>
+
+    <h3>czyj: вопрос о владельце</h3>
+    <p class="lead"><span class="pl">Czyj</span> согласуется не с владельцем, а с предметом: <span class="pl">Czyj to telefon? · Czyja to torba? · Czyje to klucze?</span> Падеж задаёт роль этого предмета в вопросе: <span class="pl">Czyjej torby szukasz?</span></p>
+    <div class="scroll"><table>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
+      ${CZYJ.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Вопросы с предлогом</h3>
@@ -1389,33 +1403,42 @@ function renderQ(){
 function renderNeg(){
   $("#s-neg").innerHTML = `<div class="panel">
     <h2>Отрицание</h2>
-    <p class="lead">Как и в русском, отрицательные слова в предложении накапливаются, а не взаимоисключают друг друга.</p>
+    <p class="lead">Отрицательные слова согласуются с <span class="pl">nie</span> при сказуемом, а прямое дополнение из Biernik обычно переходит в Dopełniacz. Множественное отрицание похоже на русское и белорусское, но падеж объекта требует отдельного внимания.</p>
 
     <h3>Множественное отрицание обязательно</h3>
     <div class="scroll"><table class="vt">
       <tr><th>пример</th><th>перевод</th><th></th></tr>
       ${NEG_MULTI.map(n => `<tr><td class="w">${n[0]}</td><td style="color:var(--muted)">${n[1]}</td><td class="note">${n[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Nie при глаголе не убирается никогда.</b> Сколько бы ни было в предложении <span class="pl">nikt, nic, nigdy, nigdzie</span> - частица <span class="pl">nie</span> перед глаголом остаётся всегда. Здесь польский совпадает с русским и расходится с английским, где двойное отрицание, наоборот, недопустимо.</div>
+    <div class="tip"><b>Если отрицательное слово относится к сказуемому, сказуемое тоже получает <span class="pl">nie</span>.</b> <span class="pl">Nikt nie przyszedł. · Nikogo nie widzę. · O niczym nie myślę. · Żaden student nie odpowiedział.</span> Но в короткой реплике без сказуемого ставить <span class="pl">nie</span> некуда: <span class="pl">Kto dzwonił? - Nikt. · Ani słowa!</span></div>
+
+    <h3>Родительный при отрицании</h3>
+    <p>Если утвердительный глагол требует прямое дополнение в Biernik, при отрицании это дополнение обычно переходит в Dopełniacz. Другие падежи одного только отрицания не меняются.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>утверждение</th><th>отрицание</th><th>что изменилось</th></tr>
+      ${NEG_OBJECT.map(n => `<tr><td class="w">${n[0]}</td><td class="g">${n[1]}</td><td class="note">${n[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Сначала найди падеж без отрицания.</b> Только модель с Biernik переключается на Dopełniacz. При контрасте <span class="pl">nie</span> может отрицать не сказуемое, а один член: <span class="pl">Widziałem nie Annę, lecz Marię.</span> Здесь глагол утвердительный, поэтому обе формы остаются в Biernik.</div>
 
     <h3>Склонение nikt / nic</h3>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>nikt</th><th>nic</th></tr>
       ${NIKT_DEKL.map(n => `<tr><td style="color:var(--muted)">${n[0]}</td><td class="w">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Склоняются полностью, как обычные существительные - в отличие от русских «никто/ничто», где падежная форма не всегда прозрачна.</p>
+    <p class="lead">Падеж выбирают по управлению глагола или предлога: <span class="pl">nie widzę nikogo · nie pomagam nikomu · nie rozmawiam z nikim · nie myślę o niczym</span>. Предлог ставится перед всей польской формой: <span class="pl">z nikim, o niczym, bez nikogo, bez niczego</span>, в отличие от русских и белорусских сочетаний типа «ни с кем».</p>
 
     <h3>nie ma или nie jest</h3>
-    <p><span class="pl">nie ma</span> - безличное, «не имеется», требует Dopełniacz. <span class="pl">nie jest</span> - личное, «не является», при подлежащем и обычном для <span class="pl">być</span> падеже.</p>
+    <p>У <span class="pl">nie ma</span> две разные конструкции. Безличное <span class="pl">nie ma + Dopełniacz</span> сообщает об отсутствии: <span class="pl">W lodówce nie ma mleka.</span> Личное <span class="pl">on nie ma</span> - это обычное отрицание глагола <span class="pl">mieć</span>: <span class="pl">On nie ma czasu.</span> Форма <span class="pl">nie jest</span> отрицает <span class="pl">być</span> при названном подлежащем: <span class="pl">Ona nie jest lekarką. · Ona nie jest w domu.</span></p>
     <div class="scroll"><table class="vt">
       <tr><th>пример</th><th>падеж</th><th>смысл</th></tr>
       ${NIEMA_JEST.map(n => `<tr><td class="g">${n[0]}</td><td class="c">${n[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${n[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Главная проверка.</b> Если можно поставить вопрос «есть ли у кого-то / где-то?» - это <span class="pl">nie ma</span> + Dopełniacz. Если вопрос «является ли чем-то / каким-то?» - это <span class="pl">nie jest</span> и падеж обычного сказуемого.</div>
+    <div class="tip"><b>Смотри на конструкцию, а не на русский перевод «нет».</b> В безличной модели нет подлежащего в Mianownik: <span class="pl">Nie ma Anny. · Nie było Anny.</span> С названным подлежащим различай обладание и <span class="pl">być</span>: <span class="pl">Anna nie ma czasu</span>, но <span class="pl">Anna nie jest w domu</span>. Пара <span class="pl">Jej nie ma w domu / Ona nie jest w domu</span> противопоставляет отсутствие человека и отрицание его местонахождения.</div>
 
     <h3>ani… ani и żaden</h3>
-    <p class="pl">Nie mam ani czasu, ani pieniędzy.</p>
-    <p class="lead">Отдельное отрицательное местоимение <span class="pl">żaden / żadna / żadne</span> - «никакой»: <span class="pl">Żaden z nich nie przyszedł.</span> Склоняется как прилагательное с окончаниями местоименного типа: <span class="pl">żadnego, żadnej, żadnym</span>.</p>
+    <p><span class="pl">Ani… ani</span> соединяет отрицаемые элементы; перед повторным <span class="pl">ani</span> ставится запятая, а при сказуемом сохраняется <span class="pl">nie</span>: <span class="pl">Nie mam ani czasu, ani pieniędzy.</span> Без сказуемого возможна короткая модель <span class="pl">Ani słowa!</span></p>
+    <p class="lead"><span class="pl">Żaden / żadna / żadne</span> - «никакой»: <span class="pl">Żaden z nich nie przyszedł. · Nie mam żadnego problemu.</span> Согласуется с существительным и склоняется по местоименному типу: <span class="pl">żadnego, żadnej, żadnym</span>. В предложной группе без сказуемого дополнительное <span class="pl">nie</span> не нужно: <span class="pl">bez żadnego problemu</span>.</p>
+    <div class="tip"><b>Не путай отрицание возможности и обязанности.</b> <span class="pl">Nie muszę iść</span> - не обязан, <span class="pl">nie mogę iść</span> - не могу, <span class="pl">nie wolno iść</span> - нельзя. Подробнее - в разделах <a href="#s-verbs">Глаголы</a> и <a href="#s-impers">Безличные конструкции</a>. Слитное и раздельное написание <span class="pl">nie</span> разобрано в разделе <a href="#s-part">Частицы</a>.</div>
   </div>${topicPracticeHTML(NEG_PRACTICE, "negation")}`;
 }
 

@@ -1262,7 +1262,7 @@ const NAGR = [
  ["2, 3, 4","Mianownik мн. ч.","dwa domy · trzy książki · cztery okna","są / były"],
  ["5-9, 0, 11-14","Dopełniacz мн. ч.","pięć domów · dziesięć książek · czternaście okien","jest / było"],
  ["22, 23, 24","Mianownik мн. ч.","dwadzieścia dwa domy · trzydzieści trzy książki","są / były"],
- ["21, 31, 41...","Mianownik ед. ч.","dwadzieścia jeden dom · trzydzieści jedna książka","jest / był"],
+ ["21, 31, 41...","Dopełniacz мн. ч.","dwadzieścia jeden domów · trzydzieści jeden książek","jest / było"],
  ["25, 35, 100...","Dopełniacz мн. ч.","dwadzieścia pięć domów · sto okien","jest / było"]
 ];
 
@@ -1282,7 +1282,7 @@ const ZBIOR = [
 ];
 
 const ULAM = [
- ["1/2","pół · połowa","pół godziny · połowa klasy · o pół roku starszy"],
+ ["1/2","pół · połowa (существительное)","pół godziny · połowa klasy · o pół roku starszy"],
  ["1/4","ćwierć","ćwierć litra · kwadrans - это четверть часа"],
  ["3/4","trzy czwarte","trzy czwarte szklanki"],
  ["1,5","półtora · półtorej","półtora roku (м. и ср.) · półtorej godziny (ж.)"],
@@ -1497,7 +1497,7 @@ const QWORDS = [
  ["jaki / jaka / jakie","какой (качество, любой признак)","Jaki jest ten film? - Ciekawy."],
  ["który / która / które","который (выбор из известного набора)","Który dzień tygodnia lubisz najbardziej?"],
  ["czyj / czyja / czyje","чей","Czyja to torba?"],
- ["ile","сколько","Ile to kosztuje?"],
+ ["ile / ilu","сколько; в M./B. ilu - с мужско-личной группой","Ile osób przyszło? · Ilu studentów przyszło?"],
  ["gdzie","где","Gdzie mieszkasz?"],
  ["dokąd","куда","Dokąd idziesz?"],
  ["skąd","откуда","Skąd jesteś?"],
@@ -1526,6 +1526,14 @@ const KTORY = [
  ["Biernik","który (m3) / którego (m1, m2)","którą","które","których","które"],
  ["Narzędnik","którym","którą","którym","którymi","którymi"],
  ["Miejscownik","którym","której","którym","których","których"]
+];
+const CZYJ = [
+ ["Mianownik","czyj","czyja","czyje","czyi","czyje"],
+ ["Dopełniacz","czyjego","czyjej","czyjego","czyich","czyich"],
+ ["Celownik","czyjemu","czyjej","czyjemu","czyim","czyim"],
+ ["Biernik","czyj (m3) / czyjego (m1, m2)","czyją","czyje","czyich","czyje"],
+ ["Narzędnik","czyim","czyją","czyim","czyimi","czyimi"],
+ ["Miejscownik","czyim","czyjej","czyim","czyich","czyich"]
 ];
 const KTORY_SENT = [
  ["sklep, w którym pracuję","магазин, в котором я работаю","Miejscownik м. р. - согласован со sklep, падеж от pracować w czym?"],
@@ -1558,7 +1566,7 @@ const NIKT_DEKL = [
  ["Celownik","nikomu","niczemu"],
  ["Biernik","nikogo","nic"],
  ["Narzędnik","nikim","niczym"],
- ["Miejscownik","nikim","niczym"]
+ ["Miejscownik","(o) nikim","(o) niczym"]
 ];
 const NEG_MULTI = [
  ["Nikt nic nie wie.","Никто ничего не знает.","2 отрицательных слова + nie"],
@@ -1566,13 +1574,22 @@ const NEG_MULTI = [
  ["Nigdzie nikogo nie widziałem.","Я нигде никого не видел.","2 отрицательных слова + nie"],
  ["Nikt nigdy tu nie przychodzi.","Никто никогда сюда не приходит.","2 отрицательных слова + nie"]
 ];
+const NEG_OBJECT = [
+ ["Mam bilet.","Nie mam biletu.","Biernik → Dopełniacz"],
+ ["Czytam książkę.","Nie czytam książki.","Biernik → Dopełniacz"],
+ ["Widzę Annę.","Nie widzę Anny.","Biernik → Dopełniacz"],
+ ["Pomagam bratu.","Nie pomagam bratu.","Celownik остаётся"],
+ ["Interesuję się muzyką.","Nie interesuję się muzyką.","Narzędnik остаётся"]
+];
 const NIEMA_JEST = [
- ["Nie ma czasu.","Dopełniacz","безличное: времени нет вообще, ни у кого конкретно"],
- ["On nie ma czasu.","Dopełniacz","личное отрицание обладания: у него нет времени"],
- ["To nie jest prawda.","Mianownik","отрицание тождества: это не есть правда"],
+ ["W lodówce nie ma mleka.","Dopełniacz","безличное отсутствие: в холодильнике нет молока"],
+ ["Nie ma czasu.","Dopełniacz","безличное: в данной ситуации нет времени"],
+ ["On nie ma czasu.","Dopełniacz","личная форма mieć: у него нет времени"],
+ ["To nie jest prawda.","Mianownik","отрицание тождества: это неправда"],
  ["On nie jest lekarzem.","Narzędnik","отрицание роли/профессии - как и в утверждении, jest + Narzędnik"],
- ["Jej nie ma w domu.","Dopełniacz","её нет дома - буквально «отсутствует»"],
- ["Ona nie jest w domu.","Miejscownik","она не находится дома - утверждение о месте, просто с nie"]
+ ["Jej nie ma w domu.","Dopełniacz","сообщаем об отсутствии человека дома"],
+ ["Ona nie jest w domu.","Miejscownik","отрицаем её местонахождение: она не дома"],
+ ["Wczoraj nie było czasu.","Dopełniacz","в прошлом безличное nie ma меняется на nie było"]
 ];
 
 const SIE_POS = [
@@ -1813,8 +1830,8 @@ const PEOPLE_PRACTICE={id:"people",title:"Практика: люди и вежл
 const ALPHA_PRACTICE={id:"alphabet",title:"Практика: алфавит и произношение",lead:"20 заданий на чтение букв, диграфов и носовых гласных.",tasks:[...ADIAC,...DIGR].map((item,index)=>({id:`alpha-${index+1}`,prompt:`Как читается польское «${item[0]}»?`,answers:[item[1]],explanation:item[3]?`${item[2]}. Пример: ${item[3]}`:`Пример: ${item[2]}`})).concat(topicTasks("alpha-nasal",[["Как реализуются ą/ę перед b, p?","om, em","Перед b, p: om, em."],["Как реализуются ą/ę в конце слова?","ą - носовое; ę - часто теряет носовость","Конец слова: особая позиция."],["Как реализуются ą/ę перед d, t?","on, en","Перед d, t: on, en."]]))};
 const DIM_PRACTICE={id:"diminutives",title:"Практика: уменьшительные",lead:"20 заданий на формы и уместность уменьшительных.",tasks:[...DIM_M,...DIM_F,...DIM_N,...DIM_ADJ,...DIM_NAME].slice(0,20).map((item,index)=>({id:`dim-${index+1}`,prompt:`Уменьшительная форма слова «${item[0]}»:`,answers:[item[1].split(" / ")[0]],explanation:`Первая обычная уменьшительная форма: ${item[1]}.`}))};
 const BRIDGE_PRACTICE={id:"bridges",title:"Практика: мосты и ложные друзья",lead:"20 заданий на значения похожих польских слов.",get tasks(){return FALSE.slice(0,20).map((item,index)=>({id:`bridge-${index+1}`,prompt:`Что по-польски означает «${item[0]}»?`,answers:[item[1]],explanation:`Не «${item[2]}».`}));}};
-const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, даты и время.",tasks:topicTasks("num",[["dwa ___ (dom)","domy","После dwa: mianownik множественного."],["pięć ___ (dom)","domów","После pięć: dopełniacz множественного."],["dwie ___ (książka)","książki","Женский род после dwie."],["trzy ___ (okno)","okna","После trzy: okna."],["dwanaście ___ (student)","studentów","11–14: родительный множественного."],["dwadzieścia dwa ___ (kot)","koty","Последнее число dwa."],["dwadzieścia pięć ___ (kot)","kotów","Последнее число pięć."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? - o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["we ___ (wtorek)","wtorek","Устойчиво: we wtorek."],["w ___ (maj)","maju","W maju."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["pięć ___ (złoty)","złotych","После 5: złotych."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["Wrócę za ___ (tydzień)","tydzień","За неделю в будущем."],["w ciągu ___ (tydzień)","tygodnia","В течение срока: w ciągu tygodnia."]] )};
-const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на общий и косвенный вопрос, вопросительные слова, падежные формы и относительное który.",tasks:topicTasks("question",[
+const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, согласование, склонение, даты и время.",tasks:topicTasks("num",[["dwadzieścia jeden ___ (dom)","domów","Числа на jeden, кроме ровно 1, требуют dopełniacz множественного: dwadzieścia jeden domów."],["pięć ___ domów (duży)","dużych","После pięć вся именная группа стоит в dopełniacz множественного: pięć dużych domów."],["dwie ___ (książka)","książki","Женский род после dwie."],["Dwa okna ___ otwarte. (być, прошедшее)","były","После dwa сказуемое стоит во множественном числе: dwa okna były."],["___ studentów przyszło. (12)","Dwunastu","С мужско-личным существительным нужна форма dwunastu: Dwunastu studentów przyszło."],["dwadzieścia dwa ___ (kot)","koty","Последний член dwa требует mianownik множественного."],["dwadzieścia pięć ___ (kot)","kotów","Последний член pięć требует dopełniacz множественного."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? - o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["___ studenci czytają. (2)","Dwaj","Форма dwaj требует mianownik множественного и сказуемое во множественном: Dwaj studenci czytają."],["___ dobrych studentów czekało. (5)","Pięciu","При мужско-личном существительном употребляется pięciu: Pięciu dobrych studentów czekało."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["Rozmawiam z ___ studentami. (3)","trzema","В narzędnik числительное trzy имеет форму trzema."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["To wydarzyło się w roku tysiąc osiemset ___. (1)","pierwszym","Если в составном порядковом числительном нет десятков, изменяется только последнее слово: w roku tysiąc osiemset pierwszym."],["Zapisz słownie 3,14.","trzy przecinek czternaście","Десятичный разделитель читается przecinek: trzy przecinek czternaście."]] )};
+const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на общий, альтернативный и косвенный вопрос, вопросительные слова, падежные формы и относительное który.",tasks:topicTasks("question",[
   ["___ mieszkasz? - W Gdańsku.","Gdzie","Спрашиваем о месте: gdzie?",["Gdzie","Skąd","Dokąd"]],
   ["___ idziesz? (точно: куда?) - Do sklepu.","Dokąd","Точный вопрос о конечной точке движения: dokąd? В разговоре возможно Gdzie idziesz?",["Dokąd","Skąd","Którędy"]],
   ["___ wracasz? - Z pracy.","Skąd","Спрашиваем об исходной точке: skąd?",["Skąd","Gdzie","Dokąd"]],
@@ -1825,21 +1842,41 @@ const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы"
   ["___ szukasz? (książka)","Czego","Szukać требует Dopełniacz: czego?",["Czego","Co","Czemu"]],
   ["___ pomagasz? (sąsiad)","Komu","Pomagać требует Celownik: komu?",["Komu","Kogo","Kim"]],
   ["___ piszesz? (орудие письма: długopis)","Czym","Орудие действия стоит в Narzędnik: czym?",["Czym","Czemu","Co"]],
-  ["___ rozmawiasz teraz przez telefon? (Anna - собеседница)","Z kim","Собеседник вводится через z + Narzędnik: z kim?",["Z kim","O kim","Do kogo"]],
+  ["Wolisz kawę ___ herbatę?","czy","В альтернативном вопросе czy соединяет варианты и значит «или».",["czy","że","żeby"]],
   ["___ czekasz? (autobus)","Na co","Czekać na co? - na autobus.",["Na co","Na kogo","Do czego"]],
   ["___ dzwonisz? (lekarz - адресат звонка)","Do kogo","Dzwonić do kogo? - do lekarza.",["Do kogo","O kim","Z kim"]],
-  ["___ to torba? - Anny.","Czyja","Спрашиваем о принадлежности: czyja?",["Czyja","Jaka","Która"]],
+  ["___ torby szukasz? - Anny.","Czyjej","Czyj согласуется с предметом; szukać требует Dopełniacz: czyjej torby?",["Czyjej","Czyją","Czyja"]],
   ["___ wracasz? - Wieczorem.","Kiedy","Спрашиваем о времени: kiedy?",["Kiedy","Skąd","Dokąd"]],
   ["___ mówisz po polsku? - Dobrze.","Jak","Спрашиваем о способе или качестве: jak?",["Jak","Czy","Dlaczego"]],
   ["___ to robisz? (вопрос именно о цели) - Żeby pomóc.","Po co","Вопрос о цели: po co?",["Po co","Kiedy","Czym"]],
-  ["___ dni zostało do wakacji?","Ile","Ile требует Dopełniacz множественного: ile dni?",["Ile","Jak","Które"]],
+  ["___ studentów przyszło na zajęcia?","Ilu","С мужско-личным существительным спрашиваем ilu?: Ilu studentów przyszło?",["Ilu","Ile","Które"]],
   ["Nie wiem, ___ jutro pracujesz. (косвенный вопрос «да / нет»)","czy","В косвенном общем вопросе используется czy; перед придаточной частью стоит запятая.",["czy","że","żeby"]],
   ["To jest sklep, w ___ pracuję.","którym","Род и число от sklep, Miejscownik требуется предлогом w: w którym.",["którym","którego","który"]]
 ] )};
-const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",lead:"20 заданий на nie, отрицательные местоимения и nie ma.",tasks:topicTasks("neg",[["Nie mam ___. (czas)","czasu","После nie: родительный."],["Nikt nic nie ___. (wiedzieć)","wie","Nie остаётся при глаголе."],["Nigdy tam nie ___. (być, ja)","byłem","Nigdy nie byłem."],["Nie ma ___ w domu. (Anna)","Anny","Nie ma + родительный."],["Anna nie ___ lekarzem.","jest","Nie jest lekarzem."],["Nie widzę żadnego ___. (pies)","psa","Żadnego psa."],["Nie mam ani ___, ani pieniędzy. (czas)","czasu","Ani czasu."],["Nigdzie nie ___ kluczy. (widzieć, ja)","widzę","Nigdzie nie widzę."],["Nie chcę ___. (kawa)","kawy","Nie chcę kawy."],["Czy ktoś dzwoni? - Nie, ___.","nikt","Nikt."],["Nie wiem ___ o tym problemie. (nic)","nic","После wiedzieć употребляется nic: Nie wiem nic o tym problemie."],["On nie ___ w pracy.","jest","Nie jest w pracy."],["W lodówce nie ma ___. (mleko)","mleka","Nie ma mleka."],["Żaden z nich nie ___. (przyjść)","przyszedł","Żaden nie przyszedł."],["Nie mogę znaleźć swoich ___. (okulary)","okularów","Родительный множественного."],["Nikomu nic nie ___. (mówić, ja)","mówię","Nikomu nic nie mówię."],["To nie ___ prawda.","jest","Nie jest prawda."],["Nie słyszę ___ (muzyka)","muzyki","Nie słyszę muzyki."],["Nikt nie ___, gdzie on jest. (wiedzieć)","wie","Nikt nie wie."],["Bez ciebie nie ___. (móc, ja)","mogę","Nie mogę."]] )};
+const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",lead:"20 заданий на nie, родительный отрицания, отрицательные местоимения и различие nie ma / nie jest.",tasks:topicTasks("neg",[
+  ["Nie mam ___. (czas)","czasu","Прямое дополнение czas в Biernik при отрицании переходит в Dopełniacz: nie mam czasu."],
+  ["Nikt nic nie ___. (wiedzieć, настоящее)","wie","При отрицательных словах сказуемое сохраняет nie: Nikt nic nie wie."],
+  ["Nigdy tam nie ___. (być, ja, мужчина, прошедшее)","byłem","Мужская форма прошедшего времени: Nigdy tam nie byłem."],
+  ["Dzisiaj nie ma ___ w domu. (Anna)","Anny","Безличное nie ma требует Dopełniacz: nie ma Anny."],
+  ["Anna nie ___ lekarzem. (być, настоящее)","jest","Nie jest отрицает роль; lekarzem остаётся в Narzędnik."],
+  ["Nie widzę żadnego ___. (pies)","psa","Żaden согласуется с существительным в Dopełniacz: żadnego psa."],
+  ["Nie mam ani ___, ani pieniędzy. (czas)","czasu","При сказуемом остаётся nie, перед повторным ani ставится запятая."],
+  ["Nigdzie nie ___ kluczy. (widzieć, ja, настоящее)","widzę","Nigdzie требует отрицания сказуемого: nigdzie nie widzę."],
+  ["Nie chcę ___. (kawa)","kawy","Прямое дополнение при отрицании стоит в Dopełniacz: kawy."],
+  ["Czy ktoś dzwoni? - Nie, ___ nie dzwoni.","nikt","С полным сказуемым: Nikt nie dzwoni."],
+  ["Nie rozmawiam z ___. (nikt)","nikim","После предлога z употребляется Narzędnik: z nikim."],
+  ["Teraz on nie ___ w pracy. (być)","jest","Nie jest отрицает местонахождение названного подлежащего."],
+  ["W lodówce nie ma ___. (mleko)","mleka","Безличное nie ma + Dopełniacz: nie ma mleka."],
+  ["Wczoraj żaden z nich nie ___. (przyjść)","przyszedł","Wczoraj задаёт прошедшее время: żaden nie przyszedł."],
+  ["Nie mogę znaleźć swoich ___. (okulary)","okularów","Прямое дополнение при znaleźć под отрицанием стоит в Dopełniacz множественного: okularów."],
+  ["Teraz nikomu nic nie ___. (mówić, ja)","mówię","Nikomu и nic не заменяют nie при сказуемом: nie mówię."],
+  ["To nie ___ prawda. (być, настоящее)","jest","С конструкцией to jest именная часть стоит в Mianownik: To nie jest prawda."],
+  ["Nie słyszę ___. (muzyka)","muzyki","Biernik muzykę при отрицании меняется на Dopełniacz: muzyki."],
+  ["Teraz nikt nie ___, gdzie on jest. (wiedzieć)","wie","Teraz задаёт настоящее время: Nikt nie wie."],
+  ["Teraz bez ciebie nie ___ tego zrobić. (móc, ja)","mogę","Настоящее время: nie mogę tego zrobić."]
+] )};
 const ORDER_PRACTICE={id:"word-order",title:"Практика: порядок слов",lead:"20 заданий на клитики, się и нейтральный порядок.",tasks:topicTasks("order",[["Jak ___ nazywasz?","się","Się не открывает фразу."],["Czy możesz ___ pomóc? (ja)","mi","Краткая клитика mi."],["Nie martw ___.","się","Nie martw się."],["Powiedz ___ prawdę. (ja)","mi","Powiedz mi."],["Czy podoba ___ się ten film? (ty)","ci","Порядок: ci się."],["Widzę ___ codziennie. (on)","go","Краткая форма: go."],["Idę do ___. (on)","niego","После предлога: niego."],["Mnie to nie ___. (interesować)","interesuje","Полная форма для акцента."],["Gdzie ___ twoja siostra? (mieszkać)","mieszka","Вопросительное слово + глагол."],["Ile ___ bilet? (kosztować)","kosztuje","Ile kosztuje bilet?"],["Klucze są ___ stole. (na)","na","Новый факт: na stole."],["Na stole są ___. (klucze)","klucze","Ответ на «что?» - klucze."],["Czy Anna ___ zna? (ty)","cię","Винительный: cię."],["Nie ___ się tego. (bać, ty)","bój","Nie bój się."],["On ___ dał książkę. (ja)","mi","On mi dał."],["Wczoraj ___ go w kinie. (widzieć, ja)","widziałem","Вчера видел: widziałem."],["Czy ___ to zrobić? (móc, ty)","możesz","Czy możesz…"],["Z kim ___ spotykasz?","się","Spotykać się z kimś: здесь нужна частица się."],["Proszę, ___ mi pomóc.","pomóż","Pomóż mi."],["Dzisiaj ___ do pracy. (iść, ja)","idę","Dzisiaj idę."]] )};
 const IMPERS_PRACTICE={id:"impersonal",title:"Практика: безличные конструкции",lead:"20 заданий на trzeba, można, nie wolno, -no/-to и mówi się.",tasks:topicTasks("impers",[["Tu nie ___ palić.","wolno","Прямой запрет: nie wolno."],["Nie ___ wejść, bo drzwi są zamknięte.","można","Нет возможности: nie można."],["___ wypełnić formularz.","Trzeba","Необходимость: trzeba."],["___ to przeczytać.","Warto","Рекомендация: warto."],["W regulaminie: ___ zapłacić do piątku.","należy","Официальная инструкция: należy."],["Wczoraj nie ___ tu parkować.","można było","Прошедшее: nie można było."],["Trzeba ___ wcześniej. (wyjść)","było","Trzeba było wyjść."],["Wczoraj ___ formularz.","wypełniono","Безличное действие: wypełniono."],["Drzwi ___ o ósmej.","otwarto","Форма на -to: otwarto."],["Po polsku ___ się «dzień dobry».","mówi","Mówi się."],["Tu się nie ___. (palić)","pali","Tu się nie pali."],["Nie wolno ___ zdjęć. (robić)","robić","После nie wolno - инфинитив."],["Czy ___ tu usiąść?","można","Можно ли: czy można?"],["___ mi wejść?","Wolno","Можно ли мне: wolno mi?"],["Nie ___ nam rozmawiać głośno.","wolno","Nie wolno nam."],["Wczoraj ___ remont.","wykonano","Wykonano remont."],["Jak ___ dojeżdża na lotnisko?","się","Jak się dojeżdża?"],["___ było spróbować tej zupy.","Warto","Warto było."],["W urzędzie ___ złożyć wniosek online.","można","Возможность: można."],["Nie ___ było wejść po zamknięciu.","wolno","Запрет в прошлом: nie wolno było."]] )};
-NEG_PRACTICE.tasks[2] = {id:"neg-3",prompt:"Nigdy tam nie ___. (być, ja, мужчина)",answers:["byłem"],explanation:"Nigdy nie byłem."};
 ORDER_PRACTICE.tasks[15] = {id:"order-16",prompt:"Wczoraj ___ go w kinie. (widzieć, ja, мужчина)",answers:["widziałem"],explanation:"Вчера видел: widziałem."};
 ORDER_PRACTICE.tasks[18] = {id:"order-19",prompt:"Proszę mi ___.",answers:["pomóc"],explanation:"Вежливая конструкция: proszę mi pomóc."};
 NUM_PRACTICE.tasks[17].explanation = "В этой конструкции после dwa: dwa procent. Слово procent в других падежах склоняется: o dwóch procentach.";

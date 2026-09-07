@@ -24,7 +24,7 @@ const manifestPath = resolve(root, "content-manifest.json");
 const storedManifest = await readFile(manifestPath, "utf8").then(JSON.parse).catch(() => ({}));
 const previousSitemap = await readFile(resolve(root, "sitemap.xml"), "utf8").catch(() => "");
 const previousDates = new Map([...previousSitemap.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map(match => [match[1], match[2]]));
-const contentSignature = html => createHash("sha256").update(html.replace(/\?v=[0-9a-f]{10}/g, "?v=")).digest("hex");
+const contentSignature = html => createHash("sha256").update(html.replace(/\?v=[0-9a-f]{10}/g, "?v=").replace(/ id="r-\d+"/g, "")).digest("hex");
 const nextManifest = {};
 const stampDate = (key, canonical, hash) => {
   const stored = storedManifest[key];

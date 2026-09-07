@@ -713,9 +713,14 @@ każdy / każda / każdeкаждыйобычно употребляется в �
 Общий вопрос строится с czy или одной вопросительной интонацией, частный - с вопросительным словом. Русский и белорусский дают хорошую опору для gdzie / dokąd / skąd; особого внимания требует польское противопоставление jaki / który.
 Общий вопрос: czy
 czy открывает вопрос, на который отвечают «да / нет»: Czy jesteś głodny? Czy lubisz kawę? Если вопросительность и так понятна из контекста, знака вопроса или интонации, частицу можно опустить: Czy masz czas? = Masz czas? Обе модели нормативны и в устной, и в письменной речи. Вежливость создают вся конструкция и форма обращения: Czy ma pani chwilę? · Ma pani chwilę? · Mógłby mi pan pomóc?
+тип вопросапримерожидаемый ответ
+да / нетCzy pijesz kawę?Tak. / Nie.
+выборWolisz kawę czy herbatę?Herbatę.
+В альтернативном вопросе czy значит «или» и соединяет варианты. Сравни: Czy pijesz kawę? спрашивает о самом факте, а Kawa czy herbata? просит выбрать один из вариантов.
 Вопросительные слова
 словозначениепример
-ktoктоKto to jest?coчтоCo to jest?jaki / jaka / jakieкакой (качество, любой признак)Jaki jest ten film? - Ciekawy.który / która / któreкоторый (выбор из известного набора)Który dzień tygodnia lubisz najbardziej?czyj / czyja / czyjeчейCzyja to torba?ileсколькоIle to kosztuje?gdzieгдеGdzie mieszkasz?dokądкудаDokąd idziesz?skądоткудаSkąd jesteś?kiedyкогдаKiedy wracasz?dlaczego / czemuпочему; czemu - разговорноеDlaczego się spóźniłeś? · Czemu jesteś smutny?jakкакJak się masz?po coзачемPo co to robisz?
+ktoктоKto to jest?coчтоCo to jest?jaki / jaka / jakieкакой (качество, любой признак)Jaki jest ten film? - Ciekawy.który / która / któreкоторый (выбор из известного набора)Który dzień tygodnia lubisz najbardziej?czyj / czyja / czyjeчейCzyja to torba?ile / iluсколько; в M./B. ilu - с мужско-личной группойIle osób przyszło? · Ilu studentów przyszło?gdzieгдеGdzie mieszkasz?dokądкудаDokąd idziesz?skądоткудаSkąd jesteś?kiedyкогдаKiedy wracasz?dlaczego / czemuпочему; czemu - разговорноеDlaczego się spóźniłeś? · Czemu jesteś smutny?jakкакJak się masz?po coзачемPo co to robisz?
+Ile или ilu. В Mianownik и Biernik с мужско-личным существительным употребляется ilu: Ilu studentów przyszło? В этих же падежах с другими группами - ile: Ile studentek przyszło? · Ile osób przyszło? В косвенных падежах форма меняется у всех групп; полное склонение разобрано в разделе Числительные.
 Прямой и косвенный вопрос
 прямой вопроскосвенный вопрос
 Czy przyjdzie?Nie wiem, czy przyjdzie.
@@ -745,9 +750,13 @@ MianownikktocoDopełniaczkogoczegoCelownikkomuczemuBiernikkogocoNarzędnikkimczy
 словозначениекосвенные формы
 kto · coвопросKogo szukasz? · Czym piszesz? · O czym myślisz?ktoś · cośкто-то, что-тоkogoś · komuś · kimś czegoś · czemuś · czymśnikt · nicникто, ничтоnikogo · nikomu · nikim niczego · niczemu · niczymktokolwiek · cokolwiekкто угодно, что угодноkogokolwiek · komukolwiek czegokolwiek · czymkolwiekten, kto… · to, co…тот, кто… · то, что…Ten, kto to zrobił, powinien przeprosić. · Nie wierzę w to, co mówisz.
 jaki или który
-jaki - какой по качеству, признак из неограниченного набора: Jaki jest ten film? - Nudny. który - выбор из известного, ограниченного набора: Który film chcesz obejrzeć? - Ten pierwszy. Русский язык это различие обычно не делает - оба переводятся как «какой».
+jaki - вопрос о качестве или вариант из открытого набора: Jaki jest ten film? - Nudny. · Jakiego języka się uczysz? - Polskiego. który - выбор из известного, ограниченного набора: Który film chcesz obejrzeć? - Ten pierwszy. В русском тоже есть «какой» и «который», но границы их употребления не совпадают с польскими полностью, поэтому ориентируйся на тип выбора, а не на дословный перевод.
 Jaki masz samochód?какой у тебя автомобиль (марка, качество - открытый вопрос)
 Który z tych samochodów jest twój?который из этих (выбор из конкретного набора)
+czyj: вопрос о владельце
+Czyj согласуется не с владельцем, а с предметом: Czyj to telefon? · Czyja to torba? · Czyje to klucze? Падеж задаёт роль этого предмета в вопросе: Czyjej torby szukasz?
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
+MianownikczyjczyjaczyjeczyiczyjeDopełniaczczyjegoczyjejczyjegoczyichczyichCelownikczyjemuczyjejczyjemuczyimczyimBiernikczyj (m3) / czyjego (m1, m2)czyjączyjeczyichczyjeNarzędnikczyimczyjączyimczyimiczyimiMiejscownikczyimczyjejczyimczyichczyich
 Вопросы с предлогом
 Предлог всегда идёт перед вопросительным словом, никогда не остаётся в конце, как в английском.
 вопросзначениепример
@@ -762,7 +771,7 @@ sklep, w którym pracujęмагазин, в котором я работаюMiej
 Który связывает существительное с уточняющим придаточным. Вместо двух фраз To jest sklep. Pracuję w tym sklepie. получаем одну: To jest sklep, w którym pracuję. Другие средства строят другие типы придаточных: tam, gdzie… · ten, kto… · nie wiem, czy…
 Числительные
 Главная сложность не в самих числах, а в том, какой падеж они требуют от существительного и что делают с глаголом.
-Три основных режима. Числительное на 1, кроме 11, требует Mianownik единственного: dwadzieścia jeden dom był. На 2, 3, 4, кроме 12-14, - Mianownik множественного и глагол во множественном: dwadzieścia dwa domy były. На 5-9, 0 и на 11-14 - Dopełniacz множественного и глагол в среднем роде единственного: pięć osób było.
+Три основных режима для немужско-личных существительных. Ровно 1 требует Mianownik единственного: jeden dom był. Числа 2, 3, 4 и составные, последний член которых - 2, 3, 4, кроме 12-14, требуют Mianownik множественного и глагол во множественном: dwadzieścia dwa domy były. Все остальные - Dopełniacz множественного и глагол в среднем роде единственного: dwadzieścia jeden domów było · pięć osób było.
 Количественные: 0–20
 0zero1jeden2dwa3trzy4cztery5pięć6sześć7siedem8osiem9dziewięć10dziesięć11jedenaście12dwanaście13trzynaście14czternaście15piętnaście16szesnaście17siedemnaście18osiemnaście19dziewiętnaście20dwadzieścia
 Десятки, сотни, тысячи
@@ -771,10 +780,10 @@ Który связывает существительное с уточняющим
 У базовых количественных форм род различается у 1 и 2. jeden dom · jedna książka · jedno okno; dwa domy · dwie książki · dwa okna. У мужско-личных групп есть отдельные формы dwaj, trzej, czterej.
 Согласование с существительным
 числосуществительноепримерглагол
-1Mianownik ед. ч.jeden dom · jedna książka · jedno oknojest / był2, 3, 4Mianownik мн. ч.dwa domy · trzy książki · cztery oknasą / były5-9, 0, 11-14Dopełniacz мн. ч.pięć domów · dziesięć książek · czternaście okienjest / było22, 23, 24Mianownik мн. ч.dwadzieścia dwa domy · trzydzieści trzy książkisą / były21, 31, 41...Mianownik ед. ч.dwadzieścia jeden dom · trzydzieści jedna książkajest / był25, 35, 100...Dopełniacz мн. ч.dwadzieścia pięć domów · sto okienjest / było
-В составных числительных смотрим на последнюю цифру: 22 domy, 25 domów. Исключение - 11-14: они всегда требуют Dopełniacz множественного, dwanaście domów, не «dwanaście domy».
+1Mianownik ед. ч.jeden dom · jedna książka · jedno oknojest / był2, 3, 4Mianownik мн. ч.dwa domy · trzy książki · cztery oknasą / były5-9, 0, 11-14Dopełniacz мн. ч.pięć domów · dziesięć książek · czternaście okienjest / było22, 23, 24Mianownik мн. ч.dwadzieścia dwa domy · trzydzieści trzy książkisą / były21, 31, 41...Dopełniacz мн. ч.dwadzieścia jeden domów · trzydzieści jeden książekjest / było25, 35, 100...Dopełniacz мн. ч.dwadzieścia pięć domów · sto okienjest / było
+В составных числительных смотрим на последний член: 22 domy, 25 domów. Исключение - 12-14: они всегда требуют Dopełniacz множественного, dwanaście domów, не «dwanaście domy». Числа на 1 тоже требуют Dopełniacz множественного: 21 domów.
 Число на что оканчивается?
-Быстрая схема. 21, 31, 41... обычно требуют единственного числа: dwadzieścia jeden dom. Окончания 2-4, кроме 12-14, дают множественное: 22 domy. Окончания 5-9, 0 и числа 11-14 - Dopełniacz множественного: 25 domów, 30 domów, 114 domów. Возраст запоминай отдельно: mam 21 lat, 22 lata, 25 lat. Для мужчин есть свои формы: dwaj / dwóch studentów.
+Быстрая схема. Ровно 1 даёт единственное число: jeden dom. Последний член 2-4, кроме 12-14, даёт Mianownik множественного: 22 domy. Все остальные числа требуют Dopełniacz множественного: 21 domów, 25 domów, 30 domów, 114 domów. Та же схема работает с возрастом: mam 21 lat, 22 lata, 25 lat. Для мужчин есть свои пары: dwaj studenci / dwóch studentów.
 Мужско-личные формы
 Если считаем мужчин, у числительного появляется отдельная форма - и она меняет весь остальной падеж и глагол.
 формасуществительноеглаголпример
@@ -793,9 +802,9 @@ Mianownikdwa · dwie · dwajtrzy · trzejcztery · czterejpięć · pięciuDope�
 Числительные от 5 до 90 склоняются по образцу pięć: pięciu, pięciu, pięć, pięcioma, pięciu. Sto и сотни имеют свои модели. В Narzędnik женское dwiema сохраняет род.
 Порядковые
 1pierwszy2drugi3trzeci4czwarty5piąty6szósty7siódmy8ósmy9dziewiąty10dziesiąty11jedenasty12dwunasty13trzynasty14czternasty15piętnasty16szesnasty17siedemnasty18osiemnasty19dziewiętnasty20dwudziesty30trzydziesty40czterdziesty50pięćdziesiąty100setny1000tysięczny
-Склоняются как обычные прилагательные: pierwszy, pierwszego, pierwszemu… В составных порядковыми становятся только десятки и единицы - последние два слова; сотни и тысячи остаются количественными: dwudziesty pierwszy · tysiąc dziewięćset dziewięćdziesiąty dziewiąty.
+Склоняются как обычные прилагательные: pierwszy, pierwszego, pierwszemu… В составном числительном с десятками и единицами порядковыми становятся два последних слова: tysiąc dziewięćset dziewięćdziesiąty dziewiąty. Если десятков нет, порядковым становится только последнее слово: tysiąc osiemset pierwszy · tysiąc osiemsetny.
 Собирательные
-Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. Требуют Dopełniacz и глагол в среднем роде. Исключение - oboje rodzice: Mianownik и обычное согласование.
+Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. В Mianownik и Biernik существительное стоит в Dopełniacz множественного, а глагол при подлежащем - в среднем роде единственного: troje dzieci bawiło się. В косвенных падежах склоняется вся группа: nie ma trojga dzieci · przyglądam się trojgu dzieciom · idę z trojgiem dzieci · mówię o trojgu dzieciach. Исключение - oboje rodzice: Mianownik и обычное согласование.
 формапереводпример
 dwojeдвоеdwoje dzieci · dwoje ludzitrojeтроеtroje rodzeństwa · troje drzwiczworoчетвероczworo studentów - смешанная группа студентовpięcioroпятероpięcioro kurczątobojeоба (он и она)oboje rodzice (не «rodziców») · obojga rodzicówkilkoroнесколько (о людях)kilkoro znajomych
 Troje dzieci bawiło się w ogrodzie. - глагол в среднем роде единственного числа. Три женщины - это trzy kobiety, а мужчина с женщиной - dwoje ludzi.
@@ -824,7 +833,7 @@ za + Biernikчерез сколько - в будущемza godzinę · za tydzi
 za tydzień - это «через неделю», а не «за неделю». «За неделю» в смысле «в течение» - przez tydzień (столько длилось) или w ciągu tygodnia (успею к сроку). Три разные конструкции на один русский предлог: Wrócę za tydzień · Byłem tam przez tydzień · Zrobię to w ciągu tygodnia.
 Срок поездки - через na. Jadę do Polski na tydzień - на сколько еду. Byłem w Polsce przez tydzień - сколько там пробыл. Русское «на неделю» тянет na в обе фразы, но во второй нужен przez.
 Один предлог w, два падежа - и вывести правилом не получится. Дни недели и названия периодов-событий берут Biernik: w poniedziałek, w sobotę, w weekend, w święta, w wakacje, w ferie. Неделя, месяц, год - Miejscownik: w tym tygodniu, w maju, w 2026 roku. Через длину отрезка это не объясняется: w weekend длиннее суток, но Biernik, а w dzień и w nocy одинаковы по длине и стоят в разных падежах. Учить двумя списками.
-Часть времени вообще обходится без предлога. rano, wieczorem, nocą, latem, zimą - Narzędnik без w. Но w nocy и nocą сосуществуют, а rankiem звучит книжно рядом с обычным rano.
+Часть времени вообще обходится без предлога. rano, wieczorem, nocą, latem, zimą - формы без w. При этом w nocy и nocą сосуществуют, а rankiem также употребляется в значении rano.
 Возраст, деньги, счёт
 Сколько тебе лет?Ile masz lat?
 1 / 2-4 / остальныеrok · lata · lat - mam 21 lat, 22 lata, 25 lat
@@ -833,14 +842,14 @@ za tydzień - это «через неделю», а не «за неделю».
 ile / ilu: сначала определи падеж всей группы. В Mianownik и Biernik после ile существительное стоит в Dopełniacz множественного числа: ile osób, ile lat, ile pieniędzy; у несчётных - в единственном: ile czasu, ile cukru. О мужчинах - форма ilu: ilu studentów, ilu ludzi, а глагол обычно в среднем роде единственного числа: Ilu ludzi przyszło? В косвенных падежах склоняется вся группа: Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?
 Дроби
 числокак называетсяпримеры
-1/2pół · połowapół godziny · połowa klasy · o pół roku starszy1/4ćwierććwierć litra · kwadrans - это четверть часа3/4trzy czwartetrzy czwarte szklanki1,5półtora · półtorejpółtora roku (м. и ср.) · półtorej godziny (ж.)2,5dwa i półdwa i pół tygodnia
+1/2pół · połowa (существительное)pół godziny · połowa klasy · o pół roku starszy1/4ćwierććwierć litra · kwadrans - это четверть часа3/4trzy czwartetrzy czwarte szklanki1,5półtora · półtorejpółtora roku (м. и ср.) · półtorej godziny (ж.)2,5dwa i półdwa i pół tygodnia
 półtora или półtorej. Единственная дробь с родом: półtora roku, półtora kilo - мужской и средний, półtorej godziny, półtorej minuty - женский. После pół и półtora существительное идёт в Dopełniacz.
 Десятичные
 0,5zero przecinek pięć3,14trzy przecinek czternaście2,75dwa przecinek siedemdziesiąt pięć1,20 złjeden złoty dwadzieścia groszy36,6°trzydzieści sześć przecinek sześć stopnia
 Разделитель дробной части - запятая, читается przecinek. Точка в этой роли не используется вообще.
 Проценты
 1%jeden procent2%dwa procent5%pięć procent20%dwadzieścia procent0,5%pół procent100%sto procent
-procent после количественного числительного. В Mianownik, Dopełniacz и Biernik форма обычно остаётся procent: dwa procent, pięć procent, sto procent. В Dativ, Narzędnik и Miejscownik она склоняется: stu procentom, z pięcioma procentami, o czterdziestu procentach. После дробных числительных форма застывает во всех падежах: pół procent, półtora procent, dwa i pół procent, o pięciu i pół procent.
+procent после количественного числительного. В Mianownik, Dopełniacz и Biernik форма обычно остаётся procent: dwa procent, pięć procent, sto procent. Исключение в Dopełniacz с jeden: jednego procenta / jednego procentu. В Celownik, Narzędnik и Miejscownik форма склоняется: stu procentom, z pięcioma procentami, o czterdziestu procentach. После дробных числительных форма застывает во всех падежах: pół procent, półtora procent, dwa i pół procent, o pięciu i pół procent.
 СпряженияВременаНаклоненияПричастия и пассивУправление
 Четыре спряжения
 Тип определяется парой форм «я» и «ты»: -ę/-esz, -ę/-isz, -am/-asz, -em/-esz. Знаешь пару - знаешь всю парадигму.
@@ -3327,23 +3336,29 @@ chybaнаверное; кажетсяChyba jutro będzie padać.raczejскоре
 по-польскипо-русскивариант для себя
 Chwileczkę, muszę się zastanowić.Секундочку, мне нужно подумать.Даёт время сформулировать ответ.Nie wiem, jak to powiedzieć po polsku, ale…Не знаю, как сказать это по-польски, но…После этого скажи проще или покажи слово.Czy możesz mówić trochę wolniej?Можешь говорить немного медленнее?Просьба про темп речи в целом; про одну фразу - строкой ниже.Czy możesz powtórzyć?Можешь повторить?Коротко и естественно.Rozumiem mniej więcej.Я примерно понимаю.Если общий смысл понятен, но не всё.Nie rozumiem jeszcze wszystkiego.Я пока не всё понимаю.Честно и без извинений.Jak to będzie po rosyjsku?Как это будет по-русски?Можно заменить rosyjsku на angielsku.Czy dobrze rozumiem, że…?Я правильно понимаю, что…?Повтори смысл своими словами.Możesz podać przykład?Можешь привести пример?Когда новое слово неясно.Uczę się, więc czasem robię błędy.Я учусь, поэтому иногда ошибаюсь.Снимает напряжение в начале разговора.
 Отрицание
-Как и в русском, отрицательные слова в предложении накапливаются, а не взаимоисключают друг друга.
+Отрицательные слова согласуются с nie при сказуемом, а прямое дополнение из Biernik обычно переходит в Dopełniacz. Множественное отрицание похоже на русское и белорусское, но падеж объекта требует отдельного внимания.
 Множественное отрицание обязательно
 примерперевод
 Nikt nic nie wie.Никто ничего не знает.2 отрицательных слова + nieNigdy nikomu nic nie mówię.Я никогда никому ничего не говорю.3 отрицательных слова + nieNigdzie nikogo nie widziałem.Я нигде никого не видел.2 отрицательных слова + nieNikt nigdy tu nie przychodzi.Никто никогда сюда не приходит.2 отрицательных слова + nie
-Nie при глаголе не убирается никогда. Сколько бы ни было в предложении nikt, nic, nigdy, nigdzie - частица nie перед глаголом остаётся всегда. Здесь польский совпадает с русским и расходится с английским, где двойное отрицание, наоборот, недопустимо.
+Если отрицательное слово относится к сказуемому, сказуемое тоже получает nie. Nikt nie przyszedł. · Nikogo nie widzę. · O niczym nie myślę. · Żaden student nie odpowiedział. Но в короткой реплике без сказуемого ставить nie некуда: Kto dzwonił? - Nikt. · Ani słowa!
+Родительный при отрицании
+Если утвердительный глагол требует прямое дополнение в Biernik, при отрицании это дополнение обычно переходит в Dopełniacz. Другие падежи одного только отрицания не меняются.
+утверждениеотрицаниечто изменилось
+Mam bilet.Nie mam biletu.Biernik → DopełniaczCzytam książkę.Nie czytam książki.Biernik → DopełniaczWidzę Annę.Nie widzę Anny.Biernik → DopełniaczPomagam bratu.Nie pomagam bratu.Celownik остаётсяInteresuję się muzyką.Nie interesuję się muzyką.Narzędnik остаётся
+Сначала найди падеж без отрицания. Только модель с Biernik переключается на Dopełniacz. При контрасте nie может отрицать не сказуемое, а один член: Widziałem nie Annę, lecz Marię. Здесь глагол утвердительный, поэтому обе формы остаются в Biernik.
 Склонение nikt / nic
 падежniktnic
-MianownikniktnicDopełniacznikogoniczegoCelowniknikomuniczemuBierniknikogonicNarzędniknikimniczymMiejscowniknikimniczym
-Склоняются полностью, как обычные существительные - в отличие от русских «никто/ничто», где падежная форма не всегда прозрачна.
+MianownikniktnicDopełniacznikogoniczegoCelowniknikomuniczemuBierniknikogonicNarzędniknikimniczymMiejscownik(o) nikim(o) niczym
+Падеж выбирают по управлению глагола или предлога: nie widzę nikogo · nie pomagam nikomu · nie rozmawiam z nikim · nie myślę o niczym. Предлог ставится перед всей польской формой: z nikim, o niczym, bez nikogo, bez niczego, в отличие от русских и белорусских сочетаний типа «ни с кем».
 nie ma или nie jest
-nie ma - безличное, «не имеется», требует Dopełniacz. nie jest - личное, «не является», при подлежащем и обычном для być падеже.
+У nie ma две разные конструкции. Безличное nie ma + Dopełniacz сообщает об отсутствии: W lodówce nie ma mleka. Личное on nie ma - это обычное отрицание глагола mieć: On nie ma czasu. Форма nie jest отрицает być при названном подлежащем: Ona nie jest lekarką. · Ona nie jest w domu.
 примерпадежсмысл
-Nie ma czasu.Dopełniaczбезличное: времени нет вообще, ни у кого конкретноOn nie ma czasu.Dopełniaczличное отрицание обладания: у него нет времениTo nie jest prawda.Mianownikотрицание тождества: это не есть правдаOn nie jest lekarzem.Narzędnikотрицание роли/профессии - как и в утверждении, jest + NarzędnikJej nie ma w domu.Dopełniaczеё нет дома - буквально «отсутствует»Ona nie jest w domu.Miejscownikона не находится дома - утверждение о месте, просто с nie
-Главная проверка. Если можно поставить вопрос «есть ли у кого-то / где-то?» - это nie ma + Dopełniacz. Если вопрос «является ли чем-то / каким-то?» - это nie jest и падеж обычного сказуемого.
+W lodówce nie ma mleka.Dopełniaczбезличное отсутствие: в холодильнике нет молокаNie ma czasu.Dopełniaczбезличное: в данной ситуации нет времениOn nie ma czasu.Dopełniaczличная форма mieć: у него нет времениTo nie jest prawda.Mianownikотрицание тождества: это неправдаOn nie jest lekarzem.Narzędnikотрицание роли/профессии - как и в утверждении, jest + NarzędnikJej nie ma w domu.Dopełniaczсообщаем об отсутствии человека домаOna nie jest w domu.Miejscownikотрицаем её местонахождение: она не домаWczoraj nie było czasu.Dopełniaczв прошлом безличное nie ma меняется на nie było
+Смотри на конструкцию, а не на русский перевод «нет». В безличной модели нет подлежащего в Mianownik: Nie ma Anny. · Nie było Anny. С названным подлежащим различай обладание и być: Anna nie ma czasu, но Anna nie jest w domu. Пара Jej nie ma w domu / Ona nie jest w domu противопоставляет отсутствие человека и отрицание его местонахождения.
 ani… ani и żaden
-Nie mam ani czasu, ani pieniędzy.
-Отдельное отрицательное местоимение żaden / żadna / żadne - «никакой»: Żaden z nich nie przyszedł. Склоняется как прилагательное с окончаниями местоименного типа: żadnego, żadnej, żadnym.
+Ani… ani соединяет отрицаемые элементы; перед повторным ani ставится запятая, а при сказуемом сохраняется nie: Nie mam ani czasu, ani pieniędzy. Без сказуемого возможна короткая модель Ani słowa!
+Żaden / żadna / żadne - «никакой»: Żaden z nich nie przyszedł. · Nie mam żadnego problemu. Согласуется с существительным и склоняется по местоименному типу: żadnego, żadnej, żadnym. В предложной группе без сказуемого дополнительное nie не нужно: bez żadnego problemu.
+Не путай отрицание возможности и обязанности. Nie muszę iść - не обязан, nie mogę iść - не могу, nie wolno iść - нельзя. Подробнее - в разделах Глаголы и Безличные конструкции. Слитное и раздельное написание nie разобрано в разделе Частицы.
 Порядок слов
 Польский, как и русский, допускает несколько порядков слов. Выбор не случайный: нейтральная фраза обычно ведёт от уже известной темы к новому сообщению, а у безударных словечек - клитик - есть ещё и жёсткие правила места.
 Тема и новое сообщение
@@ -3457,7 +3472,7 @@ Ani słowa! · Ani jeden.Усиленное отрицание.
 Неопределённость: -ś, -kolwiek, byle
 элементзначениепримеры
 -ś-то, -нибудьktoś · coś · gdzieś · kiedyś · jakiś-kolwiek-нибудь (любой)ktokolwiek · cokolwiek · gdziekolwiek · jakikolwiekbyleкто, где, как попало; в другой конструкции «лишь бы»byle kto · byle gdzie · byle jak · Byle zdążyć na pociąg.ladaлюбой, первый попавшийсяlada dzień · lada chwila · lada ktoотрицательные словатребуют nie при глаголеnikt · nic · nigdy · nigdzie · żaden
-Двойное отрицание обязательно. Nikt nic nie wie. · Nigdy tam nie byłem. - nie при глаголе остаётся, даже когда уже есть nikt или nigdy. Здесь польский совпадает с русским и расходится с английским.
+Двойное отрицание обязательно. Nikt nic nie wie. · Nigdy tam nie byłem. - nie при сказуемом остаётся, даже когда уже есть nikt или nigdy. В стандартном английском используется другая модель: Nobody knows.
 Слитно или раздельно
 какправилопримеры
 слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»aby · ażeby · byleby · chociażby · choćby · czyżby · gdyby · jakby · jakoby · niby · żeby · obyслитноnie с существительными, прилагательными, наречиями, причастиями - вне противопоставленияnieprawda · niegrzeczny · niedaleko · niepalącyслитно · норма-2026nie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie со словами глагольного значенияnie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomoраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельно · норма-2026by после союза - всегдаczy by · bo by · jeśli byś · to byśраздельноby, bym, byś после существительного, прилагательного, наречия, числительного или местоименияOn by to zrobił · My byśmy dokończyli · Czerwony by się zrobiłраздельноby с безличными формамиmożna by · trzeba by · warto by
