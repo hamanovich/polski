@@ -231,28 +231,36 @@ function renderRod(){
 function renderAlt(){
   $("#s-alt").innerHTML = `<div class="panel">
     <h2>Чередования: сводная карта</h2>
-    <p class="lead">Окончание часто меняет последний звук основы. Эта таблица нужна как карта: найди знакомую пару, а затем переходи к разделу, где показано точное условие.</p>
-    <div class="tip"><b>Не применяй чередование автоматически.</b> Одна и та же буква ведёт себя по-разному в разных словах и формах: <span class="pl">róg → rogu</span>, но <span class="pl">król → królu</span>; <span class="pl">Polak → Polacy</span>, но <span class="pl">Polaka</span>. Сначала выбери падеж или форму глагола, потом меняй основу.</div>
+    <p class="lead">В формах слова грамматическое значение обычно передаёт окончание, а основа иногда получает другой вариант. Чередование - это смена звука или появление и исчезновение звука внутри вариантов основы: <span class="pl">róg → rogu</span> содержит <span class="pl">ó ↔ o</span>, а <span class="pl">król → królu</span> сохраняет основу <span class="pl">król-</span>.</p>
+    <div class="tip"><b>Не применяй чередование автоматически.</b> Карта показывает частые модели, но не превращает их в правило для каждого слова. Сначала выбери падеж, число или лицо, затем вспомни форму конкретного слова: <span class="pl">Polak → Polacy</span>, но <span class="pl">Polaka</span>; <span class="pl">stół → stołu</span>, но <span class="pl">król → króla</span>.</div>
 
     <h3>Гласные</h3>
     <div class="scroll"><table class="vt">
       <tr><th>чередование</th><th>где встречается</th><th>примеры</th></tr>
-      <tr><td class="c">ó ↔ o</td><td style="white-space:normal">при склонении и в родственных формах</td><td class="w" style="white-space:normal">róg → rogu · samochód → samochodu · stół → stole</td></tr>
+      <tr><td class="c">ó ↔ o</td><td style="white-space:normal">при склонении существительных; в форме <span class="pl">on</span> прошедшего времени у части глаголов</td><td class="w" style="white-space:normal">róg → rogu · stół → stołu · móc → mógł, но mogła · nieść → niósł, но niosła</td></tr>
       <tr><td class="c">ą ↔ ę</td><td style="white-space:normal">при склонении существительных и в отдельных глагольных формах</td><td class="w" style="white-space:normal">mąż → męża · ząb → zęby · zacząć → zaczęła</td></tr>
-      <tr><td class="c">e ↔ a</td><td style="white-space:normal">в прошедшем времени у части глаголов на -eć</td><td class="w" style="white-space:normal">musieć → musiał · musiała, но musieli</td></tr>
-      <tr><td class="c">o ↔ ó</td><td style="white-space:normal">в мужской форме прошедшего времени у отдельных глаголов</td><td class="w" style="white-space:normal">móc → mógł · nieść → niósł, но mogła · niosła</td></tr>
+      <tr><td class="c">e ↔ a</td><td style="white-space:normal">в прошедшем времени у части глаголов на <span class="pl">-eć</span>: <span class="pl">a</span> в единственном и немужско-личном множественном, <span class="pl">e</span> в мужско-личном множественном</td><td class="w" style="white-space:normal">musieć → musiał · musiała · musiały, но musieli</td></tr>
+      <tr><td class="c">e ↔ ∅</td><td style="white-space:normal">беглая гласная: в одних формах <span class="pl">e</span> есть, в других отсутствует</td><td class="w" style="white-space:normal">pies → psa · sen → snu · Marek → Marka</td></tr>
     </table></div>
 
-    <h3>Согласные перед окончанием</h3>
+    <h3>Согласные в Miejscownik на -e</h3>
+    <p class="lead">В записи <span class="pl">wodzi-e, sklepi-e, nosi-e</span> буква <span class="pl">i</span> показывает мягкость согласной и относится к варианту основы; падежное окончание здесь <span class="pl">-e</span>.</p>
     <div class="scroll"><table class="vt">
-      <tr><th>чередование</th><th>типичное место</th><th>примеры</th></tr>
-      <tr><td class="c">r → rz</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">komputer → komputerze · teatr → teatrze</td></tr>
-      <tr><td class="c">k → c</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">apteka → aptece · ręka → ręce</td></tr>
-      <tr><td class="c">k → c + y</td><td style="white-space:normal">мужско-личное множественное</td><td class="w" style="white-space:normal">Polak → Polacy · kierownik → kierownicy</td></tr>
-      <tr><td class="c">g → dz · ch → sz</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">droga → drodze · mucha → musze</td></tr>
-      <tr><td class="c">t → ci · d → dzi</td><td style="white-space:normal">перед мягким окончанием</td><td class="w" style="white-space:normal">brat → bracie · woda → wodzie · student → studenci</td></tr>
-      <tr><td class="c">ł → l</td><td style="white-space:normal">Miejscownik на -e</td><td class="w" style="white-space:normal">szkoła → szkole · stół → stole</td></tr>
+      <tr><th>чередование основы</th><th>примеры</th></tr>
+      <tr><td class="c">t → ci · d → dzi · st → ści</td><td class="w" style="white-space:normal">brat → bracie · woda → wodzie · miasto → mieście</td></tr>
+      <tr><td class="c">sł → śl · ł → l · r → rz</td><td class="w" style="white-space:normal">krzesło → krześle · szkoła → szkole · teatr → teatrze</td></tr>
+      <tr><td class="c">k → c · g → dz · ch → sz</td><td class="w" style="white-space:normal">apteka → aptece · droga → drodze · mucha → musze</td></tr>
+      <tr><td class="c">n → ni · b/p/w/m/f → bi/pi/wi/mi/fi · s/z → si/zi</td><td class="w" style="white-space:normal">okno → oknie · sklep → sklepie · nos → nosie</td></tr>
     </table></div>
+
+    <h3>Согласные в других формах</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>где</th><th>чередование основы</th><th>примеры</th></tr>
+      <tr><td style="white-space:normal">Mianownik мужско-личного множественного</td><td class="c">k → c · t → ci</td><td class="w" style="white-space:normal">Polak → Polacy · student → studenci</td></tr>
+      <tr><td style="white-space:normal">настоящее или простое будущее: формы <span class="pl">ja / ty</span></td><td class="c">s → sz · g → ż · r → rz · d → dzi</td><td class="w" style="white-space:normal">piszę / piszesz · mogę / możesz · biorę / bierzesz · jadę / jedziesz</td></tr>
+      <tr><td style="white-space:normal">II спряжение: формы <span class="pl">ja / ty</span></td><td class="c">si → sz · zi → ż · ci → c · dzi → dz</td><td class="w" style="white-space:normal">proszę / prosisz · wożę / wozisz · płacę / płacisz · chodzę / chodzisz</td></tr>
+    </table></div>
+    <div class="tip"><b>Глагольную форму не строй по одной букве.</b> Распределение вариантов основы зависит от модели глагола. Учи вместе формы <span class="pl">ja, ty, oni</span>: <span class="pl">piszę, piszesz, piszą</span>; <span class="pl">jadę, jedziesz, jadą</span>.</div>
 
     <h3>Где смотреть подробности</h3>
     <ul class="related-links">
@@ -1040,6 +1048,8 @@ function trainerVerbs(){
   });
 }
 
+const TRAINER_KEYS = ["ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"];
+
 function trainerHTML(config){
   return `<section class="practice panel trainer" data-trainer="${config.deck}">
     <div class="practice-heading">
@@ -1054,6 +1064,7 @@ function trainerHTML(config){
           `<button type="button" data-value="${value}" aria-pressed="${index === 0}">${caption}</button>`).join("")}</div>
       </div>`).join("")}
     </div>
+    <p class="trainer-stats" data-trainer-stats hidden></p>
     <div class="trainer-stage" data-trainer-stage hidden>
       <p class="trainer-meta"><span data-trainer-chip="0"></span><span data-trainer-chip="1"></span><span data-trainer-chip="2" hidden></span></p>
       <p class="trainer-word" lang="pl" data-trainer-word></p>
@@ -1066,6 +1077,8 @@ function trainerHTML(config){
           <button class="exercise-button" type="submit" data-trainer-submit>Проверить</button>
           <button class="exercise-link" type="button" data-trainer-skip>Не помню</button>
         </div>
+        <div class="trainer-keys" data-trainer-keys role="group" aria-label="Польские буквы">${TRAINER_KEYS.map(letter =>
+          `<button class="trainer-key" type="button" data-key="${letter}" aria-label="Вставить ${letter}">${letter}</button>`).join("")}</div>
       </form>
       <p class="trainer-feedback" aria-live="polite" data-trainer-feedback></p>
     </div>
@@ -1084,9 +1097,9 @@ function verbTrainerHTML(){
     field:"Форма глагола",
     filters:[
       {key:"tense", label:"Время", values:[["all","все"],["present","настоящее"],["past","прошедшее"],["future","будущее"]]},
-      {key:"gender", label:"Род", values:[["all","все"],["m","мужской"],["f","женский"]]}
+      {key:"gender", label:"Род", values:[["all","все"],["m","мужской"],["f","женский"],["n","средний"]]}
     ],
-    empty:"Для этого сочетания времени и рода форм нет: в настоящем времени род не различается. Выберите прошедшее или будущее время либо снимите фильтр рода.",
+    empty:"Для этого сочетания времени и рода форм нет: в настоящем времени род не различается, а в будущем средний род есть только у глаголов несовершенного вида. Выберите прошедшее время либо снимите фильтр рода.",
     noscript:"Тренажёр работает только со скриптами. Все формы, которые он спрашивает, разобраны выше в таблицах спряжений и времён."
   });
 }
@@ -1494,38 +1507,39 @@ function renderOrder(){
 function renderImpers(){
   $("#s-impers").innerHTML = `<div class="panel">
     <h2>Безличные конструкции</h2>
-    <p class="lead">Действие есть, а того, кто его совершает, - нет и не важно. Это язык объявлений, вывесок и учреждений.</p>
+    <p class="lead">Безличная конструкция описывает действие, состояние, необходимость или возможность без грамматического подлежащего. Исполнитель может быть неизвестен, неважен или намеренно не назван. Такие формы встречаются и в повседневной речи, и в объявлениях, правилах, инструкциях.</p>
 
     <h3>Модальные безличные + инфинитив</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>пример</th></tr>
       ${IMPERS_MODAL.map(i => `<tr><td class="w">${i[0]}</td><td style="color:var(--muted)">${i[1]}</td><td class="g">${i[2]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Прошедшее время у большинства - через <span class="pl">było</span>: <span class="pl">trzeba było iść, nie można było wejść, warto było spróbować</span>. Исключение - <span class="pl">należy</span>: у него своя форма прошедшего, <span class="pl">należało wypełnić formularz</span>, без <span class="pl">było</span>.</p>
+    <p class="lead">Прошедшее время у большинства строится с <span class="pl">było</span>: <span class="pl">trzeba było iść, nie można było wejść, warto było spróbować, wolno było fotografować</span>. У <span class="pl">należy</span> своя форма: <span class="pl">należało wypełnić formularz</span>, без <span class="pl">było</span>. Будущее строится с <span class="pl">będzie</span>: <span class="pl">będzie można wejść, będzie trzeba poczekać, będzie należało podpisać dokument</span>.</p>
 
     <h3>mówi się - обобщённое «говорят»</h3>
-    <p class="lead"><span class="pl">się</span> при глаголе без подлежащего создаёт обобщённо-личную конструкцию - действие относится к любому, к «всем вообще».</p>
+    <p class="lead">Форма 3-го лица единственного числа с <span class="pl">się</span> и без подлежащего может передавать обычное, обобщённое или относящееся к понятной из контекста группе действие. В прошедшем времени употребляется средний род единственного числа: <span class="pl">mówiło się, dobrze się pracowało</span>.</p>
     <div class="scroll"><table>
       ${MOWI_SIE.map(m => `<tr><td style="width:50%" class="w">${m[0]}</td><td style="color:var(--muted)">${m[1]}</td></tr>`).join("")}
     </table></div>
+    <div class="tip"><b>Не каждое <span class="pl">się</span> создаёт безличную конструкцию.</b> В <span class="pl">Jak nazywają się te ulice?</span> есть подлежащее <span class="pl">te ulice</span>, а сказуемое согласуется с ним во множественном числе. Сравни с безличным <span class="pl">Jak się mówi po polsku?</span>, где подлежащего нет.</div>
 
     <h3>Конструкция на -no / -to</h3>
-    <p class="lead">Действие совершено, но кем - не сказано и не важно. Строится от страдательного причастия: убираем окончание рода, добавляем <span class="pl">-o</span>.</p>
+    <p class="lead">Формы на <span class="pl">-no / -to</span> называют прошлое действие, но не называют исполнителя. Вид сохраняет своё значение: совершенный глагол обычно показывает результат (<span class="pl">napisano, otwarto</span>), несовершенный - процесс или повторяемость (<span class="pl">czytano, pracowano</span>). У многих переходных глаголов форма похожа на причастие, но она образуется и от непереходных глаголов, у которых пассив невозможен: <span class="pl">pracowano, spacerowano</span>.</p>
     <div class="scroll"><table class="vt">
-      <tr><th>причастие</th><th>форма на -no/-to</th><th>пример</th></tr>
+      <tr><th>инфинитив и подсказка</th><th>форма на -no/-to</th><th>пример</th></tr>
       ${PASSIVE_NO.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Это не настоящий пассив.</b> Прямое дополнение остаётся в винительном падеже, как при обычном действии: <span class="pl">zbudowano dom</span> (не «dom został zbudowany»), <span class="pl">napisano ogłoszenie</span>. Форма всегда одна, без рода и числа - <span class="pl">-o</span> и точка. Именно так написаны объявления на дверях учреждений: <span class="pl">Zamknięto. Otwarto o 10:00. Wykonano remont.</span> Настоящий пассив (<span class="pl">dom został zbudowany</span>) - во вкладке Глаголы → Причастия и пассив.</div>
+    <div class="tip"><b>Это не настоящий пассив.</b> Форма на <span class="pl">-no / -to</span> неизменяема, а прямое дополнение остаётся в винительном падеже: <span class="pl">napisano nową książkę</span>. В настоящем пассиве объект становится подлежащим, а причастие согласуется с ним: <span class="pl">nowa książka została napisana</span>. Обе конструкции нормативны, но устроены по-разному. Подробнее о пассиве - во вкладке Глаголы → Причастия и пассив.</div>
     <h3>Сокращения в объявлениях и документах</h3>
-    <p class="lead">То же самое поле, что и безличные формы: доска объявлений, договор, письмо из urzędu. Без этого списка текст читается с пропусками.</p>
+    <p class="lead">Сами сокращения не являются безличными конструкциями. Они собраны здесь как соседний навык для чтения тех же текстов: объявлений, договоров и писем из <span class="pl">urzędu</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>сокращение</th><th>расшифровка</th><th>значение</th></tr>
       ${SKROTY.map(s => `<tr><td class="c">${s[0]}</td><td class="w" style="white-space:normal">${s[1]}</td><td style="color:var(--muted);white-space:normal">${s[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Точка ставится не всегда, и правило простое.</b> Если сокращение кончается на ту же букву, что и полное слово, точки нет: <span class="pl">dr</span> (dokto<b>r</b>), <span class="pl">mgr</span> (magiste<b>r</b>), <span class="pl">nr</span> (nume<b>r</b>), <span class="pl">wg</span> (wedłu<b>g</b>). Если на другую - точка обязательна: <span class="pl">ok.</span> (okoł<b>o</b>), <span class="pl">godz.</span> (godzin<b>a</b>), <span class="pl">ul.</span> (ulic<b>a</b>), <span class="pl">prof.</span> (profeso<b>r</b>).</div>
     <div class="tip"><b>В косвенном падеже точка возвращается.</b> <span class="pl">dr Kowalski</span> - без точки, но <span class="pl">u dr. Kowalskiego</span> или <span class="pl">u dra Kowalskiego</span>: подразумевается уже <span class="pl">doktora</span>, а сокращение на эту букву не кончается. С женщиной проще - <span class="pl">u dr Kowalskiej</span>, без точки, потому что <span class="pl">doktor</span> в женском употреблении не склоняется.</div>
-    <div class="tip"><b><span class="pl">nie wolno</span> и <span class="pl">nie można</span> - не одно и то же.</b> <span class="pl">Nie wolno palić</span> - прямой запрет: курить запрещено. <span class="pl">Nie można wejść, bo drzwi są zamknięte</span> - войти невозможно из-за обстоятельств; в правилах <span class="pl">nie można</span> тоже встречается, но звучит мягче. Человека при необходимости ставим в дательный: <span class="pl">nie wolno mi palić, nie można nam wejść</span>.</div>
-    <div class="tip"><b>Номера, которые спросят в любом окне.</b> <span class="pl">PESEL</span> - личный идентификатор жителя, <span class="pl">NIP</span> - налоговый номер, <span class="pl">REGON</span> - номер организации в статистике, <span class="pl">KRS</span> - судебный реестр компаний. Это не сокращения в обычном смысле: они не расшифровываются в речи и склоняются как обычные мужские слова - <span class="pl">podaj PESEL, numer NIP-u</span>.</div>
+    <div class="tip"><b><span class="pl">nie wolno</span> и <span class="pl">nie można</span> различаются по контексту.</b> <span class="pl">Nie wolno palić</span> однозначно сообщает запрет. <span class="pl">Nie można</span> может означать и запрет (<span class="pl">Tu nie można parkować</span>), и практическую невозможность (<span class="pl">Nie można wejść, bo drzwi są zamknięte</span>). Лицо при необходимости ставится в дательный: <span class="pl">nie wolno mi palić, nie można nam wejść</span>.</div>
+    <div class="tip"><b>Номера, которые часто нужны в учреждении.</b> <span class="pl">PESEL</span> - идентификационный номер человека, <span class="pl">NIP</span> - налоговый номер, <span class="pl">REGON</span> - номер субъекта в статистическом реестре, <span class="pl">KRS</span> - номер записи в судебном реестре. Это сокращённые названия, или <span class="pl">skrótowce</span>, а не графические сокращения вроде <span class="pl">np.</span> При склонении прописного сокращённого названия окончание обычно присоединяется через дефис: <span class="pl">numer NIP-u, wpis do KRS-u</span>.</div>
   </div>${topicPracticeHTML(IMPERS_PRACTICE, "impersonal")}`;
 }
 

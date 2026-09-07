@@ -563,22 +563,27 @@ synsynuтвёрдая основа, но традиционное -uBógBożeн�
 Итог по падежу
 В личных именах разговорная речь допускает именительный, но в титулах, родственных обращениях и формальной речи звательный остаётся живой нормой.
 Чередования: сводная карта
-Окончание часто меняет последний звук основы. Эта таблица нужна как карта: найди знакомую пару, а затем переходи к разделу, где показано точное условие.
-Не применяй чередование автоматически. Одна и та же буква ведёт себя по-разному в разных словах и формах: róg → rogu, но król → królu; Polak → Polacy, но Polaka. Сначала выбери падеж или форму глагола, потом меняй основу.
+В формах слова грамматическое значение обычно передаёт окончание, а основа иногда получает другой вариант. Чередование - это смена звука или появление и исчезновение звука внутри вариантов основы: róg → rogu содержит ó ↔ o, а król → królu сохраняет основу król-.
+Не применяй чередование автоматически. Карта показывает частые модели, но не превращает их в правило для каждого слова. Сначала выбери падеж, число или лицо, затем вспомни форму конкретного слова: Polak → Polacy, но Polaka; stół → stołu, но król → króla.
 Гласные
 чередованиегде встречаетсяпримеры
-ó ↔ oпри склонении и в родственных формахróg → rogu · samochód → samochodu · stół → stole
+ó ↔ oпри склонении существительных; в форме on прошедшего времени у части глаголовróg → rogu · stół → stołu · móc → mógł, но mogła · nieść → niósł, но niosła
 ą ↔ ęпри склонении существительных и в отдельных глагольных формахmąż → męża · ząb → zęby · zacząć → zaczęła
-e ↔ aв прошедшем времени у части глаголов на -ećmusieć → musiał · musiała, но musieli
-o ↔ óв мужской форме прошедшего времени у отдельных глаголовmóc → mógł · nieść → niósł, но mogła · niosła
-Согласные перед окончанием
-чередованиетипичное местопримеры
-r → rzMiejscownik на -ekomputer → komputerze · teatr → teatrze
-k → cMiejscownik на -eapteka → aptece · ręka → ręce
-k → c + yмужско-личное множественноеPolak → Polacy · kierownik → kierownicy
-g → dz · ch → szMiejscownik на -edroga → drodze · mucha → musze
-t → ci · d → dziперед мягким окончаниемbrat → bracie · woda → wodzie · student → studenci
-ł → lMiejscownik на -eszkoła → szkole · stół → stole
+e ↔ aв прошедшем времени у части глаголов на -eć: a в единственном и немужско-личном множественном, e в мужско-личном множественномmusieć → musiał · musiała · musiały, но musieli
+e ↔ ∅беглая гласная: в одних формах e есть, в других отсутствуетpies → psa · sen → snu · Marek → Marka
+Согласные в Miejscownik на -e
+В записи wodzi-e, sklepi-e, nosi-e буква i показывает мягкость согласной и относится к варианту основы; падежное окончание здесь -e.
+чередование основыпримеры
+t → ci · d → dzi · st → ścibrat → bracie · woda → wodzie · miasto → mieście
+sł → śl · ł → l · r → rzkrzesło → krześle · szkoła → szkole · teatr → teatrze
+k → c · g → dz · ch → szapteka → aptece · droga → drodze · mucha → musze
+n → ni · b/p/w/m/f → bi/pi/wi/mi/fi · s/z → si/ziokno → oknie · sklep → sklepie · nos → nosie
+Согласные в других формах
+гдечередование основыпримеры
+Mianownik мужско-личного множественногоk → c · t → ciPolak → Polacy · student → studenci
+настоящее или простое будущее: формы ja / tys → sz · g → ż · r → rz · d → dzipiszę / piszesz · mogę / możesz · biorę / bierzesz · jadę / jedziesz
+II спряжение: формы ja / tysi → sz · zi → ż · ci → c · dzi → dzproszę / prosisz · wożę / wozisz · płacę / płacisz · chodzę / chodzisz
+Глагольную форму не строй по одной букве. Распределение вариантов основы зависит от модели глагола. Учи вместе формы ja, ty, oni: piszę, piszesz, piszą; jadę, jedziesz, jadą.
 Где смотреть подробности
 Miejscownik: согласные перед -e - полная таблица и развилка -e / -u.
 Mianownik множественного - мужско-личные формы Polak → Polacy, student → studenci.
@@ -3391,27 +3396,28 @@ Ile kosztuje bilet?нейтрально: вопросительное слово
 Тоже вопрос порядка слов, хоть и внутри одной именной группы: качество - перед словом, вид или тип - после. Подробнее и с примерами - во вкладке «Прилагательные».
 czarna kawa (какой кофе) · kawa rozpuszczalna (какой вид кофе) · język polski · dzień dobry
 Безличные конструкции
-Действие есть, а того, кто его совершает, - нет и не важно. Это язык объявлений, вывесок и учреждений.
+Безличная конструкция описывает действие, состояние, необходимость или возможность без грамматического подлежащего. Исполнитель может быть неизвестен, неважен или намеренно не назван. Такие формы встречаются и в повседневной речи, и в объявлениях, правилах, инструкциях.
 Модальные безличные + инфинитив
 словозначениепример
-trzebaнадо, нужноTrzeba iść do lekarza.możnaможноMożna tu parkować?nie wolnoнельзя, запрещеноNie wolno tu palić.wartoстоит (имеет смысл)Warto to przeczytać.należyследует (более официально)Należy wypełnić formularz. Прошедшее - należało, без było.
-Прошедшее время у большинства - через było: trzeba było iść, nie można było wejść, warto było spróbować. Исключение - należy: у него своя форма прошедшего, należało wypełnić formularz, без było.
+trzebaнадо, нужноTrzeba iść do lekarza.możnaможно: есть разрешение или возможностьMożna tu zapłacić kartą.wolno / nie wolnoразрешено / запрещеноCzy wolno tu usiąść? · Nie wolno palić.wartoстоит (имеет смысл)Warto to przeczytać.należyследует (книжно и официально)Należy wypełnić formularz.powinno sięследует, рекомендуетсяPowinno się pić więcej wody.
+Прошедшее время у большинства строится с było: trzeba było iść, nie można było wejść, warto było spróbować, wolno było fotografować. У należy своя форма: należało wypełnić formularz, без było. Будущее строится с będzie: będzie można wejść, będzie trzeba poczekać, będzie należało podpisać dokument.
 mówi się - обобщённое «говорят»
-się при глаголе без подлежащего создаёт обобщённо-личную конструкцию - действие относится к любому, к «всем вообще».
-Jak się mówi po polsku «hello»?Как сказать по-польски «hello»?Mówi się, że będzie drożej.Говорят, что будет дороже.Jak to się nazywa?Как это называется?Tu się nie pali.Здесь не курят.Jak dojeżdża się na lotnisko?Как добраться в аэропорт?
+Форма 3-го лица единственного числа с się и без подлежащего может передавать обычное, обобщённое или относящееся к понятной из контекста группе действие. В прошедшем времени употребляется средний род единственного числа: mówiło się, dobrze się pracowało.
+Jak się mówi po polsku «hello»?Как сказать по-польски «hello»?Mówi się, że będzie drożej.Говорят, что будет дороже.Tu się nie pali.Здесь не курят.Jak dojeżdża się na lotnisko?Как добраться в аэропорт?Wczoraj dobrze się pracowało.Вчера хорошо работалось.
+Не каждое się создаёт безличную конструкцию. В Jak nazywają się te ulice? есть подлежащее te ulice, а сказуемое согласуется с ним во множественном числе. Сравни с безличным Jak się mówi po polsku?, где подлежащего нет.
 Конструкция на -no / -to
-Действие совершено, но кем - не сказано и не важно. Строится от страдательного причастия: убираем окончание рода, добавляем -o.
-причастиеформа на -no/-toпример
-zbudować → zbudowanyzbudowanoDom zbudowano w 1900 roku.otworzyć → otwartyotwartoSklep otwarto o dziesiątej.zamknąć → zamkniętyzamkniętoMuzeum zamknięto z powodu remontu.napisać → napisanynapisanoOgłoszenie napisano po polsku.zrobić → zrobionyzrobionoWszystko zrobiono na czas.
-Это не настоящий пассив. Прямое дополнение остаётся в винительном падеже, как при обычном действии: zbudowano dom (не «dom został zbudowany»), napisano ogłoszenie. Форма всегда одна, без рода и числа - -o и точка. Именно так написаны объявления на дверях учреждений: Zamknięto. Otwarto o 10:00. Wykonano remont. Настоящий пассив (dom został zbudowany) - во вкладке Глаголы → Причастия и пассив.
+Формы на -no / -to называют прошлое действие, но не называют исполнителя. Вид сохраняет своё значение: совершенный глагол обычно показывает результат (napisano, otwarto), несовершенный - процесс или повторяемость (czytano, pracowano). У многих переходных глаголов форма похожа на причастие, но она образуется и от непереходных глаголов, у которых пассив невозможен: pracowano, spacerowano.
+инфинитив и подсказкаформа на -no/-toпример
+zbudować → zbudowanyzbudowanoDom zbudowano w 1900 roku.otworzyć → otwartyotwartoSklep otwarto o dziesiątej.napisać → napisanynapisanoNapisano nową książkę.czytaćczytanoCały wieczór czytano dokumenty.pracowaćpracowanoWczoraj pracowano do późna.
+Это не настоящий пассив. Форма на -no / -to неизменяема, а прямое дополнение остаётся в винительном падеже: napisano nową książkę. В настоящем пассиве объект становится подлежащим, а причастие согласуется с ним: nowa książka została napisana. Обе конструкции нормативны, но устроены по-разному. Подробнее о пассиве - во вкладке Глаголы → Причастия и пассив.
 Сокращения в объявлениях и документах
-То же самое поле, что и безличные формы: доска объявлений, договор, письмо из urzędu. Без этого списка текст читается с пропусками.
+Сами сокращения не являются безличными конструкциями. Они собраны здесь как соседний навык для чтения тех же текстов: объявлений, договоров и писем из urzędu.
 сокращениерасшифровказначение
 np.na przykładнапримерitd.i tak dalejи так далееitp.i tym podobneи тому подобноеm.in.między innymiв частности, среди прочегоtzn.to znaczyто естьtzw.tak zwanyтак называемыйok.okołoоколо, примерноgodz.godzinaчас; часы работыul. · al. · pl. · os.ulica · aleja · plac · osiedleулица, проспект, площадь, микрорайонnrnumerномерzł · grzłoty · groszзлотый, грошszt.sztukaштукаpn.–pt.poniedziałek – piątekпн - птdot.dotyczyкасательноws.w sprawieпо вопросуww.wyżej wymienionyвышеупомянутыйbr.bieżącego rokuтекущего годаwgwedługсогласноds.do sprawпо делам - в названиях должностейdr · mgr · inż. · prof.doktor · magister · inżynier · profesorучёные степени и титулы
 Точка ставится не всегда, и правило простое. Если сокращение кончается на ту же букву, что и полное слово, точки нет: dr (doktor), mgr (magister), nr (numer), wg (według). Если на другую - точка обязательна: ok. (około), godz. (godzina), ul. (ulica), prof. (profesor).
 В косвенном падеже точка возвращается. dr Kowalski - без точки, но u dr. Kowalskiego или u dra Kowalskiego: подразумевается уже doktora, а сокращение на эту букву не кончается. С женщиной проще - u dr Kowalskiej, без точки, потому что doktor в женском употреблении не склоняется.
-nie wolno и nie można - не одно и то же. Nie wolno palić - прямой запрет: курить запрещено. Nie można wejść, bo drzwi są zamknięte - войти невозможно из-за обстоятельств; в правилах nie można тоже встречается, но звучит мягче. Человека при необходимости ставим в дательный: nie wolno mi palić, nie można nam wejść.
-Номера, которые спросят в любом окне. PESEL - личный идентификатор жителя, NIP - налоговый номер, REGON - номер организации в статистике, KRS - судебный реестр компаний. Это не сокращения в обычном смысле: они не расшифровываются в речи и склоняются как обычные мужские слова - podaj PESEL, numer NIP-u.
+nie wolno и nie można различаются по контексту. Nie wolno palić однозначно сообщает запрет. Nie można может означать и запрет (Tu nie można parkować), и практическую невозможность (Nie można wejść, bo drzwi są zamknięte). Лицо при необходимости ставится в дательный: nie wolno mi palić, nie można nam wejść.
+Номера, которые часто нужны в учреждении. PESEL - идентификационный номер человека, NIP - налоговый номер, REGON - номер субъекта в статистическом реестре, KRS - номер записи в судебном реестре. Это сокращённые названия, или skrótowce, а не графические сокращения вроде np. При склонении прописного сокращённого названия окончание обычно присоединяется через дефис: numer NIP-u, wpis do KRS-u.
 Союзы
 Не склоняются, но помогают увидеть границы частей предложения. Запятая в польском часто похожа на русскую, но её ставят по синтаксической границе, а не автоматически перед отдельным словом.
 Главное правило запятой. Придаточное обычно отделяется запятой: Wiem, że on przyjdzie; Zostanę, jeśli będzie czas. Но перед вторым że запятой нет, если союзы соединяют однородные придаточные: Powiedział, że zadzwoni i że przyjdzie. Перед простым соединительным i запятая обычно не нужна: Poszedłem do sklepu i kupiłem chleb.

@@ -1632,24 +1632,25 @@ const QVERB_ORDER = [
 
 const IMPERS_MODAL = [
  ["trzeba","надо, нужно","Trzeba iść do lekarza."],
- ["można","можно","Można tu parkować?"],
- ["nie wolno","нельзя, запрещено","Nie wolno tu palić."],
+ ["można","можно: есть разрешение или возможность","Można tu zapłacić kartą."],
+ ["wolno / nie wolno","разрешено / запрещено","Czy wolno tu usiąść? · Nie wolno palić."],
  ["warto","стоит (имеет смысл)","Warto to przeczytać."],
- ["należy","следует (более официально)","Należy wypełnić formularz. Прошедшее - należało, без było."]
+ ["należy","следует (книжно и официально)","Należy wypełnić formularz."],
+ ["powinno się","следует, рекомендуется","Powinno się pić więcej wody."]
 ];
 const MOWI_SIE = [
  ["Jak się mówi po polsku «hello»?","Как сказать по-польски «hello»?"],
  ["Mówi się, że będzie drożej.","Говорят, что будет дороже."],
- ["Jak to się nazywa?","Как это называется?"],
  ["Tu się nie pali.","Здесь не курят."],
- ["Jak dojeżdża się na lotnisko?","Как добраться в аэропорт?"]
+ ["Jak dojeżdża się na lotnisko?","Как добраться в аэропорт?"],
+ ["Wczoraj dobrze się pracowało.","Вчера хорошо работалось."]
 ];
 const PASSIVE_NO = [
  ["zbudować → zbudowany","zbudowano","Dom zbudowano w 1900 roku."],
  ["otworzyć → otwarty","otwarto","Sklep otwarto o dziesiątej."],
- ["zamknąć → zamknięty","zamknięto","Muzeum zamknięto z powodu remontu."],
- ["napisać → napisany","napisano","Ogłoszenie napisano po polsku."],
- ["zrobić → zrobiony","zrobiono","Wszystko zrobiono na czas."]
+ ["napisać → napisany","napisano","Napisano nową książkę."],
+ ["czytać","czytano","Cały wieczór czytano dokumenty."],
+ ["pracować","pracowano","Wczoraj pracowano do późna."]
 ];
 
 const PREP_E = [
@@ -1837,7 +1838,28 @@ const PREP_TEST = {
 const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation,options],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation,...(options?{options}:{})}));
 const CONJ_PRACTICE={id:"conjunctions",title:"Практика: союзы",lead:"20 заданий на выбор союза по контексту.",tasks:[...CONJ_COORD,...CONJ_SUB].slice(0,20).map((item,index)=>({id:`conj-${index+1}`,prompt:`Какой союз выражает значение «${item[1]}»?`,answers:item[0].split(" / "),explanation:item[3]||"Подчинительный союз вводит придаточное; перед ним ставится запятая."}))};
 const PART_PRACTICE={id:"particles",title:"Практика: частицы",lead:"20 заданий на смысл и употребление частиц.",tasks:PART.slice(0,20).map((item,index)=>({id:`part-${index+1}`,prompt:`Какая частица выражает «${item[1]}»?`,answers:[item[0]],explanation:`${item[3]} Пример: ${item[2]}`}))};
-const ALT_PRACTICE={id:"alternations",title:"Практика: чередования",lead:"20 заданий на узнавание чередований в падежах, множественном числе и глаголах.",tasks:topicTasks("alt",[["komputer → w komputer___","ze","Miejscownik на -e: r → rz."],["apteka → w apte___","ce","K → c перед -e."],["ręka → w rę___","ce","K → c перед -e."],["Polak → Pola___","cy","Мужско-личное множественное: k → c + y."],["student → studen___","ci","T → ci в mianownik множественного."],["brat → bra___","cie","T → ci перед мягким окончанием."],["woda → wo___","dzie","D → dzi перед -e."],["droga → dro___","dze","G → dz перед -e."],["mucha → mu___","sze","Ch → sz перед -e."],["szkoła → szko___","le","Ł → l перед -e."],["stół → sto___","le","Ł → l: stole."],["pisać → pi___","szę","S → sz в форме ja."],["móc → mo___esz","ż","G → ż: możesz."],["brać → bie___esz","rz","Основа bierz-."],["jechać → ja___","dę","Jechać: jadę."],["nieść → nio___ę","s","Niosę: основа nios-."],["róg → ro___u","g","В rogu чередования нет."],["król → kró___","la","Król → króla."],["książka → książ___","ce","K → c: książce."],["lekarz → lekarz___","u","Исторически мягкое rz: lekarzu."]] )};
+const ALT_PRACTICE={id:"alternations",title:"Практика: чередования",lead:"20 заданий на варианты основы в падежах, мужско-личном множественном и глагольных формах. Выбери полную форму по контексту.",tasks:topicTasks("alt",[
+ ["В какой паре меняется гласная основы?","róg → rogu","В rogu основа rog- чередуется с róg-. У król → królu и lekarz → lekarzu меняется только окончание.",["róg → rogu","król → królu","lekarz → lekarzu"]],
+ ["Nie ma tu dużego ___. (stół)","stołu","Dopełniacz: stół → stołu, ó ↔ o. Ł остаётся без изменения.",["stołu","stółu","stole"]],
+ ["Nie ma mojego ___. (mąż)","męża","Dopełniacz: mąż → męża, ą ↔ ę.",["męża","mąża","mężu"]],
+ ["Bolą mnie ___. (ząb, Mianownik мн.)","zęby","Mianownik множественного: ząb → zęby, ą ↔ ę.",["zęby","ząby","zębów"]],
+ ["Ona wczoraj ___ studia. (zacząć)","zaczęła","Прошедшее время, форма ona: zacząć → zaczęła, ą ↔ ę.",["zaczęła","zacząła","zaczęli"]],
+ ["Pracuję w ___. (apteka)","aptece","Miejscownik: apte-c-e. В основе k → c, окончание -e.",["aptece","apteke","apteku"]],
+ ["Samochód stoi na ___. (droga)","drodze","Miejscownik: dro-dz-e. В основе g → dz, окончание -e.",["drodze","droge","drogu"]],
+ ["Czytam artykuł o ___. (mucha)","musze","Miejscownik: mu-sz-e. В основе ch → sz, окончание -e.",["musze","muche","muchu"]],
+ ["Dzieci są w ___. (szkoła)","szkole","Miejscownik: szko-l-e. В основе ł → l, окончание -e.",["szkole","szkołe","szkołu"]],
+ ["Spotykamy się w ___. (sklep)","sklepie","Miejscownik: sklepi-e. I показывает мягкость p в варианте основы, окончание -e.",["sklepie","sklepe","sklepu"]],
+ ["Widziałam kota w otwartym ___. (okno)","oknie","Miejscownik: okni-e. I показывает мягкость n в варианте основы, окончание -e.",["oknie","okne","oknu"]],
+ ["Boję się dużego ___. (pies)","psa","Dopełniacz: pies → psa. Гласная e исчезает в варианте основы ps-.",["psa","piesa","psu"]],
+ ["Ci ___ mieszkają w Warszawie. (Polak)","Polacy","Mianownik мужско-личного множественного: Polak → Polacy, k → c и окончание -y.",["Polacy","Polaki","Polakowie"]],
+ ["Ci ___ czekają na egzamin. (student)","studenci","Mianownik мужско-личного множественного: student → studenci, t → ci.",["studenci","studenty","studentowie"]],
+ ["Ja codziennie ___ po polsku. (pisać)","piszę","Форма ja: pisać → piszę, s → sz.",["piszę","piszęsz","pisam"]],
+ ["Czy ty ___ to zrobić? (móc)","możesz","Форма ty: móc → możesz, g → ż.",["możesz","mogesz","możę"]],
+ ["Ty zawsze ___ tę książkę. (brać)","bierzesz","Форма ty: brać → bierzesz; нужно запомнить вариант основы bierz-.",["bierzesz","biorzesz","brzesz"]],
+ ["Ty teraz ___ pociągiem. (jechać)","jedziesz","Форма ty: jechać → jedziesz; вариант основы jedzi-.",["jedziesz","jadziesz","jechasz"]],
+ ["On wczoraj nie ___ zostać dłużej. (móc)","mógł","В прошедшем времени ó появляется в форме on: mógł, но ona mogła.",["mógł","mogł","mogła"]],
+ ["Oni wczoraj ___ zostać dłużej. (musieć)","musieli","Мужско-личное множественное: musieli. В единственном и немужско-личном множественном: musiał, musiała, musiały.",["musieli","musiali","musiały"]]
+] )};
 const PEOPLE_PRACTICE={id:"people",title:"Практика: люди и вежливость",lead:"20 заданий на pan/pani, обращения, фамилии, страны и языки.",tasks:topicTasks("people",[["Czy pan ___ czas? (mieć)","ma","Pan требует 3-го лица."],["Czy pani ___ pomóc? (móc)","może","Pani + 3-е лицо."],["Dziękuję ___ za pomoc. (pan)","panu","Дательный: panu."],["Rozmawiam z ___. (pani)","panią","Творительный: z panią."],["Proszę ___, gdzie jest bank? (pan)","pana","Устойчивая формула: proszę pana."],["Panie ___, mam pytanie. (Adam)","Adamie","Обращение: Adamie."],["Pani ___, zapraszam. (Anna)","Anno","Имя в звательном: Anno."],["Nie ma pana ___. (Kowalski)","Kowalskiego","Мужская фамилия склоняется."],["Dla pani ___ (Nowak)","Nowak","Женская фамилия на согласную не склоняется."],["Państwo Kowalscy ___ gotowi.","są","Państwo вежливо: 3-е лицо множественного."],["Jestem z ___. (Polska)","Polski","Z + родительный: z Polski."],["Mieszkam w ___. (Polska)","Polsce","W + предложный: w Polsce."],["Jadę do ___. (Polska)","Polski","Do + родительный: do Polski."],["Mówię po ___. (polski)","polsku","Po polsku - наречие."],["Uczę się ___. (polski)","polskiego","Uczyć się + родительный."],["Znam ___ język. (polski)","polski","Znać + винительный."],["Ona jest ___. (Polak)","Polką","Женская национальность: Polka в творительном."],["On jest ___. (Niemiec)","Niemcem","Niemiec в творительном: Niemcem."],["W ___ mieszkają moi znajomi. (Niemcy)","Niemczech","W Niemczech."],["Na ___ jest ciepło. (Węgry)","Węgrzech","Na Węgrzech - закрытая норма."]] )};
 const ALPHA_PRACTICE={id:"alphabet",title:"Практика: алфавит и произношение",lead:"20 заданий на буквы, сочетания, носовые, ассимиляцию, ударение и основные правила письма.",tasks:topicTasks("alpha",[
  ["Как читается буква c в слове cena?","ц [t͡s]","Польское c обозначает [t͡s], а не к или ч.",["ц [t͡s]","к [k]","ч [t͡ʂ]"]],
@@ -1909,7 +1931,29 @@ const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",l
   ["Teraz bez ciebie nie ___ tego zrobić. (móc, ja)","mogę","Настоящее время: nie mogę tego zrobić."]
 ] )};
 const ORDER_PRACTICE={id:"word-order",title:"Практика: порядок слов",lead:"20 заданий на клитики, się и нейтральный порядок.",tasks:topicTasks("order",[["Jak ___ nazywasz?","się","Się не открывает фразу."],["Czy możesz ___ pomóc? (ja)","mi","Краткая клитика mi."],["Nie martw ___.","się","Nie martw się."],["Powiedz ___ prawdę. (ja)","mi","Powiedz mi."],["Czy podoba ___ się ten film? (ty)","ci","Порядок: ci się."],["Widzę ___ codziennie. (on)","go","Краткая форма: go."],["Idę do ___. (on)","niego","После предлога: niego."],["Mnie to nie ___. (interesować)","interesuje","Полная форма для акцента."],["Gdzie ___ twoja siostra? (mieszkać)","mieszka","Вопросительное слово + глагол."],["Ile ___ bilet? (kosztować)","kosztuje","Ile kosztuje bilet?"],["Klucze są ___ stole. (na)","na","Новый факт: na stole."],["Na stole są ___. (klucze)","klucze","Ответ на «что?» - klucze."],["Czy Anna ___ zna? (ty)","cię","Винительный: cię."],["Nie ___ się tego. (bać, ty)","bój","Nie bój się."],["On ___ dał książkę. (ja)","mi","On mi dał."],["Wczoraj ___ go w kinie. (widzieć, ja)","widziałem","Вчера видел: widziałem."],["Czy ___ to zrobić? (móc, ty)","możesz","Czy możesz…"],["Z kim ___ spotykasz?","się","Spotykać się z kimś: здесь нужна частица się."],["Proszę, ___ mi pomóc.","pomóż","Pomóż mi."],["Dzisiaj ___ do pracy. (iść, ja)","idę","Dzisiaj idę."]] )};
-const IMPERS_PRACTICE={id:"impersonal",title:"Практика: безличные конструкции",lead:"20 заданий на trzeba, można, nie wolno, -no/-to и mówi się.",tasks:topicTasks("impers",[["Tu nie ___ palić.","wolno","Прямой запрет: nie wolno."],["Nie ___ wejść, bo drzwi są zamknięte.","można","Нет возможности: nie można."],["___ wypełnić formularz.","Trzeba","Необходимость: trzeba."],["___ to przeczytać.","Warto","Рекомендация: warto."],["W regulaminie: ___ zapłacić do piątku.","należy","Официальная инструкция: należy."],["Wczoraj nie ___ tu parkować.","można było","Прошедшее: nie można było."],["Trzeba ___ wcześniej. (wyjść)","było","Trzeba było wyjść."],["Wczoraj ___ formularz.","wypełniono","Безличное действие: wypełniono."],["Drzwi ___ o ósmej.","otwarto","Форма на -to: otwarto."],["Po polsku ___ się «dzień dobry».","mówi","Mówi się."],["Tu się nie ___. (palić)","pali","Tu się nie pali."],["Nie wolno ___ zdjęć. (robić)","robić","После nie wolno - инфинитив."],["Czy ___ tu usiąść?","można","Можно ли: czy można?"],["___ mi wejść?","Wolno","Можно ли мне: wolno mi?"],["Nie ___ nam rozmawiać głośno.","wolno","Nie wolno nam."],["Wczoraj ___ remont.","wykonano","Wykonano remont."],["Jak ___ dojeżdża na lotnisko?","się","Jak się dojeżdża?"],["___ było spróbować tej zupy.","Warto","Warto było."],["W urzędzie ___ złożyć wniosek online.","można","Возможность: można."],["Nie ___ było wejść po zamknięciu.","wolno","Запрет в прошлом: nie wolno było."]] )};
+const IMPERS_PRACTICE={id:"impersonal",title:"Практика: безличные конструкции",lead:"20 заданий на модальные слова, формы с się, -no/-to, время и отличие от пассива.",tasks:[]};
+IMPERS_PRACTICE.tasks = topicTasks("impers",[
+  ["На табличке нужен однозначный запрет:","Nie wolno tu palić.","Nie wolno однозначно сообщает запрет.",["Nie wolno tu palić.","Nie można tu palić, bo nie mamy papierosów.","Warto tu palić."]],
+  ["Дверь заперта, поэтому войти физически невозможно:","Nie można wejść, bo drzwi są zamknięte.","Nie można здесь обозначает практическую невозможность.",["Nie wolno wejść, bo drzwi są zamknięte.","Nie można wejść, bo drzwi są zamknięte.","Nie trzeba wejść, bo drzwi są zamknięte."]],
+  ["Нужно срочно вызвать врача:","Trzeba szybko wezwać lekarza.","Trzeba выражает необходимость.",["Warto szybko wezwać lekarza.","Trzeba szybko wezwać lekarza.","Można szybko wezwać lekarza."]],
+  ["Совет основан на пользе действия:","Warto przeczytać tę książkę.","Warto значит, что действие имеет смысл.",["Wolno przeczytać tę książkę.","Warto przeczytać tę książkę.","Należy przeczytać tę książkę."]],
+  ["Официальная инструкция в регламенте:","Należy zapłacić do piątku.","Należy характерно для книжной и официальной инструкции.",["Warto zapłacić do piątku.","Należy zapłacić do piątku.","Można zapłacić do piątku."]],
+  ["Общая рекомендация о здоровье:","Powinno się pić więcej wody.","Powinno się выражает безличную рекомендацию.",["Powinien pić więcej wody.","Powinno się pić więcej wody.","Pito więcej wody."]],
+  ["Вчера нам пришлось выйти раньше:","Trzeba było wyjść wcześniej.","Прошедшее от trzeba строится с było и инфинитивом.",["Trzeba wyjść wcześniej.","Trzeba było wyjść wcześniej.","Należało było wyjść wcześniej."]],
+  ["Вчера войти было невозможно:","Nie można było wejść.","Прошедшее от można строится с było.",["Nie można wejść.","Nie należało wejść.","Nie można było wejść."]],
+  ["Завтра появится возможность оплатить картой:","Jutro będzie można zapłacić kartą.","Будущее от można строится с będzie.",["Jutro można było zapłacić kartą.","Jutro będzie można zapłacić kartą.","Jutro można zapłacić kartą wczoraj."]],
+  ["В следующем году потребуется подать новый документ:","W przyszłym roku będzie należało złożyć nowy dokument.","Будущее от należy: będzie należało.",["W przyszłym roku będzie należy złożyć nowy dokument.","W przyszłym roku należało złożyć nowy dokument.","W przyszłym roku będzie należało złożyć nowy dokument."]],
+  ["Как по-польски сказать «добрый день»?","Jak się mówi po polsku «dzień dobry»?","Mówi się без названного деятеля передаёт обобщённое действие.",["Jak mówi po polsku «dzień dobry»?","Jak się mówi po polsku «dzień dobry»?","Jak są mówione po polsku «dzień dobry»?"]],
+  ["Сообщите обычное правило поведения:","Tu się nie pali.","Форма 3-го лица единственного числа с się выражает общее правило.",["Tu się nie pali.","Tu nie palono jutro.","Tu nie jest palony."]],
+  ["Выберите безличную конструкцию с się в прошлом:","Wczoraj dobrze się pracowało.","В прошедшем времени безличная форма с się стоит в среднем роде единственного числа: pracowało.",["Wczoraj dobrze się pracował.","Wczoraj dobrze się pracowali.","Wczoraj dobrze się pracowało."]],
+  ["В каком предложении się не создаёт безличную конструкцию?","Jak nazywają się te ulice?","Te ulice является подлежащим, а глагол согласуется с ним во множественном числе.",["Mówi się, że będzie drożej.","Jak nazywają się te ulice?","Tu się nie pali."]],
+  ["Выберите завершённое действие без названного исполнителя:","Wczoraj wypełniono formularz.","Совершенный вид wypełnić даёт результативную форму wypełniono.",["Wczoraj wypełnia się formularz.","Wczoraj wypełniono formularz.","Wczoraj formularz był wypełniać."]],
+  ["Выберите форму на -to:","O ósmej otwarto drzwi.","От otworzyć образуется безличная форма otwarto.",["O ósmej otwarto drzwi.","O ósmej otwierano jutro drzwi.","O ósmej drzwi została otwarta."]],
+  ["Как передать длительный процесс без названного исполнителя?","Wczoraj długo pracowano.","Несовершенный вид pracować даёт процессуальное pracowano.",["Wczoraj długo pracowano.","Wczoraj długo pracowało się pracownicy.","Wczoraj długo zostało pracowane."]],
+  ["Выберите правильный винительный после формы на -no:","Napisano nową książkę.","Дополнение остаётся в Biernik: nową książkę.",["Napisano nowa książka.","Napisano nowej książki.","Napisano nową książkę."]],
+  ["В каком предложении используется настоящий пассив?","Książka została napisana po polsku.","Została napisana согласуется с подлежащим książka и образует пассив.",["Napisano książkę po polsku.","Książka została napisana po polsku.","Po polsku pisano książkę."]],
+  ["Разрешение относится лично к говорящему:","Czy wolno mi wejść?","Лицо при wolno ставится в Celownik: mi.",["Czy wolno mnie wejść?","Czy wolno ja wejść?","Czy wolno mi wejść?"]]
+]);
 ORDER_PRACTICE.tasks[15] = {id:"order-16",prompt:"Wczoraj ___ go w kinie. (widzieć, ja, мужчина)",answers:["widziałem"],explanation:"Вчера видел: widziałem."};
 ORDER_PRACTICE.tasks[18] = {id:"order-19",prompt:"Proszę mi ___.",answers:["pomóc"],explanation:"Вежливая конструкция: proszę mi pomóc."};
 NUM_PRACTICE.tasks[17].explanation = "В этой конструкции после dwa: dwa procent. Слово procent в других падежах склоняется: o dwóch procentach.";

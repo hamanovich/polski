@@ -236,7 +236,9 @@ function initExerciseSection(section){
     if(action === "reset-test") resetExerciseGroup(practice, true);
   });
 }
-const TRAINER_STORAGE_KEY = "polski-trainer-v1";
+const TRAINER_STORAGE_KEY = "polski-trainer-v2";
+const TRAINER_LEGACY_KEYS = ["polski-trainer-v1"];
+const TRAINER_STATS_MIN = 3;
 const TRAINER_TENSES = {present:"настоящее", past:"прошедшее", future:"будущее"};
 const TRAINER_NUMBERS = {sg:"единственное число", pl:"множественное число"};
 const TRAINER_SIMPLE = [
@@ -253,6 +255,10 @@ const TRAINER_FULL = [
 ];
 const TRAINER_GENDER_OF = ["m", "f", "m", "f", "m", "f", "n", "m", "f", "m", "f", "m", "f"];
 const TRAINER_MISSED_LIMIT = 60;
+const trainerFold = value => exerciseNorm(value)
+  .replace(/\u0142/g, "l")
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "");
 const TRAINER_RECENT = 12;
 
 let trainerData = null;
@@ -293,6 +299,7 @@ const TRAINER_DECKS = {
         list.push({
           key:`${verb.l}|${tense}|${item.cell}`,
           word:verb.l,
+          cat:TRAINER_TENSES[tense],
           chips:[TRAINER_TENSES[tense] + aspect, item.labels[0], item.labels[1]],
           answers:item.answers,
           hint:""
@@ -311,6 +318,7 @@ const TRAINER_DECKS = {
         list.push({
           key:`${item.l}|${item.k}|${item.t}|${item.d}`,
           word:item.l,
+          cat:item.t,
           chips:[item.t, item.d, ""],
           answers:item.a,
           hint:""
@@ -330,6 +338,7 @@ const TRAINER_DECKS = {
         list.push({
           key:`${item.l}|${item.c}|${item.n}`,
           word:item.l,
+          cat:names.get(item.c) || item.c,
           chips:[names.get(item.c) || item.c, TRAINER_NUMBERS[item.n], ""],
           answers:[item.f],
           hint:`${item.g}: ${item.r}`
@@ -353,20 +362,28 @@ function initTrainer(host){
   const word = host.querySelector("[data-trainer-word]");
   const score = host.querySelector(".trainer-score");
   const chips = [0, 1, 2].map(index => host.querySelector(`[data-trainer-chip="${index}"]`));
+  const stats = host.querySelector("[data-trainer-stats]");
+  const keys = host.querySelector("[data-trainer-keys]");
   const bars = [...host.querySelectorAll("[data-trainer-filter]")];
 
-  const blank = {...deck.defaults, total:0, correct:0, streak:0, best:0, missed:[]};
+  const blank = {...deck.defaults, total:0, correct:0, streak:0, best:0, missed:[], recent:[], stats:{}};
   let store = {};
-  try{ store = JSON.parse(localStorage.getItem(TRAINER_STORAGE_KEY) || "{}") || {}; }catch{}
+  try{
+    store = JSON.parse(localStorage.getItem(TRAINER_STORAGE_KEY) || "{}") || {};
+    for(const key of TRAINER_LEGACY_KEYS) localStorage.removeItem(key);
+  }catch{}
   const saved = store[host.dataset.trainer];
   let state = saved && typeof saved === "object"
-    ? {...blank, ...saved, missed:Array.isArray(saved.missed) ? saved.missed : []}
+    ? {...blank, ...saved, missed:Array.isArray(saved.missed) ? saved.missed : [],
+        recent:Array.isArray(saved.recent) ? saved.recent.slice(-TRAINER_RECENT) : [],
+        stats:saved.stats && typeof saved.stats === "object" ? saved.stats : {}}
     : {...blank};
 
   let pool = [];
+  let poolKeys = new Set();
   let current = null;
   let reviewing = false;
-  const recent = [];
+  let opening = true;
 
   const save = () => {
     try{
@@ -378,28 +395,46 @@ function initTrainer(host){
     button.setAttribute("aria-pressed", String(button.dataset.value === state[bar.dataset.trainerFilter])));
 
   function paintScore(){
-    score.textContent = state.total
-      ? `${state.correct} из ${state.total} · серия ${state.streak} · рекорд ${state.best}`
-      : "";
+    const parts = [];
+    if(state.total) parts.push(`${state.correct} из ${state.total} · серия ${state.streak} · рекорд ${state.best}`);
+    if(state.missed.length){
+      const queued = state.missed.filter(key => poolKeys.has(key)).length;
+      const outside = state.missed.length - queued;
+      parts.push(`в очереди ошибок: ${queued}${outside ? ` (ещё ${outside} вне фильтра)` : ""}`);
+    }
+    score.textContent = parts.join(" · ");
+  }
+
+  function paintStats(){
+    const rows = Object.entries(state.stats)
+      .filter(([, row]) => Array.isArray(row) && row[1] >= TRAINER_STATS_MIN)
+      .map(([label, row]) => ({label, share:Math.round(row[0] / row[1] * 100), total:row[1]}))
+      .sort((a, b) => a.share - b.share || b.total - a.total)
+      .map(row => `${row.label} ${row.share}% (${row.total})`);
+    stats.hidden = !rows.length;
+    stats.textContent = rows.length ? `Точность по разделам, слабое впереди: ${rows.join(" · ")}` : "";
   }
 
   const draw = list => list[Math.floor(Math.random() * list.length)];
 
   function pick(){
     if(!pool.length) return null;
-    const window = Math.min(TRAINER_RECENT, pool.length - 1);
-    const skip = recent.slice(recent.length - window);
-    const base = pool.filter(item => !skip.includes(item.key));
+    const words = new Set(pool.map(item => item.word)).size;
+    const window = Math.min(TRAINER_RECENT, Math.max(0, words - 1));
+    const skip = window ? state.recent.slice(-window) : [];
+    const fresh = pool.filter(item => !skip.includes(item.word));
+    const base = fresh.length ? fresh : pool;
     const missed = base.filter(item => state.missed.includes(item.key));
-    return missed.length && Math.random() < 0.4 ? draw(missed) : draw(base);
+    return !opening && missed.length && Math.random() < 0.4 ? draw(missed) : draw(base);
   }
 
   function ask(){
     current = pick();
     reviewing = false;
     if(!current) return;
-    recent.push(current.key);
-    while(recent.length > TRAINER_RECENT) recent.shift();
+    opening = false;
+    state.recent = [...state.recent, current.word].slice(-TRAINER_RECENT);
+    save();
     chips.forEach((chip, index) => {
       chip.textContent = current.chips[index] || "";
       chip.hidden = !current.chips[index];
@@ -408,7 +443,7 @@ function initTrainer(host){
     input.value = "";
     input.disabled = false;
     input.removeAttribute("aria-invalid");
-    input.classList.remove("is-correct");
+    input.classList.remove("is-correct", "is-near");
     feedback.textContent = "";
     feedback.className = "trainer-feedback";
     submit.textContent = "Проверить";
@@ -417,15 +452,22 @@ function initTrainer(host){
 
   function refill(){
     pool = deck.questions(state);
+    poolKeys = new Set(pool.map(item => item.key));
     stage.hidden = !pool.length;
     empty.hidden = !!pool.length;
     paintScore();
+    paintStats();
     if(pool.length) ask();
   }
 
-  function settle(correct, prefix){
+  function settle(verdict, prefix){
     reviewing = true;
+    const correct = verdict !== "wrong";
     state.total += 1;
+    if(current.cat){
+      const row = Array.isArray(state.stats[current.cat]) ? state.stats[current.cat] : [0, 0];
+      state.stats[current.cat] = [row[0] + (correct ? 1 : 0), row[1] + 1];
+    }
     if(correct){
       state.correct += 1;
       state.streak += 1;
@@ -436,15 +478,19 @@ function initTrainer(host){
       state.missed = [current.key, ...state.missed.filter(item => item !== current.key)].slice(0, TRAINER_MISSED_LIMIT);
     }
     input.disabled = true;
-    input.classList.toggle("is-correct", correct);
+    input.classList.toggle("is-correct", verdict === "correct");
+    input.classList.toggle("is-near", verdict === "near");
     if(!correct) input.setAttribute("aria-invalid", "true");
-    feedback.textContent = correct
+    feedback.textContent = verdict === "correct"
       ? "Верно."
-      : `${prefix} Правильно: ${current.answers.join(" · ")}${current.hint ? `. ${current.hint}` : ""}`;
-    feedback.className = `trainer-feedback ${correct ? "is-correct" : "is-wrong"}`;
+      : verdict === "near"
+        ? `Верно, но без диакритики: ${current.answers.join(" · ")}`
+        : `${prefix} Правильно: ${current.answers.join(" · ")}${current.hint ? `. ${current.hint}` : ""}`;
+    feedback.className = `trainer-feedback ${verdict === "correct" ? "is-correct" : verdict === "near" ? "is-near" : "is-wrong"}`;
     submit.textContent = "Дальше";
     skip.hidden = true;
     paintScore();
+    paintStats();
     save();
     submit.focus();
   }
@@ -459,13 +505,26 @@ function initTrainer(host){
       input.focus();
       return;
     }
-    settle(current.answers.some(answer => exerciseNorm(answer) === value), "Пока нет.");
+    const exact = current.answers.some(answer => exerciseNorm(answer) === value);
+    const near = !exact && current.answers.some(answer => trainerFold(answer) === trainerFold(input.value));
+    settle(exact ? "correct" : near ? "near" : "wrong", "Пока нет.");
   });
-  skip.addEventListener("click", () => settle(false, "Запомните."));
+  skip.addEventListener("click", () => settle("wrong", "Запомните."));
+  keys.addEventListener("click", event => {
+    const button = event.target.closest("[data-key]");
+    if(!button || input.disabled) return;
+    const start = input.selectionStart ?? input.value.length;
+    const end = input.selectionEnd ?? start;
+    input.value = `${input.value.slice(0, start)}${button.dataset.key}${input.value.slice(end)}`;
+    const caret = start + button.dataset.key.length;
+    input.setSelectionRange(caret, caret);
+    input.focus();
+  });
   host.querySelector("[data-trainer-reset]").addEventListener("click", () => {
-    state = {...state, total:0, correct:0, streak:0, best:0, missed:[]};
+    state = {...state, total:0, correct:0, streak:0, best:0, missed:[], stats:{}};
     save();
     paintScore();
+    paintStats();
     if(pool.length) ask();
     input.focus();
   });
@@ -484,6 +543,7 @@ function initTrainer(host){
   }
 
   paintScore();
+  paintStats();
   let started = false;
   const start = () => {
     if(started) return;

@@ -1,7 +1,7 @@
 {
   "adjectives": {
-    "hash": "7546779e673ef295a575fc6a3b50d7f15f055dd6db2af8b258b878331ed213a8",
-    "date": "2026-09-06"
+    "hash": "d88e2ba8db4b750cce3ed935711896b417cc069b32954a857960d5677b3eb8c4",
+    "date": "2026-09-07"
   },
   "adverbs": {
     "hash": "700dbc3a4669bfac827fa6da2d7fb5a66d06253df694860e1e98b7519a6f7940",
@@ -12,12 +12,12 @@
     "date": "2026-09-07"
   },
   "alternations": {
-    "hash": "e407b32d4877042e5c6cba4ab61d002969ec8eb2ccdf75a727f73df10a160d9d",
-    "date": "2026-09-06"
+    "hash": "b56ba0ac2894fba3315c1d4a56f213a4ac7b4fc48b7e99b628a19b95b4f86f15",
+    "date": "2026-09-07"
   },
   "cases": {
-    "hash": "69648f11a23531641cf66ad5eafd84a6530dc7fbd421da1e1daaa85bf54340a8",
-    "date": "2026-09-06"
+    "hash": "e94e93b693e25b7d062cb56b3898b4163e7f05d3cf8a0882837f495185772ec8",
+    "date": "2026-09-07"
   },
   "conjunctions": {
     "hash": "192b144ee524304a88b186567c49da2b2c509cc4dd63adc7aa5b3896dc70ebce",
@@ -32,8 +32,8 @@
     "date": "2026-09-06"
   },
   "impersonal": {
-    "hash": "1bbc1a0371df292be545b1aedbdbff4bfbf4ff814cfa5df7d52e328dd673df34",
-    "date": "2026-09-06"
+    "hash": "79904409bc0ef75844dde1ac4f4b1f7d82358a15dad81f68081237915acce4ee",
+    "date": "2026-09-07"
   },
   "index": {
     "hash": "fd298d92e9ac4a15bb2021e34339b66868055aa3d147e743f110db75aa0317eb",
@@ -80,7 +80,7 @@
     "date": "2026-09-06"
   },
   "verbs": {
-    "hash": "5c519368d978f2652d9af4482bba7d21da5f807a16f78acf64a13bfbffb222e6",
+    "hash": "220aec2e26081833ac936dd75aabf1bd02356d9ecbce7a0c0406ee2ae55c4506",
     "date": "2026-09-07"
   },
   "vocabulary": {

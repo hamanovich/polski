@@ -224,7 +224,23 @@ const speaking = documents.get("s-talk");
 assert(speaking.html.includes("Фразы спасения"));
 assert(speaking.html.includes("Co robiłeś w weekend?"));
 
-assert(documents.get("s-alt").html.includes("Окончание часто меняет последний звук основы"));
+const alternations = documents.get("s-alt");
+assert(alternations.html.includes("Чередование - это смена звука или появление и исчезновение звука"));
+assert(alternations.html.includes("e ↔ ∅"));
+assert(alternations.html.includes("Глагольную форму не строй по одной букве"));
+assert(!alternations.html.includes("В rogu чередования нет"));
+assert.equal(alternations.document.querySelectorAll(".alternation-practice .exercise-item").length, 20);
+assert.equal(alternations.document.querySelectorAll(".alternation-practice select.exercise-control").length, 20);
+const impersonal = documents.get("s-impers");
+assert(impersonal.html.includes("без грамматического подлежащего"));
+assert(impersonal.html.includes("Wczoraj dobrze się pracowało"));
+assert(impersonal.html.includes("Jak nazywają się te ulice?"));
+assert(impersonal.html.includes("Napisano nową książkę"));
+assert(impersonal.html.includes("может означать и запрет"));
+assert(!impersonal.html.includes("Действие совершено, но кем"));
+assert(!impersonal.html.includes("не «dom został zbudowany»"));
+assert.equal(impersonal.document.querySelectorAll(".impersonal-practice .exercise-item").length, 20);
+assert.equal(impersonal.document.querySelectorAll(".impersonal-practice select.exercise-control").length, 20);
 assert(!documents.get("s-ludzie").html.includes("Wołacz - вкладка"));
 assert(documents.get("s-num").html.includes("Z iloma osobami rozmawiałeś?"));
 assert(documents.get("s-num").html.includes("o czterdziestu procentach"));
@@ -491,10 +507,13 @@ for(const [id, path, heading, filters] of trainerPages){
   assert.equal(block.querySelectorAll("[data-trainer-chip]").length, 3);
   assert(block.querySelector("[data-trainer-stage]")?.hasAttribute("hidden"));
   assert(block.querySelector("noscript"), `${path}: the trainer must say what to read when scripts do not run`);
+  assert.deepEqual([...block.querySelectorAll("[data-trainer-keys] button")].map(button => button.dataset.key),
+    ["ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"], `${path}: the trainer must offer the Polish letters that a Russian keyboard lacks`);
+  assert(block.querySelector("[data-trainer-stats]")?.hasAttribute("hidden"), `${path}: per topic accuracy starts hidden`);
   assert.match(page.querySelector("script[src]").dataset.trainerSrc, /trainer-data\.js\?v=[a-f0-9]{10}$/);
 }
 assert.equal(documents.get("s-verbs").document.querySelector('.trainer [data-trainer-filter="tense"]')?.querySelectorAll("button").length, 4);
-assert.equal(documents.get("s-verbs").document.querySelector('.trainer [data-trainer-filter="gender"]')?.querySelectorAll("button").length, 3);
+assert.equal(documents.get("s-verbs").document.querySelector('.trainer [data-trainer-filter="gender"]')?.querySelectorAll("button").length, 4);
 assert.equal(documents.get("s-cases").document.querySelector('.trainer [data-trainer-filter="case"]')?.querySelectorAll("button").length, 8);
 assert.equal(documents.get("s-cases").document.querySelector('.trainer [data-trainer-filter="number"]')?.querySelectorAll("button").length, 3);
 assert.equal(documents.get("s-adj").document.querySelector('.trainer [data-trainer-filter="kind"]')?.querySelectorAll("button").length, 4);
