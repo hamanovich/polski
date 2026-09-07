@@ -198,6 +198,25 @@ assert.equal(verbs.document.querySelectorAll(".verb-variant").length, 5);
 assert(verbs.html.includes("będę zrobił"));
 assert(!verbs.html.includes("czyby"));
 
+const alphabet = documents.get("s-alpha");
+assert(alphabet.html.includes("семь диграфов и триграф"));
+assert(alphabet.html.includes("szcz</span> распадается на два диграфа и два звука"));
+assert(alphabet.html.includes("mąka [moŋka], ręka [reŋka]"));
+assert(alphabet.html.includes("idą [idõũ̯]"));
+assert(alphabet.html.includes("BY-li-śmy; zro-BI-li-by-śmy"));
+assert(alphabet.html.includes("słuch → słyszeć"));
+assert(alphabet.html.includes("wzorzec → wzorcowy"));
+assert(alphabet.html.includes("Plac Zbawiciela; ulica Długa"));
+assert(!alphabet.html.includes("десятке диграфов"));
+assert(!alphabet.html.includes("szcz - это не «щ»"));
+assert(!alphabet.html.includes("rycerz → rycerstwo"));
+assert(!alphabet.html.includes("Не находишь чередования - скорее всего"));
+const alphabetItems = [...alphabet.document.querySelectorAll(".alphabet-practice .exercise-item")];
+assert.equal(alphabetItems.length, 20);
+assert.equal(alphabet.document.querySelectorAll(".alphabet-practice select.exercise-control").length, 20);
+assert.deepEqual([...alphabetItems[7].querySelectorAll("option")].slice(1).map(option => option.value), ["[om] / [em]", "[on] / [en]", "[oŋ] / [eŋ]"]);
+assert.deepEqual([...alphabetItems[17].querySelectorAll("option")].slice(1).map(option => option.value), ["BY-li-śmy; zro-BI-li-by-śmy", "by-LI-śmy; zro-bi-LI-by-śmy", "by-li-ŚMY; zro-bi-li-by-ŚMY"]);
+
 const vocabulary = documents.get("s-vocab");
 assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list").length, 4);
 assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list tr").length, 404);
@@ -318,6 +337,10 @@ assert(!appSource.includes("подчинительными союзами зап
 const dataSandbox = vm.createContext({});
 vm.runInContext(dataSource, dataSandbox, {filename:"data.js"});
 const fromData = name => vm.runInContext(name, dataSandbox);
+assert.equal(fromData("ABASE").length + fromData("ADIAC").length, 32, "The alphabet tables must cover all 32 Polish letters");
+assert.equal(fromData("ADIAC").length, 9, "The Polish alphabet has nine letters with diacritics");
+assert.equal(fromData("DIGR").length, 7, "The multiletter table must keep exactly seven digraphs");
+assert.deepEqual(JSON.parse(JSON.stringify(fromData("LETTER_GROUPS").map(row => row.slice(0, 2)))), [["dzi", "триграф"], ["szcz", "два диграфа"]]);
 
 const exerciseSets = [
   "CASE_PRACTICE", "CASE_TEST", "VERB_PRACTICE", "VERB_TEST", "PREP_PRACTICE", "PREP_TEST",

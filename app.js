@@ -267,35 +267,42 @@ function renderAlt(){
 function renderAlpha(){
   $("#s-alpha").innerHTML = `<div class="panel">
     <h2>Алфавит и произношение</h2>
-    <p class="lead">32 буквы, читаются почти всегда так, как пишутся. Сложность не в буквах, а в девяти особых и десятке диграфов.</p>
-    <div class="tip"><b>Нет букв Q, V, X.</b> В освоенных заимствованиях на их месте пишут <span class="pl">kw, w, ks</span>: <span class="pl">kwadrat · akwarium · likwidacja</span> · <span class="pl">wideo · willa · wiza</span> · <span class="pl">tekst · maksimum · ekspres</span>. Иностранные имена и бренды сохраняют оригинал: <span class="pl">weekend, Volvo</span>. Замена не всегда побеждает: <span class="pl">quiz</span> и <span class="pl">kwiz</span> сосуществуют, и первое сегодня встречается чаще.</div>
+    <p class="lead">В польском алфавите 32 буквы, среди них девять с диакритическими знаками. Кроме отдельных букв, письмо использует семь диграфов и триграф <span class="pl">dzi</span>.</p>
+    <div class="tip"><b>Q, V и X не входят в основной польский алфавит, но встречаются в тексте.</b> В освоенных заимствованиях им часто соответствуют <span class="pl">kw, w, ks</span>: <span class="pl">kwadrat · akwarium · likwidacja</span> · <span class="pl">wideo · willa · wiza</span> · <span class="pl">tekst · maksimum · ekspres</span>. В иностранных именах и названиях исходные буквы сохраняются: <span class="pl">Volvo, Quentin Tarantino, Xavier</span>. Варианты <span class="pl">quiz</span> и <span class="pl">kwiz</span> нормативны, первый употребляется чаще.</div>
 
     <h3>Обычные буквы - на что обратить внимание</h3>
+    <p class="lead">Русские подсказки ниже приблизительны. Для звуков без точного русского соответствия в таблицах букв и сочетаний дана запись IPA.</p>
     ${ngrid(ABASE.map(a => [a[0], a[1]]))}
+    <div class="tip"><b>Не переноси русскую редукцию гласных.</b> Безударные <span class="pl">a, e, o</span> остаются отчётливыми: в польских <span class="pl">Polska, kobieta, telefon</span> безударное <span class="pl">o</span> не превращается в русское «а».</div>
 
     <h3>Девять особых букв</h3>
     <div class="scroll"><table class="vt">
-      <tr><th>буква</th><th>звук</th><th>как произносится</th><th>примеры</th></tr>
-      ${ADIAC.map(a => `<tr><td class="g" style="font-size:var(--fs-h2)">${a[0]}</td><td style="color:var(--muted)">${a[1]}</td><td>${a[2]}</td><td class="w">${a[3]}</td></tr>`).join("")}
+      <tr><th>буква</th><th>IPA</th><th>ориентир</th><th>как произносится</th><th>примеры</th></tr>
+      ${ADIAC.map(a => `<tr><td class="g" style="font-size:var(--fs-h2)">${a[0]}</td><td class="c">${a[1]}</td><td style="color:var(--muted)">${a[2]}</td><td>${a[3]}</td><td class="w">${a[4]}</td></tr>`).join("")}
     </table></div>
 
-    <h3>Диграфы: два знака - один звук</h3>
+    <h3>Диграфы и частые сочетания</h3>
+    <p class="lead">Диграф состоит из двух букв и обозначает один звук. <span class="pl">dzi</span> состоит из трёх букв, а <span class="pl">szcz</span> распадается на два диграфа и два звука.</p>
     <div class="scroll"><table class="vt">
-      <tr><th>диграф</th><th>звук</th><th>примеры</th></tr>
-      ${DIGR.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td style="color:var(--muted)">${d[1]}</td><td class="w">${d[2]}</td></tr>`).join("")}
+      <tr><th>диграф</th><th>IPA</th><th>ориентир</th><th>примеры</th></tr>
+      ${DIGR.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td class="c">${d[1]}</td><td style="color:var(--muted)">${d[2]}</td><td class="w">${d[3]}</td></tr>`).join("")}
+    </table></div>
+    <div class="scroll"><table class="vt" style="margin-top:14px">
+      <tr><th>запись</th><th>тип</th><th>IPA</th><th>как читать</th><th>примеры</th></tr>
+      ${LETTER_GROUPS.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td>${d[1]}</td><td class="c">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td><td class="w">${d[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>ż и rz - один и тот же звук.</b> На слух не различить, только по написанию слова. Какую букву когда писать - см. таблицу орфографии ниже.</div>
-    <div class="tip"><b>szcz - это не «щ».</b> Русское «щ» - один долгий мягкий звук, а <span class="pl">szcz</span> - два раздельных твёрдых: ш + ч. Ближе всего к русскому «щ» польское <span class="pl">ść</span>. Оба звука есть в одном слове: <span class="pl">szczęście</span> - начинается на «шч», заканчивается на мягкое «щче». Подставишь «щ» в начало - получится не то слово.</div>
+    <div class="tip"><b><span class="pl">szcz</span> и <span class="pl">ść</span> обозначают по два звука.</b> В <span class="pl">szcz</span> оба твёрдые: <span class="pl">[ʂt͡ʂ]</span>. В <span class="pl">ść</span> оба мягкие: <span class="pl">[ɕt͡ɕ]</span>. Русское щ похоже только на первый мягкий звук <span class="pl">ś [ɕ]</span>, но обычно дольше него. В слове <span class="pl">szczęście</span> начало твёрдое, а сочетание <span class="pl">ść</span> ближе к концу мягкое.</div>
 
-    <h3>Твёрдая / мягкая пара</h3>
-    <p class="lead">Одна и та же мягкая согласная пишется по-разному: перед согласной или на конце слова - значком (<span class="pl">ś, ć, ź, ń, dź</span>), перед гласной - через <span class="pl">i</span>.</p>
+    <h3>Две записи мягкой согласной</h3>
+    <p class="lead">Перед согласной и на конце слова мягкость обозначается диакритикой: <span class="pl">ś, ć, ź, ń, dź</span>. Перед другой гласной пишется <span class="pl">i</span>: в <span class="pl">siostra</span> оно только обозначает мягкость и отдельного слога не образует. Если следующим звуком служит само <span class="pl">i</span>, оно одновременно является гласной и смягчает согласную: <span class="pl">siwy</span>.</p>
     <div class="scroll"><table class="vt">
-      <tr><th>пара</th><th>перед согласной / в конце</th><th>перед гласной</th></tr>
-      ${PALAT.map(p => `<tr><td class="c">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
+      <tr><th>запись</th><th>перед согласной / в конце</th><th>i перед другой гласной</th><th>i как гласная</th></tr>
+      ${PALAT.map(p => `<tr><td class="c">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td><td class="w">${p[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Носовые ą / ę: как реально звучат</h3>
-    <p class="lead">Это не «он/эн», а именно носовой звук - но в разных позициях он меняется почти до неузнаваемости.</p>
+    <p class="lead">У букв <span class="pl">ą</span> и <span class="pl">ę</span> нет одного неизменного чтения. Обычно слышны два последовательных элемента, а точная реализация зависит от следующего звука и позиции в слове.</p>
     <div class="scroll"><table class="vt">
       <tr><th>позиция</th><th>звучит как</th><th>примеры</th></tr>
       ${NASAL.map(n => `<tr><td>${n[0]}</td><td class="c">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
@@ -303,7 +310,7 @@ function renderAlpha(){
     <div class="tip"><b>Мост для русскоязычных.</b> Там, где в польском ą/ę, в русском часто «у» или «я»: после твёрдой согласной - «у» (<span class="pl">ręka</span> - рука, <span class="pl">mąka</span> - мука, <span class="pl">ząb</span> - зуб), после мягкой - «я» (<span class="pl">pięć</span> - пять, <span class="pl">mięso</span> - мясо).</div>
 
     <h3>Звонкие и глухие</h3>
-    <p class="lead">Пары те же, что в русском, и правило то же - но написание их не показывает никогда. Слово пишется как есть, а читается по позиции.</p>
+    <p class="lead">Механизм оглушения и озвончения знаком по русскому, но набор польских звуков шире. Написание сохраняет исходную согласную, а произношение меняется в зависимости от соседних звуков.</p>
     <div class="scroll"><table class="vt">
       <tr><th>звонкий</th><th>глухой</th><th>пример</th></tr>
       ${DZW_PARY.map(d => `<tr><td class="c">${d[0]}</td><td class="c">${d[1]}</td><td class="w">${d[2]}</td></tr>`).join("")}
@@ -312,11 +319,11 @@ function renderAlpha(){
       <tr><th>где</th><th>что происходит</th><th>примеры</th></tr>
       ${DZW_RULES.map(d => `<tr><td class="w">${d[0]}</td><td style="color:var(--muted)">${d[1]}</td><td class="g" style="white-space:normal">${d[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>prz-, trz-, krz- звучат как [пш-], [тш-], [кш-].</b> После глухой согласной <span class="pl">rz</span> оглушается в <span class="pl">sz</span>: <span class="pl">przepraszam</span> [пшепрашам] · <span class="pl">przez</span> [пшес] · <span class="pl">trzy</span> [тшы] · <span class="pl">krzesło</span> [кшэсўо] · <span class="pl">chrzan</span> [хшан]. Это самое частое расхождение написания и звука во всём языке - и начинаются с этих сочетаний десятки бытовых слов.</div>
-    <div class="tip"><b>Русский здесь помогает целиком.</b> «Хлеб» → [хлеп], «лодка» → [лотка], «сделать» → [зделать] - механизм тот же, переносится без переучивания. Единственная новая работа - не дать оглушению попасть на письмо: пишем <span class="pl">chleb, nóż, weź</span>, даже когда слышим глухой.</div>
+    <div class="tip"><b>prz-, trz-, krz- звучат как [пш-], [тш-], [кш-].</b> После глухой согласной <span class="pl">rz</span> оглушается в <span class="pl">sz</span>: <span class="pl">przepraszam</span> [пшепрашам] · <span class="pl">przez</span> [пшес] · <span class="pl">trzy</span> [тшы] · <span class="pl">krzesło</span> [кшэсўо] · <span class="pl">chrzan</span> [хшан]. Эти сочетания встречаются во многих частотных словах.</div>
+    <div class="tip"><b>Русский даёт полезную опору.</b> «Хлеб» → [хлеп], «лодка» → [лотка], «сделать» → [зделать] показывают знакомые типы ассимиляции. В польском важно дополнительно выучить пары <span class="pl">ż / sz, ź / ś, dż / cz, dź / ć</span> и не переносить изменение произношения на письмо: пишем <span class="pl">chleb, nóż, weź</span>, даже когда слышим глухой звук.</div>
 
     <h3>Ударение</h3>
-    <p><b>Основное правило.</b> Всегда предпоследний слог: <span class="pl">${akcent("Polska",["Pol","ska"],2)}, ${akcent("Warszawa",["War","sza","wa"],2)}, ${akcent("kobieta",["ko","bie","ta"],2)}, ${akcent("dobrze",["do","brze"],2)}</span>. Практически без исключений в базовых словах.</p>
+    <p><b>Основное правило.</b> Ударение обычно падает на предпоследний слог: <span class="pl">${akcent("Polska",["Pol","ska"],2)}, ${akcent("Warszawa",["War","sza","wa"],2)}, ${akcent("kobieta",["ko","bie","ta"],2)}, ${akcent("dobrze",["do","brze"],2)}</span>. Большинство базовых слов следует этой модели; частотные исключения собраны ниже.</p>
     <div class="scroll"><table class="vt">
       <tr><th>случай</th><th>ударение</th><th>примеры</th></tr>
       ${STRESS_EXC.map(s => `<tr><td>${s[0]}</td><td class="c">${s[1]}</td><td class="w">${s[2]}</td></tr>`).join("")}
@@ -333,17 +340,17 @@ function renderAlpha(){
       <tr><th>буква</th><th>когда</th><th>примеры</th></tr>
       ${ORTHO_RZ.map(o => `<tr><td class="c">${o[0]}</td><td>${o[1]}</td><td class="w">${o[2]}</td></tr>`).join("")}
     </table></div>
-    <p class="lead">Подсказка от русского: <span class="pl">ż</span> обычно совпадает с русским «ж» (<span class="pl">róża</span> - роза), <span class="pl">rz</span> - там, где в русском мягкое «рь» (<span class="pl">rzeka</span> - река).</p>
+    <p class="lead">Родственное русское слово иногда подсказывает историческое <span class="pl">rz</span>: <span class="pl">rzeka - река, morze - море</span>. Но это не надёжное правило: например, <span class="pl">róża - роза</span> пишется с <span class="pl">ż</span>. Сначала используй польские чередования и позиции из таблицы.</p>
 
     <h3>Правописание: u или ó</h3>
     <div class="scroll"><table class="vt">
       <tr><th>буква</th><th>когда</th><th>примеры</th></tr>
       ${ORTHO_U.map(o => `<tr><td class="c">${o[0]}</td><td>${o[1]}</td><td class="w">${o[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Проверка родственным словом.</b> Как с русским «о/ё»: если в однокоренном слове на этом месте появляется o, e или a - пиши <span class="pl">ó</span>: <span class="pl">mróz</span> (мороз) → <span class="pl">mrozu</span>. Не находишь чередования - скорее всего <span class="pl">u</span>.</div>
+    <div class="tip"><b>Проверка родственным словом.</b> Если в польской форме или родственном польском слове на этом месте появляется <span class="pl">o, e</span> или <span class="pl">a</span>, пиши <span class="pl">ó</span>: <span class="pl">mróz → mrozu, siódmy → siedem, wrócić → wracać</span>. Если чередования нет, не угадывай: частотные слова с непроверяемым <span class="pl">ó</span> нужно запомнить или проверить по словарю.</div>
 
     <h3>Прописная буква</h3>
-    <p class="lead">С 1 января 2026 года часть правил изменилась - ниже действующая норма. Расхождение с русским остаётся в одном месте, и оно частотное.</p>
+    <p class="lead">С 1 января 2026 года часть правил изменилась - ниже действующая норма. Для русскоязычного ученика особенно важны названия жителей, объектов городского пространства и вежливые обращения.</p>
     <div class="scroll"><table class="vt">
       <tr><th>с большой</th><th>примеры</th></tr>
       ${WIELKA_D.map(w => `<tr><td class="w" style="white-space:normal">${w[0]}</td><td class="g" style="white-space:normal">${w[1]}</td></tr>`).join("")}
@@ -354,7 +361,7 @@ function renderAlpha(){
     </table></div>
     <div class="tip"><b>Главная ловушка: <span class="pl">Polak</span> с большой, <span class="pl">polski</span> и <span class="pl">po polsku</span> с маленькой.</b> В русском «поляк» с маленькой, «польский» тоже - то есть расходится только существительное. <span class="pl">Jestem Polakiem, mówię po polsku</span>: в одной фразе обе буквы разные.</div>
     <div class="tip"><b>Что изменилось с 1 января 2026.</b> Жители городов, районов и деревень теперь пишутся <b>с большой</b>: <span class="pl">Warszawianin, Mokotowianin, Zakopianin</span> - раньше было с маленькой. Родовое слово в названиях городских объектов тоже поднялось: <span class="pl">Plac Zbawiciela, Aleja Róż, Park Kościuszki</span>. Единственное исключение - <span class="pl">ulica</span>, она осталась строчной: <span class="pl">ulica Długa</span>. В книгах и вывесках, изданных раньше, встретится старое написание.</div>
-    <div class="tip"><b><span class="pl">Pan / Pani / Państwo</span> с большой только в переписке.</b> <span class="pl">Szanowna Pani, dziękuję Pani za wiadomość</span> - это вежливость, а не правило орфографии. В обычном тексте с маленькой: <span class="pl">ten pan czeka od godziny</span>. То же с <span class="pl">Ty, Ciebie, Tobie, Wasz</span> в письме.</div>
+    <div class="tip"><b><span class="pl">Pan / Pani / Państwo</span> пишутся с большой при прямом письменном обращении к адресату.</b> <span class="pl">Szanowna Pani, dziękuję Pani za wiadomość</span> выражает вежливость. В обычном повествовании нужна строчная: <span class="pl">ten pan czeka od godziny</span>. То же относится к <span class="pl">Ty, Ciebie, Tobie, Wasz</span> в письмах и других текстах, прямо обращённых к читателю.</div>
   </div>${topicPracticeHTML(ALPHA_PRACTICE, "alphabet")}`;
 }
 
