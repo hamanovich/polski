@@ -173,7 +173,7 @@ function form(str){
 }
 function board(rows){
   return `<div class="board">` + rows.map(r =>
-    `<div class="brow"><div class="blabel">${r.l}</div><div>
+    `<div class="brow"${r.rowRef ? ` data-h="${r.rowRef}"` : ""}><div class="blabel">${r.l}</div><div>
       <div class="forms">${r.f.map(x =>
         `<div class="form"><span class="from">${x.a||""}</span><span class="arr">${x.a?"→":""}</span><span class="to">${form(x.b)}</span></div>`
       ).join("")}</div>
@@ -756,7 +756,7 @@ function vTryby(){
     <div class="tip"><b>Род обязателен, как в прошедшем времени.</b> Мужчина говорит <span class="pl">powinienem</span>, женщина - <span class="pl">powinnam</span>. И ударение то же, что в прошедшем времени: <span class="pl">${akcent("powinniśmy",["po","win","ni","śmy"],3)}</span>, <span class="pl">${akcent("powinniście",["po","win","ni","ście"],3)}</span> - третий слог от конца.</div>
 
     <h3>powinien в прошедшем</h3>
-    <p class="lead">Добавляется <span class="pl">był / była / byli</span> - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. В разговоре часто обходятся одной формой настоящего, но письменная норма требует связки.</p>
+    <p class="lead">Добавляется <span class="pl">był / była / byli</span> - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. Для однозначной передачи прошлого используют связку, особенно в письменной речи; в разговоре прошлый смысл часто выражает одна форма настоящего вместе с контекстом.</p>
     <table>
       ${POWINIEN_PAST.map(p => `<tr><td style="width:44%" class="w">${p[0]}</td><td>${p[1]}</td></tr>`).join("")}
     </table>
@@ -987,7 +987,9 @@ function trainerNouns(){
       questions.push({
         c:item.id, n:number, g:group.l,
         l:cell.a, f:cell.b.replace(/\|/g, ""),
-        r:group.n
+        r:group.n,
+        ref:group.ref ? `#${item.id}/${number}/~${group.ref}` : "",
+        refLabel:group.refLabel || ""
       });
     }
   return questions;
@@ -1016,7 +1018,7 @@ function trainerAdjectives(){
     questions.push({k:"degree", g:"m", l:row[0], t:"степень сравнения", d:"превосходная", a:[trainSuperlative(comparative)]});
   }
   for(const row of ADJ){
-    if(row[0] === "Mianownik") continue;
+    if(["Mianownik", "Wołacz"].includes(row[0])) continue;
     TRAIN_ADJ_COLUMNS.forEach(([gender, label], column) => {
       questions.push({
         k:"case", g:gender, l:"dobry",
@@ -1179,7 +1181,7 @@ function renderNum(){
       ${LICZ_GRUPA.map(l => `<tr><td class="c">${l[0]}</td><td class="w" style="white-space:normal">${l[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${l[2]}</td><td class="g">${l[3]}</td><td class="w" style="white-space:normal">${l[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Прилагательное согласуется с существительным, а не с числительным.</b> При числительных на <span class="pl">5-9, 0</span> и при <span class="pl">11-14</span> вся группа целиком уходит в Dopełniacz множественного: <span class="pl">pięć <b>dużych domów</b></span>, <span class="pl">dziesięć <b>nowych samochodów</b></span>, <span class="pl">pięć <b>dużych książek</b></span>. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.</div>
-    <div class="tip"><b>Самое трудное место - пассив и прошедшее при числительных на 5-9, 0 и 11-14.</b> Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: <span class="pl">Pięć dużych domów <b>zostało sprzedanych</b></span>. Сравни с 2-4, где всё обычное: <span class="pl">Dwa duże domy <b>zostały sprzedane</b></span>. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.</div>
+    <div class="tip"><b>Самое трудное место - пассив и прошедшее при числительных, которые требуют Dopełniacz множественного, например 5, 11, 21 и 25.</b> Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: <span class="pl">Pięć dużych domów <b>zostało sprzedanych</b></span>. Сравни с 2-4, где всё обычное: <span class="pl">Dwa duże domy <b>zostały sprzedane</b></span>. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.</div>
     <div class="tip"><b>Женский род ничем не отличается.</b> <span class="pl">dwie duże książki są</span> · <span class="pl">pięć dużych książek jest</span>. Род виден только у <span class="pl">dwa / dwie</span>, дальше механика та же.</div>
 
     <h3>Склонение</h3>
@@ -1632,7 +1634,7 @@ function renderAdj(){
     </table>
     <p class="lead" style="margin-top:10px">Логика та же, что в существительных: r → rz, k → c, g → dz, ł → l, d → dzi, ony → eni.</p>
     <h3>Степени сравнения: как образуется</h3>
-    <p class="lead">Суффикс выбирается по тому, чем кончается основа. Превосходная - всегда просто <span class="pl">naj-</span> перед сравнительной.</p>
+    <p class="lead">Суффикс выбирается по тому, чем кончается основа. В синтетической модели превосходная образуется добавлением <span class="pl">naj-</span> к сравнительной: <span class="pl">szybszy → najszybszy</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>суффикс</th><th>когда</th><th>примеры</th></tr>
       ${STOPN.map(s => `<tr><td class="c">${s[0]}</td><td style="color:var(--muted);white-space:normal">${s[1]}</td><td class="g" style="white-space:normal">${s[2]}</td></tr>`).join("")}
@@ -1735,7 +1737,7 @@ function renderPron(){
       ${PRON.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
     <ol class="pit" style="margin-top:14px">
-      <li><b>После предлога выбираем форму с начальным <span class="pl">n-</span>.</b> Сравни: <span class="pl">widzę go / patrzę na niego</span>, <span class="pl">daję jej / mówię o niej</span>, <span class="pl">widzę je / patrzę na nie</span>. К постпредложным относятся также <span class="pl">niemu, nim, nią, nich, nimi</span>. В творительном <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n-</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
+      <li><b>У местоимений третьего лица после предлога выбираем форму с начальным <span class="pl">n-</span>.</b> Сравни: <span class="pl">widzę go / patrzę na niego</span>, <span class="pl">daję jej / mówię o niej</span>, <span class="pl">widzę je / patrzę na nie</span>. К постпредложным относятся также <span class="pl">niemu, nim, nią, nich, nimi</span>. В творительном <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n-</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
       <li><b>Короткие формы <span class="pl">go, mu, cię, ci, mi</span> безударные.</b> Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: <span class="pl">Mnie to nie interesuje</span>.</li>
       <li><b>Личное местоимение обычно опускается.</b> Окончание глагола уже содержит лицо: <span class="pl">idę</span>, а не <span class="pl">ja idę</span>. Постоянное <span class="pl">ja</span> звучит либо как нажим, либо как речь иностранца.</li>
       <li><b>В нейтрально-вежливом обращении нужны <span class="pl">pan / pani</span> и третье лицо.</b> <span class="pl">Czy pan ma paragon?</span> Русскому и белорусскому вежливому «вы» соответствует не польское <span class="pl">wy</span>, а <span class="pl">pan / pani</span>. На <span class="pl">ty</span> переходят по взаимной договорённости или по принятой в конкретной среде норме.</li>
@@ -1782,7 +1784,7 @@ function renderPron(){
     </table></div>
     <div class="tip"><b>tę или tą.</b> Нейтральная и письменная норма винительного - <span class="pl">tę kawę</span>. В разговорной речи часто встречается <span class="pl">tą</span>, совпадающее с формой творительного.</div>
     <h3>ten · tamten · taki</h3>
-    <p class="lead"><span class="pl">tamten</span> склоняется точно как <span class="pl">ten</span> (<span class="pl">tamtego, tamtemu, tamtym, tamtą</span>), <span class="pl">taki</span> - как прилагательное <span class="pl">dobry</span> (<span class="pl">takiego, takiemu, takim, taką</span>). Отдельных парадигм учить не надо.</p>
+    <p class="lead"><span class="pl">Tamten</span> в основном следует той же указательной модели, но в Biernik женского рода формы расходятся: <span class="pl">tę kobietę</span>, но <span class="pl">tamtą kobietę</span>. В остальных частотных косвенных формах: <span class="pl">tamtego, tamtemu, tamtym</span>. <span class="pl">Taki</span> склоняется как прилагательное <span class="pl">dobry</span>: <span class="pl">takiego, takiemu, takim, taką</span>.</p>
     <div class="scroll"><table>
       <tr><th></th><th>этот</th><th>тот</th><th>такой</th></tr>
       ${TAMTEN.map(r => `<tr><td style="color:var(--muted)">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
@@ -2003,7 +2005,7 @@ function renderTalk(){
       <article class="talk-builder" data-talk-builder><b>1. Что происходит сегодня</b><div class="talk-fields"><label><span>когда</span><select><option>Dzisiaj</option><option>W weekend</option><option>Ostatnio</option></select></label><label><span>что делаю</span><select><option>uczę się polskiego</option><option>pracuję w domu</option><option>spotykam się ze znajomymi</option></select></label></div><output class="talk-example" aria-live="polite">Dzisiaj uczę się polskiego.</output></article>
       <article class="talk-builder" data-talk-builder><b>2. Что планируешь</b><div class="talk-fields"><label><span>когда</span><select><option>Jutro</option><option>W tym tygodniu</option><option>W weekend</option></select></label><label><span>план</span><select><option>chcę odpocząć</option><option>planuję pójść na spacer</option><option>chcę spotkać się z przyjaciółmi</option></select></label></div><output class="talk-example" aria-live="polite">Jutro chcę odpocząć.</output></article>
       <article class="talk-builder" data-talk-builder><b>3. Что думаешь</b><div class="talk-fields"><label><span>начало</span><select><option>Moim zdaniem</option><option>Myślę, że</option><option>Wydaje mi się, że</option></select></label><label><span>мнение</span><select><option>to dobry pomysł</option><option>ten film jest ciekawy</option><option>to miejsce jest bardzo miłe</option></select></label></div><output class="talk-example" aria-live="polite">Moim zdaniem to dobry pomysł.</output></article>
-      <article class="talk-builder" data-talk-builder><b>4. Как себя чувствуешь</b><div class="talk-fields"><label><span>состояние</span><select><option>Nie mam dziś dużo energii</option><option>Czuję się bardzo dobrze</option><option>Mam dziś dobry humor</option></select></label><label><span>что дальше</span><select><option>i dlatego chcę odpocząć</option><option>i dlatego zostaję w domu</option><option value=", ale chcę jeszcze trochę się uczyć">ale chcę jeszcze trochę się uczyć</option></select></label></div><output class="talk-example" aria-live="polite">Nie mam dziś dużo energii i dlatego chcę odpocząć.</output></article>
+      <article class="talk-builder" data-talk-builder><b>4. Как себя чувствуешь</b><div class="talk-fields"><label><span>состояние</span><select><option>Nie mam dziś dużo energii</option><option>Czuję się bardzo dobrze</option><option>Mam dziś dobry humor</option></select></label><label><span>что дальше</span><select><option>i wolę zostać w domu</option><option>i mam dziś sporo planów</option><option value=", ale chcę jeszcze trochę się uczyć">ale chcę jeszcze trochę się uczyć</option></select></label></div><output class="talk-example" aria-live="polite">Nie mam dziś dużo energii i wolę zostać w domu.</output></article>
     </div>
     <div class="tip"><b>Мини-задание.</b> Возьми любой шаблон и произнеси три варианта о себе. Не ищи идеальную грамматику во время речи: сначала закончи мысль, потом проверь один непонятный момент в справочнике.</div>
 
@@ -2129,7 +2131,7 @@ document.addEventListener("focusin", e => {
 function setHeadH(){
   const hdr = document.querySelector("header"), nav = $("#navwrap");
   const off = nav.getBoundingClientRect().top - hdr.getBoundingClientRect().top;
-  const narrow = matchMedia("(max-width:700px)").matches;
+  const narrow = matchMedia("(max-width:767px)").matches;
   const st = document.documentElement.style;
   st.setProperty("--brand-h", (narrow ? off : 0) + "px");
   st.setProperty("--head-h", (narrow ? hdr.offsetHeight - off : hdr.offsetHeight) + "px");

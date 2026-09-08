@@ -144,3 +144,6 @@
 - [WSJP PAN: nic](https://wsjp.pl/haslo/podglad/6110/nic/4712167).
 - [Poradnia Językowa UW: podwójne zaprzeczenie](https://poradniajezykowa.uw.edu.pl/porady/do-zabrania-glosu-zglosila-sie-zadna-wiecej-osoba/).
 - [WSJP PAN: operator negacji nie](https://wsjp.pl/haslo/podglad/30468/nie/4727068/nie-przyszedl-nie-ona).
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены родительный при отрицании, накопление отрицаний, `ani`, отрицательные местоимения и наречия, отрицательный инфинитив и все 20 упражнений. Написание `nie` дополнительно согласовано с исправленным блоком в разделе «Частицы». Новых P0, P1 и P2 не найдено.

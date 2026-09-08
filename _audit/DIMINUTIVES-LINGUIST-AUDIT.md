@@ -364,3 +364,6 @@ Obserwatorium UW прямо описывает этот процесс: умен
 [15]: https://wsjp.pl/haslo/podglad/94309/kocie/5233227/kota-domowego?utm_source=chatgpt.com "kocię (kota domowego)"
 [16]: https://cejsh.icm.edu.pl/cejsh/element/bwmeta1.element.ojs-doi-10_15290_lingdid_2022_26_04?utm_source=chatgpt.com "Tradycja i nowatorstwo w tworzeniu zdrobnień imion dzieci w świetle badań ankietowych - Linguodidactica - Volume 26 (2022) - CEJSH - Yadda"
 [17]: https://wsjp.pl/haslo/podglad/9966/torebka/910462/opakowanie?utm_source=chatgpt.com "torebka (opakowanie) - Wielki słownik języka polskiego PAN"
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены продуктивные модели, чередования, семантика размера и оценки, прагматика, регистр, лексикализованные формы и все 20 упражнений. Примеры не обещают полностью механического образования и различают нейтральность, ласковость, фамильярность и иронию. Новых P0, P1 и P2 не найдено.

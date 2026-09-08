@@ -424,7 +424,7 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
 .talk-builder output{display:block;margin-top:auto;padding-top:2px}
 .talk-situation{font-size:var(--fs-micro)!important;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .talk-prompt{color:var(--muted)}
-@media (max-width:700px){.talk-builders,.talk-dialogues{grid-template-columns:1fr}}
+@media (max-width:767px){.talk-builders,.talk-dialogues{grid-template-columns:1fr}}
 
 #sbox{position:relative;flex:0 1 300px;min-width:200px}
 #gsearch{
@@ -453,7 +453,7 @@ td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:
 .snone{padding:12px;font-size:var(--fs-note);color:var(--muted)}
 .hit{background:var(--tip) !important;box-shadow:inset 3px 0 0 var(--alt)}
 .hit td:first-child{padding-left:8px}
-@media (max-width:700px){
+@media (max-width:767px){
   .brand{align-items:center}
   .brand h1{order:1;flex:1 1 auto}
   #theme{order:2}
@@ -682,10 +682,12 @@ footer{margin:40px auto 0;font-size:14px}
 :focus-visible{outline:3px solid color-mix(in srgb,var(--alt) 70%,transparent);outline-offset:3px}
 @media (prefers-reduced-motion:no-preference){a,button,input,select{transition:color .16s ease,background-color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .12s ease}.panel{animation:page-in .32s ease-out both}@keyframes page-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto !important;animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
-@media (max-width:700px){
+@media (max-width:767px){
   html{scroll-padding-top:11rem}.wrap{padding:0 14px 34px}.head-in{padding:12px 14px 0}.brand h1,.brand .site-title{font-size:21px}.brand span{font-size:12px}
   .brand-subtitle{display:none}
   header{top:0}
+  .js header{transition:transform .2s ease}
+  .js header.header-hidden{transform:translateY(calc(-100% - 1px));will-change:transform}
   #navwrap{margin-top:10px}#navall{border-radius:8px}.panel{margin-top:18px;padding:26px 20px;border-radius:12px;box-shadow:0 1px 0 var(--line)}
   h2,.page-title{font-size:clamp(2rem,11vw,2.7rem);line-height:1.05;margin-bottom:15px}h3{font-size:1.3rem;margin-top:34px}
   .sec > .page-title{margin-top:18px}
@@ -723,6 +725,9 @@ footer{margin:40px auto 0;font-size:14px}
 .trainer .trainer-feedback{min-height:26px;margin:14px 0 0;font-size:var(--fs-note)}
 .trainer .trainer-feedback.is-correct{color:var(--ok)}
 .trainer .trainer-feedback.is-wrong{color:var(--end)}
+.trainer .trainer-reference{color:inherit;font-weight:650;text-underline-offset:3px}
+.trainer .trainer-reference:hover{color:var(--ui)}
+.trainer .trainer-reference:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 .trainer .trainer-empty{margin:20px 0 0;color:var(--muted);font-size:var(--fs-note)}
 .trainer .trainer-keys{display:flex;gap:6px;flex-wrap:wrap;flex:1 1 100%;margin-top:2px}
 .trainer .trainer-key{font:inherit;font-family:var(--serif);min-width:36px;padding:5px 9px;color:var(--ink);background:var(--panel);border:1px solid var(--line-ui);border-radius:8px;cursor:pointer;line-height:1.2}
@@ -885,7 +890,7 @@ body.plan-page ul.plain{list-style:none;padding:0;margin:0}
 body.plan-page ol.err{padding-left:22px;max-width:var(--measure)}
 body.plan-page ol.err li{padding:6px 0}
 body.plan-page footer{margin:0;max-width:none}
-@media (max-width:700px){
+@media (max-width:767px){
   body.plan-page .brand span{display:none}
 }
 
@@ -900,7 +905,7 @@ body.plan-page footer{margin:0;max-width:none}
   body.plan-page article.day{padding:14px}
 }
 
-@media (max-width:700px){
+@media (max-width:767px){
 
   #navmenu{
     position:fixed;top:var(--header-h,140px);left:0;right:0;bottom:0;
@@ -918,7 +923,7 @@ body.plan-page footer{margin:0;max-width:none}
   .pron-possesive-table{margin-top:12px}
 }
 
-@media (max-width:700px){
+@media (max-width:767px){
   #gsearch,.src,.talk-fields select,input,select,textarea{font-size:16px}
 }
 
@@ -936,7 +941,7 @@ body.plan-page footer{margin:0;max-width:none}
 .totop:hover{color:var(--end);border-color:var(--end)}
 .totop:focus-visible{outline:2px solid var(--ui);outline-offset:3px}
 html:not(.js) .totop{display:none}
-@media (max-width:700px){
+@media (max-width:767px){
   .totop{right:14px;bottom:14px;width:40px;height:40px}
 }
 @media (prefers-reduced-motion:reduce){

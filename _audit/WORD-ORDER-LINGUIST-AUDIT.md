@@ -283,3 +283,6 @@ WSJP PAN показывает, что `go` является также форм�
 [2]: https://poradniajezykowa.uw.edu.pl/porady/dlugie-i-krotkie-formy-zaimkow/ "https://poradniajezykowa.uw.edu.pl/porady/dlugie-i-krotkie-formy-zaimkow/"
 [3]: https://rcin.org.pl/ijp/Content/242566/Szyk%20jednostek.pdf "https://rcin.org.pl/ijp/Content/242566/Szyk%20jednostek.pdf"
 [4]: https://wsjp.pl/haslo/podglad/53688/on/5155748/to-on "https://wsjp.pl/haslo/podglad/53688/on/5155748/to-on"
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены нейтральный порядок, тема и новое сообщение, клитики, позиция `się`, отрицание и порядок в вопросах; проверены все 20 упражнений. Формулировки описывают тенденции отдельно от жёстких ограничений и не выдают информационную структуру за фиксированный шаблон. Новых P0, P1 и P2 не найдено.

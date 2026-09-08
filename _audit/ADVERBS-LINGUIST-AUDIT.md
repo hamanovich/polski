@@ -305,3 +305,6 @@
 - [WSJP PAN: blisko](https://wsjp.pl/haslo/podglad/7425/blisko/5098933/wspolpracowac) и [daleko](https://wsjp.pl/haslo/podglad/18603/daleko).
 - [WSJP PAN: rano](https://wsjp.pl/haslo/podglad/31546/rano/4026891/na-poczatku-dnia) и [wcześnie](https://wsjp.pl/haslo/podglad/29535/wczesnie/3101576/blisko-poczatku).
 - [WSJP PAN: zewnątrz](https://wsjp.pl/haslo/podglad/60360/zewnatrz).
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены образование на `-o / -e`, синтетические и аналитические степени сравнения, нерегулярные формы, непроизводные наречия, ложные друзья и все 20 упражнений. В оглавлении исправлено слишком широкое обещание, будто все наречия образуются от прилагательных; сам раздел уже давал корректную картину. Новых P0, P1 и P2 в секции не найдено.

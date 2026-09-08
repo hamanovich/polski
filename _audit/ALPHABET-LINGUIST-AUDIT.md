@@ -210,3 +210,6 @@
 - [ZPE: польский алфавит и различие буквы и звука](https://zpe.gov.pl/a/nie-trac-gruntu-pod-nogami-nie-myl-glosek-z-literami/D10I8pLqZ).
 - [WSJP PAN: quiz / kwiz](https://wsjp.pl/haslo/podglad/10573/quiz).
 - [Силезский университет: Głoski polskie. Przewodnik fonetyczny](https://www.sjikp.us.edu.pl/pl/publikacje/publikacje-szkoly-jezyka-i-kultury-polskiej-uniwersytetu-slaskiego/podreczniki-dodatkowe-i-zbiory-cwiczen/gloski-polskie-przewodnik-fonetyczny-dla-cudzoziemcow-i-nauczycieli-uczacych-jezyka-polskiego-jako-obcego/).
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены 32 буквы, девять букв с диакритикой, семь диграфов, сочетания `dzi` и `szcz`, носовые, оглушение и озвончение, ударение, орфографические блоки и все 20 упражнений. Проверены пересечения с чередованиями и новыми правилами прописных букв 2026 года. Новых P0, P1 и P2 не найдено; прежние решения остаются действующими.

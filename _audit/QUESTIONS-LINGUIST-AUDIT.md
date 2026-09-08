@@ -384,3 +384,6 @@
 - [ZPE: вопросы ile / ilu](https://zpe.gov.pl/watek/LPCgxyBw7p/137/a/liczebniki---slowa-ktore-sie-licza/D10Jk3XrL).
 - [WSJP PAN: czyj](https://wsjp.pl/haslo/podglad/9111/czyj/773518/czyj-to-teren).
 - [Poradnia Językowa UW: jaki czy który](https://poradniajezykowa.uw.edu.pl/porady/jaki-czy-ktory/).
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены общие, альтернативные, частные, косвенные и относительные вопросы, парадигмы `kto / co / który / czyj`, различия `jaki / który`, `ile / ilu`, предлоги и все 20 упражнений. Все задания по-прежнему содержат по три варианта и ровно заявленный нормативный ответ. Новых P0, P1 и P2 не найдено.

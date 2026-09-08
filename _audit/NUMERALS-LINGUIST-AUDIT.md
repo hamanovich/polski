@@ -235,3 +235,10 @@ WSJP PAN без стилистического квалификатора соо
 - [Poradnia Językowa UW: czworgu dziadków czy czworgu dziadkom?](https://poradniajezykowa.uw.edu.pl/porady/czworgu-dziadkow-czy-czworgu-dziadkom/).
 - [Narodowe Centrum Kultury: PROCENT](https://nck.pl/projekty-kulturalne/projekty/ojczysty-dodaj-do-ulubionych/ciekawostki-jezykowe/procent).
 - [WSJP PAN: ranek](https://wsjp.pl/haslo/podglad/25418/ranek) и [rano](https://wsjp.pl/haslo/podglad/31546/rano/4026891/na-poczatku-dnia).
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Сверены количественные, порядковые, мужско-личные, собирательные и дробные числительные, 20 упражнений и пересечения с падежами и глагольным согласованием.
+
+Исправлен один пункт P1: заголовок о среднем роде единственного числа перечислял только окончания `5-9`, `0` и `11-14`, хотя соседнее правило уже правильно включало `21, 25` и другие числа, требующие Dopełniacz множественного. Новая формулировка определяет класс по управлению и приводит `5, 11, 21, 25`. Статус: **подтверждено источником**. Исключение составляют `2, 3, 4` и составные числительные с ними в конце; остальные количественные группы требуют единственного числа сказуемого: [Poradnia Językowa UW](https://poradniajezykowa.uw.edu.pl/porady/czerwony-kapturek-30-stopni-ciepla/).
+
+Открытых P0, P1 и P2 нет.

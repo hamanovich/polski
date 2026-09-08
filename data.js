@@ -133,7 +133,7 @@ const CASES = [
     {l:"муж. на -a", f:[{a:"",b:"koleg|a"},{a:"",b:"mężczyzn|a"},{a:"",b:"kierowc|a"}], n:"в ед. ч. склоняются по-женски, во мн. ч. - по мужско-личному; согласование всегда мужское: ten kolega, ci koledzy"}
   ],
   pl:[
-    {l:"мужско-личный", f:[{a:"student",b:"studen|c|i"},{a:"sąsiad",b:"sąsie|dzi|"},{a:"Polak",b:"Pola|c|y"},{a:"lekarz",b:"lekarz|e"},{a:"pan",b:"pan|owie"}], n:"только про мужчин: -i / -y / -e / -owie, почти всегда с чередованием"},
+    {l:"мужско-личный", f:[{a:"student",b:"studen|c|i"},{a:"sąsiad",b:"sąsie|dzi|"},{a:"Polak",b:"Pola|c|y"},{a:"lekarz",b:"lekarz|e"},{a:"pan",b:"pan|owie"}], n:"мужские названия лиц и смешанные группы людей: -i / -y / -e / -owie, часто с чередованием"},
     {l:"не-мужско-личный", f:[{a:"bilet",b:"bilet|y"},{a:"kot",b:"kot|y"},{a:"ogórek",b:"ogórk|i"},{a:"kawa",b:"kaw|y"},{a:"książka",b:"książk|i"},{a:"ulica",b:"ulic|e"}], n:"-y после твёрдых · -i после k, g · -e после мягких и c, l, j"},
     {l:"средний", f:[{a:"piwo",b:"piw|a"},{a:"okno",b:"okn|a"},{a:"mieszkanie",b:"mieszkani|a"}], n:"-a"}
   ],
@@ -176,13 +176,13 @@ const CASES = [
 },
 {
   id:"dop", name:"Dopełniacz", ru:"Родительный", q:"kogo? czego?",
-  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После большинства количественных числительных: <span class='pl'>pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów</span>. Составные числительные, последний член которых <span class='pl'>dwa, trzy, cztery</span> (кроме 12-14), требуют именительного множественного: <span class='pl'>dwadzieścia dwa bilety</span>. Также родительный нужен после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>.","Часть вместо целого: <span class='pl'>kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy</span> - против <span class='pl'>kup chleb</span> (конкретную буханку). Русская модель «купи хлеба / купи хлеб» переносится один в один."],
+  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После большинства количественных числительных: <span class='pl'>pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów</span>. Составные числительные, последний член которых <span class='pl'>dwa, trzy, cztery</span> (кроме 12-14), требуют именительного множественного: <span class='pl'>dwadzieścia dwa bilety</span>. Также родительный нужен после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>.","Часть вместо целого: <span class='pl'>kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy</span> - против <span class='pl'>kup chleb</span> (конкретную буханку). Здесь русская модель «купи хлеба / купи хлеб» часто даёт полезную опору."],
   preps:"do, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast",
   sg:[
-    {l:"муж. одушевл.", f:[{a:"pan",b:"pan|a"},{a:"brat",b:"brat|a"},{a:"pies",b:"ps|a"}], n:"-a, без вариантов"},
-    {l:"муж. неодуш. → -a: частые группы", f:[{a:"chleb",b:"chleb|a"},{a:"ser",b:"ser|a"},{a:"Kraków",b:"Krak|ow|a"},{a:"styczeń",b:"styczni|a"}], n:"части тела, инструменты и посуда, месяцы, польские города - но это тенденции, не полный алгоритм"},
-    {l:"муж. неодуш. → -u: частые группы", f:[{a:"czas",b:"czas|u"},{a:"cukier",b:"cukr|u"},{a:"tłum",b:"tłum|u"},{a:"autobus",b:"autobus|u"},{a:"Londyn",b:"Londyn|u"}], n:"абстрактное, вещества, собирательное, многие заимствования и иностранные города"},
-    {l:"частые формы, которые учим целиком", f:[{a:"sklep",b:"sklep|u"},{a:"dom",b:"dom|u"},{a:"bank",b:"bank|u"},{a:"sok",b:"sok|u"},{a:"telefon",b:"telefon|u"}], n:"у неодушевлённых нет надёжного правила: запоминай do sklepu, do domu, bez telefonu"},
+    {l:"муж. одушевл.", f:[{a:"pan",b:"pan|a"},{a:"brat",b:"brat|a"},{a:"pies",b:"ps|a"}], n:"обычно -a; редкие исключения учат по словарю", ref:"подводные-камни", refLabel:"Открыть пояснение"},
+    {l:"муж. неодуш.: ориентиры для -a", f:[{a:"chleb",b:"chleb|a"},{a:"ser",b:"ser|a"},{a:"Kraków",b:"Krak|ow|a"},{a:"styczeń",b:"styczni|a"}], n:"-a часто встречается у частей тела, инструментов, посуды, мер, месяцев и польских городов; chleb, ser и другие отдельные слова учи готовой парой", ref:"dopelnienie-a", rowRef:"dopelnienie-a", refLabel:"Открыть ориентир"},
+    {l:"муж. неодуш.: ориентиры для -u", f:[{a:"czas",b:"czas|u"},{a:"cukier",b:"cukr|u"},{a:"tłum",b:"tłum|u"},{a:"autobus",b:"autobus|u"},{a:"Londyn",b:"Londyn|u"}], n:"-u часто встречается у абстрактных, вещественных и собирательных слов, многих заимствований и иностранных городов; это ориентир, не правило", ref:"dopelnienie-u", rowRef:"dopelnienie-u", refLabel:"Открыть ориентир"},
+    {l:"слова, форму которых учим целиком", f:[{a:"sklep",b:"sklep|u"},{a:"dom",b:"dom|u"},{a:"bank",b:"bank|u"},{a:"sok",b:"sok|u"},{a:"telefon",b:"telefon|u"}], n:"надёжного алгоритма нет: запоминай слово вместе с формой - do sklepu, do domu, bez telefonu", ref:"dopelnienie-a-u", rowRef:"dopelnienie-a-u", refLabel:"Открыть список"},
     {l:"женский", f:[{a:"kawa",b:"kaw|y"},{a:"woda",b:"wod|y"},{a:"książka",b:"książk|i"},{a:"noc",b:"noc|y"},{a:"sól",b:"sol|i"}], n:"-i после k, g и мягких · -y после остальных"},
     {l:"средний", f:[{a:"mleko",b:"mlek|a"},{a:"piwo",b:"piw|a"},{a:"okno",b:"okn|a"}], n:"-a"}
   ],
@@ -193,7 +193,7 @@ const CASES = [
   ],
   agree:[["ten dobry chleb","tego dobrego chleba"],["ta dobra kawa","tej dobrej kawy"],["to dobre piwo","tego dobrego piwa"],["мн. любое","tych dobrych ludzi / tych dobrych kaw"]],
   exc:[["ręka","rąk","мн. ч."],["rok","lat","мн. ч."],["człowiek","ludzi","мн. ч."],["pieniądze","pieniędzy",""],["dziecko","dzieci",""],["tydzień","tygodnia",""],["muzeum","muzeum / muzeów","ед. ч. не склоняется, мн. - склоняется"]]  ,
-  pit:["<b>Как выбрать форму.</b> Сначала род: женский обычно получает <span class='pl'>-y/-i</span>, средний - <span class='pl'>-a</span>, мужское одушевлённое - всегда <span class='pl'>-a</span>. Настоящая развилка остаётся только у мужских неодушевлённых: там возможны <span class='pl'>-a</span> и <span class='pl'>-u</span>, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: <span class='pl'>do sklepu, bez chleba</span>.",
+  pit:["<b>Как выбрать форму.</b> Сначала род: женский обычно получает <span class='pl'>-y/-i</span>, средний - <span class='pl'>-a</span>, мужское одушевлённое обычно - <span class='pl'>-a</span>. Редкие исключения вроде <span class='pl'>wołu</span> проверяй по словарю. Главная развилка остаётся у мужских неодушевлённых: там возможны <span class='pl'>-a</span> и <span class='pl'>-u</span>, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: <span class='pl'>do sklepu, bez chleba</span>.",
   "<b>-a или -u у неодушевлённых.</b> <span class='pl'>-a</span> часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: <span class='pl'>nosa, noża, talerza, marca, Krakowa</span>. <span class='pl'>-u</span> часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: <span class='pl'>czasu, cukru, tłumu, autobusu, Londynu</span>. Это ориентиры, а не жёсткое правило.",
   "<b>Отрицание - всегда, даже там, где русский держит винительный.</b> «Не вижу Анну» → <span class='pl'>nie widzę Anny</span>. «Не люблю кофе» → <span class='pl'>nie lubię kawy</span>.",
   "<b>Беглая гласная во множественном.</b> <span class='pl'>książka → książek</span>, <span class='pl'>okno → okien</span>, <span class='pl'>matka → matek</span>. Окончания нет, зато в основу влезает <span class='pl'>e</span>.",
@@ -208,7 +208,7 @@ const CASES = [
   preps:"dzięki, przeciwko, wbrew, ku",
   sg:[
     {l:"мужской", f:[{a:"student",b:"student|owi"},{a:"lekarz",b:"lekarz|owi"},{a:"sąsiad",b:"sąsiad|owi"}], n:"-owi - основной вариант"},
-    {l:"мужской: частые формы на -u", f:[{a:"pan",b:"pan|u"},{a:"brat",b:"brat|u"},{a:"ojciec",b:"ojc|u"},{a:"chłopiec",b:"chłopc|u"},{a:"pies",b:"ps|u"},{a:"kot",b:"kot|u"},{a:"świat",b:"świat|u"},{a:"Bóg",b:"Bog|u"}], n:"частая группа; учи готовые формы, это не исчерпывающий список"},
+    {l:"мужской: частые формы на -u", f:[{a:"pan",b:"pan|u"},{a:"brat",b:"brat|u"},{a:"ojciec",b:"ojc|u"},{a:"chłopiec",b:"chłopc|u"},{a:"pies",b:"ps|u"},{a:"kot",b:"kot|u"},{a:"świat",b:"świat|u"},{a:"Bóg",b:"Bog|u"}], n:"частая группа; учи готовые формы, это не исчерпывающий список", ref:"celownik-u", rowRef:"celownik-u", refLabel:"Открыть список"},
     {l:"женский: твёрдая основа → -e", f:[{a:"kobieta",b:"kobie|ci|e"},{a:"siostra",b:"sios|trz|e"},{a:"mama",b:"ma|mi|e"},{a:"koleżanka",b:"koleżan|c|e"}], n:"с чередованием согласной; форма совпадает с предложным"},
     {l:"женский: мягкая основа → -i / -y", f:[{a:"pani",b:"pan|i"},{a:"ulica",b:"ulic|y"},{a:"praca",b:"prac|y"},{a:"ziemia",b:"ziem|i"}], n:"после мягких и исторически мягких; форма совпадает с предложным"},
     {l:"средний", f:[{a:"dziecko",b:"dzieck|u"},{a:"okno",b:"okn|u"}], n:"-u"}
@@ -234,7 +234,7 @@ const CASES = [
   ],
   pl:[
     {l:"все роды: регулярно", f:[{a:"bilety",b:"bilet|ami"},{a:"kawy",b:"kaw|ami"},{a:"studenci",b:"student|ami"},{a:"domy",b:"dom|ami"},{a:"okna",b:"okn|ami"},{a:"ulice",b:"ulic|ami"}], n:"-ami"},
-    {l:"исключения -mi", f:[{a:"ludzie",b:"ludź|mi"},{a:"dzieci",b:"dzieć|mi"},{a:"pieniądze",b:"pieniędz|mi"},{a:"goście",b:"gość|mi"},{a:"bracia",b:"brać|mi"},{a:"konie",b:"koń|mi"},{a:"przyjaciele",b:"przyjaciół|mi"}], n:"короткий список, стоит выучить целиком"}
+    {l:"частые формы на -mi", f:[{a:"ludzie",b:"ludź|mi"},{a:"dzieci",b:"dzieć|mi"},{a:"pieniądze",b:"pieniędz|mi"},{a:"goście",b:"gość|mi"},{a:"bracia",b:"brać|mi"},{a:"konie",b:"koń|mi"},{a:"przyjaciele",b:"przyjaciół|mi"}], n:"семь форм из учебной таблицы; список не исчерпывающий", ref:"narzednik-mi", rowRef:"narzednik-mi", refLabel:"Открыть список"}
   ],
   agree:[["ten dobry lekarz","tym dobrym lekarzem"],["ta dobra kawa","tą dobrą kawą"],["to dobre piwo","tym dobrym piwem"],["мн. любое","tymi dobrymi ludźmi"]],
   exc:[["ja / ty","mną / tobą",""],["on / ona","nim / nią","после предлога: z nim, z nią"],["my / wy","nami / wami",""]],
@@ -259,18 +259,18 @@ const CASES = [
     {l:"жен. → -e", f:[{a:"kawa",b:"ka|wi|e"},{a:"woda",b:"wo|dzi|e"},{a:"szkoła",b:"szko|l|e"},{a:"książka",b:"książ|c|e"},{a:"apteka",b:"apte|c|e"},{a:"droga",b:"dro|dz|e"}], n:"с чередованием - тем же, что в белорусском"},
     {l:"жен. → -y / -i", f:[{a:"ulica",b:"ulic|y"},{a:"praca",b:"prac|y"},{a:"noc",b:"noc|y"},{a:"kuchnia",b:"kuchn|i"},{a:"sól",b:"sol|i"}], n:"после мягких и шипящих"}
   ],
-  pl:[{l:"почти все роды", f:[{a:"sklepy",b:"sklep|ach"},{a:"ulice",b:"ulic|ach"},{a:"miasta",b:"miast|ach"},{a:"dzieci",b:"dzieci|ach"},{a:"domy",b:"dom|ach"},{a:"restauracje",b:"restauracj|ach"},{a:"okna",b:"okn|ach"},{a:"pociągi",b:"pociąg|ach"},{a:"kawy",b:"kaw|ach"},{a:"psy",b:"ps|ach"},{a:"Niemcy",b:"Niem|czech"},{a:"Włochy",b:"Wło|szech"},{a:"Węgry",b:"Wę|grzech"}], n:"обычно -ach; важные традиционные исключения: w Niemczech, we Włoszech, na Węgrzech"}],
+  pl:[{l:"почти все роды", f:[{a:"sklepy",b:"sklep|ach"},{a:"ulice",b:"ulic|ach"},{a:"miasta",b:"miast|ach"},{a:"dzieci",b:"dzieci|ach"},{a:"domy",b:"dom|ach"},{a:"restauracje",b:"restauracj|ach"},{a:"okna",b:"okn|ach"},{a:"pociągi",b:"pociąg|ach"},{a:"kawy",b:"kaw|ach"},{a:"psy",b:"ps|ach"},{a:"Niemcy",b:"Niem|czech"},{a:"Włochy",b:"Wło|szech"},{a:"Węgry",b:"Wę|grzech"}], n:"обычно -ach; важные традиционные исключения: w Niemczech, we Włoszech, na Węgrzech", ref:"miejscownik-wyjatki", rowRef:"miejscownik-wyjatki", refLabel:"Открыть список"}],
   agree:[["ten duży sklep","w tym dużym sklepie"],["ta nowa praca","w tej nowej pracy"],["to małe miasto","w tym małym mieście"],["мн. любое","w tych dużych sklepach"]],
   exc:[["dom","w domu","не domie"],["syn","o synu",""],["pan","o panu",""],["państwo","o państwu",""],["muzeum","w muzeum","в ед. ч. не склоняется"],["ręka","w ręce / w ręku","обе формы живые"],["stół / ogród","na stole / w ogrodzie","ó → o"]],
   alt:[["t","ci","brat → o bracie"],["d","dzi","woda → w wodzie"],["st","ści","miasto → w mieście"],["sł","śl","krzesło → na krześle"],["ł","l","szkoła → w szkole"],["r","rz","teatr → w teatrze"],["k","c","apteka → w aptece"],["g","dz","droga → na drodze"],["ch","sz","mucha → o musze"],["n","ni","okno → w oknie"],["b p w m f","bi pi wi mi fi","sklep → w sklepie"],["s z","si zi","nos → o nosie"]],
   pit:["<b>Как выбрать между -e и -u.</b> Для мужского и среднего рода сначала найди конец основы. <span class='pl'>k, g, ch</span> или мягкая / исторически мягкая согласная обычно дают <span class='pl'>-u</span>: <span class='pl'>na parkingu, o lekarzu</span>. Многие другие твёрдые согласные дают <span class='pl'>-e</span> с чередованием: <span class='pl'>w sklepie, o obiedzie</span>. Формы <span class='pl'>w domu, o panu, o synu</span> запоминаются отдельно. У женского рода своя развилка: твёрдая основа обычно даёт <span class='pl'>-e</span>, мягкая - <span class='pl'>-i/-y</span>.",
   "<b>Чередование бери из белорусского, не из русского.</b> <span class='pl'>у вадзе → w wodzie</span>, <span class='pl'>у хаце → w chacie</span>, <span class='pl'>у школе → w szkole</span>. Русский даст «в воде» и выведет на <span class='pl'>w wode</span>.",
-  "<b>Одушевлённость на предложный не влияет.</b> <span class='pl'>o psie, o bracie, o stole</span> - одна модель. Это единственный падеж, где всё решают род и мягкость основы, а живое или неживое не спрашивают вовсе.",
+  "<b>Отдельной развилки по одушевлённости нет.</b> В отличие от Biernik, формы <span class='pl'>o psie, o bracie, o stole</span> выбираются без противопоставления живого и неживого. Окончание зависит от рода и типа основы, а частые исключения вроде <span class='pl'>w domu</span> учат отдельно.",
   "<b>Чередование ó → o.</b> У многих слов <span class='pl'>ó</span> меняется на <span class='pl'>o</span> в косвенных формах: <span class='pl'>stół → na stole</span>, <span class='pl'>samochód → w samochodzie</span>, <span class='pl'>ogród → w ogrodzie</span>, <span class='pl'>pokój → w pokoju</span>. Конкретную основу лучше запоминать сразу вместе с формой.",
   "<b>Предлог не всегда совпадает с русским.</b> <span class='pl'>w pracy</span> (не «на»), <span class='pl'>na poczcie, na dworcu, na lotnisku, na stacji, na przystanku, na uniwersytecie, na ulicy, na wsi, na basenie</span>. Учить парой предлог+слово.",
   "<b>Без предлога падежа нет.</b> Если предлог не нужен - значит, и падеж другой. Это единственный такой падеж, используй как проверку."],
   sent:[["Mieszkam w Warszawie, na Mokotowie.","Живу в Варшаве, на Мокотове."],["Klucze są na stoliku przy drzwiach.","Ключи на столике у двери."],["Rozmawialiśmy o pracy i o pieniądzach.","Мы говорили о работе и о деньгах."],["Po obiedzie idę do sklepu.","После обеда иду в магазин."],["Spotkajmy się o piątej na dworcu.","Давай встретимся в пять на вокзале."]],
-  trap:"Функционально совпадает с русским предложным один в один. Вся работа - в выборе окончания и в чередовании, и именно здесь белорусский даёт тебе фору, которой нет у русскоязычных."
+  trap:"Основные функции знакомы по русскому предложному, но предлоги не совпадают один в один: <span class='pl'>w pracy, po obiedzie</span>. После выбора польской конструкции остаётся подобрать окончание и учесть чередование; здесь белорусская модель иногда даёт полезную опору."
 },
 {
   id:"woł", name:"Wołacz", ru:"Звательный", q:"o!",
@@ -366,7 +366,7 @@ const CASE_PRACTICE = [
     {id:"dop-2", prompt:"Wracam z ___ (praca).", answers:["pracy"], explanation:"Z в значении «из» требует родительного; praca → pracy."},
     {id:"dop-3", prompt:"Szukamy ___ do mieszkania.", options:["klucze","kluczy","kluczami"], answers:["kluczy"], explanation:"Szukać управляет родительным падежом: szukać kluczy."},
     {id:"dop-4", prompt:"W sali nie ma pięciu ___.", options:["studentów","studentom","studentami"], answers:["studentów"], explanation:"После pięciu и в конструкции nie ma нужен родительный множественного: studentów."},
-    {id:"dop-5", prompt:"Nie ma dziś naszego ___ (nauczyciel).", answers:["nauczyciela"], explanation:"Мужское одушевлённое в родительном всегда получает -a: nauczyciela."},
+    {id:"dop-5", prompt:"Nie ma dziś naszego ___ (nauczyciel).", answers:["nauczyciela"], explanation:"У мужских названий лиц в родительном обычно -a: nauczyciela."},
     {id:"dop-6", prompt:"Potrzebuję kilograma ___ (cukier).", answers:["cukru"], explanation:"Названия веществ часто получают -u: cukier → cukru."},
     {id:"dop-7", prompt:"Wracamy z ___ (Kraków).", answers:["Krakowa"], explanation:"Названия польских городов обычно получают -a: Kraków → Krakowa."},
     {id:"dop-8", prompt:"Wracamy z ___ (Londyn).", answers:["Londynu"], explanation:"Названия иностранных городов обычно получают -u: Londyn → Londynu."},
@@ -1352,7 +1352,7 @@ const CONJ_SUB = [
  ["że","что","Wiem, że przyjdzie.","вводит факт после глаголов знания/речи"],
  ["żeby / aby","чтобы","Chcę, żebyś przyszedł.","цель или желание; после żeby - сослагательные окончания. В самостоятельном восклицании это частица: <a href='#s-part'>Żebyś wiedział!</a>"],
  ["ponieważ","потому что, поскольку","Nie przyszedłem, ponieważ byłem chory. · Ponieważ byłem chory, nie przyszedłem.","нейтральное, частое в письменной и официальной речи; может открывать предложение"],
- ["gdyż","так как, ибо","Nie przyszedłem, gdyż byłem chory.","книжное; обычно идёт после главной части, а не перед ней"],
+ ["gdyż","так как, ибо","Nie przyszedłem, gdyż byłem chory.","книжное; имеет фиксированную позицию между главной частью и последующим объяснением"],
  ["bo","потому что","Nie przyszedłem, bo byłem chory.","разговорное, то же значение"],
  ["jeśli / jeżeli","если","Jeśli będziesz gotowy, zadzwoń.","условие"],
  ["gdyby","если бы","Gdybym miał czas, poszedłbym.","нереальное условие, требует условного наклонения"],
@@ -1403,11 +1403,12 @@ const PARTPIS = [
  ["слитно","-że, -ż с глаголами и вопросительными","idźże! · chodźże! · dlaczegoż · cóż · któż"],
  ["слитно","by, bym, byś с личной формой глагола","zrobiłbym · chciałabyś · poszliby"],
  ["слитно","закреплённые слова - целиком, а не «союз + by»","aby · ażeby · byleby · chociażby · choćby · czyżby · gdyby · jakby · jakoby · niby · żeby · oby"],
- ["слитно","nie с существительными, прилагательными, наречиями, причастиями - вне противопоставления","nieprawda · niegrzeczny · niedaleko · niepalący"],
+ ["слитно","nie с существительными, прилагательными, образованными от них наречиями и причастиями-прилагательными - вне противопоставления","nieprawda · niegrzeczny · niedaleko · niepalący"],
  ["слитно · норма-2026","nie с прилагательным и наречием в любой степени","nielepszy · nienajlepszy · niegorzej · nienajlepiej"],
  ["раздельно","no, czy, niech, oby, bodaj как отдельные слова","Podejdź no tutaj! · Czy wiesz? · Niech wejdzie."],
  ["раздельно","nie с глаголами","nie wiem · nie mam · nie chcę"],
  ["раздельно","nie со словами глагольного значения","nie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomo"],
+ ["раздельно","nie с деепричастиями и формами на -no / -to","nie będąc · nie zjadłszy · nie znaleziono · nie wykryto"],
  ["раздельно","nie с числительными и местоимениями","nie pięć · nie ja · nie ten"],
  ["раздельно · норма-2026","by после союза - всегда","czy by · bo by · jeśli byś · to byś"],
  ["раздельно","by, bym, byś после существительного, прилагательного, наречия, числительного или местоимения","On by to zrobił · My byśmy dokończyli · Czerwony by się zrobił"],
@@ -1481,8 +1482,8 @@ const JEZYK = [
 const FEMIN = [
  ["-ka","самый продуктивный, основа не меняется","student → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka"],
  ["-arz → -arka","у слов на -arz, -erz согласная уходит","lekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka"],
- ["-ka, k → cz","только у слов на -nik и -k","prawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka"],
- ["-ka, g → ż","у слов на -log и -g","psycholog → psycholożka · filolog → filolożka · pedagog → pedagożka"],
+ ["-ka, k → cz","у ряда названий на -nik","prawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka"],
+ ["-ka, g → ż","у ряда названий на -log и -g","psycholog → psycholożka · filolog → filolożka · pedagog → pedagożka"],
  ["-ca → -czyni","продуктивно у слов на -ca","sprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni"],
  ["-ica · -nica","небольшая группа","pracownik → pracownica · robotnik → robotnica"],
  ["особые формы","вне моделей, запоминать","gospodarz → gospodyni · gość → gościni · król → królowa"],
@@ -2265,7 +2266,7 @@ const GROUPS = [
   ]],
   ["Склонение", [
     ["s-cases","Семь падежей: когда нужен, предлоги, окончания и чередования"],
-    ["s-adj","Одна парадигма на прилагательные, притяжательные и указательные"],
+    ["s-adj","Согласование, полная парадигма и степени сравнения"],
     ["s-pron","Личные, притяжательные, возвратные, указательные"],
     ["s-num","Какой падеж требует число и что делает с глаголом"],
   ]],
@@ -2283,10 +2284,10 @@ const GROUPS = [
     ["s-impers","Язык объявлений, вывесок и учреждений"],
   ]],
   ["Служебные слова", [
-    ["s-adv","Образуются от прилагательных списком типовых окончаний"],
-    ["s-preps","Один предлог - два падежа: разница обычно «где / куда»"],
-    ["s-conj","От них зависит запятая - единственное реальное отличие пунктуации"],
-    ["s-part","Без них польский звучит как учебник"],
+    ["s-adv","Формы на -o / -e, сравнение и частые непроизводные наречия"],
+    ["s-preps","Управление падежом, значения и различия «где / куда»"],
+    ["s-conj","Сочинение, подчинение и границы, на которых ставится запятая"],
+    ["s-part","Частицы и другие короткие слова: значение, оттенок и написание"],
   ]],
   ["Живая речь", [
     ["s-ludzie","Вежливое «вы» - третье лицо; имена, фамилии, национальности"],
@@ -2550,7 +2551,7 @@ const ADJ_PRACTICE = [
     {id:"adjcmp-3", prompt:"wysoki → ___ → najwyższy", answers:["wyższy"], explanation:"В сравнительной степени -ok- выпадает: wyższy."},
     {id:"adjcmp-4", prompt:"dobry → ___ → najlepszy", options:["dobrzejszy","lepszy","bardziej dobry"], answers:["lepszy"], explanation:"Dobry имеет нерегулярную форму lepszy."},
     {id:"adjcmp-5", prompt:"zły → gorszy → ___", answers:["najgorszy"], explanation:"Превосходная степень - naj- + gorszy: najgorszy."},
-    {id:"adjcmp-6", prompt:"Этот доклад интереснее: Ten referat jest ___. (interesujący)", options:["interesująciejszy","bardziej interesujący","więcej interesujący"], answers:["bardziej interesujący"], explanation:"Длинное причастное прилагательное сравнивается аналитически: bardziej interesujący."},
+    {id:"adjcmp-6", prompt:"Этот доклад интереснее: Ten referat jest ___. (interesujący)", options:["interesująciejszy","bardziej interesujący","więcej interesujący"], answers:["bardziej interesujący"], explanation:"Причастное прилагательное на -ący здесь сравнивается аналитически: bardziej interesujący."},
     {id:"adjcmp-7", prompt:"Какое прилагательное обычно не образует степеней сравнения?", options:["ciepły","drewniany","trudny"], answers:["drewniany"], explanation:"Материал - относительный признак; drewniany обычно не сравнивается."},
     {id:"adjcmp-text", prompt:"Выбор гостиницы", passage:[
       "Ten hotel jest ",{key:"a",answers:["tańszy"],hint:"tani",label:"сравнительная степень tani"}," od tamtego, ale tamten jest ",
@@ -2610,7 +2611,8 @@ const ADJ = [
  ["Celownik","dobremu","dobrej","dobremu","dobrym","dobrym"],
  ["Biernik","dobry / dobrego","dobrą","dobre","dobrych","dobre"],
  ["Narzędnik","dobrym","dobrą","dobrym","dobrymi","dobrymi"],
- ["Miejscownik","dobrym","dobrej","dobrym","dobrych","dobrych"]
+ ["Miejscownik","dobrym","dobrej","dobrym","dobrych","dobrych"],
+ ["Wołacz","dobry","dobra","dobre","dobrzy","dobre"]
 ];
 
 const STOPN = [
@@ -2644,7 +2646,7 @@ const POROWN = [
  ["trochę · nieco","немного","trochę większy · nieco później"],
  ["coraz + сравнительная","всё … и …","Jest coraz zimniej. · Coraz więcej ludzi."],
  ["im …, tym …","чем …, тем …","Im szybciej, tym lepiej."],
- ["jak naj- + сравнительная","как можно …","jak najszybciej · jak najlepiej"],
+ ["jak + превосходная степень","как можно …","jak najszybciej · jak najlepiej"],
  ["za · zbyt","слишком","Za drogo. · Zbyt trudne."],
  ["dość · wystarczająco","достаточно","dość ciepło · wystarczająco duży"],
  ["ze wszystkich · w …","самый из / в","najlepszy ze wszystkich · najstarszy w rodzinie"]

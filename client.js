@@ -341,7 +341,9 @@ const TRAINER_DECKS = {
           cat:names.get(item.c) || item.c,
           chips:[names.get(item.c) || item.c, TRAINER_NUMBERS[item.n], ""],
           answers:[item.f],
-          hint:`${item.g}: ${item.r}`
+          hint:`${item.g}: ${item.r}`,
+          reference:item.ref || "",
+          referenceLabel:item.refLabel || "Открыть правило"
         });
       }
       return list;
@@ -486,6 +488,13 @@ function initTrainer(host){
       : verdict === "near"
         ? `Верно, но без диакритики: ${current.answers.join(" · ")}`
         : `${prefix} Правильно: ${current.answers.join(" · ")}${current.hint ? `. ${current.hint}` : ""}`;
+    if(!correct && current.reference){
+      const reference = document.createElement("a");
+      reference.className = "trainer-reference";
+      reference.href = current.reference;
+      reference.textContent = current.referenceLabel;
+      feedback.append(" ", reference);
+    }
     feedback.className = `trainer-feedback ${verdict === "correct" ? "is-correct" : verdict === "near" ? "is-near" : "is-wrong"}`;
     submit.textContent = "Дальше";
     skip.hidden = true;
@@ -698,10 +707,17 @@ function mark(text, query){
   return output + escapeHTML(text.slice(position));
 }
 
-let hitList = [], selectedHit = -1;
+let hitList = [], selectedHit = -1, searchScrollY = 0;
+function restoreSearchPosition(){
+  const y = searchScrollY;
+  requestAnimationFrame(() => {
+    if(document.activeElement === $("#gsearch")) window.scrollTo({top:y, behavior:"auto"});
+  });
+}
 function openSearch(open){
   $("#sres").classList.toggle("on", open);
   $("#gsearch").setAttribute("aria-expanded", open);
+  if(open) setHeaderHidden(false);
   if(!open){ $("#gsearch").removeAttribute("aria-activedescendant"); selectedHit = -1; }
 }
 function selectHit(index){
@@ -714,19 +730,27 @@ function selectHit(index){
 }
 function renderResults(query){
   const box = $("#sres");
-  if(!query.trim()){ openSearch(false); box.innerHTML = ""; hitList = []; return; }
+  if(!query.trim()){
+    openSearch(false);
+    box.innerHTML = "";
+    hitList = [];
+    restoreSearchPosition();
+    return;
+  }
   const {list, total} = search(query);
   hitList = list; selectedHit = -1; openSearch(true);
   if(!list.length){
     box.innerHTML = tokens(query).every(term => term.length < 2)
       ? '<div class="snone">Введите хотя бы два символа</div>'
       : '<div class="snone">Ничего не нашлось</div>';
+    restoreSearchPosition();
     return;
   }
   box.innerHTML = list.map((entry, index) => `<button class="sr" role="option" id="sr-${index}" data-i="${index}" aria-selected="false">
     <span class="sr-w">${escapeHTML(entry.label)}${entry.head ? ` · ${escapeHTML(entry.head)}` : ""}</span>
     <span class="sr-t">${mark(entry.text.length > 140 ? entry.text.slice(0, 140) + "…" : entry.text, query)}</span>
   </button>`).join("") + (total > list.length ? `<div class="scount">показаны ${list.length} из ${total} - уточните запрос</div>` : "");
+  restoreSearchPosition();
 }
 function closeSearch(){ openSearch(false); $("#gsearch").blur(); }
 function resultHash(entry){
@@ -750,8 +774,13 @@ function goTo(entry){
   revealSearchHit(entry.id);
 }
 
+$("#gsearch").addEventListener("pointerdown", () => { searchScrollY = Math.max(0, window.scrollY); });
 $("#gsearch").addEventListener("input", async event => { await loadSearchIndex(); renderResults(event.target.value); });
-$("#gsearch").addEventListener("focus", async event => { await loadSearchIndex(); if(event.target.value) renderResults(event.target.value); });
+$("#gsearch").addEventListener("focus", async event => {
+  searchScrollY = Math.max(0, window.scrollY);
+  await loadSearchIndex();
+  if(event.target.value) renderResults(event.target.value);
+});
 $("#gsearch").addEventListener("keydown", event => {
   if(event.key === "Escape"){ event.target.value = ""; renderResults(""); closeSearch(); return; }
   if(event.key === "ArrowDown" || event.key === "ArrowUp"){
@@ -775,6 +804,40 @@ document.addEventListener("keydown", event => {
     event.preventDefault(); $("#gsearch").focus(); $("#gsearch").select();
   }
 });
+
+const mobileHeader = matchMedia("(max-width:767px)");
+const pageHeader = $("header");
+let headerScrollY = Math.max(0, window.scrollY), headerScrollPending = false;
+function headerInteractionActive(){
+  return document.documentElement.classList.contains("nav-open") || $("#sres").classList.contains("on") || pageHeader.contains(document.activeElement);
+}
+function setHeaderHidden(hidden){
+  pageHeader.classList.toggle("header-hidden", hidden && mobileHeader.matches && !headerInteractionActive());
+}
+function syncHeaderVisibility(){
+  headerScrollPending = false;
+  const y = Math.max(0, window.scrollY), delta = y - headerScrollY;
+  if(!mobileHeader.matches || y <= 40 || headerInteractionActive()){
+    setHeaderHidden(false);
+    headerScrollY = y;
+    return;
+  }
+  if(delta > 10 && y > 96){
+    setHeaderHidden(true);
+    headerScrollY = y;
+  }else if(delta < -6){
+    setHeaderHidden(false);
+    headerScrollY = y;
+  }
+}
+function queueHeaderVisibility(){
+  if(headerScrollPending) return;
+  headerScrollPending = true;
+  requestAnimationFrame(syncHeaderVisibility);
+}
+addEventListener("scroll", queueHeaderVisibility, {passive:true});
+addEventListener("resize", syncHeaderVisibility);
+pageHeader.addEventListener("focusin", () => setHeaderHidden(false));
 
 const toTop = $(".totop");
 if(toTop){
@@ -835,6 +898,7 @@ function closeNavPops(except){
 }
 
 function setNavMenuOpen(open){
+  if(open) setHeaderHidden(false);
   $("#navmenu").classList.toggle("on", open);
   $("#navall").setAttribute("aria-expanded", String(open));
   document.documentElement.classList.toggle("nav-open", open);
@@ -878,7 +942,7 @@ document.addEventListener("change", event => {
 function setHeadH(){
   const header = $("header"), nav = $("#navwrap");
   const offset = nav.getBoundingClientRect().top - header.getBoundingClientRect().top;
-  const narrow = matchMedia("(max-width:700px)").matches;
+  const narrow = matchMedia("(max-width:767px)").matches;
   document.documentElement.style.setProperty("--brand-h", (narrow ? offset : 0) + "px");
   document.documentElement.style.setProperty("--head-h", (narrow ? header.offsetHeight - offset : header.offsetHeight) + "px");
 

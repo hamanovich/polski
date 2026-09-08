@@ -6,7 +6,7 @@ Polski: końcówki
 Основы
 Алфавит32 буквы, диграфы, носовые, ударение и ассимиляцияРодТри мужских рода, исключения и несклоняемые слова на -umЧередованияСводная карта ó/o, ą/ę и изменений согласных
 Склонение
-СуществительныеСемь падежей: когда нужен, предлоги, окончания и чередованияПрилагательныеОдна парадигма на прилагательные, притяжательные и указательныеМестоименияЛичные, притяжательные, возвратные, указательныеЧислительныеКакой падеж требует число и что делает с глаголом
+СуществительныеСемь падежей: когда нужен, предлоги, окончания и чередованияПрилагательныеСогласование, полная парадигма и степени сравненияМестоименияЛичные, притяжательные, возвратные, указательныеЧислительныеКакой падеж требует число и что делает с глаголом
 Глагол
 ГлаголыСпряжения, времена и вид, причастия и управление слов
 Словарь и речь
@@ -14,7 +14,7 @@ Polski: końcówki
 Предложение
 Вопросыczy для общего вопроса, вопросительное слово для частногоОтрицаниеОтрицания накапливаются, а не гасят друг другаПорядок словТема, новое сообщение и ограничения для безударных словБезличныеЯзык объявлений, вывесок и учреждений
 Служебные слова
-НаречияОбразуются от прилагательных списком типовых окончанийПредлогиОдин предлог - два падежа: разница обычно «где / куда»СоюзыОт них зависит запятая - единственное реальное отличие пунктуацииЧастицыБез них польский звучит как учебник
+НаречияФормы на -o / -e, сравнение и частые непроизводные наречияПредлогиУправление падежом, значения и различия «где / куда»СоюзыСочинение, подчинение и границы, на которых ставится запятаяЧастицыЧастицы и другие короткие слова: значение, оттенок и написание
 Живая речь
 ЛюдиВежливое «вы» - третье лицо; имена, фамилии, национальностиУменьшительныеРазмер, эмоциональная оценка, близость и иронияМостыФонетические соответствия, белорусский мост, ложные друзья
 Все разделы
@@ -41,7 +41,7 @@ Polski: końcówki
 ЧередованияСводная карта ó/o, ą/ę и изменений согласных
 Склонение
 СуществительныеСемь падежей: когда нужен, предлоги, окончания и чередованияMianownikBiernikDopełniaczCelownikNarzędnikMiejscownikWołacz
-ПрилагательныеОдна парадигма на прилагательные, притяжательные и указательные
+ПрилагательныеСогласование, полная парадигма и степени сравнения
 МестоименияЛичные, притяжательные, возвратные, указательные
 ЧислительныеКакой падеж требует число и что делает с глаголом
 Глагол
@@ -55,10 +55,10 @@ Polski: końcówki
 Порядок словТема, новое сообщение и ограничения для безударных слов
 БезличныеЯзык объявлений, вывесок и учреждений
 Служебные слова
-НаречияОбразуются от прилагательных списком типовых окончаний
-ПредлогиОдин предлог - два падежа: разница обычно «где / куда»
-СоюзыОт них зависит запятая - единственное реальное отличие пунктуации
-ЧастицыБез них польский звучит как учебник
+НаречияФормы на -o / -e, сравнение и частые непроизводные наречия
+ПредлогиУправление падежом, значения и различия «где / куда»
+СоюзыСочинение, подчинение и границы, на которых ставится запятая
+ЧастицыЧастицы и другие короткие слова: значение, оттенок и написание
 Живая речь
 ЛюдиВежливое «вы» - третье лицо; имена, фамилии, национальности
 УменьшительныеРазмер, эмоциональная оценка, близость и ирония
@@ -197,7 +197,7 @@ Mianownik
 Окончания существительных
 мужско-личный
 student→studencisąsiad→sąsiedziPolak→Polacylekarz→lekarzepan→panowie
-только про мужчин: -i / -y / -e / -owie, почти всегда с чередованием
+мужские названия лиц и смешанные группы людей: -i / -y / -e / -owie, часто с чередованием
 не-мужско-личный
 bilet→biletykot→kotyogórek→ogórkikawa→kawyksiążka→książkiulica→ulice
 -y после твёрдых · -i после k, g · -e после мягких и c, l, j
@@ -291,21 +291,21 @@ pieniądzepieniądzeне мужско-личное: mam pieniądzerękarękępan
 Само окончание -ę у тебя стоит с первого блока. Ошибки идут не отсюда, а из соседних клеток: числительные, отрицание, глагольное управление.
 Dopełniacz
 Родительный · вопросы: kogo? czego?
-Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После большинства количественных числительных: pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów. Составные числительные, последний член которых dwa, trzy, cztery (кроме 12-14), требуют именительного множественного: dwadzieścia dwa bilety. Также родительный нужен после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.Часть вместо целого: kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy - против kup chleb (конкретную буханку). Русская модель «купи хлеба / купи хлеб» переносится один в один.
+Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После большинства количественных числительных: pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów. Составные числительные, последний член которых dwa, trzy, cztery (кроме 12-14), требуют именительного множественного: dwadzieścia dwa bilety. Также родительный нужен после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.Часть вместо целого: kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy - против kup chleb (конкретную буханку). Здесь русская модель «купи хлеба / купи хлеб» часто даёт полезную опору.
 Предлогиdo, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast
 Окончания существительных
 муж. одушевл.
 pan→panabrat→bratapies→psa
--a, без вариантов
-муж. неодуш. → -a: частые группы
+обычно -a; редкие исключения учат по словарю
+муж. неодуш.: ориентиры для -a
 chleb→chlebaser→seraKraków→Krakowastyczeń→stycznia
-части тела, инструменты и посуда, месяцы, польские города - но это тенденции, не полный алгоритм
-муж. неодуш. → -u: частые группы
+-a часто встречается у частей тела, инструментов, посуды, мер, месяцев и польских городов; chleb, ser и другие отдельные слова учи готовой парой
+муж. неодуш.: ориентиры для -u
 czas→czasucukier→cukrutłum→tłumuautobus→autobusuLondyn→Londynu
-абстрактное, вещества, собирательное, многие заимствования и иностранные города
-частые формы, которые учим целиком
+-u часто встречается у абстрактных, вещественных и собирательных слов, многих заимствований и иностранных городов; это ориентир, не правило
+слова, форму которых учим целиком
 sklep→sklepudom→domubank→bankusok→sokutelefon→telefonu
-у неодушевлённых нет надёжного правила: запоминай do sklepu, do domu, bez telefonu
+надёжного алгоритма нет: запоминай слово вместе с формой - do sklepu, do domu, bez telefonu
 женский
 kawa→kawywoda→wodyksiążka→książkinoc→nocysól→soli
 -i после k, g и мягких · -y после остальных
@@ -319,13 +319,13 @@ mleko→mlekapiwo→piwaokno→okna
 ten dobry chlebtego dobrego chlebata dobra kawatej dobrej kawyto dobre piwotego dobrego piwaмн. любоеtych dobrych ludzi / tych dobrych kaw
 Исключения и особые формы
 rękarąkмн. ч.roklatмн. ч.człowiekludziмн. ч.pieniądzepieniędzydzieckodziecitydzieńtygodniamuzeummuzeum / muzeówед. ч. не склоняется, мн. - склоняется
-Подводные камниКак выбрать форму. Сначала род: женский обычно получает -y/-i, средний - -a, мужское одушевлённое - всегда -a. Настоящая развилка остаётся только у мужских неодушевлённых: там возможны -a и -u, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: do sklepu, bez chleba.-a или -u у неодушевлённых. -a часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: nosa, noża, talerza, marca, Krakowa. -u часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: czasu, cukru, tłumu, autobusu, Londynu. Это ориентиры, а не жёсткое правило.Отрицание - всегда, даже там, где русский держит винительный. «Не вижу Анну» → nie widzę Anny. «Не люблю кофе» → nie lubię kawy.Беглая гласная во множественном. książka → książek, okno → okien, matka → matek. Окончания нет, зато в основу влезает e.После количественных слов. pięć biletów, dużo ludzi, mało czasu, kilka minut - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (dwadzieścia dwa domy, но dwadzieścia pięć domów), - во вкладке «Числительные».Nie ma - безличное. Формы «его нет» не существует как on nie ma: это значит «у него нет». «Его нет дома» → nie ma go w domu.
+Подводные камниКак выбрать форму. Сначала род: женский обычно получает -y/-i, средний - -a, мужское одушевлённое обычно - -a. Редкие исключения вроде wołu проверяй по словарю. Главная развилка остаётся у мужских неодушевлённых: там возможны -a и -u, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: do sklepu, bez chleba.-a или -u у неодушевлённых. -a часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: nosa, noża, talerza, marca, Krakowa. -u часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: czasu, cukru, tłumu, autobusu, Londynu. Это ориентиры, а не жёсткое правило.Отрицание - всегда, даже там, где русский держит винительный. «Не вижу Анну» → nie widzę Anny. «Не люблю кофе» → nie lubię kawy.Беглая гласная во множественном. książka → książek, okno → okien, matka → matek. Окончания нет, зато в основу влезает e.После количественных слов. pięć biletów, dużo ludzi, mało czasu, kilka minut - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (dwadzieścia dwa domy, но dwadzieścia pięć domów), - во вкладке «Числительные».Nie ma - безличное. Формы «его нет» не существует как on nie ma: это значит «у него нет». «Его нет дома» → nie ma go w domu.
 Примеры в предложенияхNie mam dzisiaj czasu.У меня сегодня нет времени.W sklepie nie ma świeżego chleba.В магазине нет свежего хлеба.Szukam apteki, która jest otwarta.Ищу аптеку, которая открыта.To jest samochód mojego brata.Это машина моего брата.Wracam z pracy do domu około szóstej.Возвращаюсь с работы домой около шести.
 Итог по падежу
 Родительный стоит четвёртым блоком не случайно: без него нельзя построить ни одного отрицания. Это самый частотный падеж в бытовой речи после винительного.
 Dopełniacz
 Родительный · вопросы: kogo? czego?
-Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После большинства количественных числительных: pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów. Составные числительные, последний член которых dwa, trzy, cztery (кроме 12-14), требуют именительного множественного: dwadzieścia dwa bilety. Также родительный нужен после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.Часть вместо целого: kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy - против kup chleb (конкретную буханку). Русская модель «купи хлеба / купи хлеб» переносится один в один.
+Когда нуженПри отрицании прямого объекта винительный обычно заменяется родительным: mam czas → nie mam czasu. Для базового польского применяй это правило автоматически.Отсутствие: nie ma mleka.После большинства количественных числительных: pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów. Составные числительные, последний член которых dwa, trzy, cztery (кроме 12-14), требуют именительного множественного: dwadzieścia dwa bilety. Также родительный нужен после слов dużo, mało, kilka, trochę, ile: dużo czasu, kilka osób.Принадлежность: dom mojego brata.Дата: trzeciego maja.Глаголы: szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć.Часть вместо целого: kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy - против kup chleb (конкретную буханку). Здесь русская модель «купи хлеба / купи хлеб» часто даёт полезную опору.
 Предлогиdo, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast
 Окончания существительных
 мужской
@@ -353,7 +353,7 @@ piwa→piwokna→okienmieszkania→mieszkańmuzea→muzeów
 ten dobry chlebtego dobrego chlebata dobra kawatej dobrej kawyto dobre piwotego dobrego piwaмн. любоеtych dobrych ludzi / tych dobrych kaw
 Исключения и особые формы
 rękarąkмн. ч.roklatмн. ч.człowiekludziмн. ч.pieniądzepieniędzydzieckodziecitydzieńtygodniamuzeummuzeum / muzeówед. ч. не склоняется, мн. - склоняется
-Подводные камниКак выбрать форму. Сначала род: женский обычно получает -y/-i, средний - -a, мужское одушевлённое - всегда -a. Настоящая развилка остаётся только у мужских неодушевлённых: там возможны -a и -u, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: do sklepu, bez chleba.-a или -u у неодушевлённых. -a часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: nosa, noża, talerza, marca, Krakowa. -u часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: czasu, cukru, tłumu, autobusu, Londynu. Это ориентиры, а не жёсткое правило.Отрицание - всегда, даже там, где русский держит винительный. «Не вижу Анну» → nie widzę Anny. «Не люблю кофе» → nie lubię kawy.Беглая гласная во множественном. książka → książek, okno → okien, matka → matek. Окончания нет, зато в основу влезает e.После количественных слов. pięć biletów, dużo ludzi, mało czasu, kilka minut - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (dwadzieścia dwa domy, но dwadzieścia pięć domów), - во вкладке «Числительные».Nie ma - безличное. Формы «его нет» не существует как on nie ma: это значит «у него нет». «Его нет дома» → nie ma go w domu.
+Подводные камниКак выбрать форму. Сначала род: женский обычно получает -y/-i, средний - -a, мужское одушевлённое обычно - -a. Редкие исключения вроде wołu проверяй по словарю. Главная развилка остаётся у мужских неодушевлённых: там возможны -a и -u, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: do sklepu, bez chleba.-a или -u у неодушевлённых. -a часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: nosa, noża, talerza, marca, Krakowa. -u часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: czasu, cukru, tłumu, autobusu, Londynu. Это ориентиры, а не жёсткое правило.Отрицание - всегда, даже там, где русский держит винительный. «Не вижу Анну» → nie widzę Anny. «Не люблю кофе» → nie lubię kawy.Беглая гласная во множественном. książka → książek, okno → okien, matka → matek. Окончания нет, зато в основу влезает e.После количественных слов. pięć biletów, dużo ludzi, mało czasu, kilka minut - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (dwadzieścia dwa domy, но dwadzieścia pięć domów), - во вкладке «Числительные».Nie ma - безличное. Формы «его нет» не существует как on nie ma: это значит «у него нет». «Его нет дома» → nie ma go w domu.
 Примеры в предложенияхNie mam dzisiaj czasu.У меня сегодня нет времени.W sklepie nie ma świeżego chleba.В магазине нет свежего хлеба.Szukam apteki, która jest otwarta.Ищу аптеку, которая открыта.To jest samochód mojego brata.Это машина моего брата.Wracam z pracy do domu około szóstej.Возвращаюсь с работы домой около шести.
 Итог по падежу
 Родительный стоит четвёртым блоком не случайно: без него нельзя построить ни одного отрицания. Это самый частотный падеж в бытовой речи после винительного.
@@ -438,9 +438,9 @@ Narzędnik
 все роды: регулярно
 bilety→biletamikawy→kawamistudenci→studentamidomy→domamiokna→oknamiulice→ulicami
 -ami
-исключения -mi
+частые формы на -mi
 ludzie→ludźmidzieci→dziećmipieniądze→pieniędzmigoście→gośćmibracia→braćmikonie→końmiprzyjaciele→przyjaciółmi
-короткий список, стоит выучить целиком
+семь форм из учебной таблицы; список не исчерпывающий
 окончаниечередование в основеоснова - чёрным
 -ami для всех родов: studentami, kobietami, oknami. Короткое -mi берёт закрытая горстка слов: ludźmi, dziećmi, pieniędzmi, braćmi, gośćmi, końmi, przyjaciółmi.
 Вся группа целиком
@@ -482,10 +482,10 @@ ten duży sklepw tym dużym sklepieta nowa pracaw tej nowej pracyto małe miasto
 tcibrat → o bracieddziwoda → w wodziestścimiasto → w mieściesłślkrzesło → na krześlełlszkoła → w szkolerrzteatr → w teatrzekcapteka → w aptecegdzdroga → na drodzechszmucha → o muszenniokno → w oknieb p w m fbi pi wi mi fisklep → w sklepies zsi zinos → o nosie
 Исключения и особые формы
 domw domuне domiesyno synupano panupaństwoo państwumuzeumw muzeumв ед. ч. не склоняетсяrękaw ręce / w rękuобе формы живыеstół / ogródna stole / w ogrodzieó → o
-Подводные камниКак выбрать между -e и -u. Для мужского и среднего рода сначала найди конец основы. k, g, ch или мягкая / исторически мягкая согласная обычно дают -u: na parkingu, o lekarzu. Многие другие твёрдые согласные дают -e с чередованием: w sklepie, o obiedzie. Формы w domu, o panu, o synu запоминаются отдельно. У женского рода своя развилка: твёрдая основа обычно даёт -e, мягкая - -i/-y.Чередование бери из белорусского, не из русского. у вадзе → w wodzie, у хаце → w chacie, у школе → w szkole. Русский даст «в воде» и выведет на w wode.Одушевлённость на предложный не влияет. o psie, o bracie, o stole - одна модель. Это единственный падеж, где всё решают род и мягкость основы, а живое или неживое не спрашивают вовсе.Чередование ó → o. У многих слов ó меняется на o в косвенных формах: stół → na stole, samochód → w samochodzie, ogród → w ogrodzie, pokój → w pokoju. Конкретную основу лучше запоминать сразу вместе с формой.Предлог не всегда совпадает с русским. w pracy (не «на»), na poczcie, na dworcu, na lotnisku, na stacji, na przystanku, na uniwersytecie, na ulicy, na wsi, na basenie. Учить парой предлог+слово.Без предлога падежа нет. Если предлог не нужен - значит, и падеж другой. Это единственный такой падеж, используй как проверку.
+Подводные камниКак выбрать между -e и -u. Для мужского и среднего рода сначала найди конец основы. k, g, ch или мягкая / исторически мягкая согласная обычно дают -u: na parkingu, o lekarzu. Многие другие твёрдые согласные дают -e с чередованием: w sklepie, o obiedzie. Формы w domu, o panu, o synu запоминаются отдельно. У женского рода своя развилка: твёрдая основа обычно даёт -e, мягкая - -i/-y.Чередование бери из белорусского, не из русского. у вадзе → w wodzie, у хаце → w chacie, у школе → w szkole. Русский даст «в воде» и выведет на w wode.Отдельной развилки по одушевлённости нет. В отличие от Biernik, формы o psie, o bracie, o stole выбираются без противопоставления живого и неживого. Окончание зависит от рода и типа основы, а частые исключения вроде w domu учат отдельно.Чередование ó → o. У многих слов ó меняется на o в косвенных формах: stół → na stole, samochód → w samochodzie, ogród → w ogrodzie, pokój → w pokoju. Конкретную основу лучше запоминать сразу вместе с формой.Предлог не всегда совпадает с русским. w pracy (не «на»), na poczcie, na dworcu, na lotnisku, na stacji, na przystanku, na uniwersytecie, na ulicy, na wsi, na basenie. Учить парой предлог+слово.Без предлога падежа нет. Если предлог не нужен - значит, и падеж другой. Это единственный такой падеж, используй как проверку.
 Примеры в предложенияхMieszkam w Warszawie, na Mokotowie.Живу в Варшаве, на Мокотове.Klucze są na stoliku przy drzwiach.Ключи на столике у двери.Rozmawialiśmy o pracy i o pieniądzach.Мы говорили о работе и о деньгах.Po obiedzie idę do sklepu.После обеда иду в магазин.Spotkajmy się o piątej na dworcu.Давай встретимся в пять на вокзале.
 Итог по падежу
-Функционально совпадает с русским предложным один в один. Вся работа - в выборе окончания и в чередовании, и именно здесь белорусский даёт тебе фору, которой нет у русскоязычных.
+Основные функции знакомы по русскому предложному, но предлоги не совпадают один в один: w pracy, po obiedzie. После выбора польской конструкции остаётся подобрать окончание и учесть чередование; здесь белорусская модель иногда даёт полезную опору.
 Miejscownik
 Предложный · вопросы: o kim? o czym? gdzie?
 Когда нуженМесто: w sklepie, na poczcie, przy oknie.Тема: rozmawiamy o pracy.Время по часам: o piątej, o wpół do ósmej.После чего-то: po pracy, po obiedzie.
@@ -504,10 +504,10 @@ ten duży sklepw tym dużym sklepieta nowa pracaw tej nowej pracyto małe miasto
 tcibrat → o bracieddziwoda → w wodziestścimiasto → w mieściesłślkrzesło → na krześlełlszkoła → w szkolerrzteatr → w teatrzekcapteka → w aptecegdzdroga → na drodzechszmucha → o muszenniokno → w oknieb p w m fbi pi wi mi fisklep → w sklepies zsi zinos → o nosie
 Исключения и особые формы
 domw domuне domiesyno synupano panupaństwoo państwumuzeumw muzeumв ед. ч. не склоняетсяrękaw ręce / w rękuобе формы живыеstół / ogródna stole / w ogrodzieó → o
-Подводные камниКак выбрать между -e и -u. Для мужского и среднего рода сначала найди конец основы. k, g, ch или мягкая / исторически мягкая согласная обычно дают -u: na parkingu, o lekarzu. Многие другие твёрдые согласные дают -e с чередованием: w sklepie, o obiedzie. Формы w domu, o panu, o synu запоминаются отдельно. У женского рода своя развилка: твёрдая основа обычно даёт -e, мягкая - -i/-y.Чередование бери из белорусского, не из русского. у вадзе → w wodzie, у хаце → w chacie, у школе → w szkole. Русский даст «в воде» и выведет на w wode.Одушевлённость на предложный не влияет. o psie, o bracie, o stole - одна модель. Это единственный падеж, где всё решают род и мягкость основы, а живое или неживое не спрашивают вовсе.Чередование ó → o. У многих слов ó меняется на o в косвенных формах: stół → na stole, samochód → w samochodzie, ogród → w ogrodzie, pokój → w pokoju. Конкретную основу лучше запоминать сразу вместе с формой.Предлог не всегда совпадает с русским. w pracy (не «на»), na poczcie, na dworcu, na lotnisku, na stacji, na przystanku, na uniwersytecie, na ulicy, na wsi, na basenie. Учить парой предлог+слово.Без предлога падежа нет. Если предлог не нужен - значит, и падеж другой. Это единственный такой падеж, используй как проверку.
+Подводные камниКак выбрать между -e и -u. Для мужского и среднего рода сначала найди конец основы. k, g, ch или мягкая / исторически мягкая согласная обычно дают -u: na parkingu, o lekarzu. Многие другие твёрдые согласные дают -e с чередованием: w sklepie, o obiedzie. Формы w domu, o panu, o synu запоминаются отдельно. У женского рода своя развилка: твёрдая основа обычно даёт -e, мягкая - -i/-y.Чередование бери из белорусского, не из русского. у вадзе → w wodzie, у хаце → w chacie, у школе → w szkole. Русский даст «в воде» и выведет на w wode.Отдельной развилки по одушевлённости нет. В отличие от Biernik, формы o psie, o bracie, o stole выбираются без противопоставления живого и неживого. Окончание зависит от рода и типа основы, а частые исключения вроде w domu учат отдельно.Чередование ó → o. У многих слов ó меняется на o в косвенных формах: stół → na stole, samochód → w samochodzie, ogród → w ogrodzie, pokój → w pokoju. Конкретную основу лучше запоминать сразу вместе с формой.Предлог не всегда совпадает с русским. w pracy (не «на»), na poczcie, na dworcu, na lotnisku, na stacji, na przystanku, na uniwersytecie, na ulicy, na wsi, na basenie. Учить парой предлог+слово.Без предлога падежа нет. Если предлог не нужен - значит, и падеж другой. Это единственный такой падеж, используй как проверку.
 Примеры в предложенияхMieszkam w Warszawie, na Mokotowie.Живу в Варшаве, на Мокотове.Klucze są na stoliku przy drzwiach.Ключи на столике у двери.Rozmawialiśmy o pracy i o pieniądzach.Мы говорили о работе и о деньгах.Po obiedzie idę do sklepu.После обеда иду в магазин.Spotkajmy się o piątej na dworcu.Давай встретимся в пять на вокзале.
 Итог по падежу
-Функционально совпадает с русским предложным один в один. Вся работа - в выборе окончания и в чередовании, и именно здесь белорусский даёт тебе фору, которой нет у русскоязычных.
+Основные функции знакомы по русскому предложному, но предлоги не совпадают один в один: w pracy, po obiedzie. После выбора польской конструкции остаётся подобрать окончание и учесть чередование; здесь белорусская модель иногда даёт полезную опору.
 Wołacz
 Звательный · вопросы: o!
 Когда нуженОбращение к незнакомому с титулом или именем: panie doktorze! pani Anno!С титулом: panie doktorze, panie kierowniku.В письме: Szanowny Panie, Droga Aniu.
@@ -593,7 +593,7 @@ Mianownik множественного - мужско-личные формы Po
 Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (mój, twój, nasz). У ten из неё выпадают четыре формы: ten, to, ci, tę. Jego, jej, ich - исключение: они не склоняются.
 dobry - полная парадигма
 падежмуж.жен.ср.мн. мужско-личноемн. остальное
-MianownikdobrydobradobredobrzydobreDopełniaczdobregodobrejdobregodobrychdobrychCelownikdobremudobrejdobremudobrymdobrymBiernikdobry / dobregodobrądobredobrychdobreNarzędnikdobrymdobrądobrymdobrymidobrymiMiejscownikdobrymdobrejdobrymdobrychdobrych
+MianownikdobrydobradobredobrzydobreDopełniaczdobregodobrejdobregodobrychdobrychCelownikdobremudobrejdobremudobrymdobrymBiernikdobry / dobregodobrądobredobrychdobreNarzędnikdobrymdobrądobrymdobrymidobrymiMiejscownikdobrymdobrejdobrymdobrychdobrychWołaczdobrydobradobredobrzydobre
 После k и g пишется i вместо y. wysoki → wysokiego, wysokim · drogi → drogiego, drogim. Это орфография, а не отдельное склонение. А вот polski → polscy и drogi → drodzy одной орфографией не объясняются: там чередование основы (k → c, g → dz), о нём ниже.
 Мужско-личное множественное: чередование
 Эта форма нужна не только для группы мужчин, но и для любой смешанной группы людей, где мужчина есть хотя бы один: Piotr i Anna są wysocy.
@@ -607,7 +607,7 @@ dużyduzi
 zmęczonyzmęczeni
 Логика та же, что в существительных: r → rz, k → c, g → dz, ł → l, d → dzi, ony → eni.
 Степени сравнения: как образуется
-Суффикс выбирается по тому, чем кончается основа. Превосходная - всегда просто naj- перед сравнительной.
+Суффикс выбирается по тому, чем кончается основа. В синтетической модели превосходная образуется добавлением naj- к сравнительной: szybszy → najszybszy.
 суффикскогдапримеры
 -szyна конце основы одна согласнаяnowy → nowszy · stary → starszy · młody → młodszy · gruby → grubszy · głupi → głupszy · ciekawy → ciekawszy-ejszyна конце основы скопление согласныхładny → ładniejszy · trudny → trudniejszy · zimny → zimniejszy · łatwy → łatwiejszy · piękny → piękniejszy · mądry → mądrzejszy-k- · -ek- · -ok- выпадаетприлагательные на -ki, -eki, -okiwysoki → wyższy · niski → niższy · bliski → bliższy · daleki → dalszy · szeroki → szerszy · krótki → krótszy · ciężki → cięższy · głęboki → głębszy
 Подсказка по основе покрывает большинство слов, но не все: у twardy основа кончается стечением rd, а форма всё равно twardszy. Сравнительную степень частотных слов надёжнее запоминать вместе с самим прилагательным.
@@ -622,7 +622,7 @@ dobrylepszynajlepszyzłygorszynajgorszyduży / wielkiwiększynajwiększymałymni
 Конструкции сравнения
 «Чем» - niż или od, но дальше начинается то, чего в русском нет по форме.
 конструкциязначениепример
-niż + падеж по роличем - падеж от того, чем было бы слово в полной фразеJest wyższy niż ja [jestem]. · Lubię Annę bardziej niż Marię [lubię].od + Dopełniaczчем - то же значениеJest wyższy ode mnie.tak … jakтакой же … какJest tak wysoki jak ja.nie tak … jakне такой … какNie jest tak drogi jak tamten.taki sam jakтакой же, какMam taki sam telefon jak ty.ten samтот же самыйMieszkamy w tym samym domu.o wiele · dużo · znacznieнамногоo wiele lepszy · dużo taniejtrochę · niecoнемногоtrochę większy · nieco późniejcoraz + сравнительнаявсё … и …Jest coraz zimniej. · Coraz więcej ludzi.im …, tym …чем …, тем …Im szybciej, tym lepiej.jak naj- + сравнительнаякак можно …jak najszybciej · jak najlepiejza · zbytслишкомZa drogo. · Zbyt trudne.dość · wystarczającoдостаточноdość ciepło · wystarczająco dużyze wszystkich · w …самый из / вnajlepszy ze wszystkich · najstarszy w rodzinie
+niż + падеж по роличем - падеж от того, чем было бы слово в полной фразеJest wyższy niż ja [jestem]. · Lubię Annę bardziej niż Marię [lubię].od + Dopełniaczчем - то же значениеJest wyższy ode mnie.tak … jakтакой же … какJest tak wysoki jak ja.nie tak … jakне такой … какNie jest tak drogi jak tamten.taki sam jakтакой же, какMam taki sam telefon jak ty.ten samтот же самыйMieszkamy w tym samym domu.o wiele · dużo · znacznieнамногоo wiele lepszy · dużo taniejtrochę · niecoнемногоtrochę większy · nieco późniejcoraz + сравнительнаявсё … и …Jest coraz zimniej. · Coraz więcej ludzi.im …, tym …чем …, тем …Im szybciej, tym lepiej.jak + превосходная степенькак можно …jak najszybciej · jak najlepiejza · zbytслишкомZa drogo. · Zbyt trudne.dość · wystarczającoдостаточноdość ciepło · wystarczająco dużyze wszystkich · w …самый из / вnajlepszy ze wszystkich · najstarszy w rodzinie
 za - это и «слишком», и предлог «за». В значении «слишком» za непосредственно модифицирует признак или количество: za drogi, za droga, za drogo, za dużo. Как предлог za вводит именную группу в падеже: za domem, za wysokim mężczyzną. Значение и форму показывает вся конструкция, а не само слово za.
 coraz и im…, tym… берут только сравнительную степень. Coraz lepiej, не coraz dobrze. В Im więcej, tym lepiej обе части в сравнительной, запятая обязательна.
 Подводные камни
@@ -658,7 +658,7 @@ szybkoszybciejnajszybciej-ko → -ciejładnieładniejnajładniejciepłocieplejna
 Личные
 ктокого / чегокомукого / чтокем(о) ком
 jamniemi / mniemniemnąmnietyciebie / cięci / tobieciebie / ciętobątobieonjego / go / niegomu / jemu / niemujego / go / niegonimnimonojego / go / niegomu / jemu / niemuje / nienimnimonajej / niejjej / niejją / niąniąniejmynasnamnasnaminaswywaswamwaswamiwasoniich / nichim / nimich / nichniminichoneich / nichim / nimje / nieniminich
-После предлога выбираем форму с начальным n-. Сравни: widzę go / patrzę na niego, daję jej / mówię o niej, widzę je / patrzę na nie. К постпредложным относятся также niemu, nim, nią, nich, nimi. В творительном nim, nią, nimi имеют n- и без предлога: Interesuję się nim.
+У местоимений третьего лица после предлога выбираем форму с начальным n-. Сравни: widzę go / patrzę na niego, daję jej / mówię o niej, widzę je / patrzę na nie. К постпредложным относятся также niemu, nim, nią, nich, nimi. В творительном nim, nią, nimi имеют n- и без предлога: Interesuję się nim.
 Короткие формы go, mu, cię, ci, mi безударные. Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: Mnie to nie interesuje.
 Личное местоимение обычно опускается. Окончание глагола уже содержит лицо: idę, а не ja idę. Постоянное ja звучит либо как нажим, либо как речь иностранца.
 В нейтрально-вежливом обращении нужны pan / pani и третье лицо. Czy pan ma paragon? Русскому и белорусскому вежливому «вы» соответствует не польское wy, а pan / pani. На ty переходят по взаимной договорённости или по принятой в конкретной среде норме.
@@ -690,7 +690,7 @@ Narzędniktymtątymtymitymi
 Miejscowniktymtejtymtychtych
 tę или tą. Нейтральная и письменная норма винительного - tę kawę. В разговорной речи часто встречается tą, совпадающее с формой творительного.
 ten · tamten · taki
-tamten склоняется точно как ten (tamtego, tamtemu, tamtym, tamtą), taki - как прилагательное dobry (takiego, takiemu, takim, taką). Отдельных парадигм учить не надо.
+Tamten в основном следует той же указательной модели, но в Biernik женского рода формы расходятся: tę kobietę, но tamtą kobietę. В остальных частотных косвенных формах: tamtego, tamtemu, tamtym. Taki склоняется как прилагательное dobry: takiego, takiemu, takim, taką.
 этоттоттакой
 муж.tentamtentakiжен.tatamtatakaср.totamtotakieмн. мужчиныcitamcitacyмн. остальноеtetamtetakie
 ten покрывает и «этот», и анафорическое «тот». Русское «тот фильм, о котором я говорил» по-польски - ten film, o którym mówiłem. Tamten выбирают, когда объект явно отодвинут в пространстве или времени либо противопоставлен другому: tamten dom, tamtego dnia, nie ten, tamten. Ставить tamten везде, где по-русски «тот», - типичная калька.
@@ -804,7 +804,7 @@ dwaj · trzej · czterejMianownik мн. ч.глагол во мн. ч.Dwaj stude
 числогруппападеж группыглаголпример
 1jeden duży domMianownik ед.jest · byłJeden duży dom stoi pusty.2, 3, 4dwa duże domyMianownik мн.są · byłyDwa duże domy zostały sprzedane.5-9, 0, 11-14pięć dużych domówDopełniacz мн.jest · byłoPięć dużych domów zostało sprzedanych.2-4, мужчиныdwaj dobrzy studenciMianownik мн.czytają · czytaliDwaj dobrzy studenci czytają.2-4, мужчины - вариантdwóch dobrych studentówDopełniacz мн.czyta · czytałoDwóch dobrych studentów czyta.5+, мужчиныpięciu dobrych studentówDopełniacz мн.czeka · czekałoPięciu dobrych studentów czekało.
 Прилагательное согласуется с существительным, а не с числительным. При числительных на 5-9, 0 и при 11-14 вся группа целиком уходит в Dopełniacz множественного: pięć dużych domów, dziesięć nowych samochodów, pięć dużych książek. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.
-Самое трудное место - пассив и прошедшее при числительных на 5-9, 0 и 11-14. Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: Pięć dużych domów zostało sprzedanych. Сравни с 2-4, где всё обычное: Dwa duże domy zostały sprzedane. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.
+Самое трудное место - пассив и прошедшее при числительных, которые требуют Dopełniacz множественного, например 5, 11, 21 и 25. Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: Pięć dużych domów zostało sprzedanych. Сравни с 2-4, где всё обычное: Dwa duże domy zostały sprzedane. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.
 Женский род ничем не отличается. dwie duże książki są · pięć dużych książek jest. Род виден только у dwa / dwie, дальше механика та же.
 Склонение
 падеж2345
@@ -1152,7 +1152,7 @@ powinien - «следует»
 japowinienempowinnamtypowinieneśpowinnaśon / ona / onopowinienpowinna · powinnomypowinniśmypowinnyśmywypowinniściepowinnyścieoni / onepowinnipowinny
 Род обязателен, как в прошедшем времени. Мужчина говорит powinienem, женщина - powinnam. И ударение то же, что в прошедшем времени: po-WIN-ni-śmy, po-WIN-ni-ście - третий слог от конца.
 powinien в прошедшем
-Добавляется był / była / byli - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. В разговоре часто обходятся одной формой настоящего, но письменная норма требует связки.
+Добавляется był / była / byli - «следовало сделать». Обычно из контекста понятно, что сделано не было, хотя буквально форма говорит только о том, что было бы правильно. Для однозначной передачи прошлого используют связку, особенно в письменной речи; в разговоре прошлый смысл часто выражает одна форма настоящего вместе с контекстом.
 powinienem był zadzwonićмне следовало позвонитьpowinnam była wiedziećмне следовало знатьpowinien był przyjśćему следовало прийтиpowinni byli zapytaćим следовало спросить
 musieć · powinien · trzeba: что выбрать
 формазначениечем отличается
@@ -3338,7 +3338,7 @@ chybaнаверное; кажетсяChyba jutro będzie padać.raczejскоре
 1. Что происходит сегоднякогдаDzisiajW weekendOstatnioчто делаюuczę się polskiegopracuję w domuspotykam się ze znajomymiDzisiaj uczę się polskiego.
 2. Что планируешькогдаJutroW tym tygodniuW weekendпланchcę odpocząćplanuję pójść na spacerchcę spotkać się z przyjaciółmiJutro chcę odpocząć.
 3. Что думаешьначалоMoim zdaniemMyślę, żeWydaje mi się, żeмнениеto dobry pomysłten film jest ciekawyto miejsce jest bardzo miłeMoim zdaniem to dobry pomysł.
-4. Как себя чувствуешьсостояниеNie mam dziś dużo energiiCzuję się bardzo dobrzeMam dziś dobry humorчто дальшеi dlatego chcę odpocząći dlatego zostaję w domuale chcę jeszcze trochę się uczyćNie mam dziś dużo energii i dlatego chcę odpocząć.
+4. Как себя чувствуешьсостояниеNie mam dziś dużo energiiCzuję się bardzo dobrzeMam dziś dobry humorчто дальшеi wolę zostać w domui mam dziś sporo planówale chcę jeszcze trochę się uczyćNie mam dziś dużo energii i wolę zostać w domu.
 Мини-задание. Возьми любой шаблон и произнеси три варианта о себе. Не ищи идеальную грамматику во время речи: сначала закончи мысль, потом проверь один непонятный момент в справочнике.
 Мини-диалоги
 Знакомый спрашивает о выходных- Co robiłeś w weekend?- W weekend odpoczywałem w domu. W niedzielę spotkałem się ze znajomymi.Твоя очередь: ответь, что делал именно ты. Достаточно двух фраз.
@@ -3428,7 +3428,7 @@ iиKupiłem chleb i mleko.без запятой, просто соединяет
 Запятая при сочинении - короткая карта. Обычно без запятой одиночные i, oraz, lub, albo, ani: chleb i mleko. Обычно с запятой a, ale, lecz, natomiast, więc, zatem, dlatego, czyli: On czyta, a ja piszę. При повторе запятая идёт перед вторым и каждым следующим: ani czasu, ani pieniędzy · albo dziś, albo jutro · i chleb, i mleko. Отдельно a без запятой в między Anną a Piotrem и в сопоставительных заголовках.
 Подчинительные - вводят придаточное
 союззначениепример
-żeчтоWiem, że przyjdzie.вводит факт после глаголов знания/речиżeby / abyчтобыChcę, żebyś przyszedł.цель или желание; после żeby - сослагательные окончания. В самостоятельном восклицании это частица: Żebyś wiedział!ponieważпотому что, посколькуNie przyszedłem, ponieważ byłem chory. · Ponieważ byłem chory, nie przyszedłem.нейтральное, частое в письменной и официальной речи; может открывать предложениеgdyżтак как, ибоNie przyszedłem, gdyż byłem chory.книжное; обычно идёт после главной части, а не перед нейboпотому чтоNie przyszedłem, bo byłem chory.разговорное, то же значениеjeśli / jeżeliеслиJeśli będziesz gotowy, zadzwoń.условиеgdybyесли быGdybym miał czas, poszedłbym.нереальное условие, требует условного наклоненияgdy / kiedyкогдаZadzwonię, gdy przyjadę.chociaż / mimo żeхотя, несмотря на то чтоPoszedłem, chociaż padał deszcz.zanimпрежде чемZanim wyjdziesz, zamknij okno.odkądс тех пор какOdkąd tu mieszkam, jestem szczęśliwy.dopóki (nie)пока (не)Dopóki czekam, czytam. · Czekam, dopóki nie zadzwonisz.dopóki - пока длится состояние; dopóki nie - до момента наступления события. Вид глагола выбирается по смыслу, а не по союзу: Dopóki nie widać rośliny, nie domyślamy się jej istnieniaskoroраз уж, посколькуSkoro już tu jesteś, zostań na obiad.
+żeчтоWiem, że przyjdzie.вводит факт после глаголов знания/речиżeby / abyчтобыChcę, żebyś przyszedł.цель или желание; после żeby - сослагательные окончания. В самостоятельном восклицании это частица: Żebyś wiedział!ponieważпотому что, посколькуNie przyszedłem, ponieważ byłem chory. · Ponieważ byłem chory, nie przyszedłem.нейтральное, частое в письменной и официальной речи; может открывать предложениеgdyżтак как, ибоNie przyszedłem, gdyż byłem chory.книжное; имеет фиксированную позицию между главной частью и последующим объяснениемboпотому чтоNie przyszedłem, bo byłem chory.разговорное, то же значениеjeśli / jeżeliеслиJeśli będziesz gotowy, zadzwoń.условиеgdybyесли быGdybym miał czas, poszedłbym.нереальное условие, требует условного наклоненияgdy / kiedyкогдаZadzwonię, gdy przyjadę.chociaż / mimo żeхотя, несмотря на то чтоPoszedłem, chociaż padał deszcz.zanimпрежде чемZanim wyjdziesz, zamknij okno.odkądс тех пор какOdkąd tu mieszkam, jestem szczęśliwy.dopóki (nie)пока (не)Dopóki czekam, czytam. · Czekam, dopóki nie zadzwonisz.dopóki - пока длится состояние; dopóki nie - до момента наступления события. Вид глагола выбирается по смыслу, а не по союзу: Dopóki nie widać rośliny, nie domyślamy się jej istnieniaskoroраз уж, посколькуSkoro już tu jesteś, zostań na obiad.
 że или żeby
 Wiem, że on przyjdzie.факт: «знаю, что придёт» - просто изъяснение
 Chcę, żeby on przyszedł.желание, исполнитель другой - нужен żeby / aby, а не że
@@ -3489,7 +3489,7 @@ Ani słowa! · Ani jeden.Усиленное отрицание.
 Двойное отрицание обязательно. Nikt nic nie wie. · Nigdy tam nie byłem. - nie при сказуемом остаётся, даже когда уже есть nikt или nigdy. В стандартном английском используется другая модель: Nobody knows.
 Слитно или раздельно
 какправилопримеры
-слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»aby · ażeby · byleby · chociażby · choćby · czyżby · gdyby · jakby · jakoby · niby · żeby · obyслитноnie с существительными, прилагательными, наречиями, причастиями - вне противопоставленияnieprawda · niegrzeczny · niedaleko · niepalącyслитно · норма-2026nie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie со словами глагольного значенияnie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomoраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельно · норма-2026by после союза - всегдаczy by · bo by · jeśli byś · to byśраздельноby, bym, byś после существительного, прилагательного, наречия, числительного или местоименияOn by to zrobił · My byśmy dokończyli · Czerwony by się zrobiłраздельноby с безличными формамиmożna by · trzeba by · warto by
+слитно-że, -ż с глаголами и вопросительнымиidźże! · chodźże! · dlaczegoż · cóż · któżслитноby, bym, byś с личной формой глаголаzrobiłbym · chciałabyś · poszlibyслитнозакреплённые слова - целиком, а не «союз + by»aby · ażeby · byleby · chociażby · choćby · czyżby · gdyby · jakby · jakoby · niby · żeby · obyслитноnie с существительными, прилагательными, образованными от них наречиями и причастиями-прилагательными - вне противопоставленияnieprawda · niegrzeczny · niedaleko · niepalącyслитно · норма-2026nie с прилагательным и наречием в любой степениnielepszy · nienajlepszy · niegorzej · nienajlepiejраздельноno, czy, niech, oby, bodaj как отдельные словаPodejdź no tutaj! · Czy wiesz? · Niech wejdzie.раздельноnie с глаголамиnie wiem · nie mam · nie chcęраздельноnie со словами глагольного значенияnie można · nie trzeba · nie warto · nie wolno · nie brak · nie wiadomoраздельноnie с деепричастиями и формами на -no / -tonie będąc · nie zjadłszy · nie znaleziono · nie wykrytoраздельноnie с числительными и местоимениямиnie pięć · nie ja · nie tenраздельно · норма-2026by после союза - всегдаczy by · bo by · jeśli byś · to byśраздельноby, bym, byś после существительного, прилагательного, наречия, числительного или местоименияOn by to zrobił · My byśmy dokończyli · Czerwony by się zrobiłраздельноby с безличными формамиmożna by · trzeba by · warto by
 Норма с 1 января 2026 года. Теперь nie пишется слитно с прилагательными и образованными от них наречиями во всех степенях: nielepszy, nienajlepszy, niegorzej, nienajlepiej. В старых словарях и текстах ещё встречается прежнее раздельное написание.
 Но слитно не везде. Реформа сняла зависимость от степени сравнения, а не все случаи раздельного написания. nie остаётся отдельным словом при явном противопоставлении (nie czarne, ale białe), при промежуточном состоянии (Film był nie najlepszy, ale też nie najgorszy), после wcale и bynajmniej (Wcale nie śmieszny ten żart), при ani (woda nie gorąca ani nie zimna), а также после byle nie, gdyby nie, jeszcze nie, już nie, tylko nie.
 by подвижна. С личной формой глагола она пишется слитно: zrobiłbym. Но может уйти к другому слову - и тогда пишется отдельно: Ja bym to zrobił · On by to zrobił · My byśmy dokończyli. Оба варианта нормативны, смысл один.
@@ -3540,7 +3540,7 @@ Mówię po polsku.наречие, не склоняетсякак говорюUc
 Женские формы профессий
 Образуются от мужской формы суффиксом. Список открытый: новые формы появляются на глазах и не всегда успевают закрепиться.
 суффикскогдапримеры
--kaсамый продуктивный, основа не меняетсяstudent → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka-arz → -arkaу слов на -arz, -erz согласная уходитlekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka-ka, k → czтолько у слов на -nik и -kprawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka-ka, g → żу слов на -log и -gpsycholog → psycholożka · filolog → filolożka · pedagog → pedagożka-ca → -czyniпродуктивно у слов на -casprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni-ica · -nicaнебольшая группаpracownik → pracownica · robotnik → robotnicaособые формывне моделей, запоминатьgospodarz → gospodyni · gość → gościni · król → królowapani + мужская формаодин из вариантов, особенно в официальном обращенииpani doktor · pani prezes · pani minister · pani inżynier; название профессии после pani не склоняется
+-kaсамый продуктивный, основа не меняетсяstudent → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka-arz → -arkaу слов на -arz, -erz согласная уходитlekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka-ka, k → czу ряда названий на -nikprawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka-ka, g → żу ряда названий на -log и -gpsycholog → psycholożka · filolog → filolożka · pedagog → pedagożka-ca → -czyniпродуктивно у слов на -casprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni-ica · -nicaнебольшая группаpracownik → pracownica · robotnik → robotnicaособые формывне моделей, запоминатьgospodarz → gospodyni · gość → gościni · król → królowapani + мужская формаодин из вариантов, особенно в официальном обращенииpani doktor · pani prezes · pani minister · pani inżynier; название профессии после pani не склоняется
 Выбор зависит от контекста и предпочтения человека. Pani doktor, pani prezes, pani minister широко употребляются, особенно в официальном обращении. Формы doktorka, profesorka, ministra, gościni нормативны и употребляются, но различаются по регистру и степени закреплённости. Поэтому u pani doktorki не ошибка; если предпочтение человека известно, лучше следовать ему, а без такой информации в официальном контакте безопасна модель pani + название должности.
 После być - творительный. Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką. Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.
 Уменьшительные формы

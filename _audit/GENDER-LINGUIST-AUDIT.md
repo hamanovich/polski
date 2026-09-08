@@ -316,3 +316,6 @@
 - [WSJP PAN: album](https://wsjp.pl/haslo/podglad/26237/album/2478843/ze-zdjeciami).
 - [WSJP PAN: muzeum](https://wsjp.pl/haslo/podglad/10927/muzeum/1361297/instytucja).
 - [WSJP PAN: artysta](https://wsjp.pl/haslo/podglad/2612/artysta/5023702/malarz).
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены m1, m2, m3, женский и средний род, pluralia tantum, несклоняемые заимствования, согласование и все 20 упражнений. Проверены пересечения с Biernik, Mianownik множественного и мужско-личным согласованием глагола. Новых P0, P1 и P2 не найдено; текущая секция согласована с исправленной подписью мужско-личной формы в разделе «Существительные».

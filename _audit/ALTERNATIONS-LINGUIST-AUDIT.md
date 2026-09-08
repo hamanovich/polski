@@ -136,3 +136,6 @@
 - [Zintegrowana Platforma Edukacyjna: Morfologiczna zasada pisowni polskiej](https://zpe.gov.pl/a/przeczytaj/D15zK2Vcz)
 - [Wielki słownik języka polskiego PAN](https://wsjp.pl/)
 - [Zasady opracowania WSJP PAN, wersja 2025](https://pliki.wsjp.pl/zasady_opracowania_wsjp.pdf), раздел `Odmiana` указывает, что полные парадигмы WSJP основаны на SGJP.
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Повторно сверены гласные и согласные чередования, беглая гласная, распределение по падежам и глагольным формам, русские и белорусские опоры и все 20 упражнений. Орфографические записи не смешивают букву и звук, а глагольные формы не выводятся по одному механическому правилу. Новых P0, P1 и P2 не найдено.

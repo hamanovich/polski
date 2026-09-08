@@ -302,7 +302,7 @@ assert(documents.get("s-conj").html.includes("Powiedział, że zadzwoni i że pr
 assert(documents.get("s-conj").html.includes("Zostałem w domu, mimo że padało"));
 assert(documents.get("s-conj").html.includes("Miał nadzieję, że jeśli wróci, porozmawiają"));
 assert(documents.get("s-conj").html.includes("Zrobiłem to dlatego, że mnie prosiłeś"));
-assert(documents.get("s-conj").html.includes("книжное; обычно идёт после главной части"));
+assert(documents.get("s-conj").html.includes("книжное; имеет фиксированную позицию"));
 assert(documents.get("s-conj").html.includes("придаточное цели"));
 assert(documents.get("s-conj").html.includes("нужен <span class=\"pl\">żeby / aby</span>"));
 assert(documents.get("s-conj").html.includes("Обязательного сдвига времени нет"));
@@ -392,6 +392,8 @@ assert(documents.get("s-talk").html.includes("Jak to będzie po rosyjsku?"));
 assert(!documents.get("s-talk").html.includes("Jak to znaczy po rosyjsku?"));
 assert(documents.get("s-talk").html.includes("około dziesięciu minut"));
 assert(!documents.get("s-talk").html.includes("Poproszę kawę i wodę, proszę"));
+assert(documents.get("s-talk").html.includes("Nie mam dziś dużo energii i wolę zostać w domu."));
+assert(!documents.get("s-talk").html.includes("i dlatego zostaję w domu"));
 assert(documents.get("s-talk").html.includes(", ale chcę jeszcze trochę się uczyć"));
 
 assert(dataSource.includes('"martwić się","o kogo?","o + Biernik"'));
@@ -407,6 +409,11 @@ assert.equal(fromData("ABASE").length + fromData("ADIAC").length, 32, "The alpha
 assert.equal(fromData("ADIAC").length, 9, "The Polish alphabet has nine letters with diacritics");
 assert.equal(fromData("DIGR").length, 7, "The multiletter table must keep exactly seven digraphs");
 assert.deepEqual(JSON.parse(JSON.stringify(fromData("LETTER_GROUPS").map(row => row.slice(0, 2)))), [["dzi", "триграф"], ["szcz", "два диграфа"]]);
+assert.deepEqual(Array.from(fromData("ADJ"), row => row[0]),
+  ["Mianownik", "Dopełniacz", "Celownik", "Biernik", "Narzędnik", "Miejscownik", "Wołacz"],
+  "The full adjective paradigm must include all seven Polish cases");
+assert(fromData("PARTPIS").some(row => row[1].includes("деепричастиями") && row[2].includes("nie będąc")),
+  "The spelling table must distinguish adverbial participles from adjectival participles");
 
 const exerciseSets = [
   "CASE_PRACTICE", "CASE_TEST", "VERB_PRACTICE", "VERB_TEST", "PREP_PRACTICE", "PREP_TEST",
@@ -645,6 +652,31 @@ assert.equal(nounAnswer("Niemcy", "miej", "pl"), "Niemczech");
 assert.equal(nounAnswer("Włochy", "miej", "pl"), "Włoszech");
 assert.equal(nounAnswer("Węgry", "miej", "pl"), "Węgrzech");
 assert.equal(nounAnswer("Piotr", "woł", "sg"), "Piotrze");
+const nounReferences = trainerNouns.filter(item => item.ref);
+assert.equal(nounReferences.length, 45, "Every noun card whose hint recommends a rule, orientation or list must link to it");
+assert.equal(new Set(nounReferences.map(item => item.ref)).size, 7);
+for(const item of nounReferences){
+  const match = item.ref.match(/^#([^/]+)\/(sg|pl)\/~(.+)$/);
+  assert(match, `${item.l}: the trainer reference must use the case deep-link format`);
+  assert.equal(match[1], item.c);
+  assert.equal(match[2], item.n);
+  const variant = documents.get("s-cases").document.querySelector(`.case-variant[data-case="${item.c}"][data-num="${item.n}"]`);
+  assert([...variant.querySelectorAll("[data-h]")].some(node => node.dataset.h === match[3]),
+    `${item.l}: the trainer reference target must exist in its case and number variant`);
+}
+const moneyReference = trainerNouns.find(item => item.l === "pieniądze" && item.c === "narz" && item.n === "pl");
+assert.equal(moneyReference.ref, "#narz/pl/~narzednik-mi");
+assert.equal(moneyReference.refLabel, "Открыть список");
+const breadReference = trainerNouns.find(item => item.l === "chleb" && item.c === "dop" && item.n === "sg");
+assert.equal(breadReference.ref, "#dop/sg/~dopelnienie-a");
+assert.equal(breadReference.refLabel, "Открыть ориентир");
+const sugarReference = trainerNouns.find(item => item.l === "cukier" && item.c === "dop" && item.n === "sg");
+assert.equal(sugarReference.ref, "#dop/sg/~dopelnienie-u");
+assert.equal(sugarReference.refLabel, "Открыть ориентир");
+const instrumentalMi = documents.get("s-cases").document.querySelector('[data-case="narz"][data-num="pl"] [data-h="narzednik-mi"]');
+assert.equal(instrumentalMi.querySelector(".blabel").textContent.trim(), "частые формы на -mi");
+assert.match(instrumentalMi.querySelector(".bnote").textContent, /список не исчерпывающий/);
+assert(!documents.get("s-cases").html.includes("короткий список, стоит выучить целиком"));
 assert(!trainerNouns.some(item => item.c === "mian" && item.n === "sg"),
   "Nominative singular is the dictionary form, so there is nothing to drill");
 for(const [caseId] of trainerDecks.cases) for(const number of ["sg", "pl"]){
@@ -675,6 +707,8 @@ assert.deepEqual(trainerAdjectives.find(item => item.k === "case" && item.t.star
   ["dobry", "dobrego"], "Both accusative masculine forms count");
 assert(!trainerAdjectives.some(item => item.k === "case" && item.t.startsWith("Mianownik")),
   "The nominative row is the dictionary form and duplicates the gender drill");
+assert(!trainerAdjectives.some(item => item.k === "case" && item.t.startsWith("Wołacz")),
+  "The vocative adjective forms match the nominative and must not duplicate trainer prompts");
 
 const planHTML = await readFile(resolve(root, "plan-40", "index.html"), "utf8");
 const plan = parseHTML(planHTML).document;

@@ -296,3 +296,10 @@
 [11]: https://www.poradnia-jezykowa.uni.lodz.pl/szczegoly/odmiana-zwrotu-grzecznosciowego?utm_source=chatgpt.com "odmiana zwrotu grzecznościowego"
 [12]: https://poradniajezykowa.uw.edu.pl/porady/moga-panstwo/?utm_source=chatgpt.com "PJ UW - mogą Państwo"
 [13]: https://poradniajezykowa.uw.edu.pl/porady/odmiana-nazwisk-zenskich/?utm_source=chatgpt.com "PJ UW - odmiana nazwisk żeńskich"
+## Финальная перепроверка перед публикацией, 8 сентября 2026 года
+
+Сверены обращения, имена, фамилии, названия жителей, национальности, феминитивы и все 20 упражнений.
+
+Исправлен один пункт P2: подписи к моделям `prawnik → prawniczka` и `psycholog → psycholożka` были сформулированы как правила для всех слов на `-nik / -k` и `-log / -g`. Область действия ограничена до «у ряда названий», чтобы таблица не обещала механическое образование любой формы. Статус: **подтверждено источником** для приведённых форм: [WSJP PAN: prawniczka](https://wsjp.pl/haslo/podglad/50326/prawniczka), [WSJP PAN: psycholożka](https://wsjp.pl/haslo/podglad/125790/psycholozka).
+
+Открытых P0, P1 и P2 нет.
