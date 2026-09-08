@@ -163,3 +163,11 @@
 - [Wielki słownik języka polskiego PAN: pracować](https://wsjp.pl/haslo/podglad/19959/pracowac/5068992/przy-budowie)
 - [Wielki słownik języka polskiego PAN: nazywać się](https://wsjp.pl/haslo/podglad/7267/nazywac-sie)
 - [Rada Języka Polskiego PAN: Pisownia i odmiana skrótowców](https://rjp.pan.pl/pisownia-i-odmiana-skrotowcow/)
+
+## Дополнение по итогам общего аудита
+
+Дата: 8 сентября 2026 года.
+
+Формулировка «настоящий пассив» в теории и задании 19 могла читаться как указание на настоящее время, хотя пример `Książka została napisana` стоит в прошедшем. Она заменена на «страдательный залог с подлежащим», что согласует терминологию с разделом глаголов и сохраняет исходный грамматический контраст.
+
+Статус: **P2, исправлено**.

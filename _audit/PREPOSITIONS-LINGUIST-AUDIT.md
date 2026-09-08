@@ -299,3 +299,11 @@
 - [WSJP PAN: w + Miejscownik](https://wsjp.pl/haslo/podglad/24288/w/3981750/w-pudelku) и [w + Biernik](https://wsjp.pl/haslo/podglad/24288/w/3981751/w-pudelko).
 - [WSJP PAN: nad](https://wsjp.pl/haslo/podglad/29983/nad/4012260/nad-stolem).
 - [WSJP PAN: bez / beze](https://wsjp.pl/haslo/podglad/27417/bez/4162585/kawa-bez-mleka).
+
+## Дополнение по итогам общего аудита
+
+Дата: 8 сентября 2026 года.
+
+Две формулировки итогового теста буквально повторяли практику: `Nie idź beze mnie` и `Lampa wisi nade mną`. Они заменены на `Nie zaczynajcie beze mnie` и `Niebo nade mną było bezchmurne`. Проверяемые расширенные формы `beze` и `nade` не изменились.
+
+Статус: **P2, исправлено**.

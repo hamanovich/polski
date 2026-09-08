@@ -176,6 +176,8 @@ assert(!rootPage.html.includes("przez godzinę"), "Homepage should not duplicate
 const cases = documents.get("s-cases");
 assert.equal(cases.document.querySelectorAll(".case-variant").length, 14);
 assert(cases.html.includes("Miejscownik"));
+assert(cases.html.includes("dwadzieścia jeden biletów"));
+assert(cases.html.includes("dwadzieścia dwa bilety"));
 
 const gender = documents.get("s-rodz");
 assert(gender.html.includes("męskozwierzęcy (męskożywotny)"));
@@ -246,6 +248,7 @@ assert(impersonal.html.includes("Wczoraj dobrze się pracowało"));
 assert(impersonal.html.includes("Jak nazywają się te ulice?"));
 assert(impersonal.html.includes("Napisano nową książkę"));
 assert(impersonal.html.includes("может означать и запрет"));
+assert(!impersonal.html.includes("настоящий пассив"));
 assert(!impersonal.html.includes("Действие совершено, но кем"));
 assert(!impersonal.html.includes("не «dom został zbudowany»"));
 assert.equal(impersonal.document.querySelectorAll(".impersonal-practice .exercise-item").length, 20);
@@ -413,20 +416,46 @@ const exerciseSets = [
   "ORDER_PRACTICE", "IMPERS_PRACTICE"
 ];
 const answerSets = [];
-for(const name of exerciseSets)
+const promptsBySet = new Map();
+const exerciseIds = [];
+for(const name of exerciseSets){
+  const prompts = [];
   for(const practice of [fromData(name)].flat())
     for(const task of practice.tasks){
-      if(task.answers) answerSets.push({where:`${name} · ${task.id}`, answers:task.answers, fixed:!!task.options});
+      exerciseIds.push(task.id);
+      assert(task.answers?.length || task.passage?.some(part => part?.answers?.length), `${name} · ${task.id}: an exercise needs an answer`);
+      prompts.push(task.prompt.replace(/\s+/g, " ").trim());
+      if(task.answers) answerSets.push({where:`${name} · ${task.id}`, answers:task.answers, options:task.options || null});
       for(const part of task.passage || [])
-        if(part?.answers) answerSets.push({where:`${name} · ${task.id}/${part.key}`, answers:part.answers, fixed:!!part.options});
+        if(part?.answers) answerSets.push({where:`${name} · ${task.id}/${part.key}`, answers:part.answers, options:part.options || null});
     }
+  assert.equal(new Set(prompts).size, prompts.length, `${name}: exact prompt duplicates weaken practice coverage`);
+  promptsBySet.set(name, prompts);
+}
+assert.equal(exerciseIds.length, 747, "The handbook practice must expose all 747 exercises");
+assert.equal(new Set(exerciseIds).size, exerciseIds.length, "Exercise ids must be unique across the handbook");
 assert(answerSets.length > 400, "Every practice block must be reachable from exerciseSets");
+
+for(const [practiceName, testName] of [["CASE_PRACTICE", "CASE_TEST"], ["VERB_PRACTICE", "VERB_TEST"], ["PREP_PRACTICE", "PREP_TEST"], ["ADJ_PRACTICE", "ADJ_TEST"]]){
+  const practicePrompts = new Set(promptsBySet.get(practiceName));
+  assert(!promptsBySet.get(testName).some(prompt => practicePrompts.has(prompt)),
+    `${testName}: a final test must not repeat an exact prompt from ${practiceName}`);
+}
 
 const beMarker = "(?:będę|będziesz|będzie|będziemy|będziecie|będą)";
 const futureWithInfinitive = new RegExp(`^${beMarker} \\S+ć( się)?$`);
 const futureWithPastForm = new RegExp(`^${beMarker} \\S+(ł|ła|ło|li|ły)( się)?$`);
-for(const {where, answers, fixed} of answerSets){
-  if(fixed) continue;
+for(const {where, answers, options} of answerSets){
+  assert(answers.every(answer => typeof answer === "string" && answer.trim() === answer && answer),
+    `${where}: every answer must be a non-empty trimmed string`);
+  assert.equal(new Set(answers).size, answers.length, `${where}: answers must not repeat`);
+  if(options){
+    assert(options.every(option => typeof option === "string" && option.trim() === option && option),
+      `${where}: every option must be a non-empty trimmed string`);
+    assert.equal(new Set(options).size, options.length, `${where}: options must not repeat`);
+    assert(answers.every(answer => options.includes(answer)), `${where}: every correct answer must be available among the options`);
+    continue;
+  }
   const withInfinitive = answers.some(answer => futureWithInfinitive.test(answer));
   const withPastForm = answers.some(answer => futureWithPastForm.test(answer));
   if(withInfinitive || withPastForm)
@@ -543,6 +572,8 @@ const trainerPages = [
   ["s-cases", "cases", "Тренажёр падежных форм", ["case", "number"]],
   ["s-adj", "adjectives", "Тренажёр форм прилагательных", ["kind", "gender"]]
 ];
+assert.match(css, /\.trainer \.trainer-filter\{[^}]*min-width:0/, "Trainer filters must be allowed to shrink on narrow screens");
+assert.match(css, /\.trainer \.trainer-tog\{[^}]*overflow-x:auto/, "Wide trainer toggles must scroll locally instead of widening the page");
 for(const [id, path, heading, filters] of trainerPages){
   const page = documents.get(id).document;
   const block = page.querySelector(".sec .trainer");

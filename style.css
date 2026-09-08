@@ -734,6 +734,9 @@ footer{margin:40px auto 0;font-size:14px}
 html:not(.js) .trainer .trainer-filters,html:not(.js) .trainer .trainer-stage,html:not(.js) .trainer .practice-actions{display:none}
 @media (max-width:760px){
   .trainer .trainer-score{white-space:normal;text-align:left;margin-top:7px}
+  .trainer .trainer-filter{width:100%;min-width:0}
+  .trainer .trainer-tog{width:100%;min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
+  .trainer .trainer-tog button{flex:0 0 auto}
 }
 @media (max-width:560px){
   .trainer .trainer-filters{gap:12px}

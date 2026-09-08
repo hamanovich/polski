@@ -718,3 +718,11 @@ akcent("byliśmy", ["by","li","śmy"], 3)
 - [Wielki słownik ortograficzny PWN, `wozić`](https://sjp.pwn.pl/so/wozic;4532058.html) - «woź a. wóź», подтверждение существующей формы.
 - [Wikisłownik: `wypić`](https://pl.wiktionary.org/wiki/wypi%C4%87), [`umyć`](https://pl.wiktionary.org/wiki/umy%C4%87), [`być`](https://pl.wiktionary.org/wiki/by%C4%87), [`dać`](https://pl.wiktionary.org/wiki/da%C4%87), [`prosić`](https://pl.wiktionary.org/wiki/prosi%C4%87) - парадигмы и управление.
 - [Słownik SJP, `wypiję`](https://sjp.pl/wypij%C4%99) - словарное подтверждение формы.
+
+## Дополнение по итогам общего аудита
+
+Дата: 8 сентября 2026 года.
+
+Точная формулировка `Boję się dużych ___. (pies)` повторялась в практике управления и итоговом тесте. Тестовая задача заменена на `Maria boi się ciemnych ___. (piwnica)` с ответом `piwnic`. Управление `bać się + Dopełniacz` сохранено, но итоговый тест больше не воспроизводит уже знакомую карточку.
+
+Форма `piwnic` подтверждена [WSJP PAN](https://wsjp.pl/haslo/podglad/26650/piwnica/4701160/w-kamienicy). Статус: **P2, исправлено**.

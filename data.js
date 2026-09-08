@@ -176,7 +176,7 @@ const CASES = [
 },
 {
   id:"dop", name:"Dopełniacz", ru:"Родительный", q:"kogo? czego?",
-  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После числительных на 5-9 и 0, а также после 11-14: <span class='pl'>pięć biletów, dwanaście biletów</span>. Также после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>.","Часть вместо целого: <span class='pl'>kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy</span> - против <span class='pl'>kup chleb</span> (конкретную буханку). Русская модель «купи хлеба / купи хлеб» переносится один в один."],
+  use:["При отрицании прямого объекта винительный обычно заменяется родительным: <span class='pl'>mam czas → nie mam czasu</span>. Для базового польского применяй это правило автоматически.","Отсутствие: <span class='pl'>nie ma mleka</span>.","После большинства количественных числительных: <span class='pl'>pięć biletów, jedenaście biletów, dwadzieścia jeden biletów, dwadzieścia pięć biletów</span>. Составные числительные, последний член которых <span class='pl'>dwa, trzy, cztery</span> (кроме 12-14), требуют именительного множественного: <span class='pl'>dwadzieścia dwa bilety</span>. Также родительный нужен после слов <span class='pl'>dużo, mało, kilka, trochę, ile</span>: <span class='pl'>dużo czasu, kilka osób</span>.","Принадлежность: <span class='pl'>dom mojego brata</span>.","Дата: <span class='pl'>trzeciego maja</span>.","Глаголы: <span class='pl'>szukać, słuchać, uczyć się, potrzebować, bać się, używać, życzyć</span>.","Часть вместо целого: <span class='pl'>kup chleba, nalej wody, daj herbaty, pożycz mi pieniędzy</span> - против <span class='pl'>kup chleb</span> (конкретную буханку). Русская модель «купи хлеба / купи хлеб» переносится один в один."],
   preps:"do, od, z (откуда), bez, dla, u, obok, koło, naprzeciwko, oprócz, według, podczas, wśród, zamiast",
   sg:[
     {l:"муж. одушевл.", f:[{a:"pan",b:"pan|a"},{a:"brat",b:"brat|a"},{a:"pies",b:"ps|a"}], n:"-a, без вариантов"},
@@ -303,11 +303,11 @@ const CASE_PRACTICE = [
   lead:"Собери подлежащее и именную часть сказуемого. Следи за родом и мужско-личным множественным числом.",
   tasks:[
     {id:"mian-1", prompt:"To są ___ dzieci.", options:["mój","moja","moje"], answers:["moje"], explanation:"Dzieci - немужско-личное множественное число, поэтому moje."},
-    {id:"mian-2", prompt:"___ dobrzy studenci czekają przed salą. (ten)", answers:["ci"], explanation:"Мужско-личная форма указательного ten во множественном числе - ci."},
+    {id:"mian-2", prompt:"___ dobrzy studenci czekają przed salą. (ten)", answers:["Ci"], explanation:"Мужско-личная форма указательного ten во множественном числе - ci."},
     {id:"mian-3", prompt:"Państwo Kowalscy ___ już gotowi.", options:["był","była","byli","były"], answers:["byli"], explanation:"Państwo о смешанной группе согласуется как мужско-личное множественное число: byli."},
     {id:"mian-4", prompt:"To jest dobry ___ (nauczyciel).", answers:["nauczyciel"], explanation:"После to jest название человека остаётся в именительном: nauczyciel."},
     {id:"mian-5", prompt:"To są dobrzy ___ (lekarz).", answers:["lekarze"], explanation:"Мужско-личное множественное от lekarz имеет словарную форму lekarze."},
-    {id:"mian-6", prompt:"___ nowe książki leżą na stole. (ten)", answers:["te"], explanation:"Книги образуют немужско-личное множественное число, поэтому используется te."},
+    {id:"mian-6", prompt:"___ nowe książki leżą na stole. (ten)", answers:["Te"], explanation:"Книги образуют немужско-личное множественное число, поэтому используется te."},
     {id:"mian-7", prompt:"Moi ___ mieszkają w Gdańsku. (brat)", answers:["bracia"], explanation:"Brat → bracia - особая форма именительного множественного, которую нужно запомнить."},
     {id:"mian-8", prompt:"To są moi mili ___ (kolega).", answers:["koledzy"], explanation:"Мужское слово на -a склоняется как женское, но во множественном о мужчинах даёт мужско-личную форму: kolega → koledzy."},
     {id:"mian-9", prompt:"Moje ___ są jeszcze małe. (dziecko)", answers:["dzieci"], explanation:"Dziecko → dzieci - форма именительного множественного."},
@@ -497,13 +497,13 @@ const CASE_PRACTICE = [
     {id:"wol-13", prompt:"Kochana ___, co u ciebie? (babcia)", answers:["Babciu"], explanation:"Babcia → Babciu в звательном."},
     {id:"wol-14", prompt:"Panie ___, jak dojść do dworca? (kierownik)", answers:["kierowniku"], explanation:"Титул kierownik в звательном: kierowniku."},
     {id:"wol-15", prompt:"___, nie zapomnij o spotkaniu! (Kasia)", answers:["Kasiu"], explanation:"Kasia → Kasiu в звательном."},
-    {id:"wol-16", prompt:"Drogi ___, dziękuję za pomoc. (Jan)", answers:["Janie"], explanation:"Jan → Janie в звательном."},
+    {id:"wol-16", prompt:"Drogi ___, dawno się nie widzieliśmy. (Jan)", answers:["Janie"], explanation:"Jan → Janie в звательном."},
     {id:"wol-17", prompt:"___, chodź na obiad! (dziecko)", answers:["Dziecko"], explanation:"У слова dziecko звательный совпадает с именительным."},
     {id:"wol-18", prompt:"Pani ___, zapraszam do gabinetu. (Maria)", answers:["Mario"], explanation:"Maria → Mario в звательном."},
     {id:"wol-19", prompt:"Szanowny panie ___, dziękuję za odpowiedź. (Adam)", answers:["Adamie"], explanation:"Adam → Adamie в звательном."},
     {id:"wol-text", prompt:"Короткий разговор в приёмной", passage:[
       {key:"a",options:["Pan","Panie","Pana"],answers:["Panie"],label:"форма слова pan"}," doktorze, czy mogę wejść? - Chwileczkę, ",
-      {key:"b",answers:["panie"],hint:"pan",label:"форма слова pan"}," Adamie. - Dobrze, ",
+      {key:"b",answers:["panie"],hint:"pan",label:"форма слова pan"}," Adamie. - Dobrze, panie ",
       {key:"c",options:["doktor","doktora","doktorze"],answers:["doktorze"],label:"форма слова doktor"},"."
     ], explanation:"В прямом обращении употребляем panie и звательную форму титула doktorze."}
   ]
@@ -524,7 +524,7 @@ const CASE_TEST = {
     {id:"test-8", prompt:"Kupuję trzy świeże ___.", options:["bułki","bułek","bułkami"], answers:["bułki"], explanation:"После 2–4 здесь винительный множественного, совпадающий с именительным: bułki."},
     {id:"test-9", prompt:"Potrzebujemy więcej ___.", options:["krzesła","krzeseł","krzesłom"], answers:["krzeseł"], explanation:"Więcej требует родительного множественного: krzeseł."},
     {id:"test-10", prompt:"Czy możesz pomóc mojej ___? (siostra)", answers:["siostrze"], explanation:"Pomagać + дательный; siostra → siostrze."},
-    {id:"test-11", prompt:"Interesuję się polską ___.", options:["historia","historii","historią"], answers:["historią"], explanation:"Interesować się управляет творительным: historią."},
+    {id:"test-11", prompt:"Od dziecka interesuję się dawną ___. (architektura)", options:["architektura","architektury","architekturą"], answers:["architekturą"], explanation:"Interesować się управляет творительным: architekturą."},
     {id:"test-12", prompt:"Myślę o naszych ___.", options:["wakacje","wakacji","wakacjach","wakacjami"], answers:["wakacjach"], explanation:"O + тема требует предложного множественного: wakacjach."},
     {id:"test-13", prompt:"___, chodź tutaj! (Piotr)", answers:["Piotrze"], explanation:"Piotr → Piotrze в звательном."},
     {id:"test-14", prompt:"Moje dzieci ___ już w domu.", options:["jest","są","byli"], answers:["są"], explanation:"Dzieci - именительный множественного, с ним są."},
@@ -761,7 +761,7 @@ const VERB_TEST = {
     {id:"vtest-9", prompt:"Mężczyzna ___ przy drzwiach jest moim sąsiadem. (stać)", answers:["stojący"], explanation:"Действительное причастие от stać: stojący."},
     {id:"vtest-10", prompt:"Dokument został ___. (podpisać)", options:["podpisany","podpisując","podpisanie"], answers:["podpisany"], explanation:"Пассив требует страдательного причастия podpisany."},
     {id:"vtest-11", prompt:"Dziękuję pani za ___. (pomoc)", answers:["pomoc"], explanation:"Dziękować komuś za + винительный; pomoc имеет ту же форму."},
-    {id:"vtest-12", prompt:"Boję się dużych ___. (pies)", answers:["psów"], explanation:"Bać się требует родительного: psów."},
+    {id:"vtest-12", prompt:"Maria boi się ciemnych ___. (piwnica)", answers:["piwnic"], explanation:"Bać się требует родительного: piwnic."},
     {id:"vtest-13", prompt:"Zwykle ___ do pracy autobusem. (jeździć, ja)", options:["jadę","jeżdżę","idę"], answers:["jeżdżę"], explanation:"Регулярное движение транспортом: jeżdżę."},
     {id:"vtest-14", prompt:"Nie ___ jego numeru telefonu.", options:["znam","wiem","umiem"], answers:["znam"], explanation:"Назван конкретный объект: znać numer."},
     {id:"vtest-15", prompt:"Nie ___, czy on przyjdzie.", options:["znam","wiem","umiem"], answers:["wiem"], explanation:"Придаточное с czy требует wiedzieć."},
@@ -1823,7 +1823,7 @@ const PREP_TEST = {
     {id:"preptest-13", prompt:"Czekałem ___ godzinę.", options:["przez","po","od"], answers:["przez"], explanation:"Длительность действия: przez godzinę."},
     {id:"preptest-14", prompt:"Pracuję ___ poniedziałku.", options:["od","ode","z"], answers:["od"], explanation:"Перед обычным существительным: od poniedziałku."},
     {id:"preptest-15", prompt:"Dostałem wiadomość ___ niego.", options:["od","ode","z"], answers:["od"], explanation:"Нормально od niego; форма ode нужна прежде всего перед mnie."},
-    {id:"preptest-16", prompt:"Nie idź ___ mnie.", options:["beze","bez","ode"], answers:["beze"], explanation:"Перед mnie употребляется расширенная форма: beze mnie."},
+    {id:"preptest-16", prompt:"Nie zaczynajcie ___ mnie.", options:["beze","bez","ode"], answers:["beze"], explanation:"Перед mnie употребляется расширенная форма: beze mnie."},
     {id:"preptest-17", prompt:"Dzięki ___ zdążyliśmy. (ty)", answers:["tobie"], explanation:"Dzięki требует дательного: dzięki tobie."},
     {id:"preptest-18", prompt:"Usiądź między ___ a Piotrem. (Anna)", answers:["Anną"], explanation:"Положение между объектами: między + творительный, między Anną a Piotrem."},
     {id:"preptest-19", prompt:"Wkładam telefon do ___. (torba)", answers:["torby"], explanation:"Do + родительный: do torby."},
@@ -1832,7 +1832,7 @@ const PREP_TEST = {
     {id:"preptest-22", prompt:"Mieszkam tu ___ pięciu lat.", options:["od","za","przez"], answers:["od"], explanation:"С какого времени: od pięciu lat."},
     {id:"preptest-23", prompt:"Przyjdę ___ dziesięć minut.", options:["za","od","po"], answers:["za"], explanation:"Через десять минут: za dziesięć minut."},
     {id:"preptest-24", prompt:"Wrócił ___ godzinie.", options:["po","przez","za"], answers:["po"], explanation:"Возвращение спустя час: po godzinie."},
-    {id:"preptest-25", prompt:"Lampa wisi ___ mną.", options:["nade","nad","pode"], answers:["nade"], explanation:"Перед mną употребляется расширенная форма: nade mną."}
+    {id:"preptest-25", prompt:"Niebo ___ mną było bezchmurne.", options:["nade","nad","pode"], answers:["nade"], explanation:"Перед mną употребляется расширенная форма: nade mną."}
   ]
 };
 const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation,options],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation,...(options?{options}:{})}));
@@ -1951,7 +1951,7 @@ IMPERS_PRACTICE.tasks = topicTasks("impers",[
   ["Выберите форму на -to:","O ósmej otwarto drzwi.","От otworzyć образуется безличная форма otwarto.",["O ósmej otwarto drzwi.","O ósmej otwierano jutro drzwi.","O ósmej drzwi została otwarta."]],
   ["Как передать длительный процесс без названного исполнителя?","Wczoraj długo pracowano.","Несовершенный вид pracować даёт процессуальное pracowano.",["Wczoraj długo pracowano.","Wczoraj długo pracowało się pracownicy.","Wczoraj długo zostało pracowane."]],
   ["Выберите правильный винительный после формы на -no:","Napisano nową książkę.","Дополнение остаётся в Biernik: nową książkę.",["Napisano nowa książka.","Napisano nowej książki.","Napisano nową książkę."]],
-  ["В каком предложении используется настоящий пассив?","Książka została napisana po polsku.","Została napisana согласуется с подлежащим książka и образует пассив.",["Napisano książkę po polsku.","Książka została napisana po polsku.","Po polsku pisano książkę."]],
+  ["В каком предложении используется страдательный залог с подлежащим?","Książka została napisana po polsku.","Została napisana согласуется с подлежащим książka и образует пассив.",["Napisano książkę po polsku.","Książka została napisana po polsku.","Po polsku pisano książkę."]],
   ["Разрешение относится лично к говорящему:","Czy wolno mi wejść?","Лицо при wolno ставится в Celownik: mi.",["Czy wolno mnie wejść?","Czy wolno ja wejść?","Czy wolno mi wejść?"]]
 ]);
 ORDER_PRACTICE.tasks = topicTasks("order",[
@@ -2227,7 +2227,7 @@ const PRON_PRACTICE = {
     {id:"pron-3",prompt:"Daję Ani książkę. Daję ___ książkę.",options:["jej","ją","niej"],answers:["jej"],explanation:"Daję komu? jej - дательный."},
     {id:"pron-4",prompt:"Rozmawiam o Ani. Rozmawiam o ___.",options:["jej","nią","niej"],answers:["niej"],explanation:"После o нужна форма с n-: o niej."},
     {id:"pron-5",prompt:"Нейтрально, без противопоставления: Myję ___.",options:["się","sobie","sobą"],answers:["się"],explanation:"Нейтральная краткая форма: myję się. Полное siebie возможно при противопоставлении: Myję siebie, nie dziecko."},
-    {id:"pron-6",prompt:"Nie myśl tylko o ___.",options:["się","siebie","sobą"],answers:["sobie"],explanation:"O + предложный: o sobie."},
+    {id:"pron-6",prompt:"Nie myśl tylko o ___.",options:["się","sobie","sobą"],answers:["sobie"],explanation:"O + предложный: o sobie."},
     {id:"pron-7",prompt:"To jest ___ książka. (ja)",options:["mój","moja","moje"],answers:["moja"],explanation:"Książka - женского рода: moja książka."},
     {id:"pron-8",prompt:"Нейтрально, без противопоставления: Biorę ___ bilet. (обладатель - я)",options:["mój","swój","jego"],answers:["swój"],explanation:"В образцовой и нейтральной модели при совпадении обладателя с подлежащим используем swój. Разговорное mój тоже возможно, но здесь тренируется нейтральная модель."},
     {id:"pron-9",prompt:"___ ludzie czekają na autobus.",options:["Ci","Te","Tych"],answers:["Ci"],explanation:"Мужско-личный именительный множественного: ci ludzie."},

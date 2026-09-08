@@ -305,3 +305,11 @@
 - [ZPE: bezosobowość w języku](https://zpe.gov.pl/a/bezosobowosc-w-jezyku/DMYmhBC8e).
 - [Poradnia Językowa UW: mój czy swój](https://poradniajezykowa.uw.edu.pl/porady/moj-czy-swoj/).
 - [Poradnia Językowa UW: обращение к клиенту](https://poradniajezykowa.uw.edu.pl/porady/zwrot-do-klienta/).
+
+## Дополнение по итогам общего аудита
+
+Дата: 8 сентября 2026 года.
+
+Повторная структурная проверка всех упражнений обнаружила пропущенный P0 в `pron-6`: правильный ответ `sobie` не входил в варианты `się / siebie / sobą`. Варианты исправлены на `się / sobie / sobą`. В общую проверку добавлен инвариант, запрещающий правильный ответ вне списка вариантов.
+
+Форма подтверждена описанием IJP PAN: `Ms. sobie` ([Fleksja](https://gramsem.ijppan.pl/wp-content/uploads/2024/06/Fleksja.pdf)). Статус: **исправлено, подтверждено источником**.

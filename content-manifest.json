@@ -16,7 +16,7 @@
     "date": "2026-09-07"
   },
   "cases": {
-    "hash": "b6b5976f6408e0873a8182da4bf2474acac8446cb22e66e35a0eece565dda950",
+    "hash": "e51c8c41d238f8dbc389c2b1c05961acab18f7071def3257c8a5c3b089edd043",
     "date": "2026-09-07"
   },
   "conjunctions": {
@@ -32,8 +32,8 @@
     "date": "2026-09-07"
   },
   "impersonal": {
-    "hash": "b9b618ed43a89555ff22df07d87cfcdc00d9130255443386ba458c00dd62c949",
-    "date": "2026-09-07"
+    "hash": "65e7093d71db3a6059074a7d793a7701ee517c93c60eea1de8d7604d3667a886",
+    "date": "2026-09-08"
   },
   "index": {
     "hash": "e57140e85450f51f6e9a59c760fc5d28e618ae00d5780c80b963756a1552de3d",
@@ -64,11 +64,11 @@
     "date": "2026-09-07"
   },
   "prepositions": {
-    "hash": "a0435adbee604820fd4757572ffc36b98f82095db5808d64a3cd5fc54c360733",
+    "hash": "316020d9e2c1724e66d0a1fa4a6767c6510864f9869979ce9a603016816a19b4",
     "date": "2026-09-07"
   },
   "pronouns": {
-    "hash": "ebac1d0832cd6cbeaa2604f1ed871d1987a09ec3170b340e204852c530b93672",
+    "hash": "ce3925839dea56dcd18c1b4b78e6929ba19d7f088379b4c4ede7aedd858b41c7",
     "date": "2026-09-07"
   },
   "questions": {
@@ -80,7 +80,7 @@
     "date": "2026-09-07"
   },
   "verbs": {
-    "hash": "809acaccac361d71d6fd6dbc946fbd7b0fde6dfa84908bbab4fe5f2788425547",
+    "hash": "4f4ec18cae0510aa6dc61d8afabbc4fd066ba9efe4e1301cbd599133fbf60242",
     "date": "2026-09-07"
   },
   "vocabulary": {
