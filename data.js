@@ -726,25 +726,25 @@ const VERB_EXTRA = {
   lista:[
     ["Форма mogę принадлежит глаголу ___.","móc","Mogę - форма ja от móc."],
     ["Форма chcę принадлежит глаголу ___.","chcieć","Chcę - форма ja от chcieć."],
-    ["___ pływać, ale nie mam dziś czasu.","Umiem","Уметь что-то делать: umiem + инфинитив."],
-    ["Nie ___ tej kobiety, ale wiem, kim jest.","znam","Конкретного человека: znam."],
-    ["___ parasol, bo pada deszcz.","Biorę","Brać в форме ja: biorę."],
-    ["Codziennie ___ do pracy tramwajem.","jeżdżę","Регулярное движение транспортом: jeżdżę."],
-    ["Teraz ___ do domu pieszo.","idę","Движение сейчас пешком: idę."],
-    ["Pociąg ___ o ósmej.","odjeżdża","Отправляется по расписанию: odjeżdża."],
-    ["___, że masz rację.","Wiem","Факт или придаточное: wiem, że…"],
-    ["Czy ___ mi pan powiedzieć, gdzie jest bank?","może","Вежливая просьба: czy może mi pan powiedzieć…"],
-    ["Dzieci ___ się w ogrodzie.","bawią","Bawić się для one: bawią się."],
-    ["Rano zawsze ___ prysznic.","biorę","Устойчиво: biorę prysznic."],
-    ["On ___ po angielsku i po polsku.","mówi","Mówić для on: mówi."],
-    ["Po pracy ___ do domu.","wracam","Wracać для ja: wracam."],
-    ["W restauracji ___ zupę i kawę.","zamawiam","Заказывать: zamawiam."]
+    ["___ pływać, ale nie mam dziś czasu.","Umiem","Уметь что-то делать: umiem + инфинитив.",["Umiem","Znam","Wiem"]],
+    ["Nie ___ tej kobiety, ale wiem, kim jest.","znam","Конкретного человека: znam.",["znam","wiem","umiem"]],
+    ["___ parasol, bo pada deszcz. (brać, ja)","Biorę","Brać в форме ja: biorę."],
+    ["Codziennie ___ do pracy tramwajem. (jeździć, ja)","jeżdżę","Регулярное движение транспортом: jeżdżę."],
+    ["Teraz ___ do domu pieszo. (iść, ja)","idę","Движение сейчас пешком: idę."],
+    ["Pociąg ___ o ósmej. (odjeżdżać)","odjeżdża","Отправляется по расписанию: odjeżdża."],
+    ["___, że masz rację.","Wiem","Факт или придаточное: wiem, że…",["Wiem","Znam","Umiem"]],
+    ["Czy ___ mi pan powiedzieć, gdzie jest bank?",["może","mógłby"],"Вежливая просьба: czy może mi pan powiedzieć… Условная форма mógłby звучит ещё мягче и тоже нормативна."],
+    ["Dzieci ___ się w ogrodzie. (bawić się)","bawią","Bawić się для one: bawią się."],
+    ["Rano zawsze ___ prysznic. (brać, ja)","biorę","Устойчиво: biorę prysznic."],
+    ["On ___ po angielsku i po polsku. (mówić)","mówi","Mówić для on: mówi."],
+    ["Po pracy ___ do domu. (wracać, ja)","wracam","Wracać для ja: wracam."],
+    ["W restauracji ___ zupę i kawę. (zamawiać, ja)","zamawiam","Заказывать: zamawiam."]
   ]
 };
 
 for(const practice of VERB_PRACTICE){
-  VERB_EXTRA[practice.id].forEach(([prompt, answer, explanation], index) => practice.tasks.push({
-    id:`v${practice.id}-extra-${index + 1}`, prompt, answers:[answer].flat(), explanation
+  VERB_EXTRA[practice.id].forEach(([prompt, answer, explanation, options], index) => practice.tasks.push({
+    id:`v${practice.id}-extra-${index + 1}`, prompt, answers:[answer].flat(), explanation, ...(options ? {options} : {})
   }));
 }
 
@@ -1310,6 +1310,14 @@ const DZIES = [
  ["1,20 zł","jeden złoty dwadzieścia groszy"],
  ["36,6°","trzydzieści sześć przecinek sześć stopnia"]
 ];
+const GODZ_URZ = [
+ ["13:00","trzynasta","o trzynastej"],
+ ["14:30","czternasta trzydzieści","o czternastej trzydzieści"],
+ ["17:45","siedemnasta czterdzieści pięć","o siedemnastej czterdzieści pięć"],
+ ["20:00","dwudziesta","o dwudziestej"],
+ ["21:15","dwudziesta pierwsza piętnaście","o dwudziestej pierwszej piętnaście"],
+ ["23:50","dwudziesta trzecia pięćdziesiąt","o dwudziestej trzeciej pięćdziesiąt"]
+];
 const PROCENT = [
  ["1%","jeden procent"],
  ["2%","dwa procent"],
@@ -1457,6 +1465,12 @@ const NAZW_TYP = [
  ["-o","Kościuszko","по женскому образцу: Kościuszki, Kościuszce, Kościuszkę","Kościuszko - не склоняется","Kościuszkowie"],
  ["-a","Zaręba","по женскому образцу: Zaręby, Zarębie, Zarębę","Zaręba - так же, по женскому","Zarębowie"],
  ["иностранная на согласную","Smith","как польская мужская: Smitha, Smithem","Smith - не склоняется","Smithowie"]
+];
+const LIST_FORM = [
+ ["незнакомому, официально","Szanowna Pani, · Szanowny Panie,","Z poważaniem"],
+ ["нейтрально","Dzień dobry,","Z wyrazami szacunku"],
+ ["знакомому, на pan","Dzień dobry, Panie Marku,","Pozdrawiam serdecznie"],
+ ["на ty","Cześć Aniu, · Droga Aniu,","Pozdrawiam · Trzymaj się"]
 ];
 const KRAJE = [
  ["Polska","w Polsce","do Polski","Polak","Polka","po polsku"],
@@ -1670,7 +1684,7 @@ const PREP_E = [
 
 const PREPS = [
  ["w","Miejscownik","где","w sklepie, w domu, w pracy"],
- ["w","Biernik","куда, внутрь; в какой день","w torbę, w góry, w środę"],
+ ["w","Biernik","куда; в какой день","w góry, w kieszeń, w środę"],
  ["na","Miejscownik","где (на поверхности, на мероприятии)","na stole, na poczcie, na uniwersytecie"],
  ["na","Biernik","куда","idę na pocztę, na obiad"],
  ["do","Dopełniacz","куда, к кому","do sklepu, do lekarza, do domu"],
@@ -1774,7 +1788,7 @@ const PREP_EXTRA = {
   ],
   space:[
     ["Książka leży w ___. (torba)","torbie","Где? W + предложный: w torbie."],
-    ["Wkładam książkę w ___. (torba)","torbę","Куда? W + винительный: w torbę."],
+    ["Wkładam książkę do ___. (torba)","torby","Внутрь ёмкости - do + Dopełniacz: do torby. W + Biernik остаётся при узких отверстиях: włożyć coś w kieszeń."],
     ["Samochód stoi za ___. (sklep)","sklepem","Где? Za + творительный."],
     ["Samochód przejechał z parkingu za ___ i tam się zatrzymał. (sklep)","sklep","Конечная область находится за магазином: za + винительный, za sklep."],
     ["Lampa wisi nad ___. (stół)","stołem","Где? Nad + творительный."],
@@ -1787,7 +1801,7 @@ const PREP_EXTRA = {
     ["Idziemy na ___. (spacer)","spacer","На прогулку: na + винительный."]
   ],
   meaning:[
-    ["Wracam ___ lekarza.","od","От человека: od lekarza."],
+    ["Wracam ___ lekarza do domu.","od","Откуда, от человека: od lekarza."],
     ["Nie idź ___ mnie.","beze","Устойчивая расширенная форма перед mnie: beze mnie."],
     ["Zadzwonię do ciebie ___ obiedzie.","po","После обеда: po obiedzie."],
     ["Czekam ___ autobus już dziesięć minut.","na","Ждать кого/что: czekać na."],
@@ -1796,7 +1810,7 @@ const PREP_EXTRA = {
     ["Mieszkam tu ___ 2020 roku.","od","С 2020 года: od."],
     ["Ten tekst został napisany ___ mnie.","przeze","Устойчивая расширенная форма перед mnie: przeze mnie."],
     ["Idę ___ lekarza, bo jestem chory.","do","К врачу: do lekarza."],
-    ["Rozmawialiśmy ___ pracy.","o","О работе: o pracy."],
+    ["Rozmawialiśmy ___ twojej nowej pracy.","o","Тема разговора: o + Miejscownik."],
     ["Jestem gotowy ___ wszystko.","na","Готов к чему: gotowy na + винительный."],
     ["Lampa wisi ___ mną.","nade","Устойчивая расширенная форма перед mną: nade mną."]
   ]
@@ -1840,8 +1854,8 @@ const PREP_TEST = {
   ]
 };
 const topicTasks=(prefix,rows)=>rows.map(([prompt,answer,explanation,options],index)=>({id:`${prefix}-${index+1}`,prompt,answers:[answer],explanation,...(options?{options}:{})}));
-const CONJ_PRACTICE={id:"conjunctions",title:"Практика: союзы",lead:"20 заданий на выбор союза по контексту.",tasks:[...CONJ_COORD,...CONJ_SUB].slice(0,20).map((item,index)=>({id:`conj-${index+1}`,prompt:`Какой союз выражает значение «${item[1]}»?`,answers:item[0].split(" / "),explanation:item[3]||"Подчинительный союз вводит придаточное; перед ним ставится запятая."}))};
-const PART_PRACTICE={id:"particles",title:"Практика: частицы",lead:"20 заданий на смысл и употребление частиц.",tasks:PART.slice(0,20).map((item,index)=>({id:`part-${index+1}`,prompt:`Какая частица выражает «${item[1]}»?`,answers:[item[0]],explanation:`${item[3]} Пример: ${item[2]}`}))};
+const CONJ_PRACTICE={id:"conjunctions",title:"Практика: союзы",lead:"20 заданий на выбор союза по контексту.",tasks:[]};
+const PART_PRACTICE={id:"particles",title:"Практика: частицы",lead:"20 заданий на смысл и употребление частиц.",tasks:[]};
 const ALT_PRACTICE={id:"alternations",title:"Практика: чередования",lead:"20 заданий на варианты основы в падежах, мужско-личном множественном и глагольных формах. Выбери полную форму по контексту.",tasks:topicTasks("alt",[
  ["В какой паре меняется гласная основы?","róg → rogu","В rogu основа rog- чередуется с róg-. У król → królu и lekarz → lekarzu меняется только окончание.",["róg → rogu","król → królu","lekarz → lekarzu"]],
  ["Nie ma tu dużego ___. (stół)","stołu","Dopełniacz: stół → stołu, ó ↔ o. Ł остаётся без изменения.",["stołu","stółu","stole"]],
@@ -1887,7 +1901,7 @@ const ALPHA_PRACTICE={id:"alphabet",title:"Практика: алфавит и �
  ["Какая пара написана по проверяемым чередованиям ch / sz и rz / r?","słuch - słyszeć; wzorzec - wzorcowy","Ch проверяется чередованием с sz, а rz - чередованием с r.",["słuch - słyszeć; wzorzec - wzorcowy","słuh - słyszeć; wzorżec - wzorcowy","słuch - słyszeć; wzorżec - wzorcowy"]],
  ["Как по действующей с 2026 года норме пишутся эти городские названия?","Plac Zbawiciela; ulica Długa","Родовое слово в названии городского объекта пишется с большой, но ulica остаётся исключением со строчной.",["Plac Zbawiciela; ulica Długa","plac Zbawiciela; Ulica Długa","plac zbawiciela; ulica długa"]]
 ])};
-const DIM_PRACTICE={id:"diminutives",title:"Практика: уменьшительные",lead:"20 заданий на формы и уместность уменьшительных.",tasks:[...DIM_M,...DIM_F,...DIM_N,...DIM_ADJ,...DIM_NAME].slice(0,20).map((item,index)=>({id:`dim-${index+1}`,prompt:`Уменьшительная форма слова «${item[0]}»:`,answers:[item[1].split(" / ")[0]],explanation:`Первая обычная уменьшительная форма: ${item[1]}.`}))};
+const DIM_PRACTICE={id:"diminutives",title:"Практика: уменьшительные",lead:"20 заданий на формы и уместность уменьшительных.",tasks:[]};
 const BRIDGE_PRACTICE={id:"bridges",title:"Практика: мосты и ложные друзья",lead:"20 контекстных заданий из всех пяти тематических групп.",tasks:[]};
 const NUM_PRACTICE={id:"numerals",title:"Практика: числительные",lead:"20 заданий на количество, согласование, склонение, даты и время.",tasks:topicTasks("num",[["dwadzieścia jeden ___ (dom)","domów","Числа на jeden, кроме ровно 1, требуют dopełniacz множественного: dwadzieścia jeden domów."],["pięć ___ domów (duży)","dużych","После pięć вся именная группа стоит в dopełniacz множественного: pięć dużych domów."],["dwie ___ (książka)","książki","Женский род после dwie."],["Dwa okna ___ otwarte. (być, прошедшее)","były","После dwa сказуемое стоит во множественном числе: dwa okna były."],["___ studentów przyszło. (12)","Dwunastu","С мужско-личным существительным нужна форма dwunastu: Dwunastu studentów przyszło."],["dwadzieścia dwa ___ (kot)","koty","Последний член dwa требует mianownik множественного."],["dwadzieścia pięć ___ (kot)","kotów","Последний член pięć требует dopełniacz множественного."],["Ile masz ___? (rok)","lat","Возраст: ile masz lat?"],["Jest godzina ___. (2:00)","druga","Час - порядковое женского рода."],["Spotkajmy się o ___. (3:00)","trzeciej","O której? - o trzeciej."],["Dzisiaj jest ___ maja. (5)","piąty","Дата с jest: piąty maja."],["Urodziłem się ___ maja. (5)","piątego","Когда: piątego maja."],["___ studenci czytają. (2)","Dwaj","Форма dwaj требует mianownik множественного и сказуемое во множественном: Dwaj studenci czytają."],["___ dobrych studentów czekało. (5)","Pięciu","При мужско-личном существительном употребляется pięciu: Pięciu dobrych studentów czekało."],["___ dzieci bawiło się w ogrodzie. (3)","Troje","Собирательное: troje dzieci."],["Rozmawiam z ___ studentami. (3)","trzema","В narzędnik числительное trzy имеет форму trzema."],["półtorej ___ (godzina)","godziny","Półtorej для женского рода."],["dwa ___ (procent)","procent","При обозначении процентной величины после числительного: dwa procent, pięć procent."],["To wydarzyło się w roku tysiąc osiemset ___. (1)","pierwszym","Если в составном порядковом числительном нет десятков, изменяется только последнее слово: w roku tysiąc osiemset pierwszym."],["Zapisz słownie 3,14.","trzy przecinek czternaście","Десятичный разделитель читается przecinek: trzy przecinek czternaście."]] )};
 const QUESTION_PRACTICE={id:"questions",title:"Практика: вопросы",lead:"20 заданий на общий, альтернативный и косвенный вопрос, вопросительные слова, падежные формы и относительное który.",tasks:topicTasks("question",[
@@ -1934,7 +1948,7 @@ const NEG_PRACTICE={id:"negation",title:"Практика: отрицание",l
   ["Teraz nikt nie ___, gdzie on jest. (wiedzieć)","wie","Teraz задаёт настоящее время: Nikt nie wie."],
   ["Teraz bez ciebie nie ___ tego zrobić. (móc, ja)","mogę","Настоящее время: nie mogę tego zrobić."]
 ] )};
-const ORDER_PRACTICE={id:"word-order",title:"Практика: порядок слов",lead:"20 заданий на клитики, się и нейтральный порядок.",tasks:topicTasks("order",[["Jak ___ nazywasz?","się","Się не открывает фразу."],["Czy możesz ___ pomóc? (ja)","mi","Краткая клитика mi."],["Nie martw ___.","się","Nie martw się."],["Powiedz ___ prawdę. (ja)","mi","Powiedz mi."],["Czy podoba ___ się ten film? (ty)","ci","Порядок: ci się."],["Widzę ___ codziennie. (on)","go","Краткая форма: go."],["Idę do ___. (on)","niego","После предлога: niego."],["Mnie to nie ___. (interesować)","interesuje","Полная форма для акцента."],["Gdzie ___ twoja siostra? (mieszkać)","mieszka","Вопросительное слово + глагол."],["Ile ___ bilet? (kosztować)","kosztuje","Ile kosztuje bilet?"],["Klucze są ___ stole. (na)","na","Новый факт: na stole."],["Na stole są ___. (klucze)","klucze","Ответ на «что?» - klucze."],["Czy Anna ___ zna? (ty)","cię","Винительный: cię."],["Nie ___ się tego. (bać, ty)","bój","Nie bój się."],["On ___ dał książkę. (ja)","mi","On mi dał."],["Wczoraj ___ go w kinie. (widzieć, ja)","widziałem","Вчера видел: widziałem."],["Czy ___ to zrobić? (móc, ty)","możesz","Czy możesz…"],["Z kim ___ spotykasz?","się","Spotykać się z kimś: здесь нужна частица się."],["Proszę, ___ mi pomóc.","pomóż","Pomóż mi."],["Dzisiaj ___ do pracy. (iść, ja)","idę","Dzisiaj idę."]] )};
+const ORDER_PRACTICE={id:"word-order",title:"Практика: порядок слов",lead:"20 заданий на клитики, się и нейтральный порядок.",tasks:[]};
 const IMPERS_PRACTICE={id:"impersonal",title:"Практика: безличные конструкции",lead:"20 заданий на модальные слова, формы с się, -no/-to, время и отличие от пассива.",tasks:[]};
 IMPERS_PRACTICE.tasks = topicTasks("impers",[
   ["На табличке нужен однозначный запрет:","Nie wolno tu palić.","Nie wolno однозначно сообщает запрет.",["Nie wolno tu palić.","Nie można tu palić, bo nie mamy papierosów.","Warto tu palić."]],
@@ -1981,7 +1995,7 @@ ORDER_PRACTICE.tasks = topicTasks("order",[
   ["Какое предложение нарушает жёсткую границу позиции się?","Się jeszcze uczę.","Начальное się ненормативно; два других порядка возможны.",["Jeszcze się uczę.","Uczę się jeszcze.","Się jeszcze uczę."]]
 ]);
 PEOPLE_PRACTICE.tasks[11] = {id:"people-12",prompt:"Rozmawiam z panią ___. (doktor)",answers:["doktor"],explanation:"После pani название профессии в этой модели не склоняется: z panią doktor."};
-PEOPLE_PRACTICE.tasks[12] = {id:"people-13",prompt:"Ona jest ___. (psycholog)",answers:["psycholożką"],explanation:"Женская форма psycholożka после być стоит в творительном: psycholożką."};
+PEOPLE_PRACTICE.tasks[12] = {id:"people-13",prompt:"Ona jest ___. (psycholog, женская форма)",answers:["psycholożką"],explanation:"Женская форма psycholożka после być стоит в творительном: psycholożką. Мужское название в применении к женщине - Ona jest psychologiem - тоже нормативно, но здесь тренируем феминатив."};
 PEOPLE_PRACTICE.tasks[15] = {id:"people-16",prompt:"Znam ___. (polski)",answers:["polski"],explanation:"Znać + Biernik: Znam polski."};
 PEOPLE_PRACTICE.tasks[19].explanation = "Na Węgrzech - традиционный и наиболее привычный вариант; современная норма допускает также we Węgrzech.";
 NUM_PRACTICE.tasks[17].explanation = "В этой конструкции после dwa: dwa procent. Слово procent в других падежах склоняется: o dwóch procentach.";

@@ -119,6 +119,15 @@ function renderLudzie(){
     </table></div>
     <div class="tip"><b>Выбор зависит от контекста и предпочтения человека.</b> <span class="pl">Pani doktor, pani prezes, pani minister</span> широко употребляются, особенно в официальном обращении. Формы <span class="pl">doktorka, profesorka, ministra, gościni</span> нормативны и употребляются, но различаются по регистру и степени закреплённости. Поэтому <span class="pl">u pani doktorki</span> не ошибка; если предпочтение человека известно, лучше следовать ему, а без такой информации в официальном контакте безопасна модель <span class="pl">pani + название должности</span>.</div>
     <div class="tip"><b>После <span class="pl">być</span> - творительный.</b> <span class="pl">Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką.</span> Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.</div>
+
+    <h3>Письмо и сообщение</h3>
+    <p class="lead">Регистр письма задают две строки: обращение сверху и формула прощания снизу. Их берут парой, иначе официальное начало и дружеский конец противоречат друг другу.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>регистр</th><th>начало … конец</th></tr>
+      ${LIST_FORM.map(l => `<tr><td>${l[0]}</td><td class="w">${l[1]} … ${l[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Знаки препинания здесь не такие, как в русском.</b> После обращения ставится запятая, а сам текст начинают с новой строки <b>со строчной буквы</b>: <span class="pl">Szanowny Panie,</span> → <span class="pl">piszę w sprawie…</span> После формулы прощания запятая <b>не ставится</b>: <span class="pl">Pozdrawiam</span>, <span class="pl">Z poważaniem</span> - и сразу подпись. Восклицательный знак после обращения тоже возможен, и тогда следующее слово идёт с прописной.</div>
+    <div class="tip"><b>В письме местоимения адресата пишут с большой буквы.</b> <span class="pl">Dziękuję Pani za wiadomość · Czy mogę Cię prosić o…</span> Это касается <span class="pl">Pan, Pani, Państwo, Ty, Ciebie, Twój</span> и их форм. Сама форма обращения разобрана выше и в Wołacz.</div>
   </div>${topicPracticeHTML(PEOPLE_PRACTICE, "people")}`;
 }
 
@@ -317,7 +326,18 @@ function renderAlpha(){
       <tr><th>позиция</th><th>звучит как</th><th>примеры</th></tr>
       ${NASAL.map(n => `<tr><td>${n[0]}</td><td class="c">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
     </table></div>
+    <div class="tip"><b>Не дописывай <span class="pl">n</span> или <span class="pl">ń</span> по слуху.</b> Носовая согласная в произношении уже входит в позиционную реализацию одной буквы <span class="pl">ą</span> или <span class="pl">ę</span>. Пиши <span class="pl">dziękuję, ręka, zęby</span>, а не <span class="pl">*dzienkuję, *renka, *zemby</span>.</div>
     <div class="tip"><b>Мост для русскоязычных.</b> Там, где в польском ą/ę, в русском часто «у» или «я»: после твёрдой согласной - «у» (<span class="pl">ręka</span> - рука, <span class="pl">mąka</span> - мука, <span class="pl">ząb</span> - зуб), после мягкой - «я» (<span class="pl">pięć</span> - пять, <span class="pl">mięso</span> - мясо).</div>
+
+    <h3>Частые ловушки русской орфографии</h3>
+    <p class="lead">Похожие слова и окончания помогают узнать смысл, но русское написание нельзя переносить буква за буквой.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>ловушка</th><th>по-польски</th><th>неверный перенос</th><th>как запомнить</th></tr>
+      <tr><td>интернациональные слова на <span class="pl">-ция / -сия / -зия</span></td><td class="w"><span class="pl">informacja, dyskusja, wizja, telewizja</span></td><td class="w"><span class="pl">*informacia, *diskussia, *televisia</span></td><td>В частых польских соответствиях пишутся модели <span class="pl">-cja, -sja, -zja</span>.</td></tr>
+      <tr><td>русское окончание прилагательного</td><td class="w"><span class="pl">dobry, nowy, stary</span></td><td class="w"><span class="pl">*dobryj, *nowyj, *staryj</span></td><td>В польском именительном мужского рода окончание уже заканчивается на <span class="pl">-y</span> или <span class="pl">-i</span>; отдельная <span class="pl">j</span> не добавляется.</td></tr>
+      <tr><td>мягкость русского <span class="pl">л</span></td><td class="w"><span class="pl">lekarz, lampa, lato</span></td><td class="w"><span class="pl">*liekarz, *liampa, *liato</span></td><td>Польская буква <span class="pl">l</span> уже обозначает свой согласный; не вставляй после неё <span class="pl">i</span> по русской модели.</td></tr>
+    </table></div>
+    <div class="tip"><b>Это частотные соответствия, а не способ переделать любое русское слово.</b> Если польское слово тебе незнакомо, проверь его по словарю: таблица защищает от переноса написания в уже известных родственных словах.</div>
 
     <h3>Звонкие и глухие</h3>
     <p class="lead">Механизм оглушения и озвончения знаком по русскому, но набор польских звуков шире. Написание сохраняет исходную согласную, а произношение меняется в зависимости от соседних звуков.</p>
@@ -1211,7 +1231,14 @@ function renderNum(){
       <tr><th>время</th><th>как говорят</th><th>«во сколько»</th></tr>
       ${GODZ.map(g => `<tr><td class="c">${g[0]}</td><td class="w">${g[1]}</td><td class="g">${g[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="tip"><b>Ловушка.</b> <span class="pl">wpół do trzeciej</span> - это 2:30, «половина третьего», а не половина четвёртого. Официально время читают просто цифрами: <span class="pl">czternasta trzydzieści</span>.</div>
+    <div class="tip"><b>Ловушка.</b> <span class="pl">wpół do trzeciej</span> - это 2:30, «половина третьего», а не половина четвёртого.</div>
+
+    <p class="lead">В официальном контексте - расписание, объявление, приём, документ - час называют по 24-часовой шкале, а минуты просто перечисляют. Конструкции <span class="pl">po</span>, <span class="pl">za</span> и <span class="pl">wpół do</span> там не используются.</p>
+    <div class="scroll"><table>
+      <tr><th>время</th><th>официально · «во сколько»</th></tr>
+      ${GODZ_URZ.map(g => `<tr><td class="c">${g[0]}</td><td class="w">${g[1]} · ${g[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Минуты после часа не склоняются.</b> <span class="pl">o piętnastej trzydzieści</span>, не «o piętnastej trzydziestej»: меняется только название часа. В составном часе меняются оба слова: <span class="pl">o dwudziestej pierwszej</span>. Разговорная и официальная схемы не смешиваются: <span class="pl">wpół do czwartej</span> или <span class="pl">piętnasta trzydzieści</span>, но не «wpół do piętnastej».</div>
 
     <h3>Дни недели</h3>
     <div class="scroll"><table>
@@ -1568,6 +1595,7 @@ function renderPreps(){
       <tr><td class="w">do lekarza</td><td class="w">u lekarza</td><td class="w">od lekarza</td></tr>
     </table></div>
     <div class="tip"><b><span class="pl">W</span> или <span class="pl">na</span> учим со словом.</b> <span class="pl">w domu, w pracy, w szkole</span>, но <span class="pl">na poczcie, na uniwersytecie, na dworcu, na lotnisku</span>. Особенно запомни польское <span class="pl">w pracy</span>, которому соответствует русское «на работе».</div>
+    <div class="tip"><b>Внутрь ёмкости - обычно <span class="pl">do + Dopełniacz</span>.</b> <span class="pl">włożyć do torby, do kieszeni, do szuflady · wlać do szklanki</span>. Сочетание <span class="pl">w + Biernik</span> остаётся при узких отверстиях и в устойчивых оборотах: <span class="pl">włożyć klucz w zamek · wpaść w kłopoty · iść w góry</span>. Русское «в сумку» тянет за собой <span class="pl">w torbę</span>, но естественное польское - <span class="pl">do torby</span>.</div>
 
     <h3>Четыре отношения во времени</h3>
     <div class="scroll"><table class="vt">
@@ -1844,7 +1872,7 @@ function renderBridge(){
       ${PHON.map(p => `<tr><td class="c">${p[0]}</td><td class="c">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}</table></div>
     <h3>Белорусский мост</h3>
     <p class="pl">kawa (кава) · herbata (гарбата) · dziękuję (дзякуй) · ciekawy (цікавы) · skarpetki (шкарпэткі) · szukać (шукаць) · rozmawiać (размаўляць) · ołówek (аловак) · rower (ровар)</p>
-    <div class="tip"><b>По звучанию польское <span class="pl">ł</span> очень близко к белорусскому <span class="pl">ў</span>.</b> Сравни <span class="pl">był ≈ быў, bułka ≈ буўка</span>. Для белорусскоязычного артикуляция обычно уже знакома, но нужно привыкнуть к польскому написанию и распределению <span class="pl">ł</span>.</div>
+    <div class="tip"><b>По звучанию польское <span class="pl">ł</span> очень близко к белорусскому <span class="pl">ў</span>.</b> В родственных формах это видно прямо: <span class="pl">był</span> ≈ быў, <span class="pl">dał</span> ≈ даў. В остальных словах совпадает звук, а не написание: по-белорусски пишется <i>булка</i> с л, а польское <span class="pl">bułka</span> звучит примерно как «буўка». Для белорусскоязычного артикуляция обычно уже знакома, но нужно привыкнуть к польскому написанию и распределению <span class="pl">ł</span>.</div>
     <h3>Ложные друзья</h3>
     <p class="lead">100 частых ловушек для русско- и белорусскоязычных. В таблицах есть и полностью разные слова, и частичные ложные друзья: у последних совпадает одно значение, но привычный перенос другого значения приводит к ошибке.</p>
     <div class="false-friends">
@@ -1942,7 +1970,7 @@ function renderVocabulary(){
     <h3>100 полезных наречий и выражений</h3>
     <p class="lead">Здесь есть наречия, частицы и готовые выражения - всё, что помогает связать знакомые слова в нормальную речь: назвать время, степень, место, мнение и темп действия.</p>
     ${vocabularyTable(VOCAB_ADVERBS, ["слово", "перевод", "сравнение", "пример"])}
-  </div>`;
+  </div>${topicPracticeHTML(VERB_PRACTICE.find(item => item.id === "lista"), "vocabulary")}`;
 }
 
 function talkRows(rows){
@@ -2027,6 +2055,18 @@ function renderTalk(){
     ["jasne", "ясно; конечно", "- Możesz pomóc? - Jasne.", "Короткое естественное согласие."],
     ["no nie? / prawda?", "да?; правда?", "To dobry plan, no nie?", "Мягко передаёт ход собеседнику и ждёт подтверждения."],
   ];
+  const discussion = [
+    ["Moim zdaniem … / Według mnie …", "По моему мнению …", "Нейтрально вводит собственную позицию."],
+    ["Uważam, że …", "Я считаю, что …", "Достаточно уверенное мнение; дальше нужен законченный тезис."],
+    ["Wydaje mi się, że … / Mam wrażenie, że …", "Мне кажется, что …", "Впечатление или осторожное предположение, а не установленный факт."],
+    ["Nie jestem pewien / pewna, czy …", "Я не уверен / не уверена, … ли", "Сомнение в ответе «да или нет» вводится через czy."],
+    ["Mam wątpliwości co do …", "У меня есть сомнения насчёт …", "Co do требует родительного: co do tego pomysłu."],
+    ["Zgadzam się z tobą / z tym argumentem.", "Я согласен / согласна с тобой / с этим аргументом.", "Zgadzać się z + творительный."],
+    ["Nie do końca się zgadzam.", "Я не вполне согласен / согласна.", "Мягкое частичное несогласие: дальше уточни, с чем именно."],
+    ["Nie zgadzam się, ponieważ …", "Я не согласен / не согласна, потому что …", "Прямое несогласие лучше сразу обосновать."],
+    ["Warto dodać, że …", "Стоит добавить, что …", "Вводит ещё один аргумент."],
+    ["Trzeba podkreślić, że …", "Нужно подчеркнуть, что …", "Выделяет главное в аргументации."],
+  ];
   $("#s-talk").innerHTML = `<div class="panel talk-panel">
     <h2>Разговорная практика</h2>
     <p class="lead">Цель этого раздела - не вспомнить отдельное слово, а иметь готовую опору для реального разговора. Начни с одной темы, вслух замени детали на свои и только потом переходи к диалогу.</p>
@@ -2052,6 +2092,20 @@ function renderTalk(){
     <h4>Смягчить мнение или передать ход собеседнику</h4>
     ${talkRows(fillersSoft)}
     <div class="tip"><b>Как это произносить.</b> Связка должна быть короткой и в обычном темпе: <span class="pl">no, znaczy…</span>, потом сразу мысль. Не растягивай <span class="pl">znaczyyy</span>: лучше короткая пауза после него. Не злоупотребляй <span class="pl">jakby</span> - это польское «как бы», которое у многих уже стало словом-паразитом.</div>
+
+    <h3>Мнение, сомнение и дискуссия</h3>
+    <p class="lead">Выбирай начало не только по смыслу, но и по степени уверенности: утверждение, осторожное впечатление, сомнение, согласие или возражение.</p>
+    ${talkRows(discussion)}
+    <div class="tip"><b>Две модели, которые нельзя смешивать.</b> С утверждением употребляй <span class="pl">że</span>: <span class="pl">Uważam, że to dobry pomysł</span>. С сомнением в ответе «да или нет» употребляй <span class="pl">czy</span>: <span class="pl">Nie jestem pewna, czy to dobry pomysł</span>.</div>
+
+    <h4>Практика: выбери силу высказывания</h4>
+    <div class="talk-dialogues">
+      <article><p class="talk-situation">Ты уверен в своей позиции</p><p>Скажи, что изучение языков открывает новые возможности, и приведи одну причину.</p><p class="talk-prompt">Начни: <span class="pl">Uważam, że …, ponieważ …</span></p></article>
+      <article><p class="talk-situation">Это только личное впечатление</p><p>Осторожно оцени новый фильм, место или курс, не выдавая мнение за факт.</p><p class="talk-prompt">Начни: <span class="pl">Wydaje mi się, że …</span> или <span class="pl">Mam wrażenie, że …</span></p></article>
+      <article><p class="talk-situation">Тебе не хватает информации</p><p>Вырази сомнение, состоится ли встреча завтра.</p><p class="talk-prompt">Начни: <span class="pl">Nie jestem pewien / pewna, czy …</span></p></article>
+      <article><p class="talk-situation">Ты согласен только частично</p><p>Признай одну часть аргумента собеседника, а затем добавь своё возражение.</p><p class="talk-prompt">Начни: <span class="pl">Zgadzam się, że …, ale nie do końca się zgadzam z …</span></p></article>
+      <article><p class="talk-situation">В обсуждении не хватает аргумента</p><p>Добавь один новый довод и подчеркни его важность.</p><p class="talk-prompt">Начни: <span class="pl">Warto dodać, że …</span> или <span class="pl">Trzeba podkreślić, że …</span></p></article>
+    </div>
 
     <h3>Конструктор фраз</h3>
     <p class="lead">Выбери варианты в строке - ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.</p>

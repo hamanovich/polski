@@ -338,9 +338,11 @@ select.exercise-control{padding-right:22px}
 .exercise-control:focus{outline:2px solid var(--ui);outline-offset:1px;border-color:transparent}
 .exercise-field.is-correct .exercise-control{color:var(--ok);border-color:var(--ok);background:var(--ok-bg)}
 .exercise-field.is-wrong .exercise-control{color:var(--end);border-color:var(--end);background:var(--wrong-bg)}
+.exercise-field.is-near .exercise-control{color:var(--alt);border-color:var(--alt);background:var(--tip)}
 .exercise-field.is-revealed .exercise-control{color:var(--alt);border-color:var(--alt);background:var(--tip)}
 .exercise-feedback{font-size:var(--fs-note);margin:2px 0 6px;color:var(--end)}
 .exercise-item[data-result="correct"] .exercise-feedback{color:var(--ok)}
+.exercise-item[data-result="near"] .exercise-feedback{color:var(--alt)}
 .exercise-item[data-result="revealed"] .exercise-feedback{color:var(--alt)}
 .exercise-explanation{font-size:var(--fs-note);color:var(--muted-s);margin:4px 0 10px !important}
 .exercise-item-actions,.practice-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}

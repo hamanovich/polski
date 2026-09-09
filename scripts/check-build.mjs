@@ -231,6 +231,11 @@ assert.equal(alphabetItems.length, 20);
 assert.equal(alphabet.document.querySelectorAll(".alphabet-practice select.exercise-control").length, 20);
 assert.deepEqual([...alphabetItems[7].querySelectorAll("option")].slice(1).map(option => option.value), ["[om] / [em]", "[on] / [en]", "[oŋ] / [eŋ]"]);
 assert.deepEqual([...alphabetItems[17].querySelectorAll("option")].slice(1).map(option => option.value), ["BY-li-śmy; zro-BI-li-by-śmy", "by-LI-śmy; zro-bi-LI-by-śmy", "by-li-ŚMY; zro-bi-li-by-ŚMY"]);
+assert(alphabet.html.includes("Не дописывай"));
+assert(alphabet.html.includes("dziękuję, ręka, zęby"));
+assert(alphabet.html.includes("informacja, dyskusja, wizja, telewizja"));
+assert(alphabet.html.includes("dobry, nowy, stary"));
+assert(alphabet.html.includes("lekarz, lampa, lato"));
 
 const vocabulary = documents.get("s-vocab");
 assert.equal(vocabulary.document.querySelectorAll("#s-vocab .vocabulary-list").length, 4);
@@ -247,6 +252,11 @@ assert(!vocabulary.html.includes("нуждаться; быть нужным"));
 const speaking = documents.get("s-talk");
 assert(speaking.html.includes("Фразы спасения"));
 assert(speaking.html.includes("Co robiłeś w weekend?"));
+assert(speaking.html.includes("Мнение, сомнение и дискуссия"));
+assert(speaking.html.includes("Nie jestem pewien / pewna, czy"));
+assert(speaking.html.includes("Zgadzać się z + творительный"));
+assert(speaking.html.includes("Warto dodać, że"));
+assert.equal(speaking.document.querySelectorAll(".talk-dialogues article").length, 9);
 
 const alternations = documents.get("s-alt");
 assert(alternations.html.includes("Чередование - это смена звука или появление и исчезновение звука"));
@@ -403,6 +413,18 @@ assert(vocabulary.html.includes("poznać"));
 assert(documents.get("s-verbs").html.includes("zniknął"));
 assert(documents.get("s-ludzie").html.includes("Регистр и уважительное обращение"));
 assert(documents.get("s-ludzie").html.includes("w Ukrainie / do Ukrainy"));
+
+assert(documents.get("s-ludzie").html.includes("Письмо и сообщение"));
+assert(documents.get("s-ludzie").html.includes("Z poważaniem"));
+assert(documents.get("s-ludzie").html.includes("После формулы прощания запятая"),
+  "The letter block must keep the punctuation rule that differs from Russian");
+assert(documents.get("s-num").html.includes("o dwudziestej pierwszej piętnaście"),
+  "The official clock must show that a compound hour inflects both words");
+assert(documents.get("s-num").html.includes("Минуты после часа не склоняются"),
+  "The official clock must warn that only the hour inflects");
+const vocabularyPractice = vocabulary.document.querySelector(".vocabulary-practice");
+assert(vocabularyPractice, "The vocabulary page must host the practice that drills the word list");
+assert.equal(vocabularyPractice.querySelectorAll(".exercise-item").length, 20);
 assert(documents.get("s-ludzie").html.includes("u pani doktorki</span> не ошибка"));
 
 const order = documents.get("s-order");
@@ -445,6 +467,10 @@ assert.deepEqual(Array.from(fromData("ADJ"), row => row[0]),
   "The full adjective paradigm must include all seven Polish cases");
 assert(fromData("PARTPIS").some(row => row[1].includes("деепричастиями") && row[2].includes("nie będąc")),
   "The spelling table must distinguish adverbial participles from adjectival participles");
+assert.equal(fromData("LIST_FORM").length, 4, "The letter block must cover four registers from official to first-name basis");
+assert.equal(fromData("GODZ_URZ").length, 6, "The official clock must show the 24 hour scale across the afternoon and evening");
+assert(fromData("GODZ_URZ").every(row => row[2].startsWith("o ")), "Every official hour needs its o + Miejscownik form");
+
 
 const exerciseSets = [
   "CASE_PRACTICE", "CASE_TEST", "VERB_PRACTICE", "VERB_TEST", "PREP_PRACTICE", "PREP_TEST",
@@ -453,6 +479,12 @@ const exerciseSets = [
   "DIM_PRACTICE", "BRIDGE_PRACTICE", "NUM_PRACTICE", "QUESTION_PRACTICE", "NEG_PRACTICE",
   "ORDER_PRACTICE", "IMPERS_PRACTICE"
 ];
+for(const name of exerciseSets){
+  if(!dataSource.includes(`${name}.tasks = `)) continue;
+  assert(new RegExp(`const ${name}\\s*=\\s*\\{[^\\n]*tasks:\\[\\]\\};`).test(dataSource),
+    `${name}: a practice filled by a later assignment must declare tasks:[], otherwise data.js keeps two versions of the same set and edits land in the dead one`);
+}
+
 const answerSets = [];
 const promptsBySet = new Map();
 const exerciseIds = [];
@@ -471,6 +503,10 @@ for(const name of exerciseSets){
   promptsBySet.set(name, prompts);
 }
 assert.equal(exerciseIds.length, 747, "The handbook practice must expose all 747 exercises");
+const renderedExercises = [...documents.values()].map(page => page.html).join("\n");
+for(const id of exerciseIds)
+  assert(renderedExercises.includes(`data-exercise-id="${id}"`),
+    `${id}: an exercise that exists in data but is rendered on no page is invisible to the learner and still inflates the practice count`);
 assert.equal(new Set(exerciseIds).size, exerciseIds.length, "Exercise ids must be unique across the handbook");
 assert(answerSets.length > 400, "Every practice block must be reachable from exerciseSets");
 

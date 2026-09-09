@@ -99,7 +99,15 @@ szcz и ść обозначают по два звука. В szcz оба твё�
 У букв ą и ę нет одного неизменного чтения. Обычно слышны два последовательных элемента, а точная реализация зависит от следующего звука и позиции в слове.
 позициязвучит какпримеры
 перед b, p[om], [em]dąb [domp], zęby [zemby]перед d, t, dz, c[on], [en]kąt [kont], ręce [rence]перед cz, dż[on], [en], но n подстраивается под следующий звукpączek: носовая согласная произносится в месте образования czперед ć/ci, dź/dzi[oɲ], [eɲ]będzie: [eɲ] перед dźперед g, k[oŋ], [eŋ]mąka [moŋka], ręka [reŋka]перед f, w, s, z, ś, ź, sz, rz, ż, ch/hносовой переход без отдельного n или mwąs [võũ̯s], węch [vẽũ̯x]перед ł, lносовость теряется: [o], [e]minął [minow], zaczęli [zat͡ʂeli]на конце словаą сохраняет носовой переход; у ę носовость ослабляется или исчезаетidą [idõũ̯]; proszę с конечным [ɛ] или слабой носовостью
+Не дописывай n или ń по слуху. Носовая согласная в произношении уже входит в позиционную реализацию одной буквы ą или ę. Пиши dziękuję, ręka, zęby, а не *dzienkuję, *renka, *zemby.
 Мост для русскоязычных. Там, где в польском ą/ę, в русском часто «у» или «я»: после твёрдой согласной - «у» (ręka - рука, mąka - мука, ząb - зуб), после мягкой - «я» (pięć - пять, mięso - мясо).
+Частые ловушки русской орфографии
+Похожие слова и окончания помогают узнать смысл, но русское написание нельзя переносить буква за буквой.
+ловушкапо-польскиневерный переноскак запомнить
+интернациональные слова на -ция / -сия / -зияinformacja, dyskusja, wizja, telewizja*informacia, *diskussia, *televisiaВ частых польских соответствиях пишутся модели -cja, -sja, -zja.
+русское окончание прилагательногоdobry, nowy, stary*dobryj, *nowyj, *staryjВ польском именительном мужского рода окончание уже заканчивается на -y или -i; отдельная j не добавляется.
+мягкость русского лlekarz, lampa, lato*liekarz, *liampa, *liatoПольская буква l уже обозначает свой согласный; не вставляй после неё i по русской модели.
+Это частотные соответствия, а не способ переделать любое русское слово. Если польское слово тебе незнакомо, проверь его по словарю: таблица защищает от переноса написания в уже известных родственных словах.
 Звонкие и глухие
 Механизм оглушения и озвончения знаком по русскому, но набор польских звуков шире. Написание сохраняет исходную согласную, а произношение меняется в зависимости от соседних звуков.
 звонкийглухойпример
@@ -829,7 +837,11 @@ Troje dzieci bawiło się w ogrodzie. - глагол в среднем роде 
 Która jest godzina? - час называют порядковым числительным женского рода: jest pierwsza, druga, trzecia. На вопрос o której? - Miejscownik: o pierwszej, o drugiej.
 времякак говорят«во сколько»
 13:00pierwszao pierwszej14:15kwadrans po drugiej · druga piętnaściekwadrans po drugiej14:30wpół do trzeciejo wpół do trzeciej14:45za kwadrans trzeciaza kwadrans trzecia15:10dziesięć po trzeciejdziesięć po trzeciej15:50za dziesięć czwartaza dziesięć czwarta
-Ловушка. wpół do trzeciej - это 2:30, «половина третьего», а не половина четвёртого. Официально время читают просто цифрами: czternasta trzydzieści.
+Ловушка. wpół do trzeciej - это 2:30, «половина третьего», а не половина четвёртого.
+В официальном контексте - расписание, объявление, приём, документ - час называют по 24-часовой шкале, а минуты просто перечисляют. Конструкции po, za и wpół do там не используются.
+времяофициально · «во сколько»
+13:00trzynasta · o trzynastej14:30czternasta trzydzieści · o czternastej trzydzieści17:45siedemnasta czterdzieści pięć · o siedemnastej czterdzieści pięć20:00dwudziesta · o dwudziestej21:15dwudziesta pierwsza piętnaście · o dwudziestej pierwszej piętnaście23:50dwudziesta trzecia pięćdziesiąt · o dwudziestej trzeciej pięćdziesiąt
+Минуты после часа не склоняются. o piętnastej trzydzieści, не «o piętnastej trzydziestej»: меняется только название часа. В составном часе меняются оба слова: o dwudziestej pierwszej. Разговорная и официальная схемы не смешиваются: wpół do czwartej или piętnasta trzydzieści, но не «wpół do piętnastej».
 Дни недели
 день«в какой день»перевод
 poniedziałekw poniedziałekпонедельникwtorekwe wtorekвторникśrodaw środęсредаczwartekw czwartekчетвергpiątekw piątekпятницаsobotaw sobotęсубботаniedzielaw niedzielęвоскресенье
@@ -3343,6 +3355,17 @@ no wiesz…ну, знаешь…No wiesz, trochę się stresuję.wie pan / wie p
 по-польскипо-русскивариант для себя
 chybaнаверное; кажетсяChyba jutro będzie padać.raczejскорееRaczej nie dam rady.generalnieв целомGeneralnie wszystko jest w porządku.tak naprawdęна самом делеTak naprawdę wolę zostać w domu.jasneясно; конечно- Możesz pomóc? - Jasne.no nie? / prawda?да?; правда?To dobry plan, no nie?
 Как это произносить. Связка должна быть короткой и в обычном темпе: no, znaczy…, потом сразу мысль. Не растягивай znaczyyy: лучше короткая пауза после него. Не злоупотребляй jakby - это польское «как бы», которое у многих уже стало словом-паразитом.
+Мнение, сомнение и дискуссия
+Выбирай начало не только по смыслу, но и по степени уверенности: утверждение, осторожное впечатление, сомнение, согласие или возражение.
+по-польскипо-русскивариант для себя
+Moim zdaniem … / Według mnie …По моему мнению …Нейтрально вводит собственную позицию.Uważam, że …Я считаю, что …Достаточно уверенное мнение; дальше нужен законченный тезис.Wydaje mi się, że … / Mam wrażenie, że …Мне кажется, что …Впечатление или осторожное предположение, а не установленный факт.Nie jestem pewien / pewna, czy …Я не уверен / не уверена, … лиСомнение в ответе «да или нет» вводится через czy.Mam wątpliwości co do …У меня есть сомнения насчёт …Co do требует родительного: co do tego pomysłu.Zgadzam się z tobą / z tym argumentem.Я согласен / согласна с тобой / с этим аргументом.Zgadzać się z + творительный.Nie do końca się zgadzam.Я не вполне согласен / согласна.Мягкое частичное несогласие: дальше уточни, с чем именно.Nie zgadzam się, ponieważ …Я не согласен / не согласна, потому что …Прямое несогласие лучше сразу обосновать.Warto dodać, że …Стоит добавить, что …Вводит ещё один аргумент.Trzeba podkreślić, że …Нужно подчеркнуть, что …Выделяет главное в аргументации.
+Две модели, которые нельзя смешивать. С утверждением употребляй że: Uważam, że to dobry pomysł. С сомнением в ответе «да или нет» употребляй czy: Nie jestem pewna, czy to dobry pomysł.
+Практика: выбери силу высказывания
+Ты уверен в своей позицииСкажи, что изучение языков открывает новые возможности, и приведи одну причину.Начни: Uważam, że …, ponieważ …
+Это только личное впечатлениеОсторожно оцени новый фильм, место или курс, не выдавая мнение за факт.Начни: Wydaje mi się, że … или Mam wrażenie, że …
+Тебе не хватает информацииВырази сомнение, состоится ли встреча завтра.Начни: Nie jestem pewien / pewna, czy …
+Ты согласен только частичноПризнай одну часть аргумента собеседника, а затем добавь своё возражение.Начни: Zgadzam się, że …, ale nie do końca się zgadzam z …
+В обсуждении не хватает аргументаДобавь один новый довод и подчеркни его важность.Начни: Warto dodać, że … или Trzeba podkreślić, że …
 Конструктор фраз
 Выбери варианты в строке - ниже сразу появится твоя фраза. Собери 3–4 варианта по одному шаблону: так конструкция начинает работать в живой речи.
 1. Что происходит сегоднякогдаDzisiajW weekendOstatnioчто делаюuczę się polskiegopracuję w domuspotykam się ze znajomymiDzisiaj uczę się polskiego.
@@ -3553,6 +3576,12 @@ Mówię po polsku.наречие, не склоняетсякак говорюUc
 -kaсамый продуктивный, основа не меняетсяstudent → studentka · kelner → kelnerka · dyrektor → dyrektorka · tłumacz → tłumaczka-arz → -arkaу слов на -arz, -erz согласная уходитlekarz → lekarka · pisarz → pisarka · malarz → malarka · dziennikarz → dziennikarka · kucharz → kucharka-ka, k → czу ряда названий на -nikprawnik → prawniczka · urzędnik → urzędniczka · rolnik → rolniczka-ka, g → żу ряда названий на -log и -gpsycholog → psycholożka · filolog → filolożka · pedagog → pedagożka-ca → -czyniпродуктивно у слов на -casprzedawca → sprzedawczyni · wychowawca → wychowawczyni · twórca → twórczyni-ica · -nicaнебольшая группаpracownik → pracownica · robotnik → robotnicaособые формывне моделей, запоминатьgospodarz → gospodyni · gość → gościni · król → królowapani + мужская формаодин из вариантов, особенно в официальном обращенииpani doktor · pani prezes · pani minister · pani inżynier; название профессии после pani не склоняется
 Выбор зависит от контекста и предпочтения человека. Pani doktor, pani prezes, pani minister широко употребляются, особенно в официальном обращении. Формы doktorka, profesorka, ministra, gościni нормативны и употребляются, но различаются по регистру и степени закреплённости. Поэтому u pani doktorki не ошибка; если предпочтение человека известно, лучше следовать ему, а без такой информации в официальном контакте безопасна модель pani + название должности.
 После być - творительный. Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką. Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.
+Письмо и сообщение
+Регистр письма задают две строки: обращение сверху и формула прощания снизу. Их берут парой, иначе официальное начало и дружеский конец противоречат друг другу.
+регистрначало … конец
+незнакомому, официальноSzanowna Pani, · Szanowny Panie, … Z poważaniemнейтральноDzień dobry, … Z wyrazami szacunkuзнакомому, на panDzień dobry, Panie Marku, … Pozdrawiam serdecznieна tyCześć Aniu, · Droga Aniu, … Pozdrawiam · Trzymaj się
+Знаки препинания здесь не такие, как в русском. После обращения ставится запятая, а сам текст начинают с новой строки со строчной буквы: Szanowny Panie, → piszę w sprawie… После формулы прощания запятая не ставится: Pozdrawiam, Z poważaniem - и сразу подпись. Восклицательный знак после обращения тоже возможен, и тогда следующее слово идёт с прописной.
+В письме местоимения адресата пишут с большой буквы. Dziękuję Pani za wiadomość · Czy mogę Cię prosić o… Это касается Pan, Pani, Państwo, Ty, Ciebie, Twój и их форм. Сама форма обращения разобрана выше и в Wołacz.
 Уменьшительные формы
 В польском уменьшительные очень частотны. Они могут обозначать малый размер, добавлять эмоциональную оценку, смягчать просьбу, показывать близость или создавать фамильярный и иронический оттенок. Точный эффект зависит от слова и ситуации.
 Это не всегда про размер. Poproszę kawusię в кафе не значит «маленькую чашечку» - это дружелюбный, смягчённый тон. Продавщица может предложить bułeczkę взрослому покупателю. Но в неподходящем контексте уменьшительное способно прозвучать иронично или слишком фамильярно.
@@ -3578,7 +3607,7 @@ AnnaAniaAnusia - ласково; Anka - фамильярноАня, Анечка
 Предлог → падеж
 Один предлог может управлять разными падежами и менять значение. У пространственных пар важно различать область действия и направленное перемещение в новую область.
 всеBiernikDopełniaczCelownikNarzędnikMiejscownik
-предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikкуда, внутрь; в какой деньw torbę, w góry, w środęnaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом сobok sklepuprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпосле; по территории или поверхностиpo pracy, chodzić po parkupoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzedNarzędnikгде; перед чемprzed domem, przed spotkaniemprzedBiernikкуда, в пространство передwyjść przed domnadNarzędnikгде, в области надlatać nad miastemnadBiernikкуда, в область надwzbić się nad miastopodNarzędnikгде, в области подspać pod stołempodBiernikкуда, в область подwejść pod stółzaNarzędnikгде, в области заstać za domemzaBiernikкуда, в область заpobiec za dommiędzyNarzędnikгде, между объектамиmiędzy stołem a oknemmiędzyBiernikкуда, в пространство междуwejść między drzewadziękiCelownikблагодаряdzięki tobie
+предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikкуда; в какой деньw góry, w kieszeń, w środęnaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом сobok sklepuprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпосле; по территории или поверхностиpo pracy, chodzić po parkupoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzedNarzędnikгде; перед чемprzed domem, przed spotkaniemprzedBiernikкуда, в пространство передwyjść przed domnadNarzędnikгде, в области надlatać nad miastemnadBiernikкуда, в область надwzbić się nad miastopodNarzędnikгде, в области подspać pod stołempodBiernikкуда, в область подwejść pod stółzaNarzędnikгде, в области заstać za domemzaBiernikкуда, в область заpobiec za dommiędzyNarzędnikгде, между объектамиmiędzy stołem a oknemmiędzyBiernikкуда, в пространство междуwejść między drzewadziękiCelownikблагодаряdzięki tobie
 Область или новое направление у парных предлогов. Miejscownik или Narzędnik описывает область, где предмет находится или где происходит действие: Dron lata nad miastem. Biernik задаёт направленное перемещение в новую область: Dron wzbił się nad miasto. Сам глагол движения не выбирает Biernik: idę do sklepu требует Dopełniacz, idę ulicą - Narzędnik.
 Куда, где, откуда
 Предлоги места удобно учить тройками. Название места запоминай сразу вместе с предлогом: по одному общему правилу нельзя вывести все сочетания w и na.
@@ -3587,6 +3616,7 @@ do sklepuw sklepieze sklepu
 na pocztęna poczciez poczty
 do lekarzau lekarzaod lekarza
 W или na учим со словом. w domu, w pracy, w szkole, но na poczcie, na uniwersytecie, na dworcu, na lotnisku. Особенно запомни польское w pracy, которому соответствует русское «на работе».
+Внутрь ёмкости - обычно do + Dopełniacz. włożyć do torby, do kieszeni, do szuflady · wlać do szklanki. Сочетание w + Biernik остаётся при узких отверстиях и в устойчивых оборотах: włożyć klucz w zamek · wpaść w kłopoty · iść w góry. Русское «в сумку» тянет за собой w torbę, но естественное польское - do torby.
 Четыре отношения во времени
 отношениепредлогпример
 через сколько от настоящего?za + BiernikPrzyjdę za godzinę.
@@ -3604,7 +3634,7 @@ wwewe Wrocławiu, we wtorek, we mniezzeze mną, ze szkoły, ze sobąododeode mni
 -оро-, -оло-, -ере--ro-, -ło-, -rze-корова → krowa, золото → złoto, берег → brzeg, голова → głowaу, я (из носовых)ą, ęрука → ręka, зуб → ząb, пять → pięć, мука → mąka-ть-ćбыть → być, читать → czytaćхchхлеб → chleb, ухо → uchoц, чc, czцена → cena, час → czas
 Белорусский мост
 kawa (кава) · herbata (гарбата) · dziękuję (дзякуй) · ciekawy (цікавы) · skarpetki (шкарпэткі) · szukać (шукаць) · rozmawiać (размаўляць) · ołówek (аловак) · rower (ровар)
-По звучанию польское ł очень близко к белорусскому ў. Сравни był ≈ быў, bułka ≈ буўка. Для белорусскоязычного артикуляция обычно уже знакома, но нужно привыкнуть к польскому написанию и распределению ł.
+По звучанию польское ł очень близко к белорусскому ў. В родственных формах это видно прямо: był ≈ быў, dał ≈ даў. В остальных словах совпадает звук, а не написание: по-белорусски пишется булка с л, а польское bułka звучит примерно как «буўка». Для белорусскоязычного артикуляция обычно уже знакома, но нужно привыкнуть к польскому написанию и распределению ł.
 Ложные друзья
 100 частых ловушек для русско- и белорусскоязычных. В таблицах есть и полностью разные слова, и частичные ложные друзья: у последних совпадает одно значение, но привычный перенос другого значения приводит к ошибке.
 Быт, вещи и еда

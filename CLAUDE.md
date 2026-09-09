@@ -14,6 +14,7 @@ npm run lint         # scripts/lint-content.mjs: запрещённые симв
 npm run check        # node --check по всем скриптам + npm run lint + scripts/check-build.mjs
 npm run drift        # git diff по сгенерированным файлам: они разошлись с исходниками?
 npm run verify       # build + check + drift, то же самое гоняет CI
+npm run serve        # scripts/serve.mjs: статика с корня на localhost:8765, порт меняется аргументом
 open index.html      # сайт работает по file://, сервер не нужен
 ```
 

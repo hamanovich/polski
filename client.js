@@ -117,13 +117,24 @@ function exerciseAnswers(control){
 function exerciseNorm(value){
   return value.normalize("NFKC").trim().replace(/\s+/g, " ").toLocaleLowerCase("pl");
 }
-function exerciseIsCorrect(control){
+const exerciseFold = value => exerciseNorm(value)
+  .replace(/\u0142/g, "l")
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "");
+function exerciseVerdict(control){
   const value = exerciseNorm(control.value);
-  return !!value && exerciseAnswers(control).some(answer => exerciseNorm(answer) === value);
+  if(!value) return "wrong";
+  const answers = exerciseAnswers(control);
+  if(answers.some(answer => exerciseNorm(answer) === value)) return "correct";
+  if(answers.some(answer => exerciseFold(answer) === exerciseFold(control.value))) return "near";
+  return "wrong";
+}
+function exerciseIsCorrect(control){
+  return exerciseVerdict(control) !== "wrong";
 }
 function clearExerciseItem(item){
   item.dataset.result = "";
-  item.querySelectorAll(".exercise-field").forEach(field => field.classList.remove("is-correct", "is-wrong", "is-revealed"));
+  item.querySelectorAll(".exercise-field").forEach(field => field.classList.remove("is-correct", "is-near", "is-wrong", "is-revealed"));
   item.querySelectorAll(".exercise-control").forEach(control => control.removeAttribute("aria-invalid"));
   const feedback = item.querySelector(".exercise-feedback");
   if(feedback){ feedback.hidden = true; feedback.textContent = ""; }
@@ -132,29 +143,38 @@ function clearExerciseItem(item){
 }
 function gradeExerciseItem(item, persist = true){
   const controls = [...item.querySelectorAll(".exercise-control")];
-  const correct = controls.every(exerciseIsCorrect);
-  controls.forEach(control => {
+  const verdicts = controls.map(exerciseVerdict);
+  const accepted = verdicts.every(verdict => verdict !== "wrong");
+  const near = accepted && verdicts.includes("near");
+  controls.forEach((control, index) => {
     const field = control.closest(".exercise-field");
-    const ok = exerciseIsCorrect(control);
-    field.classList.toggle("is-correct", ok);
-    field.classList.toggle("is-wrong", !ok);
+    const verdict = verdicts[index];
+    field.classList.toggle("is-correct", verdict === "correct");
+    field.classList.toggle("is-near", verdict === "near");
+    field.classList.toggle("is-wrong", verdict === "wrong");
     field.classList.remove("is-revealed");
-    control.setAttribute("aria-invalid", String(!ok));
+    control.setAttribute("aria-invalid", String(verdict === "wrong"));
   });
-  item.dataset.result = correct ? "correct" : "wrong";
+  item.dataset.result = accepted ? (near ? "near" : "correct") : "wrong";
+  const exact = controls
+    .filter((control, index) => verdicts[index] === "near")
+    .map(control => exerciseAnswers(control)[0])
+    .join(" · ");
   const feedback = item.querySelector(".exercise-feedback");
   feedback.hidden = false;
-  feedback.textContent = correct ? "Верно." : "Есть ошибка - проверьте выделенные поля.";
+  feedback.textContent = near
+    ? `Верно, но без диакритики: ${exact}`
+    : accepted ? "Верно." : "Есть ошибка - проверьте выделенные поля.";
   item.querySelector(".exercise-explanation").hidden = false;
   if(persist){ exerciseState.results[item.dataset.exerciseId] = item.dataset.result; saveExerciseState(); }
-  return correct;
+  return accepted;
 }
 function revealExerciseItem(item){
   item.querySelectorAll(".exercise-control").forEach(control => {
     control.value = exerciseAnswers(control)[0] || "";
     exerciseState.values[control.dataset.key] = control.value;
     const field = control.closest(".exercise-field");
-    field.classList.remove("is-wrong");
+    field.classList.remove("is-wrong", "is-near");
     field.classList.add("is-correct", "is-revealed");
     control.removeAttribute("aria-invalid");
   });
@@ -168,7 +188,7 @@ function revealExerciseItem(item){
 function updateExerciseProgress(practice){
   if(!practice || practice.classList.contains("exercise-test")) return;
   const items = [...practice.querySelectorAll(".exercise-item")];
-  const correct = items.filter(item => item.dataset.result === "correct").length;
+  const correct = items.filter(item => item.dataset.result === "correct" || item.dataset.result === "near").length;
   const progress = practice.querySelector(".exercise-progress");
   if(progress) progress.textContent = `верно ${correct} из ${items.length}`;
 }
@@ -204,7 +224,7 @@ function initExerciseSection(section){
   });
   section.querySelectorAll(".exercise-item").forEach(item => {
     const result = exerciseState.results[item.dataset.exerciseId];
-    if(result === "correct" || result === "wrong") gradeExerciseItem(item, false);
+    if(result === "correct" || result === "near" || result === "wrong") gradeExerciseItem(item, false);
     else if(result === "revealed") revealExerciseItem(item);
   });
   section.querySelectorAll(".practice:not(.exercise-test)").forEach(updateExerciseProgress);
@@ -255,10 +275,6 @@ const TRAINER_FULL = [
 ];
 const TRAINER_GENDER_OF = ["m", "f", "m", "f", "m", "f", "n", "m", "f", "m", "f", "m", "f"];
 const TRAINER_MISSED_LIMIT = 60;
-const trainerFold = value => exerciseNorm(value)
-  .replace(/\u0142/g, "l")
-  .normalize("NFD")
-  .replace(/[\u0300-\u036f]/g, "");
 const TRAINER_RECENT = 12;
 
 let trainerData = null;
@@ -515,7 +531,7 @@ function initTrainer(host){
       return;
     }
     const exact = current.answers.some(answer => exerciseNorm(answer) === value);
-    const near = !exact && current.answers.some(answer => trainerFold(answer) === trainerFold(input.value));
+    const near = !exact && current.answers.some(answer => exerciseFold(answer) === exerciseFold(input.value));
     settle(exact ? "correct" : near ? "near" : "wrong", "Пока нет.");
   });
   skip.addEventListener("click", () => settle("wrong", "Запомните."));
@@ -569,6 +585,7 @@ $$(".trainer").forEach(initTrainer);
 initExerciseSection($("#s-cases"));
 initExerciseSection($("#s-rodz"));
 initExerciseSection($("#s-verbs"));
+initExerciseSection($("#s-vocab"));
 initExerciseSection($("#s-adj"));
 initExerciseSection($("#s-preps"));
 initExerciseSection($("#s-adv"));
