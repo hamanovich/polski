@@ -205,12 +205,13 @@ const modernHash = legacyHash => {
 const groups = JSON.parse(vm.runInContext("JSON.stringify(GROUPS)", sandbox));
 const groupOf = new Map();
 groups.forEach(([, items], index) => items.forEach(([id]) => groupOf.set(id, index)));
-const readingOrder = ["s-index", ...groups.flatMap(([, items]) => items.map(([id]) => id))];
+const readingOrder = ["s-index", ...groups.flatMap(([, items]) => items.map(([id]) => id)).filter(id => id !== "s-sources")];
 const labelOf = new Map(JSON.parse(vm.runInContext("JSON.stringify(TABS)", sandbox)));
 
 const jsonLD = (page, canonical) => {
+  const learningResource = page.id !== "s-index" && page.id !== "s-sources";
   const webpage = {
-    "@type":page.id === "s-index" ? ["WebPage", "CollectionPage"] : ["WebPage", "LearningResource"],
+    "@type":page.id === "s-index" ? ["WebPage", "CollectionPage"] : page.id === "s-sources" ? ["WebPage", "AboutPage"] : ["WebPage", "LearningResource"],
     "@id":`${canonical}#webpage`,
     url:canonical,
     name:page.title,
@@ -232,8 +233,10 @@ const jsonLD = (page, canonical) => {
     inLanguage:"ru"
   }, webpage];
   if(page.id !== "s-index"){
-    webpage.learningResourceType = "reference";
-    webpage.teaches = page.h1;
+    if(learningResource){
+      webpage.learningResourceType = "reference";
+      webpage.teaches = page.h1;
+    }
     webpage.breadcrumb = {"@id":`${canonical}#breadcrumb`};
     graph.push({
       "@type":"BreadcrumbList",
@@ -285,7 +288,7 @@ for(const page of pages){
     ["prev", readingOrder[position - 1], "Предыдущий раздел"],
     ["next", readingOrder[position + 1], "Следующий раздел"]
   ].filter(([, id]) => id);
-  if(page.id !== "s-index" && neighbours.length){
+  if(page.id !== "s-index" && page.id !== "s-sources" && neighbours.length){
     const makePager = extraClass => {
       const pager = pageDocument.createElement("nav");
       pager.className = extraClass ? `pager ${extraClass}` : "pager";
@@ -363,7 +366,7 @@ for(const page of pages){
   const draft = `<!DOCTYPE html>\n${pageDocument.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");
   const date = stampDate(page.path || "index", canonical, contentSignature(draft));
   pageDates.set(page.path, date);
-  const html = draft.replace(dateSlot, date);
+  const html = draft.replaceAll(dateSlot, date);
   const outputDir = page.path ? resolve(root, page.path) : root;
   await mkdir(outputDir, {recursive:true});
   await writeFile(resolve(outputDir, "index.html"), html, "utf8");

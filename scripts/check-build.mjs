@@ -30,7 +30,8 @@ const routes = [
   ["s-ludzie", "people", "Обращение, имена и национальности"],
   ["s-dim", "diminutives", "Уменьшительные формы в польском языке"],
   ["s-preps", "prepositions", "Предлоги польского языка"],
-  ["s-bridge", "language-bridges", "Польский через русский и белорусский"]
+  ["s-bridge", "language-bridges", "Польский через русский и белорусский"],
+  ["s-sources", "sources", "О справочнике и источниках"]
 ];
 const TOC_MIN = 5;
 const sitemapPaths = [...routes.map(([, path]) => path), "plan-40"];
@@ -105,6 +106,11 @@ for(const [id, path, heading] of routes){
   assert.equal(webpage.inLanguage, "ru");
   assert.match(webpage.dateModified, /^\d{4}-\d{2}-\d{2}$/, `${path || "/"} needs a dateModified`);
   assert.equal(webpage.dateModified, contentManifest[path || "index"]?.date, `${path || "/"} dateModified must match content-manifest.json`);
+  if(id === "s-sources"){
+    assert(String(webpage["@type"]).includes("AboutPage"), "Sources must be identified as an AboutPage");
+    assert.equal(webpage.learningResourceType, undefined, "Sources are methodology, not a learning topic");
+    assert.equal(webpage.teaches, undefined, "Sources do not teach a grammar topic");
+  }else if(id !== "s-index") assert(String(webpage["@type"]).includes("LearningResource"), `${path} must be a learning resource`);
   const breadcrumb = graph.find(node => node["@type"] === "BreadcrumbList");
   if(id === "s-index") assert.equal(breadcrumb, undefined, "Homepage is the breadcrumb root, not a step in it");
   else{
@@ -115,7 +121,7 @@ for(const [id, path, heading] of routes){
   }
 
   assert.equal(document.querySelectorAll("#nav a[data-s]").length, routes.length);
-  assert.equal(document.querySelectorAll("#nav .navgroup").length, 7, "Navigation must stay two-level: seven groups in one row");
+  assert.equal(document.querySelectorAll("#nav .navgroup").length, 8, "Navigation must keep eight two-level groups");
   assert.equal(document.querySelectorAll("#nav .navgroup .navpop a[data-s]").length, routes.length - 1);
   assert.equal(document.querySelectorAll("#navmenu a[data-s]").length, routes.length);
   const currentGroups = document.querySelectorAll("#nav .navgroup.is-current");
@@ -123,6 +129,10 @@ for(const [id, path, heading] of routes){
   if(id === "s-index"){
     assert.equal(currentGroups.length, 0);
     assert.equal(pagers.length, 0, "Table of contents needs no pager");
+  }else if(id === "s-sources"){
+    assert.equal(currentGroups.length, 1, "Sources must highlight their group");
+    assert(currentGroups[0].contains(document.querySelector('#nav a[aria-current="page"]')));
+    assert.equal(pagers.length, 0, "Methodology is outside the learning sequence");
   }else{
     assert.equal(currentGroups.length, 1, `${path} must highlight its group`);
     assert(currentGroups[0].contains(document.querySelector('#nav a[aria-current="page"]')));
@@ -169,7 +179,10 @@ for(const [id, path, heading] of routes){
 
 const rootPage = documents.get("s-index");
 assert.equal(rootPage.document.title, "Польская грамматика - таблицы, правила и примеры");
-assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 21);
+assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 22);
+const indexGroups = [...rootPage.document.querySelectorAll("#s-index .idx > section")];
+assert.equal(indexGroups.at(-1)?.querySelector("h3")?.textContent.trim(), "О проекте");
+assert.equal(indexGroups.at(-1)?.querySelector(".idx-a")?.dataset.s, "s-sources");
 assert(rootPage.document.querySelector('#s-index .index-plan-card[href="plan-40/"]'));
 assert(!rootPage.html.includes("przez godzinę"), "Homepage should not duplicate every topic");
 
@@ -291,6 +304,19 @@ assert(!bridges.html.includes("Работает на любом незнаком
 assert(!bridges.html.includes("ё, е"));
 assert.equal(bridges.document.querySelectorAll(".bridge-practice .exercise-item").length, 20);
 assert.equal(bridges.document.querySelectorAll(".bridge-practice select.exercise-control").length, 20);
+const sources = documents.get("s-sources");
+assert(sources.html.includes("действующим с 1 января 2026 года"));
+assert(sources.html.includes("корпусом норму"));
+assert(sources.html.includes("не устанавливают норму"));
+assert.equal(sources.document.querySelector(".sources-updated")?.textContent.trim(), "Эта методика и список источников актуализированы: Сентябрь 2026");
+assert.equal(sources.document.querySelector("time"), null, "The public update label must use a stable month, not a technical date");
+assert.equal(sources.document.querySelectorAll('a[href^="https://"]').length >= 7, true);
+for(const {document} of documents.values()){
+  assert.equal(document.querySelector("footer .footer-brand")?.textContent.trim(), "Polski: końcówki");
+  const sourceLink = [...document.querySelectorAll("footer a[href]")].find(link => link.textContent.trim() === "О справочнике и источниках");
+  assert(sourceLink, "Every page footer must link to the methodology");
+  assert.equal(new URL(sourceLink.getAttribute("href"), document.querySelector('link[rel="canonical"]').getAttribute("href")).pathname, "/sources/");
+}
 assert(!documents.get("s-ludzie").html.includes("Wołacz - вкладка"));
 assert(documents.get("s-num").html.includes("Z iloma osobami rozmawiałeś?"));
 assert(documents.get("s-num").html.includes("o czterdziestu procentach"));
@@ -409,6 +435,11 @@ assert.equal(fromData("ABASE").length + fromData("ADIAC").length, 32, "The alpha
 assert.equal(fromData("ADIAC").length, 9, "The Polish alphabet has nine letters with diacritics");
 assert.equal(fromData("DIGR").length, 7, "The multiletter table must keep exactly seven digraphs");
 assert.deepEqual(JSON.parse(JSON.stringify(fromData("LETTER_GROUPS").map(row => row.slice(0, 2)))), [["dzi", "триграф"], ["szcz", "два диграфа"]]);
+const orthoU = fromData("ORTHO_U");
+assert(orthoU.some(row => row[1].includes("-ówna") && row[1].includes("-ówka")), "ORTHO_U must cover -ówna and -ówka");
+assert(orthoU.some(row => row[2].includes("skuwka") && row[2].includes("wsuwka") && row[2].includes("wypluwka")), "ORTHO_U must keep the u exceptions to -ówka");
+assert(orthoU.some(row => row[1].includes("-unek") && row[1].includes("-uszek")), "ORTHO_U must cover common suffixes written with u");
+assert(orthoU.some(row => row[2].includes("pracuję") && row[2].includes("snuję")), "ORTHO_U must cover verb forms from -ować and -uć");
 assert.deepEqual(Array.from(fromData("ADJ"), row => row[0]),
   ["Mianownik", "Dopełniacz", "Celownik", "Biernik", "Narzędnik", "Miejscownik", "Wołacz"],
   "The full adjective paradigm must include all seven Polish cases");
@@ -515,6 +546,8 @@ for(const row of fromData("IMIES_PRZYS")){
 }
 
 const imperativeSoftening = [["dzi", "dź"], ["si", "ś"], ["zi", "ź"], ["ci", "ć"], ["ni", "ń"], ["dz", "dź"], ["s", "ś"], ["z", "ź"], ["n", "ń"]];
+assert(fromData("IMPER").some(row => row[0] === "dawać" && row[2] === "dawaj!" && row[5].includes("dają")), "IMPER must distinguish dawać → dawaj from dać → daj");
+assert(fromData("IMPER").every(row => row[5].includes(" / ")), "Every IMPER row must show both singular and plural forms with niech");
 for(const row of fromData("IMPER")){
   const [verb, base, imperative, , , , note] = row;
   if(base === "-"){
@@ -757,7 +790,8 @@ assert.deepEqual(sitemapDates, manifestKeys.map(key => contentManifest[key].date
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");
 const searchIndex = JSON.parse(searchJSON);
 assert(searchIndex.length > 1500);
-assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 21);
+assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 22);
+assert(searchIndex.some(entry => entry.tab === "s-sources" && entry.text.includes("блог, форум")), "Methodology must be searchable");
 assert(searchIndex.every(entry => /^r-\d+$/.test(entry.id) && entry.text));
 assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementById(entry.id)), "Every search entry must resolve on its topic page");
 

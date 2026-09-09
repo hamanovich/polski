@@ -113,12 +113,14 @@ const ORTHO_RZ = [
 ];
 const ORTHO_U = [
  ["ó","чередуется с o, e, a","głowa → główka · niesie → niósł · wracać → wrócić"],
- ["ó","в родительном мн. числа -ów","panów, stołów, samochodów"],
+ ["ó","в окончаниях -ów, -ówna, -ówka","chlebów, Kraków · Zającówna · stołówka, pocztówka"],
+ ["u","исключения в производных от kuć, suwać, pluć","skuwka, okuwka · wsuwka, zasuwka · wypluwka"],
  ["ó","в начале слова - пять основ и их производные","ósmy · ósemka · ów · ówczesny · ówdzie"],
  ["ó","без чередования - просто запомнить","góra, król, mózg, próba, żółty, wróbel, włókno, wspólny"],
  ["u","в конце слова - всегда, ó там не бывает никогда","ojcu, domu, temu, dziękuję"],
  ["u","в начале слова - кроме тех пяти с ó","uczeń, ulica, ucho, uwaga"],
- ["u","в уменьшительных на -uni, -uś, -utki","babuni, dziadziuś, malutki"]
+ ["u","в большинстве суффиксов: -uch, -uchny, -ulec, -un, -unek, -unia, -unio, -utki, -us, -uszek","leniuch, słabiuchny, hamulec, opiekun, podarunek, ciotunia, tatunio, malutki, maluszek"],
+ ["u","в формах глаголов на -ować и -uć","pracuję, pracujesz, pracują, pracuj, pracujący, pracując · snuję, snujesz, snują, snuj"]
 ];
 
 const CASES = [
@@ -947,22 +949,23 @@ const ASPECT = [
 ];
 
 const IMPER = [
- ["pisać","ty piszesz","pisz!","piszmy!","piszcie!","niech pisze!","I спр.: берём форму ty, убираем окончание"],
- ["mówić","ty mówisz","mów!","mówmy!","mówcie!","niech mówi!","II спр.: то же самое"],
- ["robić","ty robisz","rób!","róbmy!","róbcie!","niech robi!","o → ó в закрытом слоге"],
- ["czytać","oni czytają","czytaj!","czytajmy!","czytajcie!","niech czyta!","III спр.: берём форму oni, убираем -ą"],
- ["jeść","oni jedzą","jedz!","jedzmy!","jedzcie!","niech je!","IV спр.: от oni"],
- ["prosić","ty prosisz","proś!","prośmy!","proście!","niech prosi!","si → ś на конце"],
- ["wozić","ty wozisz","woź!","woźmy!","woźcie!","niech wozi!","zi → ź"],
- ["spać","ty śpisz","śpij!","śpijmy!","śpijcie!","niech śpi!","непроизносимая основа → -ij"],
- ["zapomnieć","ty zapomnisz","zapomnij!","zapomnijmy!","zapomnijcie!","niech zapomni!","то же -ij"],
- ["być","-","bądź!","bądźmy!","bądźcie!","niech będzie!","от будущего времени"],
- ["mieć","ty masz","miej!","miejmy!","miejcie!","niech ma!","нерегулярный"],
- ["wziąć","ty weźmiesz","weź!","weźmy!","weźcie!","niech weźmie!","нерегулярный"],
- ["iść","ty idziesz","idź!","idźmy!","idźcie!","niech idzie!",""],
- ["pomóc","ty pomożesz","pomóż!","pomóżmy!","pomóżcie!","niech pomoże!",""],
- ["dać","ty dasz","daj!","dajmy!","dajcie!","niech da!","нерегулярный"],
- ["powiedzieć","oni powiedzą","powiedz!","powiedzmy!","powiedzcie!","niech powie!",""]
+ ["pisać","ty piszesz","pisz!","piszmy!","piszcie!","niech pisze! / niech piszą!","I спр.: берём форму ty, убираем окончание"],
+ ["mówić","ty mówisz","mów!","mówmy!","mówcie!","niech mówi! / niech mówią!","II спр.: то же самое"],
+ ["robić","ty robisz","rób!","róbmy!","róbcie!","niech robi! / niech robią!","o → ó в закрытом слоге"],
+ ["czytać","oni czytają","czytaj!","czytajmy!","czytajcie!","niech czyta! / niech czytają!","III спр.: берём форму oni, убираем -ą"],
+ ["jeść","oni jedzą","jedz!","jedzmy!","jedzcie!","niech je! / niech jedzą!","IV спр.: от oni"],
+ ["prosić","ty prosisz","proś!","prośmy!","proście!","niech prosi! / niech proszą!","si → ś на конце"],
+ ["wozić","ty wozisz","woź!","woźmy!","woźcie!","niech wozi! / niech wożą!","zi → ź"],
+ ["spać","ty śpisz","śpij!","śpijmy!","śpijcie!","niech śpi! / niech śpią!","непроизносимая основа → -ij"],
+ ["zapomnieć","ty zapomnisz","zapomnij!","zapomnijmy!","zapomnijcie!","niech zapomni! / niech zapomną!","то же -ij"],
+ ["być","-","bądź!","bądźmy!","bądźcie!","niech będzie! / niech będą!","от будущего времени"],
+ ["mieć","ty masz","miej!","miejmy!","miejcie!","niech ma! / niech mają!","нерегулярный"],
+ ["wziąć","ty weźmiesz","weź!","weźmy!","weźcie!","niech weźmie! / niech wezmą!","нерегулярный"],
+ ["iść","ty idziesz","idź!","idźmy!","idźcie!","niech idzie! / niech idą!",""],
+ ["pomóc","ty pomożesz","pomóż!","pomóżmy!","pomóżcie!","niech pomoże! / niech pomogą!",""],
+ ["dawać","ty dajesz","dawaj!","dawajmy!","dawajcie!","niech daje! / niech dają!","основа инфинитива dawa- + -j; не путай с dać → daj"],
+ ["dać","ty dasz","daj!","dajmy!","dajcie!","niech da! / niech dadzą!","нерегулярный"],
+ ["powiedzieć","oni powiedzą","powiedz!","powiedzmy!","powiedzcie!","niech powie! / niech powiedzą!",""]
 ];
 
 const POWINIEN = [
@@ -2256,7 +2259,7 @@ const PRON_PRACTICE = {
   ]
 };
 
-const TABS = [["s-index","Оглавление"],["s-alpha","Алфавит"],["s-rodz","Род"],["s-cases","Существительные"],["s-alt","Чередования"],["s-adj","Прилагательные"],["s-adv","Наречия"],["s-pron","Местоимения"],["s-q","Вопросы"],["s-num","Числительные"],["s-verbs","Глаголы"],["s-vocab","Словарь"],["s-talk","Разговорная практика"],["s-neg","Отрицание"],["s-order","Порядок слов"],["s-impers","Безличные"],["s-conj","Союзы"],["s-part","Частицы"],["s-ludzie","Люди"],["s-dim","Уменьшительные"],["s-preps","Предлоги"],["s-bridge","Мосты"]];
+const TABS = [["s-index","Оглавление"],["s-alpha","Алфавит"],["s-rodz","Род"],["s-cases","Существительные"],["s-alt","Чередования"],["s-adj","Прилагательные"],["s-adv","Наречия"],["s-pron","Местоимения"],["s-q","Вопросы"],["s-num","Числительные"],["s-verbs","Глаголы"],["s-vocab","Словарь"],["s-talk","Разговорная практика"],["s-neg","Отрицание"],["s-order","Порядок слов"],["s-impers","Безличные"],["s-conj","Союзы"],["s-part","Частицы"],["s-ludzie","Люди"],["s-dim","Уменьшительные"],["s-preps","Предлоги"],["s-bridge","Мосты"],["s-sources","Источники"]];
 
 const GROUPS = [
   ["Основы", [
@@ -2293,6 +2296,9 @@ const GROUPS = [
     ["s-ludzie","Вежливое «вы» - третье лицо; имена, фамилии, национальности"],
     ["s-dim","Размер, эмоциональная оценка, близость и ирония"],
     ["s-bridge","Фонетические соответствия, белорусский мост, ложные друзья"],
+  ]],
+  ["О проекте", [
+    ["s-sources","Как проверяется материал и какие источники имеют приоритет"],
   ]],
 ];
 

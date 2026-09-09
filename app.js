@@ -358,6 +358,7 @@ function renderAlpha(){
       ${ORTHO_U.map(o => `<tr><td class="c">${o[0]}</td><td>${o[1]}</td><td class="w">${o[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Проверка родственным словом.</b> Если в польской форме или родственном польском слове на этом месте появляется <span class="pl">o, e</span> или <span class="pl">a</span>, пиши <span class="pl">ó</span>: <span class="pl">mróz → mrozu, siódmy → siedem, wrócić → wracać</span>. Если чередования нет, не угадывай: частотные слова с непроверяемым <span class="pl">ó</span> нужно запомнить или проверить по словарю.</div>
+    <div class="tip"><b>Одинаково звучит, по-разному пишется.</b> Значение различает слова и формы с <span class="pl">u / ó</span>: <span class="pl">Bóg</span> «Бог», <span class="pl">Bug</span> «Буг», <span class="pl">buk</span> «бук»; <span class="pl">lód</span> «лёд», <span class="pl">lud</span> «народ», <span class="pl">lut</span> «припой»; <span class="pl">bród</span> «брод», <span class="pl">brud</span> «грязь».</div>
 
     <h3>Прописная буква</h3>
     <p class="lead">С 1 января 2026 года часть правил изменилась - ниже действующая норма. Для русскоязычного ученика особенно важны названия жителей, объектов городского пространства и вежливые обращения.</p>
@@ -706,19 +707,20 @@ function vTryby(){
     <h3>Повелительное: как образуется</h3>
     <p>I и II спряжение - берём форму <b>ty</b> и отбрасываем окончание. III и IV - берём форму <b>oni</b> и отбрасываем <b>-ą</b>. Дальше <b>+ -my</b> для «мы» и <b>+ -cie</b> для «вы».</p>
     <div class="scroll"><table>
-      <tr><th>глагол</th><th>от чего</th><th>ty</th><th>my</th><th>wy</th><th>on / ona</th><th></th></tr>
+      <tr><th>глагол</th><th>от чего</th><th>ty</th><th>my</th><th>wy</th><th>on / ona / oni / one</th><th></th></tr>
       ${IMPER.map(v => `<tr><td class="w">${v[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${v[1]}</td>
         <td class="g">${v[2]}</td><td class="w">${v[3]}</td><td class="w">${v[4]}</td><td class="w">${v[5]}</td>
         <td style="color:var(--muted);font-size:var(--fs-note)">${v[6]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Смягчение на конце.</b> si → ś, zi → ź, ci → ć, dzi → dź, ni → ń: <span class="pl">prosić → proś, wozić → woź, chodzić → chodź, zaprosić → zaproś</span>. Если основа не выговаривается - добавляем <b>-ij / -yj</b>: <span class="pl">spać → śpij, zapomnieć → zapomnij, zamknąć → zamknij, trzeć → trzyj</span>. Отдельно: <span class="pl">otworzyć → otwórz, pomóc → pomóż</span> - здесь o → ó.</div>
+    <div class="tip"><b>Формы с niech.</b> Для 3-го лица берём обычную форму глагола: <span class="pl">niech czyta / niech czytają, niech zrobi / niech zrobią</span>. Так же строится официальное обращение: <span class="pl">Niech pan czyta. Niech państwo czytają.</span></div>
 
     <h3>Вежливость вместо приказа</h3>
     <table>
-      <tr><td style="width:42%" class="w">Proszę usiąść.</td><td>proszę + инфинитив - самое нейтральное</td></tr>
-      <tr><td class="w">Niech pan/pani usiądzie.</td><td>niech + 3-е лицо - вежливо к незнакомому</td></tr>
-      <tr><td class="w">Czy mógłbyś mi pomóc?</td><td>условное - самая мягкая просьба</td></tr>
-      <tr><td class="w">Usiądź!</td><td>прямой императив - только на «ты»</td></tr>
+      <tr><td style="width:42%" class="w">Proszę usiąść.</td><td>proszę + инфинитив - нейтральная официальная просьба</td></tr>
+      <tr><td class="w">Niech pan/pani usiądzie.</td><td>стандартная официальная форма, но прямее первой</td></tr>
+      <tr><td class="w">Czy mógłby pan / mogłaby pani usiąść?</td><td>условное - более мягкая официальная просьба</td></tr>
+      <tr><td class="w">Usiądź, proszę.</td><td>прямая просьба к собеседнику на «ты»</td></tr>
     </table>
     <div class="tip"><b>Отрицание обычно меняет вид.</b> Приказ - совершенный, запрет - несовершенный: <span class="pl">Zrób to!</span> → <span class="pl">Nie rób tego!</span> · <span class="pl">Kup to!</span> → <span class="pl">Nie kupuj tego!</span> · <span class="pl">Powiedz!</span> → <span class="pl">Nie mów!</span> Это правило по умолчанию, а не жёсткое.</div>
     <div class="tip"><b>Когда правило не работает.</b> Совершенный вид в запрете живой - он предупреждает о конкретном нежелательном исходе: <span class="pl">Nie zapomnij! · Nie spóźnij się! · Nie zgub kluczy!</span> Сравни: <span class="pl">Nie jedz ciasta</span> («не ешь торт» - вообще не трогай) и <span class="pl">Nie zjedz całego ciasta</span> («не съешь весь торт» - предупреждение о результате). И наоборот, несовершенный в обычном приказе совершенно нормален: <span class="pl">Czytaj! · Czekaj! · Mów głośniej!</span></div>
@@ -1854,6 +1856,58 @@ function renderBridge(){
   </div>${topicPracticeHTML(BRIDGE_PRACTICE, "bridge")}`;
 }
 
+function renderSources(){
+  $("#s-sources").innerHTML = `<div class="panel sources-page">
+    <h2>О справочнике и источниках</h2>
+    <p class="lead">Polski: końcówki - практический справочник польского языка для русско- и белорусскоязычных учащихся уровней A1-B2. Материал написан своими словами и организован для учёбы: таблицы помогают увидеть систему, примеры показывают употребление, упражнения проверяют применение правила.</p>
+    <div class="tip"><b>Какая норма используется.</b> В орфографии и пунктуации справочник следует правилам Rady Języka Polskiego при Президиуме PAN, действующим с 1 января 2026 года. Если старый учебник расходится с новой кодификацией, приоритет имеет действующая норма; прежний вариант упоминается только тогда, когда это помогает понять старые тексты.</div>
+
+    <h3>Как мы проверяем материал</h3>
+    <ol class="pit">
+      <li><b>Сначала определяем тип утверждения.</b> Для написания, формы слова, управления, значения и частотности нужны разные источники.</li>
+      <li><b>Сверяем правило и примеры.</b> Недостаточно найти похожую формулировку: источник должен подтверждать именно рассматриваемую форму, значение и контекст.</li>
+      <li><b>Проверяем соседние разделы и упражнения.</b> Исправление не должно оставлять старое правило в таблице, подсказке, ответе тренажёра или перекрёстной ссылке.</li>
+      <li><b>Отделяем норму от редакционного решения.</b> Упрощённая схема для уровня A1-B2 допустима, но её границы и существенные исключения должны быть названы.</li>
+    </ol>
+
+    <h3>Иерархия источников</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>что проверяем</th><th>основная опора</th><th>как используем</th></tr>
+      <tr><td>орфография и пунктуация</td><td class="w">Rada Języka Polskiego PAN</td><td>действующая кодификация имеет приоритет</td></tr>
+      <tr><td>формы и грамматические признаки</td><td class="w">WSJP PAN, SGJP</td><td>сверяем парадигму, род, вид и другие характеристики</td></tr>
+      <tr><td>значение, управление и регистр</td><td class="w">WSJP PAN, академические консультации</td><td>проверяем значение, сочетаемость и стилистические ограничения</td></tr>
+      <tr><td>современное употребление</td><td class="w">NKJP и другие репрезентативные корпуса</td><td>смотрим контексты и распространённость, но не подменяем корпусом норму</td></tr>
+      <tr><td>подача учебного материала</td><td class="w">ZPE, учебные грамматики</td><td>сверяем терминологию и педагогическую последовательность</td></tr>
+    </table></div>
+
+    <h3>Основные ресурсы</h3>
+    <ul class="pit source-links">
+      <li><a href="https://rjp.pan.pl/12365/">Rada Języka Polskiego PAN: сообщение об изменениях 2026 года</a> и <a href="https://rjp.pan.pl/app/uploads/2026/02/2_zalacznik-do-komunikatu-Zasady-pisowni-07-10-2024.pdf">полный свод правил орфографии и пунктуации</a>.</li>
+      <li><a href="https://wsjp.pl/">Wielki słownik języka polskiego PAN</a>: значения, грамматические сведения, сочетаемость и стилистические пометы.</li>
+      <li><a href="https://sgjp.pl/">Słownik gramatyczny języka polskiego</a>: полные формы и грамматические парадигмы.</li>
+      <li><a href="https://poradniajezykowa.uw.edu.pl/">Poradnia Językowa Uniwersytetu Warszawskiego</a>: разбор сложных и вариативных случаев специалистами.</li>
+      <li><a href="https://nkjp.pl/">Narodowy Korpus Języka Polskiego</a>: реальные контексты из разных жанров и регистров.</li>
+      <li><a href="https://zpe.gov.pl/">Zintegrowana Platforma Edukacyjna</a>: официальные учебные материалы и школьная терминология.</li>
+    </ul>
+    <p class="note">Этот список описывает базу проверки, а не утверждает, что каждый источник использован для каждого предложения. Для конкретного вопроса выбирается применимый источник, а важные расхождения проверяются дополнительно.</p>
+
+    <h3>Учебные статьи и блоги</h3>
+    <p class="lead">Хорошая учебная статья может подсказать удобную формулировку, пример или случай, который стоит проверить. Но блог, форум, поисковый фрагмент и единичный пример не устанавливают норму. Они служат картой для проверки, а окончательный вывод сверяется с RJP, словарями, академическими консультациями или корпусом в зависимости от типа вопроса.</p>
+
+    <h3>Русская и белорусская опора</h3>
+    <p class="lead">Сопоставления с русским и белорусским помогают быстрее заметить знакомую модель и риск интерференции. Они не доказываются польским словарём автоматически: утверждение о русском или белорусском языке требует отдельной нормативной или академической опоры соответствующего языка.</p>
+    <div class="tip"><b>Языковой мост - не правило преобразования.</b> Похожее звучание или окончание помогает запомнить форму, но не позволяет без проверки строить новые польские слова, выбирать падеж или предсказывать значение.</div>
+
+    <h3>Границы справочника</h3>
+    <p class="lead">Справочник покрывает практическую грамматику, базовую орфографию, частотную лексику и речевые модели уровней A1-B2. Он не заменяет академическую грамматику, словарь, преподавателя или индивидуальную языковую консультацию. Редкие исторические, диалектные и узкоспециальные варианты включаются только тогда, когда без них базовое объяснение становится неверным.</p>
+
+    <h3>Исправления и обновления</h3>
+    <p class="lead">Разделы проверяются построчно, а после изменений автоматически контролируются ссылки, структура страниц, упражнения, поисковый индекс и публичные адреса. Дата изменения каждой страницы хранится отдельно и обновляется только при реальном изменении её содержания.</p>
+    <p class="note sources-updated">Эта методика и список источников актуализированы: Сентябрь 2026</p>
+    <p>Если вы заметили ошибку, пришлите польскую форму, адрес раздела и, если возможно, источник на <a href="mailto:polski@hamanovich.com">polski@hamanovich.com</a>. Проверяем не только сам пример, но и связанные таблицы, подсказки и задания.</p>
+  </div>`;
+}
+
 function vocabularyTable(words, labels){
   return `<div class="scroll vocabulary-list"><table class="vt">
     <thead><tr>${labels.map(label => `<th>${label}</th>`).join("")}</tr></thead>
@@ -2505,6 +2559,7 @@ applyTheme(readTheme());
 
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
+renderSources();
 renderNumTog();
 buildIndex();
 renderIndex();
