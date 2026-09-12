@@ -25,6 +25,7 @@ function showCase(id, number){
   let target = variants.find(item => item.dataset.case === id && item.dataset.num === number);
   if(!target){ id = "mian"; number = "sg"; target = variants.find(item => item.dataset.case === id && item.dataset.num === number); }
   curCase = id; curNum = number;
+  updateStudyLinks();
   variants.forEach(item => {
     const on = item === target;
     item.classList.toggle("on", on);
@@ -58,6 +59,7 @@ function showVerb(key){
   let target = variants.find(item => item.dataset.v === key);
   if(!target){ key = "conj"; target = variants.find(item => item.dataset.v === key); }
   curV = key;
+  updateStudyLinks();
   variants.forEach(item => {
     const on = item === target;
     item.classList.toggle("on", on);
@@ -609,6 +611,11 @@ function hashFor(suffix = ""){
   if(currentPage === "s-verbs") return `#${curV}${tail}`;
   return suffix ? `#${suffix}` : "";
 }
+function updateStudyLinks(){
+  $$('[data-study-page]').filter(link => link.dataset.studyPage === currentPage).forEach(link => {
+    link.hash = hashFor(link.dataset.study);
+  });
+}
 function writeHash(suffix = ""){
   const hash = hashFor(suffix);
   if(location.hash !== hash) history.replaceState(null, "", hash || location.pathname + location.search);
@@ -643,20 +650,44 @@ function applyHash(){
   const parts = decodeURIComponent(location.hash.replace(/^#/, "")).split("/").filter(Boolean);
   if(parts[0]?.startsWith("s-") && redirectLegacyHash([...parts])) return;
 
+  const study = parts.find(part => ["theory", "practice", "test", "trainer"].includes(part));
+  const stateParts = parts.filter(part => part !== study);
   let rest = parts;
   if(currentPage === "s-cases"){
-    showCase(parts[0] || "mian", parts[1] === "pl" ? "pl" : "sg");
+    showCase(stateParts[0] || "mian", stateParts[1] === "pl" ? "pl" : "sg");
     rest = parts.slice(2);
   }else if(currentPage === "s-verbs"){
-    showVerb(parts[0] || "conj");
+    showVerb(stateParts[0] || "conj");
     rest = parts.slice(1);
   }
   const heading = rest.find(part => part.startsWith("~"));
   const hit = rest.find(part => /^r-\d+$/.test(part));
+  if(study) requestAnimationFrame(() => {
+    const target = document.getElementById(study);
+    if(!target) return;
+    const host = study === "theory" ? target : target.nextElementSibling;
+    const heading = host.querySelector(".content-variant.on h2") || host.querySelector("h2") || host;
+    const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 0;
+    const casebar = $(".casebar");
+    const barHeight = casebar && getComputedStyle(casebar).position === "sticky" ? casebar.offsetHeight : 0;
+    const top = window.scrollY + host.getBoundingClientRect().top - headerHeight - barHeight - 12;
+    window.scrollTo({top:Math.max(0, top), behavior:SMOOTH});
+    heading.setAttribute("tabindex", "-1");
+    heading.focus({preventScroll:true});
+  });
   if(heading) requestAnimationFrame(() => scrollToHeading(heading.slice(1)));
   if(hit) requestAnimationFrame(() => revealSearchHit(hit));
 }
 window.addEventListener("hashchange", applyHash);
+document.addEventListener("click", event => {
+  const link = event.target.closest("[data-study]");
+  if(!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  closeNav();
+  if(link.dataset.studyPage === currentPage && link.hash === location.hash){
+    event.preventDefault();
+    applyHash();
+  }
+});
 
 document.addEventListener("click", event => {
   const button = event.target.closest(".alink");

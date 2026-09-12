@@ -999,3 +999,21 @@ html:not(.js) .totop{display:none}
   .exercise-field{max-width:100%;flex-wrap:wrap}
   .exercise-field .exercise-control{max-width:100%}
 }
+
+.study-nav{display:flex;flex-wrap:wrap;gap:4px 18px;margin:18px 0 22px}
+.study-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--end);font-size:14px;text-underline-offset:4px}
+#navwrap .nav-study{display:flex;flex-wrap:wrap;gap:0 12px;padding:0 10px 10px}
+#navwrap .nav-study a{width:auto;display:inline-flex;align-items:center;min-height:32px;padding:0;border:0;border-radius:0;color:var(--end);font-size:12px;line-height:1.4;text-decoration:underline;text-underline-offset:3px;background:none}
+#navwrap .nav-study a:hover,.study-nav a:hover{color:var(--ink)}
+.study-nav a:focus-visible{outline:2px solid var(--end);outline-offset:4px}
+.study-anchor{display:block;scroll-margin-top:16px}
+#theory{scroll-margin-top:16px}
+@media(max-width:767px){
+  #navmenu a[data-s]{font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:4px}
+  #navwrap #navmenu .nav-study a{color:var(--muted)}
+  #navwrap #navmenu .nav-study a:hover{color:var(--ink)}
+  #navmenu a:has(+ .nav-study){border-bottom:0;padding-bottom:2px}
+  #navwrap .nav-study{gap:0 18px;padding:0 0 8px}
+  #navwrap .nav-study a{min-height:44px;font-size:14px}
+}
+@media print{.study-nav,.study-anchor{display:none}}

@@ -250,6 +250,11 @@ const jsonLD = (page, canonical) => {
   return JSON.stringify({"@context":"https://schema.org", "@graph":graph}).replace(/</g, "\\u003c");
 };
 
+const studyKinds = [["practice", "Практика", ".practice:not(.exercise-test):not(.trainer)"], ["test", "Итоговый тест", ".exercise-test"], ["trainer", "Тренажёр", ".trainer"]];
+const studyByPage = new Map(pages.map(page => {
+  const section = document.getElementById(page.id);
+  return [page.id, studyKinds.filter(([, , selector]) => section?.querySelector(selector))];
+}));
 const masterHTML = document.documentElement.outerHTML;
 const generated = [];
 const pageDates = new Map();
@@ -321,6 +326,20 @@ for(const page of pages){
   if(topicHeading && !topicHeading.closest(".content-variant")) topicHeading.replaceWith(pageHeading);
   else topicSection.prepend(pageHeading);
 
+  const studyItems = studyByPage.get(page.id);
+  if(studyItems.length){
+    pageHeading.id = "theory";
+    for(const [id, , selector] of studyItems){
+      const target = topicSection.querySelector(selector);
+      const host = target.closest(".variant-host") || target;
+      const anchor = pageDocument.createElement("span");
+      anchor.id = id;
+      anchor.className = "study-anchor";
+      anchor.setAttribute("tabindex", "-1");
+      host.before(anchor);
+    }
+  }
+
   const tocHeadings = [...topicSection.querySelectorAll("h3[id]")].filter(heading => !heading.closest(".practice"));
   if(page.id !== "s-index" && tocHeadings.length >= TOC_MIN){
     const toc = pageDocument.createElement("nav");
@@ -340,6 +359,27 @@ for(const page of pages){
     link.removeAttribute("aria-selected");
     link.removeAttribute("tabindex");
   }
+  const studyLinks = (targetId, items) => items.map(([id, label]) =>
+    `<a href="${pageHref(page, targetId)}#${id}" data-study-page="${targetId}" data-study="${id}">${label}</a>`).join("");
+  for(const link of pageDocument.querySelectorAll("#nav [data-s],#navmenu [data-s]")){
+    const items = studyByPage.get(link.dataset.s) || [];
+    if(!items.length) continue;
+    const shortcuts = pageDocument.createElement("div");
+    shortcuts.className = "nav-study";
+    shortcuts.setAttribute("role", "group");
+    shortcuts.setAttribute("aria-label", `${labelOf.get(link.dataset.s)}: задания`);
+    shortcuts.innerHTML = studyLinks(link.dataset.s, items);
+    link.after(shortcuts);
+  }
+  if(studyItems.length){
+    const shortcuts = pageDocument.createElement("nav");
+    shortcuts.className = "study-nav";
+    shortcuts.setAttribute("aria-label", "Теория и задания раздела");
+    shortcuts.innerHTML = studyLinks(page.id, [["theory", "Теория"], ...studyItems]);
+    const lead = pageHeading.nextElementSibling;
+    (lead?.classList.contains("lead") ? lead : pageHeading).after(shortcuts);
+  }
+
   for(const link of pageDocument.querySelectorAll('a[href^="#s-"]')){
     const legacy = link.getAttribute("href");
     const targetId = decodeURIComponent(legacy.slice(1)).split("/")[0];
