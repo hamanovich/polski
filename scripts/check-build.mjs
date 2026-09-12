@@ -650,15 +650,20 @@ const trainerPages = [
   ["s-pron", "pronouns", "Тренажёр местоимений", ["topic"]],
   ["s-preps", "prepositions", "Тренажёр предлогов", ["topic"]],
   ["s-neg", "negation", "Тренажёр отрицания", ["topic"]],
-  ["s-part", "phrases", "Тренажёр разговорных реплик", ["topic"]]
+  ["s-part", "phrases", "Тренажёр разговорных реплик", ["topic"]],
+  ["s-verbs", "government", "Тренажёр управления", ["topic", "trap"]],
+  ["s-bridge", "falsefriends", "Тренажёр ложных друзей", ["topic"]]
 ];
 assert.match(css, /\.trainer \.trainer-filter\{[^}]*min-width:0/, "Trainer filters must be allowed to shrink on narrow screens");
 assert.match(css, /\.trainer \.trainer-tog\{[^}]*overflow-x:auto/, "Wide trainer toggles must scroll locally instead of widening the page");
 for(const [id, path, heading, filters] of trainerPages){
   const page = documents.get(id).document;
-  const block = page.querySelector(".sec .trainer");
+  const block = [...page.querySelectorAll(".sec .trainer")]
+    .find(node => node.querySelector(".practice-heading h2")?.textContent.trim() === heading);
   assert(block, `${path} must host its trainer`);
-  assert.equal(page.querySelectorAll(".sec .trainer").length, 1);
+  assert(block.dataset.trainer, `${path}: the trainer names its deck`);
+  assert.equal(page.querySelectorAll(".sec .trainer").length,
+    trainerPages.filter(entry => entry[0] === id).length, `${id}: every trainer on the page is registered here`);
   assert.equal(block.querySelector(".practice-heading h2")?.textContent.trim(), heading);
   assert(block.classList.contains("practice"), "The trainer is a practice block, so it stays out of search and fulltext");
   assert.deepEqual([...block.querySelectorAll("[data-trainer-filter]")].map(bar => bar.dataset.trainerFilter), filters);
@@ -689,6 +694,26 @@ for(const [name, count] of [["pronouns",31],["prepositions",55],["negation",19]]
     assert.equal((row.prompt.match(/___/g) || []).length, 1, `${name}/${row.id}: one input per question`);
     assert(typeof row.cue === "string" && row.explanation && row.answers.length && row.answers.every(answer => typeof answer === "string" && answer.trim()), `${name}/${row.id}: complete question`);
   }
+}
+const government = trainerDecks.sentences.government;
+assert.equal(government.length, 65, "government: the whole rekcja table is drilled");
+assert.equal(new Set(government.map(row => row.id)).size, government.length, "government: stable unique question IDs");
+assert.equal(new Set(government.map(row => row.topic)).size, 3, "government: verbs, adjectives and nouns all have questions");
+assert.equal(government.filter(row => row.trap === "trap").length, 41, "government: the Russian-mismatch filter keeps its selection");
+for(const row of government){
+  assert.equal((row.prompt.match(/___/g) || []).length, 1, `government/${row.id}: one input per question`);
+  assert(!/[А-Яа-яЁё]/.test(row.prompt), `government/${row.id}: Polish prompt must not contain Russian instructions`);
+  assert(row.cue && row.explanation && row.answers.length, `government/${row.id}: complete question`);
+}
+const falseFriends = trainerDecks.sentences.falsefriends;
+assert.equal(falseFriends.length, 89, "falsefriends: every unambiguous pair is drilled");
+assert.equal(new Set(falseFriends.map(row => row.id)).size, falseFriends.length, "falsefriends: stable unique question IDs");
+assert.equal(new Set(falseFriends.map(row => row.topic)).size, 5, "falsefriends: all five groups have questions");
+for(const row of falseFriends){
+  assert(/[А-Яа-яЁё]/.test(row.prompt), `falsefriends/${row.id}: the prompt is the Russian word`);
+  assert(row.answers.length && row.answers.every(answer => /^[^А-Яа-яЁё;]+$/.test(answer) && answer.trim()),
+    `falsefriends/${row.id}: Polish answers only`);
+  assert(row.cue && row.explanation, `falsefriends/${row.id}: complete question`);
 }
 const phrases = trainerDecks.sentences.phrases;
 assert.equal(phrases.length, 27, "phrases: reply deck coverage");

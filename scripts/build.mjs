@@ -116,6 +116,7 @@ vm.runInContext(`
     .map((practice, index) => verbPracticeHTML(practice, index === 0)).join("");
   document.querySelector("#verbTest").innerHTML = verbTestHTML();
   document.querySelector("#verbTrainer").innerHTML = verbTrainerHTML();
+  document.querySelector("#rekcjaTrainer").innerHTML = sentenceTrainerHTML("government");
   document.querySelector("#adjTrainer").innerHTML = adjectiveTrainerHTML();
 
   document.querySelectorAll(".case-variant,.verb-variant").forEach(linkHeadings);
@@ -174,7 +175,7 @@ const trainerSource = `globalThis.TRAINER_DATA=${JSON.stringify({
   verbs:sandbox.trainerVerbs(),
   nouns:sandbox.trainerNouns(),
   adjectives:sandbox.trainerAdjectives(),
-  sentences:Object.fromEntries(["pronouns", "prepositions", "negation", "phrases"].map(name => [name, sandbox.trainerSentences(name)])),
+  sentences:Object.fromEntries(["pronouns", "prepositions", "negation", "phrases", "government", "falsefriends"].map(name => [name, sandbox.trainerSentences(name)])),
   cases:sandbox.trainerCaseLabels()
 })};\n`;
 await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");

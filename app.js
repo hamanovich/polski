@@ -941,7 +941,7 @@ function renderVerbs(){
   $("#s-verbs").innerHTML =
     `<div class="casebar"><div class="chips" id="vchips" role="group" aria-label="Раздел о глаголах">${
       VTABS.map(t => `<button class="chip" data-v="${t[0]}" aria-pressed="${t[0]===curV}"><span class="cp">${t[1]}</span></button>`).join("")
-    }</div></div><div id="vPanel"></div><div id="verbPractice"></div><div id="verbTest"></div><div id="verbTrainer"></div>`;
+    }</div></div><div id="vPanel"></div><div id="verbPractice"></div><div id="verbTest"></div><div id="verbTrainer"></div><div id="rekcjaTrainer"></div>`;
   $("#vchips").querySelectorAll(".chip").forEach(b => b.onclick = () => {
     curV = b.dataset.v; renderVerbs(); writeHash();
   });
@@ -1085,7 +1085,28 @@ const SENTENCE_TRAINERS = {
     topics:[["reply","ответ собеседнику"],["link","скрепы в своей речи"],["soften","смягчение"]],
     lead:"Здесь наоборот: сверху русская реплика, а вписать надо польскую. Условие под ней уточняет ситуацию, потому что у одного русского оборота бывает несколько польских. Засчитываются все равноправные варианты, после проверки показываются остальные.",
     field:"Как это по-польски"
+  },
+  government:{
+    title:"Тренажёр управления",
+    topics:[["verb","глаголы"],["adjective","прилагательные"],["noun","существительные"]],
+    filters:[{key:"trap", label:"Отбор", values:[["all","все"],["trap","расходится с русским"]]}],
+    lead:"Впишите всё, чем управляет выделенное слово: и предлог, и форму. Слово в скобках дано в начальной форме, условие под предложением подсказывает смысл. Второй фильтр оставляет только те модели, где русский подсказывает неверно."
+  },
+  falsefriends:{
+    title:"Тренажёр ложных друзей", wordLang:"ru",
+    topics:[["home","быт и еда"],["time","время и место"],["people","люди"],["action","действия"],["work","учёба и работа"]],
+    lead:"Сверху русское слово, у которого в польском есть обманчиво похожий двойник. Условие называет этот двойник и его настоящее значение, а вписать надо правильный перевод. Засчитываются все равноправные варианты.",
+    field:"Как это по-польски"
   }
+};
+
+const FALSE_EXTRA = {
+  "диван":["sofa"], "обычный":["zwykły"], "выгодный":["korzystny"], "спрятать":["ukryć"], "завод":["zakład"]
+};
+
+const FALSE_GROUPS = {
+  "Быт, вещи и еда":"home", "Время и пространство":"time", "Люди и качества":"people",
+  "Действия":"action", "Учёба, работа и другие ловушки":"work"
 };
 
 function trainerSentences(name){
@@ -1117,6 +1138,24 @@ function trainerSentences(name){
       ["be-self","Po prostu bądź ___.",["sobą"],"Возвратное местоимение: будь собой","В обороте być sobą используется творительный возвратного местоимения."]
     ];
     return rows.concat(extra.map(([id,prompt,answers,cue,explanation]) => pack({id:`pron-${id}`,prompt,answers,explanation},"reflexive",cue)));
+  }
+  if(name === "government"){
+    return REKCJA_TRAIN.map(([topic, prompt, answers, cue, explanation, trap], index) =>
+      ({id:`rekcja-${index + 1}`, topic, trap:trap ? "trap" : "plain", prompt, answers, cue, explanation}));
+  }
+  if(name === "falsefriends"){
+    return FALSE.flatMap((row, index) => {
+      const [word, meaning, trap, group] = row;
+      if(!trap.includes(" - ")) return [];
+      const [russian, polish] = trap.split(" - ");
+      if(/[А-Яа-яЁё]/.test(polish) || polish.includes(";")) return [];
+      return [{
+        id:`false-${index + 1}`, topic:FALSE_GROUPS[group], prompt:russian,
+        answers:[...polish.split(" / ").map(answer => answer.trim()), ...(FALSE_EXTRA[russian] || [])],
+        cue:`похожее польское ${word} значит «${meaning}»`,
+        explanation:`${word} и «${russian}» - ложные друзья: ${word} это «${meaning}».`
+      }];
+    });
   }
   if(name === "phrases"){
     return REPLIKI.map(([topic, prompt, answers, cue, explanation], index) =>
@@ -1176,7 +1215,7 @@ function sentenceTrainerHTML(name){
     wordLang:config.wordLang,
     lead:config.lead || "Дополните пропуск в предложении. Введите только недостающую часть и нажмите Enter. После проверки появится объяснение. Ошибки возвращаются в очередь и сохраняются после перезагрузки.",
     field:config.field || "Пропущенное слово или сочетание",
-    filters:[{key:"topic", label:"Тема", values:[["all","все"], ...config.topics]}],
+    filters:[{key:"topic", label:"Тема", values:[["all","все"], ...config.topics]}, ...(config.filters || [])],
     empty:"В этой теме пока нет заданий. Выберите другую тему.",
     noscript:"Для тренажёра нужен JavaScript. Правила и практика этого раздела доступны выше."
   });
@@ -1998,7 +2037,7 @@ function renderBridge(){
           ${FALSE.filter(f => f[3] === group).map(f => `<tr><td class="w">${f[0]}</td><td>${f[1]}</td><td class="note">${f[2]}</td></tr>`).join("")}
         </table></div>`).join("")}
     </div>
-  </div>${topicPracticeHTML(BRIDGE_PRACTICE, "bridge")}`;
+  </div>${topicPracticeHTML(BRIDGE_PRACTICE, "bridge")}${sentenceTrainerHTML("falsefriends")}`;
 }
 
 function renderSources(){

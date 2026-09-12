@@ -305,14 +305,18 @@ function trainerVerbCells(verb, tense){
   return verb.fu.map((answers, cell) => ({cell, labels:TRAINER_FULL[cell], gender:TRAINER_GENDER_OF[cell], answers}));
 }
 
-function sentenceDeck(name, labels){
+function sentenceDeck(name, labels, hasTrap){
   return {
-    defaults:{topic:"all"},
+    defaults:hasTrap ? {topic:"all", trap:"all"} : {topic:"all"},
     questions(state){
-      return (trainerData?.sentences?.[name] || []).filter(item => state.topic === "all" || item.topic === state.topic).map(item => ({
-        key:item.id, word:item.prompt, cat:labels[item.topic], chips:[labels[item.topic], "", ""],
-        cue:item.cue, answers:item.answers, hint:item.explanation, explain:true
-      }));
+      return (trainerData?.sentences?.[name] || [])
+        .filter(item => state.topic === "all" || item.topic === state.topic)
+        .filter(item => !hasTrap || state.trap === "all" || item.trap === state.trap)
+        .map(item => ({
+          key:item.id, word:item.prompt, cat:labels[item.topic],
+          chips:[labels[item.topic], item.trap === "trap" ? "расходится с русским" : "", ""],
+          cue:item.cue, answers:item.answers, hint:item.explanation, explain:true
+        }));
     }
   };
 }
@@ -322,6 +326,8 @@ const TRAINER_DECKS = {
   prepositions:sentenceDeck("prepositions", {government:"Управление", space:"Где и куда", meaning:"Значение предлога"}),
   negation:sentenceDeck("negation", {case:"Падеж", construction:"Не является или отсутствует", negative:"Отрицательные слова"}),
   phrases:sentenceDeck("phrases", {reply:"Ответ собеседнику", link:"Скрепы в своей речи", soften:"Смягчение"}),
+  government:sentenceDeck("government", {verb:"Глаголы", adjective:"Прилагательные", noun:"Существительные"}, true),
+  falsefriends:sentenceDeck("falsefriends", {home:"Быт и еда", time:"Время и место", people:"Люди", action:"Действия", work:"Учёба и работа"}),
   verbs:{
     defaults:{tense:"all", gender:"all"},
     questions(state){
