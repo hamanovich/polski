@@ -174,6 +174,7 @@ const trainerSource = `globalThis.TRAINER_DATA=${JSON.stringify({
   verbs:sandbox.trainerVerbs(),
   nouns:sandbox.trainerNouns(),
   adjectives:sandbox.trainerAdjectives(),
+  sentences:Object.fromEntries(["pronouns", "prepositions", "negation", "phrases"].map(name => [name, sandbox.trainerSentences(name)])),
   cases:sandbox.trainerCaseLabels()
 })};\n`;
 await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");

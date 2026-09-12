@@ -646,7 +646,11 @@ for(const [name, fingerprint] of Object.entries(expectedCards)){
 const trainerPages = [
   ["s-verbs", "verbs", "Тренажёр глагольных форм", ["tense", "gender"]],
   ["s-cases", "cases", "Тренажёр падежных форм", ["case", "number"]],
-  ["s-adj", "adjectives", "Тренажёр форм прилагательных", ["kind", "gender"]]
+  ["s-adj", "adjectives", "Тренажёр форм прилагательных", ["kind", "gender"]],
+  ["s-pron", "pronouns", "Тренажёр местоимений", ["topic"]],
+  ["s-preps", "prepositions", "Тренажёр предлогов", ["topic"]],
+  ["s-neg", "negation", "Тренажёр отрицания", ["topic"]],
+  ["s-part", "phrases", "Тренажёр разговорных реплик", ["topic"]]
 ];
 assert.match(css, /\.trainer \.trainer-filter\{[^}]*min-width:0/, "Trainer filters must be allowed to shrink on narrow screens");
 assert.match(css, /\.trainer \.trainer-tog\{[^}]*overflow-x:auto/, "Wide trainer toggles must scroll locally instead of widening the page");
@@ -675,6 +679,53 @@ assert.equal(documents.get("s-adj").document.querySelector('.trainer [data-train
 
 const trainerData = await readFile(resolve(root, "trainer-data.js"), "utf8");
 const trainerDecks = JSON.parse(trainerData.replace(/^globalThis\.TRAINER_DATA=/, "").replace(/;\s*$/, ""));
+for(const [name, count] of [["pronouns",31],["prepositions",55],["negation",19]]){
+  const rows = trainerDecks.sentences[name];
+  assert.equal(rows.length, count, `${name}: sentence deck coverage`);
+  assert.equal(new Set(rows.map(row => row.id)).size, rows.length, `${name}: stable unique question IDs`);
+  assert.equal(new Set(rows.map(row => row.topic)).size, 3, `${name}: all three filters have questions`);
+  for(const row of rows){
+    assert(!/[А-Яа-яЁё]/.test(row.prompt), `${name}/${row.id}: Polish prompt must not contain Russian instructions`);
+    assert.equal((row.prompt.match(/___/g) || []).length, 1, `${name}/${row.id}: one input per question`);
+    assert(typeof row.cue === "string" && row.explanation && row.answers.length && row.answers.every(answer => typeof answer === "string" && answer.trim()), `${name}/${row.id}: complete question`);
+  }
+}
+const phrases = trainerDecks.sentences.phrases;
+assert.equal(phrases.length, 27, "phrases: reply deck coverage");
+assert.equal(new Set(phrases.map(row => row.id)).size, phrases.length, "phrases: stable unique question IDs");
+assert.equal(new Set(phrases.map(row => row.topic)).size, 3, "phrases: all three filters have questions");
+for(const row of phrases){
+  assert(/[А-Яа-яЁё]/.test(row.prompt), `phrases/${row.id}: the prompt is the Russian phrase`);
+  assert(!row.prompt.includes("___"), `phrases/${row.id}: this deck translates instead of filling a gap`);
+  assert(row.cue && row.explanation, `phrases/${row.id}: complete question`);
+  assert(row.answers.length && row.answers.every(answer => /^[^А-Яа-яЁё]+$/.test(answer) && !/[!?.]$/.test(answer.trim())),
+    `phrases/${row.id}: Polish answers without trailing punctuation`);
+}
+assert(trainerDecks.sentences.pronouns.every(row => !["pron-20","pron-24","pron-27"].includes(row.id)), "Do not convert ambiguous or metalinguistic choice tasks to free input");
+assert.deepEqual(trainerDecks.sentences.negation.find(row => row.id === "neg-4").answers, ["nie ma"]);
+assert.deepEqual(trainerDecks.sentences.negation.find(row => row.id === "neg-5").answers, ["nie jest"]);
+const sentenceQuestion = (deck, id) => trainerDecks.sentences[deck].find(row => row.id === id);
+for(const id of ["pron-16","pron-19","pron-29"]){
+  const row = sentenceQuestion("pronouns", id);
+  assert(!row.cue.toLowerCase().includes(row.answers[0].toLowerCase()), `${id}: cue must not disclose the answer`);
+}
+assert(trainerDecks.sentences.pronouns.filter(row => row.topic === "reflexive").length >= 8);
+assert(trainerDecks.sentences.negation.filter(row => row.topic === "negative").length >= 8);
+assert(!sentenceQuestion("negation", "neg-7"), "Do not repeat czas with an unrelated punctuation explanation");
+assert(!sentenceQuestion("prepositions", "prep-space-extra-6"));
+assert(!sentenceQuestion("prepositions", "prep-space-extra-8"));
+assert.equal(sentenceQuestion("prepositions", "prep-government-extra-8").topic, "meaning");
+assert.equal(sentenceQuestion("prepositions", "prepme-4").cue, "сходить за хлебом");
+assert.deepEqual(sentenceQuestion("pronouns", "pron-own-book").answers, ["swoją","swą"]);
+assert(trainerDecks.sentences.prepositions.some(row => row.cue === ""), "Obvious gap instructions stay hidden");
+vm.runInContext(appSource.slice(appSource.indexOf("function trainerSentences(name)"), appSource.indexOf("function sentenceTrainerHTML(name)")), dataSandbox);
+const reorderedCues = vm.runInContext(`(() => {
+  const group = PREP_PRACTICE.find(item => item.id === "meaning");
+  group.tasks.reverse();
+  try { return JSON.stringify(trainerSentences("prepositions").map(({id,cue}) => [id,cue]).sort()); }
+  finally { group.tasks.reverse(); }
+})()`, dataSandbox);
+assert.deepEqual(JSON.parse(reorderedCues), trainerDecks.sentences.prepositions.map(({id,cue}) => [id,cue]).sort(), "Reordering source tasks must preserve each meaning cue");
 const trainerVerbs = trainerDecks.verbs;
 assert.equal(trainerVerbs.length, 100, "The trainer drills the whole verb table");
 const trainerByLemma = new Map(trainerVerbs.map(verb => [verb.l, verb]));

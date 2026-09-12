@@ -1076,8 +1076,114 @@ function trainerVerbs(){
 
 const TRAINER_KEYS = ["ą", "ć", "ę", "ł", "ń", "ó", "ś", "ź", "ż"];
 
+const SENTENCE_TRAINERS = {
+  pronouns:{title:"Тренажёр местоимений", topics:[["personal","личные"],["reflexive","возвратные"],["other","указательные и другие"]]},
+  prepositions:{title:"Тренажёр предлогов", topics:[["government","управление"],["space","где и куда"],["meaning","значение предлога"]]},
+  negation:{title:"Тренажёр отрицания", topics:[["case","падеж"],["construction","не является или отсутствует"],["negative","отрицательные слова"]]},
+  phrases:{
+    title:"Тренажёр разговорных реплик", wordLang:"ru",
+    topics:[["reply","ответ собеседнику"],["link","скрепы в своей речи"],["soften","смягчение"]],
+    lead:"Здесь наоборот: сверху русская реплика, а вписать надо польскую. Условие под ней уточняет ситуацию, потому что у одного русского оборота бывает несколько польских. Засчитываются все равноправные варианты, после проверки показываются остальные.",
+    field:"Как это по-польски"
+  }
+};
+
+function trainerSentences(name){
+  const pack = (task, topic, cue = "", prompt = task.prompt, answers = task.answers) => {
+    const instructions = [];
+    prompt = prompt.replace(/^([^:]*[А-Яа-яЁё][^:]*):\s*/, (_, text) => { instructions.push(text); return ""; });
+    prompt = prompt.replace(/\s*\(([^)]*[А-Яа-яЁё][^)]*)\)/g, (_, text) => { instructions.push(text); return ""; });
+    return {id:task.id, topic, prompt, answers, cue:[cue, ...instructions].filter(Boolean).join(". "), explanation:task.explanation};
+  };
+  if(name === "pronouns"){
+    const cues = {
+      7:"Форма mój",8:"Используйте возвратное притяжательное местоимение: обладатель совпадает с подлежащим",
+      9:"Форма ten",10:"Форма ta: письменная литературная норма",11:"Форма ten",14:"Значение: сама, без чужой помощи",
+      16:"Форма wszystek",17:"Форма ono после предлога",19:"Обладатели: они",23:"Значение: тот, отдалённый предмет",
+      28:"Форма wszystek",29:"Значение: каждый по отдельности",30:"Форма sam: одного, без присмотра"
+    };
+    const ids = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,28,29,30];
+    const rows = ids.map(id => {
+      const task = PRON_PRACTICE.tasks.find(item => item.id === `pron-${id}`);
+      const topic = [5,6,8].includes(id) ? "reflexive" : [7,9,10,11,14,16,19,23,28,29,30].includes(id) ? "other" : "personal";
+      return pack(task, topic, cues[id] || "");
+    });
+    const extra = [
+      ["own-book","Anna czyta ___ książkę.",["swoją","swą"],"Возвратное притяжательное: книга принадлежит Анне","Обладатель совпадает с подлежащим Anna: swoją książkę. Книжный вариант: swą książkę."],
+      ["own-car","Jan jedzie ___ samochodem.",["swoim","swym"],"Возвратное притяжательное: автомобиль принадлежит Яну","Samochodem стоит в творительном: swoim samochodem. Книжная форма: swym."],
+      ["mutual","Znamy ___ od lat.",["się"],"Краткая безударная форма: знаем друг друга","Взаимность выражается через się: znamy się, знаем друг друга."],
+      ["change","Drzwi ___ otworzyły.",["się"],"Одна частица: двери открылись","Się участвует в обозначении изменения состояния предмета, а не действия на самого себя."],
+      ["with-self","Weź parasol ze ___.",["sobą"],"Возвратное местоимение: с собой","После ze нужна форма творительного: ze sobą."],
+      ["be-self","Po prostu bądź ___.",["sobą"],"Возвратное местоимение: будь собой","В обороте być sobą используется творительный возвратного местоимения."]
+    ];
+    return rows.concat(extra.map(([id,prompt,answers,cue,explanation]) => pack({id:`pron-${id}`,prompt,answers,explanation},"reflexive",cue)));
+  }
+  if(name === "phrases"){
+    return REPLIKI.map(([topic, prompt, answers, cue, explanation], index) =>
+      ({id:`phrase-${index + 1}`, topic, prompt, answers, cue, explanation}));
+  }
+  if(name === "prepositions"){
+    const meanings = {
+      "prepme-1":"с молоком","prepme-2":"из дома","prepme-3":"просить о помощи","prepme-4":"сходить за хлебом",
+      "prepme-5":"в течение часа","prepme-6":"во Вроцлаве","prepme-7":"со мной",
+      "prep-meaning-extra-1":"от врача","prep-meaning-extra-2":"без меня","prep-meaning-extra-3":"после обеда",
+      "prep-meaning-extra-4":"ждать автобус","prep-meaning-extra-5":"платить за билет","prep-meaning-extra-6":"через час",
+      "prep-meaning-extra-7":"с 2020 года","prep-meaning-extra-8":"написан мной","prep-meaning-extra-9":"к врачу",
+      "prep-meaning-extra-10":"о новой работе","prep-meaning-extra-11":"готов ко всему","prep-meaning-extra-12":"надо мной"
+    };
+    const omitted = ["prep-space-extra-6","prep-space-extra-8"];
+    return PREP_PRACTICE.flatMap(group => group.tasks.filter(task => !task.passage && !omitted.includes(task.id)).map(task => {
+      const topic = task.id === "prep-government-extra-8" ? "meaning" : group.id;
+      if(group.id === "meaning" && !meanings[task.id]) throw new Error(`Нет условия для ${task.id}`);
+      return pack(task, topic, meanings[task.id] || "");
+    }));
+  }
+  const ids = [1,4,5,6,9,10,11,12,13,15,17,18];
+  const constructions = {
+    4:["Dzisiaj ___ Anny w domu.","nie ma"],
+    5:["Anna ___ lekarzem.","nie jest"],
+    12:["Teraz on ___ w pracy.","nie jest"],
+    13:["W lodówce ___ mleka.","nie ma"],
+    17:["To ___ prawda.","nie jest"]
+  };
+  const rows = ids.map(id => {
+    const task = NEG_PRACTICE.tasks.find(item => item.id === `neg-${id}`);
+    if(constructions[id]){
+      const row = pack(task, "construction", "Дополните отрицанием: nie ma или nie jest", constructions[id][0], [constructions[id][1]]);
+      if(id === 12) row.explanation += " Здесь подлежащее on стоит в именительном. Отсутствие человека можно выразить безлично: Teraz nie ma go w pracy.";
+      if(id === 17) row.explanation += " Можно также сказать To nieprawda, но это другая конструкция со слитным написанием.";
+      return row;
+    }
+    return pack(task, [10,11].includes(id) ? "negative" : "case");
+  });
+  rows.push(pack(PRON_PRACTICE.tasks.find(item => item.id === "pron-25"), "negative"));
+  const extra = [
+    ["nobody","___ nic nie wie.","Nikt","Никто ничего не знает","Nikt означает «никто»; при сказуемом сохраняется nie."],
+    ["never","___ tam nie byłem.","Nigdy","Я никогда там не был","Nigdy означает «никогда» и сочетается с отрицанием сказуемого."],
+    ["nowhere","___ nie widzę kluczy.","Nigdzie","Нигде не вижу ключей","Nigdzie означает «нигде»; отрицание nie при глаголе сохраняется."],
+    ["none","Wczoraj ___ z nich nie przyszedł.","żaden","Вчера ни один из них не пришёл","Żaden z nich сочетается с единственным числом: nie przyszedł."],
+    ["to-nobody","Teraz ___ nic nie mówię.","nikomu","Сейчас никому ничего не говорю","Mówię komu? Дательный от nikt: nikomu."],
+    ["nothing","Nikt ___ nie wie.","nic","Никто ничего не знает","Nic означает «ничего» в этой конструкции; при сказуемом сохраняется nie."]
+  ];
+  return rows.concat(extra.map(([id,prompt,answer,cue,explanation]) => pack({id:`neg-word-${id}`,prompt,answers:[answer],explanation},"negative",cue)));
+}
+
+function sentenceTrainerHTML(name){
+  const config = SENTENCE_TRAINERS[name];
+  return trainerHTML({
+    deck:name, title:config.title, sentence:true,
+    kicker:`Тренажёр · заданий: ${trainerSentences(name).length}`,
+    wordLang:config.wordLang,
+    lead:config.lead || "Дополните пропуск в предложении. Введите только недостающую часть и нажмите Enter. После проверки появится объяснение. Ошибки возвращаются в очередь и сохраняются после перезагрузки.",
+    field:config.field || "Пропущенное слово или сочетание",
+    filters:[{key:"topic", label:"Тема", values:[["all","все"], ...config.topics]}],
+    empty:"В этой теме пока нет заданий. Выберите другую тему.",
+    noscript:"Для тренажёра нужен JavaScript. Правила и практика этого раздела доступны выше."
+  });
+}
+
 function trainerHTML(config){
-  return `<section class="practice panel trainer" data-trainer="${config.deck}">
+  return `<section class="practice panel trainer${config.sentence ? " trainer-sentence" : ""}" data-trainer="${config.deck}">
     <div class="practice-heading">
       <div><p class="practice-kicker">${config.kicker}</p><h2>${config.title}</h2></div>
       <div class="trainer-score" aria-live="polite" aria-label="Счёт серии"></div>
@@ -1093,7 +1199,8 @@ function trainerHTML(config){
     <p class="trainer-stats" data-trainer-stats hidden></p>
     <div class="trainer-stage" data-trainer-stage hidden>
       <p class="trainer-meta"><span data-trainer-chip="0"></span><span data-trainer-chip="1"></span><span data-trainer-chip="2" hidden></span></p>
-      <p class="trainer-word" lang="pl" data-trainer-word></p>
+      <p class="trainer-cue" data-trainer-cue hidden></p>
+      <p class="trainer-word" lang="${config.wordLang || "pl"}" data-trainer-word></p>
       <form class="trainer-form" data-trainer-form novalidate>
         <label class="trainer-field">
           <span class="trainer-legend">${config.field}</span>
@@ -1338,10 +1445,20 @@ function renderPart(){
     <div class="tip"><b><span class="pl">by</span> подвижна.</b> С личной формой глагола она пишется слитно: <span class="pl">zrobiłbym</span>. Но может уйти к другому слову - и тогда пишется отдельно: <span class="pl">Ja bym to zrobił</span> · <span class="pl">On by to zrobił</span> · <span class="pl">My byśmy dokończyli</span>. Оба варианта нормативны, смысл один.</div>
     <div class="tip"><b>-że усиливает и подгоняет приказ.</b> <span class="pl">Idź!</span> - команда, <span class="pl">Idźże!</span> - нетерпеливое «ну иди же!». Пишется слитно и без дефиса: <span class="pl">chodźże, weźże, dajże</span>.</div>
 
+    <h3>Разговорные смазки</h3>
+    <p class="lead">Короткие обороты, которыми поляки склеивают живую речь: они почти ничего не добавляют к содержанию, но без них разговор звучит рублено и слишком по-учебному. Лингвисты называют их дискурсивными маркерами. Почти все они разговорные: в устной речи звучат постоянно и небрежностью не считаются, а в заявлении или деловом письме их лучше не ставить.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>оборот</th><th>значение</th><th>примеры</th><th></th></tr>
+      ${POTOCZNE.map(p => `<tr><td class="w">${p[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[1]}</td>
+        <td class="g">${p[2]}</td><td class="note">${p[3]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Три паразита, которых лучше не набирать.</b> <span class="pl">jakby</span> и <span class="pl">tak jakby</span>, вставленные через слово, - это польское «как бы», и режут слух они так же: <span class="pl">To było jakby dziwne</span>. Само по себе слово нормальное: <span class="pl">Wygląda, jakby nie spał</span> - «как будто», <span class="pl">Jakby co, dzwoń</span> - «если что». <span class="pl">generalnie</span> вытеснило <span class="pl">w ogóle</span> и <span class="pl">ogólnie</span>, но обычно не значит ничего. <span class="pl">znaczy się</span> - разговорный вариант <span class="pl">to znaczy</span>, в речи допустим, в тексте нет.</div>
+    <div class="tip"><b><span class="pl">Dokładnie!</span> в значении «вот именно» - калька с английского <span class="pl">exactly</span>.</b> Понимают все, но языковеды относятся к ней сдержанно и советуют <span class="pl">No właśnie!</span> или <span class="pl">Otóż to!</span> У самого слова <span class="pl">dokładnie</span> значение другое: «тщательно, точно» - <span class="pl">Przeczytaj to dokładnie</span>.</div>
+
     <h3>Готовые реплики</h3>
     <table>
       <tr><td style="width:34%" class="w">No dobra. · No jasne. · No pewnie.</td><td>ну ладно · ну ясно · ну конечно</td></tr>
-      <tr><td class="w">No właśnie! · Dokładnie!</td><td>вот именно</td></tr>
+      <tr><td class="w">No właśnie! · Otóż to!</td><td>вот именно</td></tr>
       <tr><td class="w">Raczej nie. · Chyba nie.</td><td>скорее нет - мягкий отказ</td></tr>
       <tr><td class="w">Ależ oczywiście!</td><td>ну разумеется</td></tr>
       <tr><td class="w">Akurat!</td><td>ага, как же - с иронией</td></tr>
@@ -1350,7 +1467,7 @@ function renderPart(){
       <tr><td class="w">Oby!</td><td>дай бог</td></tr>
     </table>
     <div class="tip"><b>Три ложных друга.</b> <span class="pl">no</span> - это «ну», а «но» будет <span class="pl">ale</span>. <span class="pl">owszem</span> - «да, конечно», ничего общего с «совсем». <span class="pl">niby</span> - «якобы», а не «небо».</div>
-  </div>${topicPracticeHTML(PART_PRACTICE, "particle")}`;
+  </div>${topicPracticeHTML(PART_PRACTICE, "particle")}${sentenceTrainerHTML("phrases")}`;
 }
 
 function renderQ(){
@@ -1492,7 +1609,7 @@ function renderNeg(){
     <p><span class="pl">Ani… ani</span> соединяет отрицаемые элементы; перед повторным <span class="pl">ani</span> ставится запятая, а при сказуемом сохраняется <span class="pl">nie</span>: <span class="pl">Nie mam ani czasu, ani pieniędzy.</span> Без сказуемого возможна короткая модель <span class="pl">Ani słowa!</span></p>
     <p class="lead"><span class="pl">Żaden / żadna / żadne</span> - «никакой»: <span class="pl">Żaden z nich nie przyszedł. · Nie mam żadnego problemu.</span> Согласуется с существительным и склоняется по местоименному типу: <span class="pl">żadnego, żadnej, żadnym</span>. В предложной группе без сказуемого дополнительное <span class="pl">nie</span> не нужно: <span class="pl">bez żadnego problemu</span>.</p>
     <div class="tip"><b>Не путай отрицание возможности и обязанности.</b> <span class="pl">Nie muszę iść</span> - не обязан, <span class="pl">nie mogę iść</span> - не могу, <span class="pl">nie wolno iść</span> - нельзя. Подробнее - в разделах <a href="#s-verbs">Глаголы</a> и <a href="#s-impers">Безличные конструкции</a>. Слитное и раздельное написание <span class="pl">nie</span> разобрано в разделе <a href="#s-part">Частицы</a>.</div>
-  </div>${topicPracticeHTML(NEG_PRACTICE, "negation")}`;
+  </div>${topicPracticeHTML(NEG_PRACTICE, "negation")}${sentenceTrainerHTML("negation")}`;
 }
 
 function renderOrder(){
@@ -1639,7 +1756,7 @@ function prepositionPracticeHTML(practice){
 function prepositionTestHTML(){ return exerciseTestHTML(PREP_TEST, "prepositions", "preposition-test"); }
 function renderPrepPractice(){
   $("#prepPractice").innerHTML = PREP_PRACTICE.map(prepositionPracticeHTML).join("");
-  $("#prepTest").innerHTML = prepositionTestHTML();
+  $("#prepTest").innerHTML = prepositionTestHTML() + sentenceTrainerHTML("prepositions");
 }
 function renderAdj(){
   $("#s-adj").innerHTML = `<div class="panel">
@@ -1860,7 +1977,7 @@ function renderPron(){
       <tr><th>слово</th><th>значение</th><th>как ведёт себя</th></tr>
       ${OKRESL.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td style="white-space:normal;font-size:var(--fs-note)">${r[2]}</td></tr>`).join("")}
     </table></div>
-  </div>${topicPracticeHTML(PRON_PRACTICE, "pronoun")}`;
+  </div>${topicPracticeHTML(PRON_PRACTICE, "pronoun")}${sentenceTrainerHTML("pronouns")}`;
 }
 
 function renderBridge(){

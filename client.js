@@ -305,7 +305,23 @@ function trainerVerbCells(verb, tense){
   return verb.fu.map((answers, cell) => ({cell, labels:TRAINER_FULL[cell], gender:TRAINER_GENDER_OF[cell], answers}));
 }
 
+function sentenceDeck(name, labels){
+  return {
+    defaults:{topic:"all"},
+    questions(state){
+      return (trainerData?.sentences?.[name] || []).filter(item => state.topic === "all" || item.topic === state.topic).map(item => ({
+        key:item.id, word:item.prompt, cat:labels[item.topic], chips:[labels[item.topic], "", ""],
+        cue:item.cue, answers:item.answers, hint:item.explanation, explain:true
+      }));
+    }
+  };
+}
+
 const TRAINER_DECKS = {
+  pronouns:sentenceDeck("pronouns", {personal:"Личные", reflexive:"Возвратные", other:"Указательные и другие"}),
+  prepositions:sentenceDeck("prepositions", {government:"Управление", space:"Где и куда", meaning:"Значение предлога"}),
+  negation:sentenceDeck("negation", {case:"Падеж", construction:"Не является или отсутствует", negative:"Отрицательные слова"}),
+  phrases:sentenceDeck("phrases", {reply:"Ответ собеседнику", link:"Скрепы в своей речи", soften:"Смягчение"}),
   verbs:{
     defaults:{tense:"all", gender:"all"},
     questions(state){
@@ -460,6 +476,9 @@ function initTrainer(host){
       chip.hidden = !current.chips[index];
     });
     word.textContent = current.word;
+    const cue = host.querySelector("[data-trainer-cue]");
+    cue.textContent = current.cue || "";
+    cue.hidden = !current.cue;
     input.value = "";
     input.disabled = false;
     input.removeAttribute("aria-invalid");
@@ -506,6 +525,7 @@ function initTrainer(host){
       : verdict === "near"
         ? `Верно, но без диакритики: ${current.answers.join(" · ")}`
         : `${prefix} Правильно: ${current.answers.join(" · ")}${current.hint ? `. ${current.hint}` : ""}`;
+    if(correct && current.explain && current.hint) feedback.append(` ${current.hint}`);
     if(!correct && current.reference){
       const reference = document.createElement("a");
       reference.className = "trainer-reference";

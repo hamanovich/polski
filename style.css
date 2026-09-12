@@ -1017,3 +1017,6 @@ html:not(.js) .totop{display:none}
   #navwrap .nav-study a{min-height:44px;font-size:14px}
 }
 @media print{.study-nav,.study-anchor{display:none}}
+
+.trainer.trainer-sentence .trainer-word{font-size:clamp(1.25rem,3vw,1.8rem);line-height:1.5;overflow-wrap:anywhere}
+.trainer .trainer-cue{font-size:var(--fs-note);color:var(--muted);margin:12px 0 8px}
