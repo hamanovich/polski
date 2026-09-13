@@ -8,7 +8,7 @@ function renderConj(){
     <p class="note">Здесь собраны союзы и другие средства связи: <span class="pl">jednak</span>, <span class="pl">dlatego</span> и <span class="pl">więc</span> современные словари описывают как связующие частицы, но в пунктуации они ведут себя так же.</p>
     <div class="scroll"><table class="vt">
       <tr><th>союз</th><th>значение</th><th>пример</th><th></th></tr>
-      ${CONJ_COORD.map(c => `<tr><td class="w">${c[0]}</td><td style="color:var(--muted)">${c[1]}</td><td class="g">${c[2]}</td><td class="note">${c[3]}</td></tr>`).join("")}
+      ${CONJ_COORD.map(c => `<tr><td class="w">${c[0]}</td><td class="dim">${c[1]}</td><td class="g">${c[2]}</td><td class="note">${c[3]}</td></tr>`).join("")}
     </table></div>
 
     <div class="tip"><b>Запятая при сочинении - короткая карта.</b> Обычно без запятой одиночные <span class="pl">i, oraz, lub, albo, ani</span>: <span class="pl">chleb i mleko</span>. Обычно с запятой <span class="pl">a, ale, lecz, natomiast, więc, zatem, dlatego, czyli</span>: <span class="pl">On czyta, a ja piszę</span>. При повторе запятая идёт перед вторым и каждым следующим: <span class="pl">ani czasu, ani pieniędzy</span> · <span class="pl">albo dziś, albo jutro</span> · <span class="pl">i chleb, i mleko</span>. Отдельно <span class="pl">a</span> без запятой в <span class="pl">między Anną a Piotrem</span> и в сопоставительных заголовках.</div>
@@ -16,7 +16,7 @@ function renderConj(){
     <h3>Подчинительные - вводят придаточное</h3>
     <div class="scroll"><table class="vt">
       <tr><th>союз</th><th>значение</th><th>пример</th><th></th></tr>
-      ${CONJ_SUB.map(c => `<tr><td class="w">${c[0]}</td><td style="color:var(--muted)">${c[1]}</td><td class="g">${c[2]}</td><td class="note">${c[3]}</td></tr>`).join("")}
+      ${CONJ_SUB.map(c => `<tr><td class="w">${c[0]}</td><td class="dim">${c[1]}</td><td class="g">${c[2]}</td><td class="note">${c[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>że или żeby</h3>
@@ -32,12 +32,12 @@ function renderConj(){
     <p class="lead">Ту же мысль часто можно выразить без придаточного - через существительное или отглагольное существительное. Это особенно обычно в письменной и официальной речи.</p>
     <div class="scroll"><table class="vt">
       <tr><th>придаточное</th><th>короткая конструкция</th></tr>
-      <tr><td class="w" style="white-space:normal">Kiedy wróciłem do domu, zadzwoniłem do Anny.</td><td class="g" style="white-space:normal">Po powrocie do domu zadzwoniłem do Anny.</td></tr>
-      <tr><td class="w" style="white-space:normal">Po tym, jak podpisałem umowę, dostałem klucze.</td><td class="g" style="white-space:normal">Po podpisaniu umowy dostałem klucze.</td></tr>
-      <tr><td class="w" style="white-space:normal">Zanim wyjdę, zamknę okna.</td><td class="g" style="white-space:normal">Przed wyjściem zamknę okna.</td></tr>
-      <tr><td class="w" style="white-space:normal">Ponieważ padał deszcz, zostaliśmy w domu.</td><td class="g" style="white-space:normal">Z powodu deszczu zostaliśmy w domu.</td></tr>
-      <tr><td class="w" style="white-space:normal">Mimo że był zmęczony, pracował dalej.</td><td class="g" style="white-space:normal">Mimo zmęczenia pracował dalej.</td></tr>
-      <tr><td class="w" style="white-space:normal">Uczę się, żeby zdać egzamin.</td><td class="g" style="white-space:normal">Uczę się w celu zdania egzaminu. <span class="note">официально</span></td></tr>
+      <tr><td class="w flow">Kiedy wróciłem do domu, zadzwoniłem do Anny.</td><td class="g flow">Po powrocie do domu zadzwoniłem do Anny.</td></tr>
+      <tr><td class="w flow">Po tym, jak podpisałem umowę, dostałem klucze.</td><td class="g flow">Po podpisaniu umowy dostałem klucze.</td></tr>
+      <tr><td class="w flow">Zanim wyjdę, zamknę okna.</td><td class="g flow">Przed wyjściem zamknę okna.</td></tr>
+      <tr><td class="w flow">Ponieważ padał deszcz, zostaliśmy w domu.</td><td class="g flow">Z powodu deszczu zostaliśmy w domu.</td></tr>
+      <tr><td class="w flow">Mimo że był zmęczony, pracował dalej.</td><td class="g flow">Mimo zmęczenia pracował dalej.</td></tr>
+      <tr><td class="w flow">Uczę się, żeby zdać egzamin.</td><td class="g flow">Uczę się w celu zdania egzaminu. <span class="note">официально</span></td></tr>
     </table></div>
     <div class="tip"><b>Падеж задаёт новая конструкция.</b> <span class="pl">po + Miejscownik</span>: <span class="pl">po powrocie, po podpisaniu</span>; <span class="pl">przed + Narzędnik</span>: <span class="pl">przed wyjściem</span>; <span class="pl">z powodu, mimo, w celu + Dopełniacz</span>: <span class="pl">z powodu deszczu, mimo zmęczenia, w celu zdania</span>.</div>
     <div class="tip"><b>Проверь, кто выполняет действие.</b> При одном субъекте сокращение прямое: <span class="pl">Kiedy wróciłem, zadzwoniłem → Po powrocie zadzwoniłem</span>. Если субъекты разные, их нужно назвать: <span class="pl">Kiedy wróciłem, Anna zadzwoniła → Po moim powrocie Anna zadzwoniła</span>. Без <span class="pl">moim</span> смысл станет двусмысленным.</div>
@@ -46,7 +46,7 @@ function renderConj(){
     <p class="lead">Главное здесь - в польском нет обязательного сдвига времён, как в английском. Форма времени не меняется механически, а выбирается по смыслу и моменту пересказа, как в русском.</p>
     <div class="scroll"><table class="vt">
       <tr><th>прямая речь</th><th>косвенная</th><th>что произошло</th></tr>
-      ${MOWA_ZAL.map(m => `<tr><td class="w">${m[0]}</td><td class="g" style="white-space:normal">${m[1]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${m[2]}</td></tr>`).join("")}
+      ${MOWA_ZAL.map(m => `<tr><td class="w">${m[0]}</td><td class="g flow">${m[1]}</td><td class="dim sm flow">${m[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Могут измениться лицо и точка отсчёта.</b> Местоимения и окончания глагола переходят на новое лицо. Слова «здесь и сейчас» сдвигаются только если сдвинулась точка отсчёта: при позднем пересказе <span class="pl">jutro → następnego dnia</span>, <span class="pl">wczoraj → dzień wcześniej</span>, <span class="pl">tutaj → tam</span>, <span class="pl">teraz → wtedy</span>. Если пересказываешь в тот же день и в том же месте, <span class="pl">jutro</span> и <span class="pl">tutaj</span> остаются на месте. Обязательного сдвига времени нет: <span class="pl">Powiedział, że jest chory</span> означает, что состояние представлено как актуальное, а <span class="pl">Powiedział, że był chory</span> относит его к прошлому.</div>
     <div class="tip"><b>В косвенном вопросе - обычный порядок слов.</b> Сохраняется вопросительное слово или <span class="pl">czy</span>, а дальше фраза строится как утверждение: <span class="pl">Zapytał, gdzie mieszkam</span>. Никакой перестановки, как в английском, в польском нет и в прямом вопросе. Для вопросов «да/нет» вводится <span class="pl">czy</span>: <span class="pl">Nie wiem, czy przyjdzie</span>. Запятая отделяет придаточное от главного, но она отмечает границу, а не ставится автоматически перед самим словом <span class="pl">że</span> или <span class="pl">czy</span> - см. врезку ниже.</div>
@@ -69,9 +69,9 @@ function renderLudzie(){
     <h3>Как это работает в речи</h3>
     <div class="scroll"><table class="vt">
       <tr><th>фраза</th><th>к кому</th><th>форма глагола</th></tr>
-      ${PAN_USE.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td style="font-size:var(--fs-note);white-space:normal">${r[2]}</td></tr>`).join("")}
+      ${PAN_USE.map(r => `<tr><td class="w">${r[0]}</td><td class="dim">${r[1]}</td><td class="sm flow">${r[2]}</td></tr>`).join("")}
     </table></div>
-    <ol class="pit" style="margin-top:14px">
+    <ol class="pit gap">
       <li><b>Глагол в третьем лице, а не во втором множественном.</b> <span class="pl">Czy pan ma czas?</span> - буквально «имеет ли пан время». Русское «вы» - это польское <span class="pl">wy</span>, и <span class="pl">wy</span> к незнакомому звучит как обращение к толпе или как хамство.</li>
       <li><b><span class="pl">państwo</span> - три разных слова.</b> Вежливое «вы» к смешанной компании (<span class="pl">Czy państwo są gotowi?</span>), «супруги» (<span class="pl">państwo Kowalscy</span>) и «государство» (средний род: <span class="pl">państwo polskie, w tym państwie</span>). Различает только контекст.</li>
       <li><b>Дистанция задаётся тем, что стоит после pan.</b> <span class="pl">Proszę pana</span> - незнакомый. <span class="pl">Panie Adamie</span> - знакомы, но на «вы». <span class="pl">Pan Kowalski</span> - официально и обычно о третьем лице, а не в лицо.</li>
@@ -91,7 +91,7 @@ function renderLudzie(){
     <h3>Типы фамилий</h3>
     <div class="scroll"><table class="vt">
       <tr><th>окончание</th><th>пример</th><th>мужчина</th><th>женщина</th><th>семья, супруги</th></tr>
-      ${NAZW_TYP.map(r => `<tr><td class="c">${r[0]}</td><td class="w">${r[1]}</td><td class="g" style="white-space:normal">${r[2]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${r[3]}</td><td class="w">${r[4]}</td></tr>`).join("")}
+      ${NAZW_TYP.map(r => `<tr><td class="c">${r[0]}</td><td class="w">${r[1]}</td><td class="g flow">${r[2]}</td><td class="dim sm flow">${r[3]}</td><td class="w">${r[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Женская фамилия на согласную не склоняется никогда.</b> <span class="pl">pani Nowak · nie ma pani Nowak · dla pani Nowak · z panią Nowak</span> - форма одна на все падежи, падеж показывает только слово <span class="pl">pani</span>. У мужчины та же фамилия склоняется полностью: <span class="pl">pana Nowaka, panu Nowakowi</span>.</div>
     <div class="tip"><b>Фамилии на -ski ведут себя как прилагательные.</b> Значит, и род у них настоящий: <span class="pl">Kowalski / Kowalska</span>, а во множественном - мужско-личное <span class="pl">Kowalscy</span> (вся семья или супруги) против <span class="pl">Kowalskie</span> (только женщины). Отсюда и <span class="pl">państwo Kowalscy byli</span>, а не «były».</div>
@@ -107,7 +107,7 @@ function renderLudzie(){
     <h3>Язык: четыре разные конструкции</h3>
     <div class="scroll"><table class="vt">
       <tr><th>фраза</th><th>форма</th><th>что значит</th></tr>
-      ${JEZYK.map(j => `<tr><td class="w">${j[0]}</td><td class="c">${j[1]}</td><td style="color:var(--muted);white-space:normal">${j[2]}</td></tr>`).join("")}
+      ${JEZYK.map(j => `<tr><td class="w">${j[0]}</td><td class="c">${j[1]}</td><td class="dim flow">${j[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Название языка меняет форму вместе с конструкцией.</b> <span class="pl">po polsku</span> - наречие и не склоняется вообще, <span class="pl">polskiego</span> - родительный после <span class="pl">uczyć się</span>, <span class="pl">polski</span> - винительный после <span class="pl">znać</span>. Для «я учу польский» - <span class="pl">Uczę się polskiego.</span> <span class="pl">Uczę się po polsku</span> грамматично, но значит «я учусь на польском языке».</div>
 
@@ -115,7 +115,7 @@ function renderLudzie(){
     <p class="lead">Образуются от мужской формы суффиксом. Список открытый: новые формы появляются на глазах и не всегда успевают закрепиться.</p>
     <div class="scroll"><table class="vt">
       <tr><th>суффикс</th><th>когда</th><th>примеры</th></tr>
-      ${FEMIN.map(f => `<tr><td class="c">${f[0]}</td><td style="color:var(--muted);white-space:normal">${f[1]}</td><td class="g" style="white-space:normal">${f[2]}</td></tr>`).join("")}
+      ${FEMIN.map(f => `<tr><td class="c">${f[0]}</td><td class="dim flow">${f[1]}</td><td class="g flow">${f[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Выбор зависит от контекста и предпочтения человека.</b> <span class="pl">Pani doktor, pani prezes, pani minister</span> широко употребляются, особенно в официальном обращении. Формы <span class="pl">doktorka, profesorka, ministra, gościni</span> нормативны и употребляются, но различаются по регистру и степени закреплённости. Поэтому <span class="pl">u pani doktorki</span> не ошибка; если предпочтение человека известно, лучше следовать ему, а без такой информации в официальном контакте безопасна модель <span class="pl">pani + название должности</span>.</div>
     <div class="tip"><b>После <span class="pl">być</span> - творительный.</b> <span class="pl">Jestem lekarką. · Ona jest nauczycielką. · Chcę zostać tłumaczką.</span> Женская форма попадает в ту же ловушку, что и мужская, - вкладка «Существительные», Narzędnik.</div>
@@ -140,19 +140,19 @@ function renderDim(){
     <h3>Существительные: мужской род</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th>вторая степень</th><th>перевод</th></tr>
-      ${DIM_M.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
+      ${DIM_M.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td class="dim">${d[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Существительные: женский род</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th></th><th>перевод</th></tr>
-      ${DIM_F.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="note">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
+      ${DIM_F.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="note">${d[2]}</td><td class="dim">${d[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Существительные: средний род</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>уменьшительное</th><th></th><th>перевод</th></tr>
-      ${DIM_N.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="note">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
+      ${DIM_N.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="note">${d[2]}</td><td class="dim">${d[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Вторая степень усиливает малость и/или экспрессию.</b> <span class="pl">kot → kotek → koteczek</span> образует всё более уменьшительно-экспрессивную цепочку, но не обязательно сообщает возраст животного: отдельное слово для котёнка - <span class="pl">kocię</span>. Точный оттенок зависит от контекста.</div>
     <div class="tip"><b>Форма может стать обычным названием.</b> Некоторые образования получают отдельное предметное значение и не всегда ощущаются как ласковые: <span class="pl">torebka</span> может быть небольшой сумкой или упаковкой, <span class="pl">okienko</span> - окошком обслуживания.</div>
@@ -160,14 +160,14 @@ function renderDim(){
     <h3>Экспрессивные формы прилагательных</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>экспрессивная форма</th><th>усиленная форма</th><th>примерный оттенок</th></tr>
-      ${DIM_ADJ.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
+      ${DIM_ADJ.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td class="dim">${d[3]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Суффиксы <span class="pl">-utki, -uteńki</span> не обязаны уменьшать признак. Они могут усиливать его и одновременно добавлять оценку: <span class="pl">malutki</span> - очень маленький, <span class="pl">cichutki</span> - очень тихий или тихонький, <span class="pl">ładniutki</span> - хорошенький, <span class="pl">słodziutki</span> - очень сладкий или миленький в зависимости от значения.</p>
 
     <h3>Имена и обращения</h3>
     <div class="scroll"><table class="vt">
       <tr><th>полное имя</th><th>обычная неофициальная форма</th><th>другие оттенки</th><th>по-русски похоже на</th></tr>
-      ${DIM_NAME.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td></tr>`).join("")}
+      ${DIM_NAME.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="g">${d[2]}</td><td class="dim">${d[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Практический совет.</b> Услышал уменьшительное от продавца, официанта или коллеги - чаще всего это дружелюбный сервисный стиль, а не панибратство. Но не копируй его автоматически: с незнакомым человеком и в официальном тексте безопаснее нейтральная форма.</div>
   </div>${topicPracticeHTML(DIM_PRACTICE, "diminutive")}`;
@@ -200,7 +200,7 @@ function renderRod(){
     <h3>Как определить род</h3>
     <div class="scroll"><table class="vt">
       <tr><th>род</th><th>признак</th><th>примеры</th><th>исключения</th></tr>
-      ${ROD_ZNAK.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td class="w" style="white-space:normal">${r[2]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${r[3]}</td></tr>`).join("")}
+      ${ROD_ZNAK.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td class="w flow">${r[2]}</td><td class="dim sm flow">${r[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Три мужских рода</h3>
@@ -208,7 +208,7 @@ function renderRod(){
     <div class="tip"><b>Мост из русского и белорусского.</b> В единственном польское <span class="pl">widzę studenta · psa / kota · telefon</span> устроено почти как русское «вижу студента · пса / кота · телефон» и белорусское «бачу студэнта · сабаку / ката · тэлефон». Главное расхождение появляется во множественном: по-русски «вижу котов», по-белорусски «бачу катоў», но по-польски <span class="pl">widzę koty</span>; только m1 сохраняет модель <span class="pl">widzę studentów</span>.</div>
     <div class="scroll"><table class="vt">
       <tr><th>подрод</th><th>кто это</th><th>Biernik ед.</th><th>Biernik мн.</th><th>Mianownik мн.</th><th>указат.</th><th>прош.</th></tr>
-      ${ROD_M.map(r => `<tr><td class="c">${r[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g" style="white-space:normal">${r[4]}</td><td class="w">${r[5]}</td><td class="w">${r[6]}</td></tr>`).join("")}
+      ${ROD_M.map(r => `<tr><td class="c">${r[0]}</td><td class="dim sm">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g flow">${r[4]}</td><td class="w">${r[5]}</td><td class="w">${r[6]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>m2 - класс грамматический, а не только биологический.</b> Мужские названия животных обычно относятся к m2. К этой же модели лексически присоединяются некоторые неживые слова и смысловые серии: <span class="pl">palę papierosa · jem hamburgera · tańczę poloneza · kupiłem opla · zjadłem banana</span>. Тенденции есть, но полностью надёжного списка нет. Если слово не называет лицо мужского пола, Biernik единственного помогает отличить m2 от m3: совпадение с Dopełniacz указывает на m2, с Mianownik - на m3. У части слов норма колеблется: <span class="pl">mam laptop</span> и разговорное <span class="pl">mam laptopa</span> оба встречаются.</div>
 
@@ -216,14 +216,14 @@ function renderRod(){
     <p class="lead">По тройке <span class="pl">student · pies · telefon</span> легко проверить Biernik и согласование. Остальные падежные окончания и формы Mianownik множественного нужно сверять по таблицам склонения.</p>
     <div class="scroll"><table class="vt">
       <tr><th>m1 · student</th><th>m2 · pies</th><th>m3 · telefon</th><th>что показывает</th></tr>
-      ${ROD_TEST.map(r => `<tr><td class="w">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${r[3]}</td></tr>`).join("")}
+      ${ROD_TEST.map(r => `<tr><td class="w">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="dim sm flow">${r[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Род расходится с русским</h3>
     <p class="lead">Короткий список, но бьёт больно: род тянет за собой прилагательное, указательное и всю парадигму.</p>
     <div class="scroll"><table>
       <tr><th>слово</th><th>род</th><th>по-русски</th></tr>
-      ${ROD_DIFF.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td style="color:var(--muted)">${r[2]}</td></tr>`).join("")}
+      ${ROD_DIFF.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td class="dim">${r[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Проверка.</b> <span class="pl">ten problem</span>, не «ta problema». <span class="pl">ta metoda</span>, не «ten metod». Ошибка в роде здесь не одиночная - за ней сразу идут <span class="pl">tego problemu, tą metodą</span> и так далее по всей парадигме.</div>
 
@@ -248,28 +248,28 @@ function renderAlt(){
     <h3>Гласные</h3>
     <div class="scroll"><table class="vt">
       <tr><th>чередование</th><th>где встречается</th><th>примеры</th></tr>
-      <tr><td class="c">ó ↔ o</td><td style="white-space:normal">при склонении существительных; в форме <span class="pl">on</span> прошедшего времени у части глаголов</td><td class="w" style="white-space:normal">róg → rogu · stół → stołu · móc → mógł, но mogła · nieść → niósł, но niosła</td></tr>
-      <tr><td class="c">ą ↔ ę</td><td style="white-space:normal">при склонении существительных и в отдельных глагольных формах</td><td class="w" style="white-space:normal">mąż → męża · ząb → zęby · zacząć → zaczęła</td></tr>
-      <tr><td class="c">e ↔ a</td><td style="white-space:normal">в прошедшем времени у части глаголов на <span class="pl">-eć</span>: <span class="pl">a</span> в единственном и немужско-личном множественном, <span class="pl">e</span> в мужско-личном множественном</td><td class="w" style="white-space:normal">musieć → musiał · musiała · musiały, но musieli</td></tr>
-      <tr><td class="c">e ↔ ∅</td><td style="white-space:normal">беглая гласная: в одних формах <span class="pl">e</span> есть, в других отсутствует</td><td class="w" style="white-space:normal">pies → psa · sen → snu · Marek → Marka</td></tr>
+      <tr><td class="c">ó ↔ o</td><td class="flow">при склонении существительных; в форме <span class="pl">on</span> прошедшего времени у части глаголов</td><td class="w flow">róg → rogu · stół → stołu · móc → mógł, но mogła · nieść → niósł, но niosła</td></tr>
+      <tr><td class="c">ą ↔ ę</td><td class="flow">при склонении существительных и в отдельных глагольных формах</td><td class="w flow">mąż → męża · ząb → zęby · zacząć → zaczęła</td></tr>
+      <tr><td class="c">e ↔ a</td><td class="flow">в прошедшем времени у части глаголов на <span class="pl">-eć</span>: <span class="pl">a</span> в единственном и немужско-личном множественном, <span class="pl">e</span> в мужско-личном множественном</td><td class="w flow">musieć → musiał · musiała · musiały, но musieli</td></tr>
+      <tr><td class="c">e ↔ ∅</td><td class="flow">беглая гласная: в одних формах <span class="pl">e</span> есть, в других отсутствует</td><td class="w flow">pies → psa · sen → snu · Marek → Marka</td></tr>
     </table></div>
 
     <h3>Согласные в Miejscownik на -e</h3>
     <p class="lead">В записи <span class="pl">wodzi-e, sklepi-e, nosi-e</span> буква <span class="pl">i</span> показывает мягкость согласной и относится к варианту основы; падежное окончание здесь <span class="pl">-e</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>чередование основы</th><th>примеры</th></tr>
-      <tr><td class="c">t → ci · d → dzi · st → ści</td><td class="w" style="white-space:normal">brat → bracie · woda → wodzie · miasto → mieście</td></tr>
-      <tr><td class="c">sł → śl · ł → l · r → rz</td><td class="w" style="white-space:normal">krzesło → krześle · szkoła → szkole · teatr → teatrze</td></tr>
-      <tr><td class="c">k → c · g → dz · ch → sz</td><td class="w" style="white-space:normal">apteka → aptece · droga → drodze · mucha → musze</td></tr>
-      <tr><td class="c">n → ni · b/p/w/m/f → bi/pi/wi/mi/fi · s/z → si/zi</td><td class="w" style="white-space:normal">okno → oknie · sklep → sklepie · nos → nosie</td></tr>
+      <tr><td class="c">t → ci · d → dzi · st → ści</td><td class="w flow">brat → bracie · woda → wodzie · miasto → mieście</td></tr>
+      <tr><td class="c">sł → śl · ł → l · r → rz</td><td class="w flow">krzesło → krześle · szkoła → szkole · teatr → teatrze</td></tr>
+      <tr><td class="c">k → c · g → dz · ch → sz</td><td class="w flow">apteka → aptece · droga → drodze · mucha → musze</td></tr>
+      <tr><td class="c">n → ni · b/p/w/m/f → bi/pi/wi/mi/fi · s/z → si/zi</td><td class="w flow">okno → oknie · sklep → sklepie · nos → nosie</td></tr>
     </table></div>
 
     <h3>Согласные в других формах</h3>
     <div class="scroll"><table class="vt">
       <tr><th>где</th><th>чередование основы</th><th>примеры</th></tr>
-      <tr><td style="white-space:normal">Mianownik мужско-личного множественного</td><td class="c">k → c · t → ci</td><td class="w" style="white-space:normal">Polak → Polacy · student → studenci</td></tr>
-      <tr><td style="white-space:normal">настоящее или простое будущее: формы <span class="pl">ja / ty</span></td><td class="c">s → sz · g → ż · r → rz · d → dzi</td><td class="w" style="white-space:normal">piszę / piszesz · mogę / możesz · biorę / bierzesz · jadę / jedziesz</td></tr>
-      <tr><td style="white-space:normal">II спряжение: формы <span class="pl">ja / ty</span></td><td class="c">si → sz · zi → ż · ci → c · dzi → dz</td><td class="w" style="white-space:normal">proszę / prosisz · wożę / wozisz · płacę / płacisz · chodzę / chodzisz</td></tr>
+      <tr><td class="flow">Mianownik мужско-личного множественного</td><td class="c">k → c · t → ci</td><td class="w flow">Polak → Polacy · student → studenci</td></tr>
+      <tr><td class="flow">настоящее или простое будущее: формы <span class="pl">ja / ty</span></td><td class="c">s → sz · g → ż · r → rz · d → dzi</td><td class="w flow">piszę / piszesz · mogę / możesz · biorę / bierzesz · jadę / jedziesz</td></tr>
+      <tr><td class="flow">II спряжение: формы <span class="pl">ja / ty</span></td><td class="c">si → sz · zi → ż · ci → c · dzi → dz</td><td class="w flow">proszę / prosisz · wożę / wozisz · płacę / płacisz · chodzę / chodzisz</td></tr>
     </table></div>
     <div class="tip"><b>Глагольную форму не строй по одной букве.</b> Распределение вариантов основы зависит от модели глагола. Учи вместе формы <span class="pl">ja, ty, oni</span>: <span class="pl">piszę, piszesz, piszą</span>; <span class="pl">jadę, jedziesz, jadą</span>.</div>
 
@@ -297,18 +297,18 @@ function renderAlpha(){
     <h3>Девять особых букв</h3>
     <div class="scroll"><table class="vt">
       <tr><th>буква</th><th>IPA</th><th>ориентир</th><th>как произносится</th><th>примеры</th></tr>
-      ${ADIAC.map(a => `<tr><td class="g" style="font-size:var(--fs-h2)">${a[0]}</td><td class="c">${a[1]}</td><td style="color:var(--muted)">${a[2]}</td><td>${a[3]}</td><td class="w">${a[4]}</td></tr>`).join("")}
+      ${ADIAC.map(a => `<tr><td class="g" style="font-size:var(--fs-h2)">${a[0]}</td><td class="c">${a[1]}</td><td class="dim">${a[2]}</td><td>${a[3]}</td><td class="w">${a[4]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Диграфы и частые сочетания</h3>
     <p class="lead">Диграф состоит из двух букв и обозначает один звук. <span class="pl">dzi</span> состоит из трёх букв, а <span class="pl">szcz</span> распадается на два диграфа и два звука.</p>
     <div class="scroll"><table class="vt">
       <tr><th>диграф</th><th>IPA</th><th>ориентир</th><th>примеры</th></tr>
-      ${DIGR.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td class="c">${d[1]}</td><td style="color:var(--muted)">${d[2]}</td><td class="w">${d[3]}</td></tr>`).join("")}
+      ${DIGR.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td class="c">${d[1]}</td><td class="dim">${d[2]}</td><td class="w">${d[3]}</td></tr>`).join("")}
     </table></div>
-    <div class="scroll"><table class="vt" style="margin-top:14px">
+    <div class="scroll"><table class="vt gap">
       <tr><th>запись</th><th>тип</th><th>IPA</th><th>как читать</th><th>примеры</th></tr>
-      ${LETTER_GROUPS.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td>${d[1]}</td><td class="c">${d[2]}</td><td style="color:var(--muted)">${d[3]}</td><td class="w">${d[4]}</td></tr>`).join("")}
+      ${LETTER_GROUPS.map(d => `<tr><td class="g" style="font-size:var(--fs-lead)">${d[0]}</td><td>${d[1]}</td><td class="c">${d[2]}</td><td class="dim">${d[3]}</td><td class="w">${d[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>ż и rz - один и тот же звук.</b> На слух не различить, только по написанию слова. Какую букву когда писать - см. таблицу орфографии ниже.</div>
     <div class="tip"><b><span class="pl">szcz</span> и <span class="pl">ść</span> обозначают по два звука.</b> В <span class="pl">szcz</span> оба твёрдые: <span class="pl">[ʂt͡ʂ]</span>. В <span class="pl">ść</span> оба мягкие: <span class="pl">[ɕt͡ɕ]</span>. Русское щ похоже только на первый мягкий звук <span class="pl">ś [ɕ]</span>, но обычно дольше него. В слове <span class="pl">szczęście</span> начало твёрдое, а сочетание <span class="pl">ść</span> ближе к концу мягкое.</div>
@@ -345,9 +345,9 @@ function renderAlpha(){
       <tr><th>звонкий</th><th>глухой</th><th>пример</th></tr>
       ${DZW_PARY.map(d => `<tr><td class="c">${d[0]}</td><td class="c">${d[1]}</td><td class="w">${d[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="scroll"><table class="vt" style="margin-top:14px">
+    <div class="scroll"><table class="vt gap">
       <tr><th>где</th><th>что происходит</th><th>примеры</th></tr>
-      ${DZW_RULES.map(d => `<tr><td class="w">${d[0]}</td><td style="color:var(--muted)">${d[1]}</td><td class="g" style="white-space:normal">${d[2]}</td></tr>`).join("")}
+      ${DZW_RULES.map(d => `<tr><td class="w">${d[0]}</td><td class="dim">${d[1]}</td><td class="g flow">${d[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>prz-, trz-, krz- звучат как [пш-], [тш-], [кш-].</b> После глухой согласной <span class="pl">rz</span> оглушается в <span class="pl">sz</span>: <span class="pl">przepraszam</span> [пшепрашам] · <span class="pl">przez</span> [пшес] · <span class="pl">trzy</span> [тшы] · <span class="pl">krzesło</span> [кшэсўо] · <span class="pl">chrzan</span> [хшан]. Эти сочетания встречаются во многих частотных словах.</div>
     <div class="tip"><b>Русский даёт полезную опору.</b> «Хлеб» → [хлеп], «лодка» → [лотка], «сделать» → [зделать] показывают знакомые типы ассимиляции. В польском важно дополнительно выучить пары <span class="pl">ż / sz, ź / ś, dż / cz, dź / ć</span> и не переносить изменение произношения на письмо: пишем <span class="pl">chleb, nóż, weź</span>, даже когда слышим глухой звук.</div>
@@ -384,11 +384,11 @@ function renderAlpha(){
     <p class="lead">С 1 января 2026 года часть правил изменилась - ниже действующая норма. Для русскоязычного ученика особенно важны названия жителей, объектов городского пространства и вежливые обращения.</p>
     <div class="scroll"><table class="vt">
       <tr><th>с большой</th><th>примеры</th></tr>
-      ${WIELKA_D.map(w => `<tr><td class="w" style="white-space:normal">${w[0]}</td><td class="g" style="white-space:normal">${w[1]}</td></tr>`).join("")}
+      ${WIELKA_D.map(w => `<tr><td class="w flow">${w[0]}</td><td class="g flow">${w[1]}</td></tr>`).join("")}
     </table></div>
-    <div class="scroll"><table class="vt" style="margin-top:14px">
+    <div class="scroll"><table class="vt gap">
       <tr><th>с маленькой</th><th>примеры</th></tr>
-      ${WIELKA_M.map(w => `<tr><td class="w" style="white-space:normal">${w[0]}</td><td class="g" style="white-space:normal">${w[1]}</td></tr>`).join("")}
+      ${WIELKA_M.map(w => `<tr><td class="w flow">${w[0]}</td><td class="g flow">${w[1]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Главная ловушка: <span class="pl">Polak</span> с большой, <span class="pl">polski</span> и <span class="pl">po polsku</span> с маленькой.</b> В русском «поляк» с маленькой, «польский» тоже - то есть расходится только существительное. <span class="pl">Jestem Polakiem, mówię po polsku</span>: в одной фразе обе буквы разные.</div>
     <div class="tip"><b>Что изменилось с 1 января 2026.</b> Жители городов, районов и деревень теперь пишутся <b>с большой</b>: <span class="pl">Warszawianin, Mokotowianin, Zakopianin</span> - раньше было с маленькой. Родовое слово в названиях городских объектов тоже поднялось: <span class="pl">Plac Zbawiciela, Aleja Róż, Park Kościuszki</span>. Единственное исключение - <span class="pl">ulica</span>, она осталась строчной: <span class="pl">ulica Długa</span>. В книгах и вывесках, изданных раньше, встретится старое написание.</div>
@@ -402,15 +402,11 @@ const NUMS = [["sg","единственное"],["pl","множественно�
 function renderNumTog(){
   $("#numtog").innerHTML = NUMS.map(([n, label]) =>
     `<button type="button" data-n="${n}" aria-pressed="${n===curNum}">${label}</button>`).join("");
-  $("#numtog").querySelectorAll("button").forEach(b =>
-    b.onclick = () => { curNum = b.dataset.n; renderNumTog(); renderCase(); writeHash(); });
 }
 function renderChips(){
   $("#chips").innerHTML = CASES.map(c =>
     `<button class="chip" data-c="${c.id}" aria-pressed="${c.id===curCase}">
       <span class="cp">${c.name}</span><span class="cr">${c.ru}</span></button>`).join("");
-  $("#chips").querySelectorAll(".chip").forEach(b =>
-    b.onclick = () => { curCase = b.dataset.c; renderChips(); renderCase(); writeHash(); });
 }
 function casePanelHTML(c, num){
   const rows = num === "sg" ? c.sg : c.pl;
@@ -430,7 +426,7 @@ function casePanelHTML(c, num){
     ${c.alt?`<h3>Чередования перед -e</h3><div class="scroll"><table><tr><th>было</th><th>стало</th><th>пример</th></tr>
       ${c.alt.map(a => `<tr><td class="c">${a[0]}</td><td class="c">${a[1]}</td><td class="w">${a[2]}</td></tr>`).join("")}</table></div>`:""}
     ${c.exc?`<h3>Исключения и особые формы</h3><table>
-      ${c.exc.map(e => `<tr><td class="w" style="width:34%">${e[0]}</td><td class="g" style="width:33%">${e[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${e[2]||""}</td></tr>`).join("")}</table>`:""}
+      ${c.exc.map(e => `<tr><td class="w" style="width:34%">${e[0]}</td><td class="g" style="width:33%">${e[1]}</td><td class="dim sm">${e[2]||""}</td></tr>`).join("")}</table>`:""}
     ${c.pit?`<h3>Подводные камни</h3><ol class="pit">${c.pit.map(x => `<li>${x}</li>`).join("")}</ol>`:""}
     ${c.sent?`<h3>Примеры в предложениях</h3><ul class="sent">${c.sent.map(x => `<li><span class="p">${x[0]}</span><span class="r">${x[1]}</span></li>`).join("")}</ul>`:""}
     <h3>Итог по падежу</h3>
@@ -568,7 +564,7 @@ function vConj(){
     <h3>Сводка окончаний</h3>
     <div class="scroll"><table>
       <tr><th></th><th>I<span class="tr">-ę / -esz</span></th><th>II<span class="tr">-ę / -isz</span></th><th>III<span class="tr">-am / -asz</span></th><th>IV<span class="tr">-em / -esz</span></th></tr>
-      ${PERS.map((p,i) => `<tr><td style="width:96px;color:var(--muted)">${p}</td>${
+      ${PERS.map((p,i) => `<tr><td class="dim" style="width:96px">${p}</td>${
         ["I","II","III","IV"].map(k => `<td class="c">-${KEND[k][i].join(" / -")}</td>`).join("")}</tr>`).join("")}
     </table></div>
 
@@ -640,7 +636,7 @@ function vCzasy(){
     <p class="lead">Список пар ниже проще запоминать, если видеть механизм. Но приставка или суффикс не гарантируют нужную пару: значение и вид всегда проверяй по словарю.</p>
     <div class="scroll"><table class="vt">
       <tr><th>способ</th><th>что делает</th><th>примеры</th></tr>
-      ${ASPEKT_JAK.map(a => `<tr><td class="c">${a[0]}</td><td style="color:var(--muted);white-space:normal">${a[1]}</td><td class="g" style="white-space:normal">${a[2]}</td></tr>`).join("")}
+      ${ASPEKT_JAK.map(a => `<tr><td class="c">${a[0]}</td><td class="dim flow">${a[1]}</td><td class="g flow">${a[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Приставка меняет не только вид.</b> <span class="pl">pisać → napisać</span> - тот же смысл, только законченный. Но <span class="pl">pisać → podpisać</span> (подписать), <span class="pl">przepisać</span> (переписать), <span class="pl">zapisać</span> (записать), <span class="pl">wypisać</span> (выписать) - это уже другие глаголы. «Чистая» приставка, которая меняет только вид, у каждого глагола своя, и её учат вместе со словом.</div>
     <div class="tip"><b>Цепочка работает в обе стороны.</b> <span class="pl">pisać</span> (несов.) → <span class="pl">podpisać</span> (сов., новое значение) → <span class="pl">podpisywać</span> (несов. от нового значения). Приставка даёт совершенный вид, суффикс возвращает несовершенный. Так устроена почти вся глагольная лексика: <span class="pl">czytać → przeczytać</span>, но <span class="pl">czytać → odczytać → odczytywać</span>.</div>
@@ -651,18 +647,18 @@ function vCzasy(){
     <h3>Вид: пары глаголов</h3>
     <div class="scroll"><table>
       <tr><th>несовершенный</th><th>совершенный</th><th>перевод</th></tr>
-      ${ASPECT.map(a => `<tr><td class="w">${a[0]}</td><td class="g">${a[1]}</td><td style="color:var(--muted)">${a[2]}</td></tr>`).join("")}
+      ${ASPECT.map(a => `<tr><td class="w">${a[0]}</td><td class="g">${a[1]}</td><td class="dim">${a[2]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Как выбрать вид</h3>
     <p class="lead">Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Русская интуиция здесь часто помогает, но пары и управление лучше сверять, особенно у приставочных глаголов.</p>
     <div class="scroll"><table class="vt">
       <tr><th>что говорим</th><th>вид</th><th>пример</th></tr>
-      ${WYBOR.map(w => `<tr><td class="w" style="white-space:normal">${w[0]}</td><td class="c">${w[1]}</td><td class="g" style="white-space:normal">${w[2]}</td></tr>`).join("")}
+      ${WYBOR.map(w => `<tr><td class="w flow">${w[0]}</td><td class="c">${w[1]}</td><td class="g flow">${w[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="scroll"><table class="vt" style="margin-top:14px">
+    <div class="scroll"><table class="vt gap">
       <tr><th>слова-маркеры</th><th>какие</th></tr>
-      ${WYBOR_SLOWA.map(w => `<tr><td class="w">${w[0]}</td><td class="g" style="white-space:normal">${w[1]}</td></tr>`).join("")}
+      ${WYBOR_SLOWA.map(w => `<tr><td class="w">${w[0]}</td><td class="g flow">${w[1]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Единственная настоящая ловушка - настоящее время.</b> Русское «я делаю» нельзя перевести совершенным: <span class="bad">zrobię</span> значит «сделаю». Если действие происходит сейчас, вид только несовершенный, без вариантов: <span class="pl">robię, czytam, piszę</span>.</div>
     <div class="tip"><b><span class="pl">przez godzinę</span> и <span class="pl">w godzinę</span> - не одно и то же.</b> <span class="pl">Czytałem przez godzinę</span> - час читал, дочитал или нет, неизвестно. <span class="pl">Przeczytałem to w godzinę</span> - уложился за час и закончил. В русском это тоже две разные конструкции: «читал час» и «прочитал за час». Различие несёт предлог: <span class="pl">przez</span> + Biernik - сколько длилось, <span class="pl">w</span> + Biernik - за какой срок уложился, а вид просто согласуется. Подробнее - «Отрезки времени» во вкладке «Числительные».</div>
@@ -671,7 +667,7 @@ function vCzasy(){
     <div class="scroll"><table>
       <tr><th></th><th>несовершенный</th><th>совершенный</th></tr>
       <tr><td>прошедшее</td><td class="w">robiłem</td><td class="g">zrobiłem</td></tr>
-      <tr><td>настоящее</td><td class="w">robię</td><td style="color:var(--muted)">нет</td></tr>
+      <tr><td>настоящее</td><td class="w">robię</td><td class="dim">нет</td></tr>
       <tr><td>будущее</td><td class="w">będę robić / robił</td><td class="g">zrobię</td></tr>
     </table></div>
 
@@ -679,7 +675,7 @@ function vCzasy(){
     <p>Основа: инфинитив минус <b>-ć</b>, дальше <b>-ł-</b> и окончание рода и лица. В единственном числе род есть и в русском («я делал / делала»), польская особенность - родовые формы ещё и в 1-м и 2-м лице множественного: <span class="pl">robiliśmy / robiłyśmy</span>, <span class="pl">robiliście / robiłyście</span>.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>м. род</th><th>ж. род</th><th>ср. род</th></tr>
-      ${PAST.map(p => `<tr><td style="color:var(--muted)">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td><td class="${p[3]==="-"?"":"w"}" style="${p[3]==="-"?"color:var(--line)":""}">${p[3]}</td></tr>`).join("")}
+      ${PAST.map(p => `<tr><td class="dim">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td><td class="${p[3]==="-"?"none":"w"}">${p[3]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Множественное различает только два рода: <b>мужско-личный</b> (есть хоть один мужчина) - <span class="pl">robili</span>, и <b>всё остальное</b> - <span class="pl">robiły</span>.</p>
 
@@ -693,7 +689,7 @@ function vCzasy(){
     <h3>Нерегулярные в прошедшем</h3>
     <div class="scroll"><table>
       <tr><th>глагол</th><th>ja</th><th>on · ona</th><th>oni · one</th><th></th></tr>
-      ${PASTIRR.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td><td class="w">${p[3]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[4]}</td></tr>`).join("")}
+      ${PASTIRR.map(p => `<tr><td class="w">${p[0]}</td><td class="g">${p[1]}</td><td class="w">${p[2]}</td><td class="w">${p[3]}</td><td class="dim sm">${p[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В вопросе то же самое: <span class="pl">Gdzie byłeś?</span> - нейтрально, <span class="pl">Gdzieś ty był?</span> - окончание переехало на вопросительное слово, так говорят в разговоре. И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - <span class="pl">${akcent("byliśmy",["by","li","śmy"],3)}</span>, <span class="pl">${akcent("robiliśmy",["ro","bi","li","śmy"],3)}</span>, <span class="pl">${akcent("czytaliście",["czy","ta","li","ście"],3)}</span>. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.</div>
 
@@ -705,12 +701,12 @@ function vCzasy(){
     <p><span class="pl">będę</span> + инфинитив <b>или</b> + форма на -ł. Смысл одинаковый.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>+ инфинитив</th><th>+ форма на -ł (м. / ж.)</th></tr>
-      <tr><td style="color:var(--muted)">ja</td><td class="w">będę czytać</td><td class="g">będę czytał / czytała</td></tr>
-      <tr><td style="color:var(--muted)">ty</td><td class="w">będziesz czytać</td><td class="g">będziesz czytał / czytała</td></tr>
-      <tr><td style="color:var(--muted)">on / ona</td><td class="w">będzie czytać</td><td class="g">będzie czytał / czytała</td></tr>
-      <tr><td style="color:var(--muted)">my</td><td class="w">będziemy czytać</td><td class="g">będziemy czytali / czytały</td></tr>
-      <tr><td style="color:var(--muted)">wy</td><td class="w">będziecie czytać</td><td class="g">będziecie czytali / czytały</td></tr>
-      <tr><td style="color:var(--muted)">oni / one</td><td class="w">będą czytać</td><td class="g">będą czytali / czytały</td></tr>
+      <tr><td class="dim">ja</td><td class="w">będę czytać</td><td class="g">będę czytał / czytała</td></tr>
+      <tr><td class="dim">ty</td><td class="w">będziesz czytać</td><td class="g">będziesz czytał / czytała</td></tr>
+      <tr><td class="dim">on / ona</td><td class="w">będzie czytać</td><td class="g">będzie czytał / czytała</td></tr>
+      <tr><td class="dim">my</td><td class="w">będziemy czytać</td><td class="g">będziemy czytali / czytały</td></tr>
+      <tr><td class="dim">wy</td><td class="w">będziecie czytać</td><td class="g">będziecie czytali / czytały</td></tr>
+      <tr><td class="dim">oni / one</td><td class="w">będą czytać</td><td class="g">będą czytali / czytały</td></tr>
     </table></div>
     <div class="tip"><b>Три ловушки.</b> 1) Никогда <span class="bad">będę być</span> - просто <span class="pl">będę</span>. 2) Никогда <span class="bad">będę zrobić</span> и <span class="bad">będę zrobił</span>: совершенный <span class="pl">zrobić</span> образует простое будущее <span class="pl">zrobię</span>. 3) Модальные почти всегда идут в форме на -ł: <span class="pl">będę mógł, będę musiała, będzie chciał</span>.</div>
 
@@ -728,9 +724,9 @@ function vTryby(){
     <p>I и II спряжение - берём форму <b>ty</b> и отбрасываем окончание. III и IV - берём форму <b>oni</b> и отбрасываем <b>-ą</b>. Дальше <b>+ -my</b> для «мы» и <b>+ -cie</b> для «вы».</p>
     <div class="scroll"><table>
       <tr><th>глагол</th><th>от чего</th><th>ty</th><th>my</th><th>wy</th><th>on / ona / oni / one</th><th></th></tr>
-      ${IMPER.map(v => `<tr><td class="w">${v[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${v[1]}</td>
+      ${IMPER.map(v => `<tr><td class="w">${v[0]}</td><td class="dim sm">${v[1]}</td>
         <td class="g">${v[2]}</td><td class="w">${v[3]}</td><td class="w">${v[4]}</td><td class="w">${v[5]}</td>
-        <td style="color:var(--muted);font-size:var(--fs-note)">${v[6]}</td></tr>`).join("")}
+        <td class="dim sm">${v[6]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Смягчение на конце.</b> si → ś, zi → ź, ci → ć, dzi → dź, ni → ń: <span class="pl">prosić → proś, wozić → woź, chodzić → chodź, zaprosić → zaproś</span>. Если основа не выговаривается - добавляем <b>-ij / -yj</b>: <span class="pl">spać → śpij, zapomnieć → zapomnij, zamknąć → zamknij, trzeć → trzyj</span>. Отдельно: <span class="pl">otworzyć → otwórz, pomóc → pomóż</span> - здесь o → ó.</div>
     <div class="tip"><b>Формы с niech.</b> Для 3-го лица берём обычную форму глагола: <span class="pl">niech czyta / niech czytają, niech zrobi / niech zrobią</span>. Так же строится официальное обращение: <span class="pl">Niech pan czyta. Niech państwo czytają.</span></div>
@@ -749,12 +745,12 @@ function vTryby(){
     <p>Форма прошедшего времени + <b>-by</b> + окончание лица. Род сохраняется.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>окончание</th><th>chcieć - м. род</th><th>chcieć - ж. род</th></tr>
-      <tr><td style="color:var(--muted)">ja</td><td class="c">-bym</td><td class="w">chciałbym</td><td class="w">chciałabym</td></tr>
-      <tr><td style="color:var(--muted)">ty</td><td class="c">-byś</td><td class="w">chciałbyś</td><td class="w">chciałabyś</td></tr>
-      <tr><td style="color:var(--muted)">on / ona</td><td class="c">-by</td><td class="w">chciałby</td><td class="w">chciałaby</td></tr>
-      <tr><td style="color:var(--muted)">my</td><td class="c">-byśmy</td><td class="w">chcielibyśmy</td><td class="w">chciałybyśmy</td></tr>
-      <tr><td style="color:var(--muted)">wy</td><td class="c">-byście</td><td class="w">chcielibyście</td><td class="w">chciałybyście</td></tr>
-      <tr><td style="color:var(--muted)">oni / one</td><td class="c">-by</td><td class="w">chcieliby</td><td class="w">chciałyby</td></tr>
+      <tr><td class="dim">ja</td><td class="c">-bym</td><td class="w">chciałbym</td><td class="w">chciałabym</td></tr>
+      <tr><td class="dim">ty</td><td class="c">-byś</td><td class="w">chciałbyś</td><td class="w">chciałabyś</td></tr>
+      <tr><td class="dim">on / ona</td><td class="c">-by</td><td class="w">chciałby</td><td class="w">chciałaby</td></tr>
+      <tr><td class="dim">my</td><td class="c">-byśmy</td><td class="w">chcielibyśmy</td><td class="w">chciałybyśmy</td></tr>
+      <tr><td class="dim">wy</td><td class="c">-byście</td><td class="w">chcielibyście</td><td class="w">chciałybyście</td></tr>
+      <tr><td class="dim">oni / one</td><td class="c">-by</td><td class="w">chcieliby</td><td class="w">chciałyby</td></tr>
     </table></div>
 
     <h3>Куда прилипает -by</h3>
@@ -773,7 +769,7 @@ function vTryby(){
     <p class="lead">По форме это прилагательное с приросшими личными окончаниями, по функции - модальный глагол. Инфинитива нет, будущего времени нет, спряжения нет - есть только эта таблица.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>м. род</th><th>ж. род</th></tr>
-      ${POWINIEN.map(p => `<tr><td style="color:var(--muted)">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
+      ${POWINIEN.map(p => `<tr><td class="dim">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Род обязателен, как в прошедшем времени.</b> Мужчина говорит <span class="pl">powinienem</span>, женщина - <span class="pl">powinnam</span>. И ударение то же, что в прошедшем времени: <span class="pl">${akcent("powinniśmy",["po","win","ni","śmy"],3)}</span>, <span class="pl">${akcent("powinniście",["po","win","ni","ście"],3)}</span> - третий слог от конца.</div>
 
@@ -786,7 +782,7 @@ function vTryby(){
     <h3>musieć · powinien · trzeba: что выбрать</h3>
     <div class="scroll"><table class="vt">
       <tr><th>форма</th><th>значение</th><th>чем отличается</th></tr>
-      ${MODAL_MUST.map(m => `<tr><td class="w">${m[0]}</td><td class="g">${m[1]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${m[2]}</td></tr>`).join("")}
+      ${MODAL_MUST.map(m => `<tr><td class="w">${m[0]}</td><td class="g">${m[1]}</td><td class="dim sm flow">${m[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Отрицание разводит смыслы.</b> <span class="pl">Nie muszę</span> - «не обязан, но могу», <span class="pl">nie mogę</span> - «не могу», <span class="pl">nie wolno</span> - «нельзя, запрещено». Русское «не должен» покрывает все три сразу, поэтому выбирать приходится заново каждый раз.</div>
   </div>`;
@@ -801,7 +797,7 @@ function vFormy(){
     <p>Только от несовершенного вида. Берём форму <b>oni</b> и добавляем <b>-cy</b>. Склоняется как прилагательное.</p>
     <div class="scroll"><table class="vt">
       <tr><th>глагол</th><th>от чего</th><th>причастие</th><th>перевод</th></tr>
-      ${IMIES_CZ.map(i => `<tr><td class="w">${i[0]}</td><td style="color:var(--muted)">${i[1]}</td><td class="g">${i[2]}</td><td style="color:var(--muted)">${i[3]}</td></tr>`).join("")}
+      ${IMIES_CZ.map(i => `<tr><td class="w">${i[0]}</td><td class="dim">${i[1]}</td><td class="g">${i[2]}</td><td class="dim">${i[3]}</td></tr>`).join("")}
     </table></div>
     <p class="lead"><span class="pl">Kobieta czytająca gazetę siedzi przy oknie.</span> = <span class="pl">Kobieta, która czyta gazetę, siedzi przy oknie.</span> - «женщина, читающая газету, сидит у окна». Придаточное с <span class="pl">która</span> отделяется запятыми с двух сторон, причастный оборот - нет. В разговоре чаще звучит второй вариант, но в объявлениях и документах причастие обычно: <span class="pl">osoby mieszkające w Polsce</span>.</p>
 
@@ -813,13 +809,13 @@ function vFormy(){
     </table></div>
     <p class="lead">Это самые частые слова на дверях и табличках:</p>
     <div class="scroll"><table>
-      ${IMIES_SIGNS.map(s => `<tr><td style="width:40%" class="g">${s[0]}</td><td style="color:var(--muted)">${s[1]}</td></tr>`).join("")}
+      ${IMIES_SIGNS.map(s => `<tr><td style="width:40%" class="g">${s[0]}</td><td class="dim">${s[1]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Деепричастия: -ąc и -wszy / -łszy</h3>
     <div class="scroll"><table class="vt">
       <tr><th>тип</th><th>когда</th><th>образование</th><th>пример</th></tr>
-      ${IMIES_PRZYS.map(i => `<tr><td class="c">${i[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${i[1]}</td><td class="w">${i[2]}</td><td class="g">${i[3]}</td></tr>`).join("")}
+      ${IMIES_PRZYS.map(i => `<tr><td class="c">${i[0]}</td><td class="dim sm">${i[1]}</td><td class="w">${i[2]}</td><td class="g">${i[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Два ограничения.</b> 1) Субъект деепричастия и главного глагола - один и тот же человек: <span class="pl">Idąc do pracy, zgubiłem telefon</span> - шёл и потерял один и тот же «я». 2) Форма на <span class="pl">-wszy / -łszy</span> - книжная; в разговоре вместо <span class="pl">Zrobiwszy zakupy…</span> скажут <span class="pl">Kiedy zrobiłem zakupy…</span></div>
 
@@ -827,7 +823,7 @@ function vFormy(){
     <p>Причастие согласуется с подлежащим в роде и числе. Исполнитель - через <span class="pl">przez + Biernik</span>: <span class="pl">zbudowany przez znaną firmę</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>конструкция</th><th>смысл</th><th>примеры</th></tr>
-      ${PASSIVE_Z.map(p => `<tr><td class="c">${p[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
+      ${PASSIVE_Z.map(p => `<tr><td class="c">${p[0]}</td><td class="dim sm">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Три способа сказать «построили дом».</b> <span class="pl">Zbudowano dom</span> - безличное, кто - неизвестно и неважно (вкладка «Безличные»). <span class="pl">Dom został zbudowany</span> - пассив, дом в центре внимания. <span class="pl">Firma zbudowała dom</span> - обычный актив. Урядовый и газетный текст живёт первыми двумя.</div>
 
@@ -839,7 +835,7 @@ function vFormy(){
     </table></div>
     <p class="lead">Язык вывесок и запретов:</p>
     <div class="scroll"><table>
-      ${VNOUN_SIGNS.map(s => `<tr><td style="width:40%" class="g">${s[0]}</td><td style="color:var(--muted)">${s[1]}</td></tr>`).join("")}
+      ${VNOUN_SIGNS.map(s => `<tr><td style="width:40%" class="g">${s[0]}</td><td class="dim">${s[1]}</td></tr>`).join("")}
     </table></div>
   </div>`;
 }
@@ -850,8 +846,8 @@ function vRekcja(){
     <p class="lead">Самая частая ошибка русскоязычных - не окончание, а падеж после слова. У глаголов это заметно сразу, у прилагательных и существительных - нет, но механизм тот же. В таблице глаголов красным помечено то, где польский расходится с русским.</p>
     <div class="scroll"><table class="vt">
       <tr><th>глагол</th><th>вопрос</th><th>требует</th><th>по-русски</th><th>пример</th></tr>
-      ${REKCJA.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted);white-space:nowrap">${r[1]}</td>
-        <td class="${r[5]?"c":"cq"}">${r[2]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${r[3]}</td>
+      ${REKCJA.map(r => `<tr><td class="w">${r[0]}</td><td class="dim nw">${r[1]}</td>
+        <td class="${r[5]?"c":"cq"}">${r[2]}</td><td class="dim sm">${r[3]}</td>
         <td class="w">${r[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Отрицание съедает Biernik.</b> При <span class="pl">nie</span> прямое дополнение уходит в Dopełniacz: <span class="pl">Mam czas → Nie mam czasu</span> · <span class="pl">Znam ją → Nie znam jej</span> · <span class="pl">Lubię kawę → Nie lubię kawy</span>.</div>
@@ -859,14 +855,14 @@ function vRekcja(){
     <p class="lead">Первый глагол - движение в одну сторону в конкретный момент, второй - движение туда и обратно, вообще или по привычке. Ровно как русское «иду / хожу».</p>
     <div class="scroll"><table class="vt">
       <tr><th>в одну сторону, сейчас</th><th>в разные стороны, вообще</th><th>перевод</th><th>пример</th></tr>
-      ${RUCH.map(r => `<tr><td class="g">${r[0]}</td><td class="w">${r[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
+      ${RUCH.map(r => `<tr><td class="g">${r[0]}</td><td class="w">${r[1]}</td><td class="dim sm">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Приставки: общая система</h3>
     <p class="lead">Приставка обычно сохраняет одно и то же общее направление значения. Выучив четырнадцать, читаешь незнакомый глагол по частям - но проверять по словарю всё равно приходится: приставочные глаголы быстро обрастают собственным смыслом. <span class="pl">przypisać, odpisać, zapisać</span> - три разных слова, а не три оттенка одного.</p>
     <div class="scroll"><table class="vt">
       <tr><th>приставка</th><th>значение</th><th>движение</th><th>остальные глаголы</th></tr>
-      ${PREF_ALL.map(p => `<tr><td class="c">${p[0]}</td><td style="color:var(--muted);white-space:normal">${p[1]}</td><td class="g" style="white-space:normal">${p[2]}</td><td class="w" style="white-space:normal">${p[3]}</td></tr>`).join("")}
+      ${PREF_ALL.map(p => `<tr><td class="c">${p[0]}</td><td class="dim flow">${p[1]}</td><td class="g flow">${p[2]}</td><td class="w flow">${p[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Приставка задаёт вид - несовершенный берётся от многократного</h3>
@@ -880,7 +876,7 @@ function vRekcja(){
     <h3>iść с приставками: рабочие фразы</h3>
     <div class="scroll"><table>
       <tr><th>глагол</th><th>перевод</th><th>пример</th></tr>
-      ${PREF.map(p => `<tr><td class="w">${p[0]}</td><td style="color:var(--muted)">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
+      ${PREF.map(p => `<tr><td class="w">${p[0]}</td><td class="dim">${p[1]}</td><td class="w">${p[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Куда именно.</b> <span class="pl">do</span> + Dopełniacz - в здание, город, страну: <span class="pl">do sklepu, do Polski</span>. <span class="pl">na</span> + Biernik - на мероприятие, открытое место, «в» для некоторых стран: <span class="pl">na pocztę, na uniwersytet, na Węgry</span>. <span class="pl">w</span> + Biernik - <span class="pl">w góry</span>. <span class="pl">do</span> - идти к человеку: <span class="pl">idę do lekarza</span>.</div>
 
@@ -888,14 +884,14 @@ function vRekcja(){
     <p class="lead">Та же проблема, что у глаголов, только менее заметная: <span class="pl">być</span> оставляет прилагательное в именительном, но собственное управление прилагательного никуда не девается.</p>
     <div class="scroll"><table class="vt">
       <tr><th>прилагательное</th><th>требует</th><th>по-русски</th><th>пример</th></tr>
-      ${REKCJA_ADJ.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${r[2]}</td><td class="g" style="white-space:normal">${r[3]}</td></tr>`).join("")}
+      ${REKCJA_ADJ.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td class="dim sm">${r[2]}</td><td class="g flow">${r[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Две вещи в одной фразе.</b> <span class="pl">Jestem dumny z syna</span>: <span class="pl">dumny</span> - именительный, потому что после <span class="pl">być</span>; <span class="pl">z syna</span> - родительный, потому что этого требует само прилагательное. Правила не конфликтуют, они про разные слова.</div>
 
     <h3>Управление существительных</h3>
     <div class="scroll"><table class="vt">
       <tr><th>существительное</th><th>требует</th><th>пример</th></tr>
-      ${REKCJA_N.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td class="g" style="white-space:normal">${r[2]}</td></tr>`).join("")}
+      ${REKCJA_N.map(r => `<tr><td class="w">${r[0]}</td><td class="c">${r[1]}</td><td class="g flow">${r[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Управление часто наследуется от однокоренного глагола.</b> <span class="pl">tęsknić za czymś → tęsknota za czymś</span> · <span class="pl">wpływać na coś → wpływ na coś</span> · <span class="pl">zgadzać się na coś → zgoda na coś</span> · <span class="pl">interesować się czymś → zainteresowany czymś</span>. Знаешь глагол - в большинстве случаев угадаешь и производное. Совпадает не всегда, но это лучшая догадка при отсутствии словаря.</div>
 
@@ -927,13 +923,13 @@ function listHTML(q){
     <tr><th>глагол</th><th>перевод</th><th>спр.</th><th>ja</th><th>ty</th><th>oni</th><th>он</th><th>она</th><th>сов. / результат</th></tr>
     ${rows.map(v => `<tr>
       <td class="f"><span class="stem">${v[0]}</span></td>
-      <td style="color:var(--muted);font-size:var(--fs-note)">${v[1]}</td>
+      <td class="dim sm">${v[1]}</td>
       <td class="c">${v[2]}</td>
       <td class="f">${vform(v[3], v[2], 0)}</td>
       <td class="f">${vform(v[4], v[2], 1)}</td>
       <td class="f">${vform(v[5], v[2], 5)}</td>
       <td class="w">${v[6]}</td><td class="w">${v[7]}</td>
-      <td class="${v[8]==="сов."||v[8]==="-"?"":"g"}" style="${v[8]==="сов."||v[8]==="-"?"color:var(--muted);font-size:var(--fs-note)":"white-space:normal"}">${v[8]}${ASPEKT_UWAGI[v[0]]?`<span style="display:block;font-family:var(--sans);font-size:var(--fs-micro);color:var(--alt)">${ASPEKT_UWAGI[v[0]]}</span>`:""}</td>
+      <td class="${v[8]==="сов."||v[8]==="-"?"dim sm":"g flow"}">${v[8]}${ASPEKT_UWAGI[v[0]]?`<span class="sub">${ASPEKT_UWAGI[v[0]]}</span>`:""}</td>
     </tr>`).join("")}
   </table>${rows.length ? "" : `<p class="lead" style="padding:12px 0">Ничего не нашлось.</p>`}`;
 }
@@ -942,9 +938,6 @@ function renderVerbs(){
     `<div class="casebar"><div class="chips" id="vchips" role="group" aria-label="Раздел о глаголах">${
       VTABS.map(t => `<button class="chip" data-v="${t[0]}" aria-pressed="${t[0]===curV}"><span class="cp">${t[1]}</span></button>`).join("")
     }</div></div><div id="vPanel"></div><div id="verbPractice"></div><div id="verbTest"></div><div id="verbTrainer"></div><div id="rekcjaTrainer"></div>`;
-  $("#vchips").querySelectorAll(".chip").forEach(b => b.onclick = () => {
-    curV = b.dataset.v; renderVerbs(); writeHash();
-  });
   $("#vPanel").innerHTML = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja}[curV]();
   linkHeadings($("#vPanel"));
   renderVerbPractice();
@@ -1109,6 +1102,12 @@ const FALSE_GROUPS = {
   "Действия":"action", "Учёба, работа и другие ловушки":"work"
 };
 
+function taskSlug(text){
+  const id = slug(text);
+  if(!id) throw new Error(`Не удалось построить идентификатор задания из «${text}»`);
+  return id;
+}
+
 function trainerSentences(name){
   const pack = (task, topic, cue = "", prompt = task.prompt, answers = task.answers) => {
     const instructions = [];
@@ -1140,17 +1139,17 @@ function trainerSentences(name){
     return rows.concat(extra.map(([id,prompt,answers,cue,explanation]) => pack({id:`pron-${id}`,prompt,answers,explanation},"reflexive",cue)));
   }
   if(name === "government"){
-    return REKCJA_TRAIN.map(([topic, prompt, answers, cue, explanation, trap], index) =>
-      ({id:`rekcja-${index + 1}`, topic, trap:trap ? "trap" : "plain", prompt, answers, cue, explanation}));
+    return REKCJA_TRAIN.map(([topic, prompt, answers, cue, explanation, trap]) =>
+      ({id:`rekcja-${taskSlug(prompt)}`, topic, trap:trap ? "trap" : "plain", prompt, answers, cue, explanation}));
   }
   if(name === "falsefriends"){
-    return FALSE.flatMap((row, index) => {
+    return FALSE.flatMap(row => {
       const [word, meaning, trap, group] = row;
       if(!trap.includes(" - ")) return [];
       const [russian, polish] = trap.split(" - ");
       if(/[А-Яа-яЁё]/.test(polish) || polish.includes(";")) return [];
       return [{
-        id:`false-${index + 1}`, topic:FALSE_GROUPS[group], prompt:russian,
+        id:`false-${taskSlug(word)}`, topic:FALSE_GROUPS[group], prompt:russian,
         answers:[...polish.split(" / ").map(answer => answer.trim()), ...(FALSE_EXTRA[russian] || [])],
         cue:`похожее польское ${word} значит «${meaning}»`,
         explanation:`${word} и «${russian}» - ложные друзья: ${word} это «${meaning}».`
@@ -1158,8 +1157,8 @@ function trainerSentences(name){
     });
   }
   if(name === "phrases"){
-    return REPLIKI.map(([topic, prompt, answers, cue, explanation], index) =>
-      ({id:`phrase-${index + 1}`, topic, prompt, answers, cue, explanation}));
+    return REPLIKI.map(([topic, prompt, answers, cue, explanation]) =>
+      ({id:`phrase-${taskSlug(prompt)}`, topic, prompt, answers, cue, explanation}));
   }
   if(name === "prepositions"){
     const meanings = {
@@ -1338,7 +1337,7 @@ function renderNum(){
     <p>Если считаем мужчин, у числительного появляется отдельная форма - и она меняет весь остальной падеж и глагол.</p>
     <div class="scroll"><table class="vt">
       <tr><th>форма</th><th>существительное</th><th>глагол</th><th>пример</th></tr>
-      ${MOSNUM.map(m => `<tr><td class="g">${m[0]}</td><td>${m[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${m[2]}</td><td class="w">${m[3]}</td></tr>`).join("")}
+      ${MOSNUM.map(m => `<tr><td class="g">${m[0]}</td><td>${m[1]}</td><td class="dim sm">${m[2]}</td><td class="w">${m[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Что выбрать.</b> <span class="pl">Dwaj studenci czytają</span> и <span class="pl">Dwóch studentów czyta</span> значат одно и то же. Вариант с <span class="pl">dwóch / trzech / czterech</span> в живой речи встречается чаще, а начиная с пяти он единственный: <span class="pl">pięciu studentów</span>.</div>
 
@@ -1346,7 +1345,7 @@ function renderNum(){
     <p class="lead">Числительное задаёт падеж существительному, прилагательное просто следует за существительным, а глагол смотрит на числительное. Три согласования в одной фразе - здесь и ломается всё, что выучено по отдельности.</p>
     <div class="scroll"><table class="vt">
       <tr><th>число</th><th>группа</th><th>падеж группы</th><th>глагол</th><th>пример</th></tr>
-      ${LICZ_GRUPA.map(l => `<tr><td class="c">${l[0]}</td><td class="w" style="white-space:normal">${l[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${l[2]}</td><td class="g">${l[3]}</td><td class="w" style="white-space:normal">${l[4]}</td></tr>`).join("")}
+      ${LICZ_GRUPA.map(l => `<tr><td class="c">${l[0]}</td><td class="w flow">${l[1]}</td><td class="dim sm">${l[2]}</td><td class="g">${l[3]}</td><td class="w flow">${l[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Прилагательное согласуется с существительным, а не с числительным.</b> При числительных на <span class="pl">5-9, 0</span> и при <span class="pl">11-14</span> вся группа целиком уходит в Dopełniacz множественного: <span class="pl">pięć <b>dużych domów</b></span>, <span class="pl">dziesięć <b>nowych samochodów</b></span>, <span class="pl">pięć <b>dużych książek</b></span>. Отдельного правила для прилагательного нет - оно просто повторяет падеж соседа.</div>
     <div class="tip"><b>Самое трудное место - пассив и прошедшее при числительных, которые требуют Dopełniacz множественного, например 5, 11, 21 и 25.</b> Глагол уходит в средний род единственного числа, а причастие остаётся при существительном, в Dopełniacz множественного: <span class="pl">Pięć dużych domów <b>zostało sprzedanych</b></span>. Сравни с 2-4, где всё обычное: <span class="pl">Dwa duże domy <b>zostały sprzedane</b></span>. Две части сказуемого смотрят в разные стороны, и это выглядит как ошибка, пока не привыкнешь.</div>
@@ -1355,7 +1354,7 @@ function renderNum(){
     <h3>Склонение</h3>
     <div class="scroll"><table class="vt">
       <tr><th>падеж</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-      ${NDEKL.map(d => `<tr><td style="color:var(--muted)">${d[0]}</td><td class="w">${d[1]}</td><td class="w">${d[2]}</td><td class="w">${d[3]}</td><td class="w">${d[4]}</td></tr>`).join("")}
+      ${NDEKL.map(d => `<tr><td class="dim">${d[0]}</td><td class="w">${d[1]}</td><td class="w">${d[2]}</td><td class="w">${d[3]}</td><td class="w">${d[4]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Числительные от 5 до 90 склоняются по образцу <span class="pl">pięć</span>: <span class="pl">pięciu, pięciu, pięć, pięcioma, pięciu</span>. <span class="pl">Sto</span> и сотни имеют свои модели. В <span class="pl">Narzędnik</span> женское <span class="pl">dwiema</span> сохраняет род.</p>
 
@@ -1367,7 +1366,7 @@ function renderNum(){
     <p>Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. В Mianownik и Biernik существительное стоит в Dopełniacz множественного, а глагол при подлежащем - в среднем роде единственного: <span class="pl">troje dzieci bawiło się</span>. В косвенных падежах склоняется вся группа: <span class="pl">nie ma trojga dzieci · przyglądam się trojgu dzieciom · idę z trojgiem dzieci · mówię o trojgu dzieciach</span>. Исключение - <span class="pl">oboje rodzice</span>: Mianownik и обычное согласование.</p>
     <div class="scroll"><table>
       <tr><th>форма</th><th>перевод</th><th>пример</th></tr>
-      ${ZBIOR.map(z => `<tr><td class="g">${z[0]}</td><td style="color:var(--muted)">${z[1]}</td><td class="w">${z[2]}</td></tr>`).join("")}
+      ${ZBIOR.map(z => `<tr><td class="g">${z[0]}</td><td class="dim">${z[1]}</td><td class="w">${z[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><span class="pl">Troje dzieci bawiło się w ogrodzie.</span> - глагол в среднем роде единственного числа. Три женщины - это <span class="pl">trzy kobiety</span>, а мужчина с женщиной - <span class="pl">dwoje ludzi</span>.</div>
 
@@ -1389,16 +1388,16 @@ function renderNum(){
     <h3>Дни недели</h3>
     <div class="scroll"><table>
       <tr><th>день</th><th>«в какой день»</th><th>перевод</th></tr>
-      ${DNI.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td style="color:var(--muted)">${d[2]}</td></tr>`).join("")}
+      ${DNI.map(d => `<tr><td class="w">${d[0]}</td><td class="g">${d[1]}</td><td class="dim">${d[2]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">«В какой день» - предлог <span class="pl">w</span> + Biernik. Перед <span class="pl">wtorek</span> предлог удлиняется: <span class="pl">we wtorek</span>.</p>
 
     <h3>Месяцы и даты</h3>
     <div class="scroll"><table>
       <tr><th>месяц</th><th>Dopełniacz</th><th>перевод</th></tr>
-      ${MIES.map(m => `<tr><td class="w">${m[0]}</td><td class="g">${m[1]}</td><td style="color:var(--muted)">${m[2]}</td></tr>`).join("")}
+      ${MIES.map(m => `<tr><td class="w">${m[0]}</td><td class="g">${m[1]}</td><td class="dim">${m[2]}</td></tr>`).join("")}
     </table></div>
-    <div class="scroll"><table style="margin-top:14px">
+    <div class="scroll"><table class="gap">
       <tr><td style="width:38%">Какое сегодня число?</td><td class="w">Którego dzisiaj mamy?</td></tr>
       <tr><td>Сегодня 5 мая.</td><td class="w">Dzisiaj jest piąty maja. · Mamy piątego maja.</td></tr>
       <tr><td>5 мая (когда?)</td><td class="w">piątego maja</td></tr>
@@ -1411,7 +1410,7 @@ function renderNum(){
     <p class="lead">Один русский предлог «за» покрывает три польских конструкции, а «через» совпадает с польским <span class="pl">za</span>. Проще держать все четырнадцать в одной таблице.</p>
     <div class="scroll"><table class="vt">
       <tr><th>конструкция</th><th>значение</th><th>примеры</th></tr>
-      ${CZAS_WYR.map(c => `<tr><td class="c">${c[0]}</td><td style="color:var(--muted);white-space:normal">${c[1]}</td><td class="g" style="white-space:normal">${c[2]}</td></tr>`).join("")}
+      ${CZAS_WYR.map(c => `<tr><td class="c">${c[0]}</td><td class="dim flow">${c[1]}</td><td class="g flow">${c[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">za tydzień</span> - это «через неделю», а не «за неделю».</b> «За неделю» в смысле «в течение» - <span class="pl">przez tydzień</span> (столько длилось) или <span class="pl">w ciągu tygodnia</span> (успею к сроку). Три разные конструкции на один русский предлог: <span class="pl">Wrócę za tydzień</span> · <span class="pl">Byłem tam przez tydzień</span> · <span class="pl">Zrobię to w ciągu tygodnia</span>.</div>
     <div class="tip"><b>Срок поездки - через <span class="pl">na</span>.</b> <span class="pl">Jadę do Polski na tydzień</span> - на сколько еду. <span class="pl">Byłem w Polsce przez tydzień</span> - сколько там пробыл. Русское «на неделю» тянет <span class="pl">na</span> в обе фразы, но во второй нужен <span class="pl">przez</span>.</div>
@@ -1430,7 +1429,7 @@ function renderNum(){
     <h3>Дроби</h3>
     <div class="scroll"><table class="vt">
       <tr><th>число</th><th>как называется</th><th>примеры</th></tr>
-      ${ULAM.map(u => `<tr><td class="c">${u[0]}</td><td class="w">${u[1]}</td><td class="g" style="white-space:normal">${u[2]}</td></tr>`).join("")}
+      ${ULAM.map(u => `<tr><td class="c">${u[0]}</td><td class="w">${u[1]}</td><td class="g flow">${u[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">półtora</span> или <span class="pl">półtorej</span>.</b> Единственная дробь с родом: <span class="pl">półtora roku, półtora kilo</span> - мужской и средний, <span class="pl">półtorej godziny, półtorej minuty</span> - женский. После <span class="pl">pół</span> и <span class="pl">półtora</span> существительное идёт в Dopełniacz.</div>
 
@@ -1457,20 +1456,20 @@ function renderPart(){
     <h3>Рабочий минимум</h3>
     <div class="scroll"><table class="vt">
       <tr><th>частица</th><th>значение</th><th>примеры</th><th></th></tr>
-      ${PART.map(p => `<tr><td class="w">${p[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[1]}</td>
+      ${PART.map(p => `<tr><td class="w">${p[0]}</td><td class="dim sm">${p[1]}</td>
         <td class="g">${p[2]}</td><td class="note">${p[3]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Разряды</h3>
     <div class="scroll"><table>
       <tr><th>разряд</th><th>слова и элементы</th><th>пример</th></tr>
-      ${PARTKL.map(k => `<tr><td style="color:var(--muted)">${k[0]}</td><td class="w">${k[1]}</td><td class="g">${k[2]}</td></tr>`).join("")}
+      ${PARTKL.map(k => `<tr><td class="dim">${k[0]}</td><td class="w">${k[1]}</td><td class="g">${k[2]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Неопределённость: -ś, -kolwiek, byle</h3>
     <div class="scroll"><table>
       <tr><th>элемент</th><th>значение</th><th>примеры</th></tr>
-      ${NIEOKR.map(n => `<tr><td class="c">${n[0]}</td><td style="color:var(--muted)">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
+      ${NIEOKR.map(n => `<tr><td class="c">${n[0]}</td><td class="dim">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Двойное отрицание обязательно.</b> <span class="pl">Nikt nic nie wie.</span> · <span class="pl">Nigdy tam nie byłem.</span> - <span class="pl">nie</span> при сказуемом остаётся, даже когда уже есть <span class="pl">nikt</span> или <span class="pl">nigdy</span>. В стандартном английском используется другая модель: <span class="pl">Nobody knows</span>.</div>
 
@@ -1488,7 +1487,7 @@ function renderPart(){
     <p class="lead">Короткие обороты, которыми поляки склеивают живую речь: они почти ничего не добавляют к содержанию, но без них разговор звучит рублено и слишком по-учебному. Лингвисты называют их дискурсивными маркерами. Почти все они разговорные: в устной речи звучат постоянно и небрежностью не считаются, а в заявлении или деловом письме их лучше не ставить.</p>
     <div class="scroll"><table class="vt">
       <tr><th>оборот</th><th>значение</th><th>примеры</th><th></th></tr>
-      ${POTOCZNE.map(p => `<tr><td class="w">${p[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${p[1]}</td>
+      ${POTOCZNE.map(p => `<tr><td class="w">${p[0]}</td><td class="dim sm">${p[1]}</td>
         <td class="g">${p[2]}</td><td class="note">${p[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Три паразита, которых лучше не набирать.</b> <span class="pl">jakby</span> и <span class="pl">tak jakby</span>, вставленные через слово, - это польское «как бы», и режут слух они так же: <span class="pl">To było jakby dziwne</span>. Само по себе слово нормальное: <span class="pl">Wygląda, jakby nie spał</span> - «как будто», <span class="pl">Jakby co, dzwoń</span> - «если что». <span class="pl">generalnie</span> вытеснило <span class="pl">w ogóle</span> и <span class="pl">ogólnie</span>, но обычно не значит ничего. <span class="pl">znaczy się</span> - разговорный вариант <span class="pl">to znaczy</span>, в речи допустим, в тексте нет.</div>
@@ -1526,7 +1525,7 @@ function renderQ(){
     <h3>Вопросительные слова</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>пример</th></tr>
-      ${QWORDS.map(q => `<tr><td class="w">${q[0]}</td><td style="color:var(--muted)">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
+      ${QWORDS.map(q => `<tr><td class="w">${q[0]}</td><td class="dim">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">Ile</span> или <span class="pl">ilu</span>.</b> В Mianownik и Biernik с мужско-личным существительным употребляется <span class="pl">ilu</span>: <span class="pl">Ilu studentów przyszło?</span> В этих же падежах с другими группами - <span class="pl">ile</span>: <span class="pl">Ile studentek przyszło? · Ile osób przyszło?</span> В косвенных падежах форма меняется у всех групп; полное склонение разобрано в разделе <a href="#s-num">Числительные</a>.</div>
 
@@ -1541,19 +1540,19 @@ function renderQ(){
     <h3>Место и направление: одна система</h3>
     <div class="scroll"><table class="vt">
       <tr><th>вопрос</th><th>что спрашиваем</th><th>ответ</th></tr>
-      <tr><td class="w" style="white-space:normal">Gdzie jesteś?</td><td style="white-space:normal">где - положение</td><td class="g" style="white-space:normal">W domu. · Tutaj.</td></tr>
-      <tr><td class="w" style="white-space:normal">Dokąd idziesz?</td><td style="white-space:normal">куда - цель движения</td><td class="g" style="white-space:normal">Do domu. · Tam.</td></tr>
-      <tr><td class="w" style="white-space:normal">Skąd wracasz?</td><td style="white-space:normal">откуда - исходная точка</td><td class="g" style="white-space:normal">Z pracy. · Stamtąd.</td></tr>
-      <tr><td class="w" style="white-space:normal">Którędy iść?</td><td style="white-space:normal">каким путём</td><td class="g" style="white-space:normal">Tędy. · Tamtędy.</td></tr>
+      <tr><td class="w flow">Gdzie jesteś?</td><td class="flow">где - положение</td><td class="g flow">W domu. · Tutaj.</td></tr>
+      <tr><td class="w flow">Dokąd idziesz?</td><td class="flow">куда - цель движения</td><td class="g flow">Do domu. · Tam.</td></tr>
+      <tr><td class="w flow">Skąd wracasz?</td><td class="flow">откуда - исходная точка</td><td class="g flow">Z pracy. · Stamtąd.</td></tr>
+      <tr><td class="w flow">Którędy iść?</td><td class="flow">каким путём</td><td class="g flow">Tędy. · Tamtędy.</td></tr>
     </table></div>
     <div class="tip"><b>В разговоре <span class="pl">gdzie</span> часто заменяет <span class="pl">dokąd</span>.</b> <span class="pl">Gdzie idziesz?</span> звучит естественно, но точная система различает положение <span class="pl">gdzie?</span> и направление <span class="pl">dokąd?</span>. Пары ответов: <span class="pl">tu / tutaj</span> - здесь, а при движении также сюда (<span class="pl">Chodź tutaj</span>); <span class="pl">tam</span> - там/туда, <span class="pl">stąd</span> - отсюда, <span class="pl">stamtąd</span> - оттуда, <span class="pl">tędy / tamtędy</span> - этим/тем путём.</div>
     <h3>В придаточном места</h3>
     <div class="scroll"><table class="vt">
       <tr><th>связка</th><th>пример</th></tr>
-      <tr><td class="w" style="white-space:normal">tam, gdzie…</td><td class="g" style="white-space:normal">Zostań tam, gdzie jesteś.</td></tr>
-      <tr><td class="w" style="white-space:normal">tam, dokąd…</td><td class="g" style="white-space:normal">Idź tam, dokąd prowadzi ta droga.</td></tr>
-      <tr><td class="w" style="white-space:normal">stamtąd, skąd…</td><td class="g" style="white-space:normal">Wrócił stamtąd, skąd wyjechał.</td></tr>
-      <tr><td class="w" style="white-space:normal">tędy, którędy…</td><td class="g" style="white-space:normal">Idź tędy, którędy szliśmy wczoraj.</td></tr>
+      <tr><td class="w flow">tam, gdzie…</td><td class="g flow">Zostań tam, gdzie jesteś.</td></tr>
+      <tr><td class="w flow">tam, dokąd…</td><td class="g flow">Idź tam, dokąd prowadzi ta droga.</td></tr>
+      <tr><td class="w flow">stamtąd, skąd…</td><td class="g flow">Wrócił stamtąd, skąd wyjechał.</td></tr>
+      <tr><td class="w flow">tędy, którędy…</td><td class="g flow">Idź tędy, którędy szliśmy wczoraj.</td></tr>
     </table></div>
 
     <h3>kto и co: склонение</h3>
@@ -1569,7 +1568,7 @@ function renderQ(){
     <p class="lead">Приставка и суффикс едут на готовой форме: склоняется середина, а не край. Выучив <span class="pl">kto / co</span>, получаешь ещё три ряда бесплатно.</p>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>косвенные формы</th></tr>
-      ${KTO_RODZ.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td class="g" style="white-space:normal">${r[2].replace("||","<br>")}</td></tr>`).join("")}
+      ${KTO_RODZ.map(r => `<tr><td class="w">${r[0]}</td><td class="dim">${r[1]}</td><td class="g flow">${r[2].replace("||","<br>")}</td></tr>`).join("")}
     </table></div>
 
     <h3>jaki или który</h3>
@@ -1590,7 +1589,7 @@ function renderQ(){
     <p class="lead">Предлог всегда идёт перед вопросительным словом, никогда не остаётся в конце, как в английском.</p>
     <div class="scroll"><table class="vt">
       <tr><th>вопрос</th><th>значение</th><th>пример</th></tr>
-      ${QPREP.map(q => `<tr><td class="w">${q[0]}</td><td style="color:var(--muted)">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
+      ${QPREP.map(q => `<tr><td class="w">${q[0]}</td><td class="dim">${q[1]}</td><td class="g">${q[2]}</td></tr>`).join("")}
     </table></div>
 
     <h3>który: склонение в вопросах</h3>
@@ -1603,7 +1602,7 @@ function renderQ(){
     <h3>który как относительное местоимение</h3>
     <p>Присоединяет придаточное к существительному. Род и число - от существительного, к которому относится; падеж - от того, какую роль który играет внутри своего придаточного.</p>
     <div class="scroll"><table>
-      ${KTORY_SENT.map(k => `<tr><td style="width:36%" class="w">${k[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${k[1]}</td><td class="g" style="font-size:var(--fs-note)">${k[2]}</td></tr>`).join("")}
+      ${KTORY_SENT.map(k => `<tr><td style="width:36%" class="w">${k[0]}</td><td class="dim sm">${k[1]}</td><td class="g sm">${k[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">Który</span> связывает существительное с уточняющим придаточным.</b> Вместо двух фраз <span class="pl">To jest sklep. Pracuję w tym sklepie.</span> получаем одну: <span class="pl">To jest sklep, w którym pracuję.</span> Другие средства строят другие типы придаточных: <span class="pl">tam, gdzie… · ten, kto… · nie wiem, czy…</span></div>
   </div>${topicPracticeHTML(QUESTION_PRACTICE, "question")}`;
@@ -1617,7 +1616,7 @@ function renderNeg(){
     <h3>Множественное отрицание обязательно</h3>
     <div class="scroll"><table class="vt">
       <tr><th>пример</th><th>перевод</th><th></th></tr>
-      ${NEG_MULTI.map(n => `<tr><td class="w">${n[0]}</td><td style="color:var(--muted)">${n[1]}</td><td class="note">${n[2]}</td></tr>`).join("")}
+      ${NEG_MULTI.map(n => `<tr><td class="w">${n[0]}</td><td class="dim">${n[1]}</td><td class="note">${n[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Если отрицательное слово относится к сказуемому, сказуемое тоже получает <span class="pl">nie</span>.</b> <span class="pl">Nikt nie przyszedł. · Nikogo nie widzę. · O niczym nie myślę. · Żaden student nie odpowiedział.</span> Но в короткой реплике без сказуемого ставить <span class="pl">nie</span> некуда: <span class="pl">Kto dzwonił? - Nikt. · Ani słowa!</span></div>
 
@@ -1632,7 +1631,7 @@ function renderNeg(){
     <h3>Склонение nikt / nic</h3>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>nikt</th><th>nic</th></tr>
-      ${NIKT_DEKL.map(n => `<tr><td style="color:var(--muted)">${n[0]}</td><td class="w">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
+      ${NIKT_DEKL.map(n => `<tr><td class="dim">${n[0]}</td><td class="w">${n[1]}</td><td class="w">${n[2]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Падеж выбирают по управлению глагола или предлога: <span class="pl">nie widzę nikogo · nie pomagam nikomu · nie rozmawiam z nikim · nie myślę o niczym</span>. Предлог ставится перед всей польской формой: <span class="pl">z nikim, o niczym, bez nikogo, bez niczego</span>, в отличие от русских и белорусских сочетаний типа «ни с кем».</p>
 
@@ -1640,7 +1639,7 @@ function renderNeg(){
     <p>У <span class="pl">nie ma</span> две разные конструкции. Безличное <span class="pl">nie ma + Dopełniacz</span> сообщает об отсутствии: <span class="pl">W lodówce nie ma mleka.</span> Личное <span class="pl">on nie ma</span> - это обычное отрицание глагола <span class="pl">mieć</span>: <span class="pl">On nie ma czasu.</span> Форма <span class="pl">nie jest</span> отрицает <span class="pl">być</span> при названном подлежащем: <span class="pl">Ona nie jest lekarką. · Ona nie jest w domu.</span></p>
     <div class="scroll"><table class="vt">
       <tr><th>пример</th><th>падеж</th><th>смысл</th></tr>
-      ${NIEMA_JEST.map(n => `<tr><td class="g">${n[0]}</td><td class="c">${n[1]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${n[2]}</td></tr>`).join("")}
+      ${NIEMA_JEST.map(n => `<tr><td class="g">${n[0]}</td><td class="c">${n[1]}</td><td class="dim sm">${n[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Смотри на конструкцию, а не на русский перевод «нет».</b> В безличной модели нет подлежащего в Mianownik: <span class="pl">Nie ma Anny. · Nie było Anny.</span> С названным подлежащим различай обладание и <span class="pl">być</span>: <span class="pl">Anna nie ma czasu</span>, но <span class="pl">Anna nie jest w domu</span>. Пара <span class="pl">Jej nie ma w domu / Ona nie jest w domu</span> противопоставляет отсутствие человека и отрицание его местонахождения.</div>
 
@@ -1671,13 +1670,13 @@ function renderOrder(){
     <p>В нейтральной фразе короткие безударные слова обычно не открывают предложение и тяготеют к ранней или приглагольной позиции. Одного обязательного «второго места» в современном польском нет. Запоминай частотные сочетания <span class="pl">mi się, ci się, mu się</span>, а при логическом выделении выбирай полную форму: <span class="pl">mnie, tobie, jego</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>клитика</th><th>здесь значит</th><th>пример</th></tr>
-      ${CLITICS.map(c => `<tr><td class="w">${c[0]}</td><td style="color:var(--muted)">${c[1]}</td><td class="g">${c[2]}</td></tr>`).join("")}
+      ${CLITICS.map(c => `<tr><td class="w">${c[0]}</td><td class="dim">${c[1]}</td><td class="g">${c[2]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Позиция się</h3>
     <p class="lead">Русское «-ся» приклеено к глаголу намертво. Польское <span class="pl">się</span> - отдельное слово и гуляет по предложению.</p>
     <div class="scroll"><table>
-      ${SIE_POS.map(s => `<tr><td style="width:34%" class="w">${s[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${s[1]}</td><td style="font-size:var(--fs-note)">${s[2]}</td></tr>`).join("")}
+      ${SIE_POS.map(s => `<tr><td style="width:34%" class="w">${s[0]}</td><td class="dim sm">${s[1]}</td><td class="sm">${s[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Две жёсткие границы.</b> <span class="pl">się</span> никогда не ставится первым словом предложения и никогда не идёт сразу после предлога. После предлога используется соответствующая падежная форма возвратного местоимения: <span class="pl">bez siebie, przy sobie, ze sobą</span>. Поэтому правильно <span class="pl">rozmawiam sam ze sobą</span>, а не <span class="pl">ze się</span>.</div>
 
@@ -1701,14 +1700,14 @@ function renderImpers(){
     <h3>Модальные безличные + инфинитив</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>пример</th></tr>
-      ${IMPERS_MODAL.map(i => `<tr><td class="w">${i[0]}</td><td style="color:var(--muted)">${i[1]}</td><td class="g">${i[2]}</td></tr>`).join("")}
+      ${IMPERS_MODAL.map(i => `<tr><td class="w">${i[0]}</td><td class="dim">${i[1]}</td><td class="g">${i[2]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Прошедшее время у большинства строится с <span class="pl">było</span>: <span class="pl">trzeba było iść, nie można było wejść, warto było spróbować, wolno było fotografować</span>. У <span class="pl">należy</span> своя форма: <span class="pl">należało wypełnić formularz</span>, без <span class="pl">było</span>. Будущее строится с <span class="pl">będzie</span>: <span class="pl">będzie można wejść, będzie trzeba poczekać, będzie należało podpisać dokument</span>.</p>
 
     <h3>mówi się - обобщённое «говорят»</h3>
     <p class="lead">Форма 3-го лица единственного числа с <span class="pl">się</span> и без подлежащего может передавать обычное, обобщённое или относящееся к понятной из контекста группе действие. В прошедшем времени употребляется средний род единственного числа: <span class="pl">mówiło się, dobrze się pracowało</span>.</p>
     <div class="scroll"><table>
-      ${MOWI_SIE.map(m => `<tr><td style="width:50%" class="w">${m[0]}</td><td style="color:var(--muted)">${m[1]}</td></tr>`).join("")}
+      ${MOWI_SIE.map(m => `<tr><td style="width:50%" class="w">${m[0]}</td><td class="dim">${m[1]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Не каждое <span class="pl">się</span> создаёт безличную конструкцию.</b> В <span class="pl">Jak nazywają się te ulice?</span> есть подлежащее <span class="pl">te ulice</span>, а сказуемое согласуется с ним во множественном числе. Сравни с безличным <span class="pl">Jak się mówi po polsku?</span>, где подлежащего нет.</div>
 
@@ -1723,7 +1722,7 @@ function renderImpers(){
     <p class="lead">Сами сокращения не являются безличными конструкциями. Они собраны здесь как соседний навык для чтения тех же текстов: объявлений, договоров и писем из <span class="pl">urzędu</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>сокращение</th><th>расшифровка</th><th>значение</th></tr>
-      ${SKROTY.map(s => `<tr><td class="c">${s[0]}</td><td class="w" style="white-space:normal">${s[1]}</td><td style="color:var(--muted);white-space:normal">${s[2]}</td></tr>`).join("")}
+      ${SKROTY.map(s => `<tr><td class="c">${s[0]}</td><td class="w flow">${s[1]}</td><td class="dim flow">${s[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Точка ставится не всегда, и правило простое.</b> Если сокращение кончается на ту же букву, что и полное слово, точки нет: <span class="pl">dr</span> (dokto<b>r</b>), <span class="pl">mgr</span> (magiste<b>r</b>), <span class="pl">nr</span> (nume<b>r</b>), <span class="pl">wg</span> (wedłu<b>g</b>). Если на другую - точка обязательна: <span class="pl">ok.</span> (okoł<b>o</b>), <span class="pl">godz.</span> (godzin<b>a</b>), <span class="pl">ul.</span> (ulic<b>a</b>), <span class="pl">prof.</span> (profeso<b>r</b>).</div>
     <div class="tip"><b>В косвенном падеже точка возвращается.</b> <span class="pl">dr Kowalski</span> - без точки, но <span class="pl">u dr. Kowalskiego</span> или <span class="pl">u dra Kowalskiego</span>: подразумевается уже <span class="pl">doktora</span>, а сокращение на эту букву не кончается. С женщиной проще - <span class="pl">u dr Kowalskiej</span>, без точки, потому что <span class="pl">doktor</span> в женском употреблении не склоняется.</div>
@@ -1775,10 +1774,6 @@ function renderPreps(){
     PREPS.filter(p => f === "все" || p[1] === f).map(p =>
       `<tr><td class="w">${p[0]}</td><td class="c">${p[1]}</td><td>${p[2]}</td><td class="w">${p[3]}</td></tr>`).join("");
   draw("все");
-  $("#pfilter").querySelectorAll(".chip").forEach(b => b.onclick = () => {
-    $("#pfilter").querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b));
-    draw(b.dataset.f);
-  });
   renderPrepPractice();
 }
 function prepositionPracticeHTML(practice){
@@ -1823,14 +1818,14 @@ function renderAdj(){
     <p class="lead">Суффикс выбирается по тому, чем кончается основа. В синтетической модели превосходная образуется добавлением <span class="pl">naj-</span> к сравнительной: <span class="pl">szybszy → najszybszy</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>суффикс</th><th>когда</th><th>примеры</th></tr>
-      ${STOPN.map(s => `<tr><td class="c">${s[0]}</td><td style="color:var(--muted);white-space:normal">${s[1]}</td><td class="g" style="white-space:normal">${s[2]}</td></tr>`).join("")}
+      ${STOPN.map(s => `<tr><td class="c">${s[0]}</td><td class="dim flow">${s[1]}</td><td class="g flow">${s[2]}</td></tr>`).join("")}
     </table></div>
     <p class="note">Подсказка по основе покрывает большинство слов, но не все: у <span class="pl">twardy</span> основа кончается стечением <span class="pl">rd</span>, а форма всё равно <span class="pl">twardszy</span>. Сравнительную степень частотных слов надёжнее запоминать вместе с самим прилагательным.</p>
 
     <h3>Чередования в основе</h3>
     <table>
       <tr><th>было → стало</th><th>примеры</th></tr>
-      ${STOPN_ALT.map(s => `<tr><td class="c">${s[0]}</td><td class="g" style="white-space:normal">${s[1]}</td></tr>`).join("")}
+      ${STOPN_ALT.map(s => `<tr><td class="c">${s[0]}</td><td class="g flow">${s[1]}</td></tr>`).join("")}
     </table>
 
     <h3>Нерегулярные</h3>
@@ -1845,7 +1840,7 @@ function renderAdj(){
     <p class="lead">«Чем» - <span class="pl">niż</span> или <span class="pl">od</span>, но дальше начинается то, чего в русском нет по форме.</p>
     <div class="scroll"><table class="vt">
       <tr><th>конструкция</th><th>значение</th><th>пример</th></tr>
-      ${POROWN.map(p => `<tr><td class="w" style="white-space:normal">${p[0]}</td><td style="color:var(--muted)">${p[1]}</td><td class="g" style="white-space:normal">${p[2]}</td></tr>`).join("")}
+      ${POROWN.map(p => `<tr><td class="w flow">${p[0]}</td><td class="dim">${p[1]}</td><td class="g flow">${p[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">za</span> - это и «слишком», и предлог «за».</b> В значении «слишком» <span class="pl">za</span> непосредственно модифицирует признак или количество: <span class="pl">za drogi, za droga, za drogo, za dużo</span>. Как предлог <span class="pl">za</span> вводит именную группу в падеже: <span class="pl">za domem, za wysokim mężczyzną</span>. Значение и форму показывает вся конструкция, а не само слово <span class="pl">za</span>.</div>
     <div class="tip"><b><span class="pl">coraz</span> и <span class="pl">im…, tym…</span> берут только сравнительную степень.</b> <span class="pl">Coraz lepiej</span>, не <span class="bad">coraz dobrze</span>. В <span class="pl">Im więcej, tym lepiej</span> обе части в сравнительной, запятая обязательна.</div>
@@ -1908,7 +1903,7 @@ function renderAdv(){
     <h3>Частые наречия по смыслу</h3>
     <div class="scroll"><table class="vt">
       <tr><th>группа</th><th>вопрос</th><th>примеры</th></tr>
-      ${ADV_LIST.map(a => `<tr><td class="w">${a[0]}</td><td style="color:var(--muted)">${a[1]}</td><td class="g">${a[2]}</td></tr>`).join("")}
+      ${ADV_LIST.map(a => `<tr><td class="w">${a[0]}</td><td class="dim">${a[1]}</td><td class="g">${a[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Ложный друг: <span class="pl">rano</span> не значит «рано».</b> Польское <span class="pl">rano</span> - «утром», а русскому «рано» и белорусскому «рана» соответствует <span class="pl">wcześnie</span>: <span class="pl">Rano wstaję wcześnie.</span> - «Утром я встаю рано».</div>
     <div class="tip"><b>Не путать с прилагательным.</b> Наречие не согласуется с существительным и чаще всего характеризует действие или состояние: <span class="pl">On mówi dobrze. · Tu jest miło.</span> Оно также может определять прилагательное или другое наречие: <span class="pl">bardzo dobry pomysł · wyjątkowo szybko</span>. Прилагательное согласуется с существительным: <span class="pl">To jest dobry pomysł.</span></div>
@@ -1922,7 +1917,7 @@ function renderPron(){
       <tr><th>кто</th><th>кого / чего</th><th>кому</th><th>кого / что</th><th>кем</th><th>(о) ком</th></tr>
       ${PRON.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
     </table></div>
-    <ol class="pit" style="margin-top:14px">
+    <ol class="pit gap">
       <li><b>У местоимений третьего лица после предлога выбираем форму с начальным <span class="pl">n-</span>.</b> Сравни: <span class="pl">widzę go / patrzę na niego</span>, <span class="pl">daję jej / mówię o niej</span>, <span class="pl">widzę je / patrzę na nie</span>. К постпредложным относятся также <span class="pl">niemu, nim, nią, nich, nimi</span>. В творительном <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n-</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
       <li><b>Короткие формы <span class="pl">go, mu, cię, ci, mi</span> безударные.</b> Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: <span class="pl">Mnie to nie interesuje</span>.</li>
       <li><b>Личное местоимение обычно опускается.</b> Окончание глагола уже содержит лицо: <span class="pl">idę</span>, а не <span class="pl">ja idę</span>. Постоянное <span class="pl">ja</span> звучит либо как нажим, либо как речь иностранца.</li>
@@ -1933,7 +1928,7 @@ function renderPron(){
     <p class="lead">Одна форма на все лица и оба числа - как русское «себя». Именительного падежа нет.</p>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>форма</th><th>пример</th></tr>
-      ${SIEBIE.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="${r[1]==="-"?"":"g"}" style="white-space:normal${r[1]==="-"?";color:var(--muted)":""}">${r[2]}</td></tr>`).join("")}
+      ${SIEBIE.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="${r[1]==="-"?"dim flow":"g flow"}">${r[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">się</span> - безударная форма возвратного местоимения.</b> Она встречается в Dopełniacz и Biernik: <span class="pl">boję się, myję się</span>; кроме того, <span class="pl">się</span> выполняет нефлексионные функции при глаголах. Полное <span class="pl">siebie</span> нужно под ударением и после предлога: <span class="pl">bez siebie, do siebie, ze sobą</span>. Сказать <span class="bad">bez się</span> нельзя.</div>
 
@@ -1941,21 +1936,21 @@ function renderPron(){
     <p class="lead">Одна форма выполняет несколько разных задач. Таблица показывает основные модели этого уровня, но не является исчерпывающей классификацией.</p>
     <div class="scroll"><table class="vt">
       <tr><th>функция</th><th>примеры</th><th>признак</th></tr>
-      ${SIE_FUNC.map(r => `<tr><td class="w">${r[0]}</td><td class="w" style="white-space:normal">${r[1]}</td><td style="color:var(--muted);font-size:var(--fs-note);white-space:normal">${r[2]}</td></tr>`).join("")}
+      ${SIE_FUNC.map(r => `<tr><td class="w">${r[0]}</td><td class="w flow">${r[1]}</td><td class="dim sm flow">${r[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Подстановка <span class="pl">siebie</span> только помогает, но не решает задачу механически.</b> Если полная форма сохраняет значение действия на самого деятеля, перед нами возвратность: <span class="pl">Myję się → Myję siebie, nie dziecko</span>. При множественном подлежащем отдельно проверь взаимность: <span class="pl">Znamy się</span> обычно значит «знаем друг друга», а <span class="pl">Znamy siebie</span> - «знаем самих себя». Безличное <span class="pl">mówi się</span> и словарное <span class="pl">boję się</span> определяются по конструкции и смыслу.</div>
 
     <h3>Возвратные и взаимные обороты</h3>
     <div class="scroll"><table class="vt">
       <tr><th>оборот</th><th>значение</th><th>пример</th></tr>
-      ${SIEBIE_PHR.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td class="g" style="white-space:normal">${r[2]}</td></tr>`).join("")}
+      ${SIEBIE_PHR.map(r => `<tr><td class="w">${r[0]}</td><td class="dim">${r[1]}</td><td class="g flow">${r[2]}</td></tr>`).join("")}
     </table></div>
 
     <h3>Частые конструкции с sobie</h3>
     <p class="lead">Две разные вещи под одной формой. <span class="pl">radzić sobie, zdawać sobie sprawę, wyobrazić sobie</span> - готовые конструкции, где <span class="pl">sobie</span> неотделимо и не переводится. <span class="pl">robić sobie kawę, kupić sobie, iść sobie</span> - обычный дательный «себе» плюс оттенок непринуждённости; эти глаголы прекрасно живут и без него.</p>
     <div class="scroll"><table class="vt">
       <tr><th>глагол</th><th>значение</th><th>пример</th></tr>
-      ${SOBIE_V.map(r => `<tr><td class="w">${r[0]}</td><td style="color:var(--muted)">${r[1]}</td><td class="g" style="white-space:normal">${r[2]}</td></tr>`).join("")}
+      ${SOBIE_V.map(r => `<tr><td class="w">${r[0]}</td><td class="dim">${r[1]}</td><td class="g flow">${r[2]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">Czego pan sobie życzy?</span></b> - стандартный вопрос продавца и официанта. В вопросе о желании клиента используется конструкция <span class="pl">życzyć sobie</span>. Без <span class="pl">sobie</span> глагол имеет другую модель: <span class="pl">Życzę panu powodzenia</span>. В <span class="pl">Idź sobie!</span> местоимение отделимо и добавляет пренебрежения к простому <span class="pl">Idź!</span></div>
     <h3>ten / ta / to</h3>
@@ -1973,7 +1968,7 @@ function renderPron(){
     <p class="lead"><span class="pl">Tamten</span> в основном следует той же указательной модели, но в Biernik женского рода формы расходятся: <span class="pl">tę kobietę</span>, но <span class="pl">tamtą kobietę</span>. В остальных частотных косвенных формах: <span class="pl">tamtego, tamtemu, tamtym</span>. <span class="pl">Taki</span> склоняется как прилагательное <span class="pl">dobry</span>: <span class="pl">takiego, takiemu, takim, taką</span>.</p>
     <div class="scroll"><table>
       <tr><th></th><th>этот</th><th>тот</th><th>такой</th></tr>
-      ${TAMTEN.map(r => `<tr><td style="color:var(--muted)">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
+      ${TAMTEN.map(r => `<tr><td class="dim">${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b><span class="pl">ten</span> покрывает и «этот», и анафорическое «тот».</b> Русское «тот фильм, о котором я говорил» по-польски - <span class="pl">ten film, o którym mówiłem</span>. <span class="pl">Tamten</span> выбирают, когда объект явно отодвинут в пространстве или времени либо противопоставлен другому: <span class="pl">tamten dom, tamtego dnia, nie ten, tamten</span>. Ставить <span class="pl">tamten</span> везде, где по-русски «тот», - типичная калька.</div>
 
@@ -2014,7 +2009,7 @@ function renderPron(){
     <h3>każdy, inny, żaden, oba / oboje</h3>
     <div class="scroll"><table class="vt">
       <tr><th>слово</th><th>значение</th><th>как ведёт себя</th></tr>
-      ${OKRESL.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td style="white-space:normal;font-size:var(--fs-note)">${r[2]}</td></tr>`).join("")}
+      ${OKRESL.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td class="sm flow">${r[2]}</td></tr>`).join("")}
     </table></div>
   </div>${topicPracticeHTML(PRON_PRACTICE, "pronoun")}${sentenceTrainerHTML("pronouns")}`;
 }
@@ -2097,9 +2092,9 @@ function vocabularyTable(words, labels){
     <thead><tr>${labels.map(label => `<th>${label}</th>`).join("")}</tr></thead>
     <tbody>${words.map(word => `<tr>
       <td class="w">${word[0]}</td>
-      <td style="color:var(--muted);font-size:var(--fs-note)">${word[1]}</td>
+      <td class="dim sm">${word[1]}</td>
       <td class="cq">${word[2]}</td>
-      <td class="w" style="white-space:normal">${word[3]}</td>
+      <td class="w flow">${word[3]}</td>
     </tr>`).join("")}</tbody>
   </table></div>`;
 }
@@ -2131,7 +2126,7 @@ function renderVocabulary(){
 
 function talkRows(rows){
   return `<div class="scroll"><table class="vt"><tr><th>по-польски</th><th>по-русски</th><th>вариант для себя</th></tr>
-    ${rows.map(row => `<tr><td class="w">${row[0]}</td><td style="color:var(--muted);font-size:var(--fs-note)">${row[1]}</td><td class="g" style="white-space:normal">${row[2]}</td></tr>`).join("")}
+    ${rows.map(row => `<tr><td class="w">${row[0]}</td><td class="dim sm">${row[1]}</td><td class="g flow">${row[2]}</td></tr>`).join("")}
   </table></div>`;
 }
 
@@ -2288,11 +2283,6 @@ function renderTalk(){
 
 const LABEL = Object.fromEntries(TABS);
 const VLABEL = Object.fromEntries(VTABS);
-let curTab = TABS[0][0];
-
-const GROUP_OF = {};
-GROUPS.forEach((g, i) => g[1].forEach(([id]) => GROUP_OF[id] = i));
-
 const navItemHTML = (id, note) =>
   `<a id="tab-${id}" data-s="${id}" href="#${id}"><b>${LABEL[id]}</b><span>${note}</span></a>`;
 
@@ -2308,170 +2298,6 @@ $("#navmenu").innerHTML = `<section><h4>Начало</h4>
   GROUPS.map(g => `<section><h4>${g[0]}</h4>
     ${g[1].map(([id]) => `<a data-s="${id}" href="#${id}">${LABEL[id]}</a>`).join("")}
   </section>`).join("");
-
-function closeNavPops(except){
-  $("#nav").querySelectorAll(".navgroup-btn[aria-expanded='true']").forEach(b => {
-    if(b !== except) b.setAttribute("aria-expanded", "false");
-  });
-}
-function closeNavMenu(){
-  $("#navmenu").classList.remove("on");
-  $("#navall").setAttribute("aria-expanded", "false");
-}
-function closeNav(){ closeNavPops(); closeNavMenu(); }
-
-function markNav(id){
-  const group = GROUP_OF[id];
-  document.querySelectorAll("#nav [data-s],#navmenu [data-s]").forEach(a => {
-    if(a.dataset.s === id) a.setAttribute("aria-current", "page");
-    else a.removeAttribute("aria-current");
-  });
-  $("#nav").querySelectorAll(".navgroup").forEach(g =>
-    g.classList.toggle("is-current", +g.dataset.g === group));
-  const cur = $("#navall .navall-txt");
-  if(cur) cur.textContent = id === TABS[0][0] ? "Все разделы" : LABEL[id];
-}
-
-function showTab(id, scroll){
-  if(!TABS.some(t => t[0] === id)) id = TABS[0][0];
-  curTab = id;
-  markNav(id);
-  document.querySelectorAll(".sec").forEach(s => s.classList.toggle("on", s.id === id));
-  if(scroll !== false) window.scrollTo({top:0});
-}
-
-$("#nav").addEventListener("click", e => {
-  const btn = e.target.closest(".navgroup-btn");
-  if(btn){
-    const scrollTop = window.scrollY;
-    const open = btn.getAttribute("aria-expanded") !== "true";
-    closeNavPops(btn);
-    closeNavMenu();
-    btn.setAttribute("aria-expanded", open);
-
-    requestAnimationFrame(() => {
-      if(window.scrollY !== scrollTop) window.scrollTo(0, scrollTop);
-    });
-    return;
-  }
-  const link = e.target.closest("[data-s]");
-  if(!link) return;
-  showTab(link.dataset.s);
-  writeHash();
-  closeNav();
-});
-
-$("#navall").onclick = e => {
-  const scrollTop = window.scrollY;
-  const open = !$("#navmenu").classList.contains("on");
-  closeNavPops();
-  $("#navmenu").classList.toggle("on", open);
-  $("#navall").setAttribute("aria-expanded", open);
-  requestAnimationFrame(() => {
-    if(window.scrollY !== scrollTop) window.scrollTo(0, scrollTop);
-  });
-};
-$("#navmenu").addEventListener("click", e => {
-  const link = e.target.closest("[data-s]");
-  if(!link) return;
-  showTab(link.dataset.s);
-  writeHash();
-  closeNavMenu();
-  $("#navall").focus();
-});
-document.addEventListener("keydown", e => {
-  if(e.key !== "Escape") return;
-  const openBtn = $("#nav .navgroup-btn[aria-expanded='true']");
-  if(openBtn){ closeNavPops(); openBtn.focus(); return; }
-  if($("#navmenu").classList.contains("on")){ closeNavMenu(); $("#navall").focus(); }
-});
-document.addEventListener("click", e => {
-  if(!e.target.closest("#navwrap")) closeNav();
-});
-document.addEventListener("focusin", e => {
-  if(!e.target.closest("#navwrap")) closeNav();
-});
-
-function setHeadH(){
-  const hdr = document.querySelector("header"), nav = $("#navwrap");
-  const off = nav.getBoundingClientRect().top - hdr.getBoundingClientRect().top;
-  const narrow = matchMedia("(max-width:767px)").matches;
-  const st = document.documentElement.style;
-  st.setProperty("--brand-h", (narrow ? off : 0) + "px");
-  st.setProperty("--head-h", (narrow ? hdr.offsetHeight - off : hdr.offsetHeight) + "px");
-}
-
-let navRowWidth = 0;
-function measureNavRow(){
-  const wrap = $("#navwrap");
-  wrap.classList.add("measuring");
-  navRowWidth = $("#nav").scrollWidth || 0;
-  wrap.classList.remove("measuring");
-}
-function fitNav(){
-  const wrap = $("#navwrap");
-  if(!navRowWidth) measureNavRow();
-  const compact = navRowWidth > wrap.clientWidth - 4;
-  if(compact !== wrap.classList.contains("compact")){
-    wrap.classList.toggle("compact", compact);
-    closeNav();
-  }
-}
-
-window.addEventListener("resize", () => { fitNav(); setHeadH(); });
-if(document.fonts) document.fonts.ready.then(() => { navRowWidth = 0; fitNav(); });
-markNav(curTab);
-fitNav();
-setHeadH();
-
-function hashFor(){
-  if(curTab === "s-cases") return `#s-cases/${curCase}/${curNum}`;
-  if(curTab === "s-verbs") return `#s-verbs/${curV}`;
-  return `#${curTab}`;
-}
-let selfWrite = "";
-function writeHash(){
-  const h = hashFor();
-  if(location.hash === h) return;
-  selfWrite = h;
-  history.replaceState(null, "", h);
-}
-function applyHash(){
-  const parts = decodeURIComponent(location.hash.replace(/^#/, "")).split("/");
-  const tab = parts[0];
-  if(!tab) return;
-  if(tab === "s-cases"){
-    if(parts[1] && CASES.some(c => c.id === parts[1])) curCase = parts[1];
-    if(parts[2] === "sg" || parts[2] === "pl") curNum = parts[2];
-    renderChips(); renderNumTog(); renderCase();
-  } else if(tab === "s-verbs"){
-    if(parts[1] && VTABS.some(v => v[0] === parts[1])) curV = parts[1];
-    renderVerbs();
-  }
-  showTab(tab);
-
-  const anchor = parts.find(p => p.startsWith("~"));
-  if(anchor) scrollToHeading(tab, anchor.slice(1));
-}
-
-const SMOOTH = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-function scrollToHeading(tab, h){
-  const el = document.querySelector(`#${tab} [data-h="${CSS.escape(h)}"]`);
-  if(!el) return;
-
-  const off = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 0;
-  const y = window.scrollY + el.getBoundingClientRect().top - off - 12;
-  window.scrollTo({top:Math.max(0, y), behavior:SMOOTH});
-}
-
-$("#nav").querySelectorAll("[data-s]").forEach(b => b.onclick = () => {
-  showTab(b.dataset.s);
-  writeHash();
-});
-window.addEventListener("hashchange", () => {
-  if(location.hash === selfWrite){ selfWrite = ""; return; }
-  applyHash();
-});
 
 const slug = s => norm(s).replace(/[^a-zа-яё0-9]+/g, "-").replace(/^-+|-+$/g, "");
 function linkHeadings(root){
@@ -2492,223 +2318,6 @@ function linkHeadings(root){
     h.appendChild(b);
   });
 }
-document.addEventListener("click", e => {
-  const b = e.target.closest(".alink");
-  if(!b) return;
-  const h = b.closest("h3");
-  const hash = `${hashFor()}/~${h.dataset.h}`;
-  selfWrite = hash;
-  history.replaceState(null, "", hash);
-  const ok = () => { b.classList.add("ok"); setTimeout(() => b.classList.remove("ok"), 1400); };
-  try{ navigator.clipboard.writeText(location.href).then(ok, ok); }catch(err){ ok(); }
-});
-
-let INDEX = [];
-
-const clean = s => s.replace(/\s+/g, " ").trim();
-function nodeText(node){
-  if(node.tagName === "TR")
-    return clean([...node.children].map(td => clean(td.textContent)).filter(Boolean).join(" · "));
-  if(node.parentElement && node.parentElement.classList.contains("ngrid"))
-    return clean([...node.children].map(x => clean(x.textContent)).filter(Boolean).join(" "));
-  return clean(node.textContent);
-}
-
-function harvest(html, entry){
-  const box = document.createElement("div");
-  box.innerHTML = html;
-  let head = "";
-  const walk = el => {
-    for(const node of el.children){
-      const tag = node.tagName;
-      if(tag === "H2" || tag === "H3"){ head = node.textContent.trim(); continue; }
-      if(tag === "TR" && node.querySelector("th")) continue;
-      if(tag === "TR" || tag === "LI" || (tag === "DIV" && node.parentElement.classList.contains("ngrid"))){
-        const text = nodeText(node);
-        if(text.length > 1) INDEX.push({...entry, head, text, key: norm(text)});
-        continue;
-      }
-      if((tag === "P" || tag === "DIV") && !node.children.length ||
-         (tag === "DIV" && node.classList.contains("tip")) || tag === "P"){
-        const text = nodeText(node);
-        if(text.length > 2) INDEX.push({...entry, head, text, key: norm(text)});
-        if(!node.querySelector("table, ul, ol")) continue;
-      }
-      if(node.children.length) walk(node);
-    }
-  };
-  walk(box);
-}
-
-function buildIndex(){
-  INDEX = [];
-
-  for(const [id, label] of TABS){
-    if(id === "s-index" || id === "s-cases" || id === "s-verbs") continue;
-    harvest($("#" + id).innerHTML, {tab:id, label});
-  }
-
-  for(const c of CASES)
-    for(const num of ["sg","pl"])
-      harvest(casePanelHTML(c, num),
-        {tab:"s-cases", label:"Существительные", sub:`${c.name} · ${num==="sg"?"ед. ч.":"мн. ч."}`, cs:c.id, num});
-
-  const VMAP = {conj:vConj, czasy:vCzasy, tryby:vTryby, formy:vFormy, rekcja:vRekcja};
-  for(const key of Object.keys(VMAP))
-    harvest(VMAP[key](), {tab:"s-verbs", label:"Глаголы", sub:VLABEL[key], vs:key});
-
-  const seen = new Set();
-  INDEX = INDEX.filter(e => {
-    const k = `${e.tab}|${e.cs || e.vs || ""}|${e.key}`;
-    if(seen.has(k)) return false;
-    seen.add(k); return true;
-  });
-}
-
-const tokens = q => norm(q).split(/\s+/).filter(t => t.length > 0);
-
-function search(q){
-  const ts = tokens(q);
-  if(!ts.length || (ts.length === 1 && ts[0].length < 2)) return {list:[], total:0};
-  const hits = [];
-  for(const e of INDEX){
-    let score = 0, ok = true;
-    for(const t of ts){
-      const at = e.key.indexOf(t);
-      if(at < 0){ ok = false; break; }
-      score += at;
-    }
-    if(!ok) continue;
-
-    hits.push({e, score: score / ts.length + e.text.length / 40});
-  }
-  hits.sort((a,b) => a.score - b.score);
-  return {list: hits.slice(0, 30).map(h => h.e), total: hits.length};
-}
-
-function mark(text, q){
-  const key = norm(text), ranges = [];
-  for(const t of tokens(q)){
-    let at = key.indexOf(t);
-    while(at >= 0){ ranges.push([at, at + t.length]); at = key.indexOf(t, at + t.length); }
-  }
-  if(!ranges.length) return text;
-  ranges.sort((a,b) => a[0] - b[0]);
-  const merged = [ranges[0]];
-  for(const r of ranges.slice(1)){
-    const last = merged[merged.length - 1];
-    if(r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r);
-  }
-  let out = "", pos = 0;
-  for(const [a,b] of merged){
-    out += text.slice(pos, a) + "<mark>" + text.slice(a, b) + "</mark>";
-    pos = b;
-  }
-  return out + text.slice(pos);
-}
-
-let hitList = [], hitSel = -1;
-
-function openSearch(on){
-  $("#sres").classList.toggle("on", on);
-  $("#gsearch").setAttribute("aria-expanded", on);
-  if(!on){ $("#gsearch").removeAttribute("aria-activedescendant"); hitSel = -1; }
-}
-
-function selectHit(i){
-  const items = $("#sres").querySelectorAll(".sr");
-  if(!items.length) return;
-  hitSel = (i + items.length) % items.length;
-  items.forEach((b, n) => b.setAttribute("aria-selected", n === hitSel));
-  const on = items[hitSel];
-  on.scrollIntoView({block:"nearest"});
-  $("#gsearch").setAttribute("aria-activedescendant", on.id);
-}
-
-function renderResults(q){
-  const box = $("#sres");
-  if(!q.trim()){ openSearch(false); box.innerHTML = ""; hitList = []; return; }
-  const {list, total} = search(q);
-  hitList = list; hitSel = -1;
-  openSearch(true);
-  if(!list.length){
-    box.innerHTML = tokens(q).every(t => t.length < 2)
-      ? `<div class="snone">Введите хотя бы два символа</div>`
-      : `<div class="snone">Ничего не нашлось</div>`;
-    return;
-  }
-  box.innerHTML = list.map((e,i) => `<button class="sr" role="option" id="sr-${i}" data-i="${i}" aria-selected="false">
-      <span class="sr-w">${e.label}${e.sub?` · ${e.sub}`:""}${e.head?` · ${e.head}`:""}</span>
-      <span class="sr-t">${mark(e.text.length > 140 ? e.text.slice(0,140) + "…" : e.text, q)}</span>
-    </button>`).join("") +
-    (total > list.length ? `<div class="scount">показаны ${list.length} из ${total} - уточните запрос</div>` : "");
-  box.querySelectorAll(".sr").forEach(b => b.onclick = () => goTo(hitList[+b.dataset.i]));
-}
-
-function goTo(e){
-  if(e.tab === "s-cases"){
-    curCase = e.cs; curNum = e.num;
-    renderChips(); renderCase();
-  } else if(e.tab === "s-verbs"){
-    curV = e.vs; renderVerbs();
-  }
-  showTab(e.tab, false);
-  writeHash();
-  closeSearch();
-
-  const sec = $("#" + e.tab);
-  sec.querySelectorAll(".hit").forEach(x => x.classList.remove("hit"));
-  const target = [...sec.querySelectorAll("tr, li, p, .tip, .ngrid div")]
-    .find(n => nodeText(n) === e.text);
-
-  sec.focus({preventScroll:true});
-  if(target){
-    target.classList.add("hit");
-    target.scrollIntoView({block:"center", behavior:SMOOTH});
-    setTimeout(() => target.classList.remove("hit"), 2600);
-  } else {
-    window.scrollTo({top:0});
-  }
-}
-
-function closeSearch(){
-  openSearch(false);
-  $("#gsearch").blur();
-}
-
-$("#gsearch").oninput = e => renderResults(e.target.value);
-$("#gsearch").onfocus = e => { if(e.target.value) renderResults(e.target.value); };
-$("#gsearch").onkeydown = e => {
-  if(e.key === "Escape"){ e.target.value = ""; renderResults(""); closeSearch(); return; }
-  if(e.key === "ArrowDown" || e.key === "ArrowUp"){
-    e.preventDefault();
-    if(!$("#sres").classList.contains("on")) renderResults(e.target.value);
-    selectHit(hitSel + (e.key === "ArrowDown" ? 1 : -1));
-    return;
-  }
-  if(e.key === "Home" || e.key === "End"){
-    if(!$("#sres .sr")) return;
-    e.preventDefault();
-    selectHit(e.key === "Home" ? 0 : -1);
-    return;
-  }
-  if(e.key === "Enter"){
-    const pick = $("#sres .sr[aria-selected='true']") || $("#sres .sr");
-    if(pick) pick.click();
-  }
-};
-document.addEventListener("click", e => {
-  if(!e.target.closest("#sbox")) openSearch(false);
-});
-document.addEventListener("keydown", e => {
-  if((e.key === "/" || (e.key === "k" && (e.metaKey || e.ctrlKey))) &&
-      document.activeElement !== $("#gsearch")){
-    e.preventDefault();
-    $("#gsearch").focus();
-    $("#gsearch").select();
-  }
-});
-
 const IDX_SUB = {
   "s-cases":CASES.map(c => [`#s-cases/${c.id}/sg`, c.name]),
   "s-verbs":VTABS.map(([id, label]) => [`#s-verbs/${id}`, label])
@@ -2736,13 +2345,6 @@ function renderIndex(){
     </section>
   </div>`;
 }
-$("#s-index").addEventListener("click", e => {
-  const b = e.target.closest(".idx-a");
-  if(!b) return;
-  showTab(b.dataset.s);
-  writeHash();
-});
-
 const THEMES = [["light","светлая"],["dark","тёмная"]];
 const SYSDARK = matchMedia("(prefers-color-scheme: dark)");
 function readTheme(){
@@ -2758,22 +2360,13 @@ function applyTheme(v){
   const cur = v || (SYSDARK.matches ? "dark" : "light");
   $("#theme").innerHTML = THEMES.map(([id, label]) =>
     `<button type="button" data-t="${id}" aria-pressed="${id===cur}">${label}</button>`).join("");
-  $("#theme").querySelectorAll("button").forEach(b => b.onclick = () => {
-    try{ localStorage.setItem("theme", b.dataset.t); }catch(e){}
-    applyTheme(b.dataset.t);
-    setHeadH();
-  });
 }
-SYSDARK.addEventListener("change", () => { if(!readTheme()) applyTheme(null); });
 applyTheme(readTheme());
 
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
 renderSources();
 renderNumTog();
-buildIndex();
 renderIndex();
 
 document.querySelectorAll(".sec").forEach(linkHeadings);
-setHeadH();
-if(location.hash) applyHash();

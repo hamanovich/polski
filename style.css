@@ -406,6 +406,13 @@ td.f .fin{color:var(--end);font-weight:700}
 td.f .from{color:var(--muted)}
 td.note{font-size:var(--fs-note);color:var(--muted-s);min-width:140px;max-width:200px;white-space:normal}
 td.cq{font-family:var(--mono);font-size:var(--fs-note);white-space:nowrap;color:var(--muted)}
+td.dim{color:var(--muted)}
+td.sm{font-size:var(--fs-note)}
+td.flow{white-space:normal}
+td.none{color:var(--line)}
+td.nw{white-space:nowrap}
+.sub{display:block;font-family:var(--sans);font-size:var(--fs-micro);color:var(--alt)}
+table.gap,ol.gap{margin-top:14px}
 .kbadge{
   display:inline-block;min-width:26px;text-align:center;font-family:var(--mono);font-size:var(--fs-note);
   background:var(--ink);color:var(--paper);padding:1px 5px;border-radius:2px;margin-right:6px;

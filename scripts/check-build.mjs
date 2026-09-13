@@ -66,6 +66,9 @@ for(const [id, path, heading] of routes){
   assert.equal(document.documentElement.classList.contains("js"), false, "HTML must remain readable when scripts do not run");
   assert.equal(document.documentElement.getAttribute("lang"), "ru");
   assert.equal(document.querySelectorAll(".sec").length, 1, `${path || "/"} must contain one topic`);
+  for(const styled of document.querySelectorAll("[style]"))
+    assert(!/color:|white-space:|font-family:/.test(styled.getAttribute("style")),
+      `${path || "/"}: typography belongs to classes in style.css, not to a style attribute: ${styled.getAttribute("style")}`);
   assert.equal(document.querySelector(".sec")?.id, id);
   assert.notEqual(document.querySelector(".sec")?.textContent.trim(), "");
   assert.equal(document.querySelector(".sec")?.getAttribute("role"), null);
@@ -743,7 +746,10 @@ assert.equal(sentenceQuestion("prepositions", "prep-government-extra-8").topic, 
 assert.equal(sentenceQuestion("prepositions", "prepme-4").cue, "сходить за хлебом");
 assert.deepEqual(sentenceQuestion("pronouns", "pron-own-book").answers, ["swoją","swą"]);
 assert(trainerDecks.sentences.prepositions.some(row => row.cue === ""), "Obvious gap instructions stay hidden");
-vm.runInContext(appSource.slice(appSource.indexOf("function trainerSentences(name)"), appSource.indexOf("function sentenceTrainerHTML(name)")), dataSandbox);
+const appSlice = (from, to) => appSource.slice(appSource.indexOf(from), appSource.indexOf(to));
+vm.runInContext(appSlice("const norm = s =>", "function verbPracticeHTML"), dataSandbox);
+vm.runInContext(appSlice("const slug = s =>", "function linkHeadings"), dataSandbox);
+vm.runInContext(appSlice("const FALSE_EXTRA = {", "function sentenceTrainerHTML(name)"), dataSandbox);
 const reorderedCues = vm.runInContext(`(() => {
   const group = PREP_PRACTICE.find(item => item.id === "meaning");
   group.tasks.reverse();
@@ -751,6 +757,21 @@ const reorderedCues = vm.runInContext(`(() => {
   finally { group.tasks.reverse(); }
 })()`, dataSandbox);
 assert.deepEqual(JSON.parse(reorderedCues), trainerDecks.sentences.prepositions.map(({id,cue}) => [id,cue]).sort(), "Reordering source tasks must preserve each meaning cue");
+const reorderedIds = (array, deck) => JSON.parse(vm.runInContext(`(() => {
+  ${array}.reverse();
+  try { return JSON.stringify(trainerSentences("${deck}").map(({id, prompt}) => [id, prompt]).sort()); }
+  finally { ${array}.reverse(); }
+})()`, dataSandbox));
+for(const [array, deck] of [["REKCJA_TRAIN", "government"], ["REPLIKI", "phrases"], ["FALSE", "falsefriends"]])
+  assert.deepEqual(reorderedIds(array, deck), trainerDecks.sentences[deck].map(({id, prompt}) => [id, prompt]).sort(),
+    `${deck}: question IDs must stay with their content when source rows move`);
+for(const deck of ["government", "phrases", "falsefriends"])
+  assert(trainerDecks.sentences[deck].every(row => !/^[a-z]+-\d+$/.test(row.id)),
+    `${deck}: question IDs must come from content, not from the row number`);
+assert.equal(sentenceQuestion("falsefriends", "false-sklep").prompt, "склеп");
+assert.equal(sentenceQuestion("phrases", "phrase-вот-именно").answers[0], "No właśnie");
+assert.equal(sentenceQuestion("falsefriends", "false-uroda").prompt, sentenceQuestion("falsefriends", "false-urzad").prompt,
+  "Two false friends share the Russian prompt, so the Polish word identifies the question");
 const trainerVerbs = trainerDecks.verbs;
 assert.equal(trainerVerbs.length, 100, "The trainer drills the whole verb table");
 const trainerByLemma = new Map(trainerVerbs.map(verb => [verb.l, verb]));

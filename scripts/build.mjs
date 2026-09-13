@@ -43,44 +43,15 @@ const media = query => ({
 });
 
 window.matchMedia = media;
-window.scrollTo = noop;
-window.scrollBy = noop;
-if(window.Element && !window.Element.prototype.scrollIntoView)
-  window.Element.prototype.scrollIntoView = noop;
-if(window.Element && !window.Element.prototype.getBoundingClientRect)
-  window.Element.prototype.getBoundingClientRect = () => ({top:0,left:0,right:0,bottom:0,width:0,height:0});
-if(window.HTMLElement && !window.HTMLElement.prototype.focus)
-  window.HTMLElement.prototype.focus = noop;
-if(window.HTMLElement && !window.HTMLElement.prototype.blur)
-  window.HTMLElement.prototype.blur = noop;
 
-const location = {hash:"", href:"https://polski.hamanovich.com/"};
-const history = {replaceState(_state, _title, url){ location.hash = String(url).startsWith("#") ? String(url) : ""; }};
 const localStorage = {getItem(){ return null; }, setItem:noop, removeItem:noop};
-const getComputedStyle = () => ({
-  getPropertyValue(){ return "0px"; },
-  position:"static", left:"auto", whiteSpace:"normal"
-});
 
 const sandbox = {
   window,
   document,
   console,
-  location,
-  history,
   localStorage,
-  navigator:{clipboard:{writeText:async () => {}}},
-  CSS:{escape:s => String(s).replace(/[^a-zA-Z0-9_-]/g, ch => `\\${ch}`)},
-  matchMedia:media,
-  getComputedStyle,
-  setTimeout,
-  clearTimeout,
-  URL,
-  Event:window.Event,
-  CustomEvent:window.CustomEvent,
-  Node:window.Node,
-  Element:window.Element,
-  HTMLElement:window.HTMLElement
+  matchMedia:media
 };
 sandbox.globalThis = sandbox;
 vm.createContext(sandbox);

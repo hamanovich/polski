@@ -495,6 +495,15 @@ function initTrainer(host){
     skip.hidden = false;
   }
 
+  function dropUnknownMissed(){
+    if(!state.missed.length) return;
+    const known = new Set(deck.questions(deck.defaults).map(item => item.key));
+    const kept = state.missed.filter(key => known.has(key));
+    if(kept.length === state.missed.length) return;
+    state.missed = kept;
+    save();
+  }
+
   function refill(){
     pool = deck.questions(state);
     poolKeys = new Set(pool.map(item => item.key));
@@ -601,7 +610,7 @@ function initTrainer(host){
   const start = () => {
     if(started) return;
     started = true;
-    loadTrainerData().then(() => { host.dataset.ready = "true"; refill(); });
+    loadTrainerData().then(() => { host.dataset.ready = "true"; dropUnknownMissed(); refill(); });
   };
   host.addEventListener("pointerdown", start);
   host.addEventListener("focusin", start);
