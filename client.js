@@ -658,7 +658,8 @@ function writeHash(suffix = ""){
 
 const SMOOTH = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 function scrollToHeading(slug){
-  const heading = document.querySelector(`[data-h="${CSS.escape(slug)}"]`);
+  const matches = [...document.querySelectorAll(`[data-h="${CSS.escape(slug)}"]`)];
+  const heading = matches.find(node => node.offsetParent !== null) || matches[0];
   if(!heading) return;
   const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 0;
   const y = window.scrollY + heading.getBoundingClientRect().top - offset - 12;

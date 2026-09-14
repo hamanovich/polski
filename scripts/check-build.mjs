@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import vm from "node:vm";
 import { parseHTML } from "linkedom";
-import { cardManifest } from "./og-card.mjs";
+import { cardManifest, cardName } from "./og-card.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const baseURL = "https://polski.hamanovich.com/";
@@ -31,6 +31,8 @@ const routes = [
   ["s-dim", "diminutives", "Уменьшительные формы в польском языке"],
   ["s-preps", "prepositions", "Предлоги польского языка"],
   ["s-bridge", "language-bridges", "Польский через русский и белорусский"],
+  ["s-games", "gry", "Игры по польской грамматике"],
+  ["s-mil", "gry/milionerzy", "Milionerzy: игра по польской грамматике"],
   ["s-sources", "sources", "О справочнике и источниках"]
 ];
 const TOC_MIN = 5;
@@ -92,11 +94,11 @@ for(const [id, path, heading] of routes){
   assert(!titles.has(document.title), `Duplicate title: ${document.title}`);
   titles.add(document.title);
 
-  const socialCard = `${baseURL}og/${path || "index"}.png`;
+  const socialCard = `${baseURL}og/${cardName(path)}.png`;
   assert.equal(document.querySelector('meta[property="og:image"]')?.getAttribute("content"), socialCard);
   assert.equal(document.querySelector('meta[property="og:image:alt"]')?.getAttribute("content"), heading);
   assert.equal(document.querySelector('meta[name="twitter:card"]')?.getAttribute("content"), "summary_large_image");
-  await access(resolve(root, "og", `${path || "index"}.png`));
+  await access(resolve(root, "og", `${cardName(path)}.png`));
 
   const linkedData = [...document.querySelectorAll('script[type="application/ld+json"]')];
   assert.equal(linkedData.length, 1, `${path || "/"} must carry exactly one JSON-LD block`);
@@ -124,7 +126,7 @@ for(const [id, path, heading] of routes){
   }
 
   assert.equal(document.querySelectorAll("#nav a[data-s]").length, routes.length);
-  assert.equal(document.querySelectorAll("#nav .navgroup").length, 8, "Navigation must keep eight two-level groups");
+  assert.equal(document.querySelectorAll("#nav .navgroup").length, 9, "Navigation must keep nine two-level groups");
   assert.equal(document.querySelectorAll("#nav .navgroup .navpop a[data-s]").length, routes.length - 1);
   assert.equal(document.querySelectorAll("#navmenu a[data-s]").length, routes.length);
   const currentGroups = document.querySelectorAll("#nav .navgroup.is-current");
@@ -172,7 +174,13 @@ for(const [id, path, heading] of routes){
   }
 
   const scripts = [...document.querySelectorAll("script[src]")];
-  assert.equal(scripts.length, 1, "Search index should load lazily, not on every page view");
+  const gameHost = document.querySelector("[data-game]");
+  assert.equal(scripts.length, gameHost ? 2 : 1,
+    "Only the game page loads a second script; the search index stays lazy everywhere");
+  if(gameHost){
+    assert.match(scripts[1].getAttribute("src"), /game\.js\?v=[a-f0-9]{10}$/);
+    assert.match(scripts[1].dataset.gameSrc, /game-data\.js\?v=[a-f0-9]{10}$/);
+  }
   assert.match(scripts[0].getAttribute("src"), /client\.js\?v=[a-f0-9]{10}$/);
   assert.match(scripts[0].dataset.searchSrc, /search-index\.js\?v=[a-f0-9]{10}$/);
   assert(document.querySelector("button.totop"), `${path || "/"} must offer the scroll-to-top control`);
@@ -182,7 +190,7 @@ for(const [id, path, heading] of routes){
 
 const rootPage = documents.get("s-index");
 assert.equal(rootPage.document.title, "Польская грамматика - таблицы, правила и примеры");
-assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 22);
+assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 24);
 const indexGroups = [...rootPage.document.querySelectorAll("#s-index .idx > section")];
 assert.equal(indexGroups.at(-1)?.querySelector("h3")?.textContent.trim(), "О проекте");
 assert.equal(indexGroups.at(-1)?.querySelector(".idx-a")?.dataset.s, "s-sources");
@@ -923,15 +931,109 @@ assert.deepEqual(sitemapDates, manifestKeys.map(key => contentManifest[key].date
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");
 const searchIndex = JSON.parse(searchJSON);
 assert(searchIndex.length > 1500);
-assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 22);
+assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 24);
 assert(searchIndex.some(entry => entry.tab === "s-sources" && entry.text.includes("блог, форум")), "Methodology must be searchable");
 assert(searchIndex.every(entry => /^r-\d+$/.test(entry.id) && entry.text));
 assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementById(entry.id)), "Every search entry must resolve on its topic page");
 
 const excluded = new Set([...jekyllConfig.matchAll(/^\s*-\s*(.+?)\s*$/gm)].map(match => match[1]));
+const gameScriptSource = await readFile(resolve(root, "game.js"), "utf8");
+assert.equal(gameScriptSource.match(/^(?:const|let|var|function|class)\s/gm), null,
+  "game.js shares the global scope with client.js, so it must declare nothing at the top level");
+
+const deckInfo = new Map();
+for(const [id, , heading] of trainerPages){
+  const page = documents.get(id).document;
+  const block = [...page.querySelectorAll(".sec .trainer")]
+    .find(node => node.querySelector(".practice-heading h2")?.textContent.trim() === heading);
+  deckInfo.set(block.dataset.trainer, {
+    page: routes.find(route => route[0] === id)[1],
+    filters: new Map([...block.querySelectorAll("[data-trainer-filter]")].map(bar =>
+      [bar.dataset.trainerFilter, new Set([...bar.querySelectorAll("[data-value]")].map(button => button.dataset.value))]))
+  });
+}
+
+const deckKeys = deck => {
+  if(trainerDecks.sentences[deck]) return new Set(trainerDecks.sentences[deck].map(row => row.id));
+  if(deck === "nouns") return new Set(trainerDecks.nouns.map(row => `${row.l}|${row.c}|${row.n}`));
+  if(deck === "adjectives") return new Set(trainerDecks.adjectives.map(row => `${row.l}|${row.k}|${row.t}|${row.d}`));
+  if(deck === "verbs"){
+    const keys = new Set();
+    for(const verb of trainerDecks.verbs){
+      (verb.pr || []).forEach((_, cell) => keys.add(`${verb.l}|present|${cell}`));
+      verb.pa.forEach((_, cell) => keys.add(`${verb.l}|past|${cell}`));
+      verb.fu.forEach((_, cell) => keys.add(`${verb.l}|future|${cell}`));
+    }
+    return keys;
+  }
+  return null;
+};
+
+const gameSandbox = vm.createContext({globalThis: {}});
+vm.runInContext(await readFile(resolve(root, "game-data.js"), "utf8"), gameSandbox, {filename:"game-data.js"});
+const gameData = gameSandbox.globalThis.GAME_DATA;
+const gameFold = text => text.toLowerCase().replace(/ł/g, "l").normalize("NFD").replace(/\p{M}/gu, "");
+const gameTokens = text => (text.match(/[A-Za-ząćęłńóśźżĄĆĘŁŃÓŚŹŻ]+/g) || []).map(gameFold);
+const usedRules = new Set();
+const gameIds = new Set();
+const gameWarnings = [];
+
+for(const question of gameData.milionerzy){
+  const where = `milionerzy/${question.id}`;
+  assert(question.id && !/^[a-z]+-\d+$/.test(question.id), `${where}: content based id`);
+  assert(!gameIds.has(question.id), `${where}: duplicate id`);
+  gameIds.add(question.id);
+  assert([1, 2, 3].includes(question.tier), `${where}: tier is 1, 2 or 3`);
+  assert(question.level === undefined || [1, 2, 3].includes(question.level),
+    `${where}: level is 1, 2 or 3 when present`);
+  assert(question.topic && question.explanation, `${where}: topic and explanation are filled`);
+  assert.equal(question.options.length, 4, `${where}: exactly four options`);
+  assert.equal(new Set(question.options).size, 4, `${where}: options must differ`);
+  assert(question.options.includes(question.answer), `${where}: the answer is one of the options`);
+  assert((question.prompt.match(/___/g) || []).length <= 1, `${where}: at most one gap`);
+  assert(Array.isArray(question.lemmas) && question.lemmas.length, `${where}: lemmas are listed`);
+
+  const rule = gameData.rules[question.ruleId];
+  assert(rule, `${where}: ruleId ${question.ruleId} is missing from rules`);
+  usedRules.add(question.ruleId);
+  const ruleTokens = new Set(gameTokens(rule.text));
+  assert(!gameTokens(question.answer).every(token => ruleTokens.has(token)),
+    `${where}: the hint must not name the answer`);
+  for(const option of question.options)
+    if(option !== question.answer && gameTokens(option).every(token => ruleTokens.has(token)))
+      gameWarnings.push(`${where}: the hint mentions the wrong option ${option}`);
+
+  const [rulePath, ruleHash] = rule.url.replace(/^\//, "").split("#");
+  const ruleRoute = routes.find(route => route[1] === rulePath.replace(/\/$/, ""));
+  assert(ruleRoute, `${where}: rule url points at a page that does not exist: ${rule.url}`);
+  const ruleAnchor = (ruleHash || "").split("/").find(part => part.startsWith("~"));
+  if(ruleAnchor){
+    const rulePage = documents.get(ruleRoute[0]).document;
+    assert([...rulePage.querySelectorAll("[data-h]")].some(node => node.dataset.h === ruleAnchor.slice(1)),
+      `${where}: rule url anchor ${ruleAnchor} is not a heading of /${rulePath}`);
+  }
+
+  if(question.drill){
+    const info = deckInfo.get(question.drill.deck);
+    assert(info, `${where}: unknown deck ${question.drill.deck}`);
+    for(const [name, chosen] of Object.entries(question.drill.filter || {})){
+      assert(info.filters.has(name), `${where}: deck ${question.drill.deck} has no filter ${name}`);
+      assert(info.filters.get(name).has(chosen), `${where}: filter ${name} has no value ${chosen}`);
+    }
+    if(question.drillKey)
+      assert(deckKeys(question.drill.deck).has(question.drillKey),
+        `${where}: drillKey ${question.drillKey} is not a real key of deck ${question.drill.deck}`);
+  }else{
+    assert(!question.drillKey, `${where}: drillKey without drill`);
+  }
+}
+for(const ruleId of Object.keys(gameData.rules))
+  assert(usedRules.has(ruleId), `rules/${ruleId} is not used by any question`);
+for(const warning of gameWarnings) console.log(`  предупреждение: ${warning}`);
+
 const publicRoot = new Set([
   "404.html", "CNAME", "apple-touch-icon.png", "client.js", "favicon.ico", "favicon.svg",
-  "index.html", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
+  "game-data.js", "game.js", "index.html", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
   "sitemap.xml", "style.css",
   ...routes.map(([, path]) => path).filter(Boolean)
 ]);

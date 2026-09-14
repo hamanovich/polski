@@ -28,9 +28,11 @@ export const card = heading => `<!DOCTYPE html>
   <div class="foot"><span class="rule"></span>справочник польской грамматики на русском</div>
 </body></html>`;
 
+export const cardName = path => (path || "index").replace(/\//g, "-");
+
 export const socialCards = [
-  ...pages.map(page => ({name:page.path || "index", heading:page.h1})),
-  ...extraPages.map(extra => ({name:extra.path, heading:extra.h1}))
+  ...pages.map(page => ({name:cardName(page.path), heading:page.h1})),
+  ...extraPages.map(extra => ({name:cardName(extra.path), heading:extra.h1}))
 ];
 
 export const cardFingerprint = heading => createHash("sha256").update(card(heading)).digest("hex").slice(0, 10);

@@ -2326,6 +2326,110 @@ const idxSubHTML = id => IDX_SUB[id]
   ? `<div class="idx-sub">${IDX_SUB[id].map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}</div>`
   : "";
 
+function zloty(amount){
+  return `${String(amount).replace(/\B(?=(\d{3})+(?!\d))/g, " ")} zl`.replace("zl", "zł");
+}
+
+function ladderHTML(){
+  return `<ol class="game-ladder" data-game-ladder>${LADDER.map((amount, index) => {
+    const step = index + 1;
+    const safe = LADDER_SAFE.includes(step);
+    return `<li class="game-step${safe ? " is-safe" : ""}" data-step="${step}" data-prize="${amount}">
+      <span class="game-step-no">${step}</span><span class="game-step-sum">${zloty(amount)}</span></li>`;
+  }).reverse().join("")}</ol>`;
+}
+
+function renderGames(){
+  $("#s-games").innerHTML = `<div class="panel">
+    <h2>Игры</h2>
+    <p class="lead">Те же правила, что в справочнике, но с азартом. Игра не заменяет разбор темы: она показывает, где правило ещё не стало привычкой, и возвращает к нужному разделу.</p>
+
+    <div class="tip"><b>Как это связано со справочником.</b> Каждый вопрос знает своё правило и свою тренировку. Подсказка открывает формулировку правила, а после партии игра предлагает отработать тему, на которой вы споткнулись, в обычном тренажёре. Ошибки из игры попадают в ту же очередь повторения, что и ошибки тренажёра.</p></div>
+
+    <h3>Что уже можно сыграть</h3>
+    <div class="game-list">
+      <a class="game-card" href="#s-mil" data-s="s-mil">
+        <b>Milionerzy</b>
+        <span>Пятнадцать вопросов с четырьмя вариантами ответа, три подсказки и две несгораемые суммы. От узнавания форм до управления глаголов, которое расходится с русским.</span>
+        <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+
+    <h3>Что в планах</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>игра</th><th>механика</th><th>чему учит</th></tr>
+      <tr><td class="w flow">До последней секунды</td><td class="flow">Общий запас времени, верный ответ добавляет секунды</td><td class="flow">Скорость узнавания: род, вид, орфография</td></tr>
+      <tr><td class="w flow">Языковой детектив</td><td class="flow">В предложении спрятана ошибка, иногда её нет</td><td class="flow">Согласование, падежи, ложные друзья</td></tr>
+      <tr><td class="w flow">Собери фразу</td><td class="flow">Слова даны вперемешку и в начальной форме</td><td class="flow">Порядок слов и согласование в своей речи</td></tr>
+    </table></div>
+    <p class="note">Порядок не обещание: сначала то, для чего в справочнике уже есть проверенный материал.</p>
+  </div>`;
+}
+
+function renderMilionerzy(){
+  $("#s-mil").innerHTML = `<div class="panel game-page">
+    <h2>Milionerzy</h2>
+    <p class="lead game-description">15 вопросов по польской грамматике. Три подсказки. Путь к миллиону злотых.</p>
+
+    <div class="game" data-game="milionerzy">
+      <div class="game-body">
+      <div class="game-stage" data-game-stage hidden>
+        <div class="game-intro" data-game-intro>
+          <p class="game-record" data-game-record></p>
+          <button type="button" class="exercise-button" data-game-start>Начать партию</button>
+        </div>
+        <div class="game-round" data-game-round tabindex="-1" hidden>
+          <div class="game-stakes" data-game-stakes hidden><div><span>Вопрос на</span><strong data-game-value></strong></div><div><span>Накоплено</span><output data-game-prize aria-live="polite"></output></div><div><span data-game-risk-label>При ошибке</span><strong data-game-risk></strong></div></div>
+          <p class="game-meta"><span data-game-step></span><span data-game-topic></span></p>
+          <p class="game-context" data-game-context hidden></p>
+          <p class="game-prompt" lang="pl" data-game-prompt></p>
+          <div class="game-options" role="group" aria-label="Варианты ответа" data-game-options></div>
+          <p class="game-rule" data-game-rule hidden></p>
+          <p class="game-feedback" aria-live="polite" data-game-feedback tabindex="-1"></p>
+          <details class="game-explanation" data-game-explanation hidden><summary>Почему так?</summary><p data-game-explanation-text></p></details>
+          <div class="game-buttons">
+            <button type="button" class="exercise-button" data-game-lock disabled>Это окончательный ответ</button>
+            <button type="button" class="exercise-button" data-game-next hidden>Следующий вопрос</button>
+            <button type="button" class="exercise-link" data-game-quit hidden>Забрать деньги</button>
+          </div>
+          <div class="game-help">
+          <p class="game-help-label">Подсказки <span>Каждая один раз за партию</span></p>
+          <div class="game-hints" role="group" aria-label="Подсказки" data-game-hints>
+            <button type="button" class="chip" data-game-hint="fifty"><span>50 на 50</span><small data-hint-status></small></button>
+            <button type="button" class="chip" data-game-hint="rule"><span>Правило</span><small data-hint-status></small></button>
+            <button type="button" class="chip" data-game-hint="swap"><span>Замена</span><small data-hint-status></small></button>
+          </div>
+          </div>
+        </div>
+        <button type="button" class="game-reset" data-game-reset hidden>Начать заново</button>
+        <div class="game-over" data-game-over tabindex="-1" hidden></div>
+      </div>
+      <details class="game-ladder-wrap" data-game-ladder-wrap open><summary>Лестница выигрыша</summary>${ladderHTML()}</details>
+      </div>
+      <noscript><p class="note">Игра работает только со скриптами. Все правила, которые она спрашивает, разобраны в справочнике, а тренироваться можно в тренажёрах на страницах разделов.</p></noscript>
+    </div>
+
+    <h3>Правила</h3>
+    <ol class="pit gap">
+      <li><b>Пятнадцать вопросов подряд.</b> Ошибка заканчивает партию.</li>
+      <li><b>Две несгораемые суммы</b> - после пятого и десятого вопроса. Сумма закрепляется только после верного ответа на них; ошибка дальше оставляет закреплённое.</li>
+      <li><b>Ответ в два шага.</b> Сначала выбираете вариант, потом подтверждаете. Это защищает от случайного нажатия на пятнадцатом вопросе.</li>
+      <li><b>Забрать деньги</b> можно, пока ответ не подтверждён: вы уносите сумму предыдущего вопроса.</li>
+    </ol>
+
+    <h3>Подсказки</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>подсказка</th><th>что делает</th><th>когда полезна</th></tr>
+      <tr><td class="w flow">50 на 50</td><td class="flow">Убирает два неверных варианта</td><td class="flow">Когда сомневаетесь между двумя формами</td></tr>
+      <tr><td class="w flow">Правило</td><td class="flow">Открывает формулировку правила и ссылку на раздел</td><td class="flow">Когда правило знакомо, но не вспоминается</td></tr>
+      <tr><td class="w flow">Замена вопроса</td><td class="flow">Даёт другой вопрос той же трудности</td><td class="flow">Когда тема вообще не разбиралась</td></tr>
+    </table></div>
+    <p class="note">Каждая подсказка тратится один раз за партию, а не на каждом вопросе. На одном вопросе можно потратить несколько. Подсказка «Правило» никогда не называет ответ: она даёт правило, из которого ответ выводится.</p>
+
+    <div class="tip"><b>После партии.</b> Игра показывает, что стоит повторить: тему вопроса, на котором партия закончилась, и отдельно темы, где понадобилась подсказка. Оттуда можно перейти в тренажёр нужного раздела, а сам вопрос попадёт в очередь повторения.</div>
+  </div>`;
+}
+
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
@@ -2365,6 +2469,7 @@ applyTheme(readTheme());
 
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
+renderGames(); renderMilionerzy();
 renderSources();
 renderNumTog();
 renderIndex();

@@ -5,6 +5,7 @@ import { createHash } from "node:crypto";
 import vm from "node:vm";
 import { parseHTML } from "linkedom";
 import { pages, extraPages } from "./pages.mjs";
+import { cardName } from "./og-card.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const baseURL = "https://polski.hamanovich.com/";
@@ -151,21 +152,25 @@ const trainerSource = `globalThis.TRAINER_DATA=${JSON.stringify({
 })};\n`;
 await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");
 
+const gameSource = await readFile(resolve(root, "game.js"), "utf8");
+const gameDataSource = await readFile(resolve(root, "game-data.js"), "utf8");
 const assetHashes = {
   style:fingerprint(styleSource),
   client:fingerprint(clientSource),
   search:fingerprint(searchSource),
-  trainer:fingerprint(trainerSource)
+  trainer:fingerprint(trainerSource),
+  game:fingerprint(gameSource),
+  gameData:fingerprint(gameDataSource)
 };
 const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
 
 const TOC_MIN = 5;
+const upTo = page => page.path ? "../".repeat(page.path.split("/").length) : "";
 const pageHref = (from, targetId) => {
   const target = pageById.get(targetId) || pages[0];
-  if(!from.path) return target.path ? `${target.path}/` : "./";
-  if(!target.path) return "../";
-  return target.id === from.id ? "./" : `../${target.path}/`;
+  if(target.id === from.id) return "./";
+  return `${upTo(from)}${target.path ? `${target.path}/` : ""}` || "./";
 };
 const modernHash = legacyHash => {
   const parts = decodeURIComponent(legacyHash.replace(/^#/, "")).split("/");
@@ -241,7 +246,7 @@ for(const page of pages){
   const canonical = new URL(page.path ? `${page.path}/` : "", baseURL).href;
   pageDocument.querySelector('link[rel="canonical"]').setAttribute("href", canonical);
   pageDocument.querySelector('meta[property="og:url"]').setAttribute("content", canonical);
-  const socialCard = new URL(`og/${page.path || "index"}.png`, baseURL).href;
+  const socialCard = new URL(`og/${cardName(page.path)}.png`, baseURL).href;
   pageDocument.querySelector('meta[property="og:image"]').setAttribute("content", socialCard);
   pageDocument.querySelector('meta[property="og:image:alt"]').setAttribute("content", page.h1);
 
@@ -359,7 +364,7 @@ for(const page of pages){
     link.setAttribute("href", pageHref(page, targetId) + modernHash(legacy));
   }
 
-  const prefix = page.path ? "../" : "";
+  const prefix = upTo(page);
   pageDocument.querySelector('link[rel="stylesheet"]').setAttribute("href", `${prefix}style.css?v=${assetHashes.style}`);
   for(const icon of pageDocument.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]')){
     const href = icon.getAttribute("href");
@@ -375,6 +380,13 @@ for(const page of pages){
   clientScript.dataset.searchSrc = `${prefix}search-index.js?v=${assetHashes.search}`;
   clientScript.dataset.trainerSrc = `${prefix}trainer-data.js?v=${assetHashes.trainer}`;
   pageDocument.body.append(clientScript);
+
+  if(pageDocument.querySelector("[data-game]")){
+    const gameScript = pageDocument.createElement("script");
+    gameScript.src = `${prefix}game.js?v=${assetHashes.game}`;
+    gameScript.dataset.gameSrc = `${prefix}game-data.js?v=${assetHashes.gameData}`;
+    pageDocument.body.append(gameScript);
+  }
 
   const draft = `<!DOCTYPE html>\n${pageDocument.documentElement.outerHTML}\n`.replace(/[ \t]+$/gm, "");
   const date = stampDate(page.path || "index", canonical, contentSignature(draft));
