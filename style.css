@@ -143,6 +143,9 @@ header{border-bottom:1px solid var(--line);background:var(--paper);position:stic
 }
 .js #navwrap.compact #nav{display:none}
 .js #navwrap.compact #navall{display:inline-flex}
+.js.nav-compact #sbox{min-width:0;flex:1 1 100%}
+.js.nav-compact #navwrap{padding-bottom:8px}
+.js.nav-compact #navwrap #navall{width:100%;justify-content:flex-start}
 #navwrap.measuring #nav{
   display:flex !important;position:absolute;left:0;top:0;
   width:auto;visibility:hidden;pointer-events:none;
@@ -484,8 +487,7 @@ table.gap,ol.gap{margin-top:14px}
   }
   #navmenu section{margin:0}
   #navmenu h4{padding:14px 0 2px}
-  #navmenu a{padding:11px 0;border-bottom:1px solid var(--line)}
-  #navmenu section:last-child a:last-child{border-bottom:0}
+  #navmenu a{padding:11px 0}
   #navmenu a[aria-current="page"]::before{content:"";display:inline-block;width:3px;height:12px;
     background:var(--ui);margin-right:7px;vertical-align:-1px}
   .pager a{flex:1 1 100%}
@@ -968,7 +970,7 @@ html:not(.js) .totop{display:none}
 
 @media (max-width:620px){
 
-  .page-title,.sec h2,.sec h3{hyphens:auto;overflow-wrap:break-word}
+  .page-title,.sec h2,.sec h3{hyphens:auto;hyphenate-limit-chars:6 3 3;overflow-wrap:break-word}
   #s-index .page-title,body.plan-page .page-title{hyphens:manual}
 
   table:not(:has(tr > :nth-child(4))){width:100%;min-width:0}
@@ -978,15 +980,16 @@ html:not(.js) .totop{display:none}
   table:has(tr > :nth-child(3)):not(:has(tr > :nth-child(4))) :is(th,td):first-child{width:38%;min-width:0;max-width:none}
 
   table:not(:has(tr > :nth-child(4))) :is(td,th):not(:first-child):not(.f){
-    white-space:normal;hyphens:auto;
+    white-space:normal;hyphens:auto;hyphenate-limit-chars:6 3 3;
   }
 
   table:not(:has(tr > :nth-child(4))) :is(td,th):first-child:not(.f):not(.cq){
-    white-space:normal;overflow-wrap:break-word;hyphens:auto;
+    white-space:normal;overflow-wrap:break-word;hyphens:auto;hyphenate-limit-chars:6 3 3;
   }
 
   table:not(:has(tr > :nth-child(4))) th:not(:first-child){overflow-wrap:anywhere}
   table:not(:has(tr > :nth-child(4))) td:not(:first-child):not(.f){overflow-wrap:break-word}
+  td.c,td.cq{font-size:var(--fs-micro);hyphens:none}
 
   table.vt:has(tr > :nth-child(4)) tr:nth-child(even) td{background:var(--hover)}
   table.vt:has(tr > :nth-child(4)) th:not(:first-child),
@@ -1019,7 +1022,7 @@ html:not(.js) .totop{display:none}
   #navmenu a[data-s]{font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,currentColor 45%,transparent);text-underline-offset:4px}
   #navwrap #navmenu .nav-study a{color:var(--muted)}
   #navwrap #navmenu .nav-study a:hover{color:var(--ink)}
-  #navmenu a:has(+ .nav-study){border-bottom:0;padding-bottom:2px}
+  #navmenu a:has(+ .nav-study){padding-bottom:2px}
   #navwrap .nav-study{gap:0 18px;padding:0 0 8px}
   #navwrap .nav-study a{min-height:44px;font-size:14px}
 }

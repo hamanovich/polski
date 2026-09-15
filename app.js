@@ -916,6 +916,14 @@ function renderVerbPractice(){
   $("#verbPractice").innerHTML = verbPracticeHTML(practice, true);
   $("#verbTest").innerHTML = verbTestHTML();
 }
+function pform(f){
+  const refl = / się$/.test(f);
+  const w = refl ? f.slice(0, -4) : f;
+  const end = w.endsWith("ła") ? "ła" : "ł";
+  const body = `<span class="stem">${w.slice(0, w.length - end.length)}</span><span class="fin">${end}</span>`;
+  return body + (refl ? `<span class="from"> się</span>` : "");
+}
+
 function listHTML(q){
   const f = norm(q || "");
   const rows = VERBS.filter(v => !f || v.slice(0,2).concat(v.slice(3)).some(x => norm(x).includes(f)));
@@ -928,7 +936,7 @@ function listHTML(q){
       <td class="f">${vform(v[3], v[2], 0)}</td>
       <td class="f">${vform(v[4], v[2], 1)}</td>
       <td class="f">${vform(v[5], v[2], 5)}</td>
-      <td class="w">${v[6]}</td><td class="w">${v[7]}</td>
+      <td class="f">${pform(v[6])}</td><td class="f">${pform(v[7])}</td>
       <td class="${v[8]==="сов."||v[8]==="-"?"dim sm":"g flow"}">${v[8]}${ASPEKT_UWAGI[v[0]]?`<span class="sub">${ASPEKT_UWAGI[v[0]]}</span>`:""}</td>
     </tr>`).join("")}
   </table>${rows.length ? "" : `<p class="lead" style="padding:12px 0">Ничего не нашлось.</p>`}`;

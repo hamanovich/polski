@@ -18,7 +18,7 @@ Polski: końcówki
 Живая речь
 ЛюдиВежливое «вы» - третье лицо; имена, фамилии, национальностиУменьшительныеРазмер, эмоциональная оценка, близость и иронияМостыФонетические соответствия, белорусский мост, ложные друзья
 Игры
-ИгрыЧто уже можно сыграть и как игры связаны со справочникомMilionerzyПятнадцать вопросов, три подсказки, две несгораемые суммы
+Все игрыЧто уже можно сыграть и как игры связаны со справочникомMilionerzyПятнадцать вопросов, три подсказки, две несгораемые суммы
 О проекте
 ИсточникиКак проверяется материал и какие источники имеют приоритет
 Все разделы
@@ -38,7 +38,7 @@ Polski: końcówki
 Живая речь
 ЛюдиУменьшительныеМосты
 Игры
-ИгрыMilionerzy
+Все игрыMilionerzy
 О проекте
 Источники
 Справочник
@@ -72,7 +72,7 @@ Polski: końcówki
 УменьшительныеРазмер, эмоциональная оценка, близость и ирония
 МостыФонетические соответствия, белорусский мост, ложные друзья
 Игры
-ИгрыЧто уже можно сыграть и как игры связаны со справочником
+Все игрыЧто уже можно сыграть и как игры связаны со справочником
 MilionerzyПятнадцать вопросов, три подсказки, две несгораемые суммы
 О проекте
 ИсточникиКак проверяется материал и какие источники имеют приоритет
@@ -737,7 +737,7 @@ MianownikwszyscywszystkiewszystkoDopełniaczwszystkichwszystkichwszystkiegoCelow
 wszyscy или wszystkie. О людях, где есть хоть один мужчина, - wszyscy: Wszyscy przyszli. О вещах, животных, женщинах и детях - wszystkie: Wszystkie bilety są sprzedane. Тот же тест ci / te, что и у существительных.
 Готовые обороты со wszystko
 оборотпереводчто за форма
-Wszystkiego najlepszego!Всего наилучшего!Dopełniacz - стандартное поздравлениеPrzede wszystkimпрежде всегоprzed + Narzędnik, с беглым ePo wszystkim.Всё кончено.MiejscownikZe wszystkich stronсо всех сторонDopełniacz мн. ч.Dziękuję wszystkim.Спасибо всем.CelownikWszyscy przyszli.Все пришли.мужско-личное - о людяхWszystkie bilety sprzedane.Все билеты проданы.не-мужско-личное - о вещахTo wszystko.Это всё.в магазине - «больше ничего»
+Wszystkiego najlepszego!Всего наилучшего!Dopełniacz - стандартное поздравлениеPrzede wszystkimпрежде всегоprzed + Narzędnik, с беглым ePo wszystkim.Всё кончено.MiejscownikZe wszystkich stronсо всех сторонDopełniacz мн. ч.Dziękuję wszystkim.Спасибо всем.CelownikWszyscy przyszli.Все пришли.мужско-личное - о людяхWszystkie bilety są sprzedane.Все билеты проданы.не-мужско-личное - о вещахTo wszystko.Это всё.в магазине - «больше ничего»
 każdy, inny, żaden, oba / oboje
 словозначениекак ведёт себя
 każdy / każda / każdeкаждыйобычно употребляется в единственном числе: Każdy z nas. · Każdego dnia. Ограниченные формы множественного встречаются, например, в każde drzwi. Для всей группы: wszyscy / wszystkie.inny / inna / inneдругойDaj mi inny. · innym razem - в другой разżaden / żadna / żadneникакойс отрицательным сказуемым сохраняется nie: Żaden nie przyszedł. · Nie mam żadnego problemu. · Pod żadnym pozorem nie otwieraj. В bez żadnego problemu отрицание уже выражено через bez.obaj · oba · obieоба, обеobaj / obydwaj panowie · oba domy · obie książki. Косвенные: obu; Narzędnik oboma, для женского также obiema.obojeоба, обе в смешанной паре и с особыми существительнымиoboje rodzice · oboje dzieci · oboje drzwi. Косвенные: obojga, obojgu, obojgiem.

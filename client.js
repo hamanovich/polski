@@ -1044,6 +1044,7 @@ function fitNav(){
   const wrap = $("#navwrap");
   if(!navRowWidth) measureNavRow();
   const compact = navRowWidth > wrap.clientWidth - 4;
+  document.documentElement.classList.toggle("nav-compact", compact);
   if(compact !== wrap.classList.contains("compact")){
     wrap.classList.toggle("compact", compact);
     closeNav();
