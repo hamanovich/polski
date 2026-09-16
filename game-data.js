@@ -1,5 +1,125 @@
 globalThis.GAME_DATA = {
   rules: {
+    "rekcja-do-na": {
+      text: "Там, где русский ставит «на», польский часто требует do с родительным падежом: так управляют podobny, zdolny, prawo.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-z-dop": {
+      text: "Śmiać się и żartować управляют предлогом z с родительным падежом, а не калькой русского «над».",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-powod-do": {
+      text: "Powód и okazja управляют предлогом do с родительным падежом, а не калькой русского «для».",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-ochota-na": {
+      text: "Ochota на предмет требует предлога na с винительным падежом. О занятии бывает и ochota do: ochota do pracy.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-zainteresowany": {
+      text: "Zainteresowany требует творительного падежа без предлога, в отличие от русского «заинтересован в».",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-pewien": {
+      text: "Pewien и pewny требуют родительного падежа без предлога.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-ozenic": {
+      text: "Ożenić się управляет предлогом z с творительным падежом. Русское «жениться на ком» в польский не переносится.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-dziekowac": {
+      text: "Dziękować требует дательного падежа лица, а не винительного, как русское «благодарить кого».",
+      url: "/verbs/#rekcja"
+    },
+    "num-mos-pieciu": {
+      text: "С мужско-личными существительными числительные от пяти принимают форму на -u, а существительное стоит в родительном множественного.",
+      url: "/numerals/#~мужско-личные-формы"
+    },
+    "rekcja-dumny": {
+      text: "Dumny управляет предлогом z с родительным падежом, а не творительным, как русское «гордиться кем».",
+      url: "/verbs/#rekcja"
+    },
+    "reflexive-case": {
+      text: "Возвратное местоимение siebie склоняется по падежам, и форму задаёт предлог или глагол, а не русский перевод.",
+      url: "/pronouns/#~возвратное-siebie"
+    },
+    "past-nonpersonal-pl": {
+      text: "Форма прошедшего времени на -li только для групп, где есть мужчины. Дети, животные и предметы получают форму на -ły.",
+      url: "/verbs/#czasy/~прошедшее-время"
+    },
+    "prep-do-budynek": {
+      text: "Направление в здание или учреждение передаётся предлогом do с родительным падежом: do sklepu, do szkoły.",
+      url: "/prepositions/#~куда-где-откуда"
+    },
+    "porownanie-od": {
+      text: "«Чем» при сравнении - od с родительным падежом или niż с тем падежом, который был бы в полной фразе. Голый родительный, как в русском «старше меня», не используется.",
+      url: "/adjectives/#~конструкции-сравнения"
+    },
+    "godzina-porzadkowa": {
+      text: "Час называют порядковым числительным женского рода, а «во сколько» - предлогом o с предложным падежом.",
+      url: "/numerals/#~которыи-час"
+    },
+    "mos-zaimki": {
+      text: "Во множественном числе местоимения и прилагательные различают мужско-личную форму и все остальные: для групп с мужчинами своя форма.",
+      url: "/adjectives/#~мужско-личное-множественное-чередование"
+    },
+    "czas-za": {
+      text: "«Через» о времени в будущем - za с винительным падежом. Przez с тем же словом значит «в течение».",
+      url: "/prepositions/#~четыре-отношения-во-времени"
+    },
+    "past-person-ending": {
+      text: "В прошедшем времени лицо выражено окончанием самого глагола, местоимение для этого не нужно.",
+      url: "/verbs/#czasy/~прошедшее-время"
+    },
+    "prep-rozszerzone": {
+      text: "Перед некоторыми сочетаниями согласных и формами местоимения ja предлог получает гласную e: w → we, z → ze.",
+      url: "/prepositions/#~краткие-и-расширенные-формы"
+    },
+    "ile-dop": {
+      text: "После ile в именительном и винительном падеже существительное стоит в родительном множественного, а глагол прошедшего времени - в среднем роде.",
+      url: "/numerals/#~возраст-деньги-счет"
+    },
+    "ff-nagly": {
+      text: "Похожее польское nagły значит «внезапный».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-czaszka": {
+      text: "Похожее польское czaszka значит «череп».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "rod-rozni-sie": {
+      text: "Род польского существительного не всегда совпадает с русским. Прилагательное и указательное слово согласуются с польским родом, а не с родом русского перевода.",
+      url: "/gender/#~род-расходится-с-русским"
+    },
+    "ff-recepta": {
+      text: "Похожее польское przepis значит «правило» или «рецепт блюда». Документ от врача называется иначе.",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-zapomniec": {
+      text: "Похожее польское zapomnieć значит «забыть», то есть ровно противоположное русскому «запомнить».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "prep-do-miasto": {
+      text: "Направление в город или страну передаётся предлогом do с родительным падежом, а не калькой русского «в» с винительным.",
+      url: "/prepositions/#~куда-где-откуда"
+    },
+    "prep-w-pracy": {
+      text: "Предлоги места не всегда совпадают с русскими: о работе как месте польский говорит с предлогом w, а не na.",
+      url: "/cases/#miej/sg/~подводные-камни"
+    },
+    "pan-3-osoba": {
+      text: "При вежливом обращении pan и pani глагол стоит в третьем лице единственного числа, а не во втором множественном, как русское «вы».",
+      url: "/people/#~pan-pani-panstwo"
+    },
+    "byc-narz-rola": {
+      text: "Профессия, роль или характеристика после być стоит в творительном падеже.",
+      url: "/cases/#narz/sg/~когда-нужен"
+    },
+    "po-polsku": {
+      text: "«Говорить на каком-то языке» по-польски передаётся наречием: po и основа названия языка с окончанием -u.",
+      url: "/people/#~язык-четыре-разные-конструкции"
+    },
     "past-feminine-sg": {
       text: "В третьем лице прошедшего времени окончание согласуется с родом подлежащего: для женщины нужна форма женского рода.",
       url: "/verbs/#czasy/~прошедшее-время"
@@ -205,7 +325,7 @@ globalThis.GAME_DATA = {
       url: "/verbs/#rekcja"
     },
     "numeral-collective": {
-      text: "При детях, смешанных группах людей и словах без единственного числа образцовая норма требует собирательного числительного.",
+      text: "При детях, смешанных группах людей и некоторых словах без единственного числа образцовая норма требует собирательного числительного.",
       url: "/numerals/#~собирательные"
     },
     "numeral-masculine-personal": {
@@ -1625,6 +1745,646 @@ globalThis.GAME_DATA = {
       ruleId: "byc-my-present", lemmas: ["być"],
       drill: {deck: "verbs", filter: {tense: "present"}},
       drillKey: "być|present|3"
+    }
+  ],
+  detektyw: [
+    {
+      id: "det-nasze-liceum", tier: 1, topic: "Род существительных",
+      text: "{Nasze|Nasz} liceum ma sto lat.",
+      options: ["Nasze", "Nasza", "Naszego"],
+      explanation: "Заимствования на -um среднего рода, хотя русское «лицей» мужского: nasze liceum.",
+      ruleId: "rod-um", lemmas: ["liceum", "nasz"],
+      src: "ROD_ZNAK, ROD_DIFF (muzeum)"
+    },
+    {
+      id: "det-duzy-problem", tier: 1, topic: "Род существительных",
+      text: "To jest {duży|duża} problem.",
+      options: ["duży", "duże", "dużym"],
+      explanation: "Problem мужского рода, хотя «проблема» женского: duży problem.",
+      ruleId: "rod-rozni-sie", lemmas: ["problem", "duży"],
+      src: "ROD_DIFF: problem - м."
+    },
+    {
+      id: "det-dobra-metoda", tier: 1, topic: "Род существительных",
+      text: "To bardzo {dobra|dobry} metoda nauki.",
+      options: ["dobra", "dobre", "dobrą"],
+      explanation: "Metoda женского рода, хотя «метод» мужского: dobra metoda.",
+      ruleId: "rod-rozni-sie", lemmas: ["metoda", "dobry"],
+      drill: {deck: "adjectives", filter: {kind: "gender", gender: "f"}},
+      drillKey: "dobry|gender|род|женский",
+      src: "ROD_DIFF: metoda - ж."
+    },
+    {
+      id: "det-recepta-na-antybiotyk", tier: 1, topic: "Ложные друзья",
+      text: "Lekarz wypisał mi {receptę|przepis} na antybiotyk.",
+      options: ["receptę", "zaświadczenie", "receptą"],
+      explanation: "Документ от врача - recepta. Przepis значит «правило» или «рецепт блюда».",
+      ruleId: "ff-recepta", lemmas: ["recepta", "przepis", "wypisać"],
+      drill: {deck: "falsefriends", filter: {topic: "home"}}, drillKey: "false-przepis",
+      src: "FALSE: przepis; WSJP recepta: wypisać receptę, recepta na antybiotyk"
+    },
+    {
+      id: "det-nie-zapamietam", tier: 1, topic: "Ложные друзья",
+      text: "Powtórz, proszę, jeszcze raz, bo tego nie {zapamiętam|zapomnę}.",
+      options: ["zapamiętam", "zapamiętany", "zapamiętanie"],
+      explanation: "Запомнить - zapamiętać. Zapomnieć значит «забыть», и фраза «повтори, а то не забуду» теряет смысл.",
+      ruleId: "ff-zapomniec", lemmas: ["zapamiętać", "zapomnieć"],
+      drill: {deck: "falsefriends", filter: {topic: "action"}}, drillKey: "false-zapominac-zapomniec",
+      src: "FALSE: zapominać / zapomnieć; при отрицании оба глагола берут Dopełniacz tego"
+    },
+    {
+      id: "det-zlozylismy-zamowienie", tier: 1, topic: "Ложные друзья",
+      text: "Złożyliśmy {zamówienie|zakaz} przez internet.",
+      options: ["zamówienie", "zamówieniem", "rozkaz"],
+      explanation: "Заказ - zamówienie. Zakaz значит «запрет».",
+      ruleId: "ff-zakaz", lemmas: ["zamówienie", "zakaz", "złożyć"],
+      drill: {deck: "falsefriends", filter: {topic: "work"}}, drillKey: "false-zakaz",
+      src: "FALSE: zakaz"
+    },
+    {
+      id: "det-za-godzine", tier: 1, topic: "Ложные друзья",
+      text: "Pociąg odjeżdża za {godzinę|czas}.",
+      options: ["godzinę", "godziną", "godziny"],
+      explanation: "Час - godzina, после za в значении «через» винительный: za godzinę. Czas значит «время».",
+      ruleId: "ff-czas", lemmas: ["godzina", "czas"],
+      drill: {deck: "falsefriends", filter: {topic: "time"}}, drillKey: "false-czas",
+      src: "FALSE: czas"
+    },
+    {
+      id: "det-do-apteki", tier: 1, topic: "Предлоги",
+      text: "Idę do {apteki|aptekę} po leki.",
+      options: ["apteki", "aptece", "apteka"],
+      explanation: "Do требует родительного падежа, а не винительного, как русское «в аптеку»: do apteki.",
+      ruleId: "prep-do-dop", lemmas: ["apteka", "do"],
+      drill: {deck: "prepositions", filter: {topic: "government"}}, drillKey: "prep-government-extra-4",
+      src: "PREPS: do + Dopełniacz"
+    },
+    {
+      id: "det-obok-parku", tier: 1, topic: "Предлоги",
+      text: "Mieszkam {obok parku|obok parkiem}.",
+      options: ["obok parku", "obok parkowi", "obok park"],
+      explanation: "Obok требует родительного падежа. Творительный подсказывает русское «рядом с парком»: obok parku.",
+      ruleId: "prep-obok-dop", lemmas: ["park", "obok"],
+      drill: {deck: "prepositions", filter: {topic: "government"}}, drillKey: "prep-government-extra-2",
+      src: "PREPS: obok + Dopełniacz"
+    },
+    {
+      id: "det-do-warszawy", tier: 1, topic: "Предлоги",
+      text: "W przyszłym tygodniu jadę {do Warszawy|w Warszawę}.",
+      options: ["do Warszawy", "do Warszawie", "w Warszawie"],
+      explanation: "Куда: do + родительный. Русское «в Варшаву» с винительным в польский не переносится: jadę do Warszawy.",
+      ruleId: "prep-do-miasto", lemmas: ["Warszawa", "jechać"],
+      drill: {deck: "prepositions", filter: {topic: "space"}}, drillKey: "prep-space-extra-10",
+      src: "PREPS: do + Dopełniacz, куда"
+    },
+    {
+      id: "det-w-pracy", tier: 1, topic: "Предлоги",
+      text: "Jestem jeszcze {w pracy|na pracy}.",
+      options: ["w pracy", "do pracy", "z pracy"],
+      explanation: "Русское «на работе» по-польски w pracy.",
+      ruleId: "prep-w-pracy", lemmas: ["praca"],
+      drill: {deck: "nouns", filter: {case: "miej", number: "sg"}}, drillKey: "praca|miej|sg",
+      src: "cases, Miejscownik, подводные камни: w pracy (не «на»); PREPS: w + Miejscownik, w pracy"
+    },
+    {
+      id: "det-nie-mam-samochodu", tier: 1, topic: "Отрицание",
+      text: "Nie mam {samochodu|samochód}.",
+      options: ["samochodu", "samochodem", "samochodzie"],
+      explanation: "При отрицании прямое дополнение из винительного переходит в родительный: mam samochód, nie mam samochodu.",
+      ruleId: "neg-dopelniacz", lemmas: ["samochód", "mieć"],
+      drill: {deck: "negation", filter: {topic: "case"}}, drillKey: "neg-1",
+      src: "NEG_OBJECT; VOCAB_NOUNS: samochód, samochodu"
+    },
+    {
+      id: "det-nie-lubie-kawy", tier: 1, topic: "Отрицание",
+      text: "Nie lubię {kawy|kawę} bez mleka.",
+      options: ["kawy", "kawą", "kawie"],
+      explanation: "Lubić требует винительного, при отрицании он переходит в родительный: lubię kawę, nie lubię kawy.",
+      ruleId: "neg-dopelniacz", lemmas: ["kawa", "lubić"],
+      drill: {deck: "nouns", filter: {case: "dop", number: "sg"}}, drillKey: "kawa|dop|sg",
+      src: "NEG_OBJECT"
+    },
+    {
+      id: "det-ty-jestes", tier: 1, topic: "Спряжение",
+      text: "Czy {ty jesteś|ty jest} gotowy?",
+      options: ["ty jesteś", "ty jestem", "ty jesteście"],
+      explanation: "У być своя форма для каждого лица. Jest - только третье лицо, для ty нужна форма jesteś.",
+      ruleId: "byc-my-present", lemmas: ["być"],
+      drill: {deck: "verbs", filter: {tense: "present"}}, drillKey: "być|present|1",
+      src: "TRAIN_BYC_PRES"
+    },
+    {
+      id: "det-pani-moze", tier: 1, topic: "Вежливая форма",
+      text: "Pani Anno, czy {może mi pani|możecie mi pani} pomóc?",
+      options: ["może mi pani", "możesz mi pani", "mogą mi pani"],
+      explanation: "Pani требует третьего лица единственного: czy może mi pani pomóc. Второе множественное подсказывает русское «вы можете».",
+      ruleId: "pan-3-osoba", lemmas: ["pani", "móc"],
+      drill: {deck: "verbs", filter: {tense: "present"}}, drillKey: "móc|present|2",
+      src: "PAN_USE: глагол в 3-м лице единственного; people: глагол в третьем лице, а не во втором множественном"
+    },
+    {
+      id: "det-bylam-zmeczona", tier: 1, topic: "Прошедшее время",
+      text: "Wczoraj {byłam|była} bardzo zmęczona, więc wcześnie poszłam spać.",
+      context: "говорит женщина о себе",
+      options: ["byłam", "byłem", "byłyśmy"],
+      explanation: "О себе в прошедшем времени нужна форма первого лица: byłam. Była - «она была», так подсказывает русское «я была», где лицо выражено только местоимением.",
+      ruleId: "przeszly-rodzaj", lemmas: ["być", "iść"],
+      drill: {deck: "verbs", filter: {tense: "past"}}, drillKey: "być|past|1",
+      src: "PAST"
+    },
+    {
+      id: "det-kolezanki-byly", tier: 1, topic: "Прошедшее время",
+      text: "Moje koleżanki {były|byli} wczoraj w kinie.",
+      options: ["były", "była", "byłyśmy"],
+      explanation: "Форма на -li только для групп с мужчиной. Koleżanki - одни женщины: były.",
+      ruleId: "past-nonmasculine-pl", lemmas: ["koleżanka", "być"],
+      drill: {deck: "verbs", filter: {tense: "past"}}, drillKey: "być|past|12",
+      src: "PAST; ROD_M"
+    },
+    {
+      id: "det-ci-dwaj-studenci", tier: 1, topic: "Мужско-личные формы",
+      text: "{Ci|Te} dwaj studenci są z Ukrainy.",
+      options: ["Ci", "Ten", "Tych"],
+      explanation: "Студенты-мужчины - мужско-личная группа, для неё указательное ci, а te для всех остальных: ci studenci, te książki.",
+      ruleId: "wskaz-rod", lemmas: ["student", "ten"],
+      drill: {deck: "pronouns", filter: {topic: "other"}}, drillKey: "pron-9",
+      src: "ROD_TEST: ci studenci; MOSNUM: dwaj"
+    },
+    {
+      id: "det-dwa-bilety", tier: 1, topic: "Числительные",
+      text: "Kupiłem dwa {bilety|biletu} do kina.",
+      options: ["bilety", "biletów", "biletami"],
+      explanation: "После dwa, trzy, cztery существительное стоит во множественном числе, здесь в винительном, который у bilet совпадает с именительным: dwa bilety. Родительный единственного подсказывает русское «два билета».",
+      ruleId: "num-2-4", lemmas: ["bilet", "dwa"],
+      drill: {deck: "nouns", filter: {case: "mian", number: "pl"}}, drillKey: "bilet|mian|pl",
+      src: "NUM; VOCAB_NOUNS: bilet, bilety"
+    },
+    {
+      id: "det-brat-jest-lekarzem", tier: 1, topic: "Творительный падеж",
+      text: "Mój brat {jest lekarzem|jest lekarz}.",
+      options: ["jest lekarzem", "jest lekarza", "jest lekarzowi"],
+      explanation: "Профессия после być стоит в творительном: jest lekarzem. Именительный возможен только с to: Mój brat to lekarz.",
+      ruleId: "byc-narz-rola", lemmas: ["lekarz", "być"],
+      drill: {deck: "nouns", filter: {case: "narz", number: "sg"}}, drillKey: "lekarz|narz|sg",
+      src: "NIEMA_JEST: On nie jest lekarzem - как и в утверждении, jest + Narzędnik"
+    },
+    {
+      id: "det-jezdze-autobusem", tier: 1, topic: "Творительный падеж",
+      text: "Codziennie jeżdżę do pracy {autobusem|na autobusie}.",
+      options: ["autobusem", "autobusowi", "z autobusem"],
+      explanation: "Транспорт - творительный без предлога: jeżdżę autobusem. Русское «на автобусе» в польский не переносится.",
+      ruleId: "narz-srodek", lemmas: ["autobus", "jeździć"],
+      drill: {deck: "nouns", filter: {case: "narz", number: "sg"}}, drillKey: "autobus|narz|sg",
+      src: "cases, Narzędnik: транспорт идёт без предлога, jadę autobusem"
+    },
+    {
+      id: "det-madre-corki", tier: 1, topic: "Согласование прилагательного",
+      text: "Moje córki są bardzo {mądre|mądrzy}.",
+      options: ["mądre", "mądra", "mądrymi"],
+      explanation: "Mądrzy - форма для мужчин и смешанных групп. О дочерях: mądre.",
+      ruleId: "adj-rod", lemmas: ["córka", "mądry"],
+      drill: {deck: "adjectives", filter: {kind: "case", gender: "nmos"}},
+      src: "adjectives: мн. мужско-личное и остальное"
+    },
+    {
+      id: "det-mam-starszego-brata", tier: 1, topic: "Винительный падеж",
+      text: "Mam {starszego brata|starszy brat}.",
+      options: ["starszego brata", "starszym bratem", "starszemu bratu"],
+      explanation: "Mieć требует винительного, а у одушевлённых мужского рода он совпадает с родительным: mam brata. Именительный подсказывает русское «у меня есть брат».",
+      ruleId: "bier-odushevl", lemmas: ["brat", "starszy", "mieć"],
+      drill: {deck: "nouns", filter: {case: "bier", number: "sg"}},
+      src: "cases, Biernik: одушевлённые мужского рода = Dopełniacz"
+    },
+    {
+      id: "det-mowie-po-polsku", tier: 1, topic: "Языки",
+      text: "Mówię trochę po {polsku|polski}.",
+      options: ["polsku", "polska", "polskiego"],
+      explanation: "Po polsku - наречие с окончанием -u, а не po и название языка.",
+      ruleId: "po-polsku", lemmas: ["polski", "mówić"],
+      src: "PEOPLE_PRACTICE: Mówię po polsku - наречие; people: язык - четыре разные конструкции"
+    },
+    {
+      id: "det-do-siebie", tier: 2, topic: "Местоимения",
+      text: "Kolega zaprosił mnie {do siebie|do sobie} na kolację.",
+      options: ["do siebie", "do sobą", "do się"],
+      explanation: "Do требует родительного падежа, у siebie это форма siebie: do siebie. Sobie - дательный, его подсказывает русское «к себе».",
+      ruleId: "reflexive-case", lemmas: ["siebie", "zaprosić"],
+      drill: {deck: "pronouns", filter: {topic: "reflexive"}},
+      src: "pronouns: возвратное siebie; PREPS: do + Dopełniacz"
+    },
+    {
+      id: "det-z-nowa-sasiadka", tier: 2, topic: "Согласование прилагательного",
+      text: "Rozmawiałem wczoraj z {nową|nowej} sąsiadką.",
+      options: ["nową", "nowa", "nowym"],
+      explanation: "Z в значении «с кем» требует творительного, и прилагательное повторяет падеж существительного: z nową sąsiadką. Nowej подсказывает русское окончание «с новой».",
+      ruleId: "adjective-instrumental-f", lemmas: ["sąsiadka", "nowy"],
+      drill: {deck: "adjectives", filter: {kind: "case", gender: "f"}},
+      src: "adjectives: dobry, полная парадигма"
+    },
+    {
+      id: "det-nie-jest-nauczycielem", tier: 2, topic: "Отрицание",
+      text: "Mój ojciec nie jest {nauczycielem|nauczyciela}.",
+      options: ["nauczycielem", "nauczyciel", "nauczycielowi"],
+      explanation: "Отрицание переводит в родительный прямое дополнение, но не название роли после być: jest nauczycielem, nie jest nauczycielem.",
+      ruleId: "negation-keeps-instrumental", lemmas: ["nauczyciel", "być"],
+      drill: {deck: "negation", filter: {topic: "construction"}}, drillKey: "neg-5",
+      src: "NIEMA_JEST: On nie jest lekarzem - как и в утверждении, jest + Narzędnik"
+    },
+    {
+      id: "det-dzieci-bawily", tier: 2, topic: "Прошедшее время",
+      text: "{Dzieci bawiły|Dzieci bawili} się w ogrodzie.",
+      options: ["Dzieci bawiły", "Dzieci bawiło", "Dzieci bawiła"],
+      explanation: "Dzieci - не мужско-личная группа, хотя это люди: dzieci bawiły się. Форма на -li только для групп с мужчинами.",
+      ruleId: "past-nonpersonal-pl", lemmas: ["dziecko", "bawić się"],
+      drill: {deck: "verbs", filter: {tense: "past"}},
+      src: "ROD_M; pronouns: wszystkie dzieci wróciły"
+    },
+    {
+      id: "det-bede-czytac", tier: 2, topic: "Будущее время",
+      text: "Jutro {będę czytać|będę przeczytać} cały dzień.",
+      options: ["będę czytać", "będę czytam", "będę przeczytam"],
+      explanation: "Будущее с będę строится только от несовершенного вида: będę czytać. Совершенный вид даёт простое будущее: przeczytam.",
+      ruleId: "future-imperfective", lemmas: ["czytać", "przeczytać"],
+      drill: {deck: "verbs", filter: {tense: "future"}}, drillKey: "czytać|future|0",
+      src: "verbs, времена: будущее несовершенного вида - составное"
+    },
+    {
+      id: "det-do-kina", tier: 2, topic: "Предлоги",
+      text: "Idziemy dziś {do kina|w kino}.",
+      options: ["do kina", "w kinie", "do kinie"],
+      explanation: "Куда: в здание - do с родительным. Русское «в кино» с винительным в польский не переносится: idziemy do kina.",
+      ruleId: "prep-do-budynek", lemmas: ["kino", "iść"],
+      drill: {deck: "prepositions", filter: {topic: "government"}}, drillKey: "prepgo-1",
+      src: "PREPS: do + Dopełniacz, куда"
+    },
+    {
+      id: "det-widzialem-go", tier: 2, topic: "Местоимения",
+      text: "Widziałem {go|jego} wczoraj w sklepie.",
+      context: "нейтральная фраза, без противопоставления",
+      options: ["go", "niego", "mu"],
+      explanation: "Без логического ударения стоит краткая форма: widziałem go. Полное jego - при противопоставлении или в начале фразы.",
+      ruleId: "pron-bezudarne", lemmas: ["on", "widzieć"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}}, drillKey: "pron-1",
+      src: "pronouns, личные; колода: полное jego возможно при контрастном ударении"
+    },
+    {
+      id: "det-dwadziescia-dwa-lata", tier: 2, topic: "Числительные",
+      text: "Mam dwadzieścia {dwa lata|dwa lat}.",
+      options: ["dwa lata", "dwa roku", "dwa rok"],
+      explanation: "Решает последнее слово числа: на dwa, trzy, cztery - lata, на остальные - lat. Mam 22 lata, но mam 25 lat.",
+      ruleId: "num-2-4", lemmas: ["rok", "dwa"],
+      src: "numerals, возраст: rok · lata · lat - mam 21 lat, 22 lata, 25 lat"
+    },
+    {
+      id: "det-panie-doktorze", tier: 2, topic: "Звательный падеж",
+      text: "Dzień dobry, {panie doktorze|pan doktor}!",
+      options: ["panie doktorze", "pana doktora", "panu doktorowi"],
+      explanation: "В обращении с титулом оба слова стоят в звательном падеже: panie doktorze.",
+      ruleId: "wolacz-obrashenie", lemmas: ["pan", "doktor"],
+      drill: {deck: "nouns", filter: {case: "woł", number: "sg"}}, drillKey: "pan|woł|sg",
+      src: "particles: обращение с титулом, panie doktorze"
+    },
+    {
+      id: "det-jutro-zadzwonie", tier: 2, topic: "Будущее время",
+      text: "Jutro {zadzwonię|będę zadzwonić} do ciebie.",
+      options: ["zadzwonię", "zadzwonisz", "zadzwonił"],
+      explanation: "Совершенный вид не сочетается с będę: его будущее простое, с окончаниями настоящего времени: zadzwonię.",
+      ruleId: "future-perfective-simple", lemmas: ["zadzwonić"],
+      drill: {deck: "verbs", filter: {tense: "future"}},
+      src: "verbs, времена: будущее совершенного вида - простое"
+    },
+    {
+      id: "det-piec-zlotych", tier: 2, topic: "Числительные",
+      text: "Za bilet zapłaciłem {pięć złotych|pięć złote}.",
+      options: ["pięć złotych", "pięć złotymi", "pięć złotym"],
+      explanation: "С пяти и дальше существительное стоит в родительном множественного, кроме чисел, оканчивающихся на два, три, четыре (22 złote): dwa złote, но pięć złotych.",
+      ruleId: "num-5-dop", lemmas: ["złoty", "pięć"],
+      src: "numerals, деньги: złoty · złote · złotych - 2 złote, 5 złotych"
+    },
+    {
+      id: "det-czuje-szacunek", tier: 2, topic: "Ложные друзья",
+      text: "Czuję do niego {szacunek|uwagę}.",
+      options: ["szacunek", "szacunku", "szacunkiem"],
+      explanation: "Уважение - szacunek. Uwaga значит «внимание» или «замечание».",
+      ruleId: "ff-uwaga", lemmas: ["szacunek", "uwaga", "czuć"],
+      drill: {deck: "falsefriends", filter: {topic: "work"}}, drillKey: "false-uwaga",
+      src: "FALSE: uwaga"
+    },
+    {
+      id: "det-bezczelny-czlowiek", tier: 2, topic: "Ложные друзья",
+      text: "On zawsze wchodzi bez kolejki. To bardzo {bezczelny|nagły} człowiek.",
+      options: ["bezczelny", "bezczelna", "bezczelnym"],
+      explanation: "Наглый - bezczelny. Nagły значит «внезапный»: nagły deszcz, nagła decyzja.",
+      ruleId: "ff-nagly", lemmas: ["bezczelny", "nagły"],
+      drill: {deck: "falsefriends", filter: {topic: "people"}}, drillKey: "false-nagly",
+      src: "FALSE: nagły"
+    },
+    {
+      id: "det-filizanka-kawy", tier: 2, topic: "Ложные друзья",
+      text: "Poproszę {filiżankę|czaszkę} kawy.",
+      options: ["filiżankę", "filiżanka", "filiżanką"],
+      explanation: "Чашка - filiżanka. Czaszka значит «череп».",
+      ruleId: "ff-czaszka", lemmas: ["filiżanka", "czaszka"],
+      drill: {deck: "falsefriends", filter: {topic: "work"}}, drillKey: "false-czaszka",
+      src: "FALSE: czaszka"
+    },
+    {
+      id: "det-ile-osob", tier: 2, topic: "Числительные",
+      text: "Ile {osób|osoby} przyszło na spotkanie?",
+      options: ["osób", "osobom", "osobami"],
+      explanation: "После ile в роли подлежащего существительное стоит в родительном множественного, а глагол в среднем роде: ile osób przyszło.",
+      ruleId: "ile-dop", lemmas: ["osoba", "ile"],
+      src: "numerals: ile osób, ile lat; Ilu ludzi przyszło?"
+    },
+    {
+      id: "det-starszy-ode-mnie", tier: 2, topic: "Сравнение",
+      text: "Mój brat jest starszy {ode mnie|mnie}.",
+      options: ["ode mnie", "niż mnie", "ode mną"],
+      explanation: "«Чем» - od с родительным: ode mnie. Второй путь - niż ja. Голый родительный подсказывает русское «старше меня».",
+      ruleId: "porownanie-od", lemmas: ["stary", "ja"],
+      drill: {deck: "adjectives", filter: {kind: "degree"}},
+      src: "adjectives, конструкции сравнения: Jest wyższy ode mnie; PREP_E: ode mnie"
+    },
+    {
+      id: "det-o-piatej", tier: 2, topic: "Время",
+      text: "Spotkajmy się {o piątej|w pięć}.",
+      options: ["o piątej", "o pięciu", "w piątej"],
+      explanation: "Во сколько: o и порядковое числительное женского рода в предложном: o piątej. Количественное pięć для часа не используется.",
+      ruleId: "godzina-porzadkowa", lemmas: ["piąty", "godzina"],
+      src: "numerals, который час: o której? - o pierwszej, o drugiej"
+    },
+    {
+      id: "det-moi-przyjaciele", tier: 2, topic: "Местоимения",
+      text: "To są {moi przyjaciele|moje przyjaciele}.",
+      options: ["moi przyjaciele", "moich przyjaciół", "moimi przyjaciółmi"],
+      explanation: "Przyjaciele - мужско-личная группа, и местоимение берёт мужско-личную форму: moi przyjaciele. Moje - для остальных: moje przyjaciółki.",
+      ruleId: "mos-zaimki", lemmas: ["przyjaciel", "mój"],
+      src: "adjectives: мужско-личное множественное; ROD_M"
+    },
+    {
+      id: "det-we-wtorek", tier: 2, topic: "Предлоги",
+      text: "Spotkamy się {we wtorek|w wtorek}.",
+      options: ["we wtorek", "we wtorku", "w wtorku"],
+      explanation: "«В какой день» - w с винительным, а перед wtorek предлог удлиняется: we wtorek.",
+      ruleId: "prep-rozszerzone", lemmas: ["wtorek"],
+      src: "numerals, дни недели: перед wtorek предлог удлиняется; PREP_E: we wtorek"
+    },
+    {
+      id: "det-za-tydzien", tier: 2, topic: "Время",
+      text: "Wrócę {za tydzień|przez tydzień}.",
+      options: ["za tydzień", "za tygodnia", "za tygodniem"],
+      explanation: "«Через неделю» - za tydzień. Przez tydzień значит «в течение недели».",
+      ruleId: "czas-za", lemmas: ["tydzień", "wrócić"],
+      src: "CZAS_WYR: za + Biernik - через сколько; длительность: przez tydzień"
+    },
+    {
+      id: "det-wiekszy-dom", tier: 2, topic: "Сравнение",
+      text: "Ten dom jest {większy|bardziej duży} niż nasz.",
+      options: ["większy", "większe", "największy"],
+      explanation: "Duży образует сравнительную степень от другой основы: większy. Bardziej с этим прилагательным не используется.",
+      ruleId: "adj-stopien", lemmas: ["duży", "dom"],
+      drill: {deck: "adjectives", filter: {kind: "degree"}}, drillKey: "duży|degree|степень сравнения|сравнительная",
+      src: "adjectives: нерегулярные степени сравнения"
+    },
+    {
+      id: "det-gdzie-byles", tier: 2, topic: "Прошедшее время",
+      text: "Gdzie {byłeś|ty był} wczoraj?",
+      context: "спрашивают друга",
+      options: ["byłeś", "byłem", "byliście"],
+      explanation: "Лицо в прошедшем времени выражает окончание глагола: byłeś. Одно był - это «он был».",
+      ruleId: "past-person-ending", lemmas: ["być"],
+      drill: {deck: "verbs", filter: {tense: "past"}}, drillKey: "być|past|2",
+      src: "PAST: ty robiłeś"
+    },
+    {
+      id: "det-ze-mna", tier: 2, topic: "Предлоги",
+      text: "Pójdziesz {ze mną|z mną} na spacer?",
+      options: ["ze mną", "ze mnie", "przy mnie"],
+      explanation: "Перед mną предлог z удлиняется: ze mną.",
+      ruleId: "prep-rozszerzone", lemmas: ["ja", "z"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}},
+      src: "PREP_E: ze mną"
+    },
+    {
+      id: "det-nikt-nie-widzial-filmu", tier: 2, topic: "Отрицание",
+      text: "Nikt z nas nie widział {tego filmu|ten film}.",
+      options: ["tego filmu", "tym filmem", "temu filmowi"],
+      explanation: "При отрицании прямое дополнение переходит в родительный вместе с указательным словом: nie widział tego filmu.",
+      ruleId: "neg-dopelniacz", lemmas: ["film", "widzieć"],
+      drill: {deck: "negation", filter: {topic: "case"}}, drillKey: "neg-18",
+      src: "NEG_OBJECT"
+    },
+    {
+      id: "det-szukam-kluczy", tier: 3, topic: "Управление глаголов",
+      text: "Od godziny szukam {kluczy|klucze}.",
+      options: ["kluczy", "kluczami", "kluczach"],
+      explanation: "Szukać требует родительного падежа, а не винительного, как русское «искать ключи»: szukam kluczy.",
+      ruleId: "rekcja-dopelniacz", lemmas: ["szukać", "klucz"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-szukam-praca",
+      src: "REKCJA: szukać czego? Dopełniacz"
+    },
+    {
+      id: "det-uzyc-dlugopisu", tier: 3, topic: "Управление глаголов",
+      text: "Mogę {użyć twojego długopisu|użyć twój długopis}?",
+      options: ["użyć twojego długopisu", "użyć twoim długopisem", "użyć twojemu długopisowi"],
+      explanation: "Użyć, как и używać, требует родительного: użyć twojego długopisu. Винительный здесь из русского, творительный из «воспользоваться чем».",
+      ruleId: "rekcja-dopelniacz", lemmas: ["użyć", "długopis"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-uzywam-telefon",
+      src: "REKCJA: używać czego? Dopełniacz; колода: русский Narzędnik сюда не переносится"
+    },
+    {
+      id: "det-sluchaj-mamy", tier: 3, topic: "Управление глаголов",
+      text: "Zawsze słuchaj {mamy|mamę}!",
+      options: ["mamy", "mamą", "mamie"],
+      explanation: "Słuchać требует родительного падежа: słuchaj mamy.",
+      ruleId: "rekcja-dopelniacz", lemmas: ["słuchać", "mama"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-slucham-muzyka",
+      src: "REKCJA: słuchać czego? Dopełniacz"
+    },
+    {
+      id: "det-dbaj-o-siebie", tier: 3, topic: "Управление глаголов",
+      text: "Musisz bardziej {dbać o siebie|dbać o sobie}.",
+      options: ["dbać o siebie", "dbać o sobą", "dbać siebie"],
+      explanation: "Dbać o требует винительного падежа: dbać o siebie. Предложный подсказывает русское «заботиться о себе».",
+      ruleId: "rekcja-o-bier", lemmas: ["dbać", "siebie"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-dbam-zdrowie",
+      src: "REKCJA: dbać o co? o + Biernik"
+    },
+    {
+      id: "det-martwia-sie-o-syna", tier: 3, topic: "Управление глаголов",
+      text: "Rodzice martwią się {o syna|o synu}.",
+      options: ["o syna", "o synem", "o synowi"],
+      explanation: "Martwić się o требует винительного падежа: martwią się o syna. Предложный подсказывает русское «беспокоиться о сыне».",
+      ruleId: "rekcja-o-bier", lemmas: ["martwić się", "syn"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-martwie-sie-ty",
+      src: "REKCJA: martwić się o kogo? o + Biernik; колода: а не o + Miejscownik"
+    },
+    {
+      id: "det-opiekuje-sie-dziecmi", tier: 3, topic: "Управление глаголов",
+      text: "Kto opiekuje się {dziećmi|za dziećmi}?",
+      options: ["dziećmi", "dzieci", "z dziećmi"],
+      explanation: "Opiekować się требует творительного без предлога: opiekuje się dziećmi. Za подсказывает русское «ухаживать за».",
+      ruleId: "rekcja-narzednik-bez-przyimka", lemmas: ["opiekować się", "dziecko"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-opiekuje-sie-babcia",
+      src: "REKCJA: opiekować się kim? Narzędnik; колода: без предлога"
+    },
+    {
+      id: "det-podobna-do-mamy", tier: 3, topic: "Управление прилагательных",
+      text: "Jesteś bardzo podobna {do mamy|na mamę}.",
+      options: ["do mamy", "do mamą", "na mamy"],
+      explanation: "Podobny управляет do с родительным: podobna do mamy. Na подсказывает русское «похожа на маму».",
+      ruleId: "rekcja-do-na", lemmas: ["podobny", "mama"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-jestem-podobny-ojciec",
+      src: "REKCJA: być podobnym do kogo? do + Dopełniacz; колода: а не «на»"
+    },
+    {
+      id: "det-gratuluje-egzaminu", tier: 3, topic: "Управление глаголов",
+      text: "Gratuluję ci {zdanego egzaminu|ze zdanym egzaminem}!",
+      options: ["zdanego egzaminu", "zdanym egzaminem", "zdany egzamin"],
+      explanation: "Gratulować требует дательного лица и родительного повода: gratuluję ci zdanego egzaminu. Ze подсказывает русское «поздравляю с».",
+      ruleId: "rekcja-dopelniacz-bez-przyimka", lemmas: ["gratulować", "egzamin"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-gratuluje-ci-sukces",
+      src: "REKCJA: gratulować komu? czego? Celownik + Dopełniacz"
+    },
+    {
+      id: "det-zakochal-sie-w-oli", tier: 3, topic: "Управление глаголов",
+      text: "Marek zakochał się {w Oli|w Olę}.",
+      options: ["w Oli", "w Olą", "z Olą"],
+      explanation: "Zakochać się w требует предложного падежа: w Oli. Винительный подсказывает русское «влюбился в Олю».",
+      ruleId: "rekcja-w-miej", lemmas: ["zakochać się", "Ola"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-zakochalem-sie-ona",
+      src: "REKCJA: zakochać się w kim? w + Miejscownik; колода: русский Biernik сюда не переносится"
+    },
+    {
+      id: "det-smiej-sie-ze-mnie", tier: 3, topic: "Управление глаголов",
+      text: "Nie śmiej się {ze mnie|nade mną}!",
+      options: ["ze mnie", "ode mnie", "dla mnie"],
+      explanation: "Śmiać się управляет z с родительным: nie śmiej się ze mnie. Nad подсказывает русское «смеяться надо мной».",
+      ruleId: "rekcja-z-dop", lemmas: ["śmiać się", "ja"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-smieje-sie-to",
+      src: "REKCJA: śmiać się z kogo? z + Dopełniacz; колода: а не «над»"
+    },
+    {
+      id: "det-skorzystac-z-toalety", tier: 3, topic: "Управление глаголов",
+      text: "Czy mogę skorzystać {z toalety|toaletą}?",
+      options: ["z toalety", "z toaletą", "do toalety"],
+      explanation: "Korzystać и skorzystać управляют z с родительным: skorzystać z toalety. Творительный подсказывает русское «воспользоваться туалетом».",
+      ruleId: "rekcja-przyimek", lemmas: ["skorzystać", "toaleta"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-korzystam-internet",
+      src: "REKCJA: korzystać z czego? z + Dopełniacz"
+    },
+    {
+      id: "det-zdolny-do-wszystkiego", tier: 3, topic: "Управление прилагательных",
+      text: "Ten człowiek jest {zdolny do wszystkiego|zdolny na wszystko}.",
+      options: ["zdolny do wszystkiego", "zdolny do wszystkim", "zdolny na wszystkiego"],
+      explanation: "Zdolny управляет do с родительным: zdolny do wszystkiego. Na подсказывает русское «способен на всё».",
+      ruleId: "rekcja-do-na", lemmas: ["zdolny", "wszystko"],
+      drill: {deck: "government", filter: {topic: "adjective"}}, drillKey: "rekcja-jest-zdolny-wszystko",
+      src: "REKCJA_ADJ: zdolny do + Dopełniacz; колода: а не «на»"
+    },
+    {
+      id: "det-prawo-do-urlopu", tier: 3, topic: "Управление существительных",
+      text: "Każdy pracownik ma prawo {do urlopu|na urlop}.",
+      options: ["do urlopu", "do urlopem", "na urlopu"],
+      explanation: "Prawo управляет do с родительным: prawo do urlopu. Na подсказывает русское «право на отпуск».",
+      ruleId: "rekcja-do-na", lemmas: ["prawo", "urlop"],
+      drill: {deck: "government", filter: {topic: "noun"}}, drillKey: "rekcja-masz-prawo-urlop",
+      src: "REKCJA_N: prawo do + Dopełniacz; колода: а не «на»"
+    },
+    {
+      id: "det-powodu-do-zmartwien", tier: 3, topic: "Управление существительных",
+      text: "Nie ma powodu {do zmartwień|dla zmartwień}.",
+      options: ["do zmartwień", "do zmartwieniom", "na zmartwienia"],
+      explanation: "Powód управляет do с родительным: powód do zmartwień. Dla подсказывает русское «повод для беспокойства».",
+      ruleId: "rekcja-powod-do", lemmas: ["powód", "zmartwienie"],
+      drill: {deck: "government", filter: {topic: "noun"}}, drillKey: "rekcja-nie-ma-powodu-zmartwienia",
+      src: "REKCJA_N: powód do + Dopełniacz; колода: а не «для»"
+    },
+    {
+      id: "det-ochote-na-kawe", tier: 3, topic: "Управление существительных",
+      text: "Mam ochotę {na kawę|kawy}.",
+      options: ["na kawę", "na kawie", "na kawą"],
+      explanation: "Ochota управляет na с винительным: mam ochotę na kawę. Родительный подсказывает русское «хочется кофе».",
+      ruleId: "rekcja-ochota-na", lemmas: ["ochota", "kawa"],
+      drill: {deck: "government", filter: {topic: "noun"}}, drillKey: "rekcja-mam-ochote-kawa",
+      src: "REKCJA_N: ochota na + Biernik"
+    },
+    {
+      id: "det-zainteresowani-oferta", tier: 3, topic: "Управление прилагательных",
+      text: "Jesteśmy zainteresowani {waszą ofertą|w waszej ofercie}.",
+      options: ["waszą ofertą", "waszej oferty", "na waszą ofertę"],
+      explanation: "Zainteresowany требует творительного без предлога: zainteresowani waszą ofertą. W подсказывает русское «заинтересованы в предложении».",
+      ruleId: "rekcja-zainteresowany", lemmas: ["zainteresowany", "oferta"],
+      drill: {deck: "government", filter: {topic: "adjective"}}, drillKey: "rekcja-jestem-zainteresowany-oferta",
+      src: "REKCJA_ADJ: zainteresowany + Narzędnik; колода: без предлога"
+    },
+    {
+      id: "det-pewien-swojej-racji", tier: 3, topic: "Управление прилагательных",
+      text: "Jestem pewien {swojej racji|w swojej racji}.",
+      options: ["swojej racji", "swoją racją", "swoja racja"],
+      explanation: "Pewien требует родительного без предлога: pewien swojej racji. W подсказывает русское «уверен в своей правоте».",
+      ruleId: "rekcja-pewien", lemmas: ["pewien", "racja"],
+      drill: {deck: "government", filter: {topic: "adjective"}}, drillKey: "rekcja-jestem-pewien-swoja-racja",
+      src: "REKCJA_ADJ: pewien czego? Dopełniacz"
+    },
+    {
+      id: "det-pieciu-studentow", tier: 3, topic: "Числительные",
+      text: "{Pięciu studentów|Pięć studentów} zdało egzamin.",
+      options: ["Pięciu studentów", "Pięciu studentami", "Pięciom studentom"],
+      explanation: "О мужчинах числительное берёт мужско-личную форму: pięciu studentów zdało. Pięć - для остальных: pięć studentek.",
+      ruleId: "num-mos-pieciu", lemmas: ["pięć", "student"],
+      src: "MOSNUM: pięciu studentów, глагол в ср. роде ед. ч.; numerals: начиная с пяти он единственный"
+    },
+    {
+      id: "det-dwoje-dzieci", tier: 3, topic: "Числительные",
+      text: "Mają {dwoje dzieci|dwa dzieci}.",
+      options: ["dwoje dzieci", "dwojga dzieci", "dwoma dziećmi"],
+      explanation: "С dzieci нужно собирательное числительное: dwoje dzieci.",
+      ruleId: "numeral-collective", lemmas: ["dwoje", "dziecko"],
+      src: "ZBIOR: dwoje dzieci"
+    },
+    {
+      id: "det-dumny-z-ciebie", tier: 3, topic: "Управление прилагательных",
+      text: "Jestem {z ciebie|tobą} bardzo dumny.",
+      options: ["z ciebie", "od ciebie", "dla ciebie"],
+      explanation: "Dumny управляет z с родительным: jestem z ciebie dumny. Творительный подсказывает русское «горжусь тобой».",
+      ruleId: "rekcja-dumny", lemmas: ["dumny", "ty"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-jestem-dumny-ty",
+      src: "REKCJA: być dumnym z kogo? z + Dopełniacz; колода: Być dumnym z + Dopełniacz"
+    },
+    {
+      id: "det-zebys-przyszedl", tier: 3, topic: "Придаточные предложения",
+      text: "Chcę, {żebyś przyszedł|żeby ty przyszedł} jutro.",
+      context: "обращаются к мужчине",
+      options: ["żebyś przyszedł", "żebyś przyjdziesz", "żeby przyszedłeś"],
+      explanation: "После żeby глагол стоит в форме на -ł, а лицо присоединяется к самому союзу: żebyś przyszedł.",
+      ruleId: "zeby-past-form", lemmas: ["żeby", "przyjść"],
+      src: "conjunctions: Chcę, żebyś przyszedł; żebym, żebyś, żebyśmy"
+    },
+    {
+      id: "det-most-zostal-zbudowany", tier: 3, topic: "Страдательный залог",
+      text: "Ten most {został zbudowany|został budowany} sto lat temu.",
+      options: ["został zbudowany", "został budujący", "zostanie zbudowany"],
+      explanation: "Zostać в пассиве сочетается с причастием совершенного вида: został zbudowany.",
+      ruleId: "passive-zostac", lemmas: ["most", "zbudować"],
+      src: "PASSIVE_Z: zostać + причастие, событие, совершенный вид; Dom został zbudowany w 1900 roku"
+    },
+    {
+      id: "det-ozenil-sie-z-anna", tier: 3, topic: "Управление глаголов",
+      text: "Mój brat ożenił się {z Anną|na Annie} w zeszłym roku.",
+      options: ["z Anną", "z Anny", "za Annę"],
+      explanation: "Ożenić się управляет z с творительным: ożenił się z Anną. Na подсказывает русское «женился на Анне».",
+      ruleId: "rekcja-ozenic", lemmas: ["ożenić się", "Anna"],
+      src: "WSJP PAN, ożenić się: składnia z + KIM"
+    },
+    {
+      id: "det-podziekuj-babci", tier: 3, topic: "Управление глаголов",
+      text: "Podziękuj {babci|babcię} za prezent.",
+      options: ["babci", "babcią", "o babci"],
+      explanation: "Dziękować и podziękować требуют дательного: podziękuj babci. Винительный подсказывает русское «поблагодари бабушку».",
+      ruleId: "rekcja-dziekowac", lemmas: ["podziękować", "babcia"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-dziekuje-za-pomoc-ty",
+      src: "REKCJA: dziękować komu? Celownik"
     }
   ]
 };

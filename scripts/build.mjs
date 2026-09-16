@@ -155,8 +155,8 @@ await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");
 const speedSource = `globalThis.SEKUNDA_DATA=${JSON.stringify(sandbox.speedDeck())};\n`;
 await writeFile(resolve(root, "sekunda-data.js"), speedSource, "utf8");
 
-const [gameSource, gameDataSource, speedEngineSource] = await Promise.all(
-  ["game.js", "game-data.js", "sekunda.js"].map(name => readFile(resolve(root, name), "utf8")));
+const [gameSource, gameDataSource, speedEngineSource, detectiveSource] = await Promise.all(
+  ["game.js", "game-data.js", "sekunda.js", "detektyw.js"].map(name => readFile(resolve(root, name), "utf8")));
 const assetHashes = {
   style:fingerprint(styleSource),
   client:fingerprint(clientSource),
@@ -165,11 +165,13 @@ const assetHashes = {
   game:fingerprint(gameSource),
   gameData:fingerprint(gameDataSource),
   speed:fingerprint(speedEngineSource),
-  speedData:fingerprint(speedSource)
+  speedData:fingerprint(speedSource),
+  detective:fingerprint(detectiveSource)
 };
 const gameAssets = {
   milionerzy:[["game.js", assetHashes.game], ["game-data.js", assetHashes.gameData]],
-  sekunda:[["sekunda.js", assetHashes.speed], ["sekunda-data.js", assetHashes.speedData]]
+  sekunda:[["sekunda.js", assetHashes.speed], ["sekunda-data.js", assetHashes.speedData]],
+  detektyw:[["detektyw.js", assetHashes.detective], ["game-data.js", assetHashes.gameData]]
 };
 const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
@@ -312,6 +314,16 @@ for(const page of pages){
   const topicHeading = topicSection.querySelector("h2");
   if(topicHeading && !topicHeading.closest(".content-variant")) topicHeading.replaceWith(pageHeading);
   else topicSection.prepend(pageHeading);
+  const titleSplit = page.h1.indexOf(": ");
+  if(pageHeading.parentElement.classList.contains("game-page") && titleSplit > 0){
+    const name = pageDocument.createElement("span");
+    name.className = "title-name";
+    name.textContent = page.h1.slice(0, titleSplit);
+    const tail = pageDocument.createElement("span");
+    tail.className = "title-tail";
+    tail.textContent = page.h1.slice(titleSplit);
+    pageHeading.replaceChildren(name, tail);
+  }
 
   const studyItems = studyByPage.get(page.id);
   if(studyItems.length){

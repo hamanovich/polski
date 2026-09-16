@@ -1,74 +1,78 @@
 {
   "adjectives": {
-    "hash": "0c452bc4b237fbb166f20d60e0efac80e57e29e6f24e16cc6d225ef86179d863",
+    "hash": "cea9d17fdb0f64de78e31fba3c53a671bc7e84f7b6da853f95ad4cea27bd86fd",
     "date": "2026-09-16"
   },
   "adverbs": {
-    "hash": "906c8e6cd3f4527011377176e1d70ce04a16d1724f08cf05efd080dc6a0e371c",
+    "hash": "9b586e7d126eabde9fd82a3a8763def7b9523161fd17be5c615d4f67114b9a51",
     "date": "2026-09-16"
   },
   "alphabet": {
-    "hash": "caadde0ab6f776aaa1202a5b6652163639c7544f6d13b11017604522829c643e",
+    "hash": "c6c1e786141843beae5098cdef578a174b7b5590b25ed1ea7cfebd51c88c1d57",
     "date": "2026-09-16"
   },
   "alternations": {
-    "hash": "4d54ab380e7ab90bfe30362811a914559438d997ab70a551fa030201415daf01",
+    "hash": "16f6eeb927b765cae13234ec7867f4997e3c814a0718f47cccd274464c38fac2",
     "date": "2026-09-16"
   },
   "cases": {
-    "hash": "8c1c0ea1f2b9d8e74fc961d29e04f6b118fb6f7ddf17ea1206ee975083399883",
+    "hash": "7efc35af259455b7c1021fe0c306321f1951bfbde839c1d8d3d5fd60933e494c",
     "date": "2026-09-16"
   },
   "conjunctions": {
-    "hash": "4f6406ede24a5ac3d1b0513c461de7de5840a96e996413b0f1a5d2a496825ebf",
+    "hash": "4b9c93d9a7e2b8f729141b03ccdb66d9a26b4ad4252f57e1c401be33207bb25f",
     "date": "2026-09-16"
   },
   "diminutives": {
-    "hash": "ab7cc3168f94b14d52202615f665b065d1da98184f786cb5c17ca9533ed85d7c",
+    "hash": "4f630232776ec3fa7c263c26c3c7231a9b153ecd8923ba2b2d09d0fb09ebca8f",
     "date": "2026-09-16"
   },
   "gender": {
-    "hash": "23b985844f0cfdcdab93499bf028eb403db2d16d702b15379557123e702a3942",
+    "hash": "f003958b33a84c5a714d86e6d83c178b8b5aaa7ef5580e0964c3171378bf91a6",
     "date": "2026-09-16"
   },
   "gry": {
-    "hash": "ee0dfe9a439c695ebd80d685d016b820850e0fcd33efc05bc2dc63804ff66808",
+    "hash": "f78ee8b75ec1339088cfd4dc31dfa23ab896b58ccc033f688f130c7a4d6e0f11",
+    "date": "2026-09-16"
+  },
+  "gry/detektyw": {
+    "hash": "62318efb01ba6356be1935df7edd4f5d625d5f71f103e82000619896b6c9c898",
     "date": "2026-09-16"
   },
   "gry/milionerzy": {
-    "hash": "c5fd856191e0d1e5bb8991d5ccf75e61a4f11e01983e1aa66e815ef9243675f1",
+    "hash": "9ac98ff7d90e27c1dc6e83b3b9c3ed382813c1cfe502666f06723262aed955a2",
     "date": "2026-09-16"
   },
   "gry/sekunda": {
-    "hash": "eb8ca202d0a70cd6fc4c44f9c6b18dab2602bcacb7024ea45a62cb284bdcd1e0",
+    "hash": "3c15797531998dedcb2bd7adbedade8ecda026f983da49f45520181e1811aaa4",
     "date": "2026-09-16"
   },
   "impersonal": {
-    "hash": "05a9af65bc48e5e65090d7f32955e2a36afb48ca85ef46e08df11eba65fa3fab",
+    "hash": "1819a0744acbb5c2d4d5e2bd0c4751a503c41f5293811591a33fe21fe55d2136",
     "date": "2026-09-16"
   },
   "index": {
-    "hash": "1b6d296779bfa2fc8fce1d530c07ed3a0ce1acec2a6f69a7280c5ccf9a331de3",
+    "hash": "0a0a64ce838df2d21ea1ecf838dbb2886cf03d20ed44d7a5f4e8fb9e652b73dc",
     "date": "2026-09-16"
   },
   "language-bridges": {
-    "hash": "030ec217bf176a90597e9c9133f6ccb4a625c2f7f6a743264af74791039cb9ba",
+    "hash": "b6959006e7b08369f677a898bf60ce6d196cc0cdc8cb28689478e976771fdd00",
     "date": "2026-09-16"
   },
   "negation": {
-    "hash": "e9ed3282bab7fbc9d0eb46e141018d23a4b86bbb2c3af080dfdeea12896d357d",
+    "hash": "1723018d78bf88182794f562a3fb18ab18a2af498ecc4a4da6fee1e6b7b4bcb6",
     "date": "2026-09-16"
   },
   "numerals": {
-    "hash": "7e261ee61fa5fe859e913c41dad62242405b23508084f8b6f1bd86edc7d42754",
+    "hash": "23d36b77c71056a91160adeb7bc7b3e998ec977967381793e8ed581d4a8cad92",
     "date": "2026-09-16"
   },
   "particles": {
-    "hash": "8128077602265d8b0936493bca56088dba3c4f304c4e44865c1dbb4142615272",
+    "hash": "61d892caf9abf7db6c40a408f2ff70a2fd79ca2b7511421b6caf86c80334a4de",
     "date": "2026-09-16"
   },
   "people": {
-    "hash": "4b6f7f54ad7fb23687013d525a834727a86b56793d308ae6f9b41219906bb7a8",
+    "hash": "9ba49e16cbfa9650b9c60aa4425dd2c14c5aea08a19ab8b71cbc8e26ae6f8c35",
     "date": "2026-09-16"
   },
   "plan-40": {
@@ -76,35 +80,35 @@
     "date": "2026-09-14"
   },
   "prepositions": {
-    "hash": "341f0ed6674468325fa371ebe0c47b91780250c2d622bcf8ce7fcaf44c0ac6b3",
+    "hash": "92a1be1f068035dcf99855a2df7348df3b6dac598a153b6619f0a995fd2a97de",
     "date": "2026-09-16"
   },
   "pronouns": {
-    "hash": "2d2f13ea88977a5d8d442fdfb07c5ca35c8890e4a9b4c3928ce98ca8f0f3be4c",
+    "hash": "fd1e6b59dab3c3431e3115208b58be2d2008eea80929a4b797271037d5be8eae",
     "date": "2026-09-16"
   },
   "questions": {
-    "hash": "0a45ae4c37042cc8b8e40f1bcd5221553e9d13361bac70023a12cdeee81715f7",
+    "hash": "c86095e74515dffd57445f65fc2e5ea4e44427da37ab6b63e23a239fd4d55d3c",
     "date": "2026-09-16"
   },
   "sources": {
-    "hash": "d00e5cba249f3098a3305d18e6f75d118b568e446b6a1fa369e620e64930e1c2",
+    "hash": "b2c5dd40cbcf450d1fb5dcd69992a6b17efec27963408b99b98fd2669315f439",
     "date": "2026-09-16"
   },
   "speaking": {
-    "hash": "2d81be8e6390aa8563fb15abbc293fdd2841ce6c1b7929e6ce3474f86b2b1485",
+    "hash": "9882213f1305551fad90212bfcc35e7bb144b2e810987b87cbb78e3753604607",
     "date": "2026-09-16"
   },
   "verbs": {
-    "hash": "3b999151ca683d4cb814e48f15eedf82384ad96cdcb80f00ba3fad03100309e1",
+    "hash": "8d9c96baad2f43aeeb97446b2f820440132f3178def6604877c7187ce1e50db7",
     "date": "2026-09-16"
   },
   "vocabulary": {
-    "hash": "a6fd857093b1531ff091faf8dff373a2d62b4811645b4c556502049ff6d29123",
+    "hash": "e714cc313a259edd36f1664b05566508784c9db2f749854be6d604c6b65e8c49",
     "date": "2026-09-16"
   },
   "word-order": {
-    "hash": "8aad2cec2b7adaca2f3cd1508302828eb0ad03fb820c86479b805713317e8b74",
+    "hash": "6e6c2d8fcbe236e8e26031aaf756bd1a827ab02c86de231896f8c5ad27afb4db",
     "date": "2026-09-16"
   }
 }

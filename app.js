@@ -2482,6 +2482,11 @@ function renderGames(){
         <span>Пятнадцать вопросов с четырьмя вариантами ответа, три подсказки и две несгораемые суммы. От узнавания форм до управления глаголов, которое расходится с русским.</span>
         <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
       </a>
+      <a class="game-card" href="#s-det" data-s="s-det">
+        <b>Языковой детектив</b>
+        <span>Десять предложений, в каждом может прятаться типовая ошибка русскоязычного. Найдите неверное слово и исправьте его или докажите, что ошибки нет.</span>
+        <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
+      </a>
       <a class="game-card" href="#s-sek" data-s="s-sek">
         <b>До последней секунды</b>
         <span>Шестьдесят секунд и вопросы в одно нажатие: род существительного, вид глагола, ó или u. Верный ответ добавляет время, ошибка его отнимает.</span>
@@ -2492,10 +2497,8 @@ function renderGames(){
     <h3>Что в планах</h3>
     <div class="scroll"><table class="vt">
       <tr><th>игра</th><th>механика</th><th>чему учит</th></tr>
-      <tr><td class="w flow">Языковой детектив</td><td class="flow">В предложении спрятана ошибка, иногда её нет</td><td class="flow">Согласование, падежи, ложные друзья</td></tr>
       <tr><td class="w flow">Собери фразу</td><td class="flow">Слова даны вперемешку и в начальной форме</td><td class="flow">Порядок слов и согласование в своей речи</td></tr>
     </table></div>
-    <p class="note">Порядок не обещание: сначала то, для чего в справочнике уже есть проверенный материал.</p>
   </div>`;
 }
 
@@ -2584,11 +2587,11 @@ function renderSekunda(){
           <button type="button" class="exercise-button" data-speed-go>Начать</button>
         </div>
         <div class="speed-round" data-speed-round tabindex="-1" hidden>
-          <div class="speed-bar" aria-hidden="true"><span data-speed-fill></span></div>
           <div class="game-stakes speed-stakes">
-            <div><span>Время</span><strong role="timer" aria-live="off" data-speed-clock></strong><small class="speed-delta" aria-hidden="true" data-speed-delta></small></div>
+            <div class="speed-clock"><span>Время</span><strong role="timer" aria-live="off" data-speed-clock></strong><small class="speed-delta" aria-hidden="true" data-speed-delta></small></div>
             <div><span>Верно</span><output data-speed-score></output></div>
             <div><span>Серия</span><strong data-speed-streak></strong></div>
+            <div class="speed-bar" aria-hidden="true"><span data-speed-fill></span></div>
           </div>
           <p class="game-meta"><span data-speed-ask></span><span data-speed-topic></span></p>
           <p class="speed-prompt" lang="pl" data-speed-prompt></p>
@@ -2639,6 +2642,71 @@ function renderSekunda(){
   </div>`;
 }
 
+function renderDetektyw(){
+  $("#s-det").innerHTML = `<div class="panel game-page">
+    <h2>Языковой детектив</h2>
+    <p class="lead game-description">Десять дел. В предложении может прятаться типовая ошибка русскоязычного, а может и не прятаться. Найдите неверное слово и исправьте его или докажите, что ошибки нет.</p>
+
+    <div class="game detective" data-game="detektyw">
+      <div class="det-stage" data-det-stage hidden>
+        <div class="det-intro" data-det-intro>
+          <p class="game-record" data-det-record hidden></p>
+          <button type="button" class="exercise-button" data-det-start>Начать расследование</button>
+        </div>
+        <div class="det-round" data-det-round tabindex="-1" hidden>
+          <div class="game-stakes det-stakes">
+            <div><span>Дело</span><strong data-det-step></strong></div>
+            <div><span>Очки</span><output data-det-score></output></div>
+            <div><span>Тема</span><strong class="det-topic" data-det-topic></strong></div>
+          </div>
+          <p class="game-context" data-det-context hidden></p>
+          <p class="det-ask" data-det-ask></p>
+          <p class="det-sentence" lang="pl" role="group" aria-label="Слова предложения" data-det-sentence></p>
+          <div class="game-buttons" data-det-verdict>
+            <button type="button" class="exercise-button" data-det-commit>Ошибки нет</button>
+            <button type="button" class="exercise-link" data-det-clear hidden>Снять выбор</button>
+          </div>
+          <div class="det-fix" data-det-fix hidden>
+            <p class="det-fix-label">Верно, ошибка здесь. Как правильно?</p>
+            <div class="game-options det-options" role="group" aria-label="Варианты исправления" data-det-options></div>
+          </div>
+          <div class="det-reveal" data-det-reveal hidden>
+            <p class="game-feedback" aria-live="polite" data-det-feedback tabindex="-1"></p>
+            <p class="det-versions" data-det-versions></p>
+            <p class="game-rule" data-det-why></p>
+            <div class="game-buttons"><button type="button" class="exercise-button" data-det-next>Следующее дело</button></div>
+          </div>
+          <button type="button" class="game-reset" data-det-reset>Начать заново</button>
+        </div>
+        <div class="game-over" data-det-over tabindex="-1" hidden></div>
+      </div>
+      <noscript><p class="note">Игра работает только со скриптами. Все правила, на которых построены дела, разобраны в разделах справочника.</p></noscript>
+    </div>
+
+    <h3>Как идёт дело</h3>
+    <ol class="pit gap">
+      <li><b>Выберите слово</b>, которое считаете ошибкой. Повторное нажатие снимает выбор.</li>
+      <li><b>Подтвердите.</b> Без выбора кнопка называется «Ошибки нет», с выбором - «Здесь ошибка». Случайное касание слова ничего не решает.</li>
+      <li><b>Если ошибка найдена</b>, выберите исправление из трёх вариантов.</li>
+      <li><b>Разбор</b> показывает верную версию, объяснение и ссылку на правило.</li>
+    </ol>
+    <p class="note">Ошибка бывает и в сочетании из двух-трёх слов, например в предлоге вместе с существительным. Тогда засчитывается нажатие на любое из них.</p>
+
+    <h3>Очки</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>что произошло</th><th>очки</th></tr>
+      <tr><td class="flow">Ошибка найдена и исправлена</td><td>2</td></tr>
+      <tr><td class="flow">Ошибка найдена, но исправление неверное</td><td>1</td></tr>
+      <tr><td class="flow">Предложение верное, и вы так и ответили</td><td>2</td></tr>
+      <tr><td class="flow">Ошибка пропущена или указано не то слово</td><td>0</td></tr>
+      <tr><td class="flow">Предложение верное, а вы нашли в нём ошибку</td><td>0</td></tr>
+    </table></div>
+    <p class="note">Верное предложение стоит столько же, сколько найденная и исправленная ошибка: обвинять наугад невыгодно. Примерно каждое третье дело чистое, но точное число в партии случайно.</p>
+
+    <div class="tip"><b>После партии.</b> Игра показывает темы, где ошибка осталась незамеченной, и отдельно слова, которые вы зря сочли ошибкой. Пропущенные ошибки попадают в очередь повторения тренажёра.</div>
+  </div>`;
+}
+
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
@@ -2678,7 +2746,7 @@ applyTheme(readTheme());
 
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
-renderGames(); renderMilionerzy(); renderSekunda();
+renderGames(); renderMilionerzy(); renderSekunda(); renderDetektyw();
 renderSources();
 renderNumTog();
 renderIndex();

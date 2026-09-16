@@ -34,6 +34,7 @@ const routes = [
   ["s-games", "gry", "Игры по польской грамматике"],
   ["s-mil", "gry/milionerzy", "Milionerzy: игра по польской грамматике"],
   ["s-sek", "gry/sekunda", "До последней секунды: польская грамматика на скорость"],
+  ["s-det", "gry/detektyw", "Языковой детектив: найдите ошибку в польском предложении"],
   ["s-sources", "sources", "О справочнике и источниках"]
 ];
 const TOC_MIN = 5;
@@ -179,7 +180,7 @@ for(const [id, path, heading] of routes){
   assert.equal(scripts.length, gameHost ? 2 : 1,
     "Only the game page loads a second script; the search index stays lazy everywhere");
   if(gameHost){
-    const [engine, bank] = {milionerzy:["game", "game-data"], sekunda:["sekunda", "sekunda-data"]}[gameHost.dataset.game];
+    const [engine, bank] = {milionerzy:["game", "game-data"], sekunda:["sekunda", "sekunda-data"], detektyw:["detektyw", "game-data"]}[gameHost.dataset.game];
     assert.match(scripts[1].getAttribute("src"), new RegExp(`(?:^|/)${engine}\\.js\\?v=[a-f0-9]{10}$`));
     assert.match(scripts[1].dataset.gameSrc, new RegExp(`(?:^|/)${bank}\\.js\\?v=[a-f0-9]{10}$`));
   }
@@ -192,7 +193,7 @@ for(const [id, path, heading] of routes){
 
 const rootPage = documents.get("s-index");
 assert.equal(rootPage.document.title, "Польская грамматика - таблицы, правила и примеры");
-assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 25);
+assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 26);
 const indexGroups = [...rootPage.document.querySelectorAll("#s-index .idx > section")];
 assert.equal(indexGroups.at(-1)?.querySelector("h3")?.textContent.trim(), "О проекте");
 assert.equal(indexGroups.at(-1)?.querySelector(".idx-a")?.dataset.s, "s-sources");
@@ -933,13 +934,13 @@ assert.deepEqual(sitemapDates, manifestKeys.map(key => contentManifest[key].date
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");
 const searchIndex = JSON.parse(searchJSON);
 assert(searchIndex.length > 1500);
-assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 25);
+assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 26);
 assert(searchIndex.some(entry => entry.tab === "s-sources" && entry.text.includes("блог, форум")), "Methodology must be searchable");
 assert(searchIndex.every(entry => /^r-\d+$/.test(entry.id) && entry.text));
 assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementById(entry.id)), "Every search entry must resolve on its topic page");
 
 const excluded = new Set([...jekyllConfig.matchAll(/^\s*-\s*(.+?)\s*$/gm)].map(match => match[1]));
-for(const engine of ["game.js", "sekunda.js"]){
+for(const engine of ["game.js", "sekunda.js", "detektyw.js"]){
   const engineSource = await readFile(resolve(root, engine), "utf8");
   assert.equal(engineSource.match(/^(?:const|let|var|function|class)\s/gm), null,
     `${engine} shares the global scope with client.js, so it must declare nothing at the top level`);
@@ -1031,6 +1032,54 @@ for(const question of gameData.milionerzy){
     assert(!question.drillKey, `${where}: drillKey without drill`);
   }
 }
+const detektywIds = new Set();
+for(const item of gameData.detektyw){
+  const where = `detektyw/${item.id}`;
+  assert(/^det-[a-z0-9-]+$/.test(item.id), `${where}: id is a content slug with the det- prefix`);
+  assert(!detektywIds.has(item.id), `${where}: duplicate id`);
+  detektywIds.add(item.id);
+  assert([1, 2, 3].includes(item.tier), `${where}: tier is 1, 2 or 3`);
+  assert(item.topic && item.explanation, `${where}: topic and explanation are filled`);
+  const slots = [...item.text.matchAll(/\{([^{}|]+)\|([^{}|]+)\}/g)];
+  assert.equal(slots.length, 1, `${where}: exactly one {right|wrong} slot`);
+  assert.equal((item.text.match(/[{}|]/g) || []).length, 3, `${where}: no stray slot markers`);
+  const [, right, wrong] = slots[0];
+  assert.notEqual(right, wrong, `${where}: the error differs from the right form`);
+  assert.equal(item.options.length, 3, `${where}: three corrections`);
+  assert.equal(new Set(item.options).size, 3, `${where}: corrections must differ`);
+  assert(item.options.includes(right), `${where}: the right form is among the corrections`);
+  assert(!item.options.includes(wrong), `${where}: the shown error must not return as a correction`);
+  assert(Array.isArray(item.lemmas) && item.lemmas.length, `${where}: lemmas are listed`);
+  const rule = gameData.rules[item.ruleId];
+  assert(rule, `${where}: ruleId ${item.ruleId} is missing from rules`);
+  usedRules.add(item.ruleId);
+  const [rulePath, ruleHash] = rule.url.replace(/^\//, "").split("#");
+  const ruleRoute = routes.find(route => route[1] === rulePath.replace(/\/$/, ""));
+  assert(ruleRoute, `${where}: rule url points at a page that does not exist: ${rule.url}`);
+  const ruleAnchor = (ruleHash || "").split("/").find(part => part.startsWith("~"));
+  if(ruleAnchor)
+    assert([...documents.get(ruleRoute[0]).document.querySelectorAll("[data-h]")].some(node => node.dataset.h === ruleAnchor.slice(1)),
+      `${where}: rule url anchor ${ruleAnchor} is not a heading of /${rulePath}`);
+  if(item.drill){
+    const info = deckInfo.get(item.drill.deck);
+    assert(info, `${where}: unknown deck ${item.drill.deck}`);
+    for(const [name, chosen] of Object.entries(item.drill.filter || {})){
+      assert(info.filters.has(name), `${where}: deck ${item.drill.deck} has no filter ${name}`);
+      assert(info.filters.get(name).has(chosen), `${where}: filter ${name} has no value ${chosen}`);
+    }
+    if(item.drillKey)
+      assert(deckKeys(item.drill.deck).has(item.drillKey),
+        `${where}: drillKey ${item.drillKey} is not a real key of deck ${item.drill.deck}`);
+    const task = trainerDecks.sentences[item.drill.deck]?.find(row => row.id === item.drillKey);
+    if(task && item.drill.filter?.topic)
+      assert.equal(item.drill.filter.topic, task.topic, `${where}: the drill filter must show the topic of ${item.drillKey}`);
+  }else{
+    assert(!item.drillKey, `${where}: drillKey without drill`);
+  }
+}
+assert.equal(gameData.detektyw.filter(item => item.tier === 1).length, 24, "Detektyw starts with 24 audited first-tier cases");
+assert.equal(gameData.detektyw.filter(item => item.tier === 2).length, 24, "Detektyw has 24 audited second-tier cases");
+assert.equal(gameData.detektyw.filter(item => item.tier === 3).length, 24, "Detektyw has 24 audited third-tier cases");
 for(const ruleId of Object.keys(gameData.rules))
   assert(usedRules.has(ruleId), `rules/${ruleId} is not used by any question`);
 for(const warning of gameWarnings) console.log(`  предупреждение: ${warning}`);
@@ -1084,7 +1133,7 @@ assert.equal(speedData.items.find(item => item.id === "ortho-stół")?.o[speedDa
 
 const publicRoot = new Set([
   "404.html", "CNAME", "apple-touch-icon.png", "client.js", "favicon.ico", "favicon.svg",
-  "game-data.js", "game.js", "index.html", "sekunda-data.js", "sekunda.js", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
+  "game-data.js", "game.js", "index.html", "sekunda-data.js", "sekunda.js", "detektyw.js", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
   "sitemap.xml", "style.css",
   ...routes.map(([, path]) => path).filter(Boolean)
 ]);
