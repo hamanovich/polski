@@ -300,6 +300,131 @@ globalThis.GAME_DATA = {
       text: "Приставочный совершенный глагол даёт простое будущее теми же окончаниями, какие у несовершенного означают настоящее.",
       url: "/verbs/#czasy/~сетка-какои-вид-в-каком-времени"
     }
+,
+    "ff-czas-godzina-grupa": {
+      text: "Похожее польское niedziela значит «воскресенье».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-rano": {
+      text: "Похожее польское rano значит «утром», а не «рано».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-stol": {
+      text: "Похожее польское stół значит «стол».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-kubek": {
+      text: "Похожее польское kubek значит «кружка».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-zakaz": {
+      text: "Похожее польское zakaz значит «запрет».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "ff-uwaga": {
+      text: "Похожее польское uwaga значит «внимание» или «замечание».",
+      url: "/language-bridges/#~ложные-друзья"
+    },
+    "replika-zgoda": {
+      text: "Согласие с пониманием передаётся короткой готовой репликой, а не переводом по словам.",
+      url: "/particles/"
+    },
+    "replika-ironia": {
+      text: "Ироничное недоверие в польском выражается отдельным словом, а не интонацией при согласии.",
+      url: "/particles/"
+    },
+    "replika-istota": {
+      text: "Ввод настоящей причины оформляется своей скрепой, отличной от подведения итога.",
+      url: "/particles/"
+    },
+    "replika-pri-sluchae": {
+      text: "Присоединение попутной просьбы к идущему разговору имеет свою устойчивую формулу.",
+      url: "/particles/"
+    },
+    "replika-smyagchenie": {
+      text: "Вежливое сомнение вместо прямого отказа выражается готовой репликой.",
+      url: "/particles/"
+    },
+    "prep-z-skad": {
+      text: "Предлог z в значении «из» требует родительного падежа.",
+      url: "/prepositions/#~куда-где-откуда"
+    },
+    "prep-dla-dop": {
+      text: "Предлог dla требует родительного падежа.",
+      url: "/prepositions/"
+    },
+    "prep-przy-miej": {
+      text: "Предлог przy требует предложного падежа.",
+      url: "/prepositions/"
+    },
+    "prep-o-miej": {
+      text: "Предлог o в значении темы разговора требует предложного падежа.",
+      url: "/prepositions/"
+    },
+    "prep-obok-dop": {
+      text: "Предлоги места obok, niedaleko, oprócz требуют родительного падежа.",
+      url: "/prepositions/"
+    },
+    "neg-chciec-dop": {
+      text: "После отрицания прямое дополнение переходит в родительный, в том числе при chcieć.",
+      url: "/negation/#~родительныи-при-отрицании"
+    },
+    "neg-ma-bezlichnoe": {
+      text: "Отсутствие чего-то выражается безличной конструкцией с родительным падежом.",
+      url: "/negation/#~nie-ma-или-nie-jest"
+    },
+    "neg-mnozhestvennoe": {
+      text: "При отрицании родительный требуется и во множественном числе.",
+      url: "/negation/#~родительныи-при-отрицании"
+    },
+    "pron-celownik-ona": {
+      text: "Дательный третьего лица женского рода имеет свою краткую форму.",
+      url: "/pronouns/#~личные"
+    },
+    "pron-po-przyimku-miej": {
+      text: "После предлога местоимение третьего лица получает начальное n-, а падеж задаёт предлог.",
+      url: "/pronouns/#~личные"
+    },
+    "pron-wskazujacy-dop": {
+      text: "Указательное местоимение согласуется с существительным в роде, числе и падеже.",
+      url: "/pronouns/#~ten-ta-to"
+    },
+    "pron-sam-rod": {
+      text: "Местоимение sam согласуется в роде и числе с тем, кто выполняет действие без чужой помощи.",
+      url: "/pronouns/#~личные"
+    },
+    "rekcja-za-narz": {
+      text: "Часть глаголов требует предлога za с творительным падежом.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-o-bier": {
+      text: "Глаголы заботы и просьбы идут с предлогом o и винительным падежом.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-w-miej": {
+      text: "Глаголы чувства бывают предложными: предлог w с предложным падежом.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-dopelniacz-bez-przyimka": {
+      text: "Ряд глаголов требует родительного падежа без всякого предлога.",
+      url: "/verbs/#rekcja"
+    },
+    "rekcja-narzednik-bez-przyimka": {
+      text: "Ряд возвратных глаголов требует творительного падежа без предлога.",
+      url: "/verbs/#rekcja"
+    },
+    "miej-oj-u": {
+      text: "У слов на -ój предложный оканчивается на -u, а ó в основе переходит в o.",
+      url: "/cases/#miej/sg"
+    },
+    "conj-wy-cie": {
+      text: "Второе лицо множественного числа во всех спряжениях оканчивается на -cie.",
+      url: "/verbs/#conj/~сводка-окончании"
+    },
+    "byc-my-present": {
+      text: "У być формы настоящего времени нерегулярны и учатся таблицей.",
+      url: "/verbs/#conj/~byc-отдельная-песня"
+    }
   },
   milionerzy: [
     {
@@ -1168,6 +1293,338 @@ globalThis.GAME_DATA = {
       ruleId: "future-simple-third", lemmas: ["zamknąć"],
       drill: {deck: "verbs", filter: {tense: "future"}},
       drillKey: "zamknąć|future|2"
+    },
+    {
+      id: "mil-niedziela-tydzien", tier: 1, topic: "Ложные друзья",
+      prompt: "Как по-польски «неделя»?",
+      options: ["tydzień", "niedziela", "miesiąc", "rok"],
+      answer: "tydzień",
+      explanation: "niedziela и «неделя» - ложные друзья: niedziela значит «воскресенье», а неделя - tydzień.",
+      ruleId: "ff-czas-godzina-grupa", lemmas: ["niedziela", "tydzień"],
+      drill: {deck: "falsefriends", filter: {topic: "time"}},
+      drillKey: "false-niedziela"
+    },
+    {
+      id: "mil-rano-wczesnie", tier: 1, topic: "Ложные друзья",
+      prompt: "Как по-польски «рано»?",
+      options: ["wcześnie", "rano", "późno", "zaraz"],
+      answer: "wcześnie",
+      explanation: "rano и «рано» - ложные друзья: rano значит «утром». Наречие «рано» - wcześnie.",
+      ruleId: "ff-rano", lemmas: ["rano", "wcześnie"],
+      drill: {deck: "falsefriends", filter: {topic: "time"}},
+      drillKey: "false-rano"
+    },
+    {
+      id: "mil-stol-krzeslo", tier: 1, topic: "Ложные друзья",
+      prompt: "Как по-польски «стул»?",
+      options: ["krzesło", "stół", "fotel", "łóżko"],
+      answer: "krzesło",
+      explanation: "stół и «стул» - ложные друзья: stół это «стол», а стул - krzesło. Fotel - кресло.",
+      ruleId: "ff-stol", lemmas: ["stół", "krzesło"],
+      drill: {deck: "falsefriends", filter: {topic: "home"}},
+      drillKey: "false-stol"
+    },
+    {
+      id: "mil-kubek-puchar", tier: 1, topic: "Ложные друзья",
+      prompt: "Как по-польски «кубок»?",
+      options: ["puchar", "kubek", "talerz", "szklanka"],
+      answer: "puchar",
+      explanation: "kubek и «кубок» - ложные друзья: kubek это «кружка», а награда - puchar.",
+      ruleId: "ff-kubek", lemmas: ["kubek", "puchar"],
+      drill: {deck: "falsefriends", filter: {topic: "home"}},
+      drillKey: "false-kubek"
+    },
+    {
+      id: "mil-zakaz-zamowienie", tier: 2, topic: "Ложные друзья",
+      prompt: "Как по-польски «заказ»?",
+      options: ["zamówienie", "zakaz", "rachunek", "paragon"],
+      answer: "zamówienie",
+      explanation: "zakaz и «заказ» - ложные друзья: zakaz это «запрет». Rachunek - счёт, paragon - чек.",
+      ruleId: "ff-zakaz", lemmas: ["zakaz", "zamówienie"],
+      drill: {deck: "falsefriends", filter: {topic: "work"}},
+      drillKey: "false-zakaz"
+    },
+    {
+      id: "mil-uwaga-szacunek", tier: 2, topic: "Ложные друзья",
+      prompt: "Как по-польски «уважение»?",
+      options: ["szacunek", "uwaga", "uprzejmość", "grzeczność"],
+      answer: "szacunek",
+      explanation: "uwaga и «уважение» - ложные друзья: uwaga это «внимание» или «замечание».",
+      ruleId: "ff-uwaga", lemmas: ["uwaga", "szacunek"],
+      drill: {deck: "falsefriends", filter: {topic: "work"}},
+      drillKey: "false-uwaga"
+    },
+    {
+      id: "mil-no-jasne", tier: 2, topic: "Разговорные реплики",
+      context: "показываете, что поняли и согласны",
+      prompt: "Как сказать «ну ясно»?",
+      options: ["No jasne", "Akurat", "Może być", "No nie wiem"],
+      answer: "No jasne",
+      explanation: "No jasne подтверждает понимание. Akurat - ироничное недоверие, Może być - сдержанное согласие, No nie wiem - сомнение.",
+      ruleId: "replika-zgoda", lemmas: ["no jasne"],
+      drill: {deck: "phrases", filter: {topic: "reply"}},
+      drillKey: "phrase-ну-ясно"
+    },
+    {
+      id: "mil-akurat", tier: 3, level: 2, topic: "Разговорные реплики",
+      context: "иронично не верите сказанному",
+      prompt: "Как сказать «ага, как же»?",
+      options: ["Akurat", "No jasne", "Oczywiście", "Zgoda"],
+      answer: "Akurat",
+      explanation: "Akurat выражает ироничное недоверие. Остальные три - обычное согласие разной степени.",
+      ruleId: "replika-ironia", lemmas: ["akurat"],
+      drill: {deck: "phrases", filter: {topic: "reply"}},
+      drillKey: "phrase-ага-как-же"
+    },
+    {
+      id: "mil-tak-naprawde", tier: 2, topic: "Разговорные реплики",
+      context: "вводите то, что считаете настоящей причиной",
+      prompt: "Как сказать «на самом деле»?",
+      options: ["Tak naprawdę", "W sumie", "Przy okazji", "Po prostu"],
+      answer: "Tak naprawdę",
+      explanation: "Tak naprawdę вводит настоящую причину. W sumie подводит итог, Przy okazji прицепляет попутное, Po prostu подчёркивает простоту.",
+      ruleId: "replika-istota", lemmas: ["tak naprawdę"],
+      drill: {deck: "phrases", filter: {topic: "link"}},
+      drillKey: "phrase-на-самом-деле"
+    },
+    {
+      id: "mil-przy-okazji", tier: 2, topic: "Разговорные реплики",
+      context: "прицепляете просьбу к идущему разговору",
+      prompt: "Как сказать «заодно, раз уж зашла речь»?",
+      options: ["Przy okazji", "Tak naprawdę", "Wiesz co", "Jakoś"],
+      answer: "Przy okazji",
+      explanation: "Przy okazji присоединяет попутное дело. Wiesz co меняет тему, Jakoś смягчает отказ.",
+      ruleId: "replika-pri-sluchae", lemmas: ["przy okazji"],
+      drill: {deck: "phrases", filter: {topic: "link"}},
+      drillKey: "phrase-заодно-раз-уж-зашла-речь"
+    },
+    {
+      id: "mil-no-nie-wiem", tier: 2, topic: "Разговорные реплики",
+      context: "вежливо сомневаетесь вместо прямого «нет»",
+      prompt: "Как сказать «ну не знаю»?",
+      options: ["No nie wiem", "Akurat", "Może być", "Po prostu"],
+      answer: "No nie wiem",
+      explanation: "No nie wiem - мягкое сомнение вместо отказа. Może być, наоборот, сдержанное согласие.",
+      ruleId: "replika-smyagchenie", lemmas: ["no nie wiem"],
+      drill: {deck: "phrases", filter: {topic: "soften"}},
+      drillKey: "phrase-ну-не-знаю"
+    },
+    {
+      id: "mil-wracam-z-warszawy", tier: 2, topic: "Предлоги: управление",
+      context: "Warszawa",
+      prompt: "Wracam z ___.",
+      options: ["Warszawy", "Warszawa", "Warszawie", "Warszawą"],
+      answer: "Warszawy",
+      explanation: "Z в значении «из» требует родительного: z Warszawy.",
+      ruleId: "prep-z-skad", lemmas: ["z", "Warszawa"],
+      drill: {deck: "prepositions", filter: {topic: "government"}},
+      drillKey: "prepgo-2"
+    },
+    {
+      id: "mil-prezent-dla-dziecka", tier: 2, topic: "Предлоги: управление",
+      context: "dziecko",
+      prompt: "To prezent dla ___.",
+      options: ["dziecka", "dziecko", "dziecku", "dzieckiem"],
+      answer: "dziecka",
+      explanation: "Dla требует родительного: dla dziecka. Dziecku - дательный, dzieckiem - творительный.",
+      ruleId: "prep-dla-dop", lemmas: ["dla", "dziecko"],
+      drill: {deck: "prepositions", filter: {topic: "government"}},
+      drillKey: "prepgo-4"
+    },
+    {
+      id: "mil-przy-oknie", tier: 2, topic: "Предлоги: управление",
+      context: "okno",
+      prompt: "Stolik stoi przy ___.",
+      options: ["oknie", "okno", "okna", "oknem"],
+      answer: "oknie",
+      explanation: "Przy требует предложного: przy oknie.",
+      ruleId: "prep-przy-miej", lemmas: ["przy", "okno"],
+      drill: {deck: "prepositions", filter: {topic: "government"}},
+      drillKey: "prepgo-6"
+    },
+    {
+      id: "mil-o-pogodzie", tier: 2, topic: "Предлоги: управление",
+      context: "pogoda",
+      prompt: "Rozmawiamy o ___.",
+      options: ["pogodzie", "pogoda", "pogody", "pogodą"],
+      answer: "pogodzie",
+      explanation: "O в значении темы требует предложного: o pogodzie, с чередованием d в dz.",
+      ruleId: "prep-o-miej", lemmas: ["o", "pogoda"],
+      drill: {deck: "prepositions", filter: {topic: "government"}},
+      drillKey: "prepgo-7"
+    },
+    {
+      id: "mil-obok-kina", tier: 3, level: 2, topic: "Предлоги: управление",
+      context: "kino",
+      prompt: "Spotkajmy się obok ___.",
+      options: ["kina", "kino", "kinu", "kinem"],
+      answer: "kina",
+      explanation: "Obok требует родительного: obok kina. Так же ведут себя niedaleko и oprócz.",
+      ruleId: "prep-obok-dop", lemmas: ["obok", "kino"],
+      drill: {deck: "prepositions", filter: {topic: "government"}},
+      drillKey: "prep-government-extra-2"
+    },
+    {
+      id: "mil-nie-chce-kawy", tier: 2, topic: "Отрицание",
+      context: "kawa",
+      prompt: "Nie chcę ___.",
+      options: ["kawy", "kawa", "kawę", "kawą"],
+      answer: "kawy",
+      explanation: "При отрицании прямое дополнение переходит из винительного в родительный: nie chcę kawy.",
+      ruleId: "neg-chciec-dop", lemmas: ["chcieć", "kawa"],
+      drill: {deck: "negation", filter: {topic: "case"}},
+      drillKey: "neg-9"
+    },
+    {
+      id: "mil-nie-ma-mleka", tier: 2, topic: "Отрицание",
+      context: "настоящее время",
+      prompt: "W lodówce ___ mleka.",
+      options: ["nie ma", "nie jest", "nie mam", "nie są"],
+      answer: "nie ma",
+      explanation: "Безличное nie ma сообщает об отсутствии и требует родительного: nie ma mleka.",
+      ruleId: "neg-ma-bezlichnoe", lemmas: ["mleko"],
+      drill: {deck: "negation", filter: {topic: "construction"}},
+      drillKey: "neg-13"
+    },
+    {
+      id: "mil-nie-znajde-okularow", tier: 3, level: 2, topic: "Отрицание",
+      context: "okulary",
+      prompt: "Nie mogę znaleźć swoich ___.",
+      options: ["okularów", "okulary", "okularami", "okularach"],
+      answer: "okularów",
+      explanation: "Отрицание требует родительного и во множественном: nie mogę znaleźć okularów.",
+      ruleId: "neg-mnozhestvennoe", lemmas: ["okulary"],
+      drill: {deck: "negation", filter: {topic: "case"}},
+      drillKey: "neg-15"
+    },
+    {
+      id: "mil-daje-jej-ksiazke", tier: 2, topic: "Личные местоимения",
+      prompt: "Daję Ani książkę. Daję ___ książkę.",
+      options: ["jej", "ją", "nią", "niej"],
+      answer: "jej",
+      explanation: "Кому? Дательный третьего лица женского рода - jej. Ją - винительный, nią и niej идут после предлога.",
+      ruleId: "pron-celownik-ona", lemmas: ["ona"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}},
+      drillKey: "pron-3"
+    },
+    {
+      id: "mil-rozmawiam-o-niej", tier: 3, level: 2, topic: "Личные местоимения",
+      prompt: "Rozmawiam o Ani. Rozmawiam o ___.",
+      options: ["niej", "jej", "nią", "ją"],
+      answer: "niej",
+      explanation: "После предлога появляется n-, а o требует предложного: o niej. Форма nią - творительный.",
+      ruleId: "pron-po-przyimku-miej", lemmas: ["o"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}},
+      drillKey: "pron-4"
+    },
+    {
+      id: "mil-nie-znam-tego-adresu", tier: 2, topic: "Указательные местоимения",
+      context: "adres",
+      prompt: "Nie znam ___ adresu.",
+      options: ["tego", "ten", "tym", "temu"],
+      answer: "tego",
+      explanation: "Отрицание требует родительного, и указательное местоимение согласуется: nie znam tego adresu.",
+      ruleId: "pron-wskazujacy-dop", lemmas: ["ten", "adres"],
+      drill: {deck: "pronouns", filter: {topic: "other"}},
+      drillKey: "pron-11"
+    },
+    {
+      id: "mil-maria-sama", tier: 2, topic: "Возвратные местоимения",
+      prompt: "Maria zrobiła to ___.",
+      options: ["sama", "sam", "samo", "sami"],
+      answer: "sama",
+      explanation: "Sam согласуется с подлежащим: Maria - женский род единственного, значит sama.",
+      ruleId: "pron-sam-rod", lemmas: ["sam"],
+      drill: {deck: "pronouns", filter: {topic: "other"}},
+      drillKey: "pron-14"
+    },
+    {
+      id: "mil-tesknie-za-domem", tier: 3, level: 3, topic: "Управление: предлог вместо падежа",
+      context: "dom",
+      prompt: "Tęsknię ___.",
+      options: ["za domem", "domu", "domem", "o domu"],
+      answer: "za domem",
+      explanation: "Tęsknić za + Narzędnik. Без предлога творительный здесь не работает.",
+      ruleId: "rekcja-za-narz", lemmas: ["tęsknić", "dom"],
+      drill: {deck: "government", filter: {topic: "verb", trap: "trap"}},
+      drillKey: "rekcja-tesknie-dom"
+    },
+    {
+      id: "mil-dbam-o-zdrowie", tier: 3, level: 3, topic: "Управление: предлог вместо падежа",
+      context: "zdrowie",
+      prompt: "Dbam ___.",
+      options: ["o zdrowie", "zdrowia", "zdrowiem", "na zdrowie"],
+      answer: "o zdrowie",
+      explanation: "Dbać o + Biernik. Na zdrowie - это тост, а не управление глагола dbać.",
+      ruleId: "rekcja-o-bier", lemmas: ["dbać", "zdrowie"],
+      drill: {deck: "government", filter: {topic: "verb", trap: "trap"}},
+      drillKey: "rekcja-dbam-zdrowie"
+    },
+    {
+      id: "mil-zakochalem-sie-w-niej", tier: 3, level: 3, topic: "Управление: предлог вместо падежа",
+      context: "ona",
+      prompt: "Zakochałem się ___.",
+      options: ["w niej", "nią", "jej", "do niej"],
+      answer: "w niej",
+      explanation: "Zakochać się w + Miejscownik. Русское «влюбиться в кого-то» даёт винительный, польский требует предложного.",
+      ruleId: "rekcja-w-miej", lemmas: ["zakochać się"],
+      drill: {deck: "government", filter: {topic: "verb", trap: "trap"}},
+      drillKey: "rekcja-zakochalem-sie-ona"
+    },
+    {
+      id: "mil-gratuluje-sukcesu", tier: 3, level: 3, topic: "Управление: родительный вместо винительного",
+      context: "sukces",
+      prompt: "Gratuluję ci ___.",
+      options: ["sukcesu", "sukces", "sukcesem", "o sukcesie"],
+      answer: "sukcesu",
+      explanation: "Gratulować komuś czegoś: адресат в дательном, повод в родительном.",
+      ruleId: "rekcja-dopelniacz-bez-przyimka", lemmas: ["gratulować", "sukces"],
+      drill: {deck: "government", filter: {topic: "verb", trap: "trap"}},
+      drillKey: "rekcja-gratuluje-ci-sukces"
+    },
+    {
+      id: "mil-opiekuje-sie-babcia", tier: 3, level: 3, topic: "Управление: творительный",
+      context: "babcia",
+      prompt: "Opiekuję się ___.",
+      options: ["babcią", "babci", "babcię", "o babci"],
+      answer: "babcią",
+      explanation: "Opiekować się + Narzędnik. Русское «заботиться о ком-то» ведёт к предлогу, польский обходится падежом.",
+      ruleId: "rekcja-narzednik-bez-przyimka", lemmas: ["opiekować się", "babcia"],
+      drill: {deck: "government", filter: {topic: "verb", trap: "trap"}},
+      drillKey: "rekcja-opiekuje-sie-babcia"
+    },
+    {
+      id: "mil-czekam-w-pokoju", tier: 2, topic: "Miejscownik: окончание",
+      context: "pokój",
+      prompt: "Czekam w ___.",
+      options: ["pokoju", "pokój", "pokoje", "pokojem"],
+      answer: "pokoju",
+      explanation: "У слов на -ój предложный оканчивается на -u, а ó переходит в o: pokój даёт pokoju.",
+      ruleId: "miej-oj-u", lemmas: ["pokój"],
+      drill: {deck: "nouns", filter: {case: "miej", number: "sg"}},
+      drillKey: "pokój|miej|sg"
+    },
+    {
+      id: "mil-wy-mowicie", tier: 1, topic: "Спряжение: окончания",
+      context: "mówić, wy",
+      prompt: "___ po polsku?",
+      options: ["Mówicie", "Mówimy", "Mówią", "Mówisz"],
+      answer: "Mówicie",
+      explanation: "Второе лицо множественного во всех спряжениях оканчивается на -cie: mówicie.",
+      ruleId: "conj-wy-cie", lemmas: ["mówić"],
+      drill: {deck: "verbs", filter: {tense: "present"}},
+      drillKey: "mówić|present|4"
+    },
+    {
+      id: "mil-my-jestesmy", tier: 1, topic: "Спряжение настоящего времени",
+      context: "być, my",
+      prompt: "___ już w domu.",
+      options: ["Jesteśmy", "Jestem", "Jesteście", "Są"],
+      answer: "Jesteśmy",
+      explanation: "Być спрягается нерегулярно: для my форма jesteśmy.",
+      ruleId: "byc-my-present", lemmas: ["być"],
+      drill: {deck: "verbs", filter: {tense: "present"}},
+      drillKey: "być|present|3"
     }
   ]
 };

@@ -388,8 +388,8 @@ Celownik
 student→studentowilekarz→lekarzowisąsiad→sąsiadowi
 -owi - основной вариант
 мужской: частые формы на -u
-pan→panubrat→bratuojciec→ojcuchłopiec→chłopcupies→psukot→kotuświat→światuBóg→Bogu
-частая группа; учи готовые формы, это не исчерпывающий список
+pan→panubrat→bratuojciec→ojcuchłop→chłopuchłopiec→chłopcuksiądz→księdzupies→psukot→kotulew→lwudiabeł→diabłuświat→światuBóg→Bogu
+список учат готовым: здесь -u основная форма, а -owi обычно ошибка (pies → psu). Вне списка бывает вариативность: kat → katowi / katu
 женский: твёрдая основа → -e
 kobieta→kobieciesiostra→siostrzemama→mamiekoleżanka→koleżance
 с чередованием согласной; форма совпадает с предложным

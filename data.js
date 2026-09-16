@@ -210,7 +210,7 @@ const CASES = [
   preps:"dzięki, przeciwko, wbrew, ku",
   sg:[
     {l:"мужской", f:[{a:"student",b:"student|owi"},{a:"lekarz",b:"lekarz|owi"},{a:"sąsiad",b:"sąsiad|owi"}], n:"-owi - основной вариант"},
-    {l:"мужской: частые формы на -u", f:[{a:"pan",b:"pan|u"},{a:"brat",b:"brat|u"},{a:"ojciec",b:"ojc|u"},{a:"chłopiec",b:"chłopc|u"},{a:"pies",b:"ps|u"},{a:"kot",b:"kot|u"},{a:"świat",b:"świat|u"},{a:"Bóg",b:"Bog|u"}], n:"частая группа; учи готовые формы, это не исчерпывающий список", ref:"celownik-u", rowRef:"celownik-u", refLabel:"Открыть список"},
+    {l:"мужской: частые формы на -u", f:[{a:"pan",b:"pan|u"},{a:"brat",b:"brat|u"},{a:"ojciec",b:"ojc|u"},{a:"chłop",b:"chłop|u"},{a:"chłopiec",b:"chłopc|u"},{a:"ksiądz",b:"księdz|u"},{a:"pies",b:"ps|u"},{a:"kot",b:"kot|u"},{a:"lew",b:"lw|u"},{a:"diabeł",b:"diabł|u"},{a:"świat",b:"świat|u"},{a:"Bóg",b:"Bog|u"}], n:"список учат готовым: здесь -u основная форма, а -owi обычно ошибка (pies → psu). Вне списка бывает вариативность: kat → katowi / katu", ref:"celownik-u", rowRef:"celownik-u", refLabel:"Открыть список"},
     {l:"женский: твёрдая основа → -e", f:[{a:"kobieta",b:"kobie|ci|e"},{a:"siostra",b:"sios|trz|e"},{a:"mama",b:"ma|mi|e"},{a:"koleżanka",b:"koleżan|c|e"}], n:"с чередованием согласной; форма совпадает с предложным"},
     {l:"женский: мягкая основа → -i / -y", f:[{a:"pani",b:"pan|i"},{a:"ulica",b:"ulic|y"},{a:"praca",b:"prac|y"},{a:"ziemia",b:"ziem|i"}], n:"после мягких и исторически мягких; форма совпадает с предложным"},
     {l:"средний", f:[{a:"dziecko",b:"dzieck|u"},{a:"okno",b:"okn|u"}], n:"-u"}

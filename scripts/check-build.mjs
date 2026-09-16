@@ -810,7 +810,7 @@ assert.deepEqual(trainerByLemma.get("dać").fu, ["dam", "dasz", "da", "damy", "d
 assert.deepEqual(trainerByLemma.get("wiedzieć").pr, ["wiem", "wiesz", "wie", "wiemy", "wiecie", "wiedzą"]);
 
 const trainerNouns = trainerDecks.nouns;
-assert.equal(trainerNouns.length, 213, "The noun trainer drills every declension example that carries a dictionary form");
+assert.equal(trainerNouns.length, 217, "The noun trainer drills every declension example that carries a dictionary form");
 assert.deepEqual(trainerDecks.cases.map(([id]) => id), ["mian", "bier", "dop", "cel", "narz", "miej", "woł"]);
 assert(trainerNouns.every(item => item.l && item.f && item.c && (item.n === "sg" || item.n === "pl")),
   "Every noun question needs a lemma, a form, a case and a number");
@@ -827,7 +827,7 @@ assert.equal(nounAnswer("Włochy", "miej", "pl"), "Włoszech");
 assert.equal(nounAnswer("Węgry", "miej", "pl"), "Węgrzech");
 assert.equal(nounAnswer("Piotr", "woł", "sg"), "Piotrze");
 const nounReferences = trainerNouns.filter(item => item.ref);
-assert.equal(nounReferences.length, 45, "Every noun card whose hint recommends a rule, orientation or list must link to it");
+assert.equal(nounReferences.length, 49, "Every noun card whose hint recommends a rule, orientation or list must link to it");
 assert.equal(new Set(nounReferences.map(item => item.ref)).size, 7);
 for(const item of nounReferences){
   const match = item.ref.match(/^#([^/]+)\/(sg|pl)\/~(.+)$/);
