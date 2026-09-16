@@ -152,15 +152,24 @@ const trainerSource = `globalThis.TRAINER_DATA=${JSON.stringify({
 })};\n`;
 await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");
 
-const gameSource = await readFile(resolve(root, "game.js"), "utf8");
-const gameDataSource = await readFile(resolve(root, "game-data.js"), "utf8");
+const speedSource = `globalThis.SEKUNDA_DATA=${JSON.stringify(sandbox.speedDeck())};\n`;
+await writeFile(resolve(root, "sekunda-data.js"), speedSource, "utf8");
+
+const [gameSource, gameDataSource, speedEngineSource] = await Promise.all(
+  ["game.js", "game-data.js", "sekunda.js"].map(name => readFile(resolve(root, name), "utf8")));
 const assetHashes = {
   style:fingerprint(styleSource),
   client:fingerprint(clientSource),
   search:fingerprint(searchSource),
   trainer:fingerprint(trainerSource),
   game:fingerprint(gameSource),
-  gameData:fingerprint(gameDataSource)
+  gameData:fingerprint(gameDataSource),
+  speed:fingerprint(speedEngineSource),
+  speedData:fingerprint(speedSource)
+};
+const gameAssets = {
+  milionerzy:[["game.js", assetHashes.game], ["game-data.js", assetHashes.gameData]],
+  sekunda:[["sekunda.js", assetHashes.speed], ["sekunda-data.js", assetHashes.speedData]]
 };
 const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
@@ -381,10 +390,12 @@ for(const page of pages){
   clientScript.dataset.trainerSrc = `${prefix}trainer-data.js?v=${assetHashes.trainer}`;
   pageDocument.body.append(clientScript);
 
-  if(pageDocument.querySelector("[data-game]")){
+  const gameHost = pageDocument.querySelector("[data-game]");
+  if(gameHost){
+    const [[engine, engineHash], [bank, bankHash]] = gameAssets[gameHost.dataset.game];
     const gameScript = pageDocument.createElement("script");
-    gameScript.src = `${prefix}game.js?v=${assetHashes.game}`;
-    gameScript.dataset.gameSrc = `${prefix}game-data.js?v=${assetHashes.gameData}`;
+    gameScript.src = `${prefix}${engine}?v=${engineHash}`;
+    gameScript.dataset.gameSrc = `${prefix}${bank}?v=${bankHash}`;
     pageDocument.body.append(gameScript);
   }
 

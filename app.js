@@ -1002,6 +1002,127 @@ function trainFutureCell(aux, participle, infinitive){
   return [`${aux} się ${part}`, `${aux} ${part} się`, `${aux} się ${inf}`, `${aux} ${inf} się`];
 }
 
+const SPEED_TOPICS = {
+  gender:{label:"Род", ask:"Какое указательное слово?", url:"/gender/#~как-определить-род"},
+  aspect:{label:"Вид глагола", ask:"Какой вид?", lang:"ru", url:"/verbs/#czasy/~вид-пары-глаголов"},
+  ortho:{label:"Орфография", ask:"Какая буква пропущена?"},
+  falsefriends:{label:"Ложные друзья", ask:"Что значит слово?", lang:"ru", url:"/language-bridges/#~ложные-друзья", shuffle:true},
+  spacing:{label:"Слитно или раздельно", ask:"Как пишется?", lang:"ru", url:"/particles/#~слитно-или-раздельно"},
+  capitals:{label:"Прописная буква", ask:"Какая буква в середине предложения?", url:"/alphabet/#~прописная-буква"}
+};
+const SPEED_ORTHO_PAIRS = [
+  [["ó", "u"], "/alphabet/#~правописание-u-или-o"],
+  [["rz", "ż"], "/alphabet/#~правописание-rz-или-z"],
+  [["ch", "h"], "/alphabet/#~правописание-ch-или-h"]
+];
+const SPEED_GENDERS = {m:["мужской", 0], "ż":["женский", 1], n:["средний", 2]};
+
+function speedDeck(){
+  const items = [];
+  const traps = new Map();
+  for(const [words, gender, russian] of ROD_DIFF){
+    const [ru, ruGender] = russian.split(" - ");
+    const glosses = ru.split(", ");
+    words.split(" · ").forEach((word, index) =>
+      traps.set(word, {g:{"м.":"m", "ж.":"ż", "ср.":"n"}[gender], ru:glosses[index] || glosses[0], ruGender}));
+  }
+  const nouns = new Map(VOCAB_NOUNS.map(row => [row[0], {g:row[2].split(" · ")[0], ru:row[1]}]));
+  for(const [word, trap] of traps) if(!nouns.has(word)) nouns.set(word, trap);
+  for(const [word, noun] of nouns){
+    const gender = SPEED_GENDERS[noun.g];
+    if(!gender) continue;
+    const trap = traps.get(word);
+    const pointer = ["ten", "ta", "to"][gender[1]];
+    const clash = trap ? ` В русском «${trap.ru}» ${{"м.":"мужского", "ж.":"женского", "ср.":"среднего"}[trap.ruGender]} рода.` : "";
+    items.push({
+      k:"gender", id:`gender-${word}`, p:["", ` ${word}`], n:noun.ru,
+      o:["ten", "ta", "to"], a:gender[1],
+      w:`${pointer} ${word}: ${gender[0]} род.${clash}`,
+      u:trap ? "/gender/#~род-расходится-с-русским" : ""
+    });
+  }
+
+  const aspects = new Map();
+  const partners = new Map();
+  const mark = (verb, kind) => { if(!aspects.has(verb)) aspects.set(verb, kind); };
+  const pair = (imperfective, perfective) => {
+    mark(imperfective, "impf"); mark(perfective, "pf");
+    if(!partners.has(imperfective)) partners.set(imperfective, perfective);
+    if(!partners.has(perfective)) partners.set(perfective, imperfective);
+  };
+  for(const row of VERBS){
+    if(row[8] === "сов.") mark(row[0], "pf");
+    else if(row[8] === "-") mark(row[0], "impf");
+    else pair(row[0], row[8]);
+  }
+  for(const [imperfective, perfective] of ASPECT) pair(imperfective, perfective);
+  for(const [verb, kind] of aspects){
+    const partner = partners.get(verb);
+    const name = kind === "pf" ? "совершенный" : "несовершенный";
+    items.push({
+      k:"aspect", id:`aspect-${verb}`, p:verb,
+      o:["несов.", "сов."], a:kind === "pf" ? 1 : 0,
+      w:partner ? `${verb}: ${name} вид, пара ${kind === "pf" ? "к" : "-"} ${partner}.` : `${verb}: ${name} вид.`,
+      u:""
+    });
+  }
+
+  for(const [marked, reason] of SPEED_ORTHO){
+    const [, before, letters, after] = marked.match(/^(.*)\((.+)\)(.*)$/);
+    const [options, url] = SPEED_ORTHO_PAIRS.find(([pair]) => pair.includes(letters));
+    items.push({
+      k:"ortho", id:`ortho-${before}${letters}${after}`, p:[before, after],
+      o:options, a:options.indexOf(letters),
+      w:`${before}${letters}${after}: ${reason}.`, u:url
+    });
+  }
+  for(const [word, meaning, lure] of FALSE){
+    const parts = lure.replace(/^(?:только|просто) /, "").split(" - ");
+    if(parts.length !== 2) continue;
+    const right = meaning.split("; ")[0];
+    items.push({
+      k:"falsefriends", id:`falsefriends-${word}`, p:word,
+      o:[right, parts[0]], a:0,
+      w:`${word}: ${meaning}. «${parts[0]}» по-польски ${parts[1]}.`, u:""
+    });
+  }
+
+  for(const [kind, rule, examples] of PARTPIS){
+    const joined = kind.startsWith("слитно");
+    for(const example of examples.split(" · ")){
+      if(SPEED_SKIP.includes(example)) continue;
+      const split = joined
+        ? example.match(/^(nie)(.+)$/) || example.match(/^(.+?)(by(?:m|ś|śmy|ście)?)$/)
+        : example.match(/^(nie) (.+)$/i) || example.match(/^(.+?) (by(?:m|ś|śmy|ście)?\b.*)$/);
+      if(!split) continue;
+      items.push({
+        k:"spacing", id:`spacing-${example}`, p:[split[1], split[2]],
+        o:["раздельно", "слитно"], f:[" ", ""], a:joined ? 1 : 0,
+        w:`${example}: ${rule}, ${joined ? "слитно" : "раздельно"}.`, u:""
+      });
+    }
+  }
+
+  const capitalRows = [...WIELKA_D.filter(row => !row[0].startsWith("Pan ")).map(row => [row, true]), ...WIELKA_M.map(row => [row, false])];
+  for(const [[rule, examples], upper] of capitalRows){
+    for(const example of examples.split(" · ")){
+      if(SPEED_SKIP.includes(example)) continue;
+      const words = example.split(" ");
+      const last = words.length - 1;
+      const target = upper || words[last][0] !== words[last][0].toLowerCase() ? 0 : last;
+      const letter = words[target][0];
+      const before = words.slice(0, target).concat("").join(" ");
+      const after = [words[target].slice(1), ...words.slice(target + 1)].join(" ");
+      items.push({
+        k:"capitals", id:`capitals-${example}`, p:[before, after],
+        o:[letter.toLowerCase(), letter.toUpperCase()], a:letter === letter.toUpperCase() ? 1 : 0,
+        w:`${example}: ${rule}, ${letter === letter.toUpperCase() ? "с прописной" : "со строчной"}.`, u:""
+      });
+    }
+  }
+  return {clock:SPEED_CLOCK, topics:SPEED_TOPICS, items};
+}
+
 function trainerNouns(){
   const questions = [];
   for(const item of CASES) for(const number of ["sg", "pl"]) for(const group of item[number])
@@ -2361,12 +2482,16 @@ function renderGames(){
         <span>Пятнадцать вопросов с четырьмя вариантами ответа, три подсказки и две несгораемые суммы. От узнавания форм до управления глаголов, которое расходится с русским.</span>
         <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
       </a>
+      <a class="game-card" href="#s-sek" data-s="s-sek">
+        <b>До последней секунды</b>
+        <span>Шестьдесят секунд и вопросы в одно нажатие: род существительного, вид глагола, ó или u. Верный ответ добавляет время, ошибка его отнимает.</span>
+        <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
+      </a>
     </div>
 
     <h3>Что в планах</h3>
     <div class="scroll"><table class="vt">
       <tr><th>игра</th><th>механика</th><th>чему учит</th></tr>
-      <tr><td class="w flow">До последней секунды</td><td class="flow">Общий запас времени, верный ответ добавляет секунды</td><td class="flow">Скорость узнавания: род, вид, орфография</td></tr>
       <tr><td class="w flow">Языковой детектив</td><td class="flow">В предложении спрятана ошибка, иногда её нет</td><td class="flow">Согласование, падежи, ложные друзья</td></tr>
       <tr><td class="w flow">Собери фразу</td><td class="flow">Слова даны вперемешку и в начальной форме</td><td class="flow">Порядок слов и согласование в своей речи</td></tr>
     </table></div>
@@ -2438,6 +2563,82 @@ function renderMilionerzy(){
   </div>`;
 }
 
+function renderSekunda(){
+  const deck = speedDeck();
+  const count = kind => deck.items.filter(item => item.k === kind).length;
+  const {start, bonus, penalty} = SPEED_CLOCK;
+  $("#s-sek").innerHTML = `<div class="panel game-page">
+    <h2>До последней секунды</h2>
+    <p class="lead game-description">${start} секунд на старте. Верный ответ добавляет ${bonus}, ошибка отнимает ${penalty}. Род, вид глагола, правописание и ложные друзья в одно нажатие.</p>
+
+    <div class="game speed" data-game="sekunda" data-speed-start="${start}" data-speed-bonus="${bonus}" data-speed-penalty="${penalty}">
+      <div class="speed-stage" data-speed-stage hidden>
+        <div class="speed-intro" data-speed-intro>
+          <p class="game-help-label">Что тренируем</p>
+          <div class="speed-topics" role="group" aria-label="Тема партии" data-speed-topics>
+            <button type="button" class="chip" data-topic="all" aria-pressed="true">Всё вперемешку</button>
+            ${Object.entries(SPEED_TOPICS).map(([key, topic]) =>
+              `<button type="button" class="chip" data-topic="${key}" aria-pressed="false">${topic.label}</button>`).join("")}
+          </div>
+          <p class="game-record" data-speed-record hidden></p>
+          <button type="button" class="exercise-button" data-speed-go>Начать</button>
+        </div>
+        <div class="speed-round" data-speed-round tabindex="-1" hidden>
+          <div class="speed-bar" aria-hidden="true"><span data-speed-fill></span></div>
+          <div class="game-stakes speed-stakes">
+            <div><span>Время</span><strong role="timer" aria-live="off" data-speed-clock></strong><small class="speed-delta" aria-hidden="true" data-speed-delta></small></div>
+            <div><span>Верно</span><output data-speed-score></output></div>
+            <div><span>Серия</span><strong data-speed-streak></strong></div>
+          </div>
+          <p class="game-meta"><span data-speed-ask></span><span data-speed-topic></span></p>
+          <p class="speed-prompt" lang="pl" data-speed-prompt></p>
+          <p class="game-context speed-note" data-speed-note></p>
+          <div class="speed-options" role="group" aria-label="Варианты ответа" data-speed-options></div>
+          <div class="speed-fix" data-speed-fix hidden>
+            <p class="game-feedback is-wrong" data-speed-feedback></p>
+            <p class="game-rule" data-speed-why></p>
+            <div class="game-buttons"><button type="button" class="exercise-button" data-speed-next>Дальше</button></div>
+          </div>
+          <div class="speed-pause" data-speed-pause hidden>
+            <p>Пауза. Время стоит, вопрос скрыт.</p>
+            <button type="button" class="exercise-button" data-speed-resume>Продолжить</button>
+          </div>
+          <p class="speed-live" aria-live="polite" data-speed-live></p>
+          <div class="speed-controls">
+            <button type="button" class="game-reset" data-speed-hold>Пауза</button>
+            <button type="button" class="game-reset" data-speed-stop>Закончить партию</button>
+          </div>
+        </div>
+        <div class="game-over" data-speed-over tabindex="-1" hidden></div>
+      </div>
+      <noscript><p class="note">Игра работает только со скриптами. Всё, что она спрашивает, разобрано в разделах о роде, о виде глагола и о правописании.</p></noscript>
+    </div>
+
+    <h3>Правила</h3>
+    <ol class="pit gap">
+      <li><b>${start} секунд на старте.</b> Партия идёт, пока не кончится время.</li>
+      <li><b>Верный ответ добавляет ${bonus} секунды</b>, но больше ${start} на часах не бывает.</li>
+      <li><b>Ошибка отнимает ${penalty} секунд.</b> Часы останавливаются, пока вы читаете правильный ответ и объяснение, поэтому наугад жать невыгодно.</li>
+      <li><b>Ответ в одно нажатие:</b> клик или клавиша с номером варианта. После ошибки дальше ведёт <b>Enter</b>.</li>
+      <li><b>Если уйти со вкладки</b>, игра встаёт на паузу и прячет вопрос.</li>
+    </ol>
+
+    <h3>Что спрашивает игра</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>тема</th><th>что на экране</th><th>варианты</th><th>карточек</th></tr>
+      <tr><td class="w flow">Род</td><td class="flow">существительное и перевод</td><td class="g">ten · ta · to</td><td>${count("gender")}</td></tr>
+      <tr><td class="w flow">Вид глагола</td><td class="flow">инфинитив</td><td class="flow">несовершенный · совершенный</td><td>${count("aspect")}</td></tr>
+      <tr><td class="w flow">Орфография</td><td class="flow">слово с пропуском</td><td class="g">ó · u, rz · ż, ch · h</td><td>${count("ortho")}</td></tr>
+      <tr><td class="w flow">Ложные друзья</td><td class="flow">польское слово</td><td class="flow">настоящее значение · «русское»</td><td>${count("falsefriends")}</td></tr>
+      <tr><td class="w flow">Слитно или раздельно</td><td class="flow">nie или by рядом со словом</td><td class="flow">раздельно · слитно</td><td>${count("spacing")}</td></tr>
+      <tr><td class="w flow">Прописная буква</td><td class="flow">слово без первой буквы</td><td class="g">p · P</td><td>${count("capitals")}</td></tr>
+    </table></div>
+    <p class="note">В режиме «всё вперемешку» темы чередуются с равным весом, поэтому большая колода не вытесняет маленькую. Род берётся из словаря и таблицы слов, чей род расходится с русским. Вид - из списка глаголов и видовых пар. Ложные друзья, слитное и раздельное написание и прописная буква - из таблиц соответствующих разделов. Слова для орфографии подобраны так, чтобы вторая буква не давала другого настоящего слова: <span class="pl">morze</span> и <span class="pl">może</span> в игру не попадают.</p>
+
+    <div class="tip"><b>После партии.</b> Игра показывает все ошибки с правильным ответом и ссылкой на правило. Слова, на которых вы ошиблись, в следующей партии придут одними из первых.</div>
+  </div>`;
+}
+
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
@@ -2477,7 +2678,7 @@ applyTheme(readTheme());
 
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
-renderGames(); renderMilionerzy();
+renderGames(); renderMilionerzy(); renderSekunda();
 renderSources();
 renderNumTog();
 renderIndex();

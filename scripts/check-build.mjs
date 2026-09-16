@@ -33,6 +33,7 @@ const routes = [
   ["s-bridge", "language-bridges", "Польский через русский и белорусский"],
   ["s-games", "gry", "Игры по польской грамматике"],
   ["s-mil", "gry/milionerzy", "Milionerzy: игра по польской грамматике"],
+  ["s-sek", "gry/sekunda", "До последней секунды: польская грамматика на скорость"],
   ["s-sources", "sources", "О справочнике и источниках"]
 ];
 const TOC_MIN = 5;
@@ -178,8 +179,9 @@ for(const [id, path, heading] of routes){
   assert.equal(scripts.length, gameHost ? 2 : 1,
     "Only the game page loads a second script; the search index stays lazy everywhere");
   if(gameHost){
-    assert.match(scripts[1].getAttribute("src"), /game\.js\?v=[a-f0-9]{10}$/);
-    assert.match(scripts[1].dataset.gameSrc, /game-data\.js\?v=[a-f0-9]{10}$/);
+    const [engine, bank] = {milionerzy:["game", "game-data"], sekunda:["sekunda", "sekunda-data"]}[gameHost.dataset.game];
+    assert.match(scripts[1].getAttribute("src"), new RegExp(`(?:^|/)${engine}\\.js\\?v=[a-f0-9]{10}$`));
+    assert.match(scripts[1].dataset.gameSrc, new RegExp(`(?:^|/)${bank}\\.js\\?v=[a-f0-9]{10}$`));
   }
   assert.match(scripts[0].getAttribute("src"), /client\.js\?v=[a-f0-9]{10}$/);
   assert.match(scripts[0].dataset.searchSrc, /search-index\.js\?v=[a-f0-9]{10}$/);
@@ -190,7 +192,7 @@ for(const [id, path, heading] of routes){
 
 const rootPage = documents.get("s-index");
 assert.equal(rootPage.document.title, "Польская грамматика - таблицы, правила и примеры");
-assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 24);
+assert.equal(rootPage.document.querySelectorAll("#s-index .idx-a[href]").length, 25);
 const indexGroups = [...rootPage.document.querySelectorAll("#s-index .idx > section")];
 assert.equal(indexGroups.at(-1)?.querySelector("h3")?.textContent.trim(), "О проекте");
 assert.equal(indexGroups.at(-1)?.querySelector(".idx-a")?.dataset.s, "s-sources");
@@ -931,15 +933,17 @@ assert.deepEqual(sitemapDates, manifestKeys.map(key => contentManifest[key].date
 const searchJSON = searchSource.replace(/^globalThis\.SEARCH_INDEX=/, "").replace(/;\s*$/, "");
 const searchIndex = JSON.parse(searchJSON);
 assert(searchIndex.length > 1500);
-assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 24);
+assert.equal(new Set(searchIndex.map(entry => entry.tab)).size, 25);
 assert(searchIndex.some(entry => entry.tab === "s-sources" && entry.text.includes("блог, форум")), "Methodology must be searchable");
 assert(searchIndex.every(entry => /^r-\d+$/.test(entry.id) && entry.text));
 assert(searchIndex.every(entry => documents.get(entry.tab)?.document.getElementById(entry.id)), "Every search entry must resolve on its topic page");
 
 const excluded = new Set([...jekyllConfig.matchAll(/^\s*-\s*(.+?)\s*$/gm)].map(match => match[1]));
-const gameScriptSource = await readFile(resolve(root, "game.js"), "utf8");
-assert.equal(gameScriptSource.match(/^(?:const|let|var|function|class)\s/gm), null,
-  "game.js shares the global scope with client.js, so it must declare nothing at the top level");
+for(const engine of ["game.js", "sekunda.js"]){
+  const engineSource = await readFile(resolve(root, engine), "utf8");
+  assert.equal(engineSource.match(/^(?:const|let|var|function|class)\s/gm), null,
+    `${engine} shares the global scope with client.js, so it must declare nothing at the top level`);
+}
 
 const deckInfo = new Map();
 for(const [id, , heading] of trainerPages){
@@ -1031,9 +1035,56 @@ for(const ruleId of Object.keys(gameData.rules))
   assert(usedRules.has(ruleId), `rules/${ruleId} is not used by any question`);
 for(const warning of gameWarnings) console.log(`  предупреждение: ${warning}`);
 
+const speedSandbox = vm.createContext({globalThis: {}});
+vm.runInContext(await readFile(resolve(root, "sekunda-data.js"), "utf8"), speedSandbox, {filename:"sekunda-data.js"});
+const speedData = speedSandbox.globalThis.SEKUNDA_DATA;
+assert.equal(JSON.stringify(speedData.clock), JSON.stringify({start:60, bonus:2, penalty:5}));
+const speedCount = kind => speedData.items.filter(item => item.k === kind).length;
+assert.equal(speedCount("gender"), 110, "Gender cards come from VOCAB_NOUNS plus the ROD_DIFF words missing from it");
+assert.equal(speedCount("aspect"), 152, "Aspect cards come from VERBS and ASPECT");
+assert.equal(speedCount("ortho"), 101, "Spelling cards are the hand-written SPEED_ORTHO list");
+assert.equal(speedCount("falsefriends"), 89, "False friend cards are the FALSE rows with a Russian lure of the form «word - polish»");
+assert.equal(speedCount("spacing"), 37, "Spacing cards come from PARTPIS minus SPEED_SKIP");
+assert.equal(speedCount("capitals"), 45, "Capital letter cards come from WIELKA_D and WIELKA_M minus SPEED_SKIP");
+const speedSkip = JSON.parse(vm.runInContext(`${dataSource};JSON.stringify(SPEED_SKIP)`, vm.createContext({}), {filename:"data.js"}));
+const speedExamples = new Set(speedData.items.map(item => item.id.slice(item.id.indexOf("-") + 1)));
+for(const example of speedSkip)
+  assert(!speedExamples.has(example), `sekunda: ${example} is listed in SPEED_SKIP but still became a card`);
+assert.equal(new Set(speedData.items.map(item => item.id)).size, speedData.items.length, "Speed card ids must be unique");
+for(const item of speedData.items){
+  const where = `sekunda/${item.id}`;
+  assert(speedData.topics[item.k], `${where}: unknown topic`);
+  assert(item.o.length === 2 || item.o.length === 3, `${where}: two or three options`);
+  assert(Number.isInteger(item.a) && item.o[item.a] !== undefined, `${where}: the answer is one of the options`);
+  assert(item.w, `${where}: explanation is filled`);
+  assert(!item.f || item.f.length === item.o.length, `${where}: one fill per option`);
+  if(["ortho", "spacing", "capitals", "gender"].includes(item.k)){
+    assert(Array.isArray(item.p) && item.p.join("").length > 0, `${where}: card has a gap`);
+    assert(![...item.p.join("")].some(char => char === "_" || char === "(" || char === ")"), `${where}: stray gap marker`);
+  }
+}
+const speedPage = documents.get("s-sek").document;
+const speedHost = speedPage.querySelector("[data-game='sekunda']");
+assert.equal(speedHost?.dataset.speedStart, "60");
+assert.deepEqual([...speedHost.querySelectorAll("[data-topic]")].map(button => button.dataset.topic), ["all", ...Object.keys(speedData.topics)]);
+const speedUrls = new Set([...Object.values(speedData.topics).map(topic => topic.url), ...speedData.items.map(item => item.u)].filter(Boolean));
+for(const url of speedUrls){
+  const [urlPath, urlHash] = url.replace(/^\//, "").split("#");
+  const urlRoute = routes.find(route => route[1] === urlPath.replace(/\/$/, ""));
+  assert(urlRoute, `sekunda: rule url points at a page that does not exist: ${url}`);
+  const urlAnchor = (urlHash || "").split("/").find(part => part.startsWith("~"));
+  if(urlAnchor)
+    assert([...documents.get(urlRoute[0]).document.querySelectorAll("[data-h]")].some(node => node.dataset.h === urlAnchor.slice(1)),
+      `sekunda: anchor ${urlAnchor} is not a heading of /${urlPath}`);
+}
+assert(speedData.items.filter(item => item.k === "gender").every(item => ["ten", "ta", "to"].join() === item.o.join()));
+assert.equal(speedData.items.find(item => item.id === "gender-problem")?.u, "/gender/#~род-расходится-с-русским");
+assert.equal(speedData.items.find(item => item.id === "aspect-zrobić")?.a, 1);
+assert.equal(speedData.items.find(item => item.id === "ortho-stół")?.o[speedData.items.find(item => item.id === "ortho-stół").a], "ó");
+
 const publicRoot = new Set([
   "404.html", "CNAME", "apple-touch-icon.png", "client.js", "favicon.ico", "favicon.svg",
-  "game-data.js", "game.js", "index.html", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
+  "game-data.js", "game.js", "index.html", "sekunda-data.js", "sekunda.js", "og", "plan-40", "robots.txt", "search-index.js", "trainer-data.js",
   "sitemap.xml", "style.css",
   ...routes.map(([, path]) => path).filter(Boolean)
 ]);

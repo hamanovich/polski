@@ -198,8 +198,8 @@ p{margin:0 0 10px}
 .related-links a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
 .related-links a:hover{color:var(--ui);text-decoration-color:var(--ui)}
 .related-links a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
-.tip a,.game-rule a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
-.tip a:hover,.game-rule a:hover{color:var(--ui);text-decoration-color:var(--ui)}
+.tip a,.game-rule a,.speed-mistakes a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
+.tip a:hover,.game-rule a:hover,.speed-mistakes a:hover{color:var(--ui);text-decoration-color:var(--ui)}
 .tip a:focus-visible,.game-rule a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 .source-links a,.sources-page > p a{color:var(--ink);font-weight:600;text-decoration-color:color-mix(in srgb,var(--end) 55%,transparent);text-decoration-thickness:1px;text-underline-offset:3px}
 .source-links a:hover,.sources-page > p a:hover{color:var(--end);text-decoration-color:currentColor}
@@ -1144,4 +1144,36 @@ a.exercise-link{display:inline-block;text-decoration:none}
   .game-options{gap:6px}
   .game-option{min-height:44px;padding:8px 10px}
   .game-help-label span{display:block;margin:2px 0 0}
+}
+#s-sek .game-page > .page-title{font-size:clamp(26px,3vw,36px);line-height:1.15;max-width:none;margin-bottom:10px}
+.speed-stage{max-width:640px}
+.speed-topics{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.speed-topics .chip{min-height:44px}
+.speed-topics .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.speed-bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin:0 0 14px}
+.speed-bar span{display:block;height:100%;width:100%;background:var(--ink)}
+.speed-round.is-low .speed-bar span{background:var(--end)}
+.speed-round.is-low [data-speed-clock]{color:var(--end)}
+.speed-round:focus{outline:none}
+.speed-stakes > div{position:relative}
+.speed-delta{position:absolute;right:0;top:0;font-size:var(--fs-note);font-weight:650;font-variant-numeric:tabular-nums}
+.speed-delta.is-plus{color:var(--ok)}
+.speed-delta.is-minus{color:var(--end)}
+.speed-prompt{font-family:var(--serif);font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.3;margin:10px 0 4px;text-align:center}
+.speed-gap{display:inline-block;min-width:1.2em;border-bottom:2px solid var(--ink);color:var(--end);text-align:center}
+.speed-gap.is-filled{min-width:.35em;border-bottom-color:transparent}
+.speed-note{text-align:center;min-height:1.4em}
+.speed-options{display:grid;grid-template-columns:repeat(var(--speed-cols,3),minmax(0,1fr));gap:8px;margin-top:14px}
+.speed-options[data-count="2"]{--speed-cols:2}
+.speed-option{justify-content:center;min-height:56px;font-size:var(--fs-lead)}
+.speed-option .game-letter{font-size:var(--fs-micro)}
+.speed-fix .game-feedback{font-weight:600}
+.speed-pause{text-align:center;padding:24px 0}
+.speed-pause p{margin:0 0 12px;color:var(--muted-s)}
+.speed-live{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.speed-controls{display:flex;flex-wrap:wrap;gap:0 18px}
+.speed-mistakes li{margin-bottom:6px}
+@media (max-width:767px){
+  .speed-options{gap:6px}
+  .speed-option{min-height:52px;padding:8px 6px}
 }
