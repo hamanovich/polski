@@ -1071,6 +1071,7 @@ znać или wiedzieć. Критерий не «объект или факт», 
 Вид: пары глаголов
 несовершенныйсовершенныйперевод
 robićzrobićделатьpisaćnapisaćписатьczytaćprzeczytaćчитатьjeśćzjeśćестьpićwypićпитьkupowaćkupićпокупатьdawaćdaćдаватьbraćwziąćбратьmówićpowiedziećговоритьwidziećzobaczyćвидетьoglądaćobejrzećсмотретьiśćpójśćидтиwracaćwrócićвозвращатьсяzaczynaćzacząćначинатьkończyćskończyćзаканчиватьotwieraćotworzyćоткрыватьzamykaćzamknąćзакрыватьspotykać sięspotkać sięвстречатьсяsprzedawaćsprzedaćпродаватьdzwonićzadzwonićзвонитьpytaćzapytaćспрашиватьuczyć sięnauczyć sięучить(ся)pamiętaćzapamiętaćпомнить / запомнить
+Сидеть, садиться, сесть - три глагола, как и в русском. Состояние и смена положения - разные слова: siedzieć (сидеть), siadać (садиться, несов.), usiąść (сесть, сов.). Siedzę przy stole - уже сижу. Codziennie siadam przy stole o ósmej - сажусь каждый день. Usiadłem przy stole - сел. Так же устроены leżeć - kłaść się / położyć się и stać - wstawać / wstać.
 Как выбрать вид
 Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Русская интуиция здесь часто помогает, но пары и управление лучше сверять, особенно у приставочных глаголов.
 что говоримвидпример
@@ -1089,6 +1090,7 @@ przez godzinę и w godzinę - не одно и то же. Czytałem przez godzi
 лицом. родж. родср. род
 jarobiłemrobiłam-tyrobiłeśrobiłaś-on / ona / onorobiłrobiłarobiłomyrobiliśmyrobiłyśmy-wyrobiliścierobiłyście-oni / onerobilirobiły-
 Множественное различает только два рода: мужско-личный (есть хоть один мужчина) - robili, и всё остальное - robiły.
+Перед i пишется l, а не ł. В мужско-личной форме основа меняется: był → byli · planował → planowali · robił → robili. У глаголов на -eć меняется ещё и гласная: miał → mieli · widział → widzieli. Во всех остальных формах ł остаётся: byłam, planowały, zorganizowałyśmy. Сочетания łi в польских словах не бывает.
 Чередования в прошедшем
 часть глаголов на -eće → amusieć → musiał, musiała, но musieli
 инфинитив на -ąćą → ęzacząć → zaczął, но zaczęła, zaczęli
@@ -1681,7 +1683,7 @@ siedzę
 siedzisz
 siedzą
 siedziałsiedziała
-usiąśćсмена состояния: usiąść; siadać - вторичный несовершенный
+usiąśćсмена положения: siadać / usiąść
 leżeć
 лежать
 II
@@ -3642,8 +3644,9 @@ AnnaAniaAnusia - ласково; Anka - фамильярноАня, Анечка
 Предлог → падеж
 Один предлог может управлять разными падежами и менять значение. У пространственных пар важно различать область действия и направленное перемещение в новую область.
 всеBiernikDopełniaczCelownikNarzędnikMiejscownik
-предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikкуда; в какой деньw góry, w kieszeń, w środęnaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом сobok sklepuprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпосле; по территории или поверхностиpo pracy, chodzić po parkupoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzedNarzędnikгде; перед чемprzed domem, przed spotkaniemprzedBiernikкуда, в пространство передwyjść przed domnadNarzędnikгде, в области надlatać nad miastemnadBiernikкуда, в область надwzbić się nad miastopodNarzędnikгде, в области подspać pod stołempodBiernikкуда, в область подwejść pod stółzaNarzędnikгде, в области заstać za domemzaBiernikкуда, в область заpobiec za dommiędzyNarzędnikгде, между объектамиmiędzy stołem a oknemmiędzyBiernikкуда, в пространство междуwejść między drzewadziękiCelownikблагодаряdzięki tobie
+предлогпадежзначениепримерwMiejscownikгдеw sklepie, w domu, w pracywBiernikкуда; в какой деньw góry, w kieszeń, w środęnaMiejscownikгде (на поверхности, на мероприятии)na stole, na poczcie, na uniwersytecienaBiernikкудаidę na pocztę, na obiaddoDopełniaczкуда, к комуdo sklepu, do lekarza, do domuzDopełniaczоткуда, изz Warszawy, z domuzNarzędnikс кем, с чемkawa z mlekiem, z bratemodDopełniaczот кого, с какого времениod lekarza, od poniedziałkuuDopełniaczу когоu lekarza, u mamydlaDopełniaczдляdla dzieckabezDopełniaczбезbez cukruobok / kołoDopełniaczрядом с, возлеobok sklepu, koło drzewaprzyMiejscownikпри, возлеprzy oknie, przy kasieoMiejscownikо чём; во сколькоo pogodzie, o piątejoBiernikпросить/спрашивать оproszę o pomoc, pytam o cenępoMiejscownikпосле; по территории или поверхностиpo pracy, chodzić po parkupoBiernikза чем-то (сходить)idę po chlebprzezBiernikчерез, в течениеprzez miasto, przez godzinęprzedNarzędnikгде; перед чемprzed domem, przed spotkaniemprzedBiernikкуда, в пространство передwyjść przed domnadNarzędnikгде, в области надlatać nad miastemnadBiernikкуда, в область надwzbić się nad miastopodNarzędnikгде, в области подspać pod stołempodBiernikкуда, в область подwejść pod stółzaNarzędnikгде, в области заstać za domemzaBiernikкуда, в область заpobiec za dommiędzyNarzędnikгде, между объектамиmiędzy stołem a oknemmiędzyBiernikкуда, в пространство междуwejść między drzewadziękiCelownikблагодаряdzięki tobie
 Область или новое направление у парных предлогов. Miejscownik или Narzędnik описывает область, где предмет находится или где происходит действие: Dron lata nad miastem. Biernik задаёт направленное перемещение в новую область: Dron wzbił się nad miasto. Сам глагол движения не выбирает Biernik: idę do sklepu требует Dopełniacz, idę ulicą - Narzędnik.
+В устойчивом обороте падеж подсказывает предлог. przyjść komuś z pomocą и przyjść komuś na pomoc значат одно и то же, «прийти на помощь», но падежи разные: z + Narzędnik, na + Biernik. Z pomocą przyszła mu Ewa · Ewa przyszła mu na pomoc. Русское «на помощь» тянет к na, но перед pomocą подходит только z: в задании с пропуском сначала смотри на окончание слова после него.
 Куда, где, откуда
 Предлоги места удобно учить тройками. Название места запоминай сразу вместе с предлогом: по одному общему правилу нельзя вывести все сочетания w и na.
 кудагдеоткуда

@@ -517,7 +517,7 @@ for(const name of exerciseSets){
   assert.equal(new Set(prompts).size, prompts.length, `${name}: exact prompt duplicates weaken practice coverage`);
   promptsBySet.set(name, prompts);
 }
-assert.equal(exerciseIds.length, 747, "The handbook practice must expose all 747 exercises");
+assert.equal(exerciseIds.length, 751, "The handbook practice must expose all 751 exercises");
 const renderedExercises = [...documents.values()].map(page => page.html).join("\n");
 for(const id of exerciseIds)
   assert(renderedExercises.includes(`data-exercise-id="${id}"`),

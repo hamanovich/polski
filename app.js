@@ -649,6 +649,7 @@ function vCzasy(){
       <tr><th>несовершенный</th><th>совершенный</th><th>перевод</th></tr>
       ${ASPECT.map(a => `<tr><td class="w">${a[0]}</td><td class="g">${a[1]}</td><td class="dim">${a[2]}</td></tr>`).join("")}
     </table></div>
+    <div class="tip"><b>Сидеть, садиться, сесть - три глагола, как и в русском.</b> Состояние и смена положения - разные слова: <span class="pl">siedzieć</span> (сидеть), <span class="pl">siadać</span> (садиться, несов.), <span class="pl">usiąść</span> (сесть, сов.). <span class="pl">Siedzę przy stole</span> - уже сижу. <span class="pl">Codziennie siadam przy stole o ósmej</span> - сажусь каждый день. <span class="pl">Usiadłem przy stole</span> - сел. Так же устроены <span class="pl">leżeć - kłaść się / położyć się</span> и <span class="pl">stać - wstawać / wstać</span>.</div>
 
     <h3>Как выбрать вид</h3>
     <p class="lead">Образовать пару - полдела. Дальше каждый раз надо решать, какую половину брать. Русская интуиция здесь часто помогает, но пары и управление лучше сверять, особенно у приставочных глаголов.</p>
@@ -678,6 +679,7 @@ function vCzasy(){
       ${PAST.map(p => `<tr><td class="dim">${p[0]}</td><td class="w">${p[1]}</td><td class="w">${p[2]}</td><td class="${p[3]==="-"?"none":"w"}">${p[3]}</td></tr>`).join("")}
     </table></div>
     <p class="lead">Множественное различает только два рода: <b>мужско-личный</b> (есть хоть один мужчина) - <span class="pl">robili</span>, и <b>всё остальное</b> - <span class="pl">robiły</span>.</p>
+    <div class="tip"><b>Перед <span class="pl">i</span> пишется <span class="pl">l</span>, а не <span class="pl">ł</span>.</b> В мужско-личной форме основа меняется: <span class="pl">był → byli · planował → planowali · robił → robili</span>. У глаголов на <span class="pl">-eć</span> меняется ещё и гласная: <span class="pl">miał → mieli · widział → widzieli</span>. Во всех остальных формах <span class="pl">ł</span> остаётся: <span class="pl">byłam, planowały, zorganizowałyśmy</span>. Сочетания <span class="pl">łi</span> в польских словах не бывает.</div>
 
     <h3>Чередования в прошедшем</h3>
     <div class="scroll"><table>
@@ -1869,6 +1871,7 @@ function renderPreps(){
       `<button class="chip" data-f="${c}" aria-pressed="${i===0}"><span class="cp">${c}</span></button>`).join("")}</div>
     <div class="scroll"><table id="ptable" class="vt"></table></div>
     <div class="tip"><b>Область или новое направление у парных предлогов.</b> Miejscownik или Narzędnik описывает область, где предмет находится или где происходит действие: <span class="pl">Dron lata nad miastem</span>. Biernik задаёт направленное перемещение в новую область: <span class="pl">Dron wzbił się nad miasto</span>. Сам глагол движения не выбирает Biernik: <span class="pl">idę do sklepu</span> требует Dopełniacz, <span class="pl">idę ulicą</span> - Narzędnik.</div>
+    <div class="tip"><b>В устойчивом обороте падеж подсказывает предлог.</b> <span class="pl">przyjść komuś z pomocą</span> и <span class="pl">przyjść komuś na pomoc</span> значат одно и то же, «прийти на помощь», но падежи разные: <span class="pl">z</span> + Narzędnik, <span class="pl">na</span> + Biernik. <span class="pl">Z pomocą przyszła mu Ewa · Ewa przyszła mu na pomoc</span>. Русское «на помощь» тянет к <span class="pl">na</span>, но перед <span class="pl">pomocą</span> подходит только <span class="pl">z</span>: в задании с пропуском сначала смотри на окончание слова после него.</div>
 
     <h3>Куда, где, откуда</h3>
     <p class="lead">Предлоги места удобно учить тройками. Название места запоминай сразу вместе с предлогом: по одному общему правилу нельзя вывести все сочетания <span class="pl">w</span> и <span class="pl">na</span>.</p>
