@@ -155,8 +155,8 @@ await writeFile(resolve(root, "trainer-data.js"), trainerSource, "utf8");
 const speedSource = `globalThis.SEKUNDA_DATA=${JSON.stringify(sandbox.speedDeck())};\n`;
 await writeFile(resolve(root, "sekunda-data.js"), speedSource, "utf8");
 
-const [gameSource, gameDataSource, speedEngineSource, detectiveSource] = await Promise.all(
-  ["game.js", "game-data.js", "sekunda.js", "detektyw.js"].map(name => readFile(resolve(root, name), "utf8")));
+const [gameSource, gameDataSource, speedEngineSource, detectiveSource, builderSource] = await Promise.all(
+  ["game.js", "game-data.js", "sekunda.js", "detektyw.js", "zdanie.js"].map(name => readFile(resolve(root, name), "utf8")));
 const assetHashes = {
   style:fingerprint(styleSource),
   client:fingerprint(clientSource),
@@ -166,12 +166,14 @@ const assetHashes = {
   gameData:fingerprint(gameDataSource),
   speed:fingerprint(speedEngineSource),
   speedData:fingerprint(speedSource),
-  detective:fingerprint(detectiveSource)
+  detective:fingerprint(detectiveSource),
+  builder:fingerprint(builderSource)
 };
 const gameAssets = {
   milionerzy:[["game.js", assetHashes.game], ["game-data.js", assetHashes.gameData]],
   sekunda:[["sekunda.js", assetHashes.speed], ["sekunda-data.js", assetHashes.speedData]],
-  detektyw:[["detektyw.js", assetHashes.detective], ["game-data.js", assetHashes.gameData]]
+  detektyw:[["detektyw.js", assetHashes.detective], ["game-data.js", assetHashes.gameData]],
+  zdanie:[["zdanie.js", assetHashes.builder], ["game-data.js", assetHashes.gameData]]
 };
 const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${assetHashes.style}`)}\n`.replace(/[ \t]+$/gm, "");
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");

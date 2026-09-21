@@ -2475,7 +2475,6 @@ function renderGames(){
 
     <div class="tip"><b>Как это связано со справочником.</b> Каждый вопрос знает своё правило и свою тренировку. Подсказка открывает формулировку правила, а после партии игра предлагает отработать тему, на которой вы споткнулись, в обычном тренажёре. Ошибки из игры попадают в ту же очередь повторения, что и ошибки тренажёра.</p></div>
 
-    <h3>Что уже можно сыграть</h3>
     <div class="game-list">
       <a class="game-card" href="#s-mil" data-s="s-mil">
         <b>Milionerzy</b>
@@ -2492,13 +2491,12 @@ function renderGames(){
         <span>Шестьдесят секунд и вопросы в одно нажатие: род существительного, вид глагола, ó или u. Верный ответ добавляет время, ошибка его отнимает.</span>
         <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
       </a>
+      <a class="game-card" href="#s-zd" data-s="s-zd">
+        <b>Собери фразу</b>
+        <span>Десять фраз из слов вперемешку, среди которых есть лишние: типовые ошибки русскоязычного. Порядок слов, краткие местоимения, управление и согласование.</span>
+        <span class="game-card-go">Играть <span aria-hidden="true">→</span></span>
+      </a>
     </div>
-
-    <h3>Что в планах</h3>
-    <div class="scroll"><table class="vt">
-      <tr><th>игра</th><th>механика</th><th>чему учит</th></tr>
-      <tr><td class="w flow">Собери фразу</td><td class="flow">Слова даны вперемешку и в начальной форме</td><td class="flow">Порядок слов и согласование в своей речи</td></tr>
-    </table></div>
   </div>`;
 }
 
@@ -2707,6 +2705,70 @@ function renderDetektyw(){
   </div>`;
 }
 
+function renderZdanie(){
+  $("#s-zd").innerHTML = `<div class="panel game-page">
+    <h2>Собери фразу</h2>
+    <p class="lead game-description">Десять фраз. Польские слова даны вперемешку, и среди них есть лишние: типовые ошибки русскоязычного. Соберите фразу, которая значит то же, что русская.</p>
+
+    <div class="game builder" data-game="zdanie">
+      <div class="zd-stage" data-zd-stage hidden>
+        <div class="zd-intro" data-zd-intro>
+          <p class="game-record" data-zd-record hidden></p>
+          <button type="button" class="exercise-button" data-zd-start>Начать партию</button>
+        </div>
+        <div class="zd-round" data-zd-round tabindex="-1" hidden>
+          <div class="game-stakes zd-stakes">
+            <div><span>Фраза</span><strong data-zd-step></strong></div>
+            <div><span>Очки</span><output data-zd-score></output></div>
+            <div><span>Тема</span><strong class="zd-topic" data-zd-topic></strong></div>
+          </div>
+          <p class="zd-prompt" data-zd-prompt></p>
+          <p class="game-context" data-zd-context hidden></p>
+          <div class="zd-row" lang="pl" role="group" aria-label="Ваша фраза" data-zd-row></div>
+          <div class="zd-pool" lang="pl" role="group" aria-label="Слова" data-zd-pool></div>
+          <p class="zd-live" aria-live="polite" data-zd-live></p>
+          <p class="zd-note" aria-live="polite" tabindex="-1" data-zd-note hidden></p>
+          <div class="game-buttons" data-zd-controls>
+            <button type="button" class="exercise-button" data-zd-check disabled>Проверить</button>
+            <button type="button" class="exercise-link" data-zd-hint aria-pressed="false">Первое слово за очко</button>
+            <button type="button" class="exercise-link" data-zd-clear>Вернуть слова</button>
+          </div>
+          <div class="zd-reveal" data-zd-reveal hidden>
+            <p class="game-feedback" aria-live="polite" data-zd-feedback tabindex="-1"></p>
+            <div class="zd-versions" data-zd-versions></div>
+            <p class="game-rule" data-zd-why></p>
+            <div class="game-buttons"><button type="button" class="exercise-button" data-zd-next>Следующая фраза</button></div>
+          </div>
+          <button type="button" class="game-reset" data-zd-reset>Начать заново</button>
+        </div>
+        <div class="game-over" data-zd-over tabindex="-1" hidden></div>
+      </div>
+      <noscript><p class="note">Игра работает только со скриптами. Все правила, на которых построены фразы, разобраны в разделах справочника.</p></noscript>
+    </div>
+
+    <h3>Как собирать</h3>
+    <ol class="pit gap">
+      <li><b>Нажмите на слово</b>, чтобы поставить его в первую свободную ячейку. Нажатие на слово в строке возвращает его обратно, а ячейка остаётся пустой: следующее слово встанет в неё. Так можно заменить любое слово, не разбирая фразу.</li>
+      <li><b>Ячеек столько, сколько слов во фразе.</b> Остальные слова лишние, но сколько их, игра не говорит.</li>
+      <li><b>Проверьте</b>, когда все ячейки заполнены. Если фраза неверна, игра подскажет, что не так: порядок или неверная форма, которую надо заменить одним из оставшихся слов. Вторая попытка стоит меньше.</li>
+      <li><b>Разбор</b> показывает верную фразу, другие допустимые порядки, объяснение и ссылку на правило.</li>
+    </ol>
+    <p class="note">С клавиатуры: стрелки ходят по словам, Enter или пробел переносит слово, Backspace возвращает последнее, Enter вне слов проверяет фразу.</p>
+
+    <h3>Очки</h3>
+    <div class="scroll"><table class="vt">
+      <tr><th>что произошло</th><th>очки</th></tr>
+      <tr><td class="flow">Фраза собрана с первой попытки</td><td>2</td></tr>
+      <tr><td class="flow">Фраза собрана со второй попытки</td><td>1</td></tr>
+      <tr><td class="flow">Фраза не собрана</td><td>0</td></tr>
+      <tr><td class="flow">Подсказка «Первое слово»</td><td>минус 1</td></tr>
+    </table></div>
+    <p class="note">Порядок слов в польском свободный. Если из тех же слов складывается несколько верных фраз, засчитывается любая. Условие под заданием, например «нейтрально, без выделения», отсекает порядки, которые меняют смысл.</p>
+
+    <div class="tip"><b>После партии.</b> Игра показывает темы, где фраза не сложилась с первого раза. Несобранные фразы попадают в очередь повторения тренажёра.</div>
+  </div>`;
+}
+
 function renderIndex(){
   $("#s-index").innerHTML = `<div class="panel">
     <h2>Справочник</h2>
@@ -2746,7 +2808,7 @@ applyTheme(readTheme());
 
 renderAlpha(); renderRod(); renderAlt(); renderChips(); renderCase(); renderAdj(); renderAdv(); renderPron(); renderQ(); renderVerbs();
 renderNum(); renderVocabulary(); renderTalk(); renderNeg(); renderOrder(); renderImpers(); renderConj(); renderPart(); renderLudzie(); renderDim(); renderPreps(); renderBridge();
-renderGames(); renderMilionerzy(); renderSekunda(); renderDetektyw();
+renderGames(); renderMilionerzy(); renderSekunda(); renderDetektyw(); renderZdanie();
 renderSources();
 renderNumTog();
 renderIndex();

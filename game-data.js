@@ -544,6 +544,42 @@ globalThis.GAME_DATA = {
     "byc-my-present": {
       text: "У być формы настоящего времени нерегулярны и учатся таблицей.",
       url: "/verbs/#conj/~byc-отдельная-песня"
+    },
+    "order-klityki": {
+      text: "Краткие безударные формы mi, ci, go, mu не открывают нейтральную фразу и держатся рядом с глаголом. Для выделения берут полную форму: mnie, tobie, jego.",
+      url: "/word-order/#~клитики-mi-ci-go-mu-sie"
+    },
+    "order-sie": {
+      text: "Się - отдельное слово: оно не открывает фразу, не идёт после предлога и в вопросе обычно стоит сразу за вопросительным словом.",
+      url: "/word-order/#~позиция-sie"
+    },
+    "order-tema-rema": {
+      text: "В нейтральной фразе то, о чём уже идёт речь, стоит раньше, а ответ на главный вопрос - ближе к концу.",
+      url: "/word-order/#~тема-и-новое-сообщение"
+    },
+    "order-przymiotnik": {
+      text: "Прилагательное, которое называет вид или тип, стоит после существительного; прилагательное качества - перед ним.",
+      url: "/word-order/#~прилагательное-качество-или-тип"
+    },
+    "ktory-przypadek": {
+      text: "Który берёт род и число от существительного, к которому относится, а падеж - от своей роли внутри придаточного.",
+      url: "/questions/#~ktory-как-относительное-местоимение"
+    },
+    "ze-zeby": {
+      text: "Że вводит факт, а желание, просьба или цель вводятся союзом żeby.",
+      url: "/conjunctions/#~ze-или-zeby"
+    },
+    "gdyby-warunek": {
+      text: "Нереальное условие строится с gdyby, к которому прирастает личное окончание, и условным наклонением во второй части.",
+      url: "/verbs/#tryby/~куда-прилипает-by"
+    },
+    "by-ruchome": {
+      text: "Частица by с личным окончанием может отойти от глагола к местоимению, наречию или вопросительному слову. У самого глагола она пишется слитно.",
+      url: "/verbs/#tryby/~куда-прилипает-by"
+    },
+    "pytanie-posrednie": {
+      text: "Косвенный вопрос «да или нет» вводится союзом czy, дальше порядок слов как в утверждении.",
+      url: "/questions/#~прямои-и-косвенныи-вопрос"
     }
   },
   milionerzy: [
@@ -2385,6 +2421,701 @@ globalThis.GAME_DATA = {
       ruleId: "rekcja-dziekowac", lemmas: ["podziękować", "babcia"],
       drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-dziekuje-za-pomoc-ty",
       src: "REKCJA: dziękować komu? Celownik"
+    }
+  ],
+  zdanie: [
+    {
+      id: "zd-dziekuje-wam-za-zaproszenie", tier: 1, topic: "Управление глаголов",
+      prompt: "Спасибо вам за приглашение.", context: "нейтрально, без выделения",
+      answers: ["Dziękuję wam za zaproszenie.", "Za zaproszenie wam dziękuję.", "Za zaproszenie dziękuję wam."],
+      extra: ["was"],
+      explanation: "Dziękować требует дательного: dziękuję wam. Was - винительный, его подсказывает русское «благодарю вас». За что благодарят, можно назвать и в начале фразы.",
+      ruleId: "rekcja-dziekowac", lemmas: ["dziękować", "wy", "zaproszenie"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-dziekuje-za-pomoc-ty",
+      src: "REKCJA: dziękować komu? Celownik"
+    },
+    {
+      id: "zd-szukamy-nowego-mieszkania", tier: 1, topic: "Управление: родительный вместо винительного",
+      prompt: "Мы ищем новую квартиру.", context: "нейтрально, без выделения",
+      answers: ["Szukamy nowego mieszkania."],
+      extra: ["nowe", "mieszkanie"],
+      explanation: "Szukać требует родительного, и прилагательное встаёт в тот же падеж: nowego mieszkania. Nowe mieszkanie - винительный из русского «ищем новую квартиру».",
+      ruleId: "rekcja-dopelniacz", lemmas: ["szukać", "nowy", "mieszkanie"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-szukam-praca",
+      src: "REKCJA: szukać czego? Dopełniacz"
+    },
+    {
+      id: "zd-wieczorem-slucham-radia", tier: 1, topic: "Управление: родительный вместо винительного",
+      prompt: "Вечером я слушаю радио.", context: "нейтрально, без выделения",
+      answers: ["Wieczorem słucham radia.", "Słucham radia wieczorem.", "Słucham wieczorem radia."],
+      extra: ["radio"],
+      explanation: "Słuchać требует родительного: słucham radia. Radio - винительный, как в русском «слушаю радио». Wieczorem свободно встаёт в начало, середину или конец.",
+      ruleId: "rekcja-dopelniacz-bez-przyimka", lemmas: ["słuchać", "radio", "wieczorem"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-slucham-muzyka",
+      src: "REKCJA: słuchać czego? Dopełniacz"
+    },
+    {
+      id: "zd-codziennie-dzwonie-do-mamy", tier: 1, topic: "Управление: предлог вместо падежа",
+      prompt: "Я каждый день звоню маме.", context: "нейтрально, без выделения",
+      answers: ["Codziennie dzwonię do mamy.", "Dzwonię do mamy codziennie.", "Dzwonię codziennie do mamy.", "Do mamy dzwonię codziennie."],
+      extra: ["mamie"],
+      explanation: "Dzwonić управляет do с родительным: dzwonię do mamy. Mamie - дательный из русского «звоню маме». Codziennie свободно встаёт в начало, середину или конец.",
+      ruleId: "rekcja-przyimek", lemmas: ["dzwonić", "mama", "codziennie"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-dzwonie-brat",
+      src: "REKCJA: dzwonić do kogo? do + Dopełniacz"
+    },
+    {
+      id: "zd-czekamy-na-pociag", tier: 1, topic: "Управление: предлог вместо падежа",
+      prompt: "Мы ждём поезд.", context: "нейтрально, без выделения",
+      answers: ["Czekamy na pociąg."],
+      extra: ["pociągu"],
+      explanation: "Czekać управляет na с винительным: czekamy na pociąg. Родительный pociągu подсказывает русское «ждём поезда», после na он не встаёт.",
+      ruleId: "rekcja-przyimek", lemmas: ["czekać", "pociąg"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-czekam-autobus",
+      src: "REKCJA: czekać na kogo? na co? na + Biernik"
+    },
+    {
+      id: "zd-prosimy-o-cisze", tier: 1, topic: "Управление: предлог вместо падежа",
+      prompt: "Просим тишины.", context: "нейтрально, без выделения",
+      answers: ["Prosimy o ciszę.", "O ciszę prosimy."],
+      extra: ["ciszy"],
+      explanation: "Prosić управляет o с винительным: prosimy o ciszę. Ciszy - родительный из русского «просим тишины».",
+      ruleId: "rekcja-o-bier", lemmas: ["prosić", "cisza"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-prosze-pomoc",
+      src: "REKCJA: prosić o co? o + Biernik"
+    },
+    {
+      id: "zd-nie-mamy-mleka", tier: 1, topic: "Отрицание",
+      prompt: "У нас нет молока.",
+      answers: ["Nie mamy mleka.", "Mleka nie mamy."],
+      extra: ["mleko"],
+      explanation: "При отрицании прямое дополнение уходит в родительный: nie mamy mleka. Mleka nie mamy тоже верно: так говорят, когда о молоке уже шла речь. Nie стоит прямо перед глаголом.",
+      ruleId: "neg-dopelniacz", lemmas: ["mieć", "mleko"],
+      drill: {deck: "negation", filter: {topic: "case"}}, drillKey: "neg-1",
+      src: "negation: родительный при отрицании"
+    },
+    {
+      id: "zd-szefa-nie-ma", tier: 1, topic: "Отрицание",
+      prompt: "Начальника нет.",
+      answers: ["Szefa nie ma.", "Nie ma szefa."],
+      extra: ["jest"],
+      explanation: "Отсутствие передаёт безличное nie ma с родительным: szefa nie ma. Nie jest с родительным не сочетается: оно отрицает być при подлежащем в именительном, как в szef nie jest w biurze, и эта фраза сообщает не об отсутствии, а о том, где начальника нет.",
+      ruleId: "neg-ma-jest", lemmas: ["szef", "nie ma"],
+      drill: {deck: "negation", filter: {topic: "construction"}}, drillKey: "neg-4",
+      src: "NIEMA_JEST"
+    },
+    {
+      id: "zd-nie-znam-tych-ludzi", tier: 1, topic: "Отрицание",
+      prompt: "Я не знаю этих людей.",
+      answers: ["Nie znam tych ludzi.", "Tych ludzi nie znam.", "Ludzi tych nie znam."],
+      extra: ["ci", "ludzie"],
+      explanation: "При отрицании родительный нужен и во множественном: nie znam tych ludzi. Ci ludzie - именительный, так их можно назвать только подлежащим: ci ludzie mnie nie znają.",
+      ruleId: "neg-mnozhestvennoe", lemmas: ["znać", "ten", "ludzie"],
+      drill: {deck: "negation", filter: {topic: "case"}},
+      src: "negation: родительный при отрицании"
+    },
+    {
+      id: "zd-znam-go-od-dawna", tier: 1, topic: "Личные местоимения",
+      prompt: "Я давно его знаю.", context: "нейтрально, без выделения",
+      answers: ["Znam go od dawna.", "Od dawna go znam.", "Od dawna znam go."],
+      extra: ["jego"],
+      explanation: "Без выделения ставится краткое go. Оно не открывает фразу и держится рядом с глаголом. Jego нужно для противопоставления: jego znam od dawna, a ją dopiero od roku.",
+      ruleId: "pron-bezudarne", lemmas: ["znać", "on"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}}, drillKey: "pron-1",
+      src: "CLITICS; WORD-ORDER: нейтрально и с акцентом"
+    },
+    {
+      id: "zd-pokaz-mi-zdjecia", tier: 1, topic: "Личные местоимения",
+      prompt: "Покажи мне фотографии.", context: "нейтрально, без выделения",
+      answers: ["Pokaż mi zdjęcia."],
+      extra: ["mnie"],
+      explanation: "В нейтральной просьбе краткое mi стоит сразу за глаголом: pokaż mi zdjęcia. Mnie - ударная форма, она выделяет: mnie pokaż, nie jemu.",
+      ruleId: "order-klityki", lemmas: ["pokazać", "ja", "zdjęcie"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}},
+      src: "CLITICS: Powiedz mi prawdę"
+    },
+    {
+      id: "zd-kupimy-mu-rower", tier: 1, topic: "Личные местоимения",
+      prompt: "Мы купим ему велосипед.", context: "нейтрально, без выделения",
+      answers: ["Kupimy mu rower."],
+      extra: ["jemu"],
+      explanation: "«Ему» без выделения - краткое mu, сразу после глагола. Jemu выделяет адресата: jemu kupimy rower, a jej hulajnogę.",
+      ruleId: "pron-bezudarne", lemmas: ["kupić", "on", "rower"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}}, drillKey: "pron-18",
+      src: "CLITICS: Pomogę mu jutro"
+    },
+    {
+      id: "zd-jak-sie-czujesz", tier: 1, topic: "Возвратные местоимения",
+      prompt: "Как ты себя чувствуешь?",
+      answers: ["Jak się czujesz?", "Jak czujesz się?"],
+      extra: ["siebie"],
+      explanation: "Czuć się - глагол с się, русское «себя» в нём отдельным словом не переводится. Się - отдельное слово: в вопросе оно обычно стоит сразу после вопросительного слова, как в jak się nazywasz?",
+      ruleId: "order-sie", lemmas: ["czuć się"],
+      drill: {deck: "pronouns", filter: {topic: "reflexive"}},
+      src: "SIE_POS: Jak się nazywasz?"
+    },
+    {
+      id: "zd-mam-przy-sobie-paszport", tier: 1, topic: "Возвратные местоимения",
+      prompt: "У меня при себе паспорт.", context: "нейтрально, без выделения",
+      answers: ["Mam przy sobie paszport.", "Mam paszport przy sobie.", "Przy sobie mam paszport.", "Paszport mam przy sobie."],
+      extra: ["się"],
+      explanation: "После предлога się не ставится, нужна падежная форма возвратного местоимения. Przy требует предложного: przy sobie.",
+      ruleId: "reflexive-case", lemmas: ["mieć", "siebie", "paszport"],
+      drill: {deck: "pronouns", filter: {topic: "reflexive"}},
+      src: "WORD-ORDER: две жёсткие границы się"
+    },
+    {
+      id: "zd-opiekuje-sie-psem-sasiada", tier: 1, topic: "Управление: творительный",
+      prompt: "Я присматриваю за собакой соседа.", context: "нейтрально, без выделения",
+      answers: ["Opiekuję się psem sąsiada."],
+      extra: ["za"],
+      explanation: "Opiekować się требует творительного без предлога: opiekuję się psem. Za подсказывает русское «присматриваю за собакой».",
+      ruleId: "rekcja-narzednik-bez-przyimka", lemmas: ["opiekować się", "pies", "sąsiad"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-opiekuje-sie-babcia",
+      src: "REKCJA: opiekować się kim? Narzędnik"
+    },
+    {
+      id: "zd-jutro-jedziemy-do-gdanska", tier: 1, topic: "Предлоги: место и направление",
+      prompt: "Завтра мы едем в Гданьск.", context: "нейтрально, без выделения",
+      answers: ["Jutro jedziemy do Gdańska.", "Jedziemy jutro do Gdańska.", "Jedziemy do Gdańska jutro.", "Do Gdańska jedziemy jutro."],
+      extra: ["w", "Gdańsk"], names: ["Gdańska", "Gdańsk"],
+      explanation: "Направление в город - do с родительным: do Gdańska. W Gdańsk повторяет русское «в Гданьск». Jutro свободно: в начале, после глагола или в конце.",
+      ruleId: "prep-do-miasto", lemmas: ["jechać", "Gdańsk", "jutro"],
+      drill: {deck: "prepositions", filter: {topic: "space"}}, drillKey: "prep-space-extra-10",
+      src: "PREPS: do + Dopełniacz, направление"
+    },
+    {
+      id: "zd-dzieci-ida-do-szkoly", tier: 1, topic: "Предлоги: место и направление",
+      prompt: "Дети идут в школу.", context: "нейтрально, без выделения",
+      answers: ["Dzieci idą do szkoły."],
+      extra: ["w", "szkołę"],
+      explanation: "Направление в учреждение - do с родительным: do szkoły. W szkołę - калька русского «в школу».",
+      ruleId: "prep-do-budynek", lemmas: ["iść", "dziecko", "szkoła"],
+      drill: {deck: "prepositions", filter: {topic: "government"}}, drillKey: "prepgo-1",
+      src: "PREPS: do + Dopełniacz, направление"
+    },
+    {
+      id: "zd-wracam-do-domu-tramwajem", tier: 1, topic: "Творительный падеж",
+      prompt: "Я возвращаюсь домой на трамвае.", context: "нейтрально, без выделения",
+      answers: ["Wracam do domu tramwajem.", "Wracam tramwajem do domu.", "Do domu wracam tramwajem.", "Tramwajem wracam do domu."],
+      extra: ["na", "tramwaju"],
+      explanation: "Средство передвижения - творительный без предлога: tramwajem. Na tramwaju повторяет русское «на трамвае».",
+      ruleId: "narz-srodek", lemmas: ["wracać", "dom", "tramwaj"],
+      drill: {deck: "nouns", filter: {case: "narz", number: "sg"}},
+      src: "cases: Narzędnik, средство передвижения"
+    },
+    {
+      id: "zd-siostra-jest-pielegniarka", tier: 1, topic: "Творительный падеж",
+      prompt: "Моя сестра - медсестра.", context: "нейтрально, без выделения",
+      answers: ["Moja siostra jest pielęgniarką.", "Siostra moja jest pielęgniarką."],
+      extra: ["pielęgniarka"],
+      explanation: "Профессия после być - творительный: jest pielęgniarką. Именительный подсказывает русское «сестра - медсестра», он возможен только после to: moja siostra to pielęgniarka.",
+      ruleId: "byc-narz-rola", lemmas: ["być", "siostra", "pielęgniarka"],
+      drill: {deck: "nouns", filter: {case: "narz", number: "sg"}},
+      src: "cases: Narzędnik, когда нужен"
+    },
+    {
+      id: "zd-moi-rodzice-mieszkaja-na-wsi", tier: 1, topic: "Мужско-личные формы",
+      prompt: "Мои родители живут в деревне.", context: "ответ на вопрос, где живут родители",
+      answers: ["Moi rodzice mieszkają na wsi.", "Rodzice moi mieszkają na wsi."],
+      extra: ["moje"],
+      explanation: "Rodzice - группа, где есть мужчина, поэтому мужско-личное moi rodzice. Moje - форма для остальных групп: moje siostry.",
+      ruleId: "mos-zaimki", lemmas: ["mój", "rodzice", "wieś"],
+      drill: {deck: "pronouns", filter: {topic: "other"}},
+      src: "adjectives: мужско-личное множественное"
+    },
+    {
+      id: "zd-nasi-goscie-juz-przyszli", tier: 1, topic: "Мужско-личные формы",
+      prompt: "Наши гости уже пришли.", context: "нейтрально, без выделения",
+      answers: ["Nasi goście już przyszli.", "Już przyszli nasi goście.", "Goście nasi już przyszli.", "Przyszli już nasi goście.", "Już nasi goście przyszli.", "Już przyszli goście nasi."],
+      extra: ["nasze", "przyszły"],
+      explanation: "Goście - мужско-личное существительное: nasi goście przyszli. Nasze и przyszły - формы для групп без мужчин: nasze koleżanki przyszły.",
+      ruleId: "past-nonpersonal-pl", lemmas: ["nasz", "gość", "przyjść"],
+      drill: {deck: "verbs", filter: {tense: "past"}},
+      src: "verbs: прошедшее время, -li и -ły"
+    },
+    {
+      id: "zd-mam-powazny-problem", tier: 1, topic: "Род существительных",
+      prompt: "У меня серьёзная проблема.", context: "нейтрально, без выделения",
+      answers: ["Mam poważny problem."],
+      extra: ["poważną"],
+      explanation: "Problem по-польски мужского рода, поэтому poważny problem. Poważną подсказывает русское «серьёзную проблему».",
+      ruleId: "rod-rozni-sie", lemmas: ["problem", "poważny"],
+      src: "ROD_DIFF: problem - м."
+    },
+    {
+      id: "zd-ten-system-jest-prosty", tier: 1, topic: "Род существительных",
+      prompt: "Эта система очень простая.", context: "нейтрально, без выделения",
+      answers: ["Ten system jest bardzo prosty.", "System ten jest bardzo prosty."],
+      extra: ["ta", "prosta"],
+      explanation: "System мужского рода, и указательное слово, и прилагательное согласуются с ним: ten system, prosty.",
+      ruleId: "rod-rozni-sie", lemmas: ["system", "prosty"],
+      src: "ROD_DIFF: system - м."
+    },
+    {
+      id: "zd-czy-rozumiesz-po-polsku", tier: 1, topic: "Языки",
+      prompt: "Ты понимаешь по-польски?", context: "нейтрально, без выделения",
+      answers: ["Czy rozumiesz po polsku?"],
+      extra: ["polski"],
+      explanation: "«По-польски» - наречие po polsku, с окончанием -u. Polski - прилагательное «польский», после po оно не встаёт.",
+      ruleId: "po-polsku", lemmas: ["rozumieć", "polski"],
+      drill: {deck: "prepositions", filter: {topic: "meaning"}}, drillKey: "prep-government-extra-8",
+      src: "people: язык, четыре разные конструкции"
+    },
+    {
+      id: "zd-telefon-lezy-na-biurku", tier: 2, topic: "Тема и рема",
+      prompt: "Телефон лежит на письменном столе.", context: "ответ на вопрос, где лежит телефон",
+      answers: ["Telefon leży na biurku."],
+      extra: ["biurko"],
+      explanation: "На вопрос «где» na требует предложного: na biurku. Na biurko - направление, «на стол»: telefon spadł na biurko. Телефон уже в вопросе, поэтому он открывает фразу, а место стоит в конце.",
+      ruleId: "prep-na-gdzie", lemmas: ["telefon", "leżeć", "biurko"],
+      drill: {deck: "prepositions", filter: {topic: "space"}}, drillKey: "prepsp-1",
+      src: "TEMA_REMA: Gdzie są klucze? Klucze są na stole"
+    },
+    {
+      id: "zd-w-lodowce-jest-mleko", tier: 2, topic: "Тема и рема",
+      prompt: "В холодильнике есть молоко.", context: "ответ на вопрос, что есть в холодильнике",
+      answers: ["W lodówce jest mleko.", "Jest w lodówce mleko."],
+      extra: ["mleka"],
+      explanation: "Спрашивают, что есть, поэтому mleko - новое и стоит в конце. При утвердительном jest подлежащее в именительном: mleko. Mleka было бы при отрицании: w lodówce nie ma mleka.",
+      ruleId: "order-tema-rema", lemmas: ["lodówka", "mleko"],
+      src: "TEMA_REMA: Co jest na stole? Na stole są klucze; NIEMA_JEST"
+    },
+    {
+      id: "zd-tort-upiekla-babcia", tier: 2, topic: "Тема и рема",
+      prompt: "Торт испекла бабушка.", context: "ответ на вопрос, кто испёк торт; без выделения голосом",
+      answers: ["Tort upiekła babcia.", "Upiekła tort babcia."],
+      extra: ["upiekł"],
+      explanation: "Торт уже известен из вопроса, новое - кто испёк, поэтому babcia в конце. Babcia upiekła tort без ударения на babcia отвечает на другой вопрос: что сделала бабушка. Глагол согласуется с подлежащим женского рода: upiekła.",
+      ruleId: "past-feminine-sg", lemmas: ["tort", "upiec", "babcia"],
+      drill: {deck: "verbs", filter: {tense: "past"}},
+      src: "TEMA_REMA: Kto kupił bilety? Bilety kupiła Anna"
+    },
+    {
+      id: "zd-lekcja-zaczyna-sie-o-osmej", tier: 2, topic: "Время",
+      prompt: "Урок начинается в восемь.", context: "ответ на вопрос, когда начинается урок",
+      answers: ["Lekcja zaczyna się o ósmej.", "Lekcja się zaczyna o ósmej.", "Zaczyna się lekcja o ósmej."],
+      extra: ["w", "osiem"],
+      explanation: "«Во сколько» - o с порядковым числительным в предложном: o ósmej. W osiem - калька русского «в восемь». Się можно поставить и до, и после глагола, но не в начало фразы.",
+      ruleId: "godzina-porzadkowa", lemmas: ["lekcja", "zaczynać się", "osiem"],
+      src: "numerals: который час"
+    },
+    {
+      id: "zd-za-kim-tesknisz", tier: 2, topic: "Управление глаголов",
+      prompt: "По кому ты скучаешь?",
+      answers: ["Za kim tęsknisz?"],
+      extra: ["po"],
+      explanation: "Tęsknić управляет za с творительным: za kim tęsknisz? Po подсказывает русское «скучать по кому». Предлог в вопросе всегда стоит перед вопросительным словом.",
+      ruleId: "rekcja-za-narz", lemmas: ["tęsknić", "kto"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-tesknie-dom",
+      src: "REKCJA: tęsknić za kim? za + Narzędnik"
+    },
+    {
+      id: "zd-czy-podoba-ci-sie-krakow", tier: 2, topic: "Личные местоимения",
+      prompt: "Тебе нравится Краков?", context: "нейтрально, без выделения",
+      answers: ["Czy podoba ci się Kraków?", "Czy ci się podoba Kraków?", "Czy Kraków ci się podoba?", "Czy Kraków podoba ci się?", "Czy ci się Kraków podoba?"],
+      extra: ["tobie"], names: ["Kraków"],
+      explanation: "Без выделения адресата нужны краткие ci się. Они держатся вместе и не открывают фразу, а после czy могут стоять сразу. Tobie - ударная форма для противопоставления: czy tobie podoba się Kraków, a nie jej?",
+      ruleId: "order-klityki", lemmas: ["podobać się", "ty", "Kraków"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}},
+      src: "SIE_POS: Czy podoba ci się ten film?"
+    },
+    {
+      id: "zd-nie-widze-tu-zadnego-sklepu", tier: 2, topic: "Отрицание",
+      prompt: "Я не вижу здесь ни одного магазина.",
+      answers: ["Nie widzę tu żadnego sklepu.", "Tu nie widzę żadnego sklepu.", "Żadnego sklepu tu nie widzę.", "Tu żadnego sklepu nie widzę."],
+      extra: ["żaden", "sklep"],
+      explanation: "При отрицании дополнение уходит в родительный, и żaden вместе с ним: żadnego sklepu. Żaden sklep - именительный, так бывает только подлежащее: żaden sklep nie jest otwarty.",
+      ruleId: "neg-dopelniacz", lemmas: ["widzieć", "żaden", "sklep"],
+      drill: {deck: "negation", filter: {topic: "case"}}, drillKey: "neg-6",
+      src: "negation: родительный при отрицании; ani-ani и żaden"
+    },
+    {
+      id: "zd-wczoraj-nie-bylo-pradu", tier: 2, topic: "Отрицание",
+      prompt: "Вчера не было электричества.",
+      answers: ["Wczoraj nie było prądu.", "Nie było wczoraj prądu.", "Wczoraj prądu nie było.", "Prądu wczoraj nie było.", "Nie było prądu wczoraj.", "Prądu nie było wczoraj."],
+      extra: ["prąd", "był"],
+      explanation: "Безличное nie ma в прошедшем становится nie było, и тоже с родительным: nie było prądu. Личное być без именной части фразы не даёт: prąd nie był drogi.",
+      ruleId: "neg-ma-bezlichnoe", lemmas: ["prąd", "nie ma"],
+      drill: {deck: "negation", filter: {topic: "construction"}}, drillKey: "neg-13",
+      src: "NIEMA_JEST: Wczoraj nie było czasu"
+    },
+    {
+      id: "zd-ci-chlopcy-graja-w-pilke", tier: 2, topic: "Мужско-личные формы",
+      prompt: "Эти мальчики играют в мяч.", context: "нейтрально, без выделения",
+      answers: ["Ci chłopcy grają w piłkę.", "Chłopcy ci grają w piłkę."],
+      extra: ["te", "piłce"],
+      explanation: "Chłopcy - мужско-личное, поэтому ci, а не te. Grać w управляет винительным: w piłkę.",
+      ruleId: "wskaz-rod", lemmas: ["ten", "chłopiec", "grać", "piłka"],
+      drill: {deck: "pronouns", filter: {topic: "other"}}, drillKey: "pron-9",
+      src: "pronouns: ten, ta, to; REKCJA: grać w co? w + Biernik"
+    },
+    {
+      id: "zd-anna-i-piotr-byli-w-kinie", tier: 2, topic: "Мужско-личные формы",
+      prompt: "Анна и Пётр были в кино.", context: "нейтрально, без выделения",
+      answers: ["Anna i Piotr byli w kinie.", "Piotr i Anna byli w kinie."],
+      extra: ["były"], names: ["Anna", "Piotr"],
+      explanation: "В группе есть мужчина, поэтому мужско-личная форма byli. Były - для групп без мужчин: Anna i Ewa były w kinie.",
+      ruleId: "past-nonpersonal-pl", lemmas: ["Anna", "Piotr", "być", "kino"],
+      drill: {deck: "verbs", filter: {tense: "past"}}, drillKey: "być|past|11",
+      src: "verbs: прошедшее время, -li и -ły"
+    },
+    {
+      id: "zd-nasi-sasiedzi-sa-bardzo-mili", tier: 2, topic: "Мужско-личные формы",
+      prompt: "Наши соседи очень милые.", context: "нейтрально, без выделения",
+      answers: ["Nasi sąsiedzi są bardzo mili.", "Sąsiedzi nasi są bardzo mili."],
+      extra: ["nasze", "miłe"],
+      explanation: "Sąsiedzi - мужско-личное, и притяжательное, и прилагательное берут мужско-личную форму: nasi, mili. Nasze и miłe - для остальных групп: nasze sąsiadki są miłe.",
+      ruleId: "mos-zaimki", lemmas: ["nasz", "sąsiad", "miły"],
+      src: "adjectives: мужско-личное множественное"
+    },
+    {
+      id: "zd-w-grupie-jest-piec-kobiet", tier: 2, topic: "Числительные",
+      prompt: "В группе пять женщин.", context: "ответ на вопрос, сколько женщин в группе",
+      answers: ["W grupie jest pięć kobiet.", "Jest w grupie pięć kobiet.", "Kobiet w grupie jest pięć.", "W grupie kobiet jest pięć.", "Kobiet jest w grupie pięć."],
+      extra: ["są", "kobiety"],
+      explanation: "С пяти существительное стоит в родительном множественного, а глагол - в единственном: jest pięć kobiet. Są и kobiety - согласование как при dwie, trzy, cztery.",
+      ruleId: "num-5-dop", lemmas: ["grupa", "pięć", "kobieta"],
+      src: "numerals: согласование с существительным"
+    },
+    {
+      id: "zd-przy-stole-stoja-cztery-krzesla", tier: 2, topic: "Числительные",
+      prompt: "У стола стоят четыре стула.", context: "ответ на вопрос, сколько стульев у стола",
+      answers: ["Przy stole stoją cztery krzesła.", "Stoją przy stole cztery krzesła."],
+      extra: ["krzeseł", "stoi"],
+      explanation: "После dwa, trzy, cztery существительное в именительном множественного, а глагол во множественном: stoją cztery krzesła. Родительный и единственное число - правило для пяти и больше. Число - новое, поэтому оно в конце.",
+      ruleId: "num-2-4", lemmas: ["stół", "cztery", "krzesło"],
+      src: "numerals: число, прилагательное, существительное, глагол"
+    },
+    {
+      id: "zd-pieciu-kolegow-czekalo", tier: 2, topic: "Числительные",
+      prompt: "Меня ждали пять коллег.", context: "нейтрально, без выделения",
+      answers: ["Pięciu kolegów czekało na mnie.", "Czekało na mnie pięciu kolegów.", "Pięciu kolegów na mnie czekało.", "Na mnie czekało pięciu kolegów."],
+      extra: ["czekali", "pięć"],
+      explanation: "С мужско-личным существительным нужна форма pięciu, а глагол прошедшего времени стоит в среднем роде единственного: pięciu kolegów czekało. Czekali подсказывает русское «ждали».",
+      ruleId: "numeral-predicate-neuter", lemmas: ["pięć", "kolega", "czekać"],
+      src: "numerals: мужско-личные формы, Pięciu studentów czekało"
+    },
+    {
+      id: "zd-gratuluje-ci-nowej-pracy", tier: 2, topic: "Управление глаголов",
+      prompt: "Поздравляю тебя с новой работой.", context: "нейтрально, без выделения",
+      answers: ["Gratuluję ci nowej pracy."],
+      extra: ["nową", "pracą"],
+      explanation: "Gratulować требует дательного лица и родительного повода: gratuluję ci nowej pracy. Творительный подсказывает русское «с новой работой».",
+      ruleId: "rekcja-dopelniacz-bez-przyimka", lemmas: ["gratulować", "nowy", "praca"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-gratuluje-ci-sukces",
+      src: "REKCJA: gratulować komu? czego? Celownik + Dopełniacz"
+    },
+    {
+      id: "zd-potrzebuje-twojej-pomocy", tier: 2, topic: "Управление: родительный вместо винительного",
+      prompt: "Мне нужна твоя помощь.", context: "нейтрально, без выделения",
+      answers: ["Potrzebuję twojej pomocy."],
+      extra: ["twoja", "pomoc"],
+      explanation: "Potrzebować - «нуждаться», и он требует родительного: potrzebuję twojej pomocy. Twoja pomoc - именительный из русского «мне нужна твоя помощь», где помощь - подлежащее.",
+      ruleId: "rekcja-dopelniacz", lemmas: ["potrzebować", "twój", "pomoc"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-potrzebuje-pomoc",
+      src: "REKCJA: potrzebować czego? Dopełniacz"
+    },
+    {
+      id: "zd-uzywamy-tego-programu", tier: 2, topic: "Управление: родительный вместо винительного",
+      prompt: "Мы каждый день используем эту программу.", context: "нейтрально, без выделения",
+      answers: ["Używamy tego programu codziennie.", "Codziennie używamy tego programu.", "Używamy codziennie tego programu."],
+      extra: ["ten", "program"],
+      explanation: "Używać требует родительного: używamy tego programu. Ten program - винительный из русского «используем эту программу».",
+      ruleId: "rekcja-dopelniacz-bez-przyimka", lemmas: ["używać", "ten", "program"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-uzywam-telefon",
+      src: "REKCJA: używać czego? Dopełniacz"
+    },
+    {
+      id: "zd-pociag-odjezdza-za-dziesiec-minut", tier: 2, topic: "Время",
+      prompt: "Поезд отходит через десять минут.", context: "ответ на вопрос, когда отходит поезд",
+      answers: ["Pociąg odjeżdża za dziesięć minut.", "Odjeżdża pociąg za dziesięć minut."],
+      extra: ["przez", "minuty"],
+      explanation: "«Через» о времени в будущем - za: za dziesięć minut. Przez с тем же словом значит «в течение». После dziesięć существительное в родительном множественного: minut.",
+      ruleId: "czas-za", lemmas: ["pociąg", "odjeżdżać", "minuta"],
+      src: "prepositions: четыре отношения во времени"
+    },
+    {
+      id: "zd-syn-wraca-ze-szkoly", tier: 2, topic: "Предлоги: место и направление",
+      prompt: "Сын возвращается из школы.", context: "нейтрально, без выделения",
+      answers: ["Syn wraca ze szkoły."],
+      extra: ["z"],
+      explanation: "Перед сочетанием согласных sz- предлог получает гласную: ze szkoły.",
+      ruleId: "prep-rozszerzone", lemmas: ["syn", "wracać", "szkoła"],
+      drill: {deck: "prepositions", filter: {topic: "government"}}, drillKey: "prepgo-2",
+      src: "prepositions: краткие и расширенные формы"
+    },
+    {
+      id: "zd-dziadek-byl-dobrym-lekarzem", tier: 2, topic: "Творительный падеж",
+      prompt: "Мой дедушка был хорошим врачом.", context: "нейтрально, без выделения",
+      answers: ["Mój dziadek był dobrym lekarzem.", "Dziadek mój był dobrym lekarzem."],
+      extra: ["dobry", "lekarz"],
+      explanation: "После być профессия стоит в творительном, и прилагательное при ней тоже: był dobrym lekarzem. Именительный возможен только после to: to był dobry lekarz.",
+      ruleId: "byc-narz-rola", lemmas: ["dziadek", "dobry", "lekarz"],
+      drill: {deck: "nouns", filter: {case: "narz", number: "sg"}}, drillKey: "lekarz|narz|sg",
+      src: "adjectives: подводные камни, jestem dobrym lekarzem"
+    },
+    {
+      id: "zd-ewa-kupila-nowa-sukienke", tier: 2, topic: "Тема и рема",
+      prompt: "Ева купила новое платье.", context: "ответ на вопрос, что купила Ева",
+      answers: ["Ewa kupiła nową sukienkę."],
+      extra: ["nowe", "sukienka"], names: ["Ewa"],
+      explanation: "Спрашивают, что купила Ева, поэтому покупка - новое и стоит в конце. Sukienka женского рода, и прилагательное согласуется с ней в винительном: nową sukienkę. Nowe подсказывает русское «новое платье».",
+      ruleId: "feminine-accusative-e", lemmas: ["Ewa", "kupić", "nowy", "sukienka"],
+      drill: {deck: "nouns", filter: {case: "bier", number: "sg"}},
+      src: "TEMA_REMA; cases: Biernik"
+    },
+    {
+      id: "zd-dzwonil-do-ciebie-marek", tier: 2, topic: "Тема и рема",
+      prompt: "Тебе звонил Марек.", context: "ответ на вопрос, кто тебе звонил; без выделения голосом",
+      answers: ["Dzwonił do ciebie Marek.", "Do ciebie dzwonił Marek."],
+      extra: ["tobie"], names: ["Marek"],
+      explanation: "Новое - кто звонил, поэтому Marek в конце. Dzwonić управляет do с родительным: do ciebie. Tobie - дательный из русского «звонил тебе».",
+      ruleId: "rekcja-przyimek", lemmas: ["dzwonić", "ty", "Marek"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-dzwonie-brat",
+      src: "REKCJA: dzwonić do kogo?; TEMA_REMA"
+    },
+    {
+      id: "zd-nie-ma-tu-nikogo", tier: 2, topic: "Отрицание",
+      prompt: "Здесь никого нет.",
+      answers: ["Nie ma tu nikogo.", "Tu nie ma nikogo.", "Nikogo tu nie ma.", "Tu nikogo nie ma."],
+      extra: ["nikt"],
+      explanation: "Отсутствие - безличное nie ma с родительным, и nikt в нём тоже в родительном: nie ma nikogo. Nikt - именительный, это подлежащее: nikt tu nie mieszka.",
+      ruleId: "neg-ma-jest", lemmas: ["nikt", "nie ma"],
+      drill: {deck: "negation", filter: {topic: "construction"}}, drillKey: "neg-4",
+      src: "negation: склонение nikt, nic; nie ma или nie jest"
+    },
+    {
+      id: "zd-o-co-pytasz", tier: 2, topic: "Управление: предлог вместо падежа",
+      prompt: "О чём ты спрашиваешь?",
+      answers: ["O co pytasz?"],
+      extra: ["czym"],
+      explanation: "Pytać управляет o с винительным: pytam o cenę, поэтому o co pytasz. O czym - предложный из русского «о чём», так спрашивают при mówić: o czym mówisz?",
+      ruleId: "rekcja-o-bier", lemmas: ["pytać", "co"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-pytam-cena",
+      src: "REKCJA: pytać o co? o + Biernik"
+    },
+    {
+      id: "zd-mama-chce-zebym-wrocil", tier: 3, topic: "Придаточное с żeby",
+      prompt: "Мама хочет, чтобы я вернулся раньше.",
+      answers: ["Mama chce, żebym wrócił wcześniej.", "Mama chce, żebym wcześniej wrócił."],
+      extra: ["że", "wrócę"],
+      explanation: "Желание, которое исполняет другой человек, вводит żeby, лицо прирастает к союзу: żebym, а глагол стоит в форме на -ł: wrócił. Że вводит факт, а не желание.",
+      ruleId: "zeby-past-form", lemmas: ["chcieć", "wrócić", "mama"],
+      src: "conjunctions: że или żeby, Chcę, żeby on przyszedł"
+    },
+    {
+      id: "zd-ksiazka-ktorej-szukam", tier: 3, topic: "Относительное który",
+      prompt: "Это книга, которую я ищу.",
+      answers: ["To jest książka, której szukam.", "Jest to książka, której szukam."],
+      extra: ["którą"],
+      explanation: "Który берёт род от książka, а падеж - от глагола в придаточном. Szukać требует родительного, поэтому której, а не którą из русского «которую ищу».",
+      ruleId: "ktory-przypadek", lemmas: ["książka", "który", "szukać"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-szukam-praca",
+      src: "questions: który как относительное, pani, której szukam"
+    },
+    {
+      id: "zd-ludzie-ktorzy-mi-pomogli", tier: 3, topic: "Относительное który",
+      prompt: "Это люди, которые мне помогли.", context: "нейтрально, без выделения",
+      answers: ["To są ludzie, którzy mi pomogli.", "To są ludzie, którzy pomogli mi.", "Są to ludzie, którzy mi pomogli.", "Są to ludzie, którzy pomogli mi."],
+      extra: ["które", "pomogły"],
+      explanation: "Ludzie - мужско-личное, и który в роли подлежащего, и глагол берут мужско-личную форму: którzy pomogli.",
+      ruleId: "past-nonpersonal-pl", lemmas: ["ludzie", "który", "pomóc"],
+      src: "questions: ludzie, którzy przyszli"
+    },
+    {
+      id: "zd-samochod-ktory-kupilismy", tier: 3, topic: "Относительное który",
+      prompt: "Это машина, которую мы купили в мае.",
+      answers: ["To jest samochód, który kupiliśmy w maju.", "To jest samochód, który w maju kupiliśmy.", "Jest to samochód, który kupiliśmy w maju.", "Jest to samochód, który w maju kupiliśmy."],
+      extra: ["którego"],
+      explanation: "Samochód - мужской неодушевлённый, у него винительный совпадает с именительным: który kupiliśmy. Którego - винительный одушевлённых: mężczyzna, którego znam.",
+      ruleId: "bier-odushevl", lemmas: ["samochód", "który", "kupić", "maj"],
+      src: "questions: dom, który kupiłem; mężczyzna, którego znam"
+    },
+    {
+      id: "zd-poprosilem-go-zeby-zamknal", tier: 3, topic: "Придаточное с żeby",
+      prompt: "Я попросил его закрыть окно.",
+      answers: ["Poprosiłem go, żeby zamknął okno.", "Poprosiłem go, żeby okno zamknął."],
+      extra: ["że", "zamknie"],
+      explanation: "Просьба вводится żeby с формой на -ł: żeby zamknął. Że с будущим временем сообщало бы факт, а не просьбу.",
+      ruleId: "ze-zeby", lemmas: ["poprosić", "on", "zamknąć", "okno"],
+      src: "conjunctions: косвенная речь, Powiedział, żebym to zrobił"
+    },
+    {
+      id: "zd-oszczedzam-zeby-kupic", tier: 3, topic: "Придаточное с żeby",
+      prompt: "Я коплю, чтобы купить квартиру.",
+      answers: ["Oszczędzam, żeby kupić mieszkanie.", "Żeby kupić mieszkanie, oszczędzam.", "Oszczędzam, żeby mieszkanie kupić.", "Żeby mieszkanie kupić, oszczędzam."],
+      extra: ["że", "kupię"],
+      explanation: "Цель при одном исполнителе - żeby с инфинитивом: żeby kupić. Że и будущее время сообщали бы факт, а не цель.",
+      ruleId: "ze-zeby", lemmas: ["oszczędzać", "kupić", "mieszkanie"],
+      src: "conjunctions: Uczę się, żeby zdać egzamin"
+    },
+    {
+      id: "zd-chetnie-bym-z-wami-pojechal", tier: 3, topic: "Условное наклонение",
+      prompt: "Я бы с удовольствием поехал с вами.", context: "нейтрально, без выделения",
+      answers: ["Chętnie bym z wami pojechał.", "Chętnie bym pojechał z wami.", "Chętnie z wami bym pojechał."],
+      extra: ["pojechałem"],
+      explanation: "Bym отошло от глагола к наречию: chętnie bym pojechał. Лицо уже выражено в bym, поэтому глагол стоит в форме на -ł без окончания: pojechał, а не pojechałem.",
+      ruleId: "by-ruchome", lemmas: ["chętnie", "pojechać", "wy"],
+      src: "verbs: куда прилипает -by, Chętnie bym pojechał"
+    },
+    {
+      id: "zd-gdybym-wiedzial-powiedzialbym", tier: 3, topic: "Условное наклонение",
+      prompt: "Если бы я знал, я бы тебе сказал.",
+      answers: ["Gdybym wiedział, powiedziałbym ci.", "Powiedziałbym ci, gdybym wiedział."],
+      extra: ["jeśli", "wiedziałem"],
+      explanation: "Нереальное условие - gdyby с личным окончанием: gdybym wiedział, и условное наклонение во второй части. Jeśli вводит реальное условие, а wiedziałem с gdybym повторило бы лицо дважды.",
+      ruleId: "gdyby-warunek", lemmas: ["wiedzieć", "powiedzieć", "ty"],
+      src: "verbs: условие целиком, Gdybym miał czas, poszedłbym z tobą"
+    },
+    {
+      id: "zd-ja-bym-tak-nie-powiedzial", tier: 3, topic: "Условное наклонение",
+      prompt: "Я бы так не сказал.",
+      answers: ["Ja bym tak nie powiedział.", "Ja tak bym nie powiedział.", "Ja bym nie powiedział tak."],
+      extra: ["powiedziałem"],
+      explanation: "Bym может стоять после местоимения, тогда пишется раздельно: ja bym. Лицо выражено в bym, поэтому глагол в форме на -ł: nie powiedział.",
+      ruleId: "conditional-person-gender", lemmas: ["ja", "powiedzieć"],
+      src: "verbs: куда прилипает -by, Ja bym tego nie zrobił"
+    },
+    {
+      id: "zd-w-parku-bawilo-sie-troje-dzieci", tier: 3, topic: "Числительные",
+      prompt: "В парке играли трое детей.", context: "ответ на вопрос, кто играл в парке; без выделения голосом",
+      answers: ["W parku bawiło się troje dzieci.", "Bawiło się w parku troje dzieci.", "W parku się bawiło troje dzieci."],
+      extra: ["bawiły"],
+      explanation: "С собирательным troje глагол стоит в среднем роде единственного: bawiło się. Новое - кто играл, поэтому troje dzieci в конце.",
+      ruleId: "numeral-collective", lemmas: ["park", "bawić się", "troje", "dziecko"],
+      src: "numerals: собирательные, Troje dzieci bawiło się w ogrodzie"
+    },
+    {
+      id: "zd-przyszlo-dziesieciu-pracownikow", tier: 3, topic: "Числительные",
+      prompt: "На встречу пришли десять сотрудников.", context: "ответ на вопрос, сколько человек пришло на встречу",
+      answers: ["Na spotkanie przyszło dziesięciu pracowników.", "Przyszło na spotkanie dziesięciu pracowników."],
+      extra: ["przyszli", "dziesięć"],
+      explanation: "С мужско-личным существительным нужна форма dziesięciu, существительное в родительном множественного, а глагол в среднем роде единственного: przyszło. Число - новое, поэтому оно в конце.",
+      ruleId: "num-mos-pieciu", lemmas: ["spotkanie", "przyjść", "dziesięć", "pracownik"],
+      src: "numerals: мужско-личные формы, Dwudziestu ludzi przyszło"
+    },
+    {
+      id: "zd-brat-gra-w-pilke-nozna", tier: 3, topic: "Порядок прилагательного",
+      prompt: "Мой брат играет в футбол.", context: "нейтрально, без выделения",
+      answers: ["Mój brat gra w piłkę nożną.", "Brat mój gra w piłkę nożną."],
+      extra: ["piłce"],
+      explanation: "Piłka nożna - название вида спорта, тип стоит после существительного, как в język polski. Grać w управляет винительным: w piłkę nożną.",
+      ruleId: "order-przymiotnik", lemmas: ["brat", "grać", "piłka"],
+      src: "adjectives: подводные камни, порядок слов"
+    },
+    {
+      id: "zd-lalke-napisal-prus", tier: 3, topic: "Тема и рема",
+      prompt: "«Куклу» написал Болеслав Прус.", context: "ответ на вопрос, кто написал «Куклу»; без выделения голосом",
+      answers: ["«Lalkę» napisał Bolesław Prus."],
+      extra: ["Lalka"], names: ["Lalkę", "Lalka", "Bolesław", "Prus"],
+      explanation: "Роман известен из вопроса, новое - автор, поэтому Bolesław Prus в конце. Название в кавычках склоняется, как обычное существительное: napisał «Lalkę», czytam «Pana Tadeusza».",
+      ruleId: "order-tema-rema", lemmas: ["Lalka", "napisać", "Prus"],
+      src: "TEMA_REMA; Bańko, Poradnia PWN, tytuły filmów: Czytam Pana Tadeusza"
+    },
+    {
+      id: "zd-wiem-ze-go-znasz", tier: 3, topic: "Личные местоимения",
+      prompt: "Я знаю, что ты его знаешь.", context: "нейтрально, без выделения",
+      answers: ["Wiem, że go znasz.", "Wiem, że znasz go."],
+      extra: ["jego"],
+      explanation: "В придаточном краткое go тоже без ударения и держится у глагола; после że оно может стоять сразу. Jego - для противопоставления: wiem, że jego znasz, a jej nie.",
+      ruleId: "pron-bezudarne", lemmas: ["wiedzieć", "znać", "on"],
+      drill: {deck: "pronouns", filter: {topic: "personal"}}, drillKey: "pron-1",
+      src: "CLITICS; Bańko, Poradnia PWN: Nie widzę go, ale Jego nie widzę"
+    },
+    {
+      id: "zd-smiejemy-sie-z-tego-dowcipu", tier: 3, topic: "Управление глаголов",
+      prompt: "Мы смеёмся над этой шуткой.", context: "нейтрально, без выделения",
+      answers: ["Śmiejemy się z tego dowcipu."],
+      extra: ["nad", "tym", "dowcipem"],
+      explanation: "Śmiać się управляет z с родительным: śmiejemy się z tego dowcipu. Nad с творительным - калька русского «смеяться над».",
+      ruleId: "rekcja-z-dop", lemmas: ["śmiać się", "ten", "dowcip"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-smieje-sie-to",
+      src: "REKCJA: śmiać się z kogo? z czego? z + Dopełniacz"
+    },
+    {
+      id: "zd-dziadek-choruje-na-serce", tier: 3, topic: "Управление: предлог вместо падежа",
+      prompt: "Мой дедушка болеет сердцем.", context: "нейтрально, без выделения",
+      answers: ["Mój dziadek choruje na serce.", "Dziadek mój choruje na serce."],
+      extra: ["sercem"],
+      explanation: "Chorować управляет na с винительным: choruje na serce, na grypę. Творительный подсказывает русское «болеет сердцем».",
+      ruleId: "rekcja-przyimek", lemmas: ["dziadek", "chorować", "serce"],
+      drill: {deck: "government", filter: {topic: "verb"}}, drillKey: "rekcja-choruje-grypa",
+      src: "REKCJA: chorować na co? na + Biernik"
+    },
+    {
+      id: "zd-nie-mamy-wolnych-miejsc", tier: 3, topic: "Отрицание",
+      prompt: "У нас уже нет свободных мест.",
+      answers: ["Nie mamy już wolnych miejsc.", "Już nie mamy wolnych miejsc.", "Wolnych miejsc już nie mamy.", "Już wolnych miejsc nie mamy.", "Wolnych miejsc nie mamy już."],
+      extra: ["wolne", "miejsca"],
+      explanation: "При отрицании дополнение и во множественном уходит в родительный, прилагательное вместе с ним: wolnych miejsc.",
+      ruleId: "neg-mnozhestvennoe", lemmas: ["mieć", "wolny", "miejsce"],
+      drill: {deck: "negation", filter: {topic: "case"}}, drillKey: "neg-15",
+      src: "negation: родительный при отрицании"
+    },
+    {
+      id: "zd-zapytaj-czy-sklep-jest-otwarty", tier: 3, topic: "Косвенный вопрос",
+      prompt: "Спроси, открыт ли магазин.",
+      answers: ["Zapytaj, czy sklep jest otwarty."],
+      extra: ["że"],
+      explanation: "Косвенный вопрос «да или нет» вводится czy, дальше порядок как в утверждении: czy sklep jest otwarty. Русское «ли» после глагола здесь не переносится, а że вводит не вопрос, а факт.",
+      ruleId: "pytanie-posrednie", lemmas: ["zapytać", "sklep", "otwarty"],
+      src: "conjunctions: косвенная речь, Zapytał, czy mam czas"
+    },
+    {
+      id: "zd-gdzie-bys-chcial-pojechac", tier: 3, topic: "Условное наклонение",
+      prompt: "Куда бы ты хотел поехать?",
+      answers: ["Gdzie byś chciał pojechać?"],
+      extra: ["chciałeś"],
+      explanation: "Byś может отойти от глагола к вопросительному слову: gdzie byś chciał. Лицо уже выражено в byś, поэтому chciał без окончания. У самого глагола частица пишется слитно: gdzie chciałbyś pojechać. Gdzie здесь значит «куда», так говорят в обычной речи; точнее dokąd.",
+      ruleId: "by-ruchome", lemmas: ["chcieć", "pojechać", "gdzie"],
+      src: "verbs: куда прилипает -by"
+    },
+    {
+      id: "zd-zeby-nie-obudzic-dziecka", tier: 3, topic: "Придаточное с żeby",
+      prompt: "Говори тише, чтобы не разбудить ребёнка.",
+      answers: ["Mów ciszej, żeby nie obudzić dziecka.", "Mów ciszej, żeby dziecka nie obudzić.", "Ciszej mów, żeby nie obudzić dziecka.", "Ciszej mów, żeby dziecka nie obudzić.", "Żeby nie obudzić dziecka, mów ciszej.", "Żeby dziecka nie obudzić, mów ciszej."],
+      extra: ["dziecko"],
+      explanation: "Отрицание при инфинитиве тоже переводит дополнение в родительный: żeby nie obudzić dziecka.",
+      ruleId: "neg-dopelniacz", lemmas: ["mówić", "obudzić", "dziecko"],
+      drill: {deck: "negation", filter: {topic: "case"}},
+      src: "negation: родительный при отрицании; conjunctions: żeby + инфинитив"
+    },
+    {
+      id: "zd-problem-o-ktorym-mowilem", tier: 3, topic: "Относительное który",
+      prompt: "Это проблема, о которой я говорил.",
+      answers: ["To jest problem, o którym mówiłem.", "Jest to problem, o którym mówiłem."],
+      extra: ["której"],
+      explanation: "Problem по-польски мужского рода, и który согласуется с ним: o którym. Której подсказывает русское «проблема, о которой».",
+      ruleId: "ktory-przypadek", lemmas: ["problem", "który", "mówić"],
+      src: "questions: który; ROD_DIFF: problem - м."
+    },
+    {
+      id: "zd-wygrala-nasza-druzyna", tier: 3, topic: "Тема и рема",
+      prompt: "Выиграла наша команда.", context: "ответ на вопрос, кто выиграл; без выделения голосом",
+      answers: ["Wygrała nasza drużyna.", "Wygrała drużyna nasza."],
+      extra: ["wygrał"],
+      explanation: "Новое - кто выиграл, поэтому nasza drużyna в конце. Nasza drużyna wygrała без ударения на drużyna отвечает на вопрос, что сделала команда. Глагол согласуется с drużyna в женском роде.",
+      ruleId: "order-tema-rema", lemmas: ["wygrać", "nasz", "drużyna"],
+      src: "TEMA_REMA"
+    },
+    {
+      id: "zd-ktora-jest-godzina", tier: 3, topic: "Время",
+      prompt: "Простите, который час?",
+      answers: ["Przepraszam, która jest godzina?", "Która jest godzina, przepraszam?"],
+      extra: ["który", "czas"],
+      explanation: "«Час» по-польски godzina, женского рода, и вопрос согласуется с ней: która jest godzina. Czas значит «время», его подсказывает похожее русское слово.",
+      ruleId: "godzina-porzadkowa", lemmas: ["godzina", "który", "przepraszać"],
+      src: "numerals: который час; bridges: czas - ложный друг"
+    },
+    {
+      id: "zd-nie-chce-zebys-sie-martwil", tier: 3, topic: "Придаточное с żeby",
+      prompt: "Я не хочу, чтобы ты волновался.",
+      answers: ["Nie chcę, żebyś się martwił.", "Nie chcę, żebyś martwił się."],
+      extra: ["martwiłeś"],
+      explanation: "Лицо прирастает к союзу: żebyś, а глагол стоит в форме на -ł: martwił. Martwiłeś повторило бы лицо второй раз. Się удобно встаёт сразу за żebyś.",
+      ruleId: "zeby-past-form", lemmas: ["chcieć", "martwić się"],
+      src: "conjunctions: żeby + сослагательные окончания"
     }
   ]
 };
