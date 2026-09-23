@@ -764,6 +764,30 @@ function vTryby(){
       <tr><td class="w">Należałoby zadzwonić.</td><td>безличная форма</td></tr>
     </table>
     <div class="tip"><b>Условие целиком.</b> <span class="pl">Gdyby + условное, to + условное</span>: <span class="pl">Gdybym miał czas, poszedłbym z tobą.</span> Оба глагола в условном. Русское «бы» тоже стоит в обеих частях («если бы у меня было время, я бы пошёл»), но оно неизменяемо, а польская <span class="pl">-by</span> спрягается по лицам: <span class="pl">gdybym, gdybyś, gdybyśmy</span>.</div>
+
+    <h3>Окончание лица ставится один раз</h3>
+    <p class="lead">Когда <span class="pl">-by</span> стоит отдельно от глагола (<span class="pl">gdyby, żeby, aby</span> или <span class="pl">bym</span> после местоимения и наречия), окончание лица уходит вместе с ним. Глагол остаётся голой формой на <span class="pl">-ł, -ła, -li, -ły</span>, как в 3-м лице прошедшего. Род и число он при этом сохраняет: <span class="pl">gdybym miała</span>, <span class="pl">żebyście przyszły</span>.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>ошибка</th><th>верно</th><th>где окончание</th></tr>
+      <tr><td class="bad">Gdybym miałem czas</td><td class="g">Gdybym miał czas</td><td class="dim">gdyby<b>m</b></td></tr>
+      <tr><td class="bad">Ja bym to zrobiłem</td><td class="g">Ja bym to zrobił</td><td class="dim">by<b>m</b></td></tr>
+      <tr><td class="bad">Na pewno bym nie zwlekałem</td><td class="g">Na pewno bym nie zwlekał</td><td class="dim">by<b>m</b></td></tr>
+      <tr><td class="bad">Chcę, żebyś przyszedłeś</td><td class="g">Chcę, żebyś przyszedł</td><td class="dim">żeby<b>ś</b></td></tr>
+      <tr><td class="bad">Gdybyśmy się nie przygotowaliśmy</td><td class="g">Gdybyśmy się nie przygotowali</td><td class="dim">gdyby<b>śmy</b></td></tr>
+    </table></div>
+    <div class="tip"><b>Проверка.</b> Посчитай окончания лица в конструкции: оно должно быть ровно одно. Если оно уже есть в <span class="pl">gdyby-, żeby-</span> или <span class="pl">bym</span>, глагол без него. В слитной форме оно в конце самого глагола: <span class="pl">zrobiłbym, poszlibyśmy</span>.</div>
+
+    <h3>żeby + форма на -ł</h3>
+    <p class="lead">После глаголов желания, просьбы и совета (<span class="pl">chcieć, prosić, polecić, radzić, zależeć na tym</span>) при разных подлежащих нужно <span class="pl">żeby</span> + окончание лица + форма на <span class="pl">-ł</span>. По-русски так же: «хочу, чтобы ты пришёл», только русское «бы» не спрягается, а польское да.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>пример</th><th>перевод</th><th>кто действует</th></tr>
+      <tr><td class="g flow">Chcę, żebyś przyszedł.</td><td class="flow">Хочу, чтобы ты пришёл.</td><td class="dim flow">ty: żeby<b>ś</b></td></tr>
+      <tr><td class="g flow">Mama prosi, żebyśmy wrócili przed dziesiątą.</td><td class="flow">Мама просит, чтобы мы вернулись до десяти.</td><td class="dim flow">my: żeby<b>śmy</b>, мужско-личное -li</td></tr>
+      <tr><td class="g flow">Poleciłem im, żeby zabrali ciepłe ubrania.</td><td class="flow">Я посоветовал им взять тёплую одежду.</td><td class="dim flow">oni: żeby без окончания, мужско-личное -li</td></tr>
+      <tr><td class="g flow">Proszę, żeby pan zaczekał.</td><td class="flow">Прошу вас подождать.</td><td class="dim flow">pan - 3-е лицо: żeby без окончания</td></tr>
+      <tr><td class="g flow">Zależy mi na tym, żebyście zdążyli.</td><td class="flow">Мне важно, чтобы вы успели.</td><td class="dim flow">wy: żeby<b>ście</b></td></tr>
+    </table></div>
+    <div class="tip"><b>Подлежащее одно - инфинитив.</b> <span class="pl">Chcę przyjść</span>, а не <span class="bad">Chcę, żebym przyszedł</span>. То же с целью: <span class="pl">Uczę się, żeby zdać egzamin</span> (сдаю я сам), но <span class="pl">Tłumaczę powoli, żebyś zrozumiał</span> (понимаешь ты).</div>
     <div class="tip"><b>Ударение в условном.</b> Оно тоже сдвигается: <span class="pl">${akcent("zrobiłbym",["zro","bił","bym"],3)}</span>, <span class="pl">${akcent("robiliby",["ro","bi","li","by"],3)}</span> - третий слог от конца, <span class="pl">${akcent("robilibyśmy",["ro","bi","li","by","śmy"],4)}</span>, <span class="pl">${akcent("robilibyście",["ro","bi","li","by","ście"],4)}</span> - четвёртый.</div>
     <p class="lead">Рабочие вежливые заготовки: <span class="pl">Chciałbym / Chciałabym…</span> · <span class="pl">Czy mógłbym prosić o…?</span> · <span class="pl">Czy mogłaby pani powtórzyć?</span> · <span class="pl">Wolałbym nie.</span></p>
 

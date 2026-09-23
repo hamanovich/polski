@@ -1193,6 +1193,24 @@ Ja bym tego nie zrobił.раздельно после местоимения
 Chętnie bym pojechał.раздельно после наречия
 Należałoby zadzwonić.безличная форма
 Условие целиком. Gdyby + условное, to + условное: Gdybym miał czas, poszedłbym z tobą. Оба глагола в условном. Русское «бы» тоже стоит в обеих частях («если бы у меня было время, я бы пошёл»), но оно неизменяемо, а польская -by спрягается по лицам: gdybym, gdybyś, gdybyśmy.
+Окончание лица ставится один раз
+Когда -by стоит отдельно от глагола (gdyby, żeby, aby или bym после местоимения и наречия), окончание лица уходит вместе с ним. Глагол остаётся голой формой на -ł, -ła, -li, -ły, как в 3-м лице прошедшего. Род и число он при этом сохраняет: gdybym miała, żebyście przyszły.
+ошибкаверногде окончание
+Gdybym miałem czasGdybym miał czasgdybym
+Ja bym to zrobiłemJa bym to zrobiłbym
+Na pewno bym nie zwlekałemNa pewno bym nie zwlekałbym
+Chcę, żebyś przyszedłeśChcę, żebyś przyszedłżebyś
+Gdybyśmy się nie przygotowaliśmyGdybyśmy się nie przygotowaligdybyśmy
+Проверка. Посчитай окончания лица в конструкции: оно должно быть ровно одно. Если оно уже есть в gdyby-, żeby- или bym, глагол без него. В слитной форме оно в конце самого глагола: zrobiłbym, poszlibyśmy.
+żeby + форма на -ł
+После глаголов желания, просьбы и совета (chcieć, prosić, polecić, radzić, zależeć na tym) при разных подлежащих нужно żeby + окончание лица + форма на -ł. По-русски так же: «хочу, чтобы ты пришёл», только русское «бы» не спрягается, а польское да.
+примерпереводкто действует
+Chcę, żebyś przyszedł.Хочу, чтобы ты пришёл.ty: żebyś
+Mama prosi, żebyśmy wrócili przed dziesiątą.Мама просит, чтобы мы вернулись до десяти.my: żebyśmy, мужско-личное -li
+Poleciłem im, żeby zabrali ciepłe ubrania.Я посоветовал им взять тёплую одежду.oni: żeby без окончания, мужско-личное -li
+Proszę, żeby pan zaczekał.Прошу вас подождать.pan - 3-е лицо: żeby без окончания
+Zależy mi na tym, żebyście zdążyli.Мне важно, чтобы вы успели.wy: żebyście
+Подлежащее одно - инфинитив. Chcę przyjść, а не Chcę, żebym przyszedł. То же с целью: Uczę się, żeby zdać egzamin (сдаю я сам), но Tłumaczę powoli, żebyś zrozumiał (понимаешь ты).
 Ударение в условном. Оно тоже сдвигается: ZRO-bił-bym, ro-BI-li-by - третий слог от конца, ro-BI-li-by-śmy, ro-BI-li-by-ście - четвёртый.
 Рабочие вежливые заготовки: Chciałbym / Chciałabym… · Czy mógłbym prosić o…? · Czy mogłaby pani powtórzyć? · Wolałbym nie.
 powinien - «следует»
