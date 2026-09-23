@@ -63,8 +63,10 @@ vm.runInContext(appSource, sandbox, {filename:"app.js"});
 vm.runInContext(`
   const caseHost = document.querySelector("#casePanel");
   caseHost.className = "variant-host";
-  caseHost.innerHTML = CASES.flatMap(c => ["sg", "pl"].map(num =>
-    \`<article class="panel content-variant case-variant\${c.id === "mian" && num === "sg" ? " on" : ""}"
+  caseHost.innerHTML = ["sg", "pl"].map(num =>
+    \`<article class="panel content-variant case-variant\${num === "sg" ? " on" : ""}" data-case="sciaga" data-num="\${num}">\${caseGridHTML(num)}</article>\`
+  ).join("") + CASES.flatMap(c => ["sg", "pl"].map(num =>
+    \`<article class="panel content-variant case-variant"
               data-case="\${c.id}" data-num="\${num}">\${casePanelHTML(c, num)}</article>\`
   )).join("");
 

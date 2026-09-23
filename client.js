@@ -7,7 +7,7 @@ const TRAINER_DATA_SRC = document.currentScript?.dataset.trainerSrc || "trainer-
 
 const currentPage = document.documentElement.dataset.page || "s-index";
 const navLinks = $$("#nav [data-s]");
-let curCase = "mian", curNum = "sg", curV = "conj";
+let curCase = "sciaga", curNum = "sg", curV = "conj";
 
 const navLink = tab => navLinks.find(link => link.dataset.s === tab);
 navLinks.forEach(link => {
@@ -23,7 +23,7 @@ function showCase(id, number){
   const variants = $$(".case-variant");
   if(!variants.length) return;
   let target = variants.find(item => item.dataset.case === id && item.dataset.num === number);
-  if(!target){ id = "mian"; number = "sg"; target = variants.find(item => item.dataset.case === id && item.dataset.num === number); }
+  if(!target){ id = "sciaga"; number = "sg"; target = variants.find(item => item.dataset.case === id && item.dataset.num === number); }
   curCase = id; curNum = number;
   updateStudyLinks();
   variants.forEach(item => {
@@ -33,8 +33,9 @@ function showCase(id, number){
   });
   $$("#chips [data-c]").forEach(item => item.setAttribute("aria-pressed", item.dataset.c === id));
   $$("#numtog [data-n]").forEach(item => item.setAttribute("aria-pressed", item.dataset.n === number));
+  const practiceId = id === "sciaga" ? "mian" : id;
   $$(".case-practice-variant").forEach(item => {
-    const on = item.dataset.case === id;
+    const on = item.dataset.case === practiceId;
     item.classList.toggle("on", on);
     item.setAttribute("aria-hidden", String(!on));
   });
@@ -690,7 +691,7 @@ function applyHash(){
   const stateParts = parts.filter(part => part !== study);
   let rest = parts;
   if(currentPage === "s-cases"){
-    showCase(stateParts[0] || "mian", stateParts[1] === "pl" ? "pl" : "sg");
+    showCase(stateParts[0] || "sciaga", stateParts[1] === "pl" ? "pl" : "sg");
     rest = parts.slice(2);
   }else if(currentPage === "s-verbs"){
     showVerb(stateParts[0] || "conj");
@@ -1054,7 +1055,7 @@ function fitNav(){
 window.addEventListener("resize", () => { fitNav(); setHeadH(); });
 document.fonts?.ready.then(() => { navRowWidth = 0; fitNav(); });
 
-if(currentPage === "s-cases") showCase("mian", "sg");
+if(currentPage === "s-cases") showCase("sciaga", "sg");
 if(currentPage === "s-verbs") showVerb("conj");
 if(currentPage === "s-preps") filterPreps("все");
 applyTheme(readTheme());

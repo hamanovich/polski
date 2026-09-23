@@ -123,6 +123,44 @@ const ORTHO_U = [
  ["u","в формах глаголов на -ować и -uć","pracuję, pracujesz, pracują, pracuj, pracujący, pracując · snuję, snujesz, snują, snuj"]
 ];
 
+const CASE_GRID = {
+  sg:{
+    cols:[["муж. неодуш.","sklep"],["муж. одуш.","student"],["муж. на -a","tata"],["жен. на -a","kawa"],["жен. на согласную","noc"],["средний","okno"]],
+    rows:[
+      ["Mianownik","kto? co?","sklep|","student|","tat|a","kaw|a","noc|","okn|o"],
+      ["Dopełniacz","kogo? czego?",["sklep|u","или -a: chleba"],"student|a","tat|y","kaw|y","noc|y","okn|a"],
+      ["Celownik","komu? czemu?","sklep|owi",["student|owi","panu, bratu: -u"],"ta|ci|e","ka|wi|e","noc|y","okn|u"],
+      ["Biernik","kogo? co?",["sklep|","= M"],["student|a","= D"],"tat|ę","kaw|ę",["noc|","= M"],["okn|o","= M"]],
+      ["Narzędnik","kim? czym?","sklep|em","student|em","tat|ą","kaw|ą","noc|ą","okn|em"],
+      ["Miejscownik","o kim? o czym?",["skle|pi|e","-u после k, g, ch и мягких"],"studen|ci|e","ta|ci|e","ka|wi|e","noc|y","ok|ni|e"],
+      ["Wołacz","o!","skle|pi|e","studen|ci|e","tat|o","kaw|o","noc|y","okn|o"]
+    ],
+    tips:[
+      "<b>Biernik повторяет другой падеж.</b> Мужское одушевлённое берёт форму Dopełniacz (<span class='pl'>widzę studenta</span>), неодушевлённое, средний и женский на согласную - форму Mianownik (<span class='pl'>widzę sklep, okno, noc</span>). Своё окончание <span class='pl'>-ę</span> только у слов на <span class='pl'>-a</span>, включая мужские: <span class='pl'>kawę, tatę</span>.",
+      "<b>Совпадения, которые экономят память.</b> У слов на <span class='pl'>-a</span> Celownik = Miejscownik: <span class='pl'>kawie, tacie</span>. У мужских с твёрдой основой Miejscownik = Wołacz: <span class='pl'>studencie</span>. У женских на согласную косвенные падежи почти все на <span class='pl'>-y / -i</span>: <span class='pl'>nocy</span>.",
+      "<b>Перед -e согласная меняется.</b> <span class='pl'>kawa → kawie, student → studencie, siostra → siostrze, ręka → ręce</span>. Подсказку даёт белорусский: <span class='pl'>у вадзе → w wodzie</span>. После <span class='pl'>k, g</span> и мягких пишется <span class='pl'>-i</span> вместо <span class='pl'>-y</span>: <span class='pl'>książki, kolegi</span>.",
+      "<b>Где сетка упрощает.</b> Dopełniacz мужского неодушевлённого: <span class='pl'>-a</span> или <span class='pl'>-u</span> без надёжного правила (<span class='pl'>chleba, sklepu</span>). Celownik: короткий список на <span class='pl'>-u</span> (<span class='pl'>panu, bratu, psu, ojcu</span>). Miejscownik: <span class='pl'>-u</span> после <span class='pl'>k, g, ch</span> и мягких (<span class='pl'>na parkingu, w hotelu</span>). Подробности - во вкладке каждого падежа."
+    ]
+  },
+  pl:{
+    cols:[["мужско-личные","studenci"],["остальные мужские","sklepy"],["женский","kawy"],["средний","okna"]],
+    rows:[
+      ["Mianownik","kto? co?",["studen|c|i","-i / -y / -owie"],"sklep|y","kaw|y","okn|a"],
+      ["Dopełniacz","kogo? czego?","student|ów","sklep|ów",["kaw|","без окончания"],["okien|","без окончания"]],
+      ["Celownik","komu? czemu?","student|om","sklep|om","kaw|om","okn|om"],
+      ["Biernik","kogo? co?",["student|ów","= D"],["sklep|y","= M"],["kaw|y","= M"],["okn|a","= M"]],
+      ["Narzędnik","kim? czym?","student|ami","sklep|ami","kaw|ami","okn|ami"],
+      ["Miejscownik","o kim? o czym?","student|ach","sklep|ach","kaw|ach","okn|ach"],
+      ["Wołacz","o!",["studen|c|i","= M"],["sklep|y","= M"],["kaw|y","= M"],["okn|a","= M"]]
+    ],
+    tips:[
+      "<b>Три падежа одинаковы для всех.</b> Celownik <span class='pl'>-om</span>, Narzędnik <span class='pl'>-ami</span>, Miejscownik <span class='pl'>-ach</span> - род не важен. Короткие исключения на <span class='pl'>-mi</span>: <span class='pl'>ludźmi, dziećmi, pieniędzmi, gośćmi, braćmi</span>.",
+      "<b>Род решает только в Mianownik, Dopełniacz и Biernik.</b> Мужско-личные (люди, где есть хоть один мужчина) в Biernik = Dopełniacz: <span class='pl'>widzę studentów</span>. Всё остальное, включая животных, в Biernik = Mianownik: <span class='pl'>widzę psy, kawy, okna</span>.",
+      "<b>Dopełniacz - самый пёстрый.</b> Мужские обычно <span class='pl'>-ów</span>, после мягких и шипящих <span class='pl'>-i / -y</span> (<span class='pl'>lekarzy, nauczycieli</span>). Женские и средние без окончания, часто со вставной <span class='pl'>e</span>: <span class='pl'>książek, okien</span>. Подробный разбор - во вкладке Dopełniacz, множественное."
+    ]
+  }
+};
+
 const CASES = [
 {
   id:"mian", name:"Mianownik", ru:"Именительный", q:"kto? co?",

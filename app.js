@@ -404,9 +404,26 @@ function renderNumTog(){
     `<button type="button" data-n="${n}" aria-pressed="${n===curNum}">${label}</button>`).join("");
 }
 function renderChips(){
-  $("#chips").innerHTML = CASES.map(c =>
-    `<button class="chip" data-c="${c.id}" aria-pressed="${c.id===curCase}">
+  $("#chips").innerHTML = `<button class="chip" data-c="sciaga" aria-pressed="true">
+      <span class="cp">Ściąga</span><span class="cr">все падежи</span></button>` + CASES.map(c =>
+    `<button class="chip" data-c="${c.id}" aria-pressed="false">
       <span class="cp">${c.name}</span><span class="cr">${c.ru}</span></button>`).join("");
+}
+function caseGridCell(cell){
+  const [f, note] = Array.isArray(cell) ? cell : [cell, ""];
+  return `<td class="w"><span class="to">${form(f)}</span>${note ? `<span class="sub">${note}</span>` : ""}</td>`;
+}
+function caseGridHTML(num){
+  const g = CASE_GRID[num];
+  return `
+    <h2 class="pl">Ściąga</h2>
+    <p class="lead">Все падежи на одном экране: ${num === "sg" ? "единственное" : "множественное"} число. Строка - падеж, столбец - тип слова. Найди столбец своего слова и возьми окончание из нужной строки.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>падеж</th>${g.cols.map(c => `<th>${c[0]}<span class="sub">${c[1]}</span></th>`).join("")}</tr>
+      ${g.rows.map(r => `<tr><td><span class="pl">${r[0]}</span><span class="sub">${r[1]}</span></td>${r.slice(2).map(caseGridCell).join("")}</tr>`).join("")}
+    </table></div>
+    <div class="legend"><span><i class="l1">окончание</i></span><span><i class="l2">чередование в основе</i></span><span>основа - чёрным</span></div>
+    ${g.tips.map(t => `<div class="tip">${t}</div>`).join("")}`;
 }
 function casePanelHTML(c, num){
   const rows = num === "sg" ? c.sg : c.pl;

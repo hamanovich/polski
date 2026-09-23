@@ -202,7 +202,7 @@ assert(rootPage.document.querySelector('#s-index .index-plan-card[href="plan-40/
 assert(!rootPage.html.includes("przez godzinę"), "Homepage should not duplicate every topic");
 
 const cases = documents.get("s-cases");
-assert.equal(cases.document.querySelectorAll(".case-variant").length, 14);
+assert.equal(cases.document.querySelectorAll(".case-variant").length, 16);
 assert(cases.html.includes("Miejscownik"));
 assert(cases.html.includes("dwadzieścia jeden biletów"));
 assert(cases.html.includes("dwadzieścia dwa bilety"));

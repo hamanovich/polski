@@ -179,6 +179,7 @@ problemм.проблема - ж.programм.программа - ж.systemм.си�
 dzieci - не m1, хотя это люди. te dzieci, dzieci były, widzę dzieci. То же с niemowlęta и вообще со всем средним родом.
 У pluralia tantum нет формы единственного числа. Для речи важен тип согласования во множественном. Drzwi, spodnie, okulary, nożyczki, urodziny, wakacje, pieniądze согласуются как немужско-личные: te drzwi były otwarte. Rodzice и ludzie не относятся к pluralia tantum: у них есть rodzic и człowiek. У państwo согласование зависит от значения: państwo było о государстве, но państwo Kowalscy przyszli о семье.
 Не любое слово на -um среднего рода. Средние заимствования типа muzeum, centrum, forum, akwarium в единственном не склоняются: w muzeum, do muzeum. Во множественном они склоняются: muzea, muzeów, w muzeach. Но ten album, kostium, rum - мужские и склоняемые: z albumu, w kostiumie, bez rumu.
+Ściągaвсе падежи
 MianownikИменительный
 BiernikВинительный
 DopełniaczРодительный
@@ -187,6 +188,18 @@ NarzędnikТворительный
 MiejscownikПредложный
 WołaczЗвательный
 единственноемножественное
+Ściąga
+Все падежи на одном экране: единственное число. Строка - падеж, столбец - тип слова. Найди столбец своего слова и возьми окончание из нужной строки.
+падежмуж. неодуш.sklepмуж. одуш.studentмуж. на -atataжен. на -akawaжен. на согласнуюnocсреднийokno
+Mianownikkto? co?sklepstudenttatakawanocoknoDopełniaczkogo? czego?sklepuили -a: chlebastudentatatykawynocyoknaCelownikkomu? czemu?sklepowistudentowipanu, bratu: -utaciekawienocyoknuBiernikkogo? co?sklep= Mstudenta= Dtatękawęnoc= Mokno= MNarzędnikkim? czym?sklepemstudentemtatąkawąnocąoknemMiejscowniko kim? o czym?sklepie-u после k, g, ch и мягкихstudencietaciekawienocyoknieWołaczo!sklepiestudencietatokawonocyokno
+окончаниечередование в основеоснова - чёрным
+Biernik повторяет другой падеж. Мужское одушевлённое берёт форму Dopełniacz (widzę studenta), неодушевлённое, средний и женский на согласную - форму Mianownik (widzę sklep, okno, noc). Своё окончание -ę только у слов на -a, включая мужские: kawę, tatę.Совпадения, которые экономят память. У слов на -a Celownik = Miejscownik: kawie, tacie. У мужских с твёрдой основой Miejscownik = Wołacz: studencie. У женских на согласную косвенные падежи почти все на -y / -i: nocy.Перед -e согласная меняется. kawa → kawie, student → studencie, siostra → siostrze, ręka → ręce. Подсказку даёт белорусский: у вадзе → w wodzie. После k, g и мягких пишется -i вместо -y: książki, kolegi.Где сетка упрощает. Dopełniacz мужского неодушевлённого: -a или -u без надёжного правила (chleba, sklepu). Celownik: короткий список на -u (panu, bratu, psu, ojcu). Miejscownik: -u после k, g, ch и мягких (na parkingu, w hotelu). Подробности - во вкладке каждого падежа.
+Ściąga
+Все падежи на одном экране: множественное число. Строка - падеж, столбец - тип слова. Найди столбец своего слова и возьми окончание из нужной строки.
+падежмужско-личныеstudenciостальные мужскиеsklepyженскийkawyсреднийokna
+Mianownikkto? co?studenci-i / -y / -owiesklepykawyoknaDopełniaczkogo? czego?studentówsklepówkawбез окончанияokienбез окончанияCelownikkomu? czemu?studentomsklepomkawomoknomBiernikkogo? co?studentów= Dsklepy= Mkawy= Mokna= MNarzędnikkim? czym?studentamisklepamikawamioknamiMiejscowniko kim? o czym?studentachsklepachkawachoknachWołaczo!studenci= Msklepy= Mkawy= Mokna= M
+окончаниечередование в основеоснова - чёрным
+Три падежа одинаковы для всех. Celownik -om, Narzędnik -ami, Miejscownik -ach - род не важен. Короткие исключения на -mi: ludźmi, dziećmi, pieniędzmi, gośćmi, braćmi.Род решает только в Mianownik, Dopełniacz и Biernik. Мужско-личные (люди, где есть хоть один мужчина) в Biernik = Dopełniacz: widzę studentów. Всё остальное, включая животных, в Biernik = Mianownik: widzę psy, kawy, okna.Dopełniacz - самый пёстрый. Мужские обычно -ów, после мягких и шипящих -i / -y (lekarzy, nauczycieli). Женские и средние без окончания, часто со вставной e: książek, okien. Подробный разбор - во вкладке Dopełniacz, множественное.
 Mianownik
 Именительный · вопросы: kto? co?
 Когда нуженПодлежащее: Sklep jest zamknięty.После to jest / to są - само to не меняется никогда.Словарная форма: так слово стоит в словаре и на ценнике.
