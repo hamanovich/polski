@@ -2912,6 +2912,37 @@ const SOBIE_V = [
  ["robić sobie","делать себе","Robię sobie kawę."],
  ["iść sobie","уйти","Idź sobie!"]
 ];
+const MOJ = [
+ ["Mianownik","mój","moja","moje","moi","moje"],
+ ["Dopełniacz","mojego","mojej","mojego","moich","moich"],
+ ["Celownik","mojemu","mojej","mojemu","moim","moim"],
+ ["Biernik","mój / mojego","moją","moje","moich","moje"],
+ ["Narzędnik","moim","moją","moim","moimi","moimi"],
+ ["Miejscownik","moim","mojej","moim","moich","moich"]
+];
+
+const NASZ = [
+ ["Mianownik","nasz","nasza","nasze","nasi","nasze"],
+ ["Dopełniacz","naszego","naszej","naszego","naszych","naszych"],
+ ["Celownik","naszemu","naszej","naszemu","naszym","naszym"],
+ ["Biernik","nasz / naszego","naszą","nasze","naszych","nasze"],
+ ["Narzędnik","naszym","naszą","naszym","naszymi","naszymi"],
+ ["Miejscownik","naszym","naszej","naszym","naszych","naszych"]
+];
+
+const SWOJ_NO = [
+ ["в самом подлежащем","Nasza drużyna wygrała. · Ich wyniki były lepsze.","Swój указывает на подлежащее, поэтому не может стоять внутри него: <span class='bad'>Swoja drużyna wygrała</span>."],
+ ["обладатель - не подлежащее","Odwiedziłem Marka i zostawiłem parasol w jego samochodzie.","Машина Марка, а подлежащее - я. Swój значило бы «в своём, моём»."],
+ ["обладатель - подлежащее другого предложения","Marek mówi, że Anna wzięła jego książkę.","Swoją здесь было бы «свою, Анны»: swój смотрит на подлежащее своего предложения."]
+];
+
+const SWOJ_YES = [
+ ["każdy, nikt, ktoś","Każdy ma swoje zdanie. · Nikt nie lubi swoich błędów."],
+ ["инфинитив и безличные обороты","Trzeba dbać o swoje zdrowie. · Warto znać swoje prawa."],
+ ["повелительное наклонение","Weź swoje rzeczy!"],
+ ["все лица, не только третье","Wziąłem swój telefon. · Macie swoje klucze?"]
+];
+
 const SAM = [
  ["Mianownik","sam","sama","samo","sami","same"],
  ["Dopełniacz","samego","samej","samego","samych","samych"],

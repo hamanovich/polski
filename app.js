@@ -2117,6 +2117,31 @@ function renderPron(){
     </table></div>
     <div class="tip"><b>Свой собственный: <span class="pl">swój</span>.</b> Если обладатель - подлежащее, в образцовой и нейтральной модели выбирай <span class="pl">swój</span>: <span class="pl">Biorę swój bilet</span>. В разговорной речи встречаются <span class="pl">mój, twój, nasz, wasz</span> без специального контраста. В третьем лице различие особенно важно: <span class="pl">Jan wziął swoją książkę</span> - свою, <span class="pl">Jan wziął jego książkę</span> - книгу другого мужчины.</div>
 
+    <h3>Склонение mój и nasz</h3>
+    <p class="lead">Притяжательные склоняются как прилагательные и согласуются с существительным, а не с обладателем. <span class="pl">twój</span> и <span class="pl">swój</span> меняются точно как <span class="pl">mój</span>, <span class="pl">wasz</span> - как <span class="pl">nasz</span>. Падеж задаёт управление: <span class="pl">skorzystać z</span> + Dopełniacz, значит <span class="pl">z twojej ładowarki</span>.</p>
+    <div class="scroll"><table>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
+      ${MOJ.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
+    </table></div>
+    <div class="scroll gap"><table>
+      <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
+      ${NASZ.map(r => `<tr><td>${r[0]}</td><td class="w">${r[1]}</td><td class="w">${r[2]}</td><td class="w">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
+    </table></div>
+    <p class="note">В Biernik мужского рода две формы, как у прилагательных: неодушевлённое <span class="pl">widzę mój dom</span>, одушевлённое <span class="pl">widzę mojego brata</span>. Короткие <span class="pl">mego, mej, mą, twą, swą</span> встречаются в книжной речи и поэзии, в обычной речи берут полные формы.</p>
+    <div class="tip"><b><span class="pl">jego, jej, ich</span> не меняются никогда.</b> Ни по падежу, ни по роду, ни по числу: <span class="pl">jego samochód, w jego samochodzie, jego rzeczy</span>. И после предлога не появляется <span class="pl">n-</span>: <span class="pl">do jego domu</span> - «в его дом», а <span class="pl">do niego</span> - «к нему». Сказать <span class="bad">w niego samochodzie</span> нельзя.</div>
+
+    <h3>swój или mój, jego</h3>
+    <p class="lead"><span class="pl">swój</span> всегда указывает на подлежащее того же предложения, в любом лице. Отсюда и все случаи, где его поставить нельзя.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>swój нельзя</th><th>пример</th><th>почему</th></tr>
+      ${SWOJ_NO.map(r => `<tr><td class="dim flow">${r[0]}</td><td class="g flow">${r[1]}</td><td class="sm flow">${r[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="scroll gap"><table class="vt">
+      <tr><th>swój нужен</th><th>пример</th></tr>
+      ${SWOJ_YES.map(r => `<tr><td class="dim flow">${r[0]}</td><td class="g flow">${r[1]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Как проверить.</b> Спроси, чьё это, и найди подлежащее. Обладатель и подлежащее совпадают - <span class="pl">swój</span>: <span class="pl">Ona tęskni za swoim miastem</span>. Не совпадают - <span class="pl">mój, twój, jego, jej, ich</span>: <span class="pl">Piotr nie lubi, kiedy ktoś dotyka jego rzeczy</span>: подлежащее придаточного - <span class="pl">ktoś</span>, а вещи Петра.</div>
+
     <h3>sam: сам, один, тот же</h3>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>

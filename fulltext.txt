@@ -729,6 +729,21 @@ mynasz / nasza / naszeда
 wywasz / wasza / waszeда
 oni / oneichнет
 Свой собственный: swój. Если обладатель - подлежащее, в образцовой и нейтральной модели выбирай swój: Biorę swój bilet. В разговорной речи встречаются mój, twój, nasz, wasz без специального контраста. В третьем лице различие особенно важно: Jan wziął swoją książkę - свою, Jan wziął jego książkę - книгу другого мужчины.
+Склонение mój и nasz
+Притяжательные склоняются как прилагательные и согласуются с существительным, а не с обладателем. twój и swój меняются точно как mój, wasz - как nasz. Падеж задаёт управление: skorzystać z + Dopełniacz, значит z twojej ładowarki.
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
+MianownikmójmojamojemoimojeDopełniaczmojegomojejmojegomoichmoichCelownikmojemumojejmojemumoimmoimBiernikmój / mojegomojąmojemoichmojeNarzędnikmoimmojąmoimmoimimoimiMiejscownikmoimmojejmoimmoichmoich
+падежмуж.жен.ср.мн. мужско-личноемн. остальное
+MianowniknasznaszanaszenasinaszeDopełniacznaszegonaszejnaszegonaszychnaszychCelowniknaszemunaszejnaszemunaszymnaszymBierniknasz / naszegonasząnaszenaszychnaszeNarzędniknaszymnasząnaszymnaszyminaszymiMiejscowniknaszymnaszejnaszymnaszychnaszych
+В Biernik мужского рода две формы, как у прилагательных: неодушевлённое widzę mój dom, одушевлённое widzę mojego brata. Короткие mego, mej, mą, twą, swą встречаются в книжной речи и поэзии, в обычной речи берут полные формы.
+jego, jej, ich не меняются никогда. Ни по падежу, ни по роду, ни по числу: jego samochód, w jego samochodzie, jego rzeczy. И после предлога не появляется n-: do jego domu - «в его дом», а do niego - «к нему». Сказать w niego samochodzie нельзя.
+swój или mój, jego
+swój всегда указывает на подлежащее того же предложения, в любом лице. Отсюда и все случаи, где его поставить нельзя.
+swój нельзяпримерпочему
+в самом подлежащемNasza drużyna wygrała. · Ich wyniki były lepsze.Swój указывает на подлежащее, поэтому не может стоять внутри него: Swoja drużyna wygrała.обладатель - не подлежащееOdwiedziłem Marka i zostawiłem parasol w jego samochodzie.Машина Марка, а подлежащее - я. Swój значило бы «в своём, моём».обладатель - подлежащее другого предложенияMarek mówi, że Anna wzięła jego książkę.Swoją здесь было бы «свою, Анны»: swój смотрит на подлежащее своего предложения.
+swój нуженпример
+każdy, nikt, ktośKażdy ma swoje zdanie. · Nikt nie lubi swoich błędów.инфинитив и безличные оборотыTrzeba dbać o swoje zdrowie. · Warto znać swoje prawa.повелительное наклонениеWeź swoje rzeczy!все лица, не только третьеWziąłem swój telefon. · Macie swoje klucze?
+Как проверить. Спроси, чьё это, и найди подлежащее. Обладатель и подлежащее совпадают - swój: Ona tęskni za swoim miastem. Не совпадают - mój, twój, jego, jej, ich: Piotr nie lubi, kiedy ktoś dotyka jego rzeczy: подлежащее придаточного - ktoś, а вещи Петра.
 sam: сам, один, тот же
 падежмуж.жен.ср.мн. мужско-личноемн. остальное
 MianowniksamsamasamosamisameDopełniaczsamegosamejsamegosamychsamychCelowniksamemusamejsamemusamymsamymBierniksam / samegosamąsamosamychsameNarzędniksamymsamąsamymsamymisamymiMiejscowniksamymsamejsamymsamychsamych
