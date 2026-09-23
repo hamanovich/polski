@@ -814,7 +814,7 @@ assert.deepEqual(trainerByLemma.get("dać").fu, ["dam", "dasz", "da", "damy", "d
 assert.deepEqual(trainerByLemma.get("wiedzieć").pr, ["wiem", "wiesz", "wie", "wiemy", "wiecie", "wiedzą"]);
 
 const trainerNouns = trainerDecks.nouns;
-assert.equal(trainerNouns.length, 217, "The noun trainer drills every declension example that carries a dictionary form");
+assert.equal(trainerNouns.length, 250, "The noun trainer drills every declension example that carries a dictionary form");
 assert.deepEqual(trainerDecks.cases.map(([id]) => id), ["mian", "bier", "dop", "cel", "narz", "miej", "woł"]);
 assert(trainerNouns.every(item => item.l && item.f && item.c && (item.n === "sg" || item.n === "pl")),
   "Every noun question needs a lemma, a form, a case and a number");

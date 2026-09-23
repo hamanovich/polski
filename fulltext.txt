@@ -202,13 +202,13 @@ kawaksiążkarestauracjanocpani
 piwomieszkanieimięmuzeum
 -o / -e / -ę / -um
 муж. на -a
-kolegamężczyznakierowca
+tatakolegamężczyznakierowca
 в ед. ч. склоняются по-женски, во мн. ч. - по мужско-личному; согласование всегда мужское: ten kolega, ci koledzy
 окончаниечередование в основеоснова - чёрным
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйименительный
-ten dobry sklepten dobry sklepta dobra kawata dobra kawato dobre piwoto dobre piwoмн. мужчиныci dobrzy studenciмн. остальноеte dobre książki
+ten dobry sklepten dobry sklepten dobry tataten dobry tatata dobra kawata dobra kawato dobre piwoto dobre piwoмн. мужчиныci dobrzy studenciмн. остальноеte dobre książki
 Исключения и особые формы
 człowiekludzieво мн. ч. другое словоroklataто жеbratbraciaksiądzksiężadzieckodziecioko / uchooczy / uszyв анатомии; в приборах - oka, ucharękaręceprzyjacielprzyjaciele
 Подводные камниКак построить именительный. В единственном числе бери словарную форму и согласуй с ten / ta / to. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (ci studenci, państwo Kowalscy); женщины, а также существительные dzieci, названия животных и предметов - немужско-личного (te kobiety, dzieci, psy, książki). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой student - studenci.Мужско-личный род (męskoosobowy). В русском во множественном рода нет, поэтому прямой опоры нет. Частичная есть: widzę studentów устроено как «вижу студентов», но на животных она обрывается - widzę koty, а не «вижу котов». Тест простой: подставь ci или te. Ci studenci, но te psy - животные идут в «остальное», даже если это самцы.Мужские слова на -a. kolega, mężczyzna, kierowca, turysta, poeta - склоняются как женские, а согласуются как мужские: ten dobry kolega. Мн. ч. - мужско-личное: ci koledzy.To не меняется. To jest mój brat / to są moje dzieci - форма to одна на всё, меняется только глагол.Państwo - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: państwo Kowalscy byli.
@@ -221,7 +221,7 @@ Mianownik
 Предлоги- (единственный падеж без предлогов)
 Окончания существительных
 мужско-личный
-student→studencisąsiad→sąsiedziPolak→Polacylekarz→lekarzepan→panowie
+student→studencisąsiad→sąsiedziPolak→Polacylekarz→lekarzepan→panowietata→tatowiekolega→koledzymężczyzna→mężczyźni
 мужские названия лиц и смешанные группы людей: -i / -y / -e / -owie, часто с чередованием
 не-мужско-личный
 bilet→biletykot→kotyogórek→ogórkikawa→kawyksiążka→książkiulica→ulice
@@ -253,7 +253,7 @@ człowiekludzieludziroklatalatbratbraciabraciksiądzksiężaksiężydzieckodziec
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйименительный
-ten dobry sklepten dobry sklepta dobra kawata dobra kawato dobre piwoto dobre piwoмн. мужчиныci dobrzy studenciмн. остальноеte dobre książki
+ten dobry sklepten dobry sklepten dobry tataten dobry tatata dobra kawata dobra kawato dobre piwoto dobre piwoмн. мужчиныci dobrzy studenciмн. остальноеte dobre książki
 Исключения и особые формы
 człowiekludzieво мн. ч. другое словоroklataто жеbratbraciaksiądzksiężadzieckodziecioko / uchooczy / uszyв анатомии; в приборах - oka, ucharękaręceprzyjacielprzyjaciele
 Подводные камниКак построить именительный. В единственном числе бери словарную форму и согласуй с ten / ta / to. Во множественном сначала определи группу: мужчины и смешанные группы людей требуют мужско-личного согласования (ci studenci, państwo Kowalscy); женщины, а также существительные dzieci, названия животных и предметов - немужско-личного (te kobiety, dzieci, psy, książki). Конкретное окончание мужско-личной формы не всегда выводится автоматически: частые слова лучше учить парой student - studenci.Мужско-личный род (męskoosobowy). В русском во множественном рода нет, поэтому прямой опоры нет. Частичная есть: widzę studentów устроено как «вижу студентов», но на животных она обрывается - widzę koty, а не «вижу котов». Тест простой: подставь ci или te. Ci studenci, но te psy - животные идут в «остальное», даже если это самцы.Мужские слова на -a. kolega, mężczyzna, kierowca, turysta, poeta - склоняются как женские, а согласуются как мужские: ten dobry kolega. Мн. ч. - мужско-личное: ci koledzy.To не меняется. To jest mój brat / to są moje dzieci - форма to одна на всё, меняется только глагол.Państwo - «супруги» или вежливое «вы» к смешанной компании. Согласование мужско-личное: państwo Kowalscy byli.
@@ -271,6 +271,9 @@ chleb→chlebbilet→biletsok→sok
 муж. одушевл.
 pan→panapies→psakot→kotalekarz→lekarza
 = родительный, как в русском
+муж. на -a
+tata→tatękolega→kolegęmężczyzna→mężczyznękierowca→kierowcę
+-ę, как у kawa: widzę tatę, не taty. Прилагательное при этом мужское: mojego tatę
 женский -a
 kawa→kawębułka→bułkęwoda→wodępani→panią
 -a → -ę. Русское «-у» один в один
@@ -284,10 +287,10 @@ mleko→mlekopiwo→piwo
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйвинительный
-ten dobry chlebten dobry chlebten dobry piestego dobrego psata dobra kawatę dobrą kawęto dobre piwoto dobre piwoмн. мужчиныtych dobrych lekarzyмн. остальноеte dobre kawy
+ten dobry chlebten dobry chlebten dobry piestego dobrego psaten dobry tatatego dobrego tatęta dobra kawatę dobrą kawęto dobre piwoto dobre piwoмн. мужчиныtych dobrych lekarzyмн. остальноеte dobre kawy
 Исключения и особые формы
 pieniądzepieniądzeне мужско-личное: mam pieniądzerękarękępanipaniąединственное женское на -ątatęлитературная норма; в речи слышно tą
-Подводные камниКак выбрать форму. В единственном числе проверь род: мужское неодушевлённое и среднее совпадают с именительным (widzę dom, auto), мужское одушевлённое - с родительным (widzę psa), женское на -a получает -ę (widzę kawę). Во множественном только группа мужчин совпадает с родительным (widzę studentów); всё остальное, включая животных, - с именительным (widzę psy, książki).Числительные рядом. dwa soki, не dwa soka. Ловушка срабатывает именно на словах, похожих на русские.Отрицание сносит винительный в родительный. Mam bilet → nie mam biletu. Автоматически и почти без исключений - самая частая точка отказа у русскоязычных на B1. Винительный удерживается только там, где nie отрицает не глагол, а отдельное слово: Widziałem nie Annę, a Marię.Одушевлённость работает только в мужском единственном. Во множественном граница проходит иначе: widzę psy (животные - как неодушевлённые), но widzę panów.na / w + винительный = движение, + предложный = положение. Idę na pocztę ↔ jestem na poczcie. Одна пара предлогов, два падежа, разный смысл.Глаголы, которые в русском требуют другого падежа: czekam na autobus (жду автобус), proszę o rachunek (прошу счёт), pytam o cenę (спрашиваю о цене).Часть неодушевлённых ведёт себя как одушевлённые. Разговорная норма ставит -a у названий еды, игр, техники, валют и марок: zjem pomidora, mam laptopa, gram w tenisa, wysłałem maila, daj loda, kup papierosa. Форма без -a (mam laptop) тоже встречается и в письменной речи считается более осторожной, но в живой речи вы услышите именно -a. Закрытого списка нет: такие слова набираются вместе с лексикой.
+Подводные камниКак выбрать форму. В единственном числе проверь род: мужское неодушевлённое и среднее совпадают с именительным (widzę dom, auto), мужское одушевлённое - с родительным (widzę psa), кроме мужских на -a: у них -ę, как у женских, а прилагательное мужское (widzę mojego tatę, kolegę), женское на -a получает -ę (widzę kawę). Во множественном только группа мужчин совпадает с родительным (widzę studentów); всё остальное, включая животных, - с именительным (widzę psy, książki).Числительные рядом. dwa soki, не dwa soka. Ловушка срабатывает именно на словах, похожих на русские.Отрицание сносит винительный в родительный. Mam bilet → nie mam biletu. Автоматически и почти без исключений - самая частая точка отказа у русскоязычных на B1. Винительный удерживается только там, где nie отрицает не глагол, а отдельное слово: Widziałem nie Annę, a Marię.Одушевлённость работает только в мужском единственном. Во множественном граница проходит иначе: widzę psy (животные - как неодушевлённые), но widzę panów.na / w + винительный = движение, + предложный = положение. Idę na pocztę ↔ jestem na poczcie. Одна пара предлогов, два падежа, разный смысл.Глаголы, которые в русском требуют другого падежа: czekam na autobus (жду автобус), proszę o rachunek (прошу счёт), pytam o cenę (спрашиваю о цене).Часть неодушевлённых ведёт себя как одушевлённые. Разговорная норма ставит -a у названий еды, игр, техники, валют и марок: zjem pomidora, mam laptopa, gram w tenisa, wysłałem maila, daj loda, kup papierosa. Форма без -a (mam laptop) тоже встречается и в письменной речи считается более осторожной, но в живой речи вы услышите именно -a. Закрытого списка нет: такие слова набираются вместе с лексикой.
 Примеры в предложенияхPoproszę kawę i dwie bułki.Мне, пожалуйста, кофе и две булки.Czekam na autobus już dziesięć minut.Жду автобус уже десять минут.Idę na pocztę, a potem do apteki.Иду на почту, а потом в аптеку.Mam czas w środę wieczorem.У меня есть время в среду вечером.Widzę tego pana codziennie.Вижу этого пана каждый день.
 Итог по падежу
 Само окончание -ę у тебя стоит с первого блока. Ошибки идут не отсюда, а из соседних клеток: числительные, отрицание, глагольное управление.
@@ -297,7 +300,7 @@ Biernik
 Предлогиna (куда), w (день), przez, po (за чем-то), za (за сколько), o (proszę o, pytam o), przed / nad / pod / między + B (куда)
 Окончания существительных
 мужско-личный
-panowie→panówlekarze→lekarzynauczyciele→nauczycielistudenci→studentówsąsiedzi→sąsiadówprzyjaciele→przyjaciół
+panowie→panówlekarze→lekarzynauczyciele→nauczycielistudenci→studentówsąsiedzi→sąsiadówprzyjaciele→przyjaciółtatowie→tatówkoledzy→kolegówmężczyźni→mężczyzn
 = родительный
 всё остальное
 bilety→biletypsy→psykawy→kawypiwa→piwaksiążki→książkidzieci→dzieciokna→okna
@@ -307,10 +310,10 @@ bilety→biletypsy→psykawy→kawypiwa→piwaksiążki→książkidzieci→dzie
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйвинительный
-ten dobry chlebten dobry chlebten dobry piestego dobrego psata dobra kawatę dobrą kawęto dobre piwoto dobre piwoмн. мужчиныtych dobrych lekarzyмн. остальноеte dobre kawy
+ten dobry chlebten dobry chlebten dobry piestego dobrego psaten dobry tatatego dobrego tatęta dobra kawatę dobrą kawęto dobre piwoto dobre piwoмн. мужчиныtych dobrych lekarzyмн. остальноеte dobre kawy
 Исключения и особые формы
 pieniądzepieniądzeне мужско-личное: mam pieniądzerękarękępanipaniąединственное женское на -ątatęлитературная норма; в речи слышно tą
-Подводные камниКак выбрать форму. В единственном числе проверь род: мужское неодушевлённое и среднее совпадают с именительным (widzę dom, auto), мужское одушевлённое - с родительным (widzę psa), женское на -a получает -ę (widzę kawę). Во множественном только группа мужчин совпадает с родительным (widzę studentów); всё остальное, включая животных, - с именительным (widzę psy, książki).Числительные рядом. dwa soki, не dwa soka. Ловушка срабатывает именно на словах, похожих на русские.Отрицание сносит винительный в родительный. Mam bilet → nie mam biletu. Автоматически и почти без исключений - самая частая точка отказа у русскоязычных на B1. Винительный удерживается только там, где nie отрицает не глагол, а отдельное слово: Widziałem nie Annę, a Marię.Одушевлённость работает только в мужском единственном. Во множественном граница проходит иначе: widzę psy (животные - как неодушевлённые), но widzę panów.na / w + винительный = движение, + предложный = положение. Idę na pocztę ↔ jestem na poczcie. Одна пара предлогов, два падежа, разный смысл.Глаголы, которые в русском требуют другого падежа: czekam na autobus (жду автобус), proszę o rachunek (прошу счёт), pytam o cenę (спрашиваю о цене).Часть неодушевлённых ведёт себя как одушевлённые. Разговорная норма ставит -a у названий еды, игр, техники, валют и марок: zjem pomidora, mam laptopa, gram w tenisa, wysłałem maila, daj loda, kup papierosa. Форма без -a (mam laptop) тоже встречается и в письменной речи считается более осторожной, но в живой речи вы услышите именно -a. Закрытого списка нет: такие слова набираются вместе с лексикой.
+Подводные камниКак выбрать форму. В единственном числе проверь род: мужское неодушевлённое и среднее совпадают с именительным (widzę dom, auto), мужское одушевлённое - с родительным (widzę psa), кроме мужских на -a: у них -ę, как у женских, а прилагательное мужское (widzę mojego tatę, kolegę), женское на -a получает -ę (widzę kawę). Во множественном только группа мужчин совпадает с родительным (widzę studentów); всё остальное, включая животных, - с именительным (widzę psy, książki).Числительные рядом. dwa soki, не dwa soka. Ловушка срабатывает именно на словах, похожих на русские.Отрицание сносит винительный в родительный. Mam bilet → nie mam biletu. Автоматически и почти без исключений - самая частая точка отказа у русскоязычных на B1. Винительный удерживается только там, где nie отрицает не глагол, а отдельное слово: Widziałem nie Annę, a Marię.Одушевлённость работает только в мужском единственном. Во множественном граница проходит иначе: widzę psy (животные - как неодушевлённые), но widzę panów.na / w + винительный = движение, + предложный = положение. Idę na pocztę ↔ jestem na poczcie. Одна пара предлогов, два падежа, разный смысл.Глаголы, которые в русском требуют другого падежа: czekam na autobus (жду автобус), proszę o rachunek (прошу счёт), pytam o cenę (спрашиваю о цене).Часть неодушевлённых ведёт себя как одушевлённые. Разговорная норма ставит -a у названий еды, игр, техники, валют и марок: zjem pomidora, mam laptopa, gram w tenisa, wysłałem maila, daj loda, kup papierosa. Форма без -a (mam laptop) тоже встречается и в письменной речи считается более осторожной, но в живой речи вы услышите именно -a. Закрытого списка нет: такие слова набираются вместе с лексикой.
 Примеры в предложенияхPoproszę kawę i dwie bułki.Мне, пожалуйста, кофе и две булки.Czekam na autobus już dziesięć minut.Жду автобус уже десять минут.Idę na pocztę, a potem do apteki.Иду на почту, а потом в аптеку.Mam czas w środę wieczorem.У меня есть время в среду вечером.Widzę tego pana codziennie.Вижу этого пана каждый день.
 Итог по падежу
 Само окончание -ę у тебя стоит с первого блока. Ошибки идут не отсюда, а из соседних клеток: числительные, отрицание, глагольное управление.
@@ -334,6 +337,9 @@ sklep→sklepudom→domubank→bankusok→sokutelefon→telefonu
 женский
 kawa→kawywoda→wodyksiążka→książkinoc→nocysól→soli
 -i после k, g и мягких · -y после остальных
+муж. на -a
+tata→tatykolega→kolegimężczyzna→mężczyznykierowca→kierowcy
+как женские: -y, после k, g -i. Прилагательное мужское: tego dobrego taty
 средний
 mleko→mlekapiwo→piwaokno→okna
 -a
@@ -341,7 +347,7 @@ mleko→mlekapiwo→piwaokno→okna
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйродительный
-ten dobry chlebtego dobrego chlebata dobra kawatej dobrej kawyto dobre piwotego dobrego piwaмн. любоеtych dobrych ludzi / tych dobrych kaw
+ten dobry chlebtego dobrego chlebaten dobry tatatego dobrego tatyta dobra kawatej dobrej kawyto dobre piwotego dobrego piwaмн. любоеtych dobrych ludzi / tych dobrych kaw
 Исключения и особые формы
 rękarąkмн. ч.roklatмн. ч.człowiekludziмн. ч.pieniądzepieniędzydzieckodziecitydzieńtygodniamuzeummuzeum / muzeówед. ч. не склоняется, мн. - склоняется
 Подводные камниКак выбрать форму. Сначала род: женский обычно получает -y/-i, средний - -a, мужское одушевлённое обычно - -a. Редкие исключения вроде wołu проверяй по словарю. Главная развилка остаётся у мужских неодушевлённых: там возможны -a и -u, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: do sklepu, bez chleba.-a или -u у неодушевлённых. -a часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: nosa, noża, talerza, marca, Krakowa. -u часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: czasu, cukru, tłumu, autobusu, Londynu. Это ориентиры, а не жёсткое правило.Отрицание - всегда, даже там, где русский держит винительный. «Не вижу Анну» → nie widzę Anny. «Не люблю кофе» → nie lubię kawy.Беглая гласная во множественном. książka → książek, okno → okien, matka → matek. Окончания нет, зато в основу влезает e.После количественных слов. pięć biletów, dużo ludzi, mało czasu, kilka minut - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (dwadzieścia dwa domy, но dwadzieścia pięć domów), - во вкладке «Числительные».Nie ma - безличное. Формы «его нет» не существует как on nie ma: это значит «у него нет». «Его нет дома» → nie ma go w domu.
@@ -356,6 +362,9 @@ Dopełniacz
 мужской
 bilety→biletówdomy→domówlekarze→lekarzynauczyciele→nauczycielikonie→koni
 -ów после твёрдых · -y после ż, rz, sz, cz, c · -i после мягких
+муж. на -a
+tatowie→tatówkoledzy→kolegówkierowcy→kierowcówmężczyźni→mężczyzn
+как мужские: -ów; mężczyzna - без окончания: mężczyzn
 женский
 kawy→kawksiążki→książekrestauracje→restauracjinoce→nocy
 нулевое окончание, часто со вставной гласной; -i у слов на -ja, -ia, -ść
@@ -375,7 +384,7 @@ piwa→piwokna→okienmieszkania→mieszkańmuzea→muzeów
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйродительный
-ten dobry chlebtego dobrego chlebata dobra kawatej dobrej kawyto dobre piwotego dobrego piwaмн. любоеtych dobrych ludzi / tych dobrych kaw
+ten dobry chlebtego dobrego chlebaten dobry tatatego dobrego tatyta dobra kawatej dobrej kawyto dobre piwotego dobrego piwaмн. любоеtych dobrych ludzi / tych dobrych kaw
 Исключения и особые формы
 rękarąkмн. ч.roklatмн. ч.człowiekludziмн. ч.pieniądzepieniędzydzieckodziecitydzieńtygodniamuzeummuzeum / muzeówед. ч. не склоняется, мн. - склоняется
 Подводные камниКак выбрать форму. Сначала род: женский обычно получает -y/-i, средний - -a, мужское одушевлённое обычно - -a. Редкие исключения вроде wołu проверяй по словарю. Главная развилка остаётся у мужских неодушевлённых: там возможны -a и -u, а абсолютно надёжного правила нет. Используй смысловые тенденции, но проверяй форму по словарю и учи в готовой паре: do sklepu, bez chleba.-a или -u у неодушевлённых. -a часто встречается у названий частей тела, инструментов, посуды, месяцев и польских городов: nosa, noża, talerza, marca, Krakowa. -u часто получают абстрактные, вещественные, собирательные слова, многие заимствования и иностранные города: czasu, cukru, tłumu, autobusu, Londynu. Это ориентиры, а не жёсткое правило.Отрицание - всегда, даже там, где русский держит винительный. «Не вижу Анну» → nie widzę Anny. «Не люблю кофе» → nie lubię kawy.Беглая гласная во множественном. książka → książek, okno → okien, matka → matek. Окончания нет, зато в основу влезает e.После количественных слов. pięć biletów, dużo ludzi, mało czasu, kilka minut - здесь русская модель работает, интуиция не мешает. Какие именно числительные требуют родительного, а какие нет (dwadzieścia dwa domy, но dwadzieścia pięć domów), - во вкладке «Числительные».Nie ma - безличное. Формы «его нет» не существует как on nie ma: это значит «у него нет». «Его нет дома» → nie ma go w domu.
@@ -399,6 +408,9 @@ kobieta→kobieciesiostra→siostrzemama→mamiekoleżanka→koleżance
 женский: мягкая основа → -i / -y
 pani→paniulica→ulicypraca→pracyziemia→ziemi
 после мягких и исторически мягких; форма совпадает с предложным
+муж. на -a
+tata→taciekolega→koledzemężczyzna→mężczyźniekierowca→kierowcy
+как женские, а не -owi: tacie, koledze. Прилагательное мужское: temu dobremu tacie
 средний
 dziecko→dzieckuokno→oknu
 -u
@@ -406,7 +418,7 @@ dziecko→dzieckuokno→oknu
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйдательный
-ten dobry studenttemu dobremu studentowita dobra kobietatej dobrej kobiecieto dobre dzieckotemu dobremu dzieckuмн. любоеtym dobrym ludziom
+ten dobry studenttemu dobremu studentowiten dobry tatatemu dobremu tacieta dobra kobietatej dobrej kobiecieto dobre dzieckotemu dobremu dzieckuмн. любоеtym dobrym ludziom
 Исключения и особые формы
 jami / mnieкороткая mi - обычная, mnie - под ударениемtyci / tobieonmu / jemu / niemuniemu - только после предлога
 Подводные камниКак выбрать окончание. Мужское обычно получает -owi; небольшой список частых слов - -u (panu, bratu, ojcu, psu). Средний род получает -u. У женского твёрдая основа обычно даёт -e с чередованием (kobiecie, koleżance), мягкая - -i/-y (pani, ulicy). Во множественном всегда -om.Dziękuję ci - дательный. Русское «благодарю тебя» - винительный. Системный сдвиг, ловится только заучиванием: dziękuję panu, dziękuję pani.Podoba mi się ta kawa. То, что нравится, здесь подлежащее в именительном. Lubić - устойчивая симпатия или «любить что-то»: Lubię kawę. Podobać się - производить хорошее впечатление, казаться удачным: Podoba mi się ta sukienka, ten pomysł, Warszawa.Короткие формы mi, ci, mu не ставятся в начало фразы и не идут после предлога. В начале - Mnie się to nie podoba. После предлога - dzięki tobie, не dzięki ci.Безличные с mi - целый пласт бытовой речи. Jest mi zimno / gorąco / smutno / miło / głupio. Русский строит это через «мне» тоже, так что конструкция знакомая - но список выражений надо набрать.
@@ -426,7 +438,7 @@ studenci→studentomkobiety→kobietomdzieci→dzieciompanowie→panomlekarze→
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйдательный
-ten dobry studenttemu dobremu studentowita dobra kobietatej dobrej kobiecieto dobre dzieckotemu dobremu dzieckuмн. любоеtym dobrym ludziom
+ten dobry studenttemu dobremu studentowiten dobry tatatemu dobremu tacieta dobra kobietatej dobrej kobiecieto dobre dzieckotemu dobremu dzieckuмн. любоеtym dobrym ludziom
 Исключения и особые формы
 jami / mnieкороткая mi - обычная, mnie - под ударениемtyci / tobieonmu / jemu / niemuniemu - только после предлога
 Подводные камниКак выбрать окончание. Мужское обычно получает -owi; небольшой список частых слов - -u (panu, bratu, ojcu, psu). Средний род получает -u. У женского твёрдая основа обычно даёт -e с чередованием (kobiecie, koleżance), мягкая - -i/-y (pani, ulicy). Во множественном всегда -om.Dziękuję ci - дательный. Русское «благодарю тебя» - винительный. Системный сдвиг, ловится только заучиванием: dziękuję panu, dziękuję pani.Podoba mi się ta kawa. То, что нравится, здесь подлежащее в именительном. Lubić - устойчивая симпатия или «любить что-то»: Lubię kawę. Podobać się - производить хорошее впечатление, казаться удачным: Podoba mi się ta sukienka, ten pomysł, Warszawa.Короткие формы mi, ci, mu не ставятся в начало фразы и не идут после предлога. В начале - Mnie się to nie podoba. После предлога - dzięki tobie, не dzięki ci.Безличные с mi - целый пласт бытовой речи. Jest mi zimno / gorąco / smutno / miło / głupio. Русский строит это через «мне» тоже, так что конструкция знакомая - но список выражений надо набрать.
@@ -444,11 +456,14 @@ autobus→autobusembrat→bratempiwo→piwempociąg→pociągiemmleko→mlekieml
 женский
 kawa→kawąwoda→wodąpani→paniąnoc→nocąksiążka→książkąulica→ulicą
 -ą, одна форма на всё
+муж. на -a
+tata→tatąkolega→kolegąmężczyzna→mężczyznąkierowca→kierowcą
+-ą, как у женских, а не -em. Прилагательное мужское: z tym dobrym kolegą
 окончаниечередование в основеоснова - чёрным
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйтворительный
-ten dobry lekarztym dobrym lekarzemta dobra kawatą dobrą kawąto dobre piwotym dobrym piwemмн. любоеtymi dobrymi ludźmi
+ten dobry lekarztym dobrym lekarzemten dobry kolegatym dobrym kolegąta dobra kawatą dobrą kawąto dobre piwotym dobrym piwemмн. любоеtymi dobrymi ludźmi
 Исключения и особые формы
 ja / tymną / tobąon / onanim / niąпосле предлога: z nim, z niąmy / wynami / wami
 Подводные камниКак выбрать окончание. В единственном мужской и средний род получают -em, после k/g пишется -kiem/-giem; женский род получает -ą. Во множественном основной вариант - -ami, а формы на -mi составляют небольшой список: dziećmi, ludźmi, gośćmi.Jestem programistą - главная калька всей программы. В русском «я программист» именительный, и рука ставит именительный автоматически. После być существительное уходит в творительный.Но прилагательное после być остаётся в именительном. Jestem zmęczony ✅, jestem lekarzem ✅, вместе - jestem dobrym lekarzem. Проверка: есть существительное - творительный, нет - именительный.Предлог z управляет двумя падежами, и смысл разный. z Warszawy (родительный) = из Варшавы; z bratem (творительный) = с братом.Транспорт идёт без предлога. Jadę autobusem, tramwajem, samochodem, pociągiem. Русское «на автобусе» тянет вставить na - это ошибка.przed / nad / pod / za / między + творительный = где, + винительный = куда. Stoję przed domem ↔ idę przed dom.Связка to отменяет творительный. Anna jest lekarką, но Anna to lekarka - после to обе части стоят в именительном: Warszawa to stolica Polski. Вариант с to звучит определительно, «это и есть»; вариант с być нейтрален. Смешивать модели нельзя: Anna to lekarką - ошибка.
@@ -471,7 +486,7 @@ ludzie→ludźmidzieci→dziećmipieniądze→pieniędzmigoście→gośćmibraci
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйтворительный
-ten dobry lekarztym dobrym lekarzemta dobra kawatą dobrą kawąto dobre piwotym dobrym piwemмн. любоеtymi dobrymi ludźmi
+ten dobry lekarztym dobrym lekarzemten dobry kolegatym dobrym kolegąta dobra kawatą dobrą kawąto dobre piwotym dobrym piwemмн. любоеtymi dobrymi ludźmi
 Исключения и особые формы
 ja / tymną / tobąon / onanim / niąпосле предлога: z nim, z niąmy / wynami / wami
 Подводные камниКак выбрать окончание. В единственном мужской и средний род получают -em, после k/g пишется -kiem/-giem; женский род получает -ą. Во множественном основной вариант - -ami, а формы на -mi составляют небольшой список: dziećmi, ludźmi, gośćmi.Jestem programistą - главная калька всей программы. В русском «я программист» именительный, и рука ставит именительный автоматически. После być существительное уходит в творительный.Но прилагательное после być остаётся в именительном. Jestem zmęczony ✅, jestem lekarzem ✅, вместе - jestem dobrym lekarzem. Проверка: есть существительное - творительный, нет - именительный.Предлог z управляет двумя падежами, и смысл разный. z Warszawy (родительный) = из Варшавы; z bratem (творительный) = с братом.Транспорт идёт без предлога. Jadę autobusem, tramwajem, samochodem, pociągiem. Русское «на автобусе» тянет вставить na - это ошибка.przed / nad / pod / za / między + творительный = где, + винительный = куда. Stoję przed domem ↔ idę przed dom.Связка to отменяет творительный. Anna jest lekarką, но Anna to lekarka - после to обе части стоят в именительном: Warszawa to stolica Polski. Вариант с to звучит определительно, «это и есть»; вариант с być нейтрален. Смешивать модели нельзя: Anna to lekarką - ошибка.
@@ -498,11 +513,14 @@ kawa→kawiewoda→wodzieszkoła→szkoleksiążka→książceapteka→aptecedro
 жен. → -y / -i
 ulica→ulicypraca→pracynoc→nocykuchnia→kuchnisól→soli
 после мягких и шипящих
+муж. на -a
+tata→taciekolega→koledzemężczyzna→mężczyźniekierowca→kierowcy
+как женские, а не -u: o tacie, o koledze. Прилагательное мужское: o moim tacie
 окончаниечередование в основеоснова - чёрным
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйпредложный
-ten duży sklepw tym dużym sklepieta nowa pracaw tej nowej pracyto małe miastow tym małym mieścieмн. любоеw tych dużych sklepach
+ten duży sklepw tym dużym sklepiemój dobry tatao moim dobrym tacieta nowa pracaw tej nowej pracyto małe miastow tym małym mieścieмн. любоеw tych dużych sklepach
 Чередования перед -eбылосталопример
 tcibrat → o bracieddziwoda → w wodziestścimiasto → w mieściesłślkrzesło → na krześlełlszkoła → w szkolerrzteatr → w teatrzekcapteka → w aptecegdzdroga → na drodzechszmucha → o muszenniokno → w oknieb p w m fbi pi wi mi fisklep → w sklepies zsi zinos → o nosie
 Исключения и особые формы
@@ -524,7 +542,7 @@ sklepy→sklepachulice→ulicachmiasta→miastachdzieci→dzieciachdomy→domach
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйпредложный
-ten duży sklepw tym dużym sklepieta nowa pracaw tej nowej pracyto małe miastow tym małym mieścieмн. любоеw tych dużych sklepach
+ten duży sklepw tym dużym sklepiemój dobry tatao moim dobrym tacieta nowa pracaw tej nowej pracyto małe miastow tym małym mieścieмн. любоеw tych dużych sklepach
 Чередования перед -eбылосталопример
 tcibrat → o bracieddziwoda → w wodziestścimiasto → w mieściesłślkrzesło → na krześlełlszkoła → w szkolerrzteatr → w teatrzekcapteka → w aptecegdzdroga → na drodzechszmucha → o muszenniokno → w oknieb p w m fbi pi wi mi fisklep → w sklepies zsi zinos → o nosie
 Исключения и особые формы
@@ -550,6 +568,9 @@ lekarz→lekarzuTomasz→Tomaszunauczyciel→nauczycielugość→gościu
 женский
 mama→mamoAnna→Annosiostra→siostro
 -o
+муж. на -a
+tata→tatokolega→kolegokierowca→kierowco
+-o, как у женских: Tato! Kolego! Прилагательное мужское: kochany tato
 уменьшительные
 Kasia→KasiuAnia→Aniubabcia→babciu
 -u
@@ -560,7 +581,7 @@ dziecko→dzieckopani→pani
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйзвательный
-drogi Marekdrogi Markudroga Annadroga Annoszanowni panowieszanowni panowie
+drogi Marekdrogi Markukochany tatakochany tatodroga Annadroga Annoszanowni panowieszanowni panowie
 Исключения и особые формы
 synsynuтвёрдая основа, но традиционное -uBógBożeне Boguojciecojczechłopiecchłopczeksiądzksięże
 Подводные камниКак выбрать между -e и -u. Смотри не просто на последнюю букву, а на конец основы: Marek → Marka, поэтому основа Mark-. Если она заканчивается на k, g, ch или мягкую / исторически мягкую согласную - ставь -u: Marku, lekarzu, nauczycielu. После остальных твёрдых согласных обычно ставь -e и учитывай чередование: panie, Piotrze, Adamie. Формы synu, Boże, ojcze запоминаются отдельно.Ежедневная формула - и это не вокатив. Przepraszam, proszę pani / proszę pana - самое частое обращение к незнакомому, но pana, pani здесь стоят не в звательном падеже: это застывший оборот. Настоящий вокатив начинается там, где есть титул или имя: Panie doktorze! Pani Anno! Proszę pana, gdzie…Титул тоже идёт в вокатив. Panie doktorze, panie kierowniku, pani doktor (женский титул часто не склоняется).В разговорной речи Wołacz конкурирует с Mianownik. С личными именами возможны Kasiu! и разговорное Kasia!. Но в родственных обращениях, титулах и более официальной речи звательный очень продуктивен: Mamo!, Panie doktorze!, Drogi Marku!.В письмах с большой буквы: Szanowna Pani, Drogi Marku, Dzień dobry, Panie Adamie. Обращение выделяется запятой.
@@ -580,7 +601,7 @@ panowie→panowiedzieci→dziecistudenci→studencilekarze→lekarzesąsiedzi→
 Вся группа целиком
 Прилагательное и указательное меняются вместе с существительным.
 именительныйзвательный
-drogi Marekdrogi Markudroga Annadroga Annoszanowni panowieszanowni panowie
+drogi Marekdrogi Markukochany tatakochany tatodroga Annadroga Annoszanowni panowieszanowni panowie
 Исключения и особые формы
 synsynuтвёрдая основа, но традиционное -uBógBożeне Boguojciecojczechłopiecchłopczeksiądzksięże
 Подводные камниКак выбрать между -e и -u. Смотри не просто на последнюю букву, а на конец основы: Marek → Marka, поэтому основа Mark-. Если она заканчивается на k, g, ch или мягкую / исторически мягкую согласную - ставь -u: Marku, lekarzu, nauczycielu. После остальных твёрдых согласных обычно ставь -e и учитывай чередование: panie, Piotrze, Adamie. Формы synu, Boże, ojcze запоминаются отдельно.Ежедневная формула - и это не вокатив. Przepraszam, proszę pani / proszę pana - самое частое обращение к незнакомому, но pana, pani здесь стоят не в звательном падеже: это застывший оборот. Настоящий вокатив начинается там, где есть титул или имя: Panie doktorze! Pani Anno! Proszę pana, gdzie…Титул тоже идёт в вокатив. Panie doktorze, panie kierowniku, pani doktor (женский титул часто не склоняется).В разговорной речи Wołacz конкурирует с Mianownik. С личными именами возможны Kasiu! и разговорное Kasia!. Но в родственных обращениях, титулах и более официальной речи звательный очень продуктивен: Mamo!, Panie doktorze!, Drogi Marku!.В письмах с большой буквы: Szanowna Pani, Drogi Marku, Dzień dobry, Panie Adamie. Обращение выделяется запятой.
