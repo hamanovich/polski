@@ -1236,6 +1236,8 @@ Na pewno bym nie zwlekałemNa pewno bym nie zwlekałbym
 Chcę, żebyś przyszedłeśChcę, żebyś przyszedłżebyś
 Gdybyśmy się nie przygotowaliśmyGdybyśmy się nie przygotowaligdybyśmy
 Проверка. Посчитай окончания лица в конструкции: оно должно быть ровно одно. Если оно уже есть в gdyby-, żeby- или bym, глагол без него. В слитной форме оно в конце самого глагола: zrobiłbym, poszlibyśmy.
+Собрать форму за три шага. 1. Кто действует в этой части предложения? Отсюда окончание: -bym, -byś, -by, -byśmy, -byście, -by. 2. Возьми прошедшее 3-го лица нужного рода и числа, без -m, -ś, -śmy: zabrała, znaleźli, mogli. 3. Склей: zabrała + by, znaleźli + byście, mogli + by. Нерегулярное прошедшее переходит как есть: wziął → wziąłby, wzięła → wzięłaby, mógł → mógłby. Если в ответе -liśmy без by, это прошедшее время: Gdyby pogoda była lepsza, wyruszyliśmy → wyruszylibyśmy.
+Лицо берут из подлежащего, а не из образца. Чаще всего оно одно в обеих частях: Gdybyście mieli mapę, znaleźlibyście szlak. Gdyby ona wiedziała, zabrałaby kije, а не zabrałabym. Вид тоже не меняется: условное строят от того глагола, который дан. nie marzłbym (от marznąć) и nie zmarzłbym (от zmarznąć) - формы двух разных глаголов.
 żeby + форма на -ł
 После глаголов желания, просьбы и совета (chcieć, prosić, polecić, radzić, zależeć na tym) при разных подлежащих нужно żeby + окончание лица + форма на -ł. По-русски так же: «хочу, чтобы ты пришёл», только русское «бы» не спрягается, а польское да.
 примерпереводкто действует

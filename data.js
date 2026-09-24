@@ -632,7 +632,16 @@ const VERB_PRACTICE = [
       "Gdybym ",{key:"a",answers:["miał"],hint:"mieć · ja, мужчина",label:"условная форма mieć"}," więcej czasu, ",
       {key:"b",options:["pojechałbym","pojadę","jechałem"],answers:["pojechałbym"],label:"условная форма pojechać"}," w góry i ",
       {key:"c",answers:["zostałbym"],hint:"zostać · ja, мужчина",label:"условная форма zostać"}," tam na tydzień."
-    ], explanation:"После gdybym первая часть имеет форму miał, а результаты - pojechałbym и zostałbym."}
+    ], explanation:"После gdybym первая часть имеет форму miał, а результаты - pojechałbym и zostałbym."},
+    {id:"vmode-cond-my", prompt:"Gdyby pogoda była lepsza, ___ w góry o świcie. (wyruszyć, my · мужчины)", answers:["wyruszylibyśmy"], explanation:"Прошедшее 3-го лица wyruszyli + by + śmy. Форма wyruszyliśmy без by - это прошедшее «мы выехали», а не условное."},
+    {id:"vmode-cond-choice", prompt:"Gdybyśmy wyszli wcześniej, ___ na pociąg. (zdążyć, my · мужчины)", options:["zdążylibyśmy","zdążyliśmy","zdążyłbyśmy"], answers:["zdążylibyśmy"], explanation:"Zdążyliśmy - прошедшее. Zdążyłbyśmy не существует: для my основа берётся из множественного zdążyli, а у женщин - zdążyły: zdążyłybyśmy."},
+    {id:"vmode-cond-wy", prompt:"Gdybyście mieli mapę, ___ szlak szybciej. (znaleźć, wy · мужчины)", answers:["znaleźlibyście"], explanation:"Лицо то же, что в gdybyście: wy. Znaleźli + by + ście. Znaleźliśmy - и прошедшее, и не то лицо."},
+    {id:"vmode-cond-ona", prompt:"Gdyby Ola wiedziała o deszczu, ___ parasol. (wziąć, ona)", answers:["wzięłaby"], explanation:"Подлежащее ona, окончание -by без лица. Прошедшее wzięła сохраняет чередование ą → ę: wziął, но wzięła."},
+    {id:"vmode-cond-ja-f", prompt:"Gdybym miała pieniądze, ___ nowy rower. (kupić, ja · женщина)", options:["kupiłabym","kupiłam","kupiłbym"], answers:["kupiłabym"], explanation:"Женщина: kupiła + by + m. Kupiłam - прошедшее, kupiłbym - форма мужчины."},
+    {id:"vmode-cond-oni", prompt:"Gdyby mieli czas, ___ nam pomóc. (móc, oni)", answers:["mogliby"], explanation:"Прошедшее mogli + by. У oni личного окончания нет, как у on и ona."},
+    {id:"vmode-cond-pan", prompt:"Czy ___ mi pan pomóc? (móc, pan)", answers:["mógłby"], explanation:"Pan требует 3-го лица: mógł + by. Это самая частая вежливая просьба."},
+    {id:"vmode-aspect-cond", prompt:"Gdybym zabrał cieplejsze buty, nie ___ w nocy. (marznąć, ja · мужчина)", answers:["marzłbym"], explanation:"Форму строят от глагола в скобках: marznąć → marzł → marzłbym. Zmarzłbym - от другого глагола, zmarznąć, совершенного вида."},
+    {id:"vmode-aspect-imp", prompt:"Jutro mamy pociąg o szóstej, ___ wcześnie! (wstać, ty)", options:["wstań","wstawaj","wstaniesz"], answers:["wstań"], explanation:"Wstać - совершенный вид, повелительное wstań. Wstawaj - от wstawać, несовершенного: его берут, когда подгоняют (wstawaj, już siódma!)."}
   ]
 },
 {
