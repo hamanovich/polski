@@ -896,6 +896,22 @@ function vRekcja(){
         <td class="w">${r[4]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Отрицание съедает Biernik.</b> При <span class="pl">nie</span> прямое дополнение уходит в Dopełniacz: <span class="pl">Mam czas → Nie mam czasu</span> · <span class="pl">Znam ją → Nie znam jej</span> · <span class="pl">Lubię kawę → Nie lubię kawy</span>.</div>
+    <h3>Перевёрнутые конструкции</h3>
+    <p class="lead">Русское «я люблю» и польское <span class="pl">smakuje mi</span> описывают одно и то же, но подлежащее в них разное. В перевёрнутой конструкции подлежащим становится предмет, а человек уходит в Celownik или Biernik. Глагол согласуется с предметом: <span class="pl">smakuje mi zupa</span>, но <span class="pl">smakują mi pierogi</span>.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>обычная</th><th>перевёрнутая</th><th>глагол</th><th>кто в каком падеже</th><th>заметка</th></tr>
+      ${REKCJA_FLIP.map(r => `<tr><td class="w flow">${r[0]}</td><td class="g flow">${r[1]}</td><td class="c">${r[2]}</td><td class="dim sm flow">${r[3]}</td><td class="dim sm flow">${r[4]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Типичная ошибка - оставить подлежащее на месте.</b> <span class="bad">Mój brat smakuje zupę</span> значит «мой брат вкусный». Правильно <span class="pl">Mojemu bratu smakuje zupa</span>: суп - подлежащее, брат - Celownik.</div>
+
+    <h3>Перефразирование на экзамене</h3>
+    <p class="lead">Задание «użyć wyrazu w nawiasie i przekształcić zdanie» оценивается целиком: одна неверная форма или лишнее слово - и балл за предложение потерян. Ошибки почти всегда сводятся к трём правилам.</p>
+    <div class="tip"><b>1. Новое слово диктует конструкцию.</b> Выясни его падеж, предлог и то, кто теперь подлежащее, и перестрой под него только нужное место. <b>2. Падеж меняет вся группа.</b> <span class="pl">nagłe ocieplenie → nagłym ociepleniem</span>, <span class="pl">tamtego niskiego stolika → tamtym niskim stoliku</span>: проверь каждое прилагательное и местоимение. <b>3. Остальное переписывай дословно.</b> Ничего не выбрасывай (<span class="pl">bardzo dobrym pianistą → bardzo dobrze gra</span>), не подменяй (<span class="pl">tamtym</span>, а не <span class="pl">tym</span>) и не добавляй лишних слов.</div>
+    <div class="scroll"><table class="vt">
+      <tr><th>исходное</th><th>слово</th><th>результат</th><th>что меняется</th></tr>
+      ${PRZEKSZT.map(r => `<tr><td class="w flow">${r[0]}</td><td class="c">${r[1]}</td><td class="g flow">${r[2]}</td><td class="dim sm flow">${r[3]}</td></tr>`).join("")}
+    </table></div>
+
     <h3>Глаголы движения: пара «однонаправленный / разнонаправленный»</h3>
     <p class="lead">Первый глагол - движение в одну сторону в конкретный момент, второй - движение туда и обратно, вообще или по привычке. Ровно как русское «иду / хожу».</p>
     <div class="scroll"><table class="vt">

@@ -671,7 +671,17 @@ const VERB_PRACTICE = [
       "Marek uczy się ",{key:"a",answers:["polskiego"],hint:"polski",label:"форма polski после uczyć się"},", pomaga ",
       {key:"b",options:["kolega","koledze","kolegą"],answers:["koledze"],label:"форма kolega после pomaga"}," i często pyta kierownika o ",
       {key:"c",answers:["radę"],hint:"rada",label:"форма rada после pytać o"},"."
-    ], explanation:"Uczyć się + родительный, pomagać + дательный, pytać o + винительный."}
+    ], explanation:"Uczyć się + родительный, pomagać + дательный, pytać o + винительный."},
+    {id:"vrek-flip-smakowac", prompt:"Mój brat lubi zupę pomidorową. (smakuje)", passage:[{key:"a",answers:["mojemu bratu"],label:"кому смакует"}," smakuje ",{key:"b",answers:["zupa pomidorowa"],label:"что смакует"},"."], explanation:"Smakować перестраивает фразу: еда становится подлежащим (Mianownik), человек уходит в Celownik: mojemu bratu. Brat в Celownik - bratu, не bratowi."},
+    {id:"vrek-flip-podobac", prompt:"Lubię twoją nową fryzurę. (podoba się)", passage:[{key:"a",answers:["podoba"],label:"глагол"}," mi się ",{key:"b",answers:["twoja nowa fryzura"],label:"что нравится"},"."], explanation:"Podobać się: то, что нравится, - подлежащее в Mianownik, поэтому вся группа меняется: twoją nową fryzurę → twoja nowa fryzura."},
+    {id:"vrek-flip-brakowac", prompt:"Nie mam czasu na sport. (brakuje)", passage:["Brakuje ",{key:"a",answers:["mi"],label:"кому"}," ",{key:"b",answers:["czasu"],label:"чего"}," na sport."], explanation:"Brakować komuś czegoś: человек в Celownik, чего не хватает - в Dopełniacz, глагол всегда в 3-м лице."},
+    {id:"vrek-flip-bolec", prompt:"Mam ból głowy od rana. (boli)", passage:["Od rana boli ",{key:"a",answers:["mnie"],label:"кого"}," ",{key:"b",answers:["głowa"],label:"что болит"},"."], explanation:"Boleć: болит часть тела (подлежащее, Mianownik), человек - в Biernik: boli mnie, boli go, boli ją."},
+    {id:"vrek-flip-udac", prompt:"Zdałem egzamin, choć było trudno. (udało się)", passage:["Udało ",{key:"a",answers:["mi"],label:"кому"}," się ",{key:"b",answers:["zdać"],label:"инфинитив"}," egzamin, choć było trudno."], explanation:"Udać się komuś + инфинитив: человек в Celownik, действие - инфинитивом."},
+    {id:"vrek-flip-zainteresowac", prompt:"Naukowców zaciekawiło nagłe ocieplenie klimatu. (zainteresowali się)", passage:[{key:"a",answers:["naukowcy"],label:"кто"}," zainteresowali się ",{key:"b",answers:["nagłym ociepleniem"],label:"чем"}," klimatu."], explanation:"Обратная перестройка: человек становится подлежащим (naukowcy), а interesować się требует Narzędnik для всей группы: nagłym ociepleniem."},
+    {id:"vrek-flip-przy", prompt:"Lampę postaw obok tamtego niskiego stolika. (przy)", passage:["Lampę postaw przy ",{key:"a",answers:["tamtym niskim stoliku"],label:"при чём"},"."], explanation:"Obok + Dopełniacz, przy + Miejscownik. Меняется падеж всей группы, а tamten остаётся tamten: tamtym, не tym."},
+    {id:"vrek-flip-cieszyc", prompt:"Dorotka cieszy się, że dostała tort. (cieszy się z)", passage:["Dorotka cieszy się z ",{key:"a",answers:["tortu","otrzymanego tortu"],label:"из-за чего"},"."], explanation:"Cieszyć się z + Dopełniacz заменяет придаточное. Otrzymanego tortu тоже правильно, но в экзаменационных ключах надёжнее кратчайший вариант без добавленных слов."},
+    {id:"vrek-flip-grac", prompt:"Wujek jest bardzo dobrym pianistą. (gra na)", passage:["Wujek ",{key:"a",answers:["bardzo dobrze"],label:"как"}," gra na ",{key:"b",answers:["pianinie","fortepianie"],label:"на чём"},"."], explanation:"Существительное-деятель превращается в глагол, а прилагательное - в наречие: bardzo dobry pianista → bardzo dobrze gra. Без bardzo dobrze смысл теряется. Grać na + Miejscownik."},
+    {id:"vrek-flip-potrzebowac", prompt:"Na jutro muszę kupić świeży chleb. (potrzebuję)", passage:["Na jutro potrzebuję ",{key:"a",answers:["świeżego chleba"],label:"чего"},"."], explanation:"Potrzebować + Dopełniacz: вся группа меняется вместе - świeży chleb → świeżego chleba."}
   ]
 },
 {
@@ -1106,6 +1116,27 @@ const REKCJA_ADJ = [
  ["pełny / pełen","Dopełniacz","полон чего","Pokój pełen ludzi."],
  ["wolny","od + Dopełniacz","свободен от чего","Wolny od podatku."]
 ];
+const REKCJA_FLIP = [
+ ["Brat lubi zupę.","Bratu smakuje zupa.","smakować komuś","еда - Mianownik, человек - Celownik","о еде и напитках"],
+ ["Lubię ten film.","Podoba mi się ten film.","podobać się komuś","то, что нравится, - Mianownik, человек - Celownik","впечатление, часто первое; lubić - постоянная симпатия"],
+ ["Nie mam czasu.","Brakuje mi czasu.","brakować komuś czegoś","человек - Celownik, чего нет - Dopełniacz","глагол всегда в 3-м лице"],
+ ["Chcę spać.","Chce mi się spać.","chcieć się komuś","человек - Celownik + инфинитив","nie chce mi się - «лень»"],
+ ["Mam ból głowy.","Boli mnie głowa.","boleć kogoś","часть тела - Mianownik, человек - Biernik","boli mnie, boli go, bolą mnie nogi"],
+ ["Zdałem egzamin.","Udało mi się zdać egzamin.","udać się komuś","человек - Celownik + инфинитив","подчёркивает, что было непросто"],
+ ["To jest dla mnie ważne.","Zależy mi na tym.","zależeć komuś na czymś","человек - Celownik, na + Miejscownik","zależy mi na pracy, na tobie"],
+ ["To mnie zaciekawiło.","Zainteresowałem się tym.","zainteresować się czymś","обратно: человек - подлежащее, предмет - Narzędnik","interesuje mnie historia = interesuję się historią"]
+];
+
+const PRZEKSZT = [
+ ["Wujek jest dobrym pianistą.","gra na","Wujek dobrze gra na pianinie.","деятель → глагол, прилагательное → наречие"],
+ ["Muszę kupić chleb.","potrzebuję","Potrzebuję chleba.","potrzebować + Dopełniacz"],
+ ["Cieszy się, że dostała tort.","cieszy się z","Cieszy się z tortu.","придаточное → cieszyć się z + Dopełniacz"],
+ ["Postaw lampę obok stolika.","przy","Postaw lampę przy stoliku.","obok + Dopełniacz → przy + Miejscownik"],
+ ["Tomek nie pamiętał o spotkaniu.","zapomniał","Tomek zapomniał o spotkaniu.","отрицание уходит вместе с антонимом"],
+ ["Kasia nie lubi tłumów.","unika","Kasia unika tłumów.","unikać + Dopełniacz"],
+ ["Anna szuka nowej pracy.","interesuje się","Anna interesuje się nową pracą.","interesować się + Narzędnik"]
+];
+
 const REKCJA_N = [
  ["problem","z + Narzędnik","Mam problem z komputerem."],
  ["ochota","na + Biernik","Mam ochotę na kawę."],

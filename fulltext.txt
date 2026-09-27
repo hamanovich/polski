@@ -1368,6 +1368,16 @@ Gram w piłkę. Gram na gitarze.iśćpo co?
 po + Biernikидти за чем
 Idę po chleb.
 Отрицание съедает Biernik. При nie прямое дополнение уходит в Dopełniacz: Mam czas → Nie mam czasu · Znam ją → Nie znam jej · Lubię kawę → Nie lubię kawy.
+Перевёрнутые конструкции
+Русское «я люблю» и польское smakuje mi описывают одно и то же, но подлежащее в них разное. В перевёрнутой конструкции подлежащим становится предмет, а человек уходит в Celownik или Biernik. Глагол согласуется с предметом: smakuje mi zupa, но smakują mi pierogi.
+обычнаяперевёрнутаяглаголкто в каком падежезаметка
+Brat lubi zupę.Bratu smakuje zupa.smakować komuśеда - Mianownik, человек - Celownikо еде и напиткахLubię ten film.Podoba mi się ten film.podobać się komuśто, что нравится, - Mianownik, человек - Celownikвпечатление, часто первое; lubić - постоянная симпатияNie mam czasu.Brakuje mi czasu.brakować komuś czegośчеловек - Celownik, чего нет - Dopełniaczглагол всегда в 3-м лицеChcę spać.Chce mi się spać.chcieć się komuśчеловек - Celownik + инфинитивnie chce mi się - «лень»Mam ból głowy.Boli mnie głowa.boleć kogośчасть тела - Mianownik, человек - Biernikboli mnie, boli go, bolą mnie nogiZdałem egzamin.Udało mi się zdać egzamin.udać się komuśчеловек - Celownik + инфинитивподчёркивает, что было непростоTo jest dla mnie ważne.Zależy mi na tym.zależeć komuś na czymśчеловек - Celownik, na + Miejscownikzależy mi na pracy, na tobieTo mnie zaciekawiło.Zainteresowałem się tym.zainteresować się czymśобратно: человек - подлежащее, предмет - Narzędnikinteresuje mnie historia = interesuję się historią
+Типичная ошибка - оставить подлежащее на месте. Mój brat smakuje zupę значит «мой брат вкусный». Правильно Mojemu bratu smakuje zupa: суп - подлежащее, брат - Celownik.
+Перефразирование на экзамене
+Задание «użyć wyrazu w nawiasie i przekształcić zdanie» оценивается целиком: одна неверная форма или лишнее слово - и балл за предложение потерян. Ошибки почти всегда сводятся к трём правилам.
+1. Новое слово диктует конструкцию. Выясни его падеж, предлог и то, кто теперь подлежащее, и перестрой под него только нужное место. 2. Падеж меняет вся группа. nagłe ocieplenie → nagłym ociepleniem, tamtego niskiego stolika → tamtym niskim stoliku: проверь каждое прилагательное и местоимение. 3. Остальное переписывай дословно. Ничего не выбрасывай (bardzo dobrym pianistą → bardzo dobrze gra), не подменяй (tamtym, а не tym) и не добавляй лишних слов.
+исходноесловорезультатчто меняется
+Wujek jest dobrym pianistą.gra naWujek dobrze gra na pianinie.деятель → глагол, прилагательное → наречиеMuszę kupić chleb.potrzebujęPotrzebuję chleba.potrzebować + DopełniaczCieszy się, że dostała tort.cieszy się zCieszy się z tortu.придаточное → cieszyć się z + DopełniaczPostaw lampę obok stolika.przyPostaw lampę przy stoliku.obok + Dopełniacz → przy + MiejscownikTomek nie pamiętał o spotkaniu.zapomniałTomek zapomniał o spotkaniu.отрицание уходит вместе с антонимомKasia nie lubi tłumów.unikaKasia unika tłumów.unikać + DopełniaczAnna szuka nowej pracy.interesuje sięAnna interesuje się nową pracą.interesować się + Narzędnik
 Глаголы движения: пара «однонаправленный / разнонаправленный»
 Первый глагол - движение в одну сторону в конкретный момент, второй - движение туда и обратно, вообще или по привычке. Ровно как русское «иду / хожу».
 в одну сторону, сейчасв разные стороны, вообщепереводпример
