@@ -181,6 +181,12 @@ const notFoundHTML = `${notFoundTemplate.replace("{{STYLE}}", `/style.css?v=${as
 await writeFile(resolve(root, "404.html"), notFoundHTML, "utf8");
 
 const TOC_MIN = 5;
+const afterLead = heading => {
+  let node = heading.nextElementSibling;
+  if(node?.classList.contains("term")) node = node.nextElementSibling;
+  if(node?.classList.contains("lead")) return node;
+  return heading.nextElementSibling?.classList.contains("term") ? heading.nextElementSibling : heading;
+};
 const upTo = page => page.path ? "../".repeat(page.path.split("/").length) : "";
 const pageHref = (from, targetId) => {
   const target = pageById.get(targetId) || pages[0];
@@ -350,8 +356,7 @@ for(const page of pages){
     toc.setAttribute("aria-label", "Содержание раздела");
     toc.innerHTML = `<p class="toc-title">На этой странице</p><ol>${tocHeadings.map(heading =>
       `<li><a href="#${heading.id}">${clean(heading.textContent)}</a></li>`).join("")}</ol>`;
-    const lead = pageHeading.nextElementSibling;
-    (lead?.classList.contains("lead") ? lead : pageHeading).after(toc);
+    afterLead(pageHeading).after(toc);
   }
 
   for(const link of pageDocument.querySelectorAll("#nav [data-s],#navmenu [data-s],.idx-a[data-s]")){
@@ -379,8 +384,7 @@ for(const page of pages){
     shortcuts.className = "study-nav";
     shortcuts.setAttribute("aria-label", "Теория и задания раздела");
     shortcuts.innerHTML = studyLinks(page.id, [["theory", "Теория"], ...studyItems]);
-    const lead = pageHeading.nextElementSibling;
-    (lead?.classList.contains("lead") ? lead : pageHeading).after(shortcuts);
+    afterLead(pageHeading).after(shortcuts);
   }
 
   for(const link of pageDocument.querySelectorAll('a[href^="#s-"]')){

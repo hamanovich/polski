@@ -598,6 +598,10 @@ const VERB_PRACTICE = [
     {id:"vconj-2", prompt:"Co teraz ___? (robić, ty)", options:["robisz","robisz się","robiszcie"], answers:["robisz"], explanation:"Robić относится ко II спряжению: ty robisz."},
     {id:"vconj-3", prompt:"Moi rodzice dużo ___. (pracować, oni)", answers:["pracują"], explanation:"-ować превращается в -uj-: oni pracują."},
     {id:"vconj-4", prompt:"My ___ już w domu. (być)", options:["jesteśmy","jesteście","są"], answers:["jesteśmy"], explanation:"Нерегулярная форма być для my - jesteśmy."},
+    {id:"vconj-przygotowywac", prompt:"Co wieczór razem ___ kolację. (przygotowywać, my)", answers:["przygotowujemy"], explanation:"Отбрасываем только -ywać: przygotow|uj|emy. Przygotujemy - будущее от совершенного przygotować."},
+    {id:"vconj-teraz-przygotowuje", prompt:"Teraz ___ prezentację, a jutro ją pokażę. (ja)", options:["przygotowuję","przygotuję","przygotowywuję"], answers:["przygotowuję"], explanation:"Teraz - настоящее, значит несовершенный przygotowywać: przygotowuję. Przygotuję значит «приготовлю»."},
+    {id:"vconj-wychowywac", prompt:"Oni sami ___ troje dzieci. (wychowywać)", answers:["wychowują"], explanation:"Wychow|ywać → wychow|uj|ą: -ow- остаётся, -ywać заменяется на -uj-."},
+    {id:"vconj-parkowac", prompt:"Zawsze ___ pod domem. (parkować, ja)", answers:["parkuję"], explanation:"Ja - окончание -ę: parkuję. Parkuje без хвостика - это on / ona."},
     {id:"vconj-text", prompt:"Обычное утро", passage:[
       "Rano ",{key:"a",answers:["wstaję"],hint:"wstawać · ja",label:"форма wstawać для ja"},", potem ",
       {key:"b",options:["piję","pijesz","pije"],answers:["piję"],label:"форма pić для ja"}," kawę i ",
@@ -633,6 +637,15 @@ const VERB_PRACTICE = [
       {key:"b",options:["pojechałbym","pojadę","jechałem"],answers:["pojechałbym"],label:"условная форма pojechać"}," w góry i ",
       {key:"c",answers:["zostałbym"],hint:"zostać · ja, мужчина",label:"условная форма zostać"}," tam na tydzień."
     ], explanation:"После gdybym первая часть имеет форму miał, а результаты - pojechałbym и zostałbym."},
+    {id:"vimp-przyjsc", prompt:"___ jutro o dziewiątej. (przyjść, ty)", answers:["przyjdź"], explanation:"Przyjdziesz → przyjdź: мягкий конец dzi пишется как dź."},
+    {id:"vimp-sprawdzic", prompt:"___ jeszcze raz adres. (sprawdzić, ty)", answers:["sprawdź"], explanation:"Sprawdzisz → sprawdź. Во множественном sprawdźcie: знак стоит на основе, а -cie пишется без знака."},
+    {id:"vimp-byc-wy", prompt:"___ cierpliwi! (być, wy)", answers:["bądźcie"], explanation:"Być нерегулярный: bądź, bądźmy, bądźcie. Będziecie - это будущее время, а не просьба."},
+    {id:"vimp-niech-on", prompt:"___ szefowi raport do piątku. (wysłać, on)", answers:["niech wyśle"], explanation:"У on своей повелительной формы нет: niech + (on) wyśle. Wysłać совершенного вида, поэтому форма простого будущего."},
+    {id:"vimp-niech-oni", prompt:"___ na nas przed kinem. (poczekać, oni)", answers:["niech poczekają"], explanation:"Для oni - niech + обычная форма oni: niech poczekają."},
+    {id:"vimp-niech-ona", prompt:"Ola ma gorączkę. ___ w domu. (zostać, ona)", options:["niech zostanie","zostań","niech zostaje"], answers:["niech zostanie"], explanation:"Ona - значит niech. Речь о разовом действии, поэтому совершенный вид: niech zostanie."},
+    {id:"vimp-niech-pan", prompt:"___ tutaj. (usiąść, pan)", answers:["niech pan usiądzie"], explanation:"Pan грамматически 3-е лицо: niech pan + (on) usiądzie."},
+    {id:"vimp-nie-sie-wy", prompt:"___ przed egzaminem! (nie - stresować się, wy)", answers:["nie stresujcie się"], explanation:"Stresują → stresuj + -cie. Nie стоит перед глаголом, się - после."},
+    {id:"vimp-nie-sie-ty", prompt:"___, wszystko będzie dobrze. (nie - martwić się, ty)", answers:["nie martw się"], explanation:"Martwisz → martw. Запрет с несовершенным видом, się после глагола: nie martw się."},
     {id:"vmode-cond-my", prompt:"Gdyby pogoda była lepsza, ___ w góry o świcie. (wyruszyć, my · мужчины)", answers:["wyruszylibyśmy"], explanation:"Прошедшее 3-го лица wyruszyli + by + śmy. Форма wyruszyliśmy без by - это прошедшее «мы выехали», а не условное."},
     {id:"vmode-cond-choice", prompt:"Gdybyśmy wyszli wcześniej, ___ na pociąg. (zdążyć, my · мужчины)", options:["zdążylibyśmy","zdążyliśmy","zdążyłbyśmy"], answers:["zdążylibyśmy"], explanation:"Zdążyliśmy - прошедшее. Zdążyłbyśmy не существует: для my основа берётся из множественного zdążyli, а у женщин - zdążyły: zdążyłybyśmy."},
     {id:"vmode-cond-wy", prompt:"Gdybyście mieli mapę, ___ szlak szybciej. (znaleźć, wy · мужчины)", answers:["znaleźlibyście"], explanation:"Лицо то же, что в gdybyście: wy. Znaleźli + by + ście. Znaleźliśmy - и прошедшее, и не то лицо."},
@@ -1012,6 +1025,15 @@ const ASPECT = [
  ["uczyć się","nauczyć się","учить(ся)"],["pamiętać","zapamiętać","помнить / запомнить"]
 ];
 
+const IMPER_PERSON = [
+ ["ty","сама форма повелительного","Przeczytaj umowę. · Przyjdź na czas."],
+ ["my","форма ty + -my","Wyłączmy telefony. · Bądźmy uprzejmi."],
+ ["wy","форма ty + -cie","Sprawdźcie dane. · Umówcie się z szefem."],
+ ["on / ona","niech + форма on: настоящее у несов., простое будущее у сов.","Niech przygotuje prezentację. · Niech wyśle dokumenty."],
+ ["oni / one","niech + форма oni","Niech zadzwonią do mnie. · Niech poczekają."],
+ ["pan / pani / państwo","niech + pan / pani / państwo + форма on / oni","Niech pan usiądzie. · Niech państwo wejdą."],
+ ["ja","niech + форма ja, редко: «дай-ка я»","Niech pomyślę. · Niech zobaczę."]
+];
 const IMPER = [
  ["pisać","ty piszesz","pisz!","piszmy!","piszcie!","niech pisze! / niech piszą!","I спр.: берём форму ty, убираем окончание"],
  ["mówić","ty mówisz","mów!","mówmy!","mówcie!","niech mówi! / niech mówią!","II спр.: то же самое"],
@@ -2474,6 +2496,68 @@ const PRON_PRACTICE = {
   ]
 };
 
+const GLOSS_TERMS = [
+ ["rzeczownik","существительное","s-cases","Существительные"],
+ ["przymiotnik","прилагательное","s-adj","Прилагательные"],
+ ["czasownik","глагол","s-verbs","Глаголы"],
+ ["przysłówek","наречие","s-adv","Наречия"],
+ ["zaimek (osobowy, zwrotny, dzierżawczy, wskazujący)","местоимение (личное, возвратное, притяжательное, указательное)","s-pron","Местоимения"],
+ ["liczebnik (główny, porządkowy, zbiorowy)","числительное (количественное, порядковое, собирательное)","s-num","Числительные"],
+ ["przyimek","предлог","s-preps","Предлоги"],
+ ["spójnik","союз","s-conj","Союзы"],
+ ["partykuła","частица","s-part","Частицы"],
+ ["wyraz · forma podstawowa","слово · начальная (словарная) форма","",""],
+ ["końcówka · temat","окончание · основа","s-alt","Чередования"],
+ ["oboczność","чередование","s-alt","Чередования"],
+ ["rodzaj męski · żeński · nijaki","мужской · женский · средний род","s-rodz","Род"],
+ ["rodzaj męskoosobowy · niemęskoosobowy","мужско-личный · немужско-личный род","s-rodz/~три-мужских-рода","Род"],
+ ["liczba pojedyncza (l.poj.) · mnoga (l.mn.)","единственное · множественное число","s-cases","Существительные"],
+ ["przypadek · odmiana (deklinacja)","падеж · склонение","s-cases","Существительные"],
+ ["koniugacja · osoba","спряжение · лицо","s-verbs/conj","Спряжения"],
+ ["bezokolicznik","инфинитив, неопределённая форма","s-verbs/conj","Спряжения"],
+ ["czas teraźniejszy","настоящее время","s-verbs/conj","Спряжения"],
+ ["czas przeszły","прошедшее время","s-verbs/czasy","Времена"],
+ ["czas przyszły (prosty, złożony)","будущее время (простое, составное)","s-verbs/czasy","Времена"],
+ ["aspekt dokonany · niedokonany","совершенный · несовершенный вид","s-verbs/czasy","Времена"],
+ ["tryb oznajmujący","изъявительное наклонение (обычные времена)","s-verbs/czasy","Времена"],
+ ["tryb rozkazujący","повелительное наклонение","s-verbs/tryby","Наклонения"],
+ ["tryb przypuszczający","условное наклонение","s-verbs/tryby","Наклонения"],
+ ["strona czynna · bierna","действительный · страдательный залог","s-verbs/formy","Причастия и пассив"],
+ ["imiesłów","причастие, деепричастие","s-verbs/formy","Причастия и пассив"],
+ ["rzeczownik odczasownikowy","отглагольное существительное","s-verbs/formy","Причастия и пассив"],
+ ["czasownik zwrotny","возвратный глагол (с się)","s-pron","Местоимения"],
+ ["rekcja","управление (какой падеж требует слово)","s-verbs/rekcja","Управление"],
+ ["stopień równy · wyższy · najwyższy","положительная · сравнительная · превосходная степень","s-adj/~степени-сравнения-как-образуется","Прилагательные"],
+ ["zdanie (główne, podrzędne, względne)","предложение (главное, придаточное, определительное с który)","s-conj","Союзы"],
+ ["mowa zależna","косвенная речь","s-conj/~косвенная-речь","Союзы"],
+ ["pytanie · przeczenie","вопрос · отрицание","s-neg","Отрицание"],
+ ["szyk wyrazów","порядок слов","s-order","Порядок слов"],
+ ["zdrobnienie","уменьшительная форма","s-dim","Уменьшительные"],
+ ["samogłoska · spółgłoska · akcent","гласная · согласная · ударение","s-alpha","Алфавит"]
+];
+const GLOSS_TASKS = [
+ ["Proszę uzupełnić tekst / zdania","Заполните текст / предложения (впишите пропущенное)"],
+ ["poprawną / właściwą formą wyrazów w nawiasach","правильной формой слов в скобках"],
+ ["zgodnie z podanym przykładem","по данному образцу"],
+ ["Proszę przekształcić zdania","Преобразуйте предложения: скажите то же другой конструкцией"],
+ ["bez zmiany znaczenia","не меняя смысла"],
+ ["Proszę podkreślić właściwy wyraz","Подчеркните правильное слово"],
+ ["Proszę wybrać / zaznaczyć poprawną odpowiedź","Выберите / отметьте правильный ответ"],
+ ["Proszę połączyć","Соедините (части, пары)"],
+ ["Proszę wpisać","Впишите"],
+ ["Proszę ułożyć zdania z podanych wyrazów","Составьте предложения из данных слов"],
+ ["Proszę utworzyć formy / odmienić","Образуйте формы / просклоняйте, проспрягайте"],
+ ["Proszę zamienić … na …","Замените … на …"],
+ ["Proszę użyć","Используйте"],
+ ["Proszę poprawić błędy","Исправьте ошибки"],
+ ["Proszę odpowiedzieć na pytania","Ответьте на вопросы"],
+ ["prawda / fałsz (P / F)","верно / неверно"],
+ ["w czasie teraźniejszym / przeszłym / przyszłym","в настоящем / прошедшем / будущем времени"],
+ ["w liczbie mnogiej / pojedynczej","во множественном / единственном числе"],
+ ["(ja - parkować) · (my - szukać)","в скобках: лицо и глагол, форму ставят в этом лице"],
+ ["(nie - spóźniać się, wy)","nie значит отрицание: запрет или отрицательная форма"],
+ ["przykład · np. · itp.","образец · например · и т. п."]
+];
 const TABS = [["s-index","Оглавление"],["s-alpha","Алфавит"],["s-rodz","Род"],["s-cases","Существительные"],["s-alt","Чередования"],["s-adj","Прилагательные"],["s-adv","Наречия"],["s-pron","Местоимения"],["s-q","Вопросы"],["s-num","Числительные"],["s-verbs","Глаголы"],["s-vocab","Словарь"],["s-talk","Разговорная практика"],["s-neg","Отрицание"],["s-order","Порядок слов"],["s-impers","Безличные"],["s-conj","Союзы"],["s-part","Частицы"],["s-ludzie","Люди"],["s-dim","Уменьшительные"],["s-preps","Предлоги"],["s-bridge","Мосты"],["s-games","Все игры"],["s-mil","Milionerzy"],["s-sek","До последней секунды"],["s-det","Языковой детектив"],["s-zd","Собери фразу"],["s-sources","Источники"]];
 
 const GROUPS = [
@@ -2832,6 +2916,22 @@ const ADJ_PRACTICE = [
   ]
 },
 {
+  id:"compare-od", title:"Кто кого: od + Dopełniacz",
+  lead:"Формат экзамена: в скобках прилагательное и тот, с кем сравнивают. Впишите всю группу: сравнительную степень и od + Dopełniacz. Вариант с niż + Mianownik тоже засчитывается.",
+  tasks:[
+    {id:"adjod-ola", prompt:"Kasia ma 170 cm, a Ola 165 cm. Kasia jest ___. (wysoka, Ola)", answers:["wyższa od Oli","wyższa niż Ola"], explanation:"Wysoka → wyższa, род от Kasia; Ola → od Oli, как Basia → od Basi."},
+    {id:"adjod-ja", prompt:"Mam 25 lat, a mój brat 20. Brat jest ___. (młody, ja)", answers:["młodszy ode mnie","młodszy niż ja"], explanation:"Перед mnie предлог od получает e: ode mnie. С niż местоимение остаётся в именительном: niż ja."},
+    {id:"adjod-ksiazka", prompt:"Ten film jest ___. (nudny, książka)", answers:["nudniejszy od książki","nudniejszy niż książka"], explanation:"Nudny → nudniejszy: основа на стечение согласных, суффикс -iejszy. Książka → od książki."},
+    {id:"adjod-chlopcy", prompt:"Nasze córki są ___. (grzeczny, chłopcy)", answers:["grzeczniejsze od chłopców","grzeczniejsze niż chłopcy"], explanation:"Córki - немужско-личное мн. ч., поэтому -e: grzeczniejsze. Chłopcy → od chłopców."},
+    {id:"adjod-koledzy", prompt:"Nowi studenci są ___. (pracowity, koledzy)", answers:["pracowitsi od kolegów","pracowitsi niż koledzy"], explanation:"Studenci - мужско-личное мн. ч.: pracowitszy → pracowitsi, как szczęśliwszy → szczęśliwsi. Koledzy → od kolegów."},
+    {id:"adjod-wyklad", prompt:"Ten wykład był ___. (interesujący, poprzedni)", answers:["bardziej interesujący od poprzedniego","bardziej interesujący niż poprzedni"], explanation:"Interesujący образован от глагола и формы на -szy не имеет: bardziej interesujący. Poprzedni → od poprzedniego."},
+    {id:"adjod-herbata", prompt:"Kawa w tej kawiarni jest ___. (dobry, herbata)", answers:["lepsza od herbaty","lepsza niż herbata"], explanation:"Dobry → lepszy, нерегулярная форма; род от kawa: lepsza. Herbata → od herbaty."},
+    {id:"adjod-siostry", prompt:"Moje siostry są ___. (stary, ja)", answers:["starsze ode mnie","starsze niż ja"], explanation:"Siostry - немужско-личное мн. ч.: starsze. Ja → ode mnie."},
+    {id:"adjod-mieszkanie", prompt:"Mieszkanie w centrum jest ___. (drogi, dom na wsi)", answers:["droższe od domu na wsi","droższe niż dom na wsi"], explanation:"Drogi → droższy с чередованием g → ż; род от mieszkanie: droższe. Dom → od domu, na wsi не меняется."},
+    {id:"adjod-wczoraj", prompt:"Dzisiaj jest cieplej ___ wczoraj.", options:["od","niż","ode"], answers:["niż"], explanation:"Od сравнивает только с существительным или местоимением. Перед наречием и придаточным - только niż: niż wczoraj, niż myślałem."}
+  ]
+},
+{
   id:"usage", title:"Форма меняет смысл конструкции",
   lead:"После być, в сравнительных оборотах и в порядке слов прилагательное ведёт себя не так, как подсказывает русский.",
   tasks:[
@@ -2909,6 +3009,19 @@ const STOPN_IRR = [
  ["mały","mniejszy","najmniejszy"],
  ["lekki","lżejszy","najlżejszy"],
  ["gorący","gorętszy","najgorętszy"]
+];
+const POROWN_STEPS = [
+ ["1","прилагательное в сравнительную степень","wysoki → wyższy · młody → młodszy · męczący → bardziej męczący"],
+ ["2","род и число - по подлежащему, а не по второму слову","Ania → wyższa · Bartek → młodszy · dziewczynki → męczące · Feliks i Felicja → szczęśliwsi"],
+ ["3","второе слово - od + Dopełniacz","Basia → od Basi · siostry → od sióstr · koledzy → od kolegów · ja → ode mnie"]
+];
+const POROWN_OD = [
+ ["Ania","Basia","wyższa od Basi","wyższa niż Basia"],
+ ["Bartek","siostry","młodszy od sióstr","młodszy niż siostry"],
+ ["dziewczynki","brat","bardziej męczące od brata","bardziej męczące niż brat"],
+ ["Bartek","koledzy","spokojniejszy od kolegów","spokojniejszy niż koledzy"],
+ ["dzieci","rówieśnicy","zdrowsze od rówieśników","zdrowsze niż rówieśnicy"],
+ ["Piotr","ja","wyższy ode mnie","wyższy niż ja"]
 ];
 const POROWN = [
  ["niż + падеж по роли","чем - падеж от того, чем было бы слово в полной фразе","Jest wyższy niż ja [jestem]. · Lubię Annę bardziej niż Marię [lubię]."],

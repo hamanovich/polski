@@ -198,8 +198,8 @@ p{margin:0 0 10px}
 .related-links a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
 .related-links a:hover{color:var(--ui);text-decoration-color:var(--ui)}
 .related-links a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
-.tip a,.game-rule a,.speed-mistakes a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
-.tip a:hover,.game-rule a:hover,.speed-mistakes a:hover{color:var(--ui);text-decoration-color:var(--ui)}
+.tip a,.game-rule a,.speed-mistakes a,.vt td a{color:var(--end);text-decoration-color:var(--end);text-underline-offset:3px}
+.tip a:hover,.game-rule a:hover,.speed-mistakes a:hover,.vt td a:hover{color:var(--ui);text-decoration-color:var(--ui)}
 .tip a:focus-visible,.game-rule a:focus-visible{outline:2px solid var(--ui);outline-offset:2px}
 .source-links a,.sources-page > p a{color:var(--ink);font-weight:600;text-decoration-color:color-mix(in srgb,var(--end) 55%,transparent);text-decoration-thickness:1px;text-underline-offset:3px}
 .source-links a:hover,.sources-page > p a:hover{color:var(--end);text-decoration-color:currentColor}
@@ -626,6 +626,9 @@ h2,.page-title{font-family:var(--sans);font-size:var(--fs-h2);font-weight:730;li
 h3{font-family:var(--sans);font-size:clamp(1.25rem,2vw,1.55rem);font-weight:710;letter-spacing:-.028em;text-transform:none;color:var(--ink);margin:44px 0 12px}
 h3:first-child{margin-top:0}
 .panel h3 + .lead{margin-top:-5px}
+.term{font-size:var(--fs-note);color:var(--muted-s);margin:-6px 0 12px;letter-spacing:.01em}
+.term .pl{font-weight:600}
+.panel .term + .lead{margin-top:0}
 .lead{font-size:clamp(1rem,1.25vw,1.13rem);line-height:1.65;max-width:62ch;color:var(--muted);margin-bottom:16px}
 .index-intro{max-width:52ch;color:var(--muted);font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6;margin:0}
 .panel p,.panel ul,.panel ol,.tip{max-width:var(--measure)}

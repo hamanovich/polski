@@ -1,10 +1,12 @@
 function renderConj(){
   $("#s-conj").innerHTML = `<div class="panel">
     <h2>Союзы</h2>
+    <p class="term">по-польски: <span class="pl">spójniki</span></p>
     <p class="lead">Не склоняются, но помогают увидеть границы частей предложения. Запятая в польском часто похожа на русскую, но её ставят по синтаксической границе, а не автоматически перед отдельным словом.</p>
     <div class="tip"><b>Главное правило запятой.</b> Придаточное обычно отделяется запятой: <span class="pl">Wiem, że on przyjdzie</span>; <span class="pl">Zostanę, jeśli będzie czas</span>. Но перед вторым <span class="pl">że</span> запятой нет, если союзы соединяют однородные придаточные: <span class="pl">Powiedział, że zadzwoni i że przyjdzie.</span> Перед простым соединительным <span class="pl">i</span> запятая обычно не нужна: <span class="pl">Poszedłem do sklepu i kupiłem chleb.</span></div>
 
     <h3>Сочинительные - соединяют равноправное</h3>
+    <p class="term">по-польски: <span class="pl">spójniki współrzędne</span></p>
     <p class="note">Здесь собраны союзы и другие средства связи: <span class="pl">jednak</span>, <span class="pl">dlatego</span> и <span class="pl">więc</span> современные словари описывают как связующие частицы, но в пунктуации они ведут себя так же.</p>
     <div class="scroll"><table class="vt">
       <tr><th>союз</th><th>значение</th><th>пример</th><th></th></tr>
@@ -14,6 +16,7 @@ function renderConj(){
     <div class="tip"><b>Запятая при сочинении - короткая карта.</b> Обычно без запятой одиночные <span class="pl">i, oraz, lub, albo, ani</span>: <span class="pl">chleb i mleko</span>. Обычно с запятой <span class="pl">a, ale, lecz, natomiast, więc, zatem, dlatego, czyli</span>: <span class="pl">On czyta, a ja piszę</span>. При повторе запятая идёт перед вторым и каждым следующим: <span class="pl">ani czasu, ani pieniędzy</span> · <span class="pl">albo dziś, albo jutro</span> · <span class="pl">i chleb, i mleko</span>. Отдельно <span class="pl">a</span> без запятой в <span class="pl">między Anną a Piotrem</span> и в сопоставительных заголовках.</div>
 
     <h3>Подчинительные - вводят придаточное</h3>
+    <p class="term">по-польски: <span class="pl">spójniki podrzędne · zdanie podrzędne</span></p>
     <div class="scroll"><table class="vt">
       <tr><th>союз</th><th>значение</th><th>пример</th><th></th></tr>
       ${CONJ_SUB.map(c => `<tr><td class="w">${c[0]}</td><td class="dim">${c[1]}</td><td class="g">${c[2]}</td><td class="note">${c[3]}</td></tr>`).join("")}
@@ -43,6 +46,7 @@ function renderConj(){
     <div class="tip"><b>Проверь, кто выполняет действие.</b> При одном субъекте сокращение прямое: <span class="pl">Kiedy wróciłem, zadzwoniłem → Po powrocie zadzwoniłem</span>. Если субъекты разные, их нужно назвать: <span class="pl">Kiedy wróciłem, Anna zadzwoniła → Po moim powrocie Anna zadzwoniła</span>. Без <span class="pl">moim</span> смысл станет двусмысленным.</div>
 
     <h3>Косвенная речь</h3>
+    <p class="term">по-польски: <span class="pl">mowa zależna</span></p>
     <p class="lead">Главное здесь - в польском нет обязательного сдвига времён, как в английском. Форма времени не меняется механически, а выбирается по смыслу и моменту пересказа, как в русском.</p>
     <div class="scroll"><table class="vt">
       <tr><th>прямая речь</th><th>косвенная</th><th>что произошло</th></tr>
@@ -134,6 +138,7 @@ function renderLudzie(){
 function renderDim(){
   $("#s-dim").innerHTML = `<div class="panel">
     <h2>Уменьшительные формы</h2>
+    <p class="term">по-польски: <span class="pl">zdrobnienia</span></p>
     <p class="lead">В польском уменьшительные очень частотны. Они могут обозначать малый размер, добавлять эмоциональную оценку, смягчать просьбу, показывать близость или создавать фамильярный и иронический оттенок. Точный эффект зависит от слова и ситуации.</p>
     <div class="tip"><b>Это не всегда про размер.</b> <span class="pl">Poproszę kawusię</span> в кафе не значит «маленькую чашечку» - это дружелюбный, смягчённый тон. Продавщица может предложить <span class="pl">bułeczkę</span> взрослому покупателю. Но в неподходящем контексте уменьшительное способно прозвучать иронично или слишком фамильярно.</div>
 
@@ -194,6 +199,7 @@ function board(rows){
 function renderRod(){
   $("#s-rodz").innerHTML = `<div class="panel">
     <h2>Род существительного</h2>
+    <p class="term">по-польски: <span class="pl">rodzaj rzeczownika</span></p>
     <p class="lead">Всё остальное в справочнике начинается отсюда: пока не знаешь, к какому роду отнести слово, таблицы падежей некуда приложить. У родственных слов основной род часто совпадает с русским и белорусским, но угадывать по переводу нельзя: частотные расхождения собраны ниже. Главное новое - три типа польского мужского рода.</p>
     <div class="tip"><b>Быстрая проверка согласования.</b> Сначала определи род по таблице ниже, затем поставь слово рядом с указательным: <span class="pl">ten stół</span> (мужской), <span class="pl">ta książka</span> (женский), <span class="pl">to okno</span> (средний). Во множественном числе проверь, мужско-личная ли это форма: <span class="pl">ci studenci</span>, но <span class="pl">te książki, te kobiety, te psy</span>. Форма <span class="pl">ci</span> означает только мужско-личное множественное; <span class="pl">te</span> - всё остальное.</div>
 
@@ -204,6 +210,7 @@ function renderRod(){
     </table></div>
 
     <h3>Три мужских рода</h3>
+    <p class="term">по-польски: <span class="pl">rodzaj męskoosobowy · męskożywotny · męskorzeczowy</span></p>
     <p class="lead">m1, m2 и m3 - постоянные классы существительных: слово не меняет род между единственным и множественным числом. От класса зависит Biernik, а во множественном также форма существительного, указательного слова и прошедшего времени.</p>
     <div class="tip"><b>Мост из русского и белорусского.</b> В единственном польское <span class="pl">widzę studenta · psa / kota · telefon</span> устроено почти как русское «вижу студента · пса / кота · телефон» и белорусское «бачу студэнта · сабаку / ката · тэлефон». Главное расхождение появляется во множественном: по-русски «вижу котов», по-белорусски «бачу катоў», но по-польски <span class="pl">widzę koty</span>; только m1 сохраняет модель <span class="pl">widzę studentów</span>.</div>
     <div class="scroll"><table class="vt">
@@ -242,6 +249,7 @@ function renderRod(){
 function renderAlt(){
   $("#s-alt").innerHTML = `<div class="panel">
     <h2>Чередования: сводная карта</h2>
+    <p class="term">по-польски: <span class="pl">oboczności</span></p>
     <p class="lead">В формах слова грамматическое значение обычно передаёт окончание, а основа иногда получает другой вариант. Чередование - это смена звука или появление и исчезновение звука внутри вариантов основы: <span class="pl">róg → rogu</span> содержит <span class="pl">ó ↔ o</span>, а <span class="pl">król → królu</span> сохраняет основу <span class="pl">król-</span>.</p>
     <div class="tip"><b>Не применяй чередование автоматически.</b> Карта показывает частые модели, но не превращает их в правило для каждого слова. Сначала выбери падеж, число или лицо, затем вспомни форму конкретного слова: <span class="pl">Polak → Polacy</span>, но <span class="pl">Polaka</span>; <span class="pl">stół → stołu</span>, но <span class="pl">król → króla</span>.</div>
 
@@ -286,6 +294,7 @@ function renderAlt(){
 function renderAlpha(){
   $("#s-alpha").innerHTML = `<div class="panel">
     <h2>Алфавит и произношение</h2>
+    <p class="term">по-польски: <span class="pl">alfabet i wymowa</span></p>
     <p class="lead">В польском алфавите 32 буквы, среди них девять с диакритическими знаками. Кроме отдельных букв, письмо использует семь диграфов и триграф <span class="pl">dzi</span>.</p>
     <div class="tip"><b>Q, V и X не входят в основной польский алфавит, но встречаются в тексте.</b> В освоенных заимствованиях им часто соответствуют <span class="pl">kw, w, ks</span>: <span class="pl">kwadrat · akwarium · likwidacja</span> · <span class="pl">wideo · willa · wiza</span> · <span class="pl">tekst · maksimum · ekspres</span>. В иностранных именах и названиях исходные буквы сохраняются: <span class="pl">Volvo, Quentin Tarantino, Xavier</span>. Варианты <span class="pl">quiz</span> и <span class="pl">kwiz</span> нормативны, первый употребляется чаще.</div>
 
@@ -353,6 +362,7 @@ function renderAlpha(){
     <div class="tip"><b>Русский даёт полезную опору.</b> «Хлеб» → [хлеп], «лодка» → [лотка], «сделать» → [зделать] показывают знакомые типы ассимиляции. В польском важно дополнительно выучить пары <span class="pl">ż / sz, ź / ś, dż / cz, dź / ć</span> и не переносить изменение произношения на письмо: пишем <span class="pl">chleb, nóż, weź</span>, даже когда слышим глухой звук.</div>
 
     <h3>Ударение</h3>
+    <p class="term">по-польски: <span class="pl">akcent</span></p>
     <p><b>Основное правило.</b> Ударение обычно падает на предпоследний слог: <span class="pl">${akcent("Polska",["Pol","ska"],2)}, ${akcent("Warszawa",["War","sza","wa"],2)}, ${akcent("kobieta",["ko","bie","ta"],2)}, ${akcent("dobrze",["do","brze"],2)}</span>. Большинство базовых слов следует этой модели; частотные исключения собраны ниже.</p>
     <div class="scroll"><table class="vt">
       <tr><th>случай</th><th>ударение</th><th>примеры</th></tr>
@@ -417,6 +427,7 @@ function caseGridHTML(num){
   const g = CASE_GRID[num];
   return `
     <h2 class="pl">Ściąga</h2>
+    <p class="term">по-польски: <span class="pl">przypadki · liczba ${num === "sg" ? "pojedyncza" : "mnoga"}</span></p>
     <p class="lead">Все падежи на одном экране: ${num === "sg" ? "единственное" : "множественное"} число. Строка - падеж, столбец - тип слова. Найди столбец своего слова и возьми окончание из нужной строки.</p>
     <div class="scroll"><table class="vt">
       <tr><th>падеж</th>${g.cols.map(c => `<th>${c[0]}<span class="sub">${c[1]}</span></th>`).join("")}</tr>
@@ -575,6 +586,7 @@ let curV = "conj";
 function vConj(){
   return `<div class="panel">
     <h2>Четыре спряжения</h2>
+    <p class="term">по-польски: <span class="pl">koniugacja · czas teraźniejszy</span></p>
     <p class="lead">Тип определяется парой форм «я» и «ты»: <span class="pl">-ę/-esz</span>, <span class="pl">-ę/-isz</span>, <span class="pl">-am/-asz</span>, <span class="pl">-em/-esz</span>. Знаешь пару - знаешь всю парадигму.</p>
     <div class="tip"><b>Одной формы «ты» не хватает.</b> I и IV спряжения дают одинаковое <span class="pl">-esz</span>: <span class="pl">piszesz</span> и <span class="pl">jesz</span>. Различает их «я»: <span class="pl">piszę</span> против <span class="pl">jem</span>. Поэтому смотреть надо на пару. «Я» кончается на <span class="pl">-ę</span> у I и II, на <span class="pl">-am</span> у III (это большая продуктивная группа, а не исключения) и на <span class="pl">-em</span> у IV - там закрытый список из пяти глаголов.</div>
 
@@ -609,6 +621,8 @@ function vConj(){
     </table></div>
     <p class="pl" style="margin-top:10px">kupować → kupuję · studiować → studiuję · gotować → gotuję · dziękować → dziękuję · fotografować → fotografuję · wychowywać → wychowuję · pokazywać → pokazuję · zapisywać → zapisuję</p>
     <div class="tip">Не все глаголы с похожим окончанием идут по этой модели: <span class="pl">bywać → bywam, zdobywać → zdobywam, przeżywać → przeżywam</span>. <span class="pl">chować → chowam, chowasz</span> тоже относится к III спряжению.</div>
+    <div class="tip"><b>В <span class="pl">-owywać</span> отбрасывается только <span class="pl">-ywać</span>, <span class="pl">-ow-</span> остаётся.</b> <span class="pl">przygotow|ywać → przygotow|uj|emy</span>. Если потерять слог, получится форма совершенного глагола, то есть будущее время: <span class="pl">przygotować → przygotujemy</span> - «приготовим», а не «готовим». Так же <span class="pl">rozczarowywać → rozczarowuję</span>, но <span class="pl">rozczarować → rozczaruję</span>; <span class="pl">doładowywać → doładowuję</span>, но <span class="pl">doładować → doładuję</span>. Проверка: форма от несовершенного глагола длиннее, чем от совершенного.</div>
+    <div class="tip"><b><span class="pl">-uję</span> и <span class="pl">-uje</span> - разные лица.</b> <span class="pl">ja parkuję</span>, но <span class="pl">on parkuje</span>; <span class="pl">ja kupuję</span>, но <span class="pl">ona kupuje</span>. Без хвостика у <span class="pl">ę</span> форма читается как 3-е лицо.</div>
 
     <h3>Глаголы на -nąć</h3>
     <p>Настоящее (или простое будущее, если вид совершенный) - по I спряжению: <span class="pl">zamknę, zamkniesz, zamknie, zamkniemy, zamkniecie, zamkną</span>.</p>
@@ -646,10 +660,12 @@ function vConj(){
 function vCzasy(){
   return `<div class="panel">
     <h2>Времена и вид</h2>
+    <p class="term">по-польски: <span class="pl">czasy i aspekt</span></p>
     <p class="lead">Времён три, но выбор формы начинается с вида глагола. Сначала вид - потом время.</p>
     <div class="tip"><b>Главное правило.</b> У совершенного вида <b>нет настоящего времени</b>. <span class="pl">zrobię</span> - это «сделаю», а не «делаю». Настоящее возможно только у несовершенного: <span class="pl">robię</span>.</div>
 
     <h3>Как образуется вид</h3>
+    <p class="term">по-польски: <span class="pl">aspekt dokonany i niedokonany</span></p>
     <p class="lead">Список пар ниже проще запоминать, если видеть механизм. Но приставка или суффикс не гарантируют нужную пару: значение и вид всегда проверяй по словарю.</p>
     <div class="scroll"><table class="vt">
       <tr><th>способ</th><th>что делает</th><th>примеры</th></tr>
@@ -690,6 +706,7 @@ function vCzasy(){
     </table></div>
 
     <h3>Прошедшее время</h3>
+    <p class="term">по-польски: <span class="pl">czas przeszły</span></p>
     <p>Основа: инфинитив минус <b>-ć</b>, дальше <b>-ł-</b> и окончание рода и лица. В единственном числе род есть и в русском («я делал / делала»), польская особенность - родовые формы ещё и в 1-м и 2-м лице множественного: <span class="pl">robiliśmy / robiłyśmy</span>, <span class="pl">robiliście / robiłyście</span>.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>м. род</th><th>ж. род</th><th>ср. род</th></tr>
@@ -713,10 +730,12 @@ function vCzasy(){
     <div class="tip"><b>Подвижные окончания.</b> <span class="pl">-m, -ś, -śmy, -ście</span> могут присоединяться к другому слову: <span class="pl">my to zrobiliśmy</span> = <span class="pl">myśmy to zrobili</span>. В вопросе то же самое: <span class="pl">Gdzie byłeś?</span> - нейтрально, <span class="pl">Gdzieś ty był?</span> - окончание переехало на вопросительное слово, так говорят в разговоре. И ударение: во всех формах 1-го и 2-го лица множественного оно уходит на третий слог от конца - <span class="pl">${akcent("byliśmy",["by","li","śmy"],3)}</span>, <span class="pl">${akcent("robiliśmy",["ro","bi","li","śmy"],3)}</span>, <span class="pl">${akcent("czytaliście",["czy","ta","li","ście"],3)}</span>. В разговоре его часто выравнивают по предпоследнему слогу, но норма такая.</div>
 
     <h3>Будущее: совершенный вид → простое</h3>
+    <p class="term">по-польски: <span class="pl">czas przyszły prosty</span></p>
     <p>Совершенный глагол спрягается как настоящее время, а значит будущее.</p>
     <p class="pl">zrobię, zrobisz, zrobi, zrobimy, zrobicie, zrobią · napiszę · kupię · powiem · pójdę · zjem · wrócę</p>
 
     <h3>Будущее: несовершенный вид → составное</h3>
+    <p class="term">по-польски: <span class="pl">czas przyszły złożony</span></p>
     <p><span class="pl">będę</span> + инфинитив <b>или</b> + форма на -ł. Смысл одинаковый.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>+ инфинитив</th><th>+ форма на -ł (м. / ж.)</th></tr>
@@ -737,9 +756,11 @@ function vCzasy(){
 function vTryby(){
   return `<div class="panel">
     <h2>Наклонения</h2>
+    <p class="term">по-польски: <span class="pl">tryby</span></p>
     <p class="lead">Повелительное - приказ и просьба. Условное - вежливость и «бы». Отдельно - <span class="pl">powinien</span>: «следует», ни то и ни другое.</p>
 
     <h3>Повелительное: как образуется</h3>
+    <p class="term">по-польски: <span class="pl">tryb rozkazujący</span></p>
     <p>I и II спряжение - берём форму <b>ty</b> и отбрасываем окончание. III и IV - берём форму <b>oni</b> и отбрасываем <b>-ą</b>. Дальше <b>+ -my</b> для «мы» и <b>+ -cie</b> для «вы».</p>
     <div class="scroll"><table>
       <tr><th>глагол</th><th>от чего</th><th>ty</th><th>my</th><th>wy</th><th>on / ona / oni / one</th><th></th></tr>
@@ -748,6 +769,14 @@ function vTryby(){
         <td class="dim sm">${v[6]}</td></tr>`).join("")}
     </table></div>
     <div class="tip"><b>Смягчение на конце.</b> si → ś, zi → ź, ci → ć, dzi → dź, ni → ń: <span class="pl">prosić → proś, wozić → woź, chodzić → chodź, zaprosić → zaproś</span>. Если основа не выговаривается - добавляем <b>-ij / -yj</b>: <span class="pl">spać → śpij, zapomnieć → zapomnij, zamknąć → zamknij, trzeć → trzyj</span>. Отдельно: <span class="pl">otworzyć → otwórz, pomóc → pomóż</span> - здесь o → ó.</div>
+    <h3>Повелительное по лицам</h3>
+    <p>Лицо в скобках задания сразу говорит, какая нужна конструкция. Своя форма повелительного есть только у <b>ty, my, wy</b>. Для всех остальных лиц берут <span class="pl">niech</span> и обычную форму глагола.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>лицо</th><th>конструкция</th><th>пример</th></tr>
+      ${IMPER_PERSON.map(p => `<tr><td class="w">${p[0]}</td><td class="flow">${p[1]}</td><td class="g flow">${p[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>Откуда <span class="pl">niech</span>.</b> Это частица «пусть», из старого глагола <span class="pl">niechać</span> «оставить, позволить»: его повелительное <span class="pl">niechaj!</span> сократилось до <span class="pl">niech</span>. Родня - белорусское <span class="pl">няхай / хай</span> и украинское <span class="pl">нехай</span>. Полное <span class="pl">niechaj</span> живёт в торжественной речи, а в разговоре - формулы <span class="pl">Niech żyje! · Niech będzie</span> («ладно, пусть так»).</div>
+    <div class="tip"><b><span class="pl">nie</span> - перед глаголом, <span class="pl">się</span> - после.</b> <span class="pl">Nie denerwuj się. · Nie spóźniajcie się. · Umówcie się.</span> Форму строят как обычно: <span class="pl">spóźniają → spóźniaj → spóźniajcie</span>. Вид при отрицании обычно несовершенный, об этом ниже.</div>
     <div class="tip"><b>Формы с niech.</b> Для 3-го лица берём обычную форму глагола: <span class="pl">niech czyta / niech czytają, niech zrobi / niech zrobią</span>. Так же строится официальное обращение: <span class="pl">Niech pan czyta. Niech państwo czytają.</span></div>
 
     <h3>Вежливость вместо приказа</h3>
@@ -761,6 +790,7 @@ function vTryby(){
     <div class="tip"><b>Когда правило не работает.</b> Совершенный вид в запрете живой - он предупреждает о конкретном нежелательном исходе: <span class="pl">Nie zapomnij! · Nie spóźnij się! · Nie zgub kluczy!</span> Сравни: <span class="pl">Nie jedz ciasta</span> («не ешь торт» - вообще не трогай) и <span class="pl">Nie zjedz całego ciasta</span> («не съешь весь торт» - предупреждение о результате). И наоборот, несовершенный в обычном приказе совершенно нормален: <span class="pl">Czytaj! · Czekaj! · Mów głośniej!</span></div>
 
     <h3>Условное наклонение</h3>
+    <p class="term">по-польски: <span class="pl">tryb przypuszczający</span></p>
     <p>Форма прошедшего времени + <b>-by</b> + окончание лица. Род сохраняется.</p>
     <div class="scroll"><table>
       <tr><th>лицо</th><th>окончание</th><th>chcieć - м. род</th><th>chcieć - ж. род</th></tr>
@@ -836,9 +866,11 @@ function vTryby(){
 function vFormy(){
   return `<div class="panel">
     <h2>Причастия, пассив, отглагольные существительные</h2>
+    <p class="term">по-польски: <span class="pl">imiesłowy · strona bierna · rzeczowniki odczasownikowe</span></p>
     <p class="lead">Пласт письменного польского: объявления, инструкции, документы, urząd. В живой речи всё это заменяется придаточными с który и kiedy - но читать без этого не получится.</p>
 
     <h3>Действительное причастие: -ący</h3>
+    <p class="term">по-польски: <span class="pl">imiesłów przymiotnikowy czynny</span></p>
     <p>Только от несовершенного вида. Берём форму <b>oni</b> и добавляем <b>-cy</b>. Склоняется как прилагательное.</p>
     <div class="scroll"><table class="vt">
       <tr><th>глагол</th><th>от чего</th><th>причастие</th><th>перевод</th></tr>
@@ -847,6 +879,7 @@ function vFormy(){
     <p class="lead"><span class="pl">Kobieta czytająca gazetę siedzi przy oknie.</span> = <span class="pl">Kobieta, która czyta gazetę, siedzi przy oknie.</span> - «женщина, читающая газету, сидит у окна». Придаточное с <span class="pl">która</span> отделяется запятыми с двух сторон, причастный оборот - нет. В разговоре чаще звучит второй вариант, но в объявлениях и документах причастие обычно: <span class="pl">osoby mieszkające w Polsce</span>.</p>
 
     <h3>Страдательное причастие: -ny / -ony / -ty</h3>
+    <p class="term">по-польски: <span class="pl">imiesłów przymiotnikowy bierny</span></p>
     <p>Только от переходных глаголов, то есть таких, от которых возможна пассивная конструкция: <span class="pl">szukać książki → książka jest szukana</span>, <span class="pl">używać telefonu → telefon jest używany</span>. От <span class="pl">korzystać z</span>, <span class="pl">opiekować się</span>, <span class="pl">iść</span> его нет: форм <span class="bad">korzystany</span>, <span class="bad">zaopiekowany</span> не существует.</p>
     <div class="scroll"><table class="vt">
       <tr><th>тип</th><th>примеры</th></tr>
@@ -858,6 +891,7 @@ function vFormy(){
     </table></div>
 
     <h3>Деепричастия: -ąc и -wszy / -łszy</h3>
+    <p class="term">по-польски: <span class="pl">imiesłów przysłówkowy współczesny · uprzedni</span></p>
     <div class="scroll"><table class="vt">
       <tr><th>тип</th><th>когда</th><th>образование</th><th>пример</th></tr>
       ${IMIES_PRZYS.map(i => `<tr><td class="c">${i[0]}</td><td class="dim sm">${i[1]}</td><td class="w">${i[2]}</td><td class="g">${i[3]}</td></tr>`).join("")}
@@ -865,6 +899,7 @@ function vFormy(){
     <div class="tip"><b>Два ограничения.</b> 1) Субъект деепричастия и главного глагола - один и тот же человек: <span class="pl">Idąc do pracy, zgubiłem telefon</span> - шёл и потерял один и тот же «я». 2) Форма на <span class="pl">-wszy / -łszy</span> - книжная; в разговоре вместо <span class="pl">Zrobiwszy zakupy…</span> скажут <span class="pl">Kiedy zrobiłem zakupy…</span></div>
 
     <h3>Страдательный залог: zostać / być + причастие</h3>
+    <p class="term">по-польски: <span class="pl">strona bierna</span></p>
     <p>Причастие согласуется с подлежащим в роде и числе. Исполнитель - через <span class="pl">przez + Biernik</span>: <span class="pl">zbudowany przez znaną firmę</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>конструкция</th><th>смысл</th><th>примеры</th></tr>
@@ -873,6 +908,7 @@ function vFormy(){
     <div class="tip"><b>Три способа сказать «построили дом».</b> <span class="pl">Zbudowano dom</span> - безличное, кто - неизвестно и неважно (вкладка «Безличные»). <span class="pl">Dom został zbudowany</span> - пассив, дом в центре внимания. <span class="pl">Firma zbudowała dom</span> - обычный актив. Урядовый и газетный текст живёт первыми двумя.</div>
 
     <h3>Отглагольные существительные: -anie / -enie / -cie</h3>
+    <p class="term">по-польски: <span class="pl">rzeczownik odczasownikowy</span></p>
     <p>Средний род, склоняются как <span class="pl">mieszkanie</span>. Дополнение уходит в Dopełniacz: <span class="pl">palenie papierosów, mycie rąk</span>. Отрицание пишется слитно: <span class="pl">niepalenie</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>тип</th><th>примеры</th></tr>
@@ -888,6 +924,7 @@ function vFormy(){
 function vRekcja(){
   return `<div class="panel">
     <h2>Управление</h2>
+    <p class="term">по-польски: <span class="pl">rekcja</span></p>
     <p class="lead">Самая частая ошибка русскоязычных - не окончание, а падеж после слова. У глаголов это заметно сразу, у прилагательных и существительных - нет, но механизм тот же. В таблице глаголов красным помечено то, где польский расходится с русским.</p>
     <div class="scroll"><table class="vt">
       <tr><th>глагол</th><th>вопрос</th><th>требует</th><th>по-русски</th><th>пример</th></tr>
@@ -913,6 +950,7 @@ function vRekcja(){
     </table></div>
 
     <h3>Глаголы движения: пара «однонаправленный / разнонаправленный»</h3>
+    <p class="term">по-польски: <span class="pl">czasowniki ruchu</span></p>
     <p class="lead">Первый глагол - движение в одну сторону в конкретный момент, второй - движение туда и обратно, вообще или по привычке. Ровно как русское «иду / хожу».</p>
     <div class="scroll"><table class="vt">
       <tr><th>в одну сторону, сейчас</th><th>в разные стороны, вообще</th><th>перевод</th><th>пример</th></tr>
@@ -920,6 +958,7 @@ function vRekcja(){
     </table></div>
 
     <h3>Приставки: общая система</h3>
+    <p class="term">по-польски: <span class="pl">przedrostki</span></p>
     <p class="lead">Приставка обычно сохраняет одно и то же общее направление значения. Выучив четырнадцать, читаешь незнакомый глагол по частям - но проверять по словарю всё равно приходится: приставочные глаголы быстро обрастают собственным смыслом. <span class="pl">przypisać, odpisać, zapisać</span> - три разных слова, а не три оттенка одного.</p>
     <div class="scroll"><table class="vt">
       <tr><th>приставка</th><th>значение</th><th>движение</th><th>остальные глаголы</th></tr>
@@ -1503,10 +1542,12 @@ const ngrid = list => `<div class="ngrid">${list.map(n =>
 function renderNum(){
   $("#s-num").innerHTML = `<div class="panel">
     <h2>Числительные</h2>
+    <p class="term">по-польски: <span class="pl">liczebniki</span></p>
     <p class="lead">Главная сложность не в самих числах, а в том, какой падеж они требуют от существительного и что делают с глаголом.</p>
     <div class="tip"><b>Три основных режима для немужско-личных существительных.</b> Ровно <span class="pl">1</span> требует Mianownik единственного: <span class="pl">jeden dom był</span>. Числа <span class="pl">2, 3, 4</span> и составные, последний член которых - <span class="pl">2, 3, 4</span>, кроме 12-14, требуют Mianownik множественного и глагол во множественном: <span class="pl">dwadzieścia dwa domy były</span>. Все остальные - Dopełniacz множественного и глагол в среднем роде единственного: <span class="pl">dwadzieścia jeden domów było · pięć osób było</span>.</div>
 
     <h3>Количественные: 0–20</h3>
+    <p class="term">по-польски: <span class="pl">liczebniki główne</span></p>
     ${ngrid(NUM)}
     <h3>Десятки, сотни, тысячи</h3>
     ${ngrid(NUM10)}
@@ -1549,10 +1590,12 @@ function renderNum(){
     <p class="lead">Числительные от 5 до 90 склоняются по образцу <span class="pl">pięć</span>: <span class="pl">pięciu, pięciu, pięć, pięcioma, pięciu</span>. <span class="pl">Sto</span> и сотни имеют свои модели. В <span class="pl">Narzędnik</span> женское <span class="pl">dwiema</span> сохраняет род.</p>
 
     <h3>Порядковые</h3>
+    <p class="term">по-польски: <span class="pl">liczebniki porządkowe</span></p>
     ${ngrid(ORD)}
     <p class="lead" style="margin-top:10px">Склоняются как обычные прилагательные: <span class="pl">pierwszy, pierwszego, pierwszemu…</span> В составном числительном с десятками и единицами порядковыми становятся два последних слова: <span class="pl">tysiąc dziewięćset dziewięćdziesiąty dziewiąty</span>. Если десятков нет, порядковым становится только последнее слово: <span class="pl">tysiąc osiemset pierwszy · tysiąc osiemsetny</span>.</p>
 
     <h3>Собирательные</h3>
+    <p class="term">по-польски: <span class="pl">liczebniki zbiorowe</span></p>
     <p>Типичны при детях, смешанных группах людей и словах без единственного числа, но не обязательны во всех контекстах. В Mianownik и Biernik существительное стоит в Dopełniacz множественного, а глагол при подлежащем - в среднем роде единственного: <span class="pl">troje dzieci bawiło się</span>. В косвенных падежах склоняется вся группа: <span class="pl">nie ma trojga dzieci · przyglądam się trojgu dzieciom · idę z trojgiem dzieci · mówię o trojgu dzieciach</span>. Исключение - <span class="pl">oboje rodzice</span>: Mianownik и обычное согласование.</p>
     <div class="scroll"><table>
       <tr><th>форма</th><th>перевод</th><th>пример</th></tr>
@@ -1617,6 +1660,7 @@ function renderNum(){
     <div class="tip"><b><span class="pl">ile / ilu</span>: сначала определи падеж всей группы.</b> В Mianownik и Biernik после <span class="pl">ile</span> существительное стоит в Dopełniacz множественного числа: <span class="pl">ile osób, ile lat, ile pieniędzy</span>; у несчётных - в единственном: <span class="pl">ile czasu, ile cukru</span>. О мужчинах - форма <span class="pl">ilu</span>: <span class="pl">ilu studentów, ilu ludzi</span>, а глагол обычно в среднем роде единственного числа: <span class="pl">Ilu ludzi przyszło?</span> В косвенных падежах склоняется вся группа: <span class="pl">Ilu studentom pomogłeś? · O ilu osobach mówisz? · Z iloma osobami rozmawiałeś?</span></div>
 
     <h3>Дроби</h3>
+    <p class="term">по-польски: <span class="pl">ułamki</span></p>
     <div class="scroll"><table class="vt">
       <tr><th>число</th><th>как называется</th><th>примеры</th></tr>
       ${ULAM.map(u => `<tr><td class="c">${u[0]}</td><td class="w">${u[1]}</td><td class="g flow">${u[2]}</td></tr>`).join("")}
@@ -1641,6 +1685,7 @@ function renderNum(){
 function renderPart(){
   $("#s-part").innerHTML = `<div class="panel">
     <h2>Частицы</h2>
+    <p class="term">по-польски: <span class="pl">partykuły</span></p>
     <p class="lead">Здесь собраны частицы и другие короткие неизменяемые слова, которые меняют оттенок высказывания. Постоянного русского перевода у них обычно нет: значение задаёт конструкция и интонация. Часть из них по разряду ближе к союзам, и это отмечено в таблице.</p>
 
     <h3>Рабочий минимум</h3>
@@ -1701,6 +1746,7 @@ function renderPart(){
 function renderQ(){
   $("#s-q").innerHTML = `<div class="panel">
     <h2>Вопросы</h2>
+    <p class="term">по-польски: <span class="pl">pytania · zaimki pytające</span></p>
     <p class="lead">Общий вопрос строится с <span class="pl">czy</span> или одной вопросительной интонацией, частный - с вопросительным словом. Русский и белорусский дают хорошую опору для <span class="pl">gdzie / dokąd / skąd</span>; особого внимания требует польское противопоставление <span class="pl">jaki / który</span>.</p>
 
     <h3>Общий вопрос: czy</h3>
@@ -1720,6 +1766,7 @@ function renderQ(){
     <div class="tip"><b><span class="pl">Ile</span> или <span class="pl">ilu</span>.</b> В Mianownik и Biernik с мужско-личным существительным употребляется <span class="pl">ilu</span>: <span class="pl">Ilu studentów przyszło?</span> В этих же падежах с другими группами - <span class="pl">ile</span>: <span class="pl">Ile studentek przyszło? · Ile osób przyszło?</span> В косвенных падежах форма меняется у всех групп; полное склонение разобрано в разделе <a href="#s-num">Числительные</a>.</div>
 
     <h3>Прямой и косвенный вопрос</h3>
+    <p class="term">по-польски: <span class="pl">pytanie zależne</span></p>
     <div class="scroll"><table class="vt">
       <tr><th>прямой вопрос</th><th>косвенный вопрос</th></tr>
       <tr><td class="w">Czy przyjdzie?</td><td class="g">Nie wiem, czy przyjdzie.</td></tr>
@@ -1790,6 +1837,7 @@ function renderQ(){
     </table></div>
 
     <h3>który как относительное местоимение</h3>
+    <p class="term">по-польски: <span class="pl">zaimek względny · zdanie względne</span></p>
     <p>Присоединяет придаточное к существительному. Род и число - от существительного, к которому относится; падеж - от того, какую роль który играет внутри своего придаточного.</p>
     <div class="scroll"><table>
       ${KTORY_SENT.map(k => `<tr><td style="width:36%" class="w">${k[0]}</td><td class="dim sm">${k[1]}</td><td class="g sm">${k[2]}</td></tr>`).join("")}
@@ -1801,6 +1849,7 @@ function renderQ(){
 function renderNeg(){
   $("#s-neg").innerHTML = `<div class="panel">
     <h2>Отрицание</h2>
+    <p class="term">по-польски: <span class="pl">przeczenie</span></p>
     <p class="lead">Отрицательные слова согласуются с <span class="pl">nie</span> при сказуемом, а прямое дополнение из Biernik обычно переходит в Dopełniacz. Множественное отрицание похоже на русское и белорусское, но падеж объекта требует отдельного внимания.</p>
 
     <h3>Множественное отрицание обязательно</h3>
@@ -1843,6 +1892,7 @@ function renderNeg(){
 function renderOrder(){
   $("#s-order").innerHTML = `<div class="panel">
     <h2>Порядок слов</h2>
+    <p class="term">по-польски: <span class="pl">szyk wyrazów</span></p>
     <p class="lead">Польский, как и русский, допускает несколько порядков слов. Выбор не случайный: нейтральная фраза обычно ведёт от уже известной темы к новому сообщению, а у безударных словечек - клитик - есть ограничения и сильные предпочтения порядка.</p>
 
     <h3>Тема и новое сообщение</h3>
@@ -1885,6 +1935,7 @@ function renderOrder(){
 function renderImpers(){
   $("#s-impers").innerHTML = `<div class="panel">
     <h2>Безличные конструкции</h2>
+    <p class="term">по-польски: <span class="pl">konstrukcje bezosobowe</span></p>
     <p class="lead">Безличная конструкция описывает действие, состояние, необходимость или возможность без грамматического подлежащего. Исполнитель может быть неизвестен, неважен или намеренно не назван. Такие формы встречаются и в повседневной речи, и в объявлениях, правилах, инструкциях.</p>
 
     <h3>Модальные безличные + инфинитив</h3>
@@ -1925,6 +1976,7 @@ function renderPreps(){
   const cs = ["все","Biernik","Dopełniacz","Celownik","Narzędnik","Miejscownik"];
   $("#s-preps").innerHTML = `<div class="panel">
     <h2>Предлог → падеж</h2>
+    <p class="term">по-польски: <span class="pl">przyimki</span></p>
     <p class="lead">Один предлог может управлять разными падежами и менять значение. У пространственных пар важно различать область действия и направленное перемещение в новую область.</p>
     <div class="chips" id="pfilter">${cs.map((c,i) =>
       `<button class="chip" data-f="${c}" aria-pressed="${i===0}"><span class="cp">${c}</span></button>`).join("")}</div>
@@ -1986,6 +2038,7 @@ function renderPrepPractice(){
 function renderAdj(){
   $("#s-adj").innerHTML = `<div class="panel">
     <h2>Прилагательные</h2>
+    <p class="term">по-польски: <span class="pl">przymiotniki</span></p>
     <p class="lead">Одна парадигма для обычных прилагательных, указательных и склоняемых притяжательных (<span class="pl">mój, twój, nasz</span>). У <span class="pl">ten</span> из неё выпадают четыре формы: <span class="pl">ten</span>, <span class="pl">to</span>, <span class="pl">ci</span>, <span class="pl">tę</span>. <span class="pl">Jego, jej, ich</span> - исключение: они не склоняются.</p>
     <h3>dobry - полная парадигма</h3>
     <div class="scroll"><table>
@@ -1994,6 +2047,7 @@ function renderAdj(){
     </table></div>
     <div class="tip"><b>После k и g пишется i вместо y.</b> <span class="pl">wysoki → wysokiego, wysokim</span> · <span class="pl">drogi → drogiego, drogim</span>. Это орфография, а не отдельное склонение. А вот <span class="pl">polski → polscy</span> и <span class="pl">drogi → drodzy</span> одной орфографией не объясняются: там чередование основы (<span class="pl">k → c</span>, <span class="pl">g → dz</span>), о нём ниже.</div>
     <h3>Мужско-личное множественное: чередование</h3>
+    <p class="term">по-польски: <span class="pl">forma męskoosobowa</span></p>
     <p class="lead">Эта форма нужна не только для группы мужчин, но и для любой смешанной группы людей, где мужчина есть хотя бы один: <span class="pl">Piotr i Anna są wysocy</span>.</p>
     <table><tr><th>ед. ч.</th><th>мн. мужско-личное</th></tr>
       <tr><td class="w">dobry</td><td class="g">dobrzy</td></tr>
@@ -2006,6 +2060,7 @@ function renderAdj(){
     </table>
     <p class="lead" style="margin-top:10px">Логика та же, что в существительных: r → rz, k → c, g → dz, ł → l, d → dzi, ony → eni.</p>
     <h3>Степени сравнения: как образуется</h3>
+    <p class="term">по-польски: <span class="pl">stopniowanie: stopień równy · wyższy · najwyższy</span></p>
     <p class="lead">Суффикс выбирается по тому, чем кончается основа. В синтетической модели превосходная образуется добавлением <span class="pl">naj-</span> к сравнительной: <span class="pl">szybszy → najszybszy</span>.</p>
     <div class="scroll"><table class="vt">
       <tr><th>суффикс</th><th>когда</th><th>примеры</th></tr>
@@ -2028,6 +2083,7 @@ function renderAdj(){
     <div class="tip"><b>Не всё сравнивается.</b> Относительные прилагательные - материал, происхождение, принадлежность к классу - степеней обычно не имеют: <span class="pl">drewniany, polski, ślubny</span>. Отдельно стоят качественные прилагательные с предельным значением: <span class="pl">martwy</span> в прямом смысле степеней тоже не образует.</div>
 
     <h3>Конструкции сравнения</h3>
+    <p class="term">по-польски: <span class="pl">porównanie</span></p>
     <p class="lead">«Чем» - <span class="pl">niż</span> или <span class="pl">od</span>, но дальше начинается то, чего в русском нет по форме.</p>
     <div class="scroll"><table class="vt">
       <tr><th>конструкция</th><th>значение</th><th>пример</th></tr>
@@ -2035,6 +2091,19 @@ function renderAdj(){
     </table></div>
     <div class="tip"><b><span class="pl">za</span> - это и «слишком», и предлог «за».</b> В значении «слишком» <span class="pl">za</span> непосредственно модифицирует признак или количество: <span class="pl">za drogi, za droga, za drogo, za dużo</span>. Как предлог <span class="pl">za</span> вводит именную группу в падеже: <span class="pl">za domem, za wysokim mężczyzną</span>. Значение и форму показывает вся конструкция, а не само слово <span class="pl">za</span>.</div>
     <div class="tip"><b><span class="pl">coraz</span> и <span class="pl">im…, tym…</span> берут только сравнительную степень.</b> <span class="pl">Coraz lepiej</span>, не <span class="bad">coraz dobrze</span>. В <span class="pl">Im więcej, tym lepiej</span> обе части в сравнительной, запятая обязательна.</div>
+    <h3>Сравнение по шагам: od или niż</h3>
+    <p class="lead">В задании вида <span class="pl">Ania jest ___ (wysoka, Basia)</span> нужно собрать всю группу: <span class="pl">wyższa od Basi</span>. Русское «выше Баси» устроено так же, только без предлога.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>шаг</th><th>что делаем</th><th>пример</th></tr>
+      ${POROWN_STEPS.map(p => `<tr><td class="c">${p[0]}</td><td class="flow">${p[1]}</td><td class="g flow">${p[2]}</td></tr>`).join("")}
+    </table></div>
+    <div class="scroll gap"><table class="vt">
+      <tr><th>подлежащее</th><th>с кем</th><th>od + Dopełniacz</th><th>niż + Mianownik</th></tr>
+      ${POROWN_OD.map(p => `<tr><td class="pl">${p[0]}</td><td class="pl">${p[1]}</td><td class="w">${p[2]}</td><td class="g">${p[3]}</td></tr>`).join("")}
+    </table></div>
+    <div class="tip"><b>После <span class="pl">od</span> - Dopełniacz, после <span class="pl">niż</span> - падеж по роли в полной фразе.</b> Когда сравнивают подлежащие, это Mianownik: <span class="pl">niż Basia [jest]</span>. Поэтому <span class="pl">wyższa od Basi</span> = <span class="pl">wyższa niż Basia</span>. Смешивать нельзя: <span class="bad">od Basia</span>, <span class="bad">niż Basi</span>. Если в образце задания стоит <span class="pl">od</span>, пишите <span class="pl">od</span>.</div>
+    <div class="tip"><b><span class="pl">od</span> сравнивает только с существительным или местоимением.</b> Перед наречием, предложной группой и придаточным возможен только <span class="pl">niż</span>: <span class="pl">cieplej niż wczoraj · lepiej niż w domu · trudniej, niż myślałem</span>.</div>
+    <div class="tip"><b>Род берут у подлежащего.</b> <span class="pl">Dziewczynki są bardziej męczące od brata</span>: <span class="pl">brat</span> мужского рода, но сравнивают девочек, поэтому <span class="pl">męczące</span>. Мужско-личное мн. ч. меняет окончание: <span class="pl">szczęśliwszy → szczęśliwsi, pracowitszy → pracowitsi, młodszy → młodsi</span>.</div>
     <h3>Подводные камни</h3>
     <ol class="pit">
       <li><b>Прилагательное после <span class="pl">być</span> остаётся в именительном.</b> <span class="pl">Jestem zmęczony</span>, но <span class="pl">jestem lekarzem</span>. Появилось существительное - обе части уходят в творительный: <span class="pl">jestem dobrym lekarzem</span>. Но после <span class="pl">to jest</span> вся группа остаётся в именительном: <span class="pl">To jest dobry lekarz</span>.</li>
@@ -2063,6 +2132,7 @@ function renderAdjPractice(){
 function renderAdv(){
   $("#s-adv").innerHTML = `<div class="panel">
     <h2>Наречия</h2>
+    <p class="term">по-польски: <span class="pl">przysłówki</span></p>
     <p class="lead">Наречия не изменяются по падежам, числам, родам и лицам. Многие образуются от прилагательных на <span class="pl">-o</span> или <span class="pl">-e / -ie</span>, но конкретную форму надёжнее учить вместе с исходным словом. Качественные наречия могут иметь степени сравнения.</p>
 
     <h3>Образование: -o</h3>
@@ -2103,7 +2173,9 @@ function renderAdv(){
 function renderPron(){
   $("#s-pron").innerHTML = `<div class="panel">
     <h2>Местоимения</h2>
+    <p class="term">по-польски: <span class="pl">zaimki</span></p>
     <h3>Личные</h3>
+    <p class="term">по-польски: <span class="pl">zaimki osobowe</span></p>
     <div class="scroll"><table>
       <tr><th>кто</th><th>кого / чего</th><th>кому</th><th>кого / что</th><th>кем</th><th>(о) ком</th></tr>
       ${PRON.map(r => `<tr><td class="w">${r[0]}</td><td class="g">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td><td class="g">${r[4]}</td><td class="g">${r[5]}</td></tr>`).join("")}
@@ -2116,6 +2188,7 @@ function renderPron(){
     </ol>
 
     <h3>Возвратное: siebie</h3>
+    <p class="term">по-польски: <span class="pl">zaimek zwrotny</span></p>
     <p class="lead">Одна форма на все лица и оба числа - как русское «себя». Именительного падежа нет.</p>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>форма</th><th>пример</th></tr>
@@ -2145,6 +2218,7 @@ function renderPron(){
     </table></div>
     <div class="tip"><b><span class="pl">Czego pan sobie życzy?</span></b> - стандартный вопрос продавца и официанта. В вопросе о желании клиента используется конструкция <span class="pl">życzyć sobie</span>. Без <span class="pl">sobie</span> глагол имеет другую модель: <span class="pl">Życzę panu powodzenia</span>. В <span class="pl">Idź sobie!</span> местоимение отделимо и добавляет пренебрежения к простому <span class="pl">Idź!</span></div>
     <h3>ten / ta / to</h3>
+    <p class="term">по-польски: <span class="pl">zaimki wskazujące</span></p>
     <div class="scroll"><table>
       <tr><th>падеж</th><th>муж.</th><th>жен.</th><th>ср.</th><th>мн. мужско-личное</th><th>мн. остальное</th></tr>
       <tr><td>Mianownik</td><td class="w">ten</td><td class="w">ta</td><td class="w">to</td><td class="g">ci</td><td class="g">te</td></tr>
@@ -2164,6 +2238,7 @@ function renderPron(){
     <div class="tip"><b><span class="pl">ten</span> покрывает и «этот», и анафорическое «тот».</b> Русское «тот фильм, о котором я говорил» по-польски - <span class="pl">ten film, o którym mówiłem</span>. <span class="pl">Tamten</span> выбирают, когда объект явно отодвинут в пространстве или времени либо противопоставлен другому: <span class="pl">tamten dom, tamtego dnia, nie ten, tamten</span>. Ставить <span class="pl">tamten</span> везде, где по-русски «тот», - типичная калька.</div>
 
     <h3>Притяжательные</h3>
+    <p class="term">по-польски: <span class="pl">zaimki dzierżawcze</span></p>
     <div class="scroll pron-possesive-table"><table>
       <tr><th>лицо</th><th>форма</th><th>склоняется</th></tr>
       <tr><td>ja</td><td class="w">mój / moja / moje</td><td>да, как прилагательное</td></tr>
@@ -2337,6 +2412,20 @@ function renderVocabulary(){
     <h3>100 полезных наречий и выражений</h3>
     <p class="lead">Здесь есть наречия, частицы и готовые выражения - всё, что помогает связать знакомые слова в нормальную речь: назвать время, степень, место, мнение и темп действия.</p>
     ${vocabularyTable(VOCAB_ADVERBS, ["слово", "перевод", "сравнение", "пример"])}
+
+    <h3>Грамматические термины по-польски</h3>
+    <p class="lead">Задания на экзамене и в польских учебниках называют правила по-польски. Найди термин - в последней колонке раздел справочника, где это правило объяснено.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>po polsku</th><th>по-русски</th><th>где</th></tr>
+      ${GLOSS_TERMS.map(t => `<tr><td class="w flow">${t[0]}</td><td class="flow">${t[1]}</td><td class="flow">${t[2] ? `<a href="#${t[2]}">${t[3]}</a>` : `<span class="dim">-</span>`}</td></tr>`).join("")}
+    </table></div>
+
+    <h3>Язык заданий</h3>
+    <p class="lead">Формулировки, которые повторяются из теста в тест. Разберись с ними один раз - и на экзамене время уйдёт на грамматику, а не на перевод условия.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>в задании</th><th>что значит</th></tr>
+      ${GLOSS_TASKS.map(t => `<tr><td class="w flow">${t[0]}</td><td class="flow">${t[1]}</td></tr>`).join("")}
+    </table></div>
   </div>${topicPracticeHTML(VERB_PRACTICE.find(item => item.id === "lista"), "vocabulary")}`;
 }
 
