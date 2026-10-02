@@ -3079,6 +3079,14 @@ const PRON = [
  ["oni","ich / nich","im / nim","ich / nich","nimi","nich"],
  ["one","ich / nich","im / nim","je / nie","nimi","nich"]
 ];
+const PRON_PAIRS = [
+ ["ja · Celownik","mi","mnie","mnie"],
+ ["ty · Celownik","ci","tobie","tobie"],
+ ["ty · Dopełniacz, Biernik","cię","ciebie","ciebie"],
+ ["on, ono · Celownik","mu","jemu","niemu"],
+ ["on, ono · Dopełniacz","go","jego","niego"],
+ ["on · Biernik","go","jego","niego"]
+];
 
 const SIEBIE = [
  ["Mianownik","-","формы нет: возвратное не бывает подлежащим"],

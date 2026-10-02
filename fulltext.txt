@@ -741,9 +741,16 @@ szybkoszybciejnajszybciej-ko → -ciejładnieładniejnajładniejciepłocieplejna
 ктокого / чегокомукого / чтокем(о) ком
 jamniemi / mniemniemnąmnietyciebie / cięci / tobieciebie / ciętobątobieonjego / go / niegomu / jemu / niemujego / go / niegonimnimonojego / go / niegomu / jemu / niemuje / nienimnimonajej / niejjej / niejją / niąniąniejmynasnamnasnaminaswywaswamwaswamiwasoniich / nichim / nimich / nichniminichoneich / nichim / nimje / nieniminich
 У местоимений третьего лица после предлога выбираем форму с начальным n-. Сравни: widzę go / patrzę na niego, daję jej / mówię o niej, widzę je / patrzę na nie. К постпредложным относятся также niemu, nim, nią, nich, nimi. В творительном nim, nią, nimi имеют n- и без предлога: Interesuję się nim.
-Короткие формы go, mu, cię, ci, mi безударные. Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: Mnie to nie interesuje.
 Личное местоимение обычно опускается. Окончание глагола уже содержит лицо: idę, а не ja idę. Постоянное ja звучит либо как нажим, либо как речь иностранца.
 В нейтрально-вежливом обращении нужны pan / pani и третье лицо. Czy pan ma paragon? Русскому и белорусскому вежливому «вы» соответствует не польское wy, а pan / pani. На ty переходят по взаимной договорённости или по принятой в конкретной среде норме.
+Краткая или полная форма. Выбор есть только у ja, ty, on, ono и не во всех падежах. У ja в Dopełniacz и Biernik одна форма mnie, у ona, my, wy, oni, one кратких форм нет вовсе: jej, ją, nam, was, im, ich.
+лицо и падежкраткаяполнаяпосле предлога
+ja · Celownikmimniemniety · Celownikcitobietobiety · Dopełniacz, Biernikcięciebieciebieon, ono · Celownikmujemuniemuon, ono · Dopełniaczgojegoniegoon · Biernikgojegoniego
+Сначала падеж, потом форма. Падеж задаёт глагол или предлог: wyjaśnić komu - Chciałbym ci coś wyjaśnić, а не cię; przeszkadzać komu - Nie chcę im przeszkadzać, а не ich. Белорусский здесь подсказывает: перашкаджаць ім.
+После предлога - только полная форма, без исключений. У третьего лица она с n-: dla niego, z nim, dzięki niemu; у первого и второго - do mnie, dla ciebie, o tobie, ze mną. Краткие mi, ci, cię, mu, go после предлога не стоят никогда. Не путай с притяжательным jego «его», оно не меняется: dla niego, но dla jego brata.
+Без предлога по умолчанию - краткая. Она безударная и стоит рядом с глаголом: Przekaż mu, że… · Widzę go. · Daj mi znać.
+Полная без предлога - только в трёх случаях. В начале предложения, куда безударная форма не встаёт: Mnie to nie interesuje. · Jemu to powiedz. При противопоставлении и выделении, в том числе с tylko, nawet, też, i… i: Daj to jemu, nie jej. · Tylko tobie ufam. В ответе одним словом: Komu dałeś klucze? - Jemu.
+Полная форма в нейтральной позиции не ошибка, но это нажим. Przekaż jemu звучит как «передай именно ему». Если в предложении нет противопоставления, выбирай краткую. В русском такой пары нет, поэтому рука тянется к полной: «скажи ему» по-польски обычно powiedz mu.
 Возвратное: siebie
 по-польски: zaimek zwrotny
 Одна форма на все лица и оба числа - как русское «себя». Именительного падежа нет.

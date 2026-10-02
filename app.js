@@ -2182,10 +2182,22 @@ function renderPron(){
     </table></div>
     <ol class="pit gap">
       <li><b>У местоимений третьего лица после предлога выбираем форму с начальным <span class="pl">n-</span>.</b> Сравни: <span class="pl">widzę go / patrzę na niego</span>, <span class="pl">daję jej / mówię o niej</span>, <span class="pl">widzę je / patrzę na nie</span>. К постпредложным относятся также <span class="pl">niemu, nim, nią, nich, nimi</span>. В творительном <span class="pl">nim, nią, nimi</span> имеют <span class="pl">n-</span> и без предлога: <span class="pl">Interesuję się nim.</span></li>
-      <li><b>Короткие формы <span class="pl">go, mu, cię, ci, mi</span> безударные.</b> Не ставятся в начало предложения и никогда после предлога. В начале - только длинные: <span class="pl">Mnie to nie interesuje</span>.</li>
       <li><b>Личное местоимение обычно опускается.</b> Окончание глагола уже содержит лицо: <span class="pl">idę</span>, а не <span class="pl">ja idę</span>. Постоянное <span class="pl">ja</span> звучит либо как нажим, либо как речь иностранца.</li>
       <li><b>В нейтрально-вежливом обращении нужны <span class="pl">pan / pani</span> и третье лицо.</b> <span class="pl">Czy pan ma paragon?</span> Русскому и белорусскому вежливому «вы» соответствует не польское <span class="pl">wy</span>, а <span class="pl">pan / pani</span>. На <span class="pl">ty</span> переходят по взаимной договорённости или по принятой в конкретной среде норме.</li>
     </ol>
+
+    <p><b>Краткая или полная форма.</b> Выбор есть только у <span class="pl">ja, ty, on, ono</span> и не во всех падежах. У <span class="pl">ja</span> в Dopełniacz и Biernik одна форма <span class="pl">mnie</span>, у <span class="pl">ona, my, wy, oni, one</span> кратких форм нет вовсе: <span class="pl">jej, ją, nam, was, im, ich</span>.</p>
+    <div class="scroll"><table class="vt">
+      <tr><th>лицо и падеж</th><th>краткая</th><th>полная</th><th>после предлога</th></tr>
+      ${PRON_PAIRS.map(r => `<tr><td class="dim">${r[0]}</td><td class="w">${r[1]}</td><td class="g">${r[2]}</td><td class="g">${r[3]}</td></tr>`).join("")}
+    </table></div>
+    <ol class="pit gap">
+      <li><b>Сначала падеж, потом форма.</b> Падеж задаёт глагол или предлог: <span class="pl">wyjaśnić komu</span> - <span class="pl">Chciałbym ci coś wyjaśnić</span>, а не <span class="bad">cię</span>; <span class="pl">przeszkadzać komu</span> - <span class="pl">Nie chcę im przeszkadzać</span>, а не <span class="bad">ich</span>. Белорусский здесь подсказывает: <span class="pl">перашкаджаць ім</span>.</li>
+      <li><b>После предлога - только полная форма, без исключений.</b> У третьего лица она с <span class="pl">n-</span>: <span class="pl">dla niego, z nim, dzięki niemu</span>; у первого и второго - <span class="pl">do mnie, dla ciebie, o tobie, ze mną</span>. Краткие <span class="pl">mi, ci, cię, mu, go</span> после предлога не стоят никогда. Не путай с притяжательным <span class="pl">jego</span> «его», оно не меняется: <span class="pl">dla niego</span>, но <span class="pl">dla jego brata</span>.</li>
+      <li><b>Без предлога по умолчанию - краткая.</b> Она безударная и стоит рядом с глаголом: <span class="pl">Przekaż mu, że… · Widzę go. · Daj mi znać.</span></li>
+      <li><b>Полная без предлога - только в трёх случаях.</b> В начале предложения, куда безударная форма не встаёт: <span class="pl">Mnie to nie interesuje. · Jemu to powiedz.</span> При противопоставлении и выделении, в том числе с <span class="pl">tylko, nawet, też, i… i</span>: <span class="pl">Daj to jemu, nie jej. · Tylko tobie ufam.</span> В ответе одним словом: <span class="pl">Komu dałeś klucze? - Jemu.</span></li>
+    </ol>
+    <div class="tip"><b>Полная форма в нейтральной позиции не ошибка, но это нажим.</b> <span class="pl">Przekaż jemu</span> звучит как «передай именно ему». Если в предложении нет противопоставления, выбирай краткую. В русском такой пары нет, поэтому рука тянется к полной: «скажи ему» по-польски обычно <span class="pl">powiedz mu</span>.</div>
 
     <h3>Возвратное: siebie</h3>
     <p class="term">по-польски: <span class="pl">zaimek zwrotny</span></p>
